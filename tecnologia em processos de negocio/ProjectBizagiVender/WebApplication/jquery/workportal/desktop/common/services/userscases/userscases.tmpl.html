@@ -1,0 +1,36 @@
+﻿<script id="usersrelated-wrapper" type="text/x-jsrender-tmpl">
+    <div class="template-usersrelated-section">
+        <ul class="usersrelated-container"  data-idcase="{{:idCase}}">
+            {{for assignees ~defaultImg = defaultImg}}
+                <li {{if owner}} data-owner="true" {{/if}} {{if owner}} data-assignee="true" {{/if}}>
+                    <span class="initials">{{:initials}}</span>
+                    <img class="userId-{{:idUser}}" src="{{:~defaultImg}}" width="30">
+                </li>
+            {{/for}}    
+            {{if totalAssignees > 2 }}
+                <li><div>{{:totalAssignees}}</div></li>
+            {{/if}}
+        </ul>
+    </div>
+</script>
+
+<script id="usersrelated-tooltip" type="text/x-jsrender-tmpl">
+    <div class="usersrelated assingnee">
+        <ul>
+        {{for assignees ~defaultImg = defaultImg}}
+            <li>
+                <img class="userId-{{:idUser}}" src="{{:~defaultImg}}" width="30" title="{{:name}}">
+                <span class="name">{{:name}}</span>
+                <div>
+                    {{if owner}}
+                        <span class="rol"> %{workportal-widget-common-services-usersevents-owner}</span> 
+                    {{/if}}
+                    {{if isAssignee}}
+                        <span class="rol rol-assignee"> %{workportal-widget-common-services-usersevents-assignee}</span>
+                    {{/if}}
+                </div>
+            </li>    
+        {{/for}}    
+        </ul>
+    </div>
+</script>

@@ -1,0 +1,337 @@
+/*
+*	GENERAL STYLES
+*/
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+.panel {
+	
+}
+.panel >*{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+#pcPanel {
+	float: left;
+	width: 50%;
+	height: 100%;
+	position: relative;
+	font-family: "Segoe UI", "Lucida Grande", Calibri, Helvetica, Arial, sans-serif;
+}
+
+#ipadPanel {
+	float: left;
+	width: 50%;
+	height: 100%;
+	position: relative;
+	background-color: aliceblue;
+}
+
+/*
+*	PC STYLES
+*/
+#pcPanel .ui-bizagi-grid {
+	position: relative;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-buttons {
+	position: relative;
+	height: 32px;
+	border-top-color: #aaaaaa;
+	padding-top: 4px;
+	padding-bottom: 3px;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-buttons ul{
+	list-style: none;
+	height: 24px;
+	margin: 0px;
+	position: relative;
+	padding-left: 5px;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-buttons ul li{
+	display: inline-block;
+	margin-left: 1px;
+	margin-right: 1px;
+	cursor: pointer;
+	height: 28px;
+	width: 28px;
+	position: relative;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-buttons ul li .ui-icon
+{
+	top: 7px;
+	left: 7px;
+	position: relative;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table{
+	width: 100%;
+	border-spacing: 0px;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-header{
+	
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-header tr{
+	height: 28px;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-header tr th{
+	cursor: pointer;
+	padding: 0px;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-header .ui-bizagi-grid-column
+{
+	position: relative;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-header .ui-bizagi-grid-column.ui-bizagi-grid-key
+{
+	display: none;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-header .ui-bizagi-grid-column label
+{
+	display: inline-block;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-header .ui-bizagi-grid-column .ui-bizagi-grid-column-sort
+{
+	display: none;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-header .ui-bizagi-grid-column .ui-bizagi-grid-column-sort.ui-bizagi-active
+{
+	display: inline-block;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-header .ui-bizagi-grid-column .ui-bizagi-grid-column-sort .ui-icon
+{
+	height: 12px;
+	filter: Alpha(Opacity=35);
+	opacity:0.35;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-header .ui-bizagi-grid-column .ui-bizagi-grid-column-sort .ui-icon.ui-bizagi-active
+{
+	height: 12px;
+	filter: Alpha(Opacity=100);
+	opacity: 1;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-header .ui-bizagi-grid-column .ui-bizagi-grid-column-sort .ui-icon-triangle-1-s
+{
+	margin-top: -6px;
+	margin-left: -1px;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-body{
+	
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-body tr{
+	min-height: 22px;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-body tr.ui-bizagi-grid-row-selected
+{
+	
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-body tr td{
+	padding: 0px;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-body .ui-bizagi-grid-cell
+{
+	text-align: center;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-body .ui-bizagi-grid-cell.ui-bizagi-grid-key
+{
+	display: none;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-pager ul{
+	list-style: none;
+	height: 24px;
+	text-align: center;
+	margin: 0px;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-pager ul li{
+	display: inline;
+	margin-left: 5px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+#pcPanel .ui-bizagi-grid .ui-bizagi-grid-pager ul li.ui-state-active{
+	border-radius: 6px;
+}
+
+/*
+*	IPAD STYLES
+*/
+
+#ipadPanel .ui-bizagi-grid{
+	background:#e6e6e6;
+	position: relative;
+	-webkit-border-radius: 6px;
+	border-radius:6px;
+	border: 1px solid #AAA;
+	padding:1px;
+	box-shadow:0px 1px 0px rgba(255,255,255,0.3);
+}
+#ipadPanel .ui-bizagi-grid > div:last-child{
+	border-radius:0px 0px 6px 6px;
+}
+#ipadPanel .ui-bizagi-grid h3{
+	font-size:14px;
+	margin:0px;
+	text-shadow:0px 1px 0px rgba(255,255,255,0.5);
+	color:#283238;
+}
+#ipadPanel .ui-bizagi-grid-pager{
+	border-radius:0px 0px 4px 4px;
+    border-top:1px solid rgba(255,255,255,0.3);
+    box-shadow:0px -1px 0px #ccc;
+    background: #DADADA;
+    padding:5px 0px;
+}
+#ipadPanel .ui-bizagi-grid-pager ul,#ipadPanel .ui-bizagi-grid-buttons ul{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+	position:relative;
+}
+#ipadPanel .ui-bizagi-grid-pager ul{
+    text-align:center;
+    padding:0px 45px;
+    font-size:15px;
+    font-weight:bold;
+}
+#ipadPanel .ui-bizagi-grid-buttons ul li{
+	display:inline;
+}
+#ipadPanel .ui-bizagi-grid-pager ul li{
+	display:inline-block;
+}
+#ipadPanel .ui-bizagi-grid-pager ul li{
+	padding:1px;
+	height:6px;
+	width:6px;
+	margin:12px 11px;
+	line-height:20px;
+	text-align:inherit;
+	background-color: rgba(0, 0, 0, 0.15);
+	border-radius:50%;
+	box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.3) inset;
+	text-indent:-9999px;
+	position:relative;
+}
+#ipadPanel .ui-bizagi-grid-pager ul li.state-active{
+	/*background-color: rgba(0, 0, 0, 0.15);*/
+	background-image: -webkit-linear-gradient(bottom, #184465 0%, #166FAE 100%);
+	border-radius:50%;
+	box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.3) inset;
+}
+#ipadPanel .ui-bizagi-grid-pager ul li.state-active:after{
+	content:'';
+	border:2px solid rgba(19,66,100,0.6);
+	position:absolute;
+	height:10px;
+	width:10px;
+	display:block;
+	top:-3px;
+	left:-3px;
+	border-radius:50%;
+}
+#ipadPanel .ui-bizagi-grid-pager ul li:first-child,#ipadPanel .ui-bizagi-grid-pager ul li:last-child{
+	position:absolute;
+	top:-5px;
+	font-family: NeoSansStdMedium;
+	font-size:20px;
+	text-shadow:0px 1px 0px rgba(255,255,255,0.3);
+	background:none;
+	border-radius:0px;
+	box-shadow:none;
+	text-indent:0px;
+	margin:5px 10px;
+	height:20px;
+	width:20px;
+}
+#ipadPanel .ui-bizagi-grid-pager ul li:first-child{
+	left:0px;
+	border-right:1px solid #bbb;
+	padding:5px 10px 5px 0px;
+}
+#ipadPanel .ui-bizagi-grid-pager ul li:last-child{
+	right:0px;
+	padding:5px 0px 5px 10px;
+	border-left:1px solid #bbb;
+}
+
+#ipadPanel .ui-bizagi-grid table{
+	width:100%;
+	border-spacing: 0;
+}
+#ipadPanel .ui-bizagi-grid table thead tr th{
+	background:#DADADA;
+	border-bottom:1px solid #ccc;
+	position:relative;
+}
+#ipadPanel .ui-bizagi-grid table thead tr th:last-child{
+	-moz-border-radius:0px 4px 0px 0px;
+	border-radius:0px 4px 0px 0px;
+}
+#ipadPanel .ui-bizagi-grid table thead tr th:first-child+th{
+	-moz-border-radius:4px 0px 0px 0px;
+	border-radius:4px 0px 0px 0px;
+}
+#ipadPanel .ui-bizagi-grid table td, #ipadPanel .ui-bizagi-grid table th{
+	padding:6px 8px;
+	text-align:center;
+}
+#ipadPanel .ui-bizagi-grid table tbody tr:nth-child(odd){
+	background:#ECECEC;
+}
+#ipadPanel .ui-bizagi-grid table tr.ui-bizagi-state-selected{
+	/*background: -webkit-linear-gradient(top, #d8dbdc 0%,#c6cbcd 100%);*/
+	background-image: -webkit-linear-gradient(bottom, #9BA4A8 11%, #BFC5C8 50%);
+}
+#ipadPanel .ui-bizagi-grid table tbody tr td{
+	border-top:1px solid #f5f5f5;
+}
+#ipadPanel .ui-bizagi-grid table tr td:first-child, #ipadPanel .ui-bizagi-grid table tr th:first-child{
+	display:none;
+	padding:0px;
+	margin:0px;
+}
+#ipadPanel .ui-bizagi-grid table .non-editable, #ipadPanel .ui-bizagi-grid table .editable{
+	display:block;
+	height:22px;
+	width:22px;
+	background:url('../../../css/bizagi/tablet/images/sprite_inbox.png') 0 0 no-repeat transparent;
+	text-indent:-9999px;
+}
+#ipadPanel .ui-bizagi-grid table .editable{
+	background-position:-280px -55px;
+}
+#ipadPanel .ui-bizagi-grid table .non-editable{
+	background-position:-326px -55px;
+}
+#ipadPanel .ui-bizagi-grid .ui-bizagi-grid-column-sort{
+	display:none;
+}
+#ipadPanel .ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active{
+	cursor: pointer;
+	display:inline-block;
+	margin-left:10px;
+}
+#ipadPanel .ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:first-child{
+	border-top:0px solid transparent;  
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+ 	 border-bottom:5px solid rgba(0,0,0,.1);
+ 
+}
+#ipadPanel .ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:last-child{
+    border-top:5px solid rgba(0,0,0,.1);   
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+    border-bottom:0px solid transparent;
+
+}
+#ipadPanel .ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:last-child.ui-bizagi-active{
+	border-top-color:rgba(0,0,0,.4); 
+}
+#ipadPanel .ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:first-child.ui-bizagi-active{
+	border-bottom-color:rgba(0,0,0,.4); 
+}
+#ipadPanel .ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:first-child{
+    margin-bottom:3px;
+}

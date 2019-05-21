@@ -1,0 +1,25 @@
+#popup-notification-template-wrapper ul
+{
+    list-style-type: none;
+}
+
+#popup-notification-template-wrapper ul li
+{
+    min-height: 33px;
+}
+
+#popup-notification-template-wrapper ul i
+{
+    float: left;
+    margin-right: 10px;
+}
+
+#popup-notification-template-wrapper .bz-icon-check
+{
+    color: #6ca743;
+}
+
+#popup-notification-template-wrapper .bz-icon-error
+{
+    color: #e85159;
+}

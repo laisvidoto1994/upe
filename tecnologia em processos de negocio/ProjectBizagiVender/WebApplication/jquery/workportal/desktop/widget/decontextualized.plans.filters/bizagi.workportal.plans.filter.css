@@ -1,0 +1,35 @@
+﻿.sidebar-content .wdg-plan-filter-header {
+  font-weight: 400;
+  font-size: 14px;
+  color: #374C58;
+  text-indent: 0;
+  padding: 9px 15px;
+  padding-bottom: 20px;
+  margin-bottom: 0;
+  line-height: 10px;
+}
+
+.sidebar-content .wdg-plan-filter-card {
+    padding: 16px 20px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.sidebar-content .wdg-plan-filter-card > i,
+.sidebar-content .wdg-plan-filter-card > span {
+    vertical-align: middle;
+}
+
+.sidebar-content .wdg-plan-filter-title {
+  font-size: 14px;
+  font-weight: 400;
+  height: 100%;
+  line-height: 35px;
+  padding: 9px 15px;
+}
+
+.wgd-user-plan-filter-title {
+  margin-left: 10px;
+}

@@ -1,0 +1,56 @@
+/********
+* Filename: bizagi.editor.component.editor.daterange.css
+* Create Date: 2012-07-09
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__daterange
+*
+********/
+
+/* __daterange
+--------*/
+
+.bizagi_editor_component_editor_daterange .daterange-rule-value
+{
+}
+
+.bizagi_editor_component_editor_daterange .biz-action-btn{
+    line-height: 18px;
+    padding: 0px 0px 0px 8px;
+}
+
+.bizagi_editor_component_editor_daterange .daterange-button-value{
+    margin-left: 1px;
+    padding-left: 0px;
+    overflow: hidden;
+}
+
+.bizagi_editor_component_editor_daterange .ui-control-input input[type="text"] {
+    width:100%;
+    padding-left: 4px;
+}
+
+.bizagi_editor_component_editor_daterange .biz-complex-btn.biz-complex-dropdown{
+    width:auto;
+}
+
+
+.bizagi_editor_component_editor_daterange .daterange-number-container{
+    padding-top: 1px;
+}
+
+.bizagi_editor_component_editor_daterange .biz-action-btn .biz-ico {
+    top:0;
+}
+
+.bizagi_editor_component_editor_daterange .daterange-date-container{
+    position: relative;
+}
+
+.bizagi_editor_component_editor_daterange .daterange-container .ui-control-input{
+    border: none;
+}
+
+.bizagi_editor_component_editor_daterange .daterange-name-title{
+    font-weight: bold;
+}

@@ -1,0 +1,74 @@
+/********
+* Filename: bizagi.editor.component.decorator.css
+* Create Date: 2012-03-26
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__decorator
+*
+********/
+
+/* __decorator
+--------*/
+.bizagi_editor_component_decorator .biz-decorator-frame,
+.bizagi_editor_component_decorator
+{
+    width: 100%;
+    height: 0;
+}
+
+.bizagi_editor_component_decorator .decorator-image { cursor: pointer; }
+
+.bizagi_editor_component_decorator .biz-decorator-standard-options{
+	position: absolute;
+	right: 0px;
+	top:-7px;
+	line-height: 16px;
+    background: #E2E2E0;
+    padding: 2px;
+    border-radius: 3px;
+    border: 1px solid #B9B9B8;
+}
+
+.ui-bizagi-rtl .biz-decorator-standard-options{
+	right: auto;
+	left:0px;
+}
+
+.bizagi_editor_component_decorator .biz-decorator-specific-options{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	line-height: 24px;
+	z-index: 100;
+    color: #283238;
+}
+
+.bizagi_editor_component_decorator .biz-decorator-specific-options.ui-clone { top: 0; }
+
+.bizagi_editor_component_decorator .ui-clone .modal-editor-buttons { margin-top: 0; }
+
+.bizagi_editor_component_decorator .biz-action-btn{
+	min-width: auto;
+}
+
+.bizagi_editor_component_decorator .biz-action-btn .biz-ico{
+	left:0px;
+}
+
+.biz-decorator-frame .biz-ico{
+	display: inline-block;
+}
+
+.container-decorator{
+    position:relative;
+    overflow: visible;
+}
+
+.biz-decorator-frame.ui-decorator-left .biz-decorator-standard-options{
+	right:auto;
+	left:0px;
+}
+
+.biz-decorator-frame.ui-decorator-vertical .biz-decorator-standard-options .biz-ico{
+	display: block;
+}

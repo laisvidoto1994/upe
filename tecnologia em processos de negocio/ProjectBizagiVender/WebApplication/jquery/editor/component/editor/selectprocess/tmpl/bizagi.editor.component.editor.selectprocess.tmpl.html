@@ -1,0 +1,14 @@
+﻿<script id="selectprocess-frame" type="text/x-jquery-tmpl">
+    <div class="selectprocess-container ui-control-container">
+    	{{if showLabel}}
+            <label class="selectprocess-name">${caption}</label>
+        {{/if}}        
+        <div class="selectprocess-buttons biz-actions-bar">
+        {{if allowClick}}
+            <span class="editor-ui-button-actions biz-disabled-btn">%{formmodeler-component-editor-selectprocess-select-process}</span>
+        {{else}}
+            <span class="editor-ui-button-actions biz-action-btn biz-btn biz-action-select-process">%{formmodeler-component-editor-selectprocess-select-process}</span>
+        {{/if}}
+        </div>
+    </div>
+</script>

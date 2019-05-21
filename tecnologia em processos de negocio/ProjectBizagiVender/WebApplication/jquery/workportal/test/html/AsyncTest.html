@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Async</title>
+</head>
+<body>
+    <button type="button" id="btnStart">START</button>
+    <button type="button" id="btnTest">EJECUTAR PRUEBA</button>
+    <script type='text/javascript' src='../../../../jquery/steal.js'></script>
+    <script type='text/javascript' src='../../../../jquery/bizagi.loader.js'></script>
+    <script type="text/javascript" language="javascript">
+        // Redefine path to base
+        var BIZAGI_PATH_TO_BASE = "../../../../";
+        
+    	// Gets the loader instance, and load the module
+        var loader = bizagi.loader;
+    	loader.init(function() {
+    		loader.loadFile("jquery/workportal/test/js/asyncTest.test.js");
+    	});
+    </script>
+</body>
+</html>

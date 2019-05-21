@@ -1,0 +1,58 @@
+﻿	{
+		"form": {
+			"properties" : {"id": 1, "xpathContext": "", "title": "Cycle 1", "buttons": [{"action": "save", "text": "Save", "validate": "true", "submitData": "true", "refresh": "true"}]},
+			"elements": [
+				{"container": { "properties": {"id" : "tab", "type": "tab"},
+					"elements": [
+						{"container": { "properties": {"id" : "tabItem1", "type": "tabItem", "displayName": "Combos"}, "elements": [
+							{"render": {	"properties": {"id" : 10001, "displayName" : "Combo (from ajax)", "type": "combo", "xpath": "intermediate.comboAjax", "dataUrl": "ajax/cities.ashx" }}},
+							{"render": {	"properties": {"id" : 10002, "displayName" : "Combo (from ajax) with value", "type": "combo", "xpath": "intermediate.comboAjaxWithValue", "value": [{"id": "1", "value": "Bogota"}], "dataUrl": "ajax/cities.ashx" }}},
+							{"render": {	"properties": {"id" : 10003, "displayName" : "Combo (local)", "type": "combo", "xpath": "intermediate.comboLocal", "data": [{"id":"1", "value":"Pera"}, {"id":"2", "value":"Manzana"}, {"id":"3", "value":"Durazno"}] }}},
+							{"render": {	"properties": {"id" : 10004, "displayName" : "Combo (local) with value", "type": "combo", "xpath": "intermediate.comboLocalWithValue", "data": [{"id":"1111", "value":"Pera"}, {"id":"2222", "value":"Manzana"}, {"id":"3333", "value":"Durazno"}], "value": [{"id": "2222", "value": "Durazno"}] }}},
+							{"render": {	"properties": {"id" : 10005, "displayName" : "Combo (with aditional attrib)", "type": "combo", "xpath": "intermediate.comboAjaxWithAdditional", "dataUrl": "ajax/countries2.ashx", "value": [{"id": "1", "value": "Colombia"}] }}},
+							{"render": {	"properties": {"id" : 12345, "displayName" : "Combo with long values", "type": "combo", "xpath": "intermediate.comboWithLongvalues", "data": [{"id":"1111", "value":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}, {"id":"2222", "value":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}, {"id":"3333", "value":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}], "value": [{"id": "2222", "value": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}] }}}
+						]}},
+						{"container": { "properties": {"id" : "tabItem2", "type": "tabItem", "displayName": "Combos Dinamicos"}, "elements": [
+							{"render": {	"properties": {"id" : 10006, "displayName" : "Country (from ajax)", "type": "cascadingCombo", "xpath": "intermediate.cascadingComboAjax.country", "dataUrl": "ajax/countries.ashx" }}},
+							{"render": {	"properties": {"id" : 10007, "displayName" : "City (from ajax)", "type": "cascadingCombo", "xpath": "intermediate.cascadingComboAjax.city", "parentCombo": "10006", "dataUrl": "ajax/cities.ashx" }}},
+							{"render": {	"properties": {"id" : 10000, "displayName" : "", "type": "label" }}},
+							{"render": {	"properties": {"id" : 10008, "displayName" : "Country (local)", "type": "cascadingCombo", "xpath": "intermediate.cascadingComboLocal.country", "data": [{"id":"1", "value":"Colombia"}, {"id":"2", "value":"Peru"}, {"id":"3", "value":"Venezuela"}] }}},
+							{"render": {	"properties": {"id" : 10009, "displayName" : "City (local)", "type": "cascadingCombo", "xpath": "intermediate.cascadingComboLocal.city", "parentCombo": "10008", "dataUrl": "ajax/cities.ashx"  }}},
+							{"render": {	"properties": {"id" : 10000, "displayName" : "", "type": "label" }}},
+							{"render": {	"properties": {"id" : 10010, "displayName" : "Continent (with value LOCAL)", "type": "cascadingCombo", "xpath": "intermediate.cascadingComboWithValue.continent", "dataUrl": "ajax/continents.ashx", "value": [{"id": "1", "value": "America"}], "data": [{"id":"1", "value":"America"}, {"id":"2", "value":"Europa"}] }}},
+							{"render": {	"properties": {"id" : 10011, "displayName" : "Countries (with value)", "type": "cascadingCombo", "xpath": "intermediate.cascadingComboWithValue.country", "dataUrl": "ajax/countries.ashx", "parentCombo": "10010","value": [{"id": "1", "value": "Colombia"}] }}},
+							{"render": {	"properties": {"id" : 10012, "displayName" : "Cities (with value)", "type": "cascadingCombo", "xpath": "intermediate.cascadingComboWithValue.city", "dataUrl": "ajax/cities.ashx", "parentCombo": "10011", "value": [{"id": "5", "value": "Pereira"}] }}},							
+							{"render": {	"properties": {"id" : 30010, "displayName" : "Continent (with value AJAX)", "type": "cascadingCombo", "xpath": "intermediate.cascadingComboWithValueAjax.continent", "dataUrl": "ajax/continents.ashx", "value": [{"id": "1", "value": "America"}]}}},
+							{"render": {	"properties": {"id" : 30011, "displayName" : "Countries (with value)", "type": "cascadingCombo", "xpath": "intermediate.cascadingComboWithValueAjax.country", "dataUrl": "ajax/countries.ashx", "parentCombo": "30010", "value": [{"id": "1", "value": "Colombia"}] }}},
+							{"render": {	"properties": {"id" : 30012, "displayName" : "Cities (with value)", "type": "cascadingCombo", "xpath": "intermediate.cascadingComboWithValueAjax.city", "dataUrl": "ajax/cities.ashx", "parentCombo": "30011", "value": [{"id": "5", "value": "Pereira"}] }}}
+						]}},
+						{"container": { "properties": {"id" : "tabItem3", "type": "tabItem", "displayName": "Listas"}, "elements": [
+							{"render": {	"properties": {"id" : 10013, "displayName" : "List (from ajax)", "type": "list", "xpath": "intermediate.listAjax", "dataUrl": "ajax/cities.ashx" }}},
+							{"render": {	"properties": {"id" : 10014, "displayName" : "List (from ajax) with value", "type": "list", "xpath": "intermediate.listAjaxWithValue", "value": [{"id": "1", "value": "Bogota"}], "dataUrl": "ajax/cities.ashx" }}},
+							{"render": {	"properties": {"id" : 10015, "displayName" : "List (local)", "type": "list", "xpath": "intermediate.listLocal", "data": [{"id":"1", "value":"Pera"}, {"id":"2", "value":"Manzana"}, {"id":"3", "value":"Durazno"}] }}},
+							{"render": {	"properties": {"id" : 10016, "displayName" : "List (local) with value", "type": "list", "xpath": "intermediate.listLocalWithValue", "data": [{"id":"1111", "value":"Pera"}, {"id":"2222", "value":"Manzana"}, {"id":"3333", "value":"Durazno"}], "value": [{"id": "2222", "value": "Manzana"}] }}}
+						]}},
+						{"container": { "properties": {"id" : "tabItem4", "type": "tabItem", "displayName": "Radios"}, "elements": [
+							{"render": {	"properties": {"id" : 10017, "displayName" : "Radio (from ajax)", "type": "radio", "xpath": "intermediate.radioAjax", "dataUrl": "ajax/cities.ashx", "horizontal": "true" }}},
+							{"render": {	"properties": {"id" : 10018, "displayName" : "Radio (from ajax) with value", "type": "radio", "xpath": "intermediate.radioAjaxWithValue", "value": [{"id": "1", "value": "Bogota"}], "dataUrl": "ajax/cities.ashx", "horizontal": "true" }}},
+							{"render": {	"properties": {"id" : 10019, "displayName" : "Radio (local)", "type": "radio", "xpath": "intermediate.radioLocal", "data": [{"id":"1", "value":"Pera"}, {"id":"2", "value":"Manzana"}, {"id":"3", "value":"Durazno"}] }}},
+							{"render": {	"properties": {"id" : 10020, "displayName" : "Radio (local) with value", "type": "radio", "xpath": "intermediate.radioLocalWithValue", "data": [{"id":"1111", "value":"Pera"}, {"id":"2222", "value":"Manzana"}, {"id":"3333", "value":"Durazno"}], "value": [{"id": "2222", "value": "Manzana"}] }}}
+						]}},
+						{"container": { "properties": {"id" : "tabItem5", "type": "tabItem", "displayName": "No-editables", "editable": "false"}, "elements": [
+							{"render": {	"properties": {"id" : 10000, "displayName" : "Combo", "type": "label" }}},
+							{"render": {	"properties": {"id" : 20002, "displayName" : "Combo (from ajax) with value", "type": "combo", "xpath": "intermediate.readOnly.comboAjaxWithValue", "dataUrl": "ajax/cities.ashx", "value": [{"id": "1", "value": "Bogota"}] }}},
+							{"render": {	"properties": {"id" : 40005, "displayName" : "Combo (with aditional attrib)", "type": "combo", "xpath": "intermediate.readOnly.comboAjax", "dataUrl": "ajax/countries2.ashx", "value": [{"id": "1", "value": ["Colombia", "America"]}]}}},
+							{"render": {	"properties": {"id" : 10000, "displayName" : "Cascading Combos", "type": "label" }}},
+							{"render": {	"properties": {"id" : 20010, "displayName" : "Continent (with value)", "type": "cascadingCombo", "xpath": "intermediate.readOnly.cascadingComboWithValue.continent", "dataUrl": "ajax/continents.ashx", "value": [{"id": "1", "value": "America"}] }}},
+							{"render": {	"properties": {"id" : 20011, "displayName" : "Countries (with value)", "type": "cascadingCombo", "xpath": "intermediate.readOnly.cascadingComboWithValue.country", "dataUrl": "ajax/countries.ashx", "parentCombo": "10010", "value": [{"id": "1", "value": "Colombia"}] }}},
+							{"render": {	"properties": {"id" : 20012, "displayName" : "Cities (with value)", "type": "cascadingCombo", "xpath": "intermediate.readOnly.cascadingComboWithValue.city", "dataUrl": "ajax/cities.ashx", "parentCombo": "10011", "value": [{"id": "5", "value": "Pereira"}] }}},		
+							{"render": {	"properties": {"id" : 10000, "displayName" : "List", "type": "label" }}},	
+							{"render": {	"properties": {"id" : 20014, "displayName" : "List (from ajax) with value", "type": "list", "xpath": "intermediate.readOnly.listAjaxWithValue", "dataUrl": "ajax/cities.ashx", "value": [{"id": "1", "value": "Bogota"}] }}},
+							{"render": {	"properties": {"id" : 10000, "displayName" : "Radio", "type": "label" }}},
+							{"render": {	"properties": {"id" : 20018, "displayName" : "Radio (from ajax) with value", "type": "radio", "xpath": "intermediate.readOnly.radioAjaxWithValue", "dataUrl": "ajax/cities.ashx", "value": [{"id": "1", "value": "Bogota"}] }}}
+						]}}
+					]
+				}}			
+			]
+		}
+	}

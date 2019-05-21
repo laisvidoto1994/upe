@@ -1,0 +1,21 @@
+<script id="adhoc-create-process" type="text/x-jsrender">
+    <div id="adhoc-create-process-wrapper">
+        <form novalidate  autocomplete="off">
+            <div class="ui-form-scroll">
+                <div class="adhoc-create-process-wrapper__row-input">
+                    <span class="adhoc-create-process-wrapper__field-description">%{workportal-widget-admin-adhoc-processes-name}</span>
+
+                    <input name="name-adhoc-process" class="bz-wp-rub-input required adhoc-create-process-wrapper__input-name js-input-name" value=""
+                           type="text" maxlength="100" required />
+                    <div class="adhoc-create-process-wrapper__message-validate">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-bizagi-wp-project-popupform-actions">
+                <button id="button-cancel-create-adhoc-process" type="reset" class="ui-rubik-button ui-rubik-button-cancel" type="reset">%{workportal-widget-reports-confirm-cancel}</button>
+                <button id="button-accept-create-adhoc-process" type="submit" class="ui-rubik-button ui-rubik-button-accept" type="submit">%{workportal-project-plan-popup-button-create}</button>
+            </div>
+        </form>
+    </div>
+</script>

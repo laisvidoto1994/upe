@@ -1,0 +1,184 @@
+/*
+    Document   : bizagi.loader
+    Created on : Oct 27, 2015,11:02:00 AM
+    Author     : RicharU
+    Description: Styles for the plugin of loader.
+*/
+
+.k-loading-color,
+.k-loading-text {
+    display: none;
+}
+
+.k-loading-mask {
+    background: rgba(37, 44, 51, 0.50);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 99999;
+}
+
+.k-loading-image {
+    width: 155px;
+    height: 190px;
+    border: 2.5px solid transparent;
+    background: url(images/loader-sprite.png) no-repeat;
+    position: absolute;
+    z-index: 10000;
+    left: 50%;
+    top: 50%;
+    -webkit-animation: frame-animation 1s steps(6) infinite;
+    -moz-animation: frame-animation 1s steps(6) infinite;
+    -ms-animation: frame-animation 1s steps(6) infinite;
+    -o-animation: frame-animation 1s steps(6) infinite;
+    animation: frame-animation 1s steps(6) infinite;
+    -webkit-transform: translate(-50%, -50%) scale(0.2, 0.2);
+    -moz-transform: translate(-50%, -50%) scale(0.2, 0.2);
+    -ms-transform: translate(-50%, -50%) scale(0.2, 0.2);
+    -o-transform: translate(-50%, -50%) scale(0.2, 0.2);
+    transform: translate(-50%, -50%) scale(0.2, 0.2);
+}
+
+@keyframes frame-animation {
+    0% {
+        background-position: -5px -5px;
+    }
+
+    100% {
+        background-position: -965px -5px;
+    }
+}
+
+@-webkit-keyframes frame-animation {
+    0% {
+        background-position: -5px -5px;
+    }
+
+    100% {
+        background-position: -965px -5px;
+    }
+}
+
+
+/*
+* Push to refresh
+*/
+span.km-loading.km-spin,
+span.km-loading-left,
+span.km-loading-right,
+.km-scroller-pull span.km-icon,
+.km-load-more span.km-icon{
+    display: none !important;
+}
+
+.km-scroller-pull.km-scroller-refresh,
+.km-scroller-pull.km-scroller-refresh,
+.km-scroller-pull,
+.km-load-more{
+    background: transparent !important;
+    -webkit-transform: translate(-50%, -120%);
+    -moz-transform: translate(-50%, -120%);
+    -ms-transform: translate(-50%, -120%);
+    -o-transform: translate(-50%, -120%);
+    transform: translate(-50%, -120%);
+}
+
+span.km-template {
+    left: 0 !important;
+    top: -10px !important;
+}
+
+.km-loader-widget-pull,
+.km-loader-widget-refresh,
+li.km-load-more.km-scroller-refresh > div{
+    background-color: transparent;
+    background-image: url(images/loading-animation.gif) !important;
+    background-repeat: no-repeat;
+    background-position: 100% 100% !important;
+    -ms-background-size: 40px 40px;
+    background-size: 40px 40px;
+    width: 40px;
+    height: 40px;
+}
+
+/* Container Loader (for webparts or external containers that have their own processing)*/
+.bz-rn-ecm-control .innerLoader {
+    top: -10px;
+}
+
+.innerLoader:before,
+.innerLoader:after,
+.innerLoader {  
+  width: 0.8em;
+  height: 0.8em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load7 1.4s infinite ease-in-out;
+}
+.innerLoader {
+  font-size: 10px;
+  /*margin: 30px auto;*/
+  position: absolute;
+  margin-left: 49%;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.10s;
+  animation-delay: -0.10s;
+  z-index: 9;
+}
+.innerLoader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.20s;
+  animation-delay: -0.20s;
+}
+.innerLoader:after {
+  left: 1.5em;
+}
+.innerLoader:before,
+.innerLoader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+
+.innerLoaderContainer{
+    width:100%;
+    height:100px;
+    position:relative;
+}
+
+@-webkit-keyframes load7 {
+  0%{
+    box-shadow: 0 2.5em 0 -1.3em rgba(121,126,127,0.58);
+  }
+  80%{
+    box-shadow: 0 2.5em 0 -1.3em rgba(121,126,127,0.58);
+  }
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em rgba(121,126,127,0.58);
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0 rgba(121,126,127,0.58);
+  }
+}
+
+@keyframes load7 {
+  0%{
+    box-shadow: 0 2.5em 0 -1.3em rgba(121,126,127,0.58);
+  }
+  80%{
+    box-shadow: 0 2.5em 0 -1.3em rgba(121,126,127,0.58);
+  }
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em rgba(121,126,127,0.58);
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0 rgba(121,126,127,0.58);
+  }
+}

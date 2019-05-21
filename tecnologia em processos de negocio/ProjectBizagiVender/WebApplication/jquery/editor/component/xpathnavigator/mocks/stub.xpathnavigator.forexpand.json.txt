@@ -1,0 +1,68 @@
+﻿{
+    "nodes": [
+        {
+            "guid": "c89a9562-1994-451b-af0b-154e5b7297de",
+            "contextScope": "3ef3dbf5-82ba-484f-9d8d-c6dff9164eb1",
+            "displayName": "Adicionar monedas",
+            "canHasChildren": "false",
+            "isScopeAttribute": "false",
+            "renderType": "nestedform",
+            "style": "ui-bizagi-type-form",
+            "xpath": "",
+            "isDragabble": "true",
+            "nodes": [],
+            "guidRelatedEntity": "3ef3dbf5-82ba-484f-9d8d-c6dff9164eb1",
+            "maxLength": 0,
+            "processEntityId": null,
+            "formVersion": "1.0"
+        },
+        {
+            "guid": "1b4633e0-a2c9-47cb-9cc1-c9c9ffa4c62e",
+            "contextScope": "3ef3dbf5-82ba-484f-9d8d-c6dff9164eb1",
+            "displayName": "Form_1b4633e0-a2c9-47cb-9cc1-c9c9ffa4c62e",
+            "canHasChildren": "false",
+            "isScopeAttribute": "false",
+            "renderType": "nestedform",
+            "style": "ui-bizagi-type-form",
+            "xpath": "",
+            "isDragabble": "true",
+            "nodes": [],
+            "guidRelatedEntity": "3ef3dbf5-82ba-484f-9d8d-c6dff9164eb1",
+            "maxLength": 0,
+            "processEntityId": null,
+            "formVersion": "1.0"
+        },
+        {
+            "guid": "85bc5f30-dd75-4f70-a791-a1ef2618e873",
+            "contextScope": "3ef3dbf5-82ba-484f-9d8d-c6dff9164eb1",
+            "displayName": "frmResumen",
+            "canHasChildren": "false",
+            "isScopeAttribute": "false",
+            "renderType": "nestedform",
+            "style": "ui-bizagi-type-form",
+            "xpath": "",
+            "isDragabble": "true",
+            "nodes": [],
+            "guidRelatedEntity": "3ef3dbf5-82ba-484f-9d8d-c6dff9164eb1",
+            "maxLength": 0,
+            "processEntityId": null,
+            "formVersion": "1.0"
+        },
+        {
+            "guid": "976305ae-9b63-4b94-8da6-15ce9dcb0968",
+            "contextScope": "3ef3dbf5-82ba-484f-9d8d-c6dff9164eb1",
+            "displayName": "sub form",
+            "canHasChildren": "false",
+            "isScopeAttribute": "false",
+            "renderType": "nestedform",
+            "style": "ui-bizagi-type-form",
+            "xpath": "",
+            "isDragabble": "true",
+            "nodes": [],
+            "guidRelatedEntity": "3ef3dbf5-82ba-484f-9d8d-c6dff9164eb1",
+            "maxLength": 0,
+            "processEntityId": null,
+            "formVersion": "1.0"
+        }
+    ]
+}

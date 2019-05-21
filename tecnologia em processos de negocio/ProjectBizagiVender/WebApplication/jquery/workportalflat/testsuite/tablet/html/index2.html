@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        ///reload whitout tag
+        if (location.href.indexOf("#") != -1) {
+            document.location = "index2.html";
+        }
+    </script>
+</head>
+<body>
+    <script type='text/javascript' src='../../../../../jquery/steal.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/bizagi.loader.js'></script>
+    <script type="text/javascript" language="javascript">
+        var BIZAGI_USE_ABSOLUTE_PATH = false;
+        var BIZAGI_PATH_TO_BASE = "../../../../../";
+        var BIZAGI_LANGUAGE = 'en';
+        var BIZAGI_ENVIRONMENT = "debug";
+        var BIZAGI_DEFAULT_DEVICE = "tablet_ios";        
+        var BIZAGI_ENABLE_LOG = false;
+        var BIZAGI_ENABLE_MOCKS = false;
+        var BIZAGI_DEFAULT_WIDGET = "activityform";
+
+        // TODO: Temporal, hay que ajustarlo
+        var BIZAGI_DEFAULT_CURRENCY_INFO = {
+            "symbol": "$",
+            "decimalSeparator": ",",
+            "groupSeparator": ".",
+            "decimalDigits": "2"
+        };
+
+        var loader = bizagi.loader;
+        
+        loader.init({
+            url: "/jquery/bizagi.module.definition.json.txt",
+            callback: function () {
+                loader.start("workportalflat").then(function () {
+                    loader.loadFile("jquery/workportalflat/testsuite/tablet/data/mock.bizagi.json.js").then(function () {
+                        var workportal = new bizagi.workportal.facade({
+                            proxyPrefix: ""
+                        });
+
+                        workportal.executeWebpart({
+                            webpart: "render",
+                            canvas: $("body")
+                        }).done(function(data){
+                            $("body").triggerHandler("load-modules");
+                            bizagi.webpart.publish("changeCase",{"idCase":503,"idWorkitem":610,"idTask":2,"displayName":"Task 1"});
+                        });
+
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

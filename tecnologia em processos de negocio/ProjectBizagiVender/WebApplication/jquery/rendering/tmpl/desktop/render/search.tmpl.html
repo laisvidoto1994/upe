@@ -1,0 +1,16 @@
+{{if advancedSearch}}
+	<div class="ui-bizagi-render-search-cell">
+		<input class="ui-bizagi-render-search" type="text" {{if !allowTyping}}READONLY{{/if}}  value=""/><button type="button" class="ui-button ui-widget ui-state-default ui-corner-right ui-bizagi-render-search-button"><i class="ui-bizagi-render-icon-search"></i></button>
+	</div>
+{{else}}
+	<input class="ui-bizagi-render-search" type="text" {{if !allowTyping}}READONLY{{/if}}  value=""/>
+    {{if hasMozillaHelpText}}
+        <div class="ui-bizagi-render-withhelp-icons">
+    {{/if}}
+
+        <i class="ui-bizagi-render-icon-search"></i>
+
+    {{if hasMozillaHelpText}}
+        </div>
+    {{/if}}
+{{/if}}

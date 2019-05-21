@@ -1,0 +1,117 @@
+/* 
+    Document   : bizagi.workportal.paginator
+    Created on : Jan 29, 2015, 3:30:00 PM
+    Author     : Mauricio S�nchez
+    Description:
+        Styles for paginator bar
+*/
+
+#paginator-container {
+    padding: 1em 0;
+    border-top: 1px solid #E2E2E2;
+    background: #FFF;
+    padding-left: 277px;
+    padding-right: 14px;
+}
+
+#paginator-container .filter-cases
+{
+    float: left;
+    height: 38px;
+    margin-left: 40%;
+    margin-right: 40%;
+    position: relative;
+    top: -7px;
+    width: 144px;
+}
+
+
+#paginator-container .total-cases {
+    color: #262d33;
+    float: left;
+    position: absolute;
+}
+
+#paginator-container .paginator-controls {
+    color: #262d33;
+    float: right;
+    position: absolute;
+    right: 15px;
+}
+
+.paginator-controls ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.paginator-controls li {
+    display: inline-block;
+}
+
+.paginator-controls li:first-child {
+    margin-right: 1em;
+}
+
+#paginator-container .paginator-controls .control-icon {
+    width: 14px;
+    height: 10px;
+    display: inline-block;
+    background: url(images/paginator-icons-sprite.png) no-repeat top left;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+/* Icons Sprite Rules */
+
+.control-icon.fastforward-ico {
+    background-position: 0 0 !important;
+}
+
+.control-icon.fastrewind-ico {
+    background-position: -15px 0 !important;
+}
+
+.control-icon.forward-ico {
+    background-position: -30px 0 !important;
+}
+
+.control-icon.rewind-ico {
+    background-position: -45px 0 !important;
+}
+
+/*Dialog Paginator*/
+
+#dialognavdata-frame #paginator-frame{
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    left: 0;
+    z-index: 0;
+}
+
+#dialognavdata-frame #paginator-frame #paginator-container{
+    border: 1px solid #ededed;
+    background: #FFF;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 4px;
+    background-color: #ffffff;
+    height: 40px;
+    margin: 0 4.8em;
+}
+
+#dialognavdata-frame #paginator-frame #paginator-container.clearfix{
+    clear: both;
+}
+
+#dialognavdata-frame #paginator-frame #paginator-container .filter-cases {
+    float: left;
+    margin-left: 40%;
+    margin-right: 40%;
+    position: relative;
+    top: -7px;
+    width: 144px;
+}

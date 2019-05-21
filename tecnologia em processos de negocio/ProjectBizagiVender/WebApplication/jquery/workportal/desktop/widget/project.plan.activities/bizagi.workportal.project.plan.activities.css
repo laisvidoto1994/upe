@@ -1,0 +1,214 @@
+﻿.project-plan-content-wrapper {
+	width: 100%;
+}
+
+#project-plan-activities-wrapper {
+
+    position: relative;
+}
+
+.ui-bizagi-wp-project-plan-activities-header {
+    padding: 0 0 20px;
+    position: relative;
+}
+
+.ui-bizagi-wp-project-plan-activities-header h3 {
+    padding: 0;
+    margin: 0 0 15px;
+}
+
+.ui-bizagi-wp-project-plan-activities-header .plan-activities-action-button {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+
+.ui-bizagi-wp-project-plan-activities-header .plan-activities-action-button>a>span {
+    vertical-align: middle;
+}
+
+.plan-activities-action-button>a {
+	display: none;
+}
+
+.ui-bizagi-wp-project-plan-activities-headerbuttons {
+    float: right;
+}
+
+.project-plan-activity-list {
+    padding: 0;
+    margin: 1em 0;
+    list-style-position: inside;
+}
+
+
+
+.project-plan-activity-list li {
+    padding: 2em;
+    border-bottom: 1px solid #DDD;
+	position: relative;
+}
+
+.project-plan-activity-list li:not(.disabled) {
+    cursor: move;
+}
+
+.project-plan-activity-list li:only-child,
+.project-plan-activity-list li:last-child {
+    border-bottom: none;
+
+}
+
+.project-plan-activity-list .enabled {
+    cursor: pointer;
+}
+
+.project-plan-activity-list > li.selected {
+    background-color: rgb(223, 227, 229);
+}
+
+.project-plan-activity-list > li:hover {
+    background-color: rgb(223, 227, 229);
+	cursor: default;
+}
+
+.project-plan-activity-list .item-edit-button {
+    display: none;
+	position: absolute;
+    top: 12px;
+    right: -6px;
+    background-color: #DFE3E5;
+    padding: 5px 3px 0 3px;
+    border: 1px solid #C6CACC;
+}
+
+.project-plan-activity-list .item-workonit-button {
+    top: 39px;
+    background-color: #006c5f;
+    border: 1px solid #006c5f;
+    color: #fff;
+}
+
+.project-plan-activity-list .item-workonit-button:hover{
+    cursor: pointer;
+}
+
+.project-plan-activity-list .item-edit-button>i {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.project-plan-activity-list .item-edit-button>i:hover {
+	cursor: pointer;
+    color: #0B8BCB;
+}
+.project-plan-activity-list .item-workonit-button>i:hover {
+    color: #eee;
+}
+
+
+.project-plan-activity-list > li.selected .item-edit-button {
+    display: inline-block;
+}
+
+.project-plan-activity-list > li:hover .item-edit-button {
+    display: inline-block;
+}
+
+.ui-bizagi-wp-project-plan-activity-infobox {
+    float: right;
+}
+
+.ui-bizagi-wp-project-plan-activity-infobox * {
+    vertical-align: middle !important;
+}
+
+.project-plan-activity-list li p {
+    margin: 0;
+	display: inline-block;
+}
+
+.project-plan-activity-list li p span {
+    vertical-align: middle;
+}
+
+.ui-bizagi-wp-project-plan-activity-infobox .icon-list {
+    vertical-align: baseline;
+    display: inline-block;
+}
+
+.ui-bizagi-wp-project-plan-activity-infobox img {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #acbc35;
+    border-radius: 100%;
+    margin-top: 0px;
+    background: #acbc35;
+}
+
+.ui-bizagi-wp-project-plan-activity-infobox .bz-icon.bz-icon-clock.red {
+    color: red;
+}
+
+.ui-bizagi-wp-project-plan-activity-infobox .bz-icon.bz-icon-clock.yellow {
+    color: orange;
+}
+
+.ui-bizagi-wp-project-plan-activity-infobox .bz-icon.bz-icon-clock.green {
+    color: green;
+}
+
+.ui-bizagi-wp-project-plan-activity-infobox span .bz-icon-clock {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.ui-bizagi-wp-project-plan-activity-infobox span.nodisplay-ico {
+    display: none;
+}
+
+.ui-bizagi-wp-nolist {
+    list-style-type: none;
+}
+
+.biz-wp-position-relative{
+    position: relative;
+}
+.bz-icon-position-absolute-left{
+    left: -23px;
+    position: absolute;
+}
+.ui-bizagi-wp-project-plan-activity-infobox .bz-wp-avatar {
+    display: inline-block;
+    text-align:center;
+    font-weight:bold;
+}
+#project-plan-activities-wrapper .ui-bizagi-wrapper-parallel-icon{
+    float: left;
+    height: 22px;
+    left: -24px;
+    position: absolute;
+    top: 22px;
+    width: 25px;
+}
+/*Arrows*/
+.enabled-actions .wrapper-arrow-css {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 22px;
+    position: absolute;
+    top: 0;
+    transition: background 0.5s ease;
+    width: 22px;
+    z-index: 2;
+}
+.enabled-actions .wrapper-arrow-css:hover {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+.enabled-actions .wrapper-arrow-css i{
+    left: 3px;
+    position: relative;
+    top: 1px;
+}

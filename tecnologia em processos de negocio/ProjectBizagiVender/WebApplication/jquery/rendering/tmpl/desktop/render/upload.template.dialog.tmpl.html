@@ -1,0 +1,9 @@
+<div class="ui-bizagi-render-upload-template-dialog-noflash">
+    <span class="ui-bizagi-title">%{render-upload-dialog-title}</span>
+    <form method="POST" action="${url}" enctype='multipart/form-data' target="iframe-upload-${xpath}" accept-charset="UTF-8">
+        <div id="alert-file-upload"></div>
+        <input type="file" name="${xpath}" id="${xpath}" accept="${processedFileExtension}" />
+        
+        <iframe id="iframe-upload-${xpath}" name="iframe-upload-${xpath}" src="" style="width:1px;height:1px;border:0px solid #fff;"></iframe>
+    </form>    
+</div>

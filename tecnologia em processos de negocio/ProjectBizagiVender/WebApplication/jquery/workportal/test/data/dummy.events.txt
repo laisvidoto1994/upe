@@ -1,0 +1,10 @@
+{
+    "idCase": "@NUMBER@NUMBER@NUMBER",
+    "events": [{
+        "@LOREM @LOREM @LOREM": {
+            "idTask|0-9999": 0,
+            "idWorkitem|0-9999": 0,
+            "displayName": "@LOREM @LOREM @LOREM"
+        }
+    }]
+}

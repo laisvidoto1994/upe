@@ -1,0 +1,35 @@
+/**********************************
+*  Filename: bizagi.workportal.css
+*  Create Date: 2012-06-27
+*  Author: oscar.osorio@bizagi.com
+* 
+*  ==STRUCTURE=====================
+*   
+*
+***********************************/
+.ui-bizagi-workportal-application
+{
+	overflow:hidden;
+	/*review this line  http://hilton:8080/browse/SUITE-7693  comment the overflow*/
+	/*position: absolute;
+	width: 100%;
+	height: 100%;*/
+}
+.ui-bizagi-workportal-workarea
+{  
+	width: 100%;
+	height: auto;
+	 -webkit-overflow-scrolling: touch;
+	 padding-bottom: 0px;
+}
+.bz-wp-wa-hiddenWorkportal  
+{
+	z-index:-1;
+	/*position: absolute;*/
+	top: 0;
+}
+input, textarea, keygen, select, isindex, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button
+{
+	-webkit-appearance:none;
+	font-size:100%;
+}

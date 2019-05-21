@@ -1,0 +1,71 @@
+div.template-box-tooltip {
+    border: 1px solid #c0c7cc;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    width: auto;
+    max-width: 200px;
+    background: #FFF;
+    position: absolute;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+div.template-box-tooltip ul {
+    color: #405866;
+    margin: 5px 10px;
+    padding: 0;
+    list-style: none;
+}
+
+div.template-box-tooltip > ul > li {
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+
+.template-actions-container > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.5em 0.4em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.template-actions-container > ul > li {
+    display: inline-block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 6px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.template-actions-container > div.ellipsis-icon {
+    width: 28px;
+    height: 17px;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 17px;
+    line-height: 8px;
+    color: #a8b6bf;
+}
+
+.template-actions-container > ul > li.action-opt-hidden {
+    display: none;
+}
+
+.template-actions-container .wdg-tple-button .ui-bizagi-loading-button{
+    display: block;
+    float: left;
+    height: 15px;
+    margin-right: 5px;
+    width: 15px;
+}
+
+.template-actions-container .wdg-tple-button .state-loading{
+    background-color: #989797;
+    cursor: wait;
+}

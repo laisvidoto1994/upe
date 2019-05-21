@@ -1,0 +1,231 @@
+/*render styles*/
+#ui-bizagi-wp-app-render-content-table{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+#ui-bizagi-wp-app-render-content-row{
+    height: 100%;
+    width: 100%;
+}
+
+#ui-bizagi-wp-app-render-content-row>div{
+    height: 100%;
+
+}
+
+#ui-bizagi-wp-app-render-desc-panel{
+    width:380px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    background:#cecece url("images/dots_columns.png") 0 0 repeat;
+}
+
+#ui-bizagi-wp-app-render-desc-content{
+    padding:50px 15px 15px;
+}
+
+/*#ui-bizagi-wp-app-render-desc-content #ui-bizagi-details-tabs li.ui-state-active{
+    background-color:#cecece;
+}*/
+#panelArrow{
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+}
+
+#panelArrow.panelArrowRight{
+    border-color: transparent transparent transparent #b3b3b3;
+    border-left: 5px solid #b3b3b3;
+    border-style: solid;
+    border-width: 5px 0px 5px 5px;   
+    position: relative;
+    top:50%;
+    left:3px;
+}
+
+#panelArrow.panelArrowLeft{
+    border-color:  transparent transparent transparent #b3b3b3;
+    border-right: 5px solid #b3b3b3;
+    border-style: solid;
+    border-width: 5px 5px 5px 0px;  
+    position: relative;
+    top:50%;
+    width:0px;
+    height:0px;
+    line-height:0px;
+    font:0px;
+    left:50%;
+    margin:-5px 0px 0px -3px;
+}
+
+
+#panelArrowContainer{
+    height: 100%;    
+    width: 10px;    
+    position: absolute;
+    left: 380px;
+    top:0px; 
+    background:#eeeeee url("images/lines.png") 0 0 repeat;
+    border-left:1px solid #c8c8c8;
+    border-right:1px solid #b7b7b7;
+}
+
+
+#panelArrowContainer:hover{
+    cursor: pointer;
+    background-color: #EAEAEA;
+}
+
+#panelArrowContainer:hover #panelArrow.panelArrowLeft{
+    border-right:5px solid  #8A95A7;
+}
+
+#panelArrowContainer:hover #panelArrow.panelArrowRight{
+    border-left: 5px solid #8A95A7;
+}
+
+
+#ui-bizagi-wp-app-render-form-content{
+    padding-left:392px;
+}
+
+#ui-bizagi-wp-app-render-form{
+    width:100%;
+    background:#DEDEDE url("images/dots_columns.png") 0 0 repeat;
+}
+#ui-bizagi-wp-app-render-form h3{
+    margin:0px;
+    font-family: 'NeoSansStdMedium';
+    color: #2F526C;
+    font-size:115%;
+    font-weight:normal;
+    filter:none;
+}
+
+
+#ui-bizagi-wp-app-render-form.ui-bizagi-state-extended {
+    padding-left: 0px;
+}
+
+.ui-bizagi-wp-app-render-actions ul{
+    margin:0px;
+    padding:0px;
+}
+.ui-bizagi-wp-app-render-actions li{
+    display:inline-block;
+    margin-right:2px;
+    width: 35px;
+    height: 35px;
+    cursor:pointer;
+    position: relative;
+}
+.ui-bizagi-wp-app-render-actions li:hover{
+    background-color:rgba(0,0,0,0.1);
+    border-radius:  4px 4px 4px 4px;
+}
+.ui-bizagi-wp-app-render-actions li:hover:before{
+    content:"";
+    color:white;
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+}
+
+.bt-case-action{    
+    background-image: url("../../../../common/base/css/tablet/android/images/bizagi-tablet-sprite-s.png");
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+}
+.bt-case-action.reassing{        
+    background-position: 0px -203px ;
+}
+.bt-case-action.log{
+    background-position:  -35px -203px;
+}
+.bt-case-action.print{
+    background-position: -70px -203px ;
+}
+
+.bt-case-action.help{
+    background-position: -105px -203px ;
+}
+
+#subprocess{
+    background:#E6E6E6;
+}
+
+.personalizedColumnsContainer{
+    overflow: auto;
+    /*  background-color: #F4F4F4;    */
+}
+
+
+.personalizedColumnsContainer table{
+    min-width: 400px;
+    margin-bottom:10px;
+}
+/*.personalizedColumnsContainer table + table{
+	margin:0px;
+}*/
+.personalizedColumnsContainer table tbody tr:nth-child(2n+1) td {
+    background-color: #DADADA;
+}
+
+.personalizedColumnsContainer table tr td:first-child div{
+    position:relative;
+}
+.personalizedColumnsContainer #ui-bizagi-wp-app-inbox-cases-ico-close{
+    position:relative;
+    float: left;
+    top: -3px;
+}
+
+
+/* Search container */
+.ui-bizagi-render-search-container{
+    vertical-align: middle;
+    display: inline;
+}
+/* Search Input Field */
+.ui-bizagi-render-search-icon
+{
+    display: inline;
+    background-image: url('../../../../common/base/css/tablet/android/images/bizagi-tablet-sprite-s.png') ;
+	width: 25px;
+	height: 25px;
+	background-position: -400px -4px;
+	display: inline-block;
+	cursor: pointer;
+	vertical-align: middle;
+	background-color: #185891;
+}
+
+.ui-bizagi-render-search-container > input {
+    -webkit-appearance: none;
+    background: #d6d6d6;
+    border: none;
+    border-bottom: 1px solid #f7f7f7;
+    padding: 7px 5px;
+    color: #535B61;
+}
+
+button#bt-case-action-release {
+    padding: 8px 17px;
+    color: #0F3558;
+    border: 0;
+    background-color: rgba(15,53,88,0.1);
+    font-size: 14px;
+    margin: 15px 15px;
+    float: right;
+}

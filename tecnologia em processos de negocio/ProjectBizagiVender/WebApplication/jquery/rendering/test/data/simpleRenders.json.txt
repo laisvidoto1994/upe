@@ -1,0 +1,79 @@
+﻿{
+	"form": {
+		"properties" : {"id": 1, "xpathContext": "", "title": "Cycle 1", 
+		"buttons": [
+			{"action": "save", "text": "Save", "validate": "true", "submitData": "true", "refresh": "true"},
+			{"action": "next", "text": "Next", "validate": "true", "submitData": "true", "refresh": "true"}
+		]},
+		"elements": [
+			{"container": { "properties": {"id" : "tab", "type": "tab"},
+				"elements": [
+					{"container": { "properties": {"id" : "tabItem1", "type": "tabItem", "displayName": "Simple renders"}, "elements": [
+						{"render": {	"properties": {"id" : 10000, "displayName" : "Texts", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10001, "displayName" : "Text", "xpath" : "simple.text", "type": "text", "required": "true" }}},
+						{"render": {	"properties": {"id" : 10002, "displayName" : "Extended Text", "xpath" : "simple.extended", "type": "text", "isExtended": "true" }}},
+						{"render": {	"properties": {"id" : 10003, "displayName" : "Text with value", "xpath" : "simple.textWithValue", "type": "text", "value": "a value" }}},
+						{"render": {	"properties": {"id" : 10004, "displayName" : "Text with mask", "xpath" : "simple.textWithMask", "type": "text", "mask": "###-####" }}},
+						{"render": {	"properties": {"id" : 10005, "displayName" : "Extended Text  with value", "xpath" : "simple.extendedWithValue", "type": "text", "isExtended": "true", "value": "a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ...a longer value ..." }}},
+
+						{"render": {	"properties": {"id" : 10006, "displayName" : "Numerics", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10007, "displayName" : "Number", "xpath" : "simple.number", "type": "number" }}},
+						{"render": {	"properties": {"id" : 10008, "displayName" : "Number with value", "xpath" : "simple.numberWithValue", "type": "number", "value": "15.08", "colorizeOnNegative": "true" }}},
+						{"render": {	"properties": {"id" : 10009, "displayName" : "Money", "xpath" : "simple.money", "type": "money" }}},
+						{"render": {	"properties": {"id" : 10010, "displayName" : "Money with value in Euros", "xpath" : "simple.moneyWithValue", "type": "money", "value": "15.08", "colorizeOnNegative": "true", "currencySymbol": "€" }}},
+
+						{"render": {	"properties": {"id" : 10011, "displayName" : "Dates", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10012, "displayName" : "Date", "xpath" : "simple.date", "type": "date" }}},
+						{"render": {	"properties": {"id" : 10013, "displayName" : "Date with value", "xpath" : "simple.dateWithValue", "type": "date", "value": "12/24/2011" }}},
+						{"render": {	"properties": {"id" : 10014, "displayName" : "Date-Time", "xpath" : "simple.datetime", "type": "date", "showTime" : "true" }}},
+						{"render": {	"properties": {"id" : 10015, "displayName" : "Date-Time with value", "xpath" : "simple.datetimeWithValue", "type": "date", "showTime" : "true", "value": "12/24/2011 14:40:13"  }}},
+						{"render": {	"properties": {"id" : 10016, "displayName" : "Date-Time with value and custom format (yyyy-MM-dd HH-mm)", "xpath" : "simple.datetimeWithValueAndFormat", "type": "date", "showTime" : "true", "value": "12/24/2011 14:40:13", "dateFormat": "yyyy-MM-dd", "timeFormat": "hh-mm-ss"  }}},
+
+						{"render": {	"properties": {"id" : 10017, "displayName" : "Booleans", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10018, "displayName" : "Yes-No", "xpath" : "simple.yesNo", "type": "boolean", "display": "option"}}},
+						{"render": {	"properties": {"id" : 10019, "displayName" : "Yes-No with value (true)", "xpath" : "simple.yesNoWithValueTrue", "type": "boolean", "display": "option", "value" :"true" }}},
+						{"render": {	"properties": {"id" : 10020, "displayName" : "Yes-No with value (false)", "xpath" : "simple.yesNoWithValuefalse", "type": "boolean", "display": "option" , "value" :"false"}}},
+						{"render": {	"properties": {"id" : 10021, "displayName" : "Check", "xpath" : "simple.check", "type": "boolean", "display": "check"}}},
+						{"render": {	"properties": {"id" : 10022, "displayName" : "Check with value (true)", "xpath" : "simple.checkWithValueTrue", "type": "boolean", "display": "check" , "value" :"true"}}},
+						{"render": {	"properties": {"id" : 10023, "displayName" : "Check with value (false)", "xpath" : "simple.checkWithValueFalse", "type": "boolean", "display": "check" , "value" :"false"}}},
+						
+						{"render": {	"properties": {"id" : 10024, "displayName" : "There is a hidden value that will be sent to the server, check bizagi log", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10025, "type": "hidden", "value": "I'm a hidden value you know", "xpath": "simple.hidden" }}}
+					]}},
+					{"container": { "properties": {"id" : "tabItem2", "type": "tabItem", "displayName": "Simple renders read-only", "editable": "false"}, "elements": [
+						{"render": {	"properties": {"id" : 10000, "displayName" : "Texts", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10001, "displayName" : "Text", "xpath" : "simple.text", "type": "text" }}},
+						{"render": {	"properties": {"id" : 10002, "displayName" : "Extended Text", "xpath" : "simple.extended", "type": "text", "isExtended": "true" }}},
+						{"render": {	"properties": {"id" : 10003, "displayName" : "Text with value", "xpath" : "simple.textWithValue", "type": "text", "value": "a value" }}},
+						{"render": {	"properties": {"id" : 10004, "displayName" : "Text with mask", "xpath" : "simple.textWithMask", "type": "text", "mask": "###-####" }}},
+						{"render": {	"properties": {"id" : 10005, "displayName" : "Extended Text  with value", "xpath" : "simple.extendedWithValue", "type": "text", "isExtended": "true", "value": "a longer value ..." }}},
+
+						{"render": {	"properties": {"id" : 10006, "displayName" : "Numerics", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10007, "displayName" : "Number", "xpath" : "simple.number", "type": "number" }}},
+						{"render": {	"properties": {"id" : 10008, "displayName" : "Number with value", "xpath" : "simple.numberWithValue", "type": "number", "value": "15.08", "colorizeOnNegative": "true" }}},
+						{"render": {	"properties": {"id" : 10009, "displayName" : "Money", "xpath" : "simple.money", "type": "money" }}},
+						{"render": {	"properties": {"id" : 10010, "displayName" : "Money with value in Euros", "xpath" : "simple.moneyWithValue", "type": "money", "value": "15.08", "colorizeOnNegative": "true", "currencySymbol": "€" }}},
+
+						{"render": {	"properties": {"id" : 10011, "displayName" : "Dates", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10012, "displayName" : "Date", "xpath" : "simple.date", "type": "date" }}},
+						{"render": {	"properties": {"id" : 10013, "displayName" : "Date with value", "xpath" : "simple.dateWithValue", "type": "date", "value": "12/24/2011" }}},
+						{"render": {	"properties": {"id" : 10014, "displayName" : "Date-Time", "xpath" : "simple.datetime", "type": "date", "showTime" : "true" }}},
+						{"render": {	"properties": {"id" : 10015, "displayName" : "Date-Time with value", "xpath" : "simple.datetimeWithValue", "type": "date", "showTime" : "true", "value": "12/24/2011 14:40:13"  }}},
+						{"render": {	"properties": {"id" : 10016, "displayName" : "Date-Time with value and custom format (yyyy-MM-dd HH-mm)", "xpath" : "simple.datetimeWithValueAndFormat", "type": "date", "showTime" : "true", "value": "12/24/2011 14:40:13", "dateFormat": "yyyy-MM-dd", "timeFormat": "hh-mm-ss"  }}},
+
+						{"render": {	"properties": {"id" : 10017, "displayName" : "Booleans", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10018, "displayName" : "Yes-No", "xpath" : "simple.yesNo", "type": "boolean", "display": "option"}}},
+						{"render": {	"properties": {"id" : 10019, "displayName" : "Yes-No with value (true)", "xpath" : "simple.yesNoWithValueTrue", "type": "boolean", "display": "option", "value" :"true" }}},
+						{"render": {	"properties": {"id" : 10020, "displayName" : "Yes-No with value (false)", "xpath" : "simple.yesNoWithValuefalse", "type": "boolean", "display": "option" , "value" :"false"}}},
+						{"render": {	"properties": {"id" : 10021, "displayName" : "Check", "xpath" : "simple.check", "type": "boolean", "display": "check"}}},
+						{"render": {	"properties": {"id" : 10022, "displayName" : "Check with value (true)", "xpath" : "simple.checkWithValueTrue", "type": "boolean", "display": "check" , "value" :"true"}}},
+						{"render": {	"properties": {"id" : 10023, "displayName" : "Check with value (false)", "xpath" : "simple.checkWithValueFalse", "type": "boolean", "display": "check" , "value" :"false"}}},
+
+						{"render": {	"properties": {"id" : 10024, "displayName" : "There is a hidden value that will be sent to the server, check bizagi log", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10025, "type": "hidden", "value": "I'm a hidden value you know", "xpath": "simple.hidden" }}}
+					]}}
+				]
+			}}			
+		]
+	}
+}

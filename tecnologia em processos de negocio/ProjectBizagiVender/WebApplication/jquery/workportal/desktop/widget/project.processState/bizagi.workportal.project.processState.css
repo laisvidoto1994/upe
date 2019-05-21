@@ -1,0 +1,38 @@
+/*
+    Document   : bizagi.workportal.project.processState
+    Created on : Mar 23, 2015
+    Author     : Elkin Fernando Siabato Cruz
+*/
+#ui-bizagi-wp-project-process-state-wrapper .sprite {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAmCAYAAAC29NkdAAAFWElEQVRYR+WYXWhcRRTH/zN3dxNsYz5s1zTNGmwhiq3b9d7dprHaSlpFtE9iBLEi4seDL1XxE19EoVgFC4IPfjxVKyKobypotUrLPuzee7fbxohiTVHb3cQ23dvt7mb37oyccCO3ae5+tFkNOBAIOzNnfvfMnDP/MwxLvLElzoe6gMPDwz2lUukxzvkWAJ2NfJAQwuac/9De3v7G4cOHzzUyx2tMTcBYLHazEOIzAFdf4iI/FwqFHePj479c4nxvDw4ODq7u6OhIA+gh41LKScbYH87/0vOLGVsG4HpXf7ZSqWxPp9PHLgXS04PRaHSvlPJJMiqEeKWzs/PVgwcP2g0swjRN+xbAbW5I27a3HTlyZKyB+RcM8QTUNG3c8URK13WVnNio8Ugk8qaiKE/NG5+RUo4YhkF2G26egKqqnmGMdTPGPkwmkw82bBFAJBLZoyjKcwvMOSWE2G6a5o+N2qsFOM0Y6wKwT9f1h8jgunXrlgcCgRHGmG/+ApzzUjKZ/IJ+rwFI3U15silATdM+ATC60NdLKU8ahrG6AUAKuJO2bd+STqd/q+fJpgBVVU0yxrTLBXTmHwsEAhvj8XixFmSzgAcYYyMeBk/rur6SgknTtBcB7K7nHSHEC6Zp7lk0wHA4fJ3f738YwEVnkBYJBAK74/H4mc2bN3cUCoVdnHM6w3ONMcbahBCb5nZBCPGlaZp3LRpgPY800j86OqocP378dwCrhBDfmKZ5+5ICJBhVVccYYzf8/wCj0Sgl32sA/JpMJveSN6LR6CMAbqq3vdVq9ZBpmh+31IOuNHNI1/VbabFaudENLYR4xzTNJwAwVVXTLdniaDSaEEJQHjxkGAbpw1lAKeW99TxYqVT2HT169FMAy8Ph8Mt+v3+wFWfQnTfnxENd0QtgEMAuAHdTiurv72fBYHCVlPI/jWIC7wZwB4BnAIQB+AHYPT091sDAAOnMxQXcsGHDfYyxlZzzU4ZhkNKmlHGnEGKte4ullNyyrN5MJrOlVCpFpJTLXf2tA2wkSIQQyOVymJqaQj6fJ2Ew/3ja3d3d+VAo1KUoygHTNLcvWqKuBUggMzMzyGazOHv2LGzbU3xLzrloa2tTFEWZyufzrwH4DsBPAC4SDk2JhVgstsa27XYpZSGVSk3Qlw8NDfVblhWcmJjYWi6XH6hWq5QTeb2odvVXKK8CeB/AR6QX3eq9KcAai24C8C5p2ibh3CbPOIDk0T//URhei6qqepGijsVisZmZmQ6fz5czDEOnueFweH02m902OTn5rJSyjxJxE96bP7RECh7A0wDOU2dTHvQ6g9VqdXR6eno2MAqFwmXwzU7NA6AS43Pa6kUBpDKAordYLCKTycCyLCpVPUEZYxQorFqtUogvxEBwjwP4qynAcDg84vP5KD2cTiQS3ztX3ZCUcrYWsW2bVSqVZZlMZjiXy1F+DAFQ5pFSmjnf29vbWSgUzBMnTnwFYBuA9QCucMaSXiRhfKAlZaejuOnOptqYbhK6UeYaJepzAwMD3Zzzr3VdJ0W9BgCpop0kZAHQe87zAN5rSeHukJDtfgD3OPfwtc7v9ooVKxAKhXyMsf2GYRAUNSoP7gfwEoCrnJrm9VY8fcw/e7TFNwKgQmqEc35lX19fIBgM0jndmUql9rsmBBwvUiH1FgBvwAUej6acx6OGn0DcpOVyuc2yrLVCiPauri4qsFIANuq6Tona3ejefhtAvOYW04xFeH67YGXXvZxWFGVHIpGgYFioDVHMAdDrJlV6wKxUKo9KKbc2+oDpsagUQmQVRfmyWCx+MDY2Vq6RMImL/kRdwBpG/pWuJQ/4N82h21ksU1NmAAAAAElFTkSuQmCC') no-repeat top left;
+    float: left;
+}
+
+#ui-bizagi-wp-project-process-state-wrapper .sprite.project-processState-parent-case {
+    background-position: 0 0;
+    width: 40px;
+    height: 38px;
+}
+
+#ui-bizagi-wp-project-process-state-wrapper {
+    margin-bottom: 1.6em;
+}
+
+#ui-bizagi-wp-project-process-state-wrapper .summaryLink {
+
+}
+
+#ui-bizagi-wp-project-process-state-wrapper .summaryLink > div.parentCase {
+
+}
+
+#ui-bizagi-wp-project-process-state-wrapper .summaryLink span {
+    color: #0B8BCB;
+    font-weight: bold;
+}
+
+
+
+#ui-bizagi-wp-project-process-state-wrapper .summaryLink:hover span {
+    color: #234F6F;
+}

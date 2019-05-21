@@ -1,0 +1,28 @@
+﻿<div ng-controller="caseController">
+    <div class="biz-theme-home-collection">
+        <h3 class="biz-theme-home-collection-title">Opened</h3>
+        <div class="biz-theme-home-collection-items">
+            <div ng-repeat="case in openedCases" ng-click="gotoCase(case)" ng-bind-html="case.html" class="biz-theme-home-collection-item">
+            </div>
+            <div class="biz-theme-collection-empty" ng-if="openedCases.length===0  && openedCasesState === 'loaded'">
+                <span class="biz-theme-collection-empty-message">you have no items</span>
+            </div>
+            <div class="biz-theme-collection-empty" ng-if="openedCases.length===0 && openedCasesState === 'loading'">
+                <span class="biz-theme-collection-empty-message">loading . . .</span>
+            </div>
+        </div>
+    </div>
+    <div class="biz-theme-home-collection">
+        <h3 class="biz-theme-home-collection-title">Closed</h3>
+        <div class="biz-theme-home-collection-items">
+            <div ng-repeat="case in closedCases" ng-click="gotoCase(case)" ng-bind-html="case.html" class="biz-theme-home-collection-item">
+            </div>
+            <div class="biz-theme-collection-empty" ng-if="closedCases.length===0  && closedCasesState === 'loaded'">
+                <span class="biz-theme-collection-empty-message">you have no items</span>
+            </div>
+            <div class="biz-theme-collection-empty" ng-if="closedCases.length===0 && closedCasesState === 'loading'">
+                <span class="biz-theme-collection-empty-message">loading . . .</span>
+            </div>
+        </div>
+    </div>
+</div>

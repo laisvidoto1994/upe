@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JSON RPC test</title>
+    <style type="text/css">
+        .log
+        {
+            width: 99%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 50%;
+            position: absolute;
+            bottom: 0%;
+            background-color: #f0f0f0;
+        }
+        .logItem
+        {
+            width: 100%;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="modifiers">
+        <label for="chkEnableRPCBatch">Enable RPC batch: </label><input id="chkEnableRPCBatch" type="checkbox" value="0" />
+        <label for="txtTimer">Batch timer: </label><input id="txtTimer" type="text" value="1000" />
+    </div>
+    <div class="buttons">
+        <button type="button" id="btnGetClients">GET CLIENTS</button>
+        <button type="button" id="btnGetProducts">GET PRODUCTS</button>
+        <button type="button" id="btnFail">FAILED REQUEST</button>
+        <button type="button" id="btnClearLog">CLEAR LOG</button>
+    </div>
+    <div class="log">
+    </div>
+    <script type='text/javascript' src='../../../../jquery/steal.js'></script>
+    <script type='text/javascript' src='../../../../jquery/bizagi.loader.js'></script>
+    <script type="text/javascript" language="javascript">
+        // Redefine path to base
+        var BIZAGI_PATH_TO_BASE = "../../../../";
+        var BIZAGI_LANGUAGE = "";
+        
+    	// Gets the loader instance, and load the module
+        var loader = bizagi.loader;
+    	loader.init(function() {
+    		loader.loadFile("jquery/rendering/test/js/jsonRpc.test.js");
+    	});
+    </script>
+</body>
+</html>

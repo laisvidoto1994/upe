@@ -1,0 +1,27 @@
+﻿<div data-role="view" class="bz-rn-gridview" data-stretch="true">
+    <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title" class="bz-rn-view-title">#= typeof(data.title) !== 'undefined' ? data.title: "" #</span>
+            <a data-align="left" data-action="close" data-icon="cancel" data-role="button" class="nav-button bz-rn-view-options bz-rn-view-back"></a>
+            <a data-align="right" data-action="totalizers" data-icon="totalizer-small" data-role="button" class="nav-button bz-rn-view-options bz-rn-view-totalizers bz-rn-view-options-hide"></a>
+            <a data-align="right" data-action="filter" data-icon="filter-empty-01" data-role="button" class="nav-button bz-rn-view-options bz-rn-view-filter #if (!data.allowFilter){# bz-rn-view-options-hide #}#"></a>
+            <a data-align="right" data-action="add" data-icon="square-plus" data-role="button" class="nav-button bz-rn-view-options bz-rn-view-add #if (!data.allowAdd){# bz-rn-view-options-hide #}#"></a>
+        </div>
+    </header>
+
+    <div id="#=data.id#" class="render-content">
+        <div class="bz-rn-grid-top-content">
+            <div class="bz-rn-grid-corner">
+                <div class="bz-rn-grid-corner-cell"></div>
+            </div>
+            <div class="bz-rn-grid-scroll-header"></div>
+        </div>
+        <div class="bz-rn-grid-bottom-content">
+            <div class="bz-rn-grid-counter-column"></div>
+            <div class="bz-rn-grid-scroll-content" data-role="scroller" data-elastic="false"></div>
+        </div>
+    </div>
+
+    <div data-role="footer"></div>
+
+</div>

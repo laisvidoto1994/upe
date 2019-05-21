@@ -1,0 +1,78 @@
+﻿<script id="ui-bizagi-workportal-widget-async-ecm-upload" type="text/x-jquery-tmpl">
+    <div class="wrapper" >
+        <div id="async-emc-list-wrapper">
+            <h3>%{workportal-widget-async-ecm-upload-title-current}
+            </h3>
+
+            <div class="button-set">
+                <a href="#" class="async-ecm-widget-button async-ecm-refresh" role="button">
+                    %{workportal-widget-comments-refresh} <span class="ui-icon">Refresh</span>
+                </a>
+            </div>
+
+            <div id="async-emc-list-content">
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-async-ecm-upload-table-pending-jobs" type="text/x-jquery-tmpl">
+
+    {{if jobs.length}}
+        <table id="table-content">
+            <tbody>
+                <tr class="async-emc-list-header">
+                    <td>%{workportal-widget-async-ecm-upload-table-title-retry}</td>
+                    <td>%{workportal-widget-async-ecm-upload-table-title-file-name}</td>
+                    <td>%{workportal-widget-async-ecm-upload-table-title-running-state}</td>
+                    <td>%{workportal-widget-async-ecm-upload-table-title-current-retries}</td>
+                    <td>%{workportal-widget-async-ecm-upload-table-title-activity-start-date}</td>
+                    <td>%{workportal-widget-async-ecm-upload-table-title-latest-retry-date}</td>
+                    <td>%{workportal-widget-async-ecm-upload-table-title-failure-message}</td>
+                </tr>
+
+                    {{each jobs}}
+                    <tr class="async-emc-item">
+                        
+                        <td class="job-state" data-idjob = ${$value.IdAsyncECMJob} >
+
+                            {{if $value.RunningState == 1 || $value.RunningState == 4}}
+                                <a href="#" class="async-ecm-widget-button async-ecm-retry" role="button">
+                                    <span class="ui-icon">Retry</span>
+                                </a>
+                            {{/if}} 
+                        </td>
+                        <td>${$value.Filename}</td>
+                        <td>
+                            {{if $value.RunningState == 1}}
+                                <span>%{workportal-widget-async-ecm-upload-running-state-not-runned}</span>
+                            {{/if}}
+                            {{if $value.RunningState == 2}}
+                                <span>%{workportal-widget-async-ecm-upload-running-state-running}</span>
+                            {{/if}}
+                            {{if $value.RunningState == 3}}
+                                <span>%{workportal-widget-async-ecm-upload-running-state-run-finished-ok}</span>
+                            {{/if}}
+                            {{if $value.RunningState == 4}}
+                                <span>%{workportal-widget-async-ecm-upload-running-state-run-finished-with-error}</span>
+                            {{/if}}
+                        </td>
+                        <td>${$value.CurrentRetries}</td>
+                        <td>${$value.CreationDate}</td>
+                        <td>${$value.LastProcessingDate}</td>
+                        <td class="failure-message">
+                            <div>
+                                <p class="ellipsis" >${$value.FailureMessage}</p>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <span>%{workportal-widget-async-ecm-upload-empty-message}</span>
+    {{/if}}
+
+</script>
+

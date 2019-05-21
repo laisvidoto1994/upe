@@ -1,0 +1,50 @@
+<script id="resizer-horizontal" type="text/x-jquery-tmpl">
+    <div class="resizer-container ">
+        
+       <label class="resizer-name">${caption}</label>
+
+       <div>         
+            <div class="editor-localizablestring-input ui-control-input ui-control-input-small" > 
+                    <i><input id="resizeWidth" type="text" placeHolder="auto" /> </i>
+            </div>                              
+        </div>
+    </div>
+</script>
+
+<script id="resizer-frame" type="text/x-jquery-tmpl">
+    <div class="resizer-container ">
+        
+        <label class="resizer-name">${caption}</label>
+
+       <table width="86%" class="tableResizer">
+            <tr>
+                <td class="size-option">
+                    <label class="labelSize">%{formmodeler-component-editor-resizer-width}</label>
+                    <div class="editor-localizablestring-input ui-control-input"> 
+                          <input id="resizeWidth" type="text" class="" value="" />
+                    </div>
+                </td>  
+                <td class="pixel">
+                    px
+                </td>
+                <td class="">
+                    <div class="ratio-icon" align="center">                        
+                        <i class="biz-ico decorator-image {{if ratio}}aspect-ratio-icon-selected{{else}}aspect-ratio-icon{{/if}}" id="aspectRatio" title="%{formmodeler-component-editor-resizer-aspectratio}"></i>                            
+                    </div>
+                </td>             
+                <td class="size-option">
+                    <label class="labelSize">%{formmodeler-component-editor-resizer-height}</label>
+                    <div class="editor-localizablestring-input ui-control-input">
+                        <input id="resizeHeight" type="text" class="" value="" />
+                    </div>
+                </td>
+                <td class="pixel">
+                    px
+                </td>
+            </tr>
+        </table>
+       
+
+    </div>
+</script>
+

@@ -1,0 +1,45 @@
+/********
+* Filename: bizagi.editor.component.editor.taskstatedefaultvalue.css
+* Create Date: 2014-05-06
+* Author: Cristian Olaya Cristian.Olaya@bizagi.com
+*
+* $__taskstatedefaultvalue
+*
+********/
+
+/* __taskstatedefaultvalue
+--------*/
+.bizagi_editor_component_editor_taskstatedefaultvalue
+{
+    position: relative;
+}
+.bizagi_editor_component_editor_taskstatedefaultvalue .ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-option
+{
+    background-position: top left;
+}
+.bizagi_editor_component_editor_taskstatedefaultvalue .ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-check
+{
+     background-position:0 -25px;
+}
+
+.taskstatedefaultvalue-group-container
+{
+    position: relative;
+}
+
+.bizagi_editor_component_properties .bizagi_editor_component_editor_taskstatedefaultvalue .bizagi-editor-booleandisplay-inline label
+{
+    display:inline-block;
+    width:55%;
+}
+
+.bizagi_editor_component_editor_taskstatedefaultvalue .bizagi-editor-taskstatedefaultvalue-inline .ui-control-editor
+{
+    display:inline-block;
+    width:30%;
+}
+
+.bizagi_editor_component_editor_taskstatedefaultvalue .multiple-container .bizagi-editor-taskstatedefaultvalue-inline .ui-control-editor
+{
+    width:58px;
+}

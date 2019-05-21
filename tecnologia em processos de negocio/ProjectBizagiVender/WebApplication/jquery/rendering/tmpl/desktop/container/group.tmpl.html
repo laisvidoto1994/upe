@@ -1,0 +1,13 @@
+<div class="ui-bizagi-container clearfix ui-bizagi-container-group ui-drop-shadow ui-lifted ${cssclass}" guid="${guid}"  data-unique-id="${uniqueId}">
+  <h3 class="ui-bizagi-container-group-header ui-helper-reset ui-state-active ui-corner-top {{if orientation == "rtl"}}ui-bizagi-rtl{{/if}} clearfix">
+      <span class="ui-icon ${expandedClassIcon}"/>
+      <!--<a href="#">${displayName}</a>  QAF-452 -->
+      <a href="javascript:;">${displayName}</a>
+		{{if isDesign && messageValidation}}
+		    <span class="bz-studio bz-warning-red_16x16_standard ui-icon-override ui-icon-help ui-bizagi-render-icon-msg-validation ui-bizagi-render-icon-editor-msg-validation" title="${messageValidation}" style="display:inline-block"></span>
+		{{/if}}
+  </h3>
+  <div class="ui-bizagi-container-group-wrapper ui-widget-content" {{if collapse == true && isDesign == false}} style="display:none" {{/if}}>
+      {{children}}
+  </div>
+</div> 

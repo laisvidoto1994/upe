@@ -1,0 +1,8 @@
+{{each(i, val) radio}}
+<div class="biz-wp-wrapper-radio">	
+	<label>
+		<span>${$item.itemText(val)}</span>
+	</label>
+	<input type="radio" name="${$data.radioGroup}" value="${$item.itemValue(val)}" class="biz-wp-option-radio">
+</div>
+{{/each}}

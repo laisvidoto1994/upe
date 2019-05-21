@@ -1,0 +1,46 @@
+﻿﻿﻿<script id="relatedusers-wrapper" type="text/x-jsrender-tmpl">
+    <div class="relatedusers">
+        <ul class="clearfix ui-bizagi-wp-userlist">
+            {{for users}}
+                {{include tmpl="#related-user-item"/}}
+            {{/for}}
+        </ul>
+    </div>
+</script>
+
+<script id="related-user-item" type="text/x-jsrender">
+    <li data-userid="{{>id}}" class="bz-wp-avatar bz-wp-avatar-48">
+        {{if picture}}
+            <img class="bz-wp-avatar-img" src="{{>picture}}" />
+        {{else}}
+            <span class="bz-wp-avatar-label nodisplay">{{>initials}}</span>
+        {{/if}}
+    </li>
+</script>
+
+
+<script id="related-user-tooltip" type="text/x-jsrender">
+    <div class="bz-wp-tt-user ui-bizagi-wp-usertooltip">
+        <div data-iduser="{{>id}}" class="bz-wp-tt-user-info">
+            <div class="bz-wp-avatar bz-wp-avatar-32">
+                <img src="{{if picture}}{{>picture}}{{else}}data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAA+0lEQVR42uzaSxLCMAwE0c79L82SFMXHJpKHhJ59at4utmS2cBAgQMCBT3dZDuBJ1gF4mSUA3qYfALUCauvnCZT3Twqo758T0NA/JaCjf0ZwIgC0COjpHxecBgBNAgF09Y8KBAgQIECAAAFnAXgiEiDAq5mA8wEuOCERIMBBpYAfAMTH9QLygPjOSEB+b5gHxFe3I4Lt4oD0+v4HAPEXFAIECBDw70+58oDw7zh7JMteTrPTcr5MDYBDOQqgIAcAFOU7AKWZBlCeKQAtGQXQmAEAzfkAYEHeAWC5gOX1DwQS/XsBkf6dgEz/XSBAgAABAgQIECBAQBxwE2AAjnkjnL/SDJsAAAAASUVORK5CYII={{/if}}" class="bz-wp-avatar-img">
+            </div>
+            <div class="bz-wp-tt-user-info-content">
+                <h4 title="{{>name}}">{{>name}}</h4>
+                <p>{{>typesString}}</p>
+            </div>
+        </div>
+        <dl class="ui-bizagi-wp-tasklist">
+            {{for tasks}}
+            <div class="clearfix ui-bizagi-wp-tasklist-item">
+                <dt class="ui-bizagi-wp-tasklist-item-type">
+                    <strong>{{>taskType}}:</strong>
+                </dt>
+                <dd class="ui-bizagi-wp-tasklist-item-name">
+                    <span>{{>taskName}}</span>
+                </dd>
+            </div>
+            {{/for}}
+        </dl>
+    </div>
+</script>

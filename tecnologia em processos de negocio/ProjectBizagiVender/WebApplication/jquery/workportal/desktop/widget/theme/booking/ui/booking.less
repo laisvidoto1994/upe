@@ -1,0 +1,168 @@
+﻿@import "base/variables";
+@import "base/mixins";
+
+.biz-theme-bookings {
+    padding: 15px;
+}
+
+.biz-theme-bookings-title {
+    color: @blue;
+    font-size: 24px;
+    width: 100%;
+}
+
+.biz-theme-bookings-filters {
+    border-top: 1px solid @gray;
+    border-bottom: 1px solid @gray;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: @blue-4;
+    padding-left: 10px;
+}
+
+.biz-theme-bookings-filter {
+    width: 150px;
+    margin-right: 20px;
+}
+
+.biz-theme-bookings-filter-label {
+    color: @blue-2;
+    font-weight: bold;
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+.biz-theme-bookings-filter-select {
+    color: @black-2;
+    width: 150px;
+}
+
+.biz-theme-bookings-items {
+    margin-top: 20px;
+}
+
+.biz-theme-bookings-item {
+    border: 1px solid @gray;
+    position: relative;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
+
+.biz-theme-bookings-item-picture {
+    width: 130px;
+    height: 130px;
+    vertical-align: top;
+}
+
+.biz-theme-bookings-item-picture img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+}
+
+.biz-theme-bookings-item-picture img, .biz-theme-bookings-item-hotel-name, .biz-theme-bookings-item-hotel-location,
+.biz-theme-bookings-item-button-container, .biz-theme-bookings-item-check-month, .biz-theme-bookings-item-check-day-name,
+.biz-theme-bookings-item, .biz-theme-bookings-items, .biz-theme-bookings-item-cost, .biz-theme-bookings-item-check-label,
+.biz-theme-bookings-item-check-day, .biz-theme-bookings-item-check-month {
+    .width-100;
+}
+
+.biz-theme-bookings-item-check-label {
+    font-weight: bold;
+}
+
+.biz-theme-bookings-item-information {
+    width: 600px;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
+.biz-theme-bookings-item-check-month {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.biz-theme-bookings-item-hotel-name {
+    color: @blue-1;
+    font-size: 24px;
+}
+
+.biz-theme-bookings-item-hotel-location {
+    color: @gray-1;
+    margin-bottom: 5px;
+}
+
+.biz-theme-bookings-item-booking-number {
+    color: @black-2;
+}
+
+.biz-theme-bookings-item-booking-number-value {
+    color: @black-2;
+    font-weight: bold;
+}
+
+.biz-theme-bookings-item-booking-pin {
+    color: @black-2;
+}
+
+.biz-theme-bookings-item-booking-pin-value {
+    color: @black-2;
+    font-weight: bold;
+}
+
+.biz-theme-bookings-item-cost {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.biz-theme-bookings-item-check-dates {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 20px 5px 20px 20px;
+}
+
+.biz-theme-bookings-item-check-in {
+    color: @gray-3;
+    width: 100px;
+    border-right: 1px dotted @gray;
+}
+
+.biz-theme-bookings-item-check-label, .biz-theme-bookings-item-check-day, .biz-theme-bookings-item-check-month, .biz-theme-bookings-item-check-day-name {
+    text-align: center;
+}
+
+.biz-theme-bookings-item-check-day {
+    font-size: 60px;
+}
+
+.biz-theme-bookings-item-check-day-name {
+    font-style: italic;
+    font-weight: normal;
+}
+
+.biz-theme-bookings-item-check-out {
+    width: 100px;
+    color: @gray-3;
+}
+
+.biz-theme-bookings-item-button-container {
+    margin-top: 10px;
+}
+
+.biz-theme-bookings-item-button {
+    background-color: @blue-2;
+    color: @white;
+    padding: 7px 15px;
+    margin-right: 10px;
+    border-radius: 3px;
+    cursor:pointer;
+}
+
+.biz-theme-bookings-item-button:hover {
+    background-color: #003580;
+}

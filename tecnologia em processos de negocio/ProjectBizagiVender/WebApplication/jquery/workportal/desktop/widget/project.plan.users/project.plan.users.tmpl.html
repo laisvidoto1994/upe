@@ -1,0 +1,51 @@
+<script id="project-plan-users" type="text/x-jsrender" >
+   <div class="bz-wp-widget ui-bizagi-wp-project-plan-users">
+        <h3 class="bz-wp-section">%{workportal-project-plan-users-title}</h3>
+        <ul class="clearfix ui-bizagi-wp-userlist">
+            {{for owner tmpl="#project-plan-user" /}}
+            {{if assignee && assignee.length > 200 }}
+                {{if assignee tmpl="#project-plan-multiuser" /}}
+             {{else}}
+                {{for assignee tmpl="#project-plan-user" /}}
+            {{/if}}
+        </ul>
+    </div>
+</script>
+
+<script id="project-plan-user" type="text/x-jsrender">
+    <li data-iduser="{{>idUser}}" class="bz-wp-avatar bz-wp-avatar-48 k-state-border-down">
+        <img class="bz-wp-avatar-img" src="">
+        <span class="bz-wp-avatar-label"></span>
+    </li>
+</script>
+
+<script id="project-plan-multiuser" type="text/x-jsrender">
+   <li data-iduser="0" class="ui-bizagi-wp-multiuser-item">
+        {{>#ctx.root.assignee.length}}
+   </li>
+    <li class="ui-bizagi-wp-multiuser-item">
+      {{>#ctx.root.label.slice(0,2).toUpperCase()}}
+    </li>
+</script>
+
+<script id="project-plan-users-tooltip" type="text/x-jsrender">
+    <ul class="ui-bizagi-wp-usertooltip">
+        {{for users}}
+            <li>
+                <div>
+                    <h4 title="{{>#data.name}}">{{>#data.name}}</h4>
+                    <p>
+                        {{for userType}}
+                            {{if #data.toLowerCase() === "assigned" }}
+                                %{workportal-project-plan-assignee}
+                            {{else}}
+                                %{workportal-project-plan-owner}
+                            {{/if}}
+                            {{if #index < #parent.parent.data.userType.length -1}}, {{/if}}
+                        {{/for}}
+                    </p>
+                </div>
+            </li>
+        {{/for}}
+    </ul>
+</script>

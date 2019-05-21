@@ -1,0 +1,30 @@
+﻿<span class="ui-bizagi-render-checkList #if(data.vertical){#ui-bizagi-render-checkList-vertical#}#" xmlns="http://www.w3.org/1999/html">
+    # $.each(data.items, function(i, item){#
+        <span class="ui-bizagi-render-checkList-item #if(item.selected){#selected#}#"  data-item-guid="#=item.guid#" data-item-position="#=i#">
+            <label class="ui-bizagi-render-checkList-label" for="checkList-#=data.unique#-#=data.xpath#-#=item.guid#" >
+                <input id="checkList-#=data.unique#-#=data.xpath#-#=item.guid#" class="bz-mo-icon ui-bizagi-render-boolean-check #if(item.resolved){# bz-check #}else{#bz-full-ball#}#"
+                       data-item-guid="#=item.guid#" type="checkbox" />
+            </label>
+            #if(item.selected){#
+                <input class="ui-bizagi-render-checkList-input-name" type="text" value="#if(item.name){##=item.name##}#">
+                <button class="bz-rn-activitychecklist-action cancel-item-button-checklist">
+                    <i class="bz-mo-icon bz-cancel"></i>
+                </button>
+                <button class="bz-rn-activitychecklist-action add-item-button-checklist">
+                    <i class="bz-mo-icon bz-check-symbol"></i>
+                </button>
+            #}else{#
+                <label class="activity-work-items"> # if(item.name != undefined){ # #=item.name# #} else{# &nbsp; #}#</label>
+                <button class="bz-rn-activitychecklist-action delete-item-from-activity #=i#">
+                    <i class="bz-mo-icon bz-trash-full"></i>
+                </button>
+                <button class="bz-rn-activitychecklist-action cancel-edit-item-button-checklist #=i#">
+                    <i class="bz-mo-icon bz-cancel"></i>
+                </button>
+                <button class="bz-rn-activitychecklist-action add-edit-item-button-checklist #=i#">
+                    <i class="bz-mo-icon bz-check-symbol"></i>
+                </button>
+            #}#
+        </span>
+    #})#
+</span>

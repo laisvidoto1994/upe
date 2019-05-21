@@ -1,0 +1,18 @@
+﻿{
+	"form": {
+		"properties" : {"type": "searchForm", "id": 2, "columns": [ 
+			{"caption":"Name", "dataType": "15", "xpath": "name" }, 
+			{"caption":"Department", "dataType": "15", "xpath": "department" }, 
+			{"caption":"Country", "dataType": "15", "xpath": "country"},
+			{"caption":"Region", "dataType": "15", "xpath": "region"},
+			{"caption":"Inhabitants", "dataType": "15", "xpath": "inhabitants"}
+		]},
+		"elements": [
+			{"render": {	"properties": {"id" : 10000, "displayName" : "ESTA ES UNA PRUEBA DE LABEL", "type": "searchLabel"}}},
+			{"render": {	"properties": {"dataType": "15", "id" : 10001, "displayName" : "Name", "type": "searchText", "xpath": "name"}}},
+			{"render": {	"properties": {"dataType": "15", "id" : 10002, "displayName" : "Department", "type": "searchText", "xpath": "department"}}},
+			{"render": {	"properties": {"dataType": "15", "id" : 10003, "displayName" : "Country", "type": "searchText", "xpath": "country"}}},
+			{"render": {	"properties": {"dataType": "15", "id" : 10004, "displayName" : "Region", "type": "searchText", "xpath": "region", "isExtended": "true"}}}
+		]
+	}
+}

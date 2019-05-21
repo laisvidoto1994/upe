@@ -1,0 +1,11 @@
+/* TimeEntry styles */
+.timeEntry_control {
+    vertical-align: middle;
+    background: url(images/timerEntrySpinner.png) no-repeat 0 0 !important;
+    margin-left: 2px;
+}
+
+* html .timeEntry_control {
+    /* IE only */
+    margin-top: -4px;
+}

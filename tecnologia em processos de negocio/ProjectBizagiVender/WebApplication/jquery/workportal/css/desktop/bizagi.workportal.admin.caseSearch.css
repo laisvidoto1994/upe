@@ -1,0 +1,108 @@
+.case-search-border {
+    border: 1px solid #96989B;
+    border-radius: 6px;
+    height: auto;
+    width: 220px;
+}
+
+#dinamicContent
+{
+  padding-top: 20px;  
+}
+
+.case-search-app-ul {
+    list-style-type:none;
+    padding-left: 20px;
+}
+
+.case-search-action-wrapper {
+    background: snow;
+    border: 1px solid #C6CACC;
+    border-radius: 6px;
+    padding: 10px 110px;
+}
+
+.case-search-textarea {
+    height: 10px;
+    width: 100%;
+}
+
+.btn-admin-case-invalidate-div, .btn-admin-case-reassign-div {    
+    padding: 10px 0;
+}
+
+.case-search-reasonLabel {
+    min-width: 50px;
+    padding-top: 7px;   
+}
+
+.case-search-reassign-wrapper {
+    padding-top: 30px;
+}
+
+.case-item-fields {
+    display: table;
+    margin: 0;
+    min-width: 80px;
+    max-width: 340px;
+    padding: 0;
+    width: 100%;
+}
+
+.case-item-fields ul,
+.case-item-fields li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.case-item-fields li {
+    white-space: normal;
+}
+
+.case-item-fields input {
+    display: inline-block;
+}
+
+.case-item-fields li:first-child,
+.case-item-fields li:last-child{
+    width: 10%;
+}
+
+.case-item-fields .case-item-field-item {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    vertical-align: middle;
+    width: auto;
+}
+
+.case-item-field-item.task-name {
+    width: 80%;
+}
+
+.case-item-field-item .icon {
+    background-image: url(images/sprite.png);
+    background-position: -148px -176px;
+    border: 0;
+    border-style: none;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+}
+
+.case-item-field-item .icon.yellow {
+    background-position: -183px -176px;
+}
+
+.case-item-field-item .icon.green {
+    background-position: -218px -176px;
+}
+
+#biz-case-search table.biz-wp-table thead.biz-wp-table-head th a{
+    font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    color: #687785  !important;
+    font-size: 12px;
+    font-weight: normal;
+}

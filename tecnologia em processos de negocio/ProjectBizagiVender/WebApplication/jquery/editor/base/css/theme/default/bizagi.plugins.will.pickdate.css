@@ -1,0 +1,92 @@
+.wpd {
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 2px;
+}
+
+.wpd .header .next{
+	border-radius: 0 2px 2px 0;
+	line-height: 18px;
+}
+.wpd .header .previous{
+	border-radius: 2px 0 0 2px;
+	line-height: 18px;
+}
+
+.wpd .header .next, .wpd .header .previous, .wpd .header .title{
+	background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(249, 249, 249) 45%, rgb(229, 233, 238));
+	background-image: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(249, 249, 249) 45%, rgb(229, 233, 238));
+}
+
+.wpd .header .titleText {
+	font-weight: bold;
+	font-size: 13px;
+	line-height: 16px;
+}
+
+
+.wpd .selected{
+	background-color: rgba(0, 0, 0, 0.8)!important;
+}
+
+.wpd .months .month{
+	padding-top: 0px;
+	line-height: 40px;
+	width:31%;
+	height: 40px;
+}
+
+.wpd .years .year{
+	float: left;
+	cursor: pointer;
+	text-align: center;
+	width: 50px;
+	overflow: hidden;
+	margin: 0 3px 3px 0;
+	font-size: 16px;
+	padding-top: 0px;
+	line-height: 22px;
+	width: 31%;
+	height: 22px;
+}
+
+.wpd .days .week .day:hover, .wpd .months .month:hover, .wpd .years .year:hover{
+	background: rgba(0, 0, 0, 0.1)!important;
+}
+
+
+.wpd .header .disabled, .wpd .header .title.disabled:hover, .wpd .header .previous.disabled:hover, .wpd .header .next.disabled:hover{
+	background: rgba(0, 0, 0, 0.1)!important;
+	color: rgba(0, 0, 0, 0.6)!important;
+}
+
+
+.wpd .unavailable {
+	background: rgba(0, 0, 0, 0.1) !important;
+	color: rgba(0, 0, 0, 0.3) !important;
+	cursor: default !important;
+}
+
+
+.wpd .time .ok{
+  border: solid 1px rgba(179,179,179,1);
+  -webkit-box-shadow: inset 0px 0px 1px 1px #fff;
+  -moz-box-shadow: inset 0px 0px 1px 1px #fff;
+  box-shadow: inset 0px 0px 1px 1px #fff;
+  margin: 0px 2px 0px 2px;
+  padding: 0px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  font-size: 12px;
+  text-transform: capitalize;
+  /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,240,240,1)), color-stop(51%,rgba(240,240,240,1)), color-stop(51%,rgba(216,216,216,1)), color-stop(100%,rgba(216,216,216,1)));*/
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(249,249,249,1)), color-stop(100%,rgba(229,233,238,1))); /* Chrome,Safari4+ */
+  background: -moz-gradient(linear, left top, left bottom, color-stop(0%,rgba(249,249,249,1)), color-stop(100%,rgba(229,233,238,1))); /* Chrome,Safari4+ */
+  text-shadow: 1px 1px 1px #ffffff;
+  cursor:pointer;
+  min-width: 85px;
+}
+
+.wpd .time .separator{
+	top:42px;
+}

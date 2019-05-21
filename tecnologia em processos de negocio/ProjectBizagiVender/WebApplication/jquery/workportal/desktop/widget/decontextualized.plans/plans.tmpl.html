@@ -1,0 +1,19 @@
+<script id="plans-wrapper" type="text/x-jsrender">
+    <div>
+        <div id="row-plans" class="wdg-plans-panel">
+            <h3 class="wdg-plans-header">{{:title}}</h3>
+            <div class="row wdg-plans-content">
+                {{for items }}
+                    <div class="wdg-plans-list col-md-4 col-lg-3">
+                        <div class="bz-card wdg-plans-card dsb-card wdg-db-card-plans" data-title="{{:title}}" data-data="{{:data}}">
+                            <div class="wdg-plans-title">
+                                <i class="bz-icon bz-icon-24 bz-icon-{{:icon}}-outline"></i>
+                                <span>{{:title}}</span>
+                            </div>
+                        </div>
+                    </div>
+                {{/for}}
+            </div>
+        </div>
+    </div>
+</script>

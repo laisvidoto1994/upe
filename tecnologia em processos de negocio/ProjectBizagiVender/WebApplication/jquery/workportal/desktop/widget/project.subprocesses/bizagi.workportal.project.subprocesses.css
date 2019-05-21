@@ -1,0 +1,69 @@
+/*
+    Document   : bizagi.workportal.project.subprocesses
+    Created on : Mar 26, 2015
+    Author     : Elkin Fernando Siabato Cruz
+*/
+
+.ui-bizagi-wp-project-subprocesses-root-wrapper
+{
+    width: 400px;
+}
+
+#ui-bizagi-wp-project-subprocesses-wrapper
+{
+
+}
+
+#ui-bizagi-wp-project-subprocesses-wrapper .list-subprocesses
+{
+    margin: 0;
+    padding: 0;
+}
+
+#ui-bizagi-wp-project-subprocesses-wrapper .list-subprocesses li
+{
+    list-style-type: none;
+}
+
+
+
+.bizagi-custom-tooltip-subprocesses
+{
+    background: #FFF;
+    border-color: #DDD;
+    color: #000;
+}
+
+.bizagi-custom-tooltip-subprocesses .scroll-custom-properties
+{
+    max-height: 155px;
+    overflow: auto;
+
+}
+
+.bizagi-custom-tooltip-subprocesses .namesubprocess
+{
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 0;
+    text-align: left;
+    width: 100%;
+}
+
+.bizagi-custom-tooltip-subprocesses table
+{
+    color: gray;
+    font-size: 14px;
+    text-align: left;
+    width: 100%;
+}
+.bizagi-custom-tooltip-subprocesses table tr
+{
+    height: 26px;
+}
+
+.bizagi-custom-tooltip-subprocesses table tr .column2
+{
+    width: 68%;
+}

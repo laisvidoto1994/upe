@@ -1,0 +1,96 @@
+﻿#admin-oauth2-add-application,
+#admin-oauth2-edit-application {
+    display: none;
+    width: 765px;
+    margin:0 auto;
+}
+
+#admin-oauth2-add-application .biz-wp-form-column,
+#admin-oauth2-edit-application .biz-wp-form-column {
+    width: 370px;
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: top;
+}
+
+#admin-oauth2-add-application .ui-bizagi-control-wrapper,
+#admin-oauth2-edit-application .ui-bizagi-control-wrapper{
+    overflow: auto;
+}
+
+#admin-oauth2-add-application
+.bz-oauth2-only-client-credentials,
+#admin-oauth2-edit-application {
+    display:none;
+}
+
+.biz-wp-oauth2-textarea {
+    width:100%;
+    height: 80px;
+    display: block;
+    max-height: none;
+}
+
+#admin-oauth2-applications-table table tbody tr td:first-child,
+#admin-oauth2-applications-table table thead tr th:first-child {
+    display:none;
+}
+
+.biz-wp-oauth2-warnings {
+    display:block;
+}
+
+.biz-wp-oauth2-warnings__alert {
+    padding:.5em 1em;
+    width:100%;
+    background:#e56171;
+    color:#FFF;
+    margin:.5em 0;
+    display:none;
+}
+
+#admin-oauth2-add-application
+.ui-bizagi-render .ui-bizagi-render-control-required,
+#admin-oauth2-edit-application
+.ui-bizagi-render .ui-bizagi-render-control-required{
+    left: 0;
+}
+
+.bz-input-required:valid ~ .ui-bizagi-render-control-required{
+    display:none;
+}
+
+#bz-oauth2-only-MobileLocalhostPort {
+    display:none;
+}
+
+#admin-oauth2-edit-application .biz-wp-form-row,
+#admin-oauth2-add-application .biz-wp-form-row {
+    padding-bottom: 1em;
+}
+
+#admin-oauth2-add-application
+.biz-wp-form-check,
+#admin-oauth2-edit-application
+.biz-wp-form-check {
+    padding-right: 1em;
+}
+
+#admin-oauth2-add-application
+.biz-wp-form-check,
+#admin-oauth2-add-application
+.biz-wp-form-check label,
+#admin-oauth2-edit-application
+.biz-wp-form-check,
+#admin-oauth2-edit-application
+.biz-wp-form-check label {
+    cursor: pointer;
+}
+
+#admin-oauth2-add-application
+.biz-wp-form-required,
+#admin-oauth2-edit-application
+.biz-wp-form-required {
+    color: #e56171;
+    display: none;
+}

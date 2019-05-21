@@ -1,0 +1,149 @@
+﻿<script id="bz-rn-ecm-view-default-item" type="text/x-jquery-tmpl">
+<div class="bz-rn-ecm-container">
+    <div class="bz-rn-ecm-header">
+        <span> ${displayName}</span>
+    </div>
+    {{each value}}
+    <div class="${id}-${$value[0]} bz-rn-ecm-metadata">
+    {{${id}-${$value[0]}}}
+    </div>
+    {{/each}}
+     {{if editable}}
+        <div class="no-event bz-rn-ecm-metadata  bz-rn-ecm-upload">
+        <span class="bz-cm-icon"></span>
+        </div>
+     {{/if}}
+
+</div>
+    
+<div class="bz_rn_upload_container_upload_items">
+    <ul class="bz-rn-upload-options">
+       <li>  <button type="button"  class="bz-cm-icon bz-upload-button image " ></button> </li>
+       <li>  <button type="button"  class="bz-cm-icon bz-upload-button cimage" ></button> </li>
+       <li> <button type="button"  class="bz-cm-icon bz-upload-button caudio"  ></button> </li>
+       <li> <button type="button"  class="bz-cm-icon bz-upload-button cvideo"  ></button> </li>
+       <li> <button type="button"  class="bz-cm-icon bz-upload-button file"    ></button> </li>
+    </ul>
+</div>
+
+</script>
+
+<script id="biz-render-ecm-view-default-yesno" type="text/x-jquery-tmpl">
+    <div class="ecm-metadata-field-edit  biz-render-ecm-upload-boolean">
+        <label for="biz-render-ecm-upload-boolean-radio1"><input type="radio" id="biz-render-ecm-upload-boolean-radio1" name="biz-render-ecm-upload-boolean-radio" value="True" {{if checked == '1'}}checked="checked"{{/if}} />%{render-boolean-yes}</label>
+        <label for="biz-render-ecm-upload-boolean-radio2"><input type="radio" id="biz-render-ecm-upload-boolean-radio2" name="biz-render-ecm-upload-boolean-radio" value="False" {{if checked == '0'}}checked="checked"{{/if}} />%{render-boolean-no}</label>
+    </div>
+</script>
+
+<script id="bz-rn-ecm-metadata" type="text/x-jquery-tmpl"> 
+
+<div class="bz-rn-ecm-file-container" alt="${filename}" title="${filename}" data-filename="${filename}" data-idfileupload="${idFileUploads}">
+
+ <div class="bz-rn-ecm-extension">
+    <span class="bz-cm-icon bz-ecm-checkout-${ecm_allowCheckOut}"></span>
+ </div>
+
+ <div class="bz-rn-ecm-url">
+  <a href='javascript:void(0)'  onclick="window.open('${url}', '_system');" >${filename.substr(0,35)} {{if filename.length>35}}...{{/if}}</a>
+ </div>
+
+  {{if ecm_allowEdit}}
+ <div class="bz-rn-ecm-activate-menu">
+    <span class="bz-cm-icon  edit-point-icon"></span>
+ </div>   
+  {{/if}}
+
+</div>
+
+<div class="bz-rn-ecm-metadata-container">
+
+ {{each metadata }}
+    <div class="bz-rn-ecm-metadata-item">
+
+        <div class="bz-rn-ecm-title-item  {{if required == "true"}}bz-rn-ecm-required{{/if}}" >
+            <label class="{{if required == "true"}}bz-rn-ecm-required-label {{/if}}" > ${description}</label>          
+        </div>
+
+
+
+        <div class="bz-rn-ecm-metadata-value" data-value="${value}" data-required="${required}"   data-idmetadata="${metadataId}" data-description="${description}" data-allowupdatemetadata="${ecm_allowUpdateMetadata}" data-metadatatype="${metadataType}"  data-readonly="${readOnly}" data-edit-mode="false" data-ecmstatus="${ecm_ecmStatus}">
+          
+
+          {{if readOnly=="true"}}
+           <span class="ecm-metadata-text">
+                {{if metadataType =="BOOL"}}
+                  {{if value == true}}
+                    %{render-boolean-yes}
+                    {{else}}
+                    %{render-boolean-no}
+                  {{/if}}
+                {{else}}
+                ${value}
+                {{/if}}
+            </span>
+           {{/if}}
+
+  
+         {{if metadataType =="STRING"}}
+           <input  type="text"   {{if required}} required {{/if}} value="${value}" ></input>
+         {{/if}}
+
+         {{if  metadataType =="BOOL"}}
+          <input class="bz-cm-icon" type = "radio"  name ="ecm-radio" value = "true"  {{if value == 'true'}}checked{{/if}}/>%{render-boolean-yes}
+          <input class="bz-cm-icon" type = "radio"  name ="ecm-radio" value = "false" {{if value == 'false'}}checked{{/if}}/>%{render-boolean-no}
+
+         {{/if}}
+
+         {{if  metadataType =="DATETIME"}}
+           <input  type="date" class="bz-ecm-metadata-date"   {{if required}} required {{/if}}  value="${ $.scroller.formatDate("yy-mm-dd", $.scroller.parseDate("d. m. yy", value)) }" ></input>
+         {{/if}}
+
+         {{if  metadataType =="DECIMAL"}}
+           <input  type="number"   {{if required}} required {{/if}}  value="${value}" pattern="\d*"></input>
+         {{/if}}
+
+           
+        </div>
+
+    </div>
+ {{/each}}
+
+  <div class="bz-rn-ecm-metadata-item bz-rn-ecm-buttons-container">
+      <button class="bz-rn-ecm-btn-cancel">%{text-cancel}</button>
+      <button class="bz-rn-ecm-btn-save">%{text-save}</button>
+  </div>
+
+
+</div>
+
+
+<div class="bz-rn-ecm-menu-container">
+    <ul class="bz-common-webkit-reset-ul">
+       
+        <li class="bz-ecm-lock  {{if ecm_allowCheckOut}}bz-ecm-item-menu-enable{{/if}}">
+            <span class="bz-cm-icon"></span>
+            <span>%{render-ecm-bt-lock}</span>
+        </li>
+             
+        <li class="bz-ecm-unlock  {{if ecm_allowCancelCheckOut}}bz-ecm-item-menu-enable{{/if}}"  >
+            <span class="bz-cm-icon"></span>
+            <span>%{render-ecm-bt-unlock}</span>
+        </li>
+
+
+        <li class="bz-ecm-delete  {{if ecm_allowDelete}}bz-ecm-item-menu-enable{{/if}}">
+            <span class="bz-cm-icon"></span>
+            <span>%{render-ecm-bt-delete}</span>
+        </li>
+
+ 
+        <li class="bz-ecm-edit  {{if ecm_allowUpdateMetadata}}bz-ecm-item-menu-enable{{/if}}">
+            <span class="bz-cm-icon"></span>
+            <span>%{render-ecm-bt-edit}</span>
+        </li>
+                       
+    </ul>
+</div>
+
+</script>
+

@@ -1,0 +1,12 @@
+﻿{
+    "actiontype": "LoadEntityValues",
+    "result": {
+        "success": true,
+        "parameters": [
+            {
+                "key": "values",
+                "value": "[{\"id\":1,\"identifier\":\"00000000-0000-0000-0000-000000000000\",\"displayName\":\"Bogotá\"},{\"id\":2,\"identifier\":\"00000000-0000-0000-0000-000000000000\",\"displayName\":\"Cartagena\"},{\"id\":3,\"identifier\":\"00000000-0000-0000-0000-000000000000\",\"displayName\":\"Santa Martha\"},{\"id\":4,\"identifier\":\"00000000-0000-0000-0000-000000000000\",\"displayName\":\"San Gil\"}]"
+            }
+        ]
+    }
+}

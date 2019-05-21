@@ -1,0 +1,35 @@
+<script id="project-processmap-tooltip" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-wp-project-processmap-tooltip">
+        <div class="ui-bizagi-wp-project-processmap-tooltip-content">
+            <a href="javascript:void(0);"  data-idworkflow="{{:idWorkflow}}" data-idworkitem="{{:idWorkitem}}"  data-idtask="{{:idTask}}" data-radnumber="{{:radNumber}}" data-idcase="{{:idCase }}" class="ui-bizagi-wp-project-processmap-tooltip-title">%{workportal-widget-admincasesearch-table-case-number} {{:radNumber }}</a>
+            <dl class="ui-bizagi-wp-project-processmap-list">
+                <dt>%{workportal-widget-admincasesearch-table-process}</dt>
+                <dd>
+                    <a href="javascript:void(0);" class="ui-bizagi-wp-project-processmap-process">
+                        <i class="bz-icon bz-icon-16 bz-icon-diagram-outline"></i>
+                    </a> {{:process}}
+                </dd>
+
+                <dt>%{workportal-widget-admincasesearch-table-create-date}</dt>
+                <dd>{{:startDate}}</dd>
+
+                <dt>%{workportal-widget-process-map-end-date}</dt>
+                <dd>{{:endDate}}</dd>
+
+                {{if assignee}}
+                <dt>%{workportal-widget-process-map-current-assignee}</dt>
+                <dd>
+                    <div class="ui-bizagi-wp-project-processmap-tooltip-assignee">
+                        {{if assigneePhoto}}
+                        <span class="">
+                            <img src="data:image/png;base64,{{:assigneePhoto}}">
+                        </span>
+                        {{/if}}
+                        <span class="ui-bizagi-wp-project-processmap-tooltip-assignee-name">{{:assigneeName}}</span>
+                    </div>
+                </dd>
+                {{/if}}
+            </dl>
+        </div>
+    </div>
+</script>

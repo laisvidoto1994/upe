@@ -1,0 +1,6 @@
+﻿{
+    "userName":"اسم المستخدم",
+    "domain":"Domain",
+    "user":"Domain\\User",
+    "idUser":"0"
+}

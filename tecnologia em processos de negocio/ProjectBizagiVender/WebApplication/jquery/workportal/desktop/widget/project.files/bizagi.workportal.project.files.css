@@ -1,0 +1,150 @@
+/*
+    Document   : bizagi.workportal.project.files
+    Created on : Feb 25, 2015
+    Author     : David Romero Estrada
+    Description:
+        Styles for the "files" widget in the project
+*/
+
+
+
+#project-files-showmore, #project-files-nomore {
+    display: none;
+    text-align: center;
+    clear: both;
+}
+
+#project-files-showmore, .k-upload-status-total {
+    display: none;
+}
+
+#home-project-files-wrapper .k-header {
+    background-color: transparent;
+    border: 0;
+}
+
+#home-project-files-wrapper .k-upload-files {
+    position: fixed;
+    right: 230px;
+    bottom: 0;
+    width: 30%;
+    z-index: 2;
+}
+
+#home-project-files-wrapper .k-upload-button {
+    position: relative;
+    width: 100%;
+    padding: 4em 1em 4em 50%;
+    border: 2px dashed #DDD;
+    background-color: #FFF;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+#home-project-files-wrapper .k-button:hover {
+    background-color: #EEE;
+    color: #CCC;
+}
+
+.bz-wp-files-upload {
+    margin-bottom: 1.2em;
+}
+
+.bz-wp-files-upload .k-upload-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 165px;
+    height: 98px;
+    margin-top: -49px;
+    margin-left: -165px;
+}
+
+#home-project-files-wrapper .k-dropzone {
+    padding: 0;
+    background-color: transparent;
+}
+
+#home-project-files-wrapper .k-file-success > .k-progress {
+    display: none;
+}
+
+#project-files-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ui-bizagi-wp-project-files-iconwrapper {
+    overflow: hidden;
+    float: left;
+    width: 72px;
+    height: 72px;
+    border-radius: 4px;
+
+}
+
+
+
+.ui-bizagi-wp-project-files-iconwrapper .ui-bizagi-wp-project-files-thumbnail {
+    display: none;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.ui-bizagi-wp-project-files-titlewrapper {
+    margin-left: 8em;
+}
+
+.ui-bizagi-wp-project-files-file {
+    display: inline-block;
+    margin-bottom: .2em;
+    cursor: pointer;
+    font-weight:normal;
+}
+
+.ui-bizagi-wp-project-filespreview-created {
+    font-size: 14px;
+    color: #374C58;
+    margin-bottom: 0;
+}
+
+.ui-bizagi-wp-project-files-user {
+    margin: 0;
+    color: #374C58;
+}
+
+
+
+.ui-bizagi-wp-project-files-iconwrapper .ui-bizagi-wp-project-files-icon {
+    overflow: hidden;
+    width: 64px;
+    height: 64px;
+    border-radius: 4px;
+}
+
+
+
+.ui-bizagi-wp-project-files-wrapitem {
+    position: relative;
+
+}
+
+.bz-wp-files-file {
+    padding: 1em;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.ui-bizagi-wp-project-files-wrapitem .k-upload-action {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+
+.k-upload-button span {
+    font-size: 1em;
+}

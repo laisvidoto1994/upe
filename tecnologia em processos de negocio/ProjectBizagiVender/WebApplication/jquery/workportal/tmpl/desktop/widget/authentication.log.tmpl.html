@@ -1,0 +1,120 @@
+<script id="ui-bizagi-workportal-widget-authentication-log" type="text/x-jquery-tmpl" >
+    <div class="biz-wp-window" >           
+
+        <div class= "general-window">
+            <span class="biz-wp-window-title">
+               <!-- <strong>%{workportal-widget-authentication-log-subtitle}</strong> -->
+            </span>
+        </div> 
+        
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-authentication-log-fields" type="text/x-jquery-tmpl" >
+
+        
+        <div id="authentication-log-search" class="biz-wp-form clearfix">
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell lbl">%{workportal-widget-authentication-log-domain}</div>
+                <div id="auth-domain-combo" class="biz-wp-form-cell">                
+                    <select id="domainList" class="biz-wp-input-combo">
+                        <option value="none">----------------</option>
+                        {{each(i,item) domainList }}   
+                            <option value="${item}">${item}</option>
+                        {{/each}}
+                    </select>                    
+                </div>
+            </div>
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell lbl">%{workportal-widget-authentication-log-user}</div>
+                <div class="biz-wp-form-cell"><input id="auth-log-user" class="biz-wp-input-text" type="text" /></div>
+            </div>
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell lbl">%{workportal-widget-authentication-log-eventtype}</div>
+                <div id="auth-event-type-combo" class="biz-wp-form-cell">
+                    <select id="eventType" class="biz-wp-input-combo">                        
+                        {{each(i,item) eventTypeList }}   
+                            <option value="${item.id}">${item.displayName}</option>
+                        {{/each}}
+                    </select>                    
+                </div>
+            </div>
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell lbl">%{workportal-widget-authentication-log-subeventtype}</div>
+                <div id="auth-subevent-type-combo" class="biz-wp-form-cell">
+                    <select id="subEventType" class="biz-wp-input-combo">                       
+                        {{each(i,item) subEvenTypes }}   
+                            <option value="${item.id}">${item.displayName}</option>
+                        {{/each}}
+                    </select>  
+                </div>
+            </div>
+            <div class="biz-wp-form-row clearfix">
+                <strong><div class="biz-wp-form-cell lbl">%{workportal-widget-authentication-log-datesince}</div></strong>
+                <div id="auth-since-date" class="biz-wp-form-cell"><input id="sinceDate"  class="biz-wp-form-datepicker" type="text" /></div>
+            </div>
+            <div class="biz-wp-form-row clearfix">
+                <strong><div class="biz-wp-form-cell lbl">%{workportal-widget-authentication-log-dateto}</div></strong>
+                <div id="auth-to-date" class="biz-wp-form-cell"><input id="toDate"  class="biz-wp-form-datepicker" type="text" /></div>
+            </div>
+        </div>         
+  
+</script>
+
+<script id="ui-bizagi-workportal-widget-authentication-log-button" type="text/x-jquery-tmpl" >     
+
+        <div id="authentication-log-data-buttonset" class="biz-wp-buttonset">
+            <button id="btn-authentication-search" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-authentication-log-search}</span>
+            </button>
+        </div>        
+  
+</script>
+
+<script id="ui-bizagi-workportal-widget-authentication-log-result" type="text/x-jquery-tmpl">
+
+
+    <table class="biz-wp-table" cellspacing="2" cellpadding="2" width="100%" border="0">
+        <thead class="biz-wp-table-head">
+            <th>%{workportal-widget-authentication-log-date}</th>
+            <th>%{workportal-widget-authentication-log-domain}</th>
+            <th>%{workportal-widget-authentication-log-user}</th>
+            <th>%{workportal-widget-authentication-log-ip}</th>
+            <th>%{workportal-widget-authentication-log-eventtype}</th>
+            <th>%{workportal-widget-authentication-log-subeventtype}</th>
+        </thead>
+        <tbody class="biz-wp-table-body">  
+             {{each(i, item) resultList }}                  
+                    <tr>
+                        <td class="row-item BorderCell BAMainFontColor"> <span> ${item[0]}</span> </td>
+                        <td class="row-item BorderCell BAMainFontColor"> <span> ${item[1]}</span> </td>
+                        <td class="row-item BorderCell BAMainFontColor"> <span> ${item[2]}</span> </td>
+                        <td class="row-item BorderCell BAMainFontColor"> <span> ${item[3]}</span> </td>
+                        <td class="row-item BorderCell BAMainFontColor"> <span> ${item[4]}</span> </td>
+                        <td class="row-item BorderCell BAMainFontColor"> <span> ${item[5]}</span> </td>
+                    </tr>           
+            {{/each}}
+            
+        </tbody>      
+        
+    </table>
+
+    <div id="biz-wp-table-summary-wrapper" class="biz-wp-table-summary-wrapper">              
+          <ul id="biz-wp-table-pager-wrapper" class="biz-wp-table-pager-wrapper">
+          </ul>                
+    </div>
+
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-authentication-log-pagination" type="text/x-jquery-tmpl">
+   <div>
+
+        {{each pages}}
+        <li {{if page==pageNumber}} class="bz-page active" {{else}} class="bz-page" {{/if}} data-page="${pageNumber}">
+            <span class="number">${pageNumber}</span>
+        </li>
+        {{/each}}
+  
+    </div>
+</script>

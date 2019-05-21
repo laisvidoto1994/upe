@@ -1,0 +1,22 @@
+#home-links .wgd-sidebarhome {
+
+    height: 100%;
+}
+.wgd-sidebarhome #sidebarcontent1 {
+    height: 100%;
+}
+/*----- Banner footer -----*/
+.bannerfootersidebar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    text-align: center;
+}
+.bannerfootersidebar-logo {
+    display: inline-block;
+    width: 131px;
+    height: 47px;
+    margin: 1.4em;
+}

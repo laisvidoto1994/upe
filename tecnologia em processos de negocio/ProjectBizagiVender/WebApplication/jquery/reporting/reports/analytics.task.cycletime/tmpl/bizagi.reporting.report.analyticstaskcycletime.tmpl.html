@@ -1,0 +1,67 @@
+﻿<script id="bz-rp-analytics-task-cycletime-main" type="text/x-jquery-tmpl">
+<div class="row">
+
+    <div class="large-12 columns">
+        <div class="bz-rp-processbreadcrumb-container">
+        </div>
+    </div>
+
+    <div class="large-12 columns">
+        <div class="bz-rp-processviewer">
+            <div class="bz-rp-processviewer-canvas" {{loading}}>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-analytics-task-cycletime-cases" type="text/x-jquery-tmpl">
+<div class="cf bz-rp-frequentspaths-header">
+    <div class="bz-rp-analytics-task-cycletime-frequentspaths-showcontrol">
+        <input type="checkbox" />
+        <label class="bz-rp-analytics-task-cycletime-label">%{analytics-task-cycletime-showfrecuentspaths}</label>
+    </div>
+    <div class="cf bz-rp-analytics-task-cycletime-frecuentspaths-cases bz-rp-analytics-task-cycletime-frequentspaths-disabled">
+        <div class="bz-rp-analytics-process-frequentspaths-block">
+            <label class="bz-rp-frequentspaths-label">%{bz-rp-components-process-frequent-paths}</label>
+            <input type="text" readonly="readonly" class="bz-rp-frecuentspaths-control">
+        </div>
+        <div class="bz-rp-analytics-process-frequentspaths-block">
+            <label class="bz-rp-analytics-task-cycletime-label">%{bz-rp-components-process-cases-label}</label>
+            <p class="bz-rp-frequent-paths-wrapper"><span class="bz-rp-frequentspaths-data"></span> <span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-taskcycletime-detaillist"></span></p>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-analytics-task-cycletime-tooltip" type="text/x-jquery-tmpl">
+<div class="bz-rp-processviewer-tooltip" data-guid="${guid}">
+    <h3 class="bz-rp-processviewer-tooltip-title">${name}</h3>
+
+    {{if taskType}}
+        {{if taskType.reusableProcess !== undefined}}
+            <ul class="bz-rp-processviewer-tooltip-state">
+                <li class="bz-rp-processviewer-tooltip-state-item subprocess-container" data-type="load_subprocess" data-subprocessid="
+                    {{if taskType.reusableProcess !== undefined}}
+                        ${taskType.reusableProcess.id}
+                    {{/if}}">
+                
+                    <label>Proceso Invocado</label>
+                    <span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-icon-detail-subprocess"></span>
+                    <strong><span class="bz-rp-processviewer-breadcrump-item">${taskType.reusableProcess.name}<span></strong>
+                </li>
+            </ul>
+        {{/if}}
+    {{/if}}
+
+    <ul class="bz-rp-processviewer-tooltip-state">
+    {{if showAll}}
+        <li class="bz-rp-processviewer-tooltip-state-item"><label>%{analytics-task-cycletime-tooltip-expduration}</label> <strong>${expectedDuration}</strong></li>
+        <li class="bz-rp-processviewer-tooltip-state-item"><label>%{analytics-task-cycletime-tooltip-avgduration}</label> <strong>${averageDuration}</strong></li>
+        <li class="bz-rp-processviewer-tooltip-state-item" data-type="ontime"><label>%{analytics-task-cycletime-tooltip-ontime}</label> <strong>${onTime}</strong> <span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-processviewer-detaillist"></span> </li>
+        <li class="bz-rp-processviewer-tooltip-state-item" data-type="overdue"><label>%{analytics-task-cycletime-tooltip-overdue}</label> <strong>${overdue}</strong> <span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-processviewer-detaillist"></span></li>
+     {{/if}}
+        <li class="bz-rp-processviewer-tooltip-state-item" data-type="casecount"><label>%{analytics-task-cycletime-tooltip-casenumber}</label> <strong>${casesNumber}</strong> <span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-processviewer-detaillist"></span></li>
+    </ul>
+</div>
+</script>

@@ -1,0 +1,203 @@
+*{ 
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+html,
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #F3F3F3;
+}
+
+
+.processviewer-container{
+	height:400px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.processviewer-application-container{
+	overflow: hidden;
+	position: relative;
+}
+
+.processviewer-control{
+	position:absolute;
+	bottom: 10px;
+	width: 40%;
+}
+
+.processviewer-center-message{
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	width: 50%;
+	height: 20px;
+	text-align: center;
+	background-color: rgba(0,0,0,0.1);
+	border-radius: 5px;
+	line-height: 20px;
+}
+
+.processviewer-hotspots-container{
+	z-index:10;
+}
+
+#processviewer-content-kinetic{
+	position: relative;
+}
+
+.processviewer-pane-cursor{
+	cursor:move;
+}
+
+
+.processviewer-inline{
+	display:inline-block;
+	vertical-align: middle;
+}
+
+.processviewer-slider{
+	width: 100%;
+}
+
+.kineticjs-content{
+	background-color: #fff;
+}
+
+.processviewer-pane-preview {
+	border: 1px solid #ccc;
+	position: absolute;
+	right: 34px;
+	top: 10px;
+	z-index: 10;
+	overflow: hidden;
+	max-width: 150px;
+}
+
+.processviewer-pane-preview .processviewer-pane-square {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.1);
+	top: 0;
+	left: 0;
+	border: solid 1px #e75200;
+}
+
+.processviewer-hotspot{
+	position: absolute;
+	cursor: pointer;
+}
+.processviewer-hotspot-div{
+	/*background-color: rgba(255,255,255,0.5);
+	border-radius: 8px;
+	border:2px solid #03689A;*/
+}
+
+.processviewer-svg{
+	display: block;
+}
+
+.processviewer-hotspot-div.circle{
+	border-radius: 100%;
+}
+
+.processviewer-hotspot-image img{
+	width: 100%;
+	height: 100%;
+}
+
+.processviewer-container-hover{
+	display: none;
+	position: absolute;
+	right: -30px;
+	padding-left: 10px;
+	top: 0;
+}
+
+.processviewer-hotspot:hover .processviewer-container-hover{
+	display: block;
+}
+
+.processviewer-hover{
+	display: block;
+	font-size: 100%;
+	margin-bottom: 4px;
+}
+
+
+.processviewer-options {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  width: 60px;
+}
+
+.processviewer-control {
+	  position: absolute;
+	  left: 50%;
+	  bottom: 0px;
+	  width: 300px;
+	  padding: 0;
+	  margin-left: -210px;
+	  z-index: 20;
+	  height: 50px;
+}
+
+.processviewer-value-tooltip {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  opacity: 0;
+  position: absolute;
+  right: -10px;
+  top: -19px;
+  bottom: -17px;
+  min-width: 40px;
+  background-color: rgba(248, 248, 248, 0.9);
+  border: 1px solid rgba(231, 82, 0, 0.5);
+  font-size: 0.75em;
+  padding: 3px 0;
+  text-align: center;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.ui-slider-handle:hover .processviewer-value-tooltip {
+  opacity: 1;
+}
+
+
+
+.processviewer-slider-percent {
+	font-size: 0.75em;
+	margin-left: 15px;
+	display: none;
+}
+
+.processviewer-container .btn{
+	width: 60px;
+	min-height: 44px;
+	display: inline-block;
+	text-align: center;
+	border: none;
+	border-right: 1px solid #D8D8D8;
+	background-image: none;
+	background: transparent;
+	box-shadow: none;
+	line-height: 32px;
+}
+
+.processviewer-container .btn-default{
+	border-color:none;
+
+}

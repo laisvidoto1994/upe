@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html debug="true">
+    <head>
+        <title>FormModeler</title>
+        <link href="../../../../../jquery/editor/test/manual/cva/cva.css" rel="stylesheet" type="text/css" />
+          <style>
+            #cva-inline-editor{
+                z-index: 3000;
+                position: absolute;
+                top: 371px;
+                left: 320px;
+                font-family: Courier;
+            }
+            #cva-inline-editor input{
+                font-family: Courier;
+                color: green;
+                font-size: 15px;
+                font-weight: bold;
+                height: 20px;
+                line-height: 20px;
+                width: 577px;
+            }
+        </style>
+        <!--<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>-->
+        <script type='text/javascript' src='../../../../../jquery/steal.js'></script>
+        <script type='text/javascript' src='../../../../../jquery/bizagi.loader.js'></script>
+        <script type="text/javascript" language="javascript">
+            // Redefine path to base. To the default site
+            var BIZAGI_PATH_TO_BASE = "../../../../../";
+            
+            // Gets the loader instance, and load the module
+            var loader = bizagi.loader;
+            loader.init( function () {
+            	loader.start("formModeler").then(function() {
+                    bizagi.formModeler = new bizagi.editor.modelerView();
+            		
+            		$.when(bizagi.formModeler.ready())
+            		.done(function(){
+            			setTimeout(customize, 1000);
+            		});
+            		
+            		function customize() {
+            			// Add ribbon button
+            			$('<li><span class="ribbon-image-save"/><span class="ribbon-label">Actions & Validations</span></li>').insertAfter($(".bizagi_editor_component_ribbon ul li:eq(1)"))
+            			
+            			// Add an overlay
+            			$('<div class="ui-widget-overlay" style="z-index:1000"></div>').appendTo($("body", document));
+            			
+            			// Add the cva-editor in a 'dialog'
+            			$("#cva-editor").show();
+            			
+            			// Add tabs
+            			$("#cva-editor").load("jquery/editor/test/manual/cva/cva.content.html", function () {
+            			    $("#cva-editor").children().wrapAll("<div id='cva-tabs'>");
+            			    $("#cva-tabs").prepend(
+            			        $("<ul/>").append("<li><a href='#cva-rules-editor'>Rules</li><li><a href='#cva-validations-editor'>Validations</li>")
+            			    ).tabs();	
+            			});
+            			
+            			// Add another overlay
+            			$('<div class="ui-widget-overlay" style="z-index:2000"></div>').appendTo($("body", document));
+            			
+            			// Add the cva-rule-editor in a 'dialog'
+            			$("#cva-validation-editor").show();
+            			$("#cva-validation-editor").load("jquery/editor/test/manual/cva/cva.validation.edition.html");
+            			
+            			$(document).click(function() {
+            			    // Add a final overlay
+            			    $('<div class="ui-widget-overlay" style="z-index:9999"></div>').appendTo($("body", document));
+                			
+            			    $("body", document).fadeOut(1000, function () {
+            				    window.location = "cva01.html";
+            			    });
+            		    });
+            		}
+            	});
+            }); 
+        </script>         
+    </head>
+    <body>
+        <div id="cva-editor">
+        </div>
+        <div id="cva-validation-editor">            
+        </div>
+        <div id="cva-inline-editor">
+            <input type="text" value="The client name is required"/>
+        </div>
+    </body>
+</html>

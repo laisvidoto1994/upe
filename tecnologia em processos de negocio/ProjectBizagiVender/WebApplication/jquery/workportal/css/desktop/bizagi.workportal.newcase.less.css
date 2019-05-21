@@ -1,0 +1,551 @@
+/*///////global  modal container styles//////////////*/
+
+@brand-primary : #374C58;
+@brand-secondary : #5E7D8D;
+
+@active-color : #0B8BCB;
+@inactive-color : #DDD;
+
+@gray-base : #EEE;
+
+@font-family : 'Open Sans', Geneva, Arial, sans-serif;
+@font-size-base : 12px;
+@body-bg : @gray-base ;
+
+@text-color : #374C58;
+@text-color-contrast :#FAFAFA;
+@link-color : #0B8BCB;
+@link-hover-color : ligthen(@link-color , 10%);
+
+@border-radius : 3px;
+
+
+
+
+
+.modalMenuBt{
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius:  4px 4px 4px 4px;
+    width:300px;
+}
+#modalMenuBtHeader{
+    position:relative;
+    margin-bottom:5px;
+    border-bottom: 1px solid @gray-base;
+}
+#modalMenuBtList{
+    padding:0;
+}
+
+#queryFormShortcut > #modalMenuBtList{
+    padding:0px 0px 0px 0px;
+}
+
+.categoryTree {
+    overflow: hidden;
+    padding: .6em 1.3em !important;
+    border-bottom: 1px solid #e2e2e2;
+    box-shadow:0 1px 0 0 rgba(255,255,255,0.2);
+}
+.categoryTree  li{
+    list-style: none;
+    display: inline-block;
+}
+
+
+
+.categoryTree li:hover{
+    cursor: pointer;
+    text-decoration:underline;
+}
+
+.modalMenuBt #categories{
+    overflow: hidden;
+    max-height: 430px;
+}
+
+#modalMenuBtList > div ul{
+    position:relative;
+    padding: 0;
+    border-bottom: 1px solid @gray-base;
+    margin: 0;
+}
+#modalMenuBtList > div ul:first-child {
+    margin-top:0;
+}
+#modalMenuBtList > div ul:last-child {
+    border: none;
+}
+
+#modalMenuBtList > div ul li {
+    overflow: hidden;
+    position: relative;
+    padding: 1em;
+    list-style: none;
+}
+
+#modalMenuBtList > div ul li:last-child {
+    border: none;
+}
+
+#modalMenuBtList ul li i {
+    margin-right: .2em;
+}
+
+#modalMenuBtList ul li span {
+    vertical-align: middle;
+}
+
+
+#modalMenuBtList > div li:hover {
+    cursor: pointer;
+}
+
+#modalMenuBtList > div li h3{
+    font-size: 115% !important;
+    color: #283238;
+    margin:3px 0;
+    font-weight:normal;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+    width: 140px;
+}
+#modalMenuBtList > div li.category h3{
+    /*margin:3px 0px;*/
+    /*line-height:35px;*/
+}
+#modalMenuBtList > div li p{
+    margin:0 0 5px 0;
+    color:#666;
+}
+#modalMenuBtList > div li:hover p{
+    color:#444444;
+}
+#modalMenuBtList > div li #arrow{
+    background: url(images/sprite.png) -187px -145px no-repeat;
+    height:20px;
+    width:20px;
+    text-indent:-9999px;
+    position:absolute;
+    right:5px;
+    top:50%;
+    margin-top:-10px;
+}
+
+
+
+
+
+
+
+
+
+/* /////////////////  Edit and delete button /////////////////////*/
+
+#modalMenuBtList > div li .deleteButton,#modalMenuBtList > div li .editButton,#modalMenuBtList > div li .addButton{
+    position:absolute;
+    background: url(images/sprite.png) 0 0 no-repeat;
+    width: 13px;
+    height: 13px;
+}
+
+#modalMenuBtList > div li .deleteButton, #modalMenuBtList > div li .editButton,#modalMenuBtList > div li .addButton{
+    visibility: hidden;
+    display:inline-block;
+    width:16px;
+    height: 16px;
+    margin-top: 5px;
+}
+
+#modalMenuBtList > div li:hover .deleteButton, #modalMenuBtList > div li:hover .editButton, #modalMenuBtList > div li:hover .addButton{
+    visibility: visible;
+}
+
+#modalMenuBtList > div li:hover .deleteButton {
+    background-position: -296px -89px;
+    right:5px;
+}
+#modalMenuBtList > div li .deleteButton:hover{
+    background-position: -312px -89px;
+}
+#modalMenuBtList > div li:hover .editButton {
+    background-position: -264px -89px;
+    right:25px;
+}
+#modalMenuBtList > div li .editButton:hover{
+    background-position: -280px -89px;
+}
+#modalMenuBtList > div li .addButton{
+    background-position: -328px -89px;
+    right:42px;
+    top:-2px;
+}
+#modalMenuBtList > div li .addButton:hover{
+    background-position: -344px -89px;
+}
+
+
+/*//////////Admin Modal icons//////////////////*/
+#modalMenuBtList > div li.LanguageAdmin .categoryIco{
+    background-position: -205px -456px;
+}
+#modalMenuBtList > div li.LanguageAdmin:hover .categoryIco{
+    background-position: -230px -456px;
+}
+#modalMenuBtList > div li.UserAdmin .categoryIco{
+    background-position: -6px -418px;
+}
+#modalMenuBtList > div li.UserAdmin:hover .categoryIco{
+    background-position: -6px -453px;
+}
+#modalMenuBtList > div li.EntityAdmin .categoryIco{
+    background-position: -181px -278px;
+}
+#modalMenuBtList > div li.EntityAdmin:hover .categoryIco{
+    background-position: -181px -313px;
+}
+#modalMenuBtList > div li.CaseAdmin .categoryIco{
+    background-position: -250px -348px;
+}
+#modalMenuBtList > div li.CaseAdmin:hover .categoryIco{
+    background-position: -250px -383px;
+}
+#modalMenuBtList > div li.AlarmAdmin .categoryIco{
+    background-position: -214px -348px;
+}
+#modalMenuBtList > div li.AlarmAdmin:hover .categoryIco{
+    background-position: -214px -383px;
+}
+#modalMenuBtList > div li.EncryptionAdmin .categoryIco{
+    background-position: -180px -348px;
+}
+#modalMenuBtList > div li.EncryptionAdmin:hover .categoryIco{
+    background-position: -180px -383px;
+}
+#modalMenuBtList > div li.MobileUpdatesAdmin .categoryIco{
+    background-position: -110px -278px;
+}
+#modalMenuBtList > div li.MobileUpdatesAdmin:hover .categoryIco{
+    background-position: -110px -312px;
+}
+#modalMenuBtList > div li.AsynchronousWorkitemRetries .categoryIco{
+    background-position: -145px -348px;
+}
+#modalMenuBtList > div li.AsynchronousWorkitemRetries:hover .categoryIco{
+    background-position: -145px -383px;
+}
+#modalMenuBtList > div li.UserPendingRequests .categoryIco{
+    background-position: -40px -348px;
+}
+#modalMenuBtList > div li.UserPendingRequests:hover .categoryIco{
+    background-position: -40px -383px;
+}
+#modalMenuBtList > div li.AuthenticationLogQuery .categoryIco{
+    background-position: -110px -348px;
+}
+#modalMenuBtList > div li.AuthenticationLogQuery:hover .categoryIco{
+    background-position: -110px -383px;
+}
+#modalMenuBtList > div li.CasesMonitor .categoryIco{
+    background-position: -75px -348px;
+}
+#modalMenuBtList > div li.CasesMonitor:hover .categoryIco{
+    background-position: -75px -383px;
+}
+#modalMenuBtList > div li.BusinessPolicies .categoryIco{
+    background-position: -217px -278px;
+}
+#modalMenuBtList > div li.BusinessPolicies:hover .categoryIco{
+    background-position: -217px -313px;
+}
+#modalMenuBtList > div li.Profiles .categoryIco{
+    background-position: -05px -348px;
+}
+#modalMenuBtList > div li.Profiles:hover .categoryIco{
+    background-position: -05px -383px;
+}
+#modalMenuBtList > div li.UserDefaultAssignation .categoryIco{
+    background-position: -250px -278px;
+}
+#modalMenuBtList > div li.UserDefaultAssignation:hover .categoryIco{
+    background-position: -250px -313px;
+}
+#modalMenuBtList > div li.LocationResources .categoryIco{
+    background-position: -145px -278px;
+}
+#modalMenuBtList > div li.LocationResources:hover .categoryIco{
+    background-position: -145px -313px;
+}
+#modalMenuBtList > div li.Licenses .categoryIco{
+    background-position: -286px -282px;
+}
+#modalMenuBtList > div li.Licenses:hover .categoryIco{
+    background-position: -286px -317px;
+}
+#modalMenuBtList > div li.GRDimensionAdmin .categoryIco{
+    background-position: -328px -282px;
+}
+#modalMenuBtList > div li.GRDimensionAdmin:hover .categoryIco{
+    background-position: -328px -315px;
+}
+#modalMenuBtList > div li.ProcessAdmin .categoryIco{
+    background-position: -289px -352px;
+}
+#modalMenuBtList > div li.ProcessAdmin:hover .categoryIco{
+    background-position: -289px -385px;
+}
+#modalMenuBtList > div li.ThemeBuilder .categoryIco{
+    background-position: -217px -207px;
+}
+#modalMenuBtList > div li.ThemeBuilder:hover .categoryIco{
+    background-position: -217px -242px;
+}
+/*//////////Report Modal icons//////////////////*/
+#modalMenuBtList > div li.BAMProcess .categoryIco{
+    background-position: -110px -278px;
+}
+#modalMenuBtList > div li.BAMProcess:hover .categoryIco{
+    background-position: -110px -312px;
+}
+#modalMenuBtList > div li.BAMTask .categoryIco{
+    background-position: -75px -278px;
+}
+#modalMenuBtList > div li.BAMTask:hover .categoryIco{
+    background-position: -75px -313px;
+}
+#modalMenuBtList > div li.AnalyticsProcess .categoryIco{
+    background-position: -40px -278px;
+}
+#modalMenuBtList > div li.AnalyticsProcess:hover .categoryIco{
+    background-position: -40px -313px;
+}
+#modalMenuBtList > div li.AnalyticsTask .categoryIco{
+    background-position: -05px -278px;
+}
+#modalMenuBtList > div li.AnalyticsTask:hover .categoryIco{
+    background-position: -05px -313px;
+}
+#modalMenuBtList > div li.AnalyticsSensor .categoryIco{
+    background-position: -250px -208px;
+}
+#modalMenuBtList > div li.AnalyticsSensor:hover .categoryIco{
+    background-position: -250px -243px;
+}
+#modalMenuBtList > div li.AnalysisQueries .categoryIco{
+    background-position: -333px -350px;
+}
+#modalMenuBtList > div li.AnalysisQueries:hover .categoryIco{
+    background-position: -333px -382px;
+}
+#modalMenuBtList > div li.BAMResourceMonitor .categoryIco{
+    background-position: -333px -350px;
+}
+#modalMenuBtList > div li.BAMResourceMonitor:hover .categoryIco{
+    background-position: -333px -382px;
+}
+
+/*///////////////new case header/////////////////*/
+.modalMenuBt #bt-back{
+    float:left;
+    height:22px;
+    width:22px;
+    padding:1px;
+    margin-top:4px;
+    cursor: pointer;
+    position:relative;
+    cursor: pointer;
+    background:url(images/sprite.png) -185px -117px no-repeat;
+    position:relative;
+}
+.modalMenuBt #bt-back span{
+    display:block;
+    height:22px;
+    width:22px;
+    background:url(images/sprite.png) 1px -68px no-repeat;
+}
+.modalMenuBt #bt-back:hover span{
+    background:url(images/sprite.png) -22px -68px no-repeat;
+}
+
+
+
+/*/////////////////////////view option////////////*/
+#newcase-view-options{
+    float: right;
+    margin-top: 2px;
+    list-style: none;
+}
+
+#newcase-view-options li{
+    position:relative;
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+
+#newcase-view-options li i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    margin-left: -8px;
+}
+
+
+#newcase-view-options li span{
+    background:url(images/sprite.png) 0 0 no-repeat;
+    height:25px;
+    width:25px;
+    display:block;
+}
+#newcase-view-options #frecuentCases span{
+    background-position:-270px -51px;
+}
+#frecuentCases:hover span, #frecuentCases.frecuentCasesOn span{
+    background-position:-340px -51px;
+}
+#search span{
+    background-position:-99px -51px;
+    width:30px;
+}
+#search:hover span, #search.searchOn span{
+    background-position:-191px -51px;
+    width:30px;
+}
+#newcase-view-options #casesList span{
+    background-position:-235px -51px;
+}
+#casesList:hover span, #casesList.casesListOn span{
+    background-position:-305px -51px;
+}
+.frecuentCasesOn, #casesList.casesListOn, #frecuentCases:hover, #casesList:hover{
+
+    border-radius: @border-radius;
+}
+.ie8 .frecuentCasesOn,.ie8 #casesList.casesListOn,.ie8 #frecuentCases:hover,.ie8 #casesList:hover{
+    background: transparent;-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000)"; /* IE8
+	/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);   /* IE6 & 7 */      /*zoom: 1;*/
+}
+
+.frecuentCasesOn:before, #casesList.casesListOn:before, #frecuentCases:hover:before, #casesList:hover:before, #search:hover:before{
+    content:"";
+    color:white;
+    box-shadow:0 1px 0 0 rgba(255,255,255,0.1);
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius:  4px 4px 4px 4px;
+}
+
+#ui-bizagi-wp-app-search.searchNewCase{
+    width: 100% !important;
+    margin: 2px 0;
+}
+
+
+
+
+/* Modal definition for new case action */
+.modalNewCaseOverlay{
+    display: none;
+}
+.modalNewCaseOverlayShow{
+    display: inline;
+    position: fixed;
+    z-index: 1010;
+}
+
+#modalNewCaseMessage{
+    display: none;
+}
+#modalNewCaseMessage.show{
+    display: inline;
+    position: fixed;
+    z-index: 1011;
+    width: 350px;
+    height: auto;
+    box-shadow: 0 0 13px 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 0 13px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 13px 2px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background-color: #FFFFFF;
+}
+#modalNewCaseMessage #case{
+    color: #2F526C;
+    font-size: 22.5px;
+    font-weight: normal;
+    text-align: center;
+}
+#modalNewCaseMessage #loading{
+    height: 50px;
+}
+
+
+.loadMoreElements{
+    width: 100%;
+    /*height: 40px;*/
+    text-align: center;
+    margin: 15px 0 10px;
+    /*padding:5px 0px;*/
+    cursor: pointer;
+}
+.loadMoreElements span{
+    display:inline-block;
+    vertical-align: middle;
+}
+.loadMoreElements span.plus_load_icon{
+    background: url("images/sprite.png") -328px -89px no-repeat;
+    height: 16px;
+    width: 16px;
+    margin-right: 5px;
+}
+.loadMoreElements span.loading_icon{
+    background-image: url("images/loading_cube_mini.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 16px;
+    margin-right: 5px;
+    width: 16px;
+}
+.loadMoreElements:hover span.plus_load_icon{
+    background-position: -344px -89px;
+}
+.loadMoreElements:hover span{
+    color: #1F74B2;
+    text-decoration: underline;
+}
+
+.new-case-organization-list-content {
+    margin: 5px 0;
+}
+
+.new-case-organization-list-content .ui-dialog-buttonset {
+    text-align: right;
+}
+
+
+.new-case-organization-list-content form {
+    background: #e6e6e6;
+    border: 1px solid #98a1a8;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    padding : 8px;
+}
+
+.new-case-organization-list-content p {
+    margin: 0;
+}
+
+.new-case-organization-list-content #organization-list {
+    margin: 5px 0;
+}

@@ -1,0 +1,12 @@
+/* 
+    Document   : bizagi.workportal.createcase
+    Created on : Feb 02, 2015, 10:13:00 AM
+    Author     : Alexander Mejia
+    Description:
+        Styles for widget create case
+*/
+
+#createcase-content .ui-bizagi-button-container {
+    margin-right: -6px;
+    margin-left: -6px;
+}

@@ -1,0 +1,12 @@
+﻿{
+    "actiontype": "GetFormDisplayName",
+    "result": {
+        "success": true,
+        "parameters": [
+            {
+                "key": "displayname",
+                "value": "Adicionar monedas"
+            }
+        ]
+    }
+}

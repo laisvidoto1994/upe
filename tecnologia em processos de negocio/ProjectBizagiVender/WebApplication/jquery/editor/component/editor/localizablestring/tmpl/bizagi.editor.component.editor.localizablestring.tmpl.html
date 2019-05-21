@@ -1,0 +1,30 @@
+<script id="localizablestring-frame" type="text/x-jquery-tmpl">
+    <div class="ui-control-container">
+        <label title="${caption}">${caption}</label>
+        <div class="editor-localizablestring-input ui-control-input">
+            <input type="text" {{if html}}class="isHtml"{{/if}} value="${$data.value}"/>
+        </div>
+    </div>
+</script>
+
+<script id="localizablestring-localization" type="text/x-jquery-tmpl">
+    <i class="biz-ico editor-localizablestring-localization bz-studio bz-world_16x16_standard"></i>
+</script>
+
+<script id="localizablestring-richtext" type="text/x-jquery-tmpl">
+    <i class="biz-ico editor-localizablestring-richtext"></i>
+</script>
+
+<script id="localizablestring-richtext-editor" type="text/x-jquery-tmpl">
+    <div class="bz-fm-localizablestring-richtext-content">
+        <textarea id="richtext-editor" class="bz-fm-localizablestring-richtext-editor"></textarea>
+        <div class="bz-fm-localizablestring-richtext-buttons biz-actions-bar">
+            <button class="bz-fm-localizablestring-richtext-ok biz-btn biz-action-btn" type="button">%{formmodeler-component-editor-localizablestring-richtext-ok}</button>
+            <button class="bz-fm-localizablestring-richtext-cancel biz-btn biz-action-btn" type="button">%{formmodeler-component-editor-localizablestring-richtext-cancel}</button>
+        </div>
+    </div>
+</script>
+
+<script id="localizablestring-default-bind" type="text/x-jquery-tmpl">
+    <i class="biz-ico editor-localizablestring-default-bind bz-studio bz-check_16x16_standard" title="%{formmodeler-component-editor-localizablestring-default-bind-value}"></i>
+</script>

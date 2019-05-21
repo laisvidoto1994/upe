@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://tempuri.org/setEvent.xsd" xmlns="http://tempuri.org/setEvent.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="BizAgiWSParam">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="domain" type="xs:string" nillable="true" />
+				<xs:element name="userName" type="xs:string" nillable="true" />
+				<xs:element name="EventData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="radNumber" type="xs:string" minOccurs="0" />
+							<xs:element name="eventName" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Entities" nillable="true">
+					<xs:complexType>
+						<xs:attribute name="XmlSchema" form="unqualified" type="xs:string" />
+						<xs:attribute name="XslName" form="unqualified" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

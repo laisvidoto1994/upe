@@ -1,0 +1,83 @@
+/*
+    Document   : bizagi.workportal.templates
+    Author     : Alexander Mejia
+    Description:
+        Styles for templates
+*/
+
+#casestemplate-dataviewer {
+  margin-bottom: 50px;
+  margin-top: 10px;
+}
+
+#casestemplate-dataviewer > ul {
+    list-style : none;
+    margin : 1em 0;
+    padding: 0;
+}
+
+#casestemplate-dataviewer > ul > li {
+      margin-bottom: 10px;
+  }
+#casestemplate-dataviewer > ul > li .casetemplate-box-element   {
+    position:relative;
+}
+
+#casestemplate-dataviewer-list > li > div {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+}
+
+#casestemplate-dataviewer-list .casetemplate-box-check-selector {
+    border-bottom: 1px solid #DDD;
+    min-height: 28px;
+    padding: .4em 1em;
+}
+
+#casestemplate-dataviewer-list .casetemplate-box-check-selector input {
+    display: none;
+    vertical-align: middle;
+}
+
+#casestemplate-dataviewer-list > li > div.casetemplate-box-element {
+    position: relative;
+    width: 100%;
+}
+
+#casestemplate-dataviewer-list > li > div.casetemplate-box-element > div.bz-layout-1.ui-bizagi-rendering-mode-execution > h3 {
+    border-bottom: 1px solid #f2f2f2;
+    margin: 5px 0;
+    font-size: 18px;
+    padding: 5px 0;
+}
+
+.casetemplate-box-element > div.bz-layout-1.ui-bizagi-rendering-mode-execution > div.bz-right > ul{
+    margin: 0;
+}
+
+#casestemplate-paginator {
+  height: 30px;
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  left: 0;
+  z-index: 0;
+}
+
+.casetemplate-box-footer {
+	border-top: 1px solid #E3E9EF;
+    background-color: #F8FAFC;
+    padding: 0 1em;
+	height: 44px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.casetemplate-box-footer > .template-actions-container {
+	float :left;
+}
+
+.casetemplate-box-footer > .template-usersrelated-section {
+	float :right;
+}

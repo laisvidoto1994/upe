@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Editor Format</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../../../common/jquery.ui/css/desktop/jquery.ui.css" />
+        <link rel="stylesheet" href="wColorPicker.1.2.css" />
+        <link rel="stylesheet" href="jquery.miniColors.css" />
+        <style>
+            .bizagi_editor_component_editor_format .format-preview
+            {
+                border: solid 1px gainsboro;
+                text-align: center;
+                width: 175px;
+                line-height: 30px;
+            }
+            
+            
+            .bizagi_editor_component_editor_format .format-actions [class*="format-image-"]
+            {
+                display: inline-block;
+                border: solid 1px gainsboro;
+                width: 25px;
+                height: 25px;
+            }
+            
+            
+            .bizagi_editor_component_editor_format .format-actions [class^="format-image-normal-"]
+            {
+                display: inline-block;
+                border-left: none;
+                width: 11px;
+                height: 25px;
+            }
+            
+            
+            
+            .bizagi_editor_component_editor_format .format-actions [class*="format-image-"].format-primary-control:hover,
+            .bizagi_editor_component_editor_format .format-actions [class*="format-image-"].format-secondary-control:hover
+            {
+                background-color: papayawhip;
+            }
+            
+            .bizagi_editor_component_editor_format .format-actions [class*="format-image-"].format-primary-control.selected
+            {
+                background-color: salmon;
+            }
+            
+            .bizagi_editor_component_editor_format .format-actions .format-image-bold
+            {
+                background: transparent url("bold.png") no-repeat center center;
+            }
+            .bizagi_editor_component_editor_format .format-actions .format-image-italic
+            {
+                background: transparent url("italic.png") no-repeat center center;
+            }
+            .bizagi_editor_component_editor_format .format-actions .format-image-underline
+            {
+                background: transparent url("underline.png") no-repeat center center;
+            }
+            .bizagi_editor_component_editor_format .format-actions .format-image-strikeout
+            {
+                background: transparent url("strikeout.png") no-repeat center center;
+            }
+            .bizagi_editor_component_editor_format .format-actions .format-image-font
+            {
+                background: transparent url("font.png") no-repeat center center;
+            }
+            .bizagi_editor_component_editor_format .format-actions .format-image-background
+            {
+                background: transparent url("background.png") no-repeat center center;
+            }
+            
+            .bizagi_editor_component_editor_format .format-preview.bold
+            {
+                font-weight: bold;
+            }
+            .bizagi_editor_component_editor_format .format-preview.italic
+            {
+                font-style: italic;
+            }
+            .bizagi_editor_component_editor_format .format-preview.underline
+            {
+                text-decoration: underline;
+            }
+            .bizagi_editor_component_editor_format .format-preview.strikeout
+            {
+                text-decoration: line-through;
+            }
+            .bizagi_editor_component_editor_format .format-preview.strikeout.underline
+            {
+                text-decoration: line-through underline;
+            }
+            
+            .miniColors-trigger {
+                margin: 2px 0px;
+                vertical-align: inherit;
+            }
+        </style>
+        <script src="../../../../../common/base/js/lib/jquery.js"></script>
+        <script src="../../../../../common/jquery.ui/js/desktop/jquery.ui.js"></script>
+        <script src="wColorPicker.1.2.js"></script>
+        <script src="jquery.miniColors.js"></script>
+        <script>
+            $(document).ready(function() {
+                //
+                
+                $(".bizagi_editor_component_editor_format .format-actions span.format-primary-control").click(function() {
+                    
+                    if($(this).hasClass("selected")) {
+                        $(this).removeClass("selected");
+                    } else {
+                        $(this).addClass("selected");
+                    }
+                    
+                    var text = $(".bizagi_editor_component_editor_format .format-preview");
+                    
+                    /*switch($(this).data("property")) {
+                        case "bold":
+                            text.hasClass("bold") ? text.removeClass("bold") : text.addClass("bold");
+                            break;
+                        case "italic":
+                            text.hasClass("italic") ? text.removeClass("italic") : text.addClass("italic");
+                            break;
+                        case "underline":
+                            text.hasClass("underline") ? text.removeClass("underline") : text.addClass("underline");
+                            break;
+                        case "strikeout":
+                            text.hasClass("strikeout") ? text.removeClass("strikeout") : text.addClass("strikeout");
+                            break;
+                    }*/
+                    
+                    var property = $(this).data("property");
+                    text.hasClass(property) ? text.removeClass(property) : text.addClass(property);
+                });
+                
+                $("span.format-image-font").wColorPicker({
+                    mode : "click",
+                    effect : "none",
+                    opacity : 1,
+                    initColor : "#000000",
+                    onSelect : function(color) {
+                        $(".format-preview").css({
+                            color : color
+                        });
+                    }
+                });
+                
+                $("input.format-image-background").miniColors({
+                    change : function(hex, rgb) {
+                        $(".format-preview").css({
+                            readonly : true,
+                            "background-color" : hex
+                        });
+                    }
+                });
+                
+                //
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main-container">
+            
+            <div class="bizagi_editor_component_editor_format">
+                <div class="format-container">
+                    <div class="format-actions">
+                        <span class="format-primary-control format-image-bold" data-property="bold"></span>
+                        <span class="format-primary-control format-image-italic" data-property="italic"></span>
+                        <span class="format-primary-control format-image-underline" data-property="underline"></span>
+                        <span class="format-primary-control format-image-strikeout" data-property="strikeout"></span>
+                        <span class="format-secondary-control format-image-font" data-property="font"></span>
+                        <input type="hidden" class="format-secondary-control format-image-background" data-property="bakground" />
+                    </div>
+                    <div class="format-preview">AaBbCcYyZz</div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

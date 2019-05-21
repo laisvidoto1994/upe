@@ -1,0 +1,95 @@
+﻿.wdg-srcts-panel {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+.wdg-srcts-panel.relevant-to-me{
+    height: calc(~"100% - 175px");/*Less minified. Work only release*/
+}
+
+.wdg-srcts-panel.processeslist{
+    height: calc(~"100% - 30px");/*Less minified. Work only release*/
+}
+
+.wdg-srcts-header {
+    font-weight: 400;
+    font-size: 17px;
+    color: #374C58;
+    text-indent: 0;
+    padding: 9px 15px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+    line-height: 10px;
+}
+.wdg-srcts-list {
+
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+}
+
+.bz-wp-ls-list-item {
+    padding: 16px 20px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+
+li.bz-wp-ls-list-item.wdg-srcts-container {
+    position: relative;
+    font-size: 16px;
+}
+li.bz-wp-ls-list-item.wdg-srcts-container.image {
+    width:  100%;
+    display: inline-block;
+}
+
+li.bz-wp-ls-list-item > i {
+    float: left;
+    margin-right: .5em;
+}
+
+.wdg-srcts-container img.img-responsive {
+    max-width: 100%;
+    width:  100%;
+    height: auto;
+}
+.wdg-srcts-container .wdg-srcts-font-icon {
+    align-self: center;
+}
+.wdg-srcts-container .wdg-srcts-title {
+    margin-left: 24px;
+    font-size: 14px;
+
+    line-height: 1.2;
+    word-break: break-word;
+}
+.wdg-srcts-container .wdg-srcts-title.image {
+    position: absolute;
+    width: calc(100% - 40px);
+    bottom: 20px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin: 0;
+}
+
+.bz-wp-ls-list-item-loading {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .2);
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    top: 0px;
+    left: 0px;
+}
+.bz-wp-ls-list-item-loading .ui-bizagi-loading-icon{
+    margin: 12px auto;
+    display: block;
+}

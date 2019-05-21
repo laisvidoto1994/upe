@@ -1,0 +1,214 @@
+﻿{
+	"form": {
+		"properties" : {"id": 1, "xpathContext": "", "title": "Cycle 3", "buttons": [{"action": "save", "text": "Save", "validate": "true", "submitData": "true", "refresh": "true"}]},
+		"elements": [
+			{"container": { "properties": {"id" : "tab", "type": "tab"},
+				"elements": [
+					{"container": { "properties": {"id" : "tabItem1", "type": "tabItem", "displayName": "Upload"}, "elements": [
+						{"render": {	"properties": {"id" : 10001, "displayName" : "Normal Upload", "type": "upload", "xpath": "advanced.upload"}}},
+						{"render": {	"properties": {"id" : 10002, "displayName" : "Upload (MaxFiles=1, Filter=Images, Max=1MB)", "type": "upload", "xpath": "advanced.upload2", "maxFiles":"1", "validExtensions":"*.jpg; *.jpeg; *.bmp; *.gif; *.png;", "maxSize":"1048576"}}},
+						{"render": {	"properties": {"id" : 10003, "displayName" : "Upload with values", "type": "upload", "xpath": "advanced.uploadWithValues", "value": [[1, "A.jpg"], [2, "B.jpg"]] }}}
+					]}},
+					{"container": { "properties": {"id" : "tabItem2", "type": "tabItem", "displayName": "Non-Editable Grids"}, "elements": [
+						{"render": {	"properties": {"id" : 10004, "displayName" : "Non editable grid", "type": "grid", "xpath": "cities", 
+													  "data": {
+														"page": 1,
+														"total": 4,
+														"records": 32,
+														"rows": [
+															[1, "Bogota", "Cundinamarca", "Colombia", "Andina", 10000],
+															[2, "Medellin", "Antioquia", "Colombia", "Andina", 30000],
+															[3, "Cali", "Valle", "Colombia", "Pacifico", 10000],
+															[4, "Barranquilla", "Atlantico", "Colombia", "Costa", 50000],
+															[5, "Pereira", "Risaralda", "Colombia", "Andina", 10000],
+															[6, "Armenia", "Quindio", "Colombia", "Andina", 10000],
+															[7, "Manizales", "Caldas", "Colombia", "Andina", 80000],
+															[8, "Pasto", "Nariño", "Colombia", "Pacifico", 10000],
+															[9, "Monteria", "Cordoba", "Colombia", "Costa", 10000],
+															[10, "Sincelejo", "Sucre", "Colombia", "Costa", 10000]
+														],
+														"userdata": {
+															"ciudad.habitantes": 1554000,
+															"ciudad.nombre": "Grand total:"
+														}
+													}},
+							"elements": [
+								{"render": {	"properties": {"id" : 100041, "displayName" : "Name", "type": "columnText", "xpath": "ciudad.nombre"}}},
+								{"render": {	"properties": {"id" : 100042, "displayName" : "Department", "type": "columnText", "xpath": "ciudad.departamento.nombre"}}},
+								{"render": {	"properties": {"id" : 100043, "displayName" : "Country", "type": "columnText", "xpath": "ciudad.pais.nombre", "columnVisible": "true"}}},
+								{"render": {	"properties": {"id" : 100044, "displayName" : "Region", "type": "columnText", "xpath": "ciudad.pais.region", "columnVisible": "false"}}}
+						]}},
+						{"render": {	"properties": {"id" : 10005, "displayName" : "Grouped grid", "type": "grid", "xpath": "citiesGrouped", "dataUrl": "ajax/CityGridHandler.ashx",
+													   "data": {
+															"page": 1,
+															"total": 1,
+															"records": 32,
+															"rows": [
+																[23, "Leticia", "Amazonas", "Colombia", "Amazonica", 80000],
+																[24, "Puerto Inirida", "Guainia", "Colombia", "Amazonica", 80000],
+																[25, "Mitu", "Vaupes", "Colombia", "Amazonica", 10000],
+																[26, "Florencia", "Caqueta", "Colombia", "Amazonica", 90000],
+																[27, "Mocoa", "Putumayo", "Colombia", "Amazonica", 10000],
+																[32, "San Jose del Guaviare", "Guaviare", "Colombia", "Amazonica", 2000],
+																[1, "Bogota", "Cundinamarca", "Colombia", "Andina", 10000],
+																[2, "Medellin", "Antioquia", "Colombia", "Andina", 30000],
+																[5, "Pereira", "Risaralda", "Colombia", "Andina", 10000],
+																[6, "Armenia", "Quindio", "Colombia", "Andina", 10000],
+																[7, "Manizales", "Caldas", "Colombia", "Andina", 80000],
+																[15, "Cucuta", "Norte de Santander", "Colombia", "Andina", 10000],
+																[16, "Bucaramanga", "Santander", "Colombia", "Andina", 1000],
+																[17, "Tunja", "Boyaca", "Colombia", "Andina", 100000],
+																[29, "Ibague", "Tolima", "Colombia", "Andina", 10000],
+																[30, "Neiva", "Huila", "Colombia", "Andina", 50000],
+																[4, "Barranquilla", "Atlantico", "Colombia", "Costa", 50000],
+																[9, "Monteria", "Cordoba", "Colombia", "Costa", 10000],
+																[10, "Sincelejo", "Sucre", "Colombia", "Costa", 10000],
+																[11, "Cartagena", "Bolivar", "Colombia", "Costa", 100000],
+																[12, "Riohacha", "Guajira", "Colombia", "Costa", 10000],
+																[13, "Santa Marta", "Magdalena", "Colombia", "Costa", 10000],
+																[14, "Valledupar", "Cesar", "Colombia", "Costa", 90000],
+																[31, "San Andres", "San Andres", "Colombia", "Insular", 10000],
+																[18, "Yopal", "Casanare", "Colombia", "Orinoquia", 120000],
+																[19, "Villavicencio", "Meta", "Colombia", "Orinoquia", 210000],
+																[21, "Vichada", "Vichada", "Colombia", "Orinoquia", 120000],
+																[22, "Arauca", "Arauca", "Colombia", "Orinoquia", 1000],
+																[3, "Cali", "Valle", "Colombia", "Pacifico", 10000],
+																[8, "Pasto", "Nariño", "Colombia", "Pacifico", 10000],
+																[20, "Quibdo", "Choco", "Colombia", "Pacifico", 170000],
+																[28, "Popayan", "Cauca", "Colombia", "Pacifico", 40000]
+															],
+															"userdata": {
+																"ciudad.habitantes": 1554000,
+																"ciudad.nombre": "Grand total:"
+															}
+														},
+													   "groupBy":"ciudad.region.nombre", "sortBy":"ciudad.region.nombre", "groupCollapsed": "true", "groupSummary": [{"xpath": "ciudad.habitantes", "type": "sum"}, {"xpath": "ciudad.nombre", "type": "count"}]},
+							"elements": [
+								{"render": {	"properties": {"id" : 100051, "displayName" : "Name", "type": "columnText", "xpath": "ciudad.nombre"}}},
+								{"render": {	"properties": {"id" : 100052, "displayName" : "Department", "type": "columnText", "xpath": "ciudad.departamento.nombre"}}},
+								{"render": {	"properties": {"id" : 100053, "displayName" : "Country", "type": "columnText", "xpath": "ciudad.pais.nombre"}}},
+								{"render": {	"properties": {"id" : 100054, "displayName" : "Region", "type": "columnText", "xpath": "ciudad.region.nombre"}}},
+								{"render": {	"properties": {"id" : 100055, "displayName" : "Inhabitants", "type": "columnText", "xpath": "ciudad.habitantes"}}}
+						]}},
+						{"render": {	"properties": {"id" : 10006, "displayName" : "Local grid", "type": "grid", "xpath": "itemsLocal", 
+													   "data": {
+															"page": 1,
+															"total": 1,
+															"records": 32,
+															"rows": [["1", "mata", "10000"],["2", "computador", "1000000"],["3", "pocillo", "4000"],["4", "whisky", "70000"]] 
+															}
+													  },
+							"elements": [
+								{"render": {	"properties": {"id" : 100061, "displayName" : "Name", "type": "columnText", "xpath": "nombre"}}},
+								{"render": {	"properties": {"id" : 100062, "displayName" : "Value", "type": "columnText", "xpath": "valor"}}}
+						]}},
+						{"render": {	"properties": {"id" : 10007, "displayName" : "Dynamic grid", "type": "grid", "xpath": "citiesDynamic", "allowMore": "true", "allowSearch": "true",
+													   "data": {
+															"page": 1,
+															"total": 4,
+															"records": 32,
+															"rows": [
+																[1, "Bogota", "Cundinamarca", "Colombia", "Andina", 10000],
+																[2, "Medellin", "Antioquia", "Colombia", "Andina", 30000],
+																[3, "Cali", "Valle", "Colombia", "Pacifico", 10000],
+																[4, "Barranquilla", "Atlantico", "Colombia", "Costa", 50000],
+																[5, "Pereira", "Risaralda", "Colombia", "Andina", 10000],
+																[6, "Armenia", "Quindio", "Colombia", "Andina", 10000],
+																[7, "Manizales", "Caldas", "Colombia", "Andina", 80000],
+																[8, "Pasto", "Nariño", "Colombia", "Pacifico", 10000],
+																[9, "Monteria", "Cordoba", "Colombia", "Costa", 10000],
+																[10, "Sincelejo", "Sucre", "Colombia", "Costa", 10000]
+															]
+														}},
+							"elements": [
+								{"render": {	"properties": {"id" : 100071, "displayName" : "Name", "type": "columnText", "xpath": "ciudad.nombre"}}},
+								{"render": {	"properties": {"id" : 100072, "displayName" : "Department", "type": "columnText", "xpath": "ciudad.departamento.nombre"}}},
+								{"render": {	"properties": {"id" : 100073, "displayName" : "Country", "type": "columnText", "xpath": "ciudad.pais.nombre"}}},
+								{"render": {	"properties": {"id" : 100074, "displayName" : "Region", "type": "columnText", "xpath": "ciudad.region.nombre"}}},
+								{"render": {	"properties": {"id" : 100075, "displayName" : "Inhabitants", "type": "columnText", "xpath": "ciudad.habitantes"}}}
+						]}}
+					]}},
+					{"container": { "properties": {"id" : "tabItem3", "type": "tabItem", "displayName": "Editable Grids"}, "elements": [
+						{"render": {	"properties": {"id" : 10008, "displayName" : "Local grid", "type": "grid", "xpath": "itemsLocalEditable", "inlineEdit": "true", "allowDelete": "true",
+													   "data": {
+															"page": 1,
+															"total": 1,
+															"records": 32,
+															"rows": [
+																["11", "mata", "10000", "2" , "10/12/2011", "10/12/2011 13:39:13", "False", [["1", "Bogota"]], "x", [[1, "A.jpg"]], [["1", "Colombia"]], "http://www.google.com" ], 
+																["12", "computador", "1000000", "3", "11/12/2011", "10/12/2011 13:39:13", "True", [["2", "Medellin"]], "x", [[2, "B.jpg"]], [["2", "Peru"]], "http://www.google.com" ], 
+																["13", "pocillo", "4000", "4", "12/12/2011", "10/12/2011 13:39:13", "False", [["3", "Cali"]], "x", [[3, "C.jpg"]], [["3", "Venezuela"]], "http://www.google.com" ], 
+																["14", "whisky", "70000", "5", "1/13/2011", "10/12/2011 13:39:13", "False", [["4", "Barranquilla"]], "x", [[4, "D.jpg"], [5, "E.jpg"]], [["1", "Colombia"]], "http://www.google.com" ]] 
+															}
+													   },
+							"elements": [
+								{"render": {	"properties": {"id" : 100081, "displayName" : "Name", "type": "columnText", "xpath": "nombre",  "bold": "true", "color": "blue"}}},
+								{"render": {	"properties": {"id" : 100082, "displayName" : "Value", "type": "columnMoney", "xpath": "valor", "align":"right", "color": "red"}}},
+								{"render": {	"properties": {"id" : 100083, "displayName" : "Quantity", "type": "columnNumber", "xpath": "quantity", "align":"right", "color": "red", "editable": "false"}}},
+								{"render": {	"properties": {"id" : 100084, "displayName" : "Date", "type": "columnDate", "xpath": "date", "align":"center", "dateFormat": "yyyy-MM-dd"}}},
+								{"render": {	"properties": {"id" : 100088, "displayName" : "Date with Time", "type": "columnDate", "xpath": "date", "align":"center", "dateFormat": "yyyy/MM/dd", "showTime": "true"}}},
+								{"render": {	"properties": {"id" : 100085, "displayName" : "Discount", "type": "columnBoolean", "xpath": "discount", "align":"center", "backgroundColor": "pink", "display": "check"}}},
+								{"render": {	"properties": {"id" : 100086, "displayName" : "City", "type": "columnCombo", "xpath": "city", "dataUrl": "ajax/cities.ashx",  "italic": "true"}}},
+								{"render": {	"properties": {"id" : 100087, "displayName" : "Hidden", "type": "columnHidden", "xpath": "myHidden"}}},
+								{"render": {	"properties": {"id" : 100089, "displayName" : "Upload", "type": "columnUpload", "xpath": "myUpload"}}},
+								{"render": {	"properties": {"id" : 1000892, "displayName" : "Radio", "type": "columnRadio", "xpath": "myRadio", "data": [{"id":"1", "value":"Colombia"}, {"id":"2", "value":"Peru"}, {"id":"3", "value":"Venezuela"}] }}},
+								{"render": {	"properties": {"id" : 1000893, "displayName" : "Link", "type": "columnLink", "xpath": "myLink" }}}
+						]}},
+						{"render": {	"properties": {"id" : 10009, "displayName" : "Ajax grid", "type": "grid", "xpath": "clientsAjaxEditable", "inlineEdit": "true", "allowDelete": "true", "allowAdd": "true", "allowEdit": "true",
+													   "dataUrl": "ajax/Clients/GetClients.ashx", "saveUrl": "ajax/Clients/SaveClient.ashx", "deleteUrl": "ajax/Clients/DeleteClient.ashx",
+													   "editUrl": "ajax/Clients/EditClient.ashx", "addUrl": "ajax/Clients/AddClient.ashx", "rollbackUrl": "ajax/Clients/RollbackClient.ashx",
+													   "editPage": "ajax/Clients/GetClient.ashx", "addPage": "ajax/Clients/GetClient.ashx"},
+							"elements": [
+								{"render": {	"properties": {"id" : 100091, "displayName" : "Name", "type": "columnText", "xpath": "name"}}},
+								{"render": {	"properties": {"id" : 100092, "displayName" : "Document", "type": "columnText", "xpath": "document"}}}
+						]}}
+					]}},
+					{"container": { "properties": {"id" : "tabItem4", "type": "tabItem", "displayName": "Search"}, "elements": [
+						{"render": {	"properties": {"id" : 10010, "displayName" : "City", "type": "search", "xpath": "advanced.citySearch", "dataUrl": "ajax/CitySearchHandler.ashx" }}},
+						{"render": {	"properties": {"id" : 10011, "displayName" : "City (with values)", "type": "search", "xpath": "advanced.citySearchWithValue", "dataUrl": "ajax/CitySearchHandler.ashx", "value": {"id":"1", "label": "Bogota"} }}},
+						{"render": {	"properties": {"id" : 10012, "displayName" : "City (with advanced search)", "type": "search", "allowFullSearch" : "true", "xpath": "advanced.citySearchAdvanced", "dataUrl": "ajax/CitySearchHandler.ashx", "advancedSearch": "true", "searchForms":[{"id":"1", "caption":"Advanced", "url": "ajax/GetBasicSearchForm.ashx", "default":"true"}], "value": {"id":"1", "label": "Bogota"} }}},
+						{"render": {	"properties": {"id" : 10013, "displayName" : "City (with advanced multisearch)", "type": "search", "xpath": "advanced.citySearchAdvancedMulti", "dataUrl": "ajax/CitySearchHandler.ashx", "advancedSearch": "true", "searchForms":[{"id":"1", "caption":"Basic", "url": "ajax/GetBasicSearchForm.ashx", "default":"true"},{"id":"2", "caption":"Advanced", "url": "ajax/GetAdvancedSearchForm.ashx"}]}}},
+						{"render": {	"properties": {"id" : 10014, "displayName" : "City with disabled typing", "type": "search", "xpath": "advanced.citySearchX", "dataUrl": "ajax/CitySearchHandler.ashx", "allowTyping": "false", "advancedSearch": "true", "searchForms":[{"id":"1", "caption":"Advanced", "url": "ajax/GetBasicSearchForm.ashx", "default":"true"}] }}}
+						
+					]}},
+					{"container": { "properties": {"id" : "tabItemN", "type": "tabItem", "displayName": "No editable", "editable" : "false"}, "elements": [
+						{"render": {	"properties": {"id" : 20003, "displayName" : "Upload with values", "type": "upload", "xpath": "advanced.uploadWithValuesReadOnly", "value": [[1, "A.jpg"], [2, "B.jpg"]] }}},
+						{"render": {	"properties": {"id" : 20008, "displayName" : "Local grid", "type": "grid", "xpath": "itemsLocalEditable", "inlineEdit": "true", "allowDelete": "true",
+													   "data": {
+															"page": 1,
+															"total": 1,
+															"records": 32,
+															"rows": [
+																["11", "mata", "10000", "2" , "10/12/2011", "10/12/2011 13:39:13", "False", [["1", "Bogota"]], "x", [[1, "A.jpg"]], "http://www.google.com"  ], 
+																["12", "computador", "1000000", "3", "11/12/2011", "10/12/2011 13:39:13", "True", [["2", "Medellin"]], "x", [[2, "B.jpg"]], "http://www.google.com"  ], 
+																["13", "pocillo", "4000", "4", "12/12/2011", "10/12/2011 13:39:13", "False", [["3", "Cali"]], "x", [[3, "C.jpg"]], "http://www.google.com"  ], 
+																["14", "whisky", "70000", "5", "1/13/2011", "10/12/2011 13:39:13", "False", [["4", "Barranquilla"]], "x", [[4, "D.jpg"], [5, "E.jpg"]], "http://www.google.com"  ]] 
+															}
+													   },
+							"elements": [
+								{"render": {	"properties": {"id" : 100081, "displayName" : "Name", "type": "columnText", "xpath": "nombre",  "bold": "true", "color": "blue"}}},
+								{"render": {	"properties": {"id" : 100082, "displayName" : "Value", "type": "columnMoney", "xpath": "valor", "align":"right", "color": "red"}}},
+								{"render": {	"properties": {"id" : 100083, "displayName" : "Quantity", "type": "columnNumber", "xpath": "quantity", "align":"right", "color": "red", "editable": "false"}}},
+								{"render": {	"properties": {"id" : 100084, "displayName" : "Date", "type": "columnDate", "xpath": "date", "align":"center", "dateFormat": "yyyy-MM-dd"}}},
+								{"render": {	"properties": {"id" : 100088, "displayName" : "Date with Time", "type": "columnDate", "xpath": "date", "align":"center", "dateFormat": "yyyy/MM/dd", "showTime": "true"}}},
+								{"render": {	"properties": {"id" : 100085, "displayName" : "Discount", "type": "columnBoolean", "xpath": "discount", "align":"center", "backgroundColor": "pink"}}},
+								{"render": {	"properties": {"id" : 100086, "displayName" : "City", "type": "columnCombo", "xpath": "city", "dataUrl": "ajax/cities.ashx",  "italic": "true"}}},
+								{"render": {	"properties": {"id" : 100087, "displayName" : "Hidden", "type": "columnHidden", "xpath": "myHidden"}}},
+								{"render": {	"properties": {"id" : 100089, "displayName" : "Upload", "type": "columnUpload", "xpath": "myUpload"}}},
+								{"render": {	"properties": {"id" : 1000893, "displayName" : "Link", "type": "columnLink", "xpath": "myLink" }}}
+						]}},
+						{"render": {	"properties": {"id" : 20009, "displayName" : "Ajax grid", "type": "grid", "xpath": "clientsAjaxReadOnly", "inlineEdit": "true", "allowDelete": "true", "allowAdd": "true", "allowEdit": "true",
+													   "dataUrl": "ajax/Clients/GetClients.ashx", "saveUrl": "ajax/Clients/SaveClient.ashx", "deleteUrl": "ajax/Clients/DeleteClient.ashx",
+													   "editUrl": "ajax/Clients/EditClient.ashx", "addUrl": "ajax/Clients/AddClient.ashx", "rollbackUrl": "ajax/Clients/RollbackClient.ashx",
+													   "editPage": "ajax/Clients/GetClient.ashx", "addPage": "ajax/Clients/GetClient.ashx"},
+							"elements": [
+								{"render": {	"properties": {"id" : 100091, "displayName" : "Name", "type": "columnText", "xpath": "name"}}},
+								{"render": {	"properties": {"id" : 100092, "displayName" : "Document", "type": "columnText", "xpath": "document"}}}
+						]}},
+						{"render": {	"properties": {"id" : 20011, "displayName" : "City (with values)", "type": "search", "xpath": "advanced.citySearchWithValueNotEditable", "dataUrl": "ajax/CitySearchHandler.ashx", "value": {"id":"1", "label": "Bogota"} }}}
+					]}}
+				]
+			}}
+		]
+	}
+}

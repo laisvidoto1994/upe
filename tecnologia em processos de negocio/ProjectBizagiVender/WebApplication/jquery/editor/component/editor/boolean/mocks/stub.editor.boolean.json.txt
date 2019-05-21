@@ -1,0 +1,19 @@
+{
+    "caption": "Visible",
+    "name": "visible",
+    "type": "boolean",
+    "value": "true",
+    "checked":"checked",
+    "postition":"horizontal",
+    "default":"false",
+    "data": [{
+        "name" : "button"
+    }, {
+        "name" : "hidden"
+    }, {
+        "name" : "label"
+    }, {
+        "name" : "letter",
+        "selected" : "true"
+    }]
+}

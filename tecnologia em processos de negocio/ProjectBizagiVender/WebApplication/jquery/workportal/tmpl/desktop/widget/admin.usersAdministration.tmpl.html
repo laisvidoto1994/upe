@@ -1,0 +1,130 @@
+﻿<script id="ui-bizagi-workportal-widget-admin-users" type="text/x-jquery-tmpl">
+    <div class="biz-wp-window">
+        <div id="bz-wp-widget-adminuser-licenses">
+        </div>
+        <div id="bz-wp-widget-adminuser-usertable">
+        </div>
+        <div id="bz-wp-widget-adminuser-renderform" {{loading}}>
+        </div>
+        <div id="bz-wp-widget-adminuser-buttonset" class="biz-wp-buttonset">
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-users-formbuttons" type="text/x-jquery-tmpl">
+    {{if type === "query" && allowCreation === true}}
+        <button id="bz-wp-widget-adminuser-createbutton-wrapper" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false" type="button" data-type="create">
+            <span class="ui-button-text">%{workportal-widget-admin-user-profiles-button-label-newUserProfiles}</span>
+        </button>
+    {{else type === "back"}}
+        <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false" data-type="cancel" type="button">
+            <span class="ui-button-text">%{render-form-button-back}</span>
+        </button>
+    {{/if}}
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-users-log" type="text/x-jquery-tmpl">
+<div>
+    <div>
+        <h3>{{html logTitle}}</h3>
+    </div>
+    {{if rows.length}}
+         <table class="biz-wp-table" cellspacing="2" cellpadding="2" width="100%" border="0">
+            <thead class="biz-wp-table-head">
+                {{each header}}
+                    <th class="sortColumnsData" data-orderfield="${fieldValue}" {{if fieldValue == $item.orderField}} data-ordertype="{{if $item.orderType === "ASC"}}DESC{{else $item.orderType === "DESC"}}ASC{{else}}${$item.orderType}{{/if}}"  {{/if}}>
+                        <div class="bz-wp-table-head-wrapper" >
+                                <label>${displayName}</label>
+                                <span class="bz-wp-usertable-sorticons{{if $item.orderType === "ASC" && fieldValue == $item.orderField}} sortColumnsDataDownIcon{{/if}}{{if $item.orderType === "DESC" && fieldValue == $item.orderField}} sortColumnsDataUpIcon{{/if}}">
+                                    <span class="arrowUpIcon"></span>
+                                    <span class="arrowDownIcon"></span>
+                                </span>
+                        </div>
+                    </th>
+                {{/each}}
+            </thead>
+            <tbody class="biz-wp-table-body">
+                 {{each(i, item) rows }}
+                    <tr {{if i % 2 === 0}} class="biz-wp-table-row-even" {{/if}}>
+                        {{each(x, val) item.row}}
+                                <td class="BorderCell BAMainFontColor">
+                                    {{if x === 0}}
+                                        <span>
+                                            <i class="bz-wp-generic-icons bz-icon-16{{if val === 1}} bz-wp-widget-adminuser-log-addicon{{else val === 2}} bz-wp-widget-adminuser-log-editicon{{else val === 3}} bz-wp-widget-adminuser-log-deleteicon{{/if}}"></i>
+                                        </span>
+                                    {{else}}
+                                        <span {{if x === 4}} class="formatDate" {{/if}}>${val}</span>
+                                    {{/if}}
+                                </td>
+                        {{/each}}
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <div id="biz-wp-usersadministration-pager" class="biz-wp-table-summary-wrapper">
+            {{tmpl({pagination: $item.pagination, pagesArray: $item.pagesArray, page: $item.page}) "#ui-bizagi-workportal-widget-usersadministration-pagination"}}
+        </div>
+        {{else}}
+        <div class="bz-wp-widget-adminuser-centermessage">
+            <h3>%{workportal-widget-usertable-empty}</h3>
+        </div>
+    {{/if}}
+</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-usersadministration-pagination" type="text/x-jquery-tmpl" >
+    {{if pagination}}
+        <ul class="biz-wp-table-pager-wrapper">
+            {{each(i, val) pagesArray}}
+                <li {{if page==val}} class="bz-page active" {{else}} class="bz-page" {{/if}} data-page="${val}">
+                    <span class="number">${val}</span>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-users-licenses" type="text/x-jquery-tmpl" >
+    <div class="bz-wp-widget-adminuser-licenses-container">
+        <div>
+            <strong>%{workportal-widget-admin-licenses-subtitle}</strong>
+        </div>
+        <div>
+            <span>%{workportal-widget-admin-user-licenses-titles-users-text}</span> <span> ${users} / ${licenses} </span> <span>%{workportal-widget-admin-user-licenses-titles-usersLicenses-text}</span>
+        </div>
+    </div>
+    <div class="bz-wp-widget-adminuser-licenses-buttons">
+        <button id="bz-wp-widget-adminuser-button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false" data-type="buy">
+            <span class="ui-button-text">%{workportal-widget-admin-user-licenses-button-label-buyNowLicenses}</span>
+        </button>
+
+        <button id="bz-wp-widget-adminuser-button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false" data-type="licenses">
+            <span class="ui-button-text">%{workportal-menu-submenu-Licenses}</span>
+        </button>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-users-email" type="text/x-jquery-tmpl" >
+    <div class="mail">
+        <div class="admin-users-mail-fields">
+           <div class="biz-wp-form-cell-bold">%{workportal-widget-admin-users-titles-To-text}</div>
+            <div class="biz-wp-form-cell  admin-users-mail-fields">
+                 <input id="txtTextTo" class="biz-wp-text" type="text" value="${messageResponse.eMailTo}"/>
+            </div>
+        </div>
+
+        <div class="admin-users-mail-fields">
+            <div class="biz-wp-form-cell-bold">%{workportal-widget-admin-users-titles-subject-text}</div>
+            <div class="biz-wp-form-cell admin-users-mail-fields ">
+                <input id="txtSubject" class="biz-wp-text" type="text" value="${messageResponse.subject}"/>
+            </div>
+        </div>
+
+        <div class="admin-users-mail-fields">
+            <div class="biz-wp-form-cell-bold">%{workportal-widget-admin-users-titles-body-text} </div>
+            <div class="biz-wp-form-cell admin-users-mail-fields">
+                <textarea id="txtBody" class="biz-wp-textarea" type="text" >${messageResponse.body}</textarea>
+            </div>
+        </div>
+    </div>
+</script>

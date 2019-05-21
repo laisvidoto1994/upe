@@ -1,0 +1,19 @@
+{
+	"items": [
+		{ "caption": "Delete","style": "delete", "action":"delete"}, 
+		{ "caption": "Rename","style": "rename","action":"rename"},
+		{ "separator": true },
+		{ "caption": "Visible", "style": "visible", 
+			"items": [
+				{ "caption": "True", "style": "true", "property":"visible", "value": { "fixedvalue" : "true" }}, 
+				{ "caption": "False", "style": "false","property":"visible",  "value":{ "fixedvalue" : "false" }}, 
+				{ "caption": "Expression", "style": "expression", "property":"visible",  "value":"expression"}
+		]}, 
+		{ "caption": "Editable", "style": "editable", 
+			"items": [
+			{ "caption": "True", "style": "true", "property":"editable",  "value":{ "fixedvalue" : "true" }}, 
+			{ "caption": "False", "style": "false", "property":"editable", "value": { "fixedvalue" : "false" }}, 
+			{ "caption": "Expression", "style": "expression", "property":"editable", "value":"expression"}
+		]}
+	]
+}

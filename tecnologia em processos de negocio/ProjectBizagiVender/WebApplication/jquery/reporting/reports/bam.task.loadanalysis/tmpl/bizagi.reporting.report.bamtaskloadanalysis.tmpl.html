@@ -1,0 +1,107 @@
+﻿<script id="bz-rp-bam-task-loadanalysis-main" type="text/x-jquery-tmpl">
+<div class="row">
+    
+    <div class="large-12 columns">
+        <div class="bz-rp-processbreadcrumb-container">
+        </div>
+    </div>
+    
+    <div class="large-12 columns">
+        <div class="bz-rp-processviewer-canvas" {{loading}}>
+        </div>
+    </div>
+
+    <div class="large-12 columns">
+        <div class="bz-rp-bam-task-loadanalysis-manualtasks">
+                   
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-bam-task-loadanalysis-manualtasks" type="text/x-jquery-tmpl">
+ <table class="bz-rp-summary">
+    <thead>
+        <tr>
+            <th>%{reports-general-manulatask}</th>
+            <th>%{reports-general-ontime-label}</th>
+            <th>%{reports-general-onrisk-label}</th>
+            <th>%{reports-general-overdue-label}</th>
+            <th>
+                %{reports-general-total}
+                <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-toggle-summary bz-rp-toggle-summary"></i>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{each rows}}
+            <tr class="bz-rp-bam-task-loadanalysis-manualtasks-rows" data-guid="${guid}">
+                <td>${taskName}</td>
+                <td>${ontime}</td>
+                <td>${onrisk}</td>
+                <td>${overdue}</td>
+                <td>${ontime + onrisk + overdue}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+</script>
+
+<script id="bz-rp-bam-task-loadanalysis-tooltip" type="text/x-jquery-tmpl">
+<div class="bz-rp-processviewer-tooltip" data-guid="${guid}">
+    <h3 class="bz-rp-processviewer-tooltip-title">${taskName}</h3>
+
+    {{if taskType}}
+        {{if taskType.reusableProcess !== undefined}}
+            <ul class="bz-rp-processviewer-tooltip-state">
+                <li class="bz-rp-processviewer-tooltip-state-item subprocess-container" data-type="load_subprocess" data-subprocessid="
+                    {{if taskType.reusableProcess !== undefined}}
+                        ${taskType.reusableProcess.id}
+                    {{/if}}">
+                
+                    <label>Proceso Invocado</label>
+                    <span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-icon-detail-subprocess"></span>
+                    <strong><span class="bz-rp-processviewer-breadcrump-item">${taskType.reusableProcess.name}<span></strong>
+                </li>
+            </ul>
+        {{/if}}
+    {{/if}}
+
+    <ul class="bz-rp-processviewer-tooltip-state">
+        <li class="bz-rp-processviewer-tooltip-state-item bz-rp-processviewer-tooltip-ontime" data-type="ontime">
+            <label>%{reports-general-ontime-label}</label>
+            <strong>${ontime}</strong>
+            <span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-processviewer-detaillist"></span>
+        </li>
+        <li class="bz-rp-processviewer-tooltip-state-item bz-rp-processviewer-tooltip-onrisk" data-type="onrisk">
+            <label>%{reports-general-onrisk-label}</label>
+            <strong>${onrisk}</strong>
+            <span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-processviewer-detaillist"></span>
+        </li>
+        <li class="bz-rp-processviewer-tooltip-state-item bz-rp-processviewer-tooltip-overdue" data-type="overdue">
+            <label>%{reports-general-overdue-label}</label>
+            <strong>${overdue}</strong>
+            <span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-processviewer-detaillist"></span>
+        </li>
+    </ul>
+</div>
+</script>
+
+<script id="bz-rp-process-breadcrumb" type="text/x-jquery-tmpl">
+    <div class="bz-rp-processbreadcrumb-content">
+        <span>
+        ${taskData.length}
+        {{each(i, item) taskData}}
+            {{if i == 0}}
+                <a href="#" data-taskid="${item.id}"> ${item.taskName}</a>
+            {{else}}
+                {{if i < taskData.length }}
+                    <a href="#" data-taskid="${item.id}"> &gt ${item.taskName}</a>
+                {{else}}
+                    <span> &gt ${item.taskName}</span>
+                {{/if}}
+            {{/if}}
+        {{/each}}
+        </span>
+    <div>
+</script>

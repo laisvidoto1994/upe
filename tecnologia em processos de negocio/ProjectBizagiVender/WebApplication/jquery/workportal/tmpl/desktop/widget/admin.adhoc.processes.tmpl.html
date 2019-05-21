@@ -1,0 +1,419 @@
+﻿<script id="ui-bizagi-workportal-widget-admin-adhoc-processes" type="text/x-jquery-tmpl">
+    <div class="biz-wp-window">
+        <div id="bz-wp-widget-admin-adhoc-process-table">
+        </div>
+        <div id="bz-wp-widget-admin-adhoc-process-renderform" {{loading}}>
+        </div>
+        <div id="bz-wp-widget-admin-adhoc-process-form-modeler">            
+        </div>
+        <div id="bz-wp-widget-admin-adhoc-process-buttonset" class="biz-wp-buttonset">
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-processes-formbuttons" type="text/x-jquery-tmpl">
+    {{if type === "query" && allowCreation === true}}
+    <button id="bz-wp-widget-admin-adhocprocess-createbutton-wrapper" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false" type="button" data-type="create">
+        <span class="ui-button-text">%{workportal-adhoc-processes-create-button}</span>
+    </button>
+    {{else type === "back"}}
+    <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false" data-type="cancel" type="button" data-backto="${backTo}">
+        <span class="ui-button-text">%{render-form-button-back}</span>
+    </button>
+    {{/if}}
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-processes-wrapper" type="text/x-jquery-tmpl">
+    <div id="biz-wp-admin-adhoc-processes-wrapper">
+        <div id="biz-wp-admin-adhoc-processes-wrapperform">
+            <div style="padding-top:34%;" {{loading}}></div>
+        </div>
+        <div id="biz-wp-admin-adhoc-processes-wrapperlist">
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-processes-query-form" type="text/x-jquery-tmpl">
+    <form class="biz-wp-form">
+        <div class="biz-wp-form-row clearfix">
+            <h3 class="title biz-wp-form-cell">%{workportal-widget-admin-adhoc-processes-search-title}</h3>
+            <div class="biz-wp-form-cell"> </div>
+        </div>
+        <div class="biz-wp-form-column">
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell">%{workportal-widget-admin-adhoc-processes-name}</div>
+                <div class="biz-wp-form-cell"><input id="nameInput" class="biz-wp-input-text" type="text"/>
+                </div>
+            </div>
+        </div>
+        <div class="biz-wp-form-column">
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell">%{workportal-widget-admin-adhoc-processes-state}</div>
+                <div class="biz-wp-form-cell" id="biz-wp-admin-adhoc-processes-state">
+                </div>
+            </div>
+        </div>
+        <div class="biz-wp-form-column">
+            {{if catList > 0}}
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell">%{workportal-widget-admin-adhoc-processes-cat-name}</div>
+                <div class="biz-wp-form-cell" id="biz-wp-admin-adhoc-processes-cat">
+                </div>
+            </div>
+            {{/if}}
+        </div>
+
+        <div id="admin-adhoc-processes-table-buttonset" class="biz-wp-buttonset">
+            <button id="btn-admin-adhoc-processes-table-search" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false" type="submit">
+                <span class="ui-button-text">%{workportal-widget-usertable-button-search}</span>
+            </button>
+            <button id="btn-admin-adhoc-processes-table-clear" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false" type="reset">
+                <span class="ui-button-text">%{workportal-widget-usertable-button-clean}</span>
+            </button>
+        </div>
+    </form>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-processes-edit-form" type="text/x-jquery-tmpl">
+    <div id="adhoc-process-popup-wrapper">
+        <form class="biz-wp-form">
+            <div class="ui-form-scroll">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td class="first-column">
+                                <span class="field-description">%{workportal-widget-admin-adhoc-processes-name}:</span>
+                            </td>
+                            <td>
+                                <input id="input-name-adhoc-process" name="name-adhoc-process" class="bz-wp-rub-input required" value=""
+                                       type="text" maxlength="100" required validationMessage="Name is required" />
+                                <div class="position-message-validate">
+                                    <span data-for="name-plan"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="first-column">
+                                <span class="field-description">%{workportal-widget-admin-adhoc-processes-description}:</span>
+                            </td>
+                            <td>
+                                <textarea id="input-desc-adhoc-process" name="description-adhoc-process" class="ui-rubik-input" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="first-column">
+                                <span class="field-description">%{workportal-widget-admin-adhoc-processes-cat-name}:</span>
+                            </td>
+                            <td>
+                                <div id="input-cat-adhoc-process" name="category-adhoc-process"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="first-column">
+                                <span class="field-description">%{workportal-widget-admin-adhoc-processes-state}:</span>
+                            </td>
+                            <td>
+                                <span id="input-state-adhoc-process"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="first-column">
+                                <input type="checkbox" id="input-alarms-adhoc-process" />   
+                            </td>
+                            <td>
+                                <span class="field-description">%{workportal-widget-admin-adhoc-processes-enable-alarms}</span>                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="first-column">
+                                <input type="checkbox" id="input-case-number-adhoc-process" />
+                            </td>
+                            <td>
+                                <span class="field-description">%{workportal-widget-admin-adhoc-processes-enable-case-number}</span>
+                            </td>
+                        </tr>
+                        <tr class="case-number-container">
+                            <td class="first-column"></td>
+                            <td>
+                                <div class="case-number-panel">
+                                    <div class="column">
+                                        <label>%{workportal-widget-admin-adhoc-processes-case-number-preffix}:</label>
+                                        <input id="input-case-number-preffix" class="bz-wp-rub-input required" value="" type="text" />
+                                    </div>
+                                    <div class="column separator">/</div>
+                                    <div class="column">
+                                        <label>%{workportal-widget-admin-adhoc-processes-case-number-suffix}:</label>
+                                        <input id="input-case-number-suffix" class="bz-wp-rub-input required" value="" type="text" />
+                                    </div>
+                                    <div id="input-case-number-validator" class="position-message-validate">
+                                        <span data-for="name-plan"></span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><br />
+            <div class="ui-bizagi-wp-project-popupform-actions">
+                <button id="button-cancel-edit-adhoc-process" type="reset" class="ui-rubik-button ui-rubik-button-cancel" type="reset">%{text-cancel}</button>
+                <button id="button-accept-edit-adhoc-process" type="submit" class="ui-rubik-button ui-rubik-button-accept" type="submit">%{text-save}</button>
+            </div>            
+        </form>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-processes-table" type="text/x-jquery-tmpl">
+    <div>
+        <table class="biz-wp-table" cellspacing="2" cellpadding="2" width="100%" border="0">
+            <thead class="biz-wp-table-head">
+                {{each(i, val) headers}}
+            <th class="sortColumnsData" data-orderfield="${val.fieldValue}" {{if orderField === val.fieldValue}} data-ordertype="{{if orderType === "ASC"}}DESC{{else orderType === "DESC"}}ASC{{else}}${orderType}{{/if}}" {{/if}}>
+                <div class="bz-wp-table-head-wrapper">
+                    <label>${val.displayName}</label>
+                    <span class="bz-wp-admin-adhoc-processes-sorticons{{if orderType === "ASC" && val.fieldValue == orderField}} sortColumnsDataDownIcon{{/if}}{{if orderType === "DESC" && val.fieldValue == orderField}} sortColumnsDataUpIcon{{/if}}">
+                        <span class="arrowUpIcon"></span>
+                        <span class="arrowDownIcon"></span>
+                    </span>
+                </div>
+            </th>
+            {{/each}}
+            <th></th>
+            </thead>
+            <tbody class="biz-wp-table-body">
+                {{each(i, item) adhocProcesses }}
+                <tr {{if i % 2 === 0 }} class="biz-wp-table-row-even" {{/if}}>                    
+                    <td class=" BorderCell BAMainFontColor"> 
+                        <span> ${item.displayName}</span>
+                        {{if item.state === "Draft" || item.state === "Pilot" }}
+                            <span> (Edition Mode)</span>
+                        {{/if}}
+                    </td>
+                    <td class=" BorderCell BAMainFontColor"> <span> ${item.displayCreationDate} </span> </td>
+                    <td class=" BorderCell BAMainFontColor"> <span> {{if item.state === "Cloned" }} PUBLISHED {{else}} ${item.state} {{/if}} </span> </td>
+                    <td class=" BorderCell BAMainFontColor">
+                        {{each(i, val) links}}
+                        {{if val.alwaysShow || (val.name === "delete" && item.state !== "Published" && item.state !== "CLONED") || (val.name === "clone" && item.state === "Published") || (val.name === "auth" && item.state !== "Draft") }}
+                        <button id="${item.id}" class="bz-wp-button-secondary bizagi-wp-admin-adhoc-processes-link" data-linkname="${val.name}" title="{{if val.label}} ${val.label} {{/if}}">
+                            {{if val.icon}}<i class="bz-icon bz-icon-16 ${val.icon}"></i>{{/if}}
+                            <span>{{if !val.label}} ${val} {{/if}}</span>
+                        </button>
+                        {{/if}}
+                        {{/each}}
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+        <div id="biz-wp-admin-adhoc-processes-pager" class="biz-wp-table-summary-wrapper">
+            {{tmpl({pagination: pagination, pagesArray: pagesArray, page: page}) "#ui-bizagi-workportal-widget-admin-adhoc-processes-pagination"}}
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-processes-pagination" type="text/x-jquery-tmpl">
+  {{if pagination}}
+  <ul class="biz-wp-table-pager-wrapper">
+    {{each(i, val) pagesArray}}
+    <li {{if page==val}} class="bz-page active" {{else}} class="bz-page" {{/if}} data-page="${val}">
+      <span class="number">${val}</span>
+    </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-processes-message" type="text/x-jquery-tmpl">
+    <div class="bz-wp-table-centermessage">
+        <h3>${message}</h3>
+    </div>
+</script>
+
+<script id="adhoc-process-popup-template" type="text/x-jsrender">
+    <div id="adhoc-process-popup-wrapper">
+        <form>
+            <div class="ui-form-scroll">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td class="first-column">
+                                <span class="field-description">%{workportal-widget-admin-adhoc-processes-name}:</span>
+                            </td>
+                            <td>
+                                <input id="input-name-adhoc-process" name="name-adhoc-process" class="bz-wp-rub-input required" value=""
+                                       type="text" maxlength="100" required validationMessage="Name is required" />
+                                <div class="position-message-validate">
+                                    <span data-for="name-plan"></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><br />
+            <div class="ui-bizagi-wp-project-popupform-actions">
+                <button id="button-cancel-create-adhoc-process" type="reset" class="ui-rubik-button ui-rubik-button-cancel" type="reset">%{workportal-widget-reports-confirm-cancel}</button>
+                <button id="button-accept-create-adhoc-process" type="submit" class="ui-rubik-button ui-rubik-button-accept" type="submit">%{workportal-project-plan-popup-button-create}</button>
+            </div>
+        </form>
+    </div>
+</script>
+
+<script id="adhoc-process-tasks" type="text/x-jquery-tmpl">
+    <div class="adhoc-process-content-wrapper">
+        <div id="adhoc-process-tasks-wrapper">
+            <div class="ui-bizagi-wp-adhoc-process-tasks-header">
+                <h2>${displayName}</h2>
+                <p>${description}</p>
+                {{if state === "Draft"}}
+                <div class="adhoc-process-tasks-action-button">
+                    <a href="#" id="to-pilot-process" class="bz-wp-btn bz-wp-btn-primary">
+                        <i class="bz-icon bz-icon-16 bz-icon-plan-executing-outline"></i>
+                        <span class="description">%{workportal-adhoc-processes-pilot-button}</span>
+                    </a>
+                </div>
+                {{else}}
+                    {{if state === "Pilot"}}
+                        <div class="adhoc-process-tasks-action-button">
+                            <a href="#" id="to-publish-process" class="bz-wp-btn bz-wp-btn-primary">
+                                <i class="bz-icon bz-icon-16 bz-icon-plan-executing-outline"></i>
+                                <span class="description">%{workportal-adhoc-processes-publish-button}</span>
+                            </a>
+                        </div>   
+                    {{/if}} 
+                {{/if}}
+            </div>
+            <div class="ui-bizagi-wp-adhoc-process-subtitle-container">
+                <h2>%{workportal-widget-admin-alarms-task-table-title-workflow}</h2>
+                <div id="summary-form">
+                    <i class="bz-icon bz-icon-32 bz-icon-form-outline"></i>
+                    <span>%{workportal-adhoc-processes-summary-form-button}</span>
+                </div>                
+            </div>            
+            <ol class="adhoc-process-task-list" start="1">
+                <bizagi-bpm-modeler></bizagi-bpm-modeler>
+            </ol>           
+            <span id="popupNotification"></span>            
+        </div>
+    </div>
+</script>
+
+<script id="adhoc-process-boolean-expression-template" type="text/x-jsrender">
+    <div id="adhoc-process-boolean-expression-wrapper">
+        <form class="biz-wp-form">
+            <div class="biz-wp-form-row title-container">
+                <span class="title">if</span>
+                <select id="conditionType">
+                    <option value="ALL" selected>%{workportal-adhoc-processes-boolean-exps-option-all}</option>
+                    <option value="ANY">%{workportal-adhoc-processes-boolean-exps-option-any}</option>
+                </select>
+                <span class="condition-type-text"/>
+            </div>
+            <div class="biz-wp-form-row">
+                <div id="conditionContainer"></div>
+            </div>
+        </form>      
+    </div>
+</script>
+
+<script id="adhoc-process-authorization-popup-template" type="text/x-jquery-tmpl">
+    <div id="adhoc-process-authorization-popup-wrapper">
+        <div class="biz-wp-form-row clearfix">
+            <h3 class="title biz-wp-form-cell">
+                {{if isAdhocTask}}
+                    %{workportal-adhoc-process-assignment-form-title}
+                {{else}}
+                    %{workportal-adhoc-process-auth-form-title}
+                {{/if}}
+            </h3>
+            <div class="biz-wp-form-cell"/>
+            {{if isAdhocTask}}
+            <div class="assigment-type-panel">
+                <input type="radio" name="assignmentType" id="everyone" value="Everyone" /> %{workportal-adhoc-process-assignment-type-everyone}
+                <input type="radio" name="assignmentType" id="byload" value="ByLoad" /> %{workportal-adhoc-process-assignment-type-byload}
+            </div>
+            <div class="biz-wp-form-cell" />
+            {{/if}}
+            </div>
+        <div id="authorizationItems"/>
+    </div>
+</script>
+
+<script id="adhoc-process-authorization-popup-items-template" type="text/x-jquery-tmpl">
+    <div id="userGroupContainer" class="auth-panel">
+        {{each(i, val) authItemList}}
+        <div class="card">
+            <div class="user-group-avatar">
+                {{if photo}}
+                    <div class="bz-wp-avatar bz-wp-avatar-64 bz-wp-avatar-cleaned">
+                        <img class="bz-wp-avatar-img" src="data:image/png;base64,${photo}">
+                    </div>
+                {{else}}
+                    {{if type === "USER"}}
+                        <div class="bz-wp-avatar bz-wp-avatar-64">
+                            <span class="bz-wp-avatar-label">${displayName.getInitials()}</span>
+                        </div>
+                    {{else}}
+                        <div class="bz-wp-avatar-64">
+                            <i class="bz-icon bz-icon-64 bz-icon-stakeholders-outline" />
+                        </div>
+                    {{/if}}
+                {{/if}}
+                <span>${displayName}</span>
+            </div>
+            <div class="item-delete-button" data-id="${id}">
+                <i class="bz-icon bz-icon-16 bz-icon-trash-outline" title="%{workportal-adhoc-process-auth-remove-item}"></i>
+            </div>
+        </div>
+        {{/each}}
+        <div class="card">
+            <i id="addUserButton" class="user-group-avatar bz-icon bz-icon-64 bz-icon-plus"></i>
+        </div>
+    </div>
+</script>
+
+<script id="adhoc-process-authorization-item-popup-template" type="text/x-jsrender">
+    <div id="adhoc-process-authorization-item-popup-wrapper">
+        <form>
+            <div class="ui-form-scroll">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="field-description">%{workportal-adhoc-process-auth-search-form-user}:</span>
+                            </td>
+                            <td>
+                                <div class="bz-wp-pp-af-control">
+                                    <input type="text" id="input-displayname-user" />
+                                    <div class="position-message-validate">
+                                        <span data-for="name-user"></span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="separator-column" colspan="2">
+                                <h2><span>%{workportal-adhoc-process-auth-search-form-or}</span></h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="field-description">%{workportal-adhoc-process-auth-search-form-group}:</span>
+                            </td>
+                            <td>
+                                <div class="bz-wp-pp-af-control">
+                                    <span id="userGroupName"></span>
+                                    <a id="groupEditorLink" href="#">%{workportal-adhoc-process-auth-search-form-group-link}</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><br />
+            <div class="ui-bizagi-wp-project-popupform-actions">
+                <button id="button-cancel-adhoc-user-group-form" type="reset" class="ui-rubik-button ui-rubik-button-cancel" type="reset">%{text-cancel}</button>
+                <button id="button-accept-adhoc-user-group-form" type="submit" class="ui-rubik-button ui-rubik-button-accept" type="submit">%{workportal-adhoc-user-group-search-form-add-button}</button>
+            </div>
+            <input type="hidden" id="authItemId" data-itemtype="" value="{{}}" />
+        </form>
+    </div>
+</script>

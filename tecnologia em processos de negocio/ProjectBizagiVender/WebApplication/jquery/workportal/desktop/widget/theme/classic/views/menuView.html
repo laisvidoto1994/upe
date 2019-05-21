@@ -1,0 +1,104 @@
+﻿<div ng-controller="menuController" class="biz-theme-home-section-menu">
+    <div id="ui-bizagi-wp-menu" data-bizagi-component="menu" style="display: block;">
+        <div id="ui-bizagi-wp-app-menu-container">
+            <div id="ui-bizagi-wp-app-menu-logo-container">
+                <div id="ui-bizagi-wp-app-menu-logo-client">
+                    <img src="img/img/barra/logo-bizagi.svg">
+                </div>
+            </div>
+            <div id="ui-bizagi-wp-widget-searchContainer">
+                <div id="ui-bizagi-wp-widgetpc" class="ui-bizagi-wp-widgetpc">
+                </div>
+                <div id="ui-bizagi-wp-app-search" class="ui-bizagi-wp-app-menu-search-off">
+                    <i id="ui-bizagi-wp-app-bt-search" class="bz-icon bz-icon-search-outline bz-icon-16"></i>
+                    <input type="text" name="menuQuery" id="menuQuery" placeholder="Search">
+                </div>
+            </div>
+            <div id="ui-bizagi-wp-app-menu-bt-container">
+                <ul id="main_menu" data-bizagi-component="menuItems">
+                    <li id="menuListHome" class="activeMenu">
+                        <a href="">
+                            <span class="bz-icon bz-icon-home-outline bz-icon-24"></span>
+                            <span class="text">Me</span>
+                        </a>
+                    </li>
+                    <li id="menuListInbox">
+                        <a href="">
+                            <span class="bz-icon bz-icon-inbox-outline bz-icon-24"></span>
+                            <span class="text">Inbox</span>
+                        </a>
+                    </li>
+                    <li id="menuListNew">
+                        <a href="">
+                            <span class="bz-icon bz-icon-new-outline bz-icon-24"></span>
+                            <span class="text">New Case</span>
+                        </a>
+                        <span id="Span1" class="ui-bizagi-wp-mini-arrow"></span>
+                    </li>
+                    <li id="menuListQueries">
+                        <a href="">
+                            <span class="bz-icon bz-icon-search-outline bz-icon-24"></span>
+                            <span class="text">Queries</span>
+                        </a>
+                        <span id="Span2" class="ui-bizagi-wp-mini-arrow"></span>
+                    </li>
+                    <li id="menuListReports">
+                        <a href="">
+                            <span class="bz-icon bz-icon-reports-outline bz-icon-24"></span>
+                            <span class="text">Reports</span>
+                        </a>
+                        <span id="Span3" class="ui-bizagi-wp-mini-arrow"></span>
+                    </li>
+                    <li id="menuListAdmin">
+                        <a href="">
+                            <span class="bz-icon bz-icon-cog-outline bz-icon-24"></span>
+                            <span class="text">Admin</span>
+                        </a>
+                        <span id="Span4" class="ui-bizagi-wp-mini-arrow"></span>
+                    </li>
+                </ul>
+            </div>
+            <div ng-click="showMenu()" id="user">
+                <div class="bz-wp-avatar bz-wp-avatar-48 menu-user-photo">
+                    <span class="bz-wp-avatar-label">
+                        {{user.initials}}
+                    </span>
+                </div>
+                <i class="adm-user bz-icon bz-icon-16 bz-icon-cog-outline"></i>
+            </div>
+            <div id="user-preferences" ng-show="userProfileEnabled">
+                <ul>
+                    <li class="ui-bizagi-wp-bt-classic-theme" style="display: none;">
+                        <i class="bz-icon bz-icon-16 bz-icon-tv"></i>
+                        <span>Classic</span>
+                    </li>
+                    <li ng-click="gotoModernTheme()" class="ui-bizagi-wp-bt-modern-theme">
+                        <i class="bz-icon bz-icon-16 bz-icon-ufo"></i>
+                        <span>Modern</span>
+                    </li>
+                    <li ng-click="gotoBookingTheme()" class="ui-bizagi-wp-bt-booking-theme">
+                        <i class="bz-icon bz-icon-16 bz-icon-entity"></i>
+                        <span>Booking</span>
+                    </li>
+                    <li class="ui-bizagi-wp-bt-font">
+                        <i class="bz-icon bz-icon-16 bz-icon-accessibility-outline"></i>
+                        <span>Accessibility</span>
+                    </li>
+                    <li id="menuListPreferences">
+                        <i class="bz-icon bz-icon-16 bz-icon-cog-outline"></i>
+                        <span>Preferences</span>
+                    </li>
+                    <li id="about">
+                        <i class="bz-icon bz-icon-16 bz-icon-info-outline"></i>
+                        <span>About</span>
+                    </li>
+                    <li id="logout">
+                        <i class="bz-icon bz-icon-16 bz-icon-sign-out-outline"></i>
+                        <span>Logout</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

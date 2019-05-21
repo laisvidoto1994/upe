@@ -1,0 +1,41 @@
+<script id="casestemplate-wrapper" type="text/x-jsrender-tmpl">
+    <div class="template-sticky-header-tools">
+        <!--sortbar-->
+        <div id="casestemplate-sortbar" {{layout "sortbar" /}}>
+        </div>
+    </div>
+    <!--data-->
+    <div id="casestemplate-dataviewer" class="bz-wp-wrapper">
+        <ul id="casestemplate-dataviewer-list" {{loading /}} >
+            <!-- reserved space to add rendered template -->
+        </ul>
+    </div>
+
+    <!--paginator-->
+    <div id="casestemplate-paginator" {{layout "paginator" /}}>
+    </div>
+</script>
+
+<script id="casestemplate-item" type="text/x-jsrender-tmpl">
+    <li id="casetemplate-box-wrapper-{{:idCase}}">
+        <div class="casetemplate-box-element">
+            <!--header-->
+            <div class="casetemplate-box-check-selector">
+                <input type="checkbox" data-surrogatekey="{{:surrogateKey}}" data-idcase="{{:idCase}}"  data-guidentity="{{:guidEntity}}"/>
+            </div>
+            <!--body-->
+            <div id="template">
+            </div>
+            <!--footer-->
+            <div class= "casetemplate-box-footer">
+            </div>
+        </div>
+    </li>
+</script>
+
+<script id="casestemplate-empty-message" type="text/x-jsrender-tmpl">
+    <li class="bz-wp-empty">
+        <i class="bz-wp-empty__img"></i>
+        <p class="bz-wp-empty__info bz-wp-empty__info--first">%{workportal-general-first-line-no-records-found}</p>
+    </li>
+</script>

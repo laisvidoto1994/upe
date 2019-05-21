@@ -1,0 +1,13 @@
+{{css "jquery/common/jquery.ui/css/desktop/jquery.ui.css"}}
+{{css "jquery/common/base/css/desktop/jquery.bizagi.scroll.css"}}
+{{css "jquery/workportal/css/desktop/bizagi.workportal.css"}}
+<div id="ui-bizagi-wp-application">
+    <div id="ui-bizagi-wp-menu">
+        {{component menu}}
+    </div>              
+    <div id="ui-bizagi-wp-workarea" class="clearfix container-fluid" {{loading}} {{adjustable}}>
+        <div class="row fix-row-margin" {{loading}}>
+            {{component workarea}}
+        </div>
+    </div>
+</div>

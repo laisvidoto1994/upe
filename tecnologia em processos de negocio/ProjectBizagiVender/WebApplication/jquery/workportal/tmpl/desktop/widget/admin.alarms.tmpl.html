@@ -1,0 +1,306 @@
+<script id="ui-bizagi-workportal-widget-admin-alarms" type="text/x-jquery-tmpl" >
+    <div id="admin-alarms-wrapper" >
+
+        <!-- Task List-->
+        <div id="form-alarm-task-list"  >
+
+        </div>
+
+        <!-- Alarm detail and Alarm Editor -->
+        <div id="form-alarm-task-detail" >
+
+        </div>
+
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-alarms-list-item" type="text/x-jquery-tmpl">
+
+
+    {{each elementList}}
+
+        {{if taskField == "APPLICATION"}}
+            <option value="${$value.id}">${$value.displayName}</option>
+            
+        {{else taskField == "WORKFLOW"}}
+            <option value="${$value.idWFClass}">${$value.displayName}</option>
+
+        {{else taskField == "VERSION"}}
+            <option value="${$value}">${$value}</option>
+        
+        {{else taskField == "TASKS"}}
+            <option value="${$value.idTask}">${$value.taskName}</option>
+        {{/if}}
+
+        
+    {{/each}}
+
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-alarms-list" type="text/x-jquery-tmpl" >
+
+    <div>
+
+        <h3 class="">%{workportal-widget-admin-alarms-section-title-alarm-management}</h3>
+
+        <h3 class="">%{workportal-widget-admin-alarms-section-subtitle-task}</h3>
+
+        <div id="alarm-task-list-wrapper">
+
+            <table id="alarm-task-list-content" cellspacing="2" cellpadding="2" class="biz-wp-table" >
+                <tr class="biz-wp-table-head">
+                    <td>%{workportal-widget-admin-alarms-task-table-title-application}</td>
+                    <td>%{workportal-widget-admin-alarms-task-table-title-workflow}</td>
+                    <td>%{workportal-widget-admin-alarms-task-table-title-version}</td>
+                    <td>%{workportal-widget-admin-alarms-task-table-title-task}</td>
+                </tr>
+                
+                <tr class="user-list-item">
+                    <td style="width: 10%;">
+                        <select size="15" id="ListBoxApplication" class="biz-wp-input-combo">
+                        </select>
+                    </td>
+                    <td style="width: 30%;">
+                        <select size="15" id="ListBoxWFClass" class="biz-wp-input-combo">
+                            
+                        </select>
+                    </td>
+                    <td style="width: 5%;">
+                        <select size="15" id="ListBoxWFVersion" class="biz-wp-input-combo">
+                            
+                        </select>
+                    </td>
+                    <td style="width: 20%;">
+                        <select size="15" id="ListBoxWorkFlow" class="biz-wp-input-combo">
+                            
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="ui-dialog-buttonset">
+            <button id="btn-alarms" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admin-alarms-button-label-alarms} >></span>
+            </button>
+        </div>
+    </div>
+
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-admin-alarms-detail" type="text/x-jquery-tmpl" >
+
+    <div>
+        <p class = "breadcrump-wrapper">
+            <span class="breadcrump-element"> ${application} </span>
+            <span class="breadcrump-element"> ${workflow} </span>
+            <span class="breadcrump-element"> ${version} </span>
+            <span class="breadcrump-element"> ${task} </span>
+        </p>
+
+        <h3 class="">%{workportal-widget-admin-alarms-section-title-alarm-list}</h3>
+
+        <div id="alarm-list-table-wrapper">
+            <!-- here goes the alarm list -->
+        </div>        
+
+        <div id="alarm-editor-form-wrapper">
+            <!-- here goes the alarm editor -->
+        </div>
+
+        <div class="ui-dialog-buttonset">
+            <button id="btn-alarm-browser" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text"> %{workportal-widget-admin-alarms-button-label-alarm-browser}</span>
+            </button>
+
+            <button id="btn-enable-alarms" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admin-alarms-button-label-enable-alarms}</span>
+            </button>
+
+            <button id="btn-disable-alarms" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admin-alarms-button-label-disable-alarms}</span>
+            </button>
+
+            <button id="btn-save-changes" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admin-alarms-button-label-save-changes}</span>
+            </button>
+
+            <button id="btn-back" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admin-alarms-button-label-back}</span>
+            </button>
+
+            <button id="btn-add-alarm" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admin-alarms-button-label-add-alarm}</span>
+            </button>
+        </div>
+
+        <h3 class="">%{workportal-widget-admin-alarms-section-title-alarm-recipients}</h3>
+            <div id = "alarm-recipients-form-wrapper" class="options-container">
+            </div>
+
+            <div id = "alarm-recipients-table-wrapper" class="options-container">
+            </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-alarms-alarm-editor" type="text/x-jquery-tmpl" >
+
+    <div id="alarm-editor-form-content">
+        <h3 class="">%{workportal-widget-admin-alarms-section-title-alarm-editor}</h3>
+
+        <div class="options-container column">
+            <div class="title-container">
+                <span class="">%{workportal-widget-admin-alarms-group-title-lapse}</span>
+            </div>
+
+            {{each lapseModeList}}
+
+            <div class="option-field">
+                <input type="radio" name="RadioButtonListLapseMode" value="${$value.id}" class="ui-radio ui-RadioButtonListLapseMode">${$value.displayName}</input>
+                
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="options-container column">
+            <div class="title-container">
+                <span class="">%{workportal-widget-admin-alarms-group-title-alarm-recur}</span>
+            </div>
+
+            {{each recurrModeList}}
+                <div class="option-field">
+                <input type="radio" name="RadioButtonListRecurMode" value="${$value.id}" class="ui-radio ui-RadioButtonListLapseMode">${$value.displayName}</input>
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="options-container">
+            <div class="title-container">
+                <span class="">%{workportal-widget-admin-alarms-group-title-timing}</span>
+            </div>
+
+            <div class="option-field float">
+                <span>Lapse (min.)</span>
+                <!--AlarmTime-->
+                <input name="TextBoxAlarmTime" type="text" id="TextBoxAlarmTime" size="4" class="ui-text ui-TextBoxAlarmTime"></input>
+            </div>
+
+            <div class="option-field">
+                <span>Alarm Recur Time</span>
+                <!--RecurrTime-->
+                <input name="TextBoxRecurTime" type="text" id="TextBoxRecurTime" size="4" class="ui-text ui-TextBoxRecurTime"></input>
+                
+                <select name="DropDownListRecurTime" id="DropDownListRecurTime" class="biz-wp-input-combo">
+                    {{each scheduleTypeList}}
+                        <option value="${$value.id}">${$value.displayName}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="option-field vertical-align">
+                <label for="CheckBoxToCurrentAssignee">%{workportal-widget-admin-alarms-field-title-send-to-current-assignee}</label>
+                <input id="CheckBoxToCurrentAssignee" type="checkbox" name="CheckBoxToCurrentAssignee" class="ui-checkbox ui-CheckBoxToCurrentAssignee"></input>
+            </div>
+        </div>
+    </div>
+    
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-alarms-detail-list-table" type="text/x-jquery-tmpl" >
+    <table id="alarm-list-table-content" class="biz-wp-table">
+        <tr class="biz-wp-table-head">
+            <td style="width: 10%;">%{workportal-widget-admin-alarms-list-table-title-lapse}</td>
+            <td style="width: 5%;">%{workportal-widget-admin-alarms-list-table-title-time}</td>
+            <td style="width: 30%;">%{workportal-widget-admin-alarms-list-table-title-alarm-recur}</td>
+            <td style="width: 20%;">%{workportal-widget-admin-alarms-list-table-title-alarm-time-recurrence}</td>
+            <td style="width: 5%;">%{workportal-widget-admin-alarms-list-table-title-interval}</td>
+            <td style="width: 5%;">%{workportal-widget-admin-alarms-list-table-title-active}</td>
+            <td style="width: 40%;"></td>
+        </tr>
+
+        {{if alarmList.length  > 0}}
+            {{each alarmList}}
+
+            <tr>
+                <td>${$value.displayNameLapseMode}</td>
+                <td>${$value.alarmTime}</td>
+                <td>${$value.displayNameRecurrMode}</td>
+                <td>${$value.alarmRecurrTime}</td>
+
+                <td>${$value.displayNameScheduleType}</td>
+                <td>${$value.active}</td>
+                <td>
+                    <div class="ui-dialog-buttonset">
+                        <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover edit" role="button" aria-disabled="false" data-idAlarm ="${$value.idAlarm}">
+                            <span class="ui-button-text">%{workportal-widget-admin-alarms-button-label-edit}</span>
+                        </button>
+
+                        <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover delete" role="button" aria-disabled="false" data-idAlarm ="${$value.idAlarm}">
+                            <span class="ui-button-text">%{workportal-widget-admin-alarms-button-label-delete}</span>
+                        </button>
+                    </div
+                </td>
+            </tr>
+            {{/each}}
+        {{/if}}
+    </table>
+
+    {{if alarmList.length  == 0}}
+        <span>%{workportal-widget-admin-alarms-list-table-text-no-alarms} </span> 
+    {{/if}}
+        
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-alarms-detail-alarm-recipients" type="text/x-jquery-tmpl" >
+    
+    <div class="title-container">
+        <span class="">%{workportal-widget-admin-alarms-section-subtitle-add-recipient}</span>
+    </div>
+
+    <div class="option-field">
+        <select name="DropDownListRecipients" id="DropDownListRecipients" class="biz-wp-input-combo">
+            {{each bossList}}
+                <option value="${$value.id}">${$value.displayName}</option>
+            {{/each}}
+        </select>
+
+        <div class="ui-dialog-buttonset">
+            <button id="btn-add-recipient" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admin-alarms-button-label-add-recipient}</span>
+            </button>
+
+            <button id="btn-delete-recipient" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admin-alarms-button-label-delete-selected-recipients}</span>
+            </button>
+        </div>
+    </div>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-alarms-detail-alarm-recipients-table" type="text/x-jquery-tmpl" >
+    <table id="alarm-recipients-table-content" class="biz-wp-table">
+        <tr class="biz-wp-table-head">
+            <td>%{workportal-widget-admin-alarms-recipient-table-title-recipient-email}</td>
+            <td>%{workportal-widget-admin-alarms-recipient-table-title-recipient-name}</td>
+        </tr>
+
+        {{if recipientsList.length > 0}}
+            {{each recipientsList}}
+                <tr>
+                    <td>
+                        <input id="" type="checkbox" name="" class="ui-checkbox" data-idRecipient ="${$value.id}"></input>
+                    </td>
+                    <td>${$value.displayName}</td>
+                </tr>
+            {{/each}}
+        {{/if}}       
+    </table>
+
+    {{if recipientsList.length == 0}}
+        <span>%{workportal-widget-admin-alarms-list-table-text-no-alarms} </span> 
+    {{/if}}
+
+</script>

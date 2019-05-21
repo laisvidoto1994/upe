@@ -1,0 +1,178 @@
+<script id="ui-bizagi-workportal-widget-admin-document-templates" type="text/x-jquery-tmpl" >
+    <div id="admin-alarms-wrapper" >
+
+        <h2 class="biz-wp-window-title">%{workportal-widget-admin-document-templates-widget-title}</h2>
+
+        <!-- Upload Template-->
+        <div id="template-upload-form-wrapper" class="ui-bizagi-container-form ui-widget-content">
+            
+        </div>
+
+        <!-- Uploaded Template List-->
+        <div id="uploaded-template-list-wrapper" class="ui-bizagi-container-form ui-widget-content" {{loading}}>
+
+        </div>
+
+        <div id="message-container" class="ui-bizagi-container-form ui-widget-content" style="display: none;">
+            <p id="template-uploaded" style="display: none;">
+                %{workportal-widget-admin-document-templates-uploaded-templates-template-uploaded}
+            </p>
+
+            <p id="template-recovered" style="display: none;">
+                %{workportal-widget-admin-document-templates-uploaded-templates-template-restored}
+            </p>
+
+            <p id="template-no-results" style="display: none;">
+                %{workportal-widget-admin-document-templates-uploaded-templates-no-results}
+            </p>
+        </div>
+         
+
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-document-templates-upload-template" type="text/x-jquery-tmpl" >
+    <div class="ui-bizagi-render">
+
+        <div class="ui-bizagi-render ui-corner-all ui-widget-content ui-bizagi-render-display-normal ">
+            <span class="ui-bizagi-label ui-bizagi-render-align-left" style="50%">
+                %{workportal-widget-admin-document-templates-upload-form-legend}
+            </span>
+
+            <div class="ui-bizagi-render-control ui-bizagi-render-display-block" style="50%">
+                <div class="ui-bizagi-control-wrapper">
+                    <div class="ui-bizagi-render-control ui-bizagi-render-display-block ui-bizagi-render-upload">
+                        <ul class="ui-bizagi-render-upload-container">
+                            <li class="ui-bizagi-render-upload-wrapper">
+                                <a href="#" style="display:block!important;">
+                                    <span class="ui-icon upload-file"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ui-bizagi-render-icons ui-widget-content ui-corner-all ui-hidden">
+                        <span class="ui-icon ui-icon-help ui-bizagi-render-icon-help" title=""></span>
+                        <span class="ui-icon ui-icon-alert ui-bizagi-render-icon-error" title=""></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-document-templates-uploaded-template-list" type="text/x-jquery-tmpl" >
+    <div class="ui-bizagi-render">
+        <span class="biz-wp-window-title">%{workportal-widget-admin-document-templates-uploaded-templates-title}</span>
+
+        <div class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+
+            <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist" style="width: auto;">
+                <div >
+                    <span>
+                        <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="details" aria-labelledby="ui-id-1" aria-selected="true" style="margin-left: 0px;">
+                            <a href="#" class="ui-tabs-anchor">%{workportal-widget-admin-document-templates-uploaded-templates-tab-title-templates}</a>
+                        </li>
+                    </span>
+                </div>
+            </ul>
+        </div>
+
+        <div class="ui-bizagi-container-form ui-widget-content">
+
+                {{if documentTemplates.length > 0 }}
+                    <div class="ui-bizagi-grid">
+                        <div data-bizagi-component="table" class="bz-rn-grid-data-wraper">
+                            <table class="ui-bizagi-grid-table">
+                                <thead class="ui-bizagi-grid-header ui-state-default">
+                                    <tr data-bizagi-component="columns">
+                                        <th class=" resizableColumn" style="width: auto; cursor:default;">
+                                            <div class="ui-bizagi-grid-column" data-column-index="1" style="width: auto;">
+                                                <label>%{workportal-widget-admin-document-templates-uploaded-templates-table-title-template-name}</label>
+                                            </div>
+                                        </th>
+                                        
+                                        <th class=" resizableColumn"  style="width: auto; cursor:default;">                    
+                                            <div class="ui-bizagi-grid-column" data-column-index="2" style="width: auto;">
+                                                <label>%{workportal-widget-admin-document-templates-uploaded-templates-table-title-type}</label>
+                                            </div>
+                                        </th>
+
+                                        <th class=" resizableColumn" style="width: auto; cursor:default;">
+                                            <div class="ui-bizagi-grid-column" data-column-index="3" style="width: auto;">
+                                                <label>%{workportal-widget-admin-document-templates-uploaded-templates-table-title-upload-date}</label>
+                                            </div>
+                                        </th>
+
+                                        <th class=" resizableColumn" style="width: 48px; cursor:default;">
+                                            <div class="ui-bizagi-grid-column" data-column-index="4" style="width: auto;">
+                                                <label></label>
+                                            </div>
+                                        </th>
+
+                                    </tr>
+                                    
+                                </thead>
+
+                                <tbody class="ui-bizagi-grid-body" data-bizagi-component="rows">
+
+                                    {{each documentTemplates}}
+
+                                        <tr>
+                                            <td class="ui-bizagi-grid-align-center">
+                                                <div class="ui-bizagi-grid-cell">
+                                                    <div class="ui-bizagi-cell">
+                                                        <div class="ui-bizagi-cell-readonly">
+                                                            <label class="readonly-control">${$value.templateName}</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="ui-bizagi-grid-align-center">
+                                                <div class="ui-bizagi-grid-cell">
+                                                    <div class="ui-bizagi-cell">
+                                                        <div class="ui-bizagi-cell-readonly">
+                                                            <label class="readonly-control">${$value.format}</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="ui-bizagi-grid-align-center">
+                                                <div class="ui-bizagi-grid-cell">
+                                                    <div class="ui-bizagi-cell">
+                                                        <div class="ui-bizagi-cell-readonly">
+                                                            <label class="readonly-control">${$value.uploadDate}</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="ui-bizagi-grid-align-center">
+                                                <div class="ui-bizagi-grid-cell">
+                                                    <div class="ui-bizagi-cell">
+                                                        <div class="ui-bizagi-cell-readonly">
+                                                            {{if ($value.hasOverride == "True" || $value.hasOverride == "true") }}
+                                                                <a href="#" class="template-to-recover" data-guid="${$value.id}">
+                                                                    %{workportal-widget-admin-document-templates-uploaded-templates-table-item-legend-restore-original}
+                                                                </a>
+                                                            {{/if}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {{/each}}
+                            </table>
+                        </div>
+                    </div>
+                {{else}}
+                    <span class="ui-bizagi-label ui-bizagi-render-align-left">
+                        %{workportal-widget-admin-document-templates-uploaded-templates-no-results}
+                    </span>
+                {{/if}}
+        </div>
+
+    </div>
+</script>

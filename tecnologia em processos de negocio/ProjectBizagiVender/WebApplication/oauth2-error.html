@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" manifest="bizagi.cache.appcache">
+<head>
+    <title>OAuth2 Error Page</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link type="image/x-icon" rel="icon" href="favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="workportal/css/tablet/images/BizAgi_logo.png">
+    <link rel="stylesheet" href="jquery/login/css/desktop/bizagi.login.css" type="text/css">
+    <script type='text/javascript' src='jquery/bizagi.configuration.js'></script>
+    <script src="jquery/common/base/js/lib/desktop/jquery.js"></script>
+    <script src="jquery/common/base/js/lib/json2.js"></script>
+</head>
+<body>        
+    <script type="text/javascript">
+        
+		var urlParams;
+		(window.onpopstate = function () {
+			var match,
+				pl     = /\+/g,  // Regex for replacing addition symbol with a space
+				search = /([^&=]+)=?([^&]*)/g,
+				decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+				query  = window.location.search.substring(1);
+
+			urlParams = {};
+			while (match = search.exec(query))
+			   urlParams[decode(match[1])] = decode(match[2]);
+		})();		
+		
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#error").html(urlParams["error"]);
+            $("#http_status_code").html(urlParams["http_status_code"]);
+            $("#state").html(urlParams["state"]);
+            $("#error_description").html(urlParams["error_description"]);
+	    });        
+    </script>
+
+    <div id="ui-bizagi-error-wrapper">
+        <div class="error-wrapper">
+            <h1 class="logo">
+                <a href="#">
+                    <img src="jquery/login/css/desktop/images/bizagi-logo.png" alt="home">
+                </a>
+            </h1>
+            <p></p>
+            <h1>OAUth2 Error</h1>
+
+            <h2>Error : <span id="error" class="error-code">aaaaaa</span></h2>
+            <h2>Http Status Code: <span id="http_status_code" class="error-code">aaaaa</span></h2>
+            <h2>State : <span id="state" class="error-code">aaaaa</span></h2>
+            <h2>Error Description : <span id="error_description" class="error-message">aaaaaaaaa</span></h2>            
+            <br>
+            <div class="error-alert">
+                <h3>
+                    <p>Please try again later.</p><p>If the error persists contact the system administrator.</p><p></p>
+                </h3>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
+

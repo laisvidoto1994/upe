@@ -1,0 +1,31 @@
+<script id="bz-wp-widget-print" type="text/x-jquery-tmpl">
+    <div class="bz-wp-widget-print" {{loading}}></div>
+</script>
+
+<script id="bz-wp-widget-print-frame" type="text/x-jquery-tmpl">
+	<iframe name="${printID}" style="width: 1px; height: 1px; position: absolute; left: -9999px;">
+	</iframe>
+</script>
+
+<script id="bz-wp-widget-print-frame-header" type="text/x-jquery-tmpl">	
+	<div>
+	{{if environment != "release" }}
+	
+		<link rel="stylesheet" type="text/css" href="jquery/common/jquery.ui/css/desktop/jquery.ui.css">
+		<link rel="stylesheet" type="text/css" href="jquery/common/base/css/normalize.min.css">
+		<link rel="stylesheet" type="text/css" href="jquery/themes/bizagiDefault/devices/desktop/default.css">
+		<link rel="stylesheet" type="text/css" href="jquery/common/base/css/desktop/bizagi.css">
+
+		<!--[if IE]> 
+		<!--<link rel='stylesheet' type='text/css' href='jquery/common/bizagi.grid/css/desktop/bizagi.grid.css'>-->
+		<!--[endif]---->
+
+		<link rel="stylesheet" type="text/css" href="jquery/rendering/css/desktop/bizagi.rendering.css">
+		<link rel="stylesheet" type="text/css" href="jquery/rendering/css/desktop/bizagi.rendering.controls.css">
+	{{else}}
+		<link rel="stylesheet" type="text/css" href="jquery/production/${productBuild}/desktop/css/print.desktop.production.less.css?build= ${build}">
+	{{/if}}
+	</div>
+
+</script>
+

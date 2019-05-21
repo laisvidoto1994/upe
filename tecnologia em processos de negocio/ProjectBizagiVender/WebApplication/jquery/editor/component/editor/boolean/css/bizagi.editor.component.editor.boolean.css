@@ -1,0 +1,67 @@
+/********
+* Filename: bizagi.editor.component.editor.boolean.css
+* Create Date: 2012-05-03
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__boolean
+*
+********/
+
+/* __boolean
+--------*/
+
+.bizagi_editor_component_editor_boolean{
+    position:relative;
+}
+
+.bizagi_editor_component_editor_boolean > div:first-child{
+    padding: 2px 0px 2px 0px;
+}
+
+.bizagi_editor_component_properties .bizagi_editor_component_editor_boolean label{
+    display:inline-block!important;
+    width:auto;
+    max-width:65%;
+}
+
+.bizagi_editor_component_properties .bizagi_editor_component_editor_boolean .bizagi-editor-boolean-inline label{
+    display:inline-block;
+    width:60%;
+    vertical-align: middle;
+}
+
+.bizagi_editor_component_editor_boolean .bizagi-editor-boolean-inline .ui-control-editor{
+    display:inline-block;
+    vertical-align: middle;
+    float:right;
+}
+
+.editor-boolean-icon-default-value{
+    opacity: 1;
+    position: absolute;
+	top: 2px;
+    right: -22px;
+    margin: 2px 2px 0 0;
+    cursor: pointer;
+}
+
+.ui-tooltip.ui-propertybox-tooltip.ui-boolean-editor-tooltip{
+    max-width: 180px;
+}
+.ui-tooltip.ui-propertybox-tooltip.ui-boolean-editor-tooltip:before{
+    top: -8px;
+    left: 5px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 7px solid  hsl(0, 0%, 98%);
+    border-left: 8px solid transparent;
+}
+
+.ui-tooltip.ui-propertybox-tooltip.ui-boolean-editor-tooltip:after{
+    top: -9px;
+    left: 5px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 7px solid hsla(0, 0%, 80%, .5);
+    border-left: 8px solid transparent;
+}

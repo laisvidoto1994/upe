@@ -1,0 +1,25 @@
+<script id="bz-rendering-user-email" type="text/x-jquery-tmpl" >
+    <div class="mail">
+        <!-- TO -->
+        <div class="admin-users-mail-fields">
+           <div class="biz-wp-form-cell-bold">%{workportal-widget-admin-users-titles-To-text}</div>
+            <div class="biz-wp-form-cell  admin-users-mail-fields">
+                 <input id="txtTextTo" class="biz-wp-text" type="text" value="${messageResponse.eMailTo}"/>
+            </div>
+        </div>
+        <!-- SUBJECT -->
+        <div class="admin-users-mail-fields">
+            <div class="biz-wp-form-cell-bold">%{workportal-widget-admin-users-titles-subject-text}</div>
+            <div class="biz-wp-form-cell admin-users-mail-fields ">
+                <input id="txtSubject" class="biz-wp-text" type="text" value="${messageResponse.subject}"/>
+            </div>
+        </div>
+        <!-- BODY -->
+        <div class="admin-users-mail-fields">
+            <div class="biz-wp-form-cell-bold">%{workportal-widget-admin-users-titles-body-text} </div>
+            <div class="biz-wp-form-cell admin-users-mail-fields">
+                <textarea id="txtBody" class="biz-wp-textarea" type="text" >${messageResponse.body}</textarea>
+            </div>
+        </div>
+    </div>
+</script>

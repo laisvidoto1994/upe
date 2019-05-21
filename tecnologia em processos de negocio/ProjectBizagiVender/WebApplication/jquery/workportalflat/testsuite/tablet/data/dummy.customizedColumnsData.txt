@@ -1,0 +1,116 @@
+﻿{
+  "cases": {
+    "columnTitle": [
+      {
+        "displayName": "Caso No",
+        "type": "VarChar",
+        "orderFieldName": "RADNUMBER",
+        "isOrdered": "false",
+        "orderType": 0,
+        "order": "T_RADNUMBER",
+        "idAttrib": -1001,
+        "fieldName": "I_RadNumber",
+        "isParametricField": "false",
+        "countRecords": 0
+      },
+      {
+        "displayName": "Proceso",
+        "type": "Int",
+        "orderFieldName": "WFCLSDISPLAYNAME",
+        "isOrdered": "false",
+        "orderType": 0,
+        "order": "T_IDWFCLASS",
+        "idAttrib": -1003,
+        "fieldName": "I_idWFClass",
+        "isParametricField": "false",
+        "countRecords": 0
+      },
+      {
+        "displayName": "Actividad",
+        "type": "Int",
+        "orderFieldName": "CurrentTask",
+        "isOrdered": "false",
+        "orderType": 0,
+        "order": "T_IDTASK",
+        "idAttrib": 0,
+        "fieldName": "",
+        "isParametricField": "false",
+        "countRecords": 0
+      },
+      {
+        "displayName": "Fecha creación proceso",
+        "type": "DateTime",
+        "orderFieldName": "CASCREATIONDATE",
+        "isOrdered": "false",
+        "orderType": 0,
+        "order": "T_CREATIONDATE",
+        "idAttrib": -1005,
+        "fieldName": "I_CreationDate",
+        "isParametricField": "false",
+        "countRecords": 0
+      },
+      {
+        "displayName": "Actividad vence en",
+        "type": "DateTime",
+        "orderFieldName": "wiEstimatedSolutionDate",
+        "isOrdered": "false",
+        "orderType": 0,
+        "order": "T_EXPIRYDATE",
+        "idAttrib": 0,
+        "fieldName": "",
+        "isParametricField": "false",
+        "countRecords": 0
+      },
+      {
+        "displayName": "Fecha Solución",
+        "type": "DateTime",
+        "orderFieldName": "CASSOLUTIONDATE",
+        "isOrdered": "false",
+        "orderType": 0,
+        "order": "T_SOLUTIONDATE",
+        "idAttrib": -1007,
+        "fieldName": "I_SolutionDate",
+        "isParametricField": "false",
+        "countRecords": 0
+      }
+    ],
+    "rows": [
+      {
+        "id": 101,
+        "idWFClass": 2,
+        "idWorkFlow": 2,
+        "taskState": "Red",
+        "isFavorite": "false",
+        "guidFavorite": "",
+        "isOpen": "true",
+        "isAborted": "false",
+        "fields": [
+          "101",
+          "allProcess",
+          {
+            "workitems": [
+              {
+                "TaskName": "all process",
+                "State": "Red",
+                "idTask": 5,
+                "idWorkItem": 102
+              }
+            ]
+          },
+          "07/04/2014 11:28",
+          {
+            "Actividad vence en": [
+              "04/07/2014 11:28"
+            ]
+          },
+          "07/04/2014 11:28"
+        ]
+      }
+    ],
+    "page": 1,
+    "totalPages": 1,
+    "lstIdCases": [
+      101
+    ]
+  }
+}

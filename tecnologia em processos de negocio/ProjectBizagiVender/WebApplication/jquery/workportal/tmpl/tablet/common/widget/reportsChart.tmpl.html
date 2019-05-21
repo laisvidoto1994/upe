@@ -1,0 +1,16 @@
+<script id="ui-bizagi-workportal-widget-reports-chart" type="text/x-jquery-tmpl" >
+<div id="bizagi-reporting-wrapper" class="bz-wp-rp-tablet" {{adjustable}}>
+    {{if Object.keys(reports).length > 1 }}
+        <ul id="bz-rp-reports-menu" class="cf ui-bizagi-wp-widget-reports-menu">       
+           {{each(i, val) reports}}
+                <li data-report="${i}" {{if i === defaultReport}} class="ui-bizagi-wp-widget-reports-menu-active" {{/if}}>
+                    %{${val.resource}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+    <div id="reports-canvas" class="ui-bizagi-wp-widget-reports-chart" {{loading}}>
+
+    </div>
+</div>
+</script>

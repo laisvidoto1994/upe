@@ -1,0 +1,135 @@
+﻿﻿﻿﻿<script id="sortbar-wrapper" type="text/x-jsrender">
+    <div class="wgd-sortbar-container">
+        <div class="clearfix bz-wp-wrapper">
+            <div class="sortbar-left">
+                <div class="sortbar-left-check-uncheck">
+                    <div class="border-check-uncheck">
+                        <input type="checkbox" />
+                    </div>
+                </div>
+                <div class="add-button">
+
+                </div>
+                <ul class="sortbar-menu">
+                    <li>
+                    </li>
+                </ul>
+            </div>
+            <div class="sortbar-right"></div>
+        </div>
+    </div>
+</script>
+
+<script id="sortbar-content" type="text/x-jsrender">
+    <!-- -->
+</script>
+
+<script id="sortbar-right" type="text/x-jsrender">
+    <ul class="sortbar-menu">
+        {{include tmpl="#sortbar-records-per-page"/}}
+        <li>
+            <div class="sortbar-text btn btn-primary right-menu" style="display:none;">
+                <span class="sortbar-selected">%{workportal-my-search-order-by}</span>
+                <i class="fa fa-caret-down"></i>
+            </div>
+        </li>
+        <li>
+            <div class="sortbar-icon" style="display:none;">
+                <i class="sortbar-az bz-icon bz-icon-16 bz-icon-order-ascendant-outline disabled"></i>
+            </div>
+        </li>
+        <li>
+            <div class="filter-icon opened" style="display:none;">
+                <i class="bz-icon bz-icon-16 bz-icon-filter-outline"></i>
+                <span class="counter-filters-applied" style="display:none;"></span>
+            </div>
+         </li>
+    </ul>
+    <div class="wrapper-count-selected">
+        <span class="color-brand-primary actions-count-selected"></span><a class="remove-selected-items-collections"><i class="bz-icon bz-icon-close-outline color-text-secondary"></i></a>
+    </div>
+</script>
+
+
+<script id="sortbar-sort-menu" type="text/x-jsrender">
+<div class="sortbar-box-menu">
+    <ul>
+        {{for filters}}
+            <li class="sortbar-option {{if display == '' || defaultFilter }}hide{{/if}}" data-index="{{:#index}}">
+                <div class="option-title">{{:~displayValue(display)}}</div>
+            </li>
+        {{/for}}
+     </ul>
+</div>
+</script>
+
+<script id="sortbar-content-add-button" type="text/x-jsrender">
+    <div class="wgd-sortbar-add-button" data-guid="{{:action.guid}}" title="{{:action.description}}">
+        <i class="bz-icon bz-icon-16 bz-icon-new-outline"></i> <span>{{:action.displayName}}</span>
+    </div>
+</script>
+
+<script id="sortbar-content-actions" type="text/x-jsrender">
+    <div class="wrapper-sortbar-actions">
+        <ul class="actions-container">
+            {{for actions}}
+                {{include tmpl="#sortbar-action"/}}
+            {{/for}}
+        </ul>
+        {{if moreActions.length > 0}}
+            <div class="bz-actions-showmore ellipsis-icon"> ... </div>
+            <div class="template-box-tooltip" data-idcase="{{:idCase}}" data-entityguid="{{:guidEntity}}" style="display:none;">
+                <ul class="actions-container">
+                    {{for moreActions}}
+                        {{include tmpl="#sortbar-action"/}}
+                    {{/for}}
+                </ul>
+            </div>
+        {{/if}}
+    </div>
+</script>
+
+<script id="sortbar-records-per-page" type="text/x-jsrender">
+    <li>
+        <div class="btn btn-primary records-menu" style="">
+            <span class="sortbar-records-selected">%{workportal-widget-admincasesearch-number-results}</span>
+            <i class="fa fa-caret-down"></i>
+        </div>
+    </li>
+</script>
+
+<script id="sortbar-records-menu" type="text/x-jsrender">
+    <div class="sortbar-records-box-menu">
+        <ul>
+            <li class="sortbar-records-option">
+                <div class="option-title">10</div>
+            </li>
+            <li class="sortbar-records-option">
+                <div class="option-title">20</div>
+            </li>
+            <li class="sortbar-records-option">
+                <div class="option-title">50</div>
+            </li>
+            <li class="sortbar-records-option">
+                <div class="option-title">100</div>
+            </li>
+        </ul>
+    </div>
+</script>
+
+<script id="sortbar-action" type="text/x-jsrender">
+{{if multiplicity === 1}}
+    <li data-guid="{{:id}}" data-name="{{:displayName}}" title="{{:displayName}}">
+        <div class="wdg-tple-button {{>~root.typeActions}}">
+            <i class="bz-icon bz-icon-play" title="%{workportal-widget-sortbar-menu-multiplicity-one-text}"></i><span>{{:displayName}}</span>
+        </div>
+    </li>
+{{else}}
+    <li data-guid="{{:id}}" data-name="{{:displayName}}" title="{{:displayName}}">
+        <div class="wdg-tple-button {{>~root.typeActions}}">
+            <i class="bz-icon bz-icon-play-outline" title="%{workportal-widget-sortbar-menu-multiplicity-tow-text}"></i><span>{{:displayName}}</span>
+        </div>
+    </li>
+{{/if}}
+</script>
+

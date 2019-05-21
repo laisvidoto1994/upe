@@ -1,0 +1,44 @@
+#contentFamework.allWidth > ul > li{ width: 100%; }
+
+
+.ui-bizagi-wp-app-inbox-activity-name
+{
+	color: #1F74B2;
+	cursor: pointer;
+}
+
+/* Folders */
+
+.folders-case-ungroup
+{
+	margin: 6px 0 0 0;
+	background: url('images/sprite.png') -296px -89px;
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+        cursor: pointer;
+}
+
+.folders-case-ungroup:hover { background: url('images/sprite.png') -312px -89px; }
+
+#searchDetails{
+    width: 100%;
+}
+
+.workonitRow.showDesc.ui-button.bizagi-ui-icon-show-summary-grid {
+    background-image: url(images/lupa-off.png);
+    width: 16px;
+    height: 16px;
+    filter: none;
+}
+
+.workonitRow.showDesc.ui-button.bizagi-ui-icon-show-summary-grid span {
+    display: none;
+}
+
+#ui-bizagi-wp-app-inbox-grid-cases-container.adjustable {
+    overflow-y: auto;
+    background: #f5f5f5;
+    padding-left: 30px;
+    padding-right: 30px;
+}

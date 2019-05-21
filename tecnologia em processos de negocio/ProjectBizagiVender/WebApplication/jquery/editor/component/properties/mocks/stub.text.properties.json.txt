@@ -1,0 +1,177 @@
+{
+    "idRender": "GUID-2", 
+    "elements": [
+        {
+            "tabs": [
+                {
+                    "caption": "Basic", 
+                    "elements": [
+                        {
+                            "property": {
+                                "name": "xpath", 
+                                "bas-type": "xpath-to-simple", 
+                                "editor-parameters": {
+                                    "types": [
+                                        "text"
+                                    ]
+                                }, 
+                                "caption": "Data Binding", 
+                                "value": "", 
+                                "required": true
+                            }
+                        }, 
+                        {
+                            "group": {
+                                "caption": "Texts", 
+                                "elements": [
+                                    {
+                                        "property": {
+                                            "name": "displayName", 
+                                            "bas-type": "displayName", 
+                                            "caption": "Display Name", 
+                                            "default": "Text"
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "helptext", 
+                                            "bas-type": "localizable-string", 
+                                            "caption": "Help Text", 
+                                            "value": ""
+                                        }
+                                    }
+                                ]
+                            }
+                        }, 
+                        {
+                            "category": {
+                                "caption": "Rules", 
+                                "elements": [
+                                    {
+                                        "property": {
+                                            "name": "visible", 
+                                            "bas-type": "rule-expression", 
+                                            "editor-parameters": {
+                                                "types": [
+                                                    "boolean"
+                                                ]
+                                            }, 
+                                            "caption": "Visible", 
+                                            "default": "true", 
+                                            "required": true
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "editable", 
+                                            "bas-type": "rule-expression", 
+                                            "editor-parameters": {
+                                                "types": [
+                                                    "boolean"
+                                                ]
+                                            }, 
+                                            "caption": "Editable", 
+                                            "default": "true", 
+                                            "required": true
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "required", 
+                                            "bas-type": "rule-expression", 
+                                            "editor-parameters": {
+                                                "types": [
+                                                    "boolean"
+                                                ]
+                                            }, 
+                                            "caption": "Required", 
+                                            "default": "false", 
+                                            "required": true
+                                        }
+                                    }
+                                ]
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "regularExpression", 
+                                "bas-type": "string", 
+                                "caption": "Regular Expression", 
+                                "value": ""
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "retype", 
+                                "bas-type": "retype", 
+                                "caption": "ReType", 
+                                "default": "false"
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "isextended", 
+                                "bas-type": "boolean", 
+                                "caption": "Is Extended", 
+                                "default": "false"
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "maxlength", 
+                                "bas-type": "int", 
+                                "editor-parameters": {
+                                    "min": 0, 
+                                    "max": 50
+                                }, 
+                                "caption": "Max Length", 
+                                "value": ""
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "labelalign", 
+                                "bas-type": "horizontal-align", 
+                                "caption": "Label Horizontal Align", 
+                                "default": "default"
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "valuealign", 
+                                "bas-type": "horizontal-align", 
+                                "caption": "Value Horizontal Align", 
+                                "default": "default"
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "layout", 
+                                "bas-type": "render-layout", 
+                                "caption": "Layout", 
+                                "subproperties": [
+                                    {
+                                        "property": {
+                                            "name": "labelwidth", 
+                                            "bas-type": "int", 
+                                            "caption": "Label Width", 
+                                            "value": 30
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "valuewidth", 
+                                            "bas-type": "int", 
+                                            "caption": "Control Width", 
+                                            "value": 70
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

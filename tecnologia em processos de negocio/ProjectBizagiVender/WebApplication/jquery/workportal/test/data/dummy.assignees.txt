@@ -1,0 +1,12 @@
+{
+    "assignees|1-5": [{
+        "Name": "@LOREM @LOREM",
+        "idUser": "@NUMBER@NUMBER@NUMBER",
+        "idWorkItem": "@NUMBER@NUMBER@NUMBER",
+        "userName": "@LOREM\\@LOREM",
+        "taskName": "@LOREM @LOREM @LOREM",
+        "idTask|0-9999": 0,
+        "isEvent": "@BIZAGI_BOOLEAN",
+        "isDelegator": "false"
+    }]
+}

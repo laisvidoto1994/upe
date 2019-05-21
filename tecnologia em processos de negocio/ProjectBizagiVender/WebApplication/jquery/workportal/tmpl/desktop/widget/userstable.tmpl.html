@@ -1,0 +1,115 @@
+<script id="ui-bizagi-workportal-widget-usersTable-wrapper" type="text/x-jquery-tmpl" >
+    <div id="biz-wp-userstable-wrapper">
+        <div id="biz-wp-userstable-wrapperform">
+            <div style="padding-top:34%;" {{loading}}></div>
+        </div>
+        <div id="biz-wp-userstable-wrapperlist">
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-usersTable-form" type="text/x-jquery-tmpl" >
+    <form class="biz-wp-form">
+        <div class="biz-wp-form-row clearfix">
+            <h3 class="title biz-wp-form-cell">%{workportal-widget-usertable-search-user}</h3>
+            <div class="biz-wp-form-cell">  </div>
+        </div>
+        <div class="biz-wp-form-column">
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell">%{workportal-widget-usertable-domain}</div>
+                <div class="biz-wp-form-cell"><input id="domainInput" class="biz-wp-input-text" type="text" /></div>
+            </div>
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell">%{workportal-widget-usertable-user-name}</div>
+                <div class="biz-wp-form-cell"><input id="userNameReassignInput" class="biz-wp-input-text" type="text" />     </div>
+            </div>
+        </div>
+        <div class="biz-wp-form-column">
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell">%{workportal-widget-usertable-full-name}</div>
+                <div class="biz-wp-form-cell"><input id="userFullName" class="biz-wp-input-text" type="text" />     </div>
+            </div>
+
+            {{if orgList > 0}}
+                <div class="biz-wp-form-row clearfix">
+                    <div class="biz-wp-form-cell">%{workportal-widget-usertable-org-name}</div>
+                    <div class="biz-wp-form-cell" id="biz-wp-usertable-org">
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+
+        <div id="users-table-buttonset" class="biz-wp-buttonset">
+            <button id="btn-users-table-search" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false" type="submit">
+                <span class="ui-button-text">%{workportal-widget-usertable-button-search}</span>
+            </button>
+            <button id="btn-users-table-clear" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false" type="reset">
+                <span class="ui-button-text">%{workportal-widget-usertable-button-clean}</span>
+            </button>
+        </div>
+    </form>
+</script>
+
+<script id="ui-bizagi-workportal-widget-usersTable-table" type="text/x-jquery-tmpl" >
+<div>
+     <table class="biz-wp-table" cellspacing="2" cellpadding="2" width="100%" border="0">
+        <thead class="biz-wp-table-head">
+            {{each(i, val) headers}}
+                <th class="sortColumnsData" data-orderfield="${val.fieldValue}" {{if orderField === val.fieldValue}} data-ordertype="{{if orderType === "ASC"}}DESC{{else orderType === "DESC"}}ASC{{else}}${orderType}{{/if}}"  {{/if}}>
+                    <div class="bz-wp-table-head-wrapper">
+                        <label>${val.displayName}</label>
+                        <span class="bz-wp-usertable-sorticons{{if orderType === "ASC" && val.fieldValue == orderField}} sortColumnsDataDownIcon{{/if}}{{if orderType === "DESC" && val.fieldValue == orderField}} sortColumnsDataUpIcon{{/if}}">
+                            <span class="arrowUpIcon"></span>
+                            <span class="arrowDownIcon"></span>
+                        </span>
+                    </div>
+                </th>
+            {{/each}}
+            <th></th>
+        </thead>
+        <tbody class="biz-wp-table-body">
+             {{each(i, item) users }}
+                    <tr {{if i % 2 === 0 }}class="biz-wp-table-row-even"{{/if}}>
+                        <td class=" BorderCell BAMainFontColor"> <span> ${item.idUser} </span> </td>
+                        <td class=" BorderCell BAMainFontColor"> <span> ${item.userName} </span> </td>
+                        <td class=" BorderCell BAMainFontColor"> <span> ${item.user} </span> </td>
+                        <td class=" BorderCell BAMainFontColor"> <span> ${item.domain} </span> </td>
+                        <td class=" BorderCell BAMainFontColor"> <span> ${item.email} </span> </td>
+                        <td class=" BorderCell BAMainFontColor"> <span> {{if item.enabledForAssignation == true}} %{render-boolean-yes} {{else}} %{render-boolean-no} {{/if}} </span> </td>
+                        <td class=" BorderCell BAMainFontColor"> <span> {{if item.enabled == true}} %{render-boolean-yes} {{else}} %{render-boolean-no} {{/if}} </span> </td>
+                        <td class=" BorderCell BAMainFontColor">
+                            {{each(x, val) links}}
+                                <button id="${item.idUser}" name="${item.userName}" class="bz-wp-button-secondary bizagi-wp-userstable-userlink" data-linkname="${val.name}" title="{{if val.label}} ${val.label} {{/if}}" >
+                                    {{if val.icon}}<i class="bz-icon bz-icon-16 ${val.icon}"></i>{{/if}}
+                                    <span>{{if !val.label}} ${val} {{/if}}</span>
+                                </button>
+                            {{/each}}
+                         </td>
+                    </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <div id="biz-wp-userstable-pager" class="biz-wp-table-summary-wrapper">
+        {{tmpl({pagination: pagination, pagesArray: pagesArray, page: page}) "#ui-bizagi-workportal-widget-usersTable-pagination"}}
+    </div>
+</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-usersTable-pagination" type="text/x-jquery-tmpl" >
+    {{if pagination}}
+        <ul class="biz-wp-table-pager-wrapper">
+            {{each(i, val) pagesArray}}
+                <li {{if page==val}} class="bz-page active" {{else}} class="bz-page" {{/if}} data-page="${val}">
+                    <span class="number">${val}</span>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+</script>
+
+<script id="ui-bizagi-workportal-widget-usersTable-message" type="text/x-jquery-tmpl">
+    <div class="bz-wp-table-centermessage">
+        <h3>${message}</h3>
+    </div>
+</script>

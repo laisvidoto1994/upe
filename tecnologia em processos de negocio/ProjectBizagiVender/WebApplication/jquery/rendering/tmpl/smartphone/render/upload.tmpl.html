@@ -1,0 +1,34 @@
+﻿<script id="bz-rn-upload-container" type="text/x-jquery-tmpl">
+    <ul class="ui-bizagi-render-upload-container" style="-webkit-padding-start: 8px; ">
+        {{if noFiles}}
+        <li class="noFiles">%{render-upload-no-files}</li>
+        {{else}}
+        <ul class="files">
+            {{files}}
+        </ul>
+        {{/if}}
+        <li class="bz-rn-upload-show-menu">
+            <span class="bz-cm-icon"></span>
+            <input type="file" class="bz-rn-upload-web" style="display: none">
+        </li>
+    </ul>
+    <div class="bz_rn_upload_container_upload_items">
+        <ul class="bz-rn-upload-options">
+            <li><button type="button" class="bz-cm-icon bz-upload-button image"></button></li>
+            <li><button type="button" class="bz-cm-icon bz-upload-button cimage"></button></li>
+            <li><button type="button" class="bz-cm-icon bz-upload-button caudio"></button></li>
+            <li><button type="button" class="bz-cm-icon bz-upload-button cvideo"></button></li>
+            <li><button type="button" class="bz-cm-icon bz-upload-button file"></button></li>
+        </ul>
+    </div>
+</script>
+
+<script id="bz-rn-upload-item" type="text/x-jquery-tmpl">
+    <li class="ui-bizagi-render-upload-item">
+        {{if typeof (cordova) === "undefined" }}
+        <a href="${url}" {{if mode == "execution"}} target="_blank" {{/if}} title="${filename}">${filename}</a>
+        {{else}}
+        <a href="javascript:void(0)" onclick="window.open('${url}', '_system');" title="${filename}">${filename}</a>
+        {{/if}}
+    </li>
+</script>

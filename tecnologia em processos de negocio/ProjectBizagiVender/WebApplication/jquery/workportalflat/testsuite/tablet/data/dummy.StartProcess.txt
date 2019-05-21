@@ -1,0 +1,28 @@
+{
+  "hasStartForm": false,
+  "idProcess": 2,
+  "caseInfo": {
+    "idCase": 751,
+    "idWorkFlow": 2,
+    "radNumber": "751",
+    "hasGlobalForm": "false",
+    "formsRenderVersion": 2,
+    "idCaseForGlobalForm": 751,
+    "msgTask": "",
+    "workItems": [
+      {
+        "idWorkItem": 952,
+        "idCase": 751,
+        "idTask": 7,
+        "idWorkFlow": 2,
+        "displayName": "Task 1",
+        "estimatedSolutionDate": "11/06/2014 17:00",
+        "isAsynch": "false",
+        "taskType": "UserInteraction"
+      }
+    ],
+    "subProcesses": [],
+    "events": [],
+    "CustFields": []
+  }
+}

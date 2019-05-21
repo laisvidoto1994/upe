@@ -1,0 +1,7 @@
+{{if combo}}
+	<ul>
+		{{each(i, val) combo}}
+			<li data-value='${$item.itemValue(val)}'>${$item.itemText(val)}</li>
+		{{/each}}
+	</ul>
+{{/if}}

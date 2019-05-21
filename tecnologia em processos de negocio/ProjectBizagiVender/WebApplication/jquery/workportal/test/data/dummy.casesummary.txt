@@ -1,0 +1,40 @@
+ {
+    "idCase|1000-9999": 0,
+	"caseNumber|1000-9999": 0,
+	"processPath": "@LOREM > @LOREM > @LOREM @LOREM",
+	"creationDate": "@DATE_MM/@DATE_DD/@DATE_YYYY",
+	"estimatedSolutionDate": "@DATE_MM/@DATE_DD/@DATE_YYYY",
+	"solutionDate": "@DATE_MM/@DATE_DD/@DATE_YYYY",
+	"isOpen": true,
+	"idParentCase": -1,
+    "radNumberParentCase": "",
+    "isFavorite": "@BIZAGI_BOOLEAN",
+    "guidFavorite": "",
+    "parentDisplayName": "",
+    "canAccesToParentProcess": "false",
+    "isDelegatedCase": "false",
+    "isAborted": "false",
+    "hasComments": "false",
+    "countEvents": 2,
+    "countSubProcesses|0-3": 0,
+    "countAssigness": 5,
+    "helpUrl": "",
+    "hasGlobalForm": "false",
+    "currentState|1-3": [{
+        "idWorkItem|1-9999": 0,
+        "idTask|1-9999": 0,
+        "state": "@LOREM @LOREM @LOREM",
+        "colorState": "@BIZAGI_TASK_STATE",
+        "tskDescription": "",
+        "estimatedSolutionDate": "@DATE_MM/@DATE_DD/@DATE_YYYY",
+        "isEvent": "@BIZAGI_BOOLEAN",
+        "helpUrl": "",
+        "allowsReassign": "false",
+        "assignToCurrentUser": "true"
+    }],
+    "createdBy": {
+        "userName": "@LOREM",
+        "Name": "@LOREM @LOREM"
+    },
+    "caseDescription": "No details"
+}

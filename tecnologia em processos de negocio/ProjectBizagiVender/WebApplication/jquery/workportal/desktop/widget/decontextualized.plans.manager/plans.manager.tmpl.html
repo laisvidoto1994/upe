@@ -1,0 +1,162 @@
+<script id="plans-manager-wrapper" type="text/x-jsrender">
+
+    <div id="row-plans" class="wdg-plans-panel">
+        <div class="wdg-plans-manager">
+            <div class="wdg-plans-list">
+                {{for plans}}
+                <div class="wdg-plans-manager-card dsb-card clearfix wdg-db-card-plans" data-plan-id="{{:id}}" data-plan-name="{{:name}}" data-plan-current-state="{{:currentState}}">
+                     <span class="wdg-plans-leftmenu bz-icon bz-icon-16 bz-icon-cog-outline"></span>
+                     <div class="wdg-plans-title" title="{{:name}}">
+                     {{if name.length > 28}}
+                        {{:name.substring(0,29)}}...
+                     {{else}}
+                        {{:name}}
+                     {{/if}}
+                    </div>
+                    {{if currentState=='EXECUTING' }}
+                    <div class="wdg-plans-card-dial">
+                        <input type="text" class="wdg-plans-row-dial" data-bgcolor="#F5F5F5" data-fgcolor="#bbb" data-min="0" value="{{:value}} " data-max="100">
+                        <div class="wdg-plans-card-dial-layer"></div>
+                    </div>
+                    {{else}}
+                    <div class="wdg-plans-card-state">
+                        <span class="bz-wp-truncate-text-100percent">{{:locatedState}}</span>
+                    </div>
+                    {{/if}}
+                    <div class="wdg-plans-row">
+                        <span class="first-date-plan"></span>
+                    </div>
+                    {{if dueDateFormat }}
+                        <div class="wdg-plans-row">
+                            %{workportal-general-properties-due-date}: <span class="due-date-plan">{{:dueDateFormat}}</span>
+                        </div>
+                    {{/if}}
+                    {{if currentState=='EXECUTING' }}
+                    <div class="wdg-plans-row wdg-plans-activities-row" title="">
+                        <i class="bz-icon bz-icon-16 bz-icon-plan-activities-outline"></i>
+                        <span class="wdg-plans-row-activities">
+                            --
+                        </span>
+                    </div>
+                    {{/if}}
+                    <div class="wdg-plans-row">
+                        <i class="bz-icon bz-icon-user-outline bz-icon-16"></i>
+                        <ul class="wdg-plans-users" data-role="tooltip">
+                            <li data-iduser="{{:idUserCreator}}" class="bz-wp-avatar bz-wp-avatar-32" title="">
+                                <span class="wdg-plans-row-user-label">{{:name}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="wdg-plans-row">
+                        <i class="bz-icon bz-icon-16 bz-icon-checklist-outline"></i>
+                        <span class="wdg-plans-row-completed">
+                            {{:completedActivities}}
+                        </span> /
+                        <span class="wdg-plans-row-activities-length">
+                            {{:activitiesLength}}
+                        </span>
+                    </div>
+                    <div class="wdg-plans-row wdg-plans-workonit-row">
+                        <button class="bz-wp-btn bz-wp-btn-xs bz-wp-btn-primary btn-workonit" title="%{workportal-widget-render-work-on-it}">
+                            <i class="bz-icon bz-icon-play"></i>
+                            <span>%{workportal-widget-render-work-on-it}</span>
+                        </button>
+                    </div>
+                </div>
+                {{/for}}
+            </div>
+
+        </div>
+        <div class="plans-manager-context-menu-wrapper" style=""></div>
+    </div>
+
+</script>
+
+<script id="plans-manager-empty-message" type="text/x-jsrender-tmpl">
+    <li class="bz-wp-empty">
+        <i class="bz-wp-empty__img"></i>
+        <p class="bz-wp-empty__info bz-wp-empty__info--first">%{workportal-general-first-line-no-records-found}</p>
+    </li>
+</script>
+
+<script id="plans-manager-users" type="text/x-jsrender-tmpl">
+
+    {{for users}}
+        {{if #index == 5}}
+            <li class="bz-wp-avatar bz-wp-avatar-32 icon-more" title="">
+                <span class="wdg-plans-row-user-label show">+</span>
+            </li>
+        {{/if}}
+        {{if #index < 5}}
+            <li data-iduser="{{:userAssigned}}" class="bz-wp-avatar bz-wp-avatar-32" title="">
+                <img class="bz-wp-avatar-img" src="{{:picture}}">
+                <span class="wdg-plans-row-user-label">{{:name}}</span>
+            </li>
+        {{/if}}
+    {{/for}}
+</script>
+
+<script id="plans-manager-activities-tooltip" type="text/x-jsrender-tmpl">
+        <div class="wdg-plans-row-activity-tooltip">
+            <span class="wdg-plans-row-activity-name" >{{:activity.name}}</span>
+             <table>
+                 <tr>
+                     <td class="wdg-plans-item-name">%{workportal-project-plan-activity-asigned-to}:</td>
+                     <td class="wdg-plans-item-value">{{:activity.userName}}</td>
+                 </tr>
+                 <tr>
+                     <td class="wdg-plans-item-name">%{workportal-project-plan-activity-completed}:</td>
+                     <td class="wdg-plans-item-value">{{:activity.progress}}%</td>
+                 </tr>
+                 {{if activity.formatedEstimatedFinishDate}}
+                 <tr>
+                     <td class="wdg-plans-item-name">%{workportal-project-plan-estimatedend}:</td>
+                     <td class="wdg-plans-item-value">{{:activity.formatedEstimatedFinishDate}}</td>
+                 </tr>
+                 {{/if}}
+             </table>
+        </div>
+</script>
+
+<script id="plans-manager-users-tooltip" type="text/x-jsrender-tmpl">
+    <div class = "wdg-plans-tooltip-user-info">
+        <div class="wdg-plans-tooltip-user-avatar"></div>
+        <div class="wdg-plans-tooltip-user-name"><b>{{:userName}}</b></div>
+    </div>
+   <ul class="wdg-plans-tooltip-user-activities">
+        {{for activities}}
+            <li>{{:name}}</li>
+        {{/for}}
+    </ul>
+</script>
+
+<script id="plans-manager-context-menu-content" type="text/x-jsrender-tmpl">
+        <ul class="plans-manager-context-menu-list">
+
+            {{if currentState == "PENDING" || currentState ==  "EXECUTING" }}
+                <li id="edit">
+                    <span>%{workportal-project-plan-action-edit}<span>
+                </li>
+            {{/if}}
+            {{if currentState == "PENDING" || currentState ==  "EXECUTING" || currentState == "CLOSED"}}
+                <li id="save">
+                    <span>%{workportal-project-plan-action-save}<span>
+                </li>
+            {{/if}}
+            {{if currentState == "PENDING"}}
+                <li id="enable">
+                    <span>%{workportal-project-plan-action-execute-plan}<span>
+                </li>
+            {{/if}}
+            {{if currentState == "PENDING" || currentState ==  "EXECUTING" || currentState == "CLOSED"}}
+                 <li id="delete">
+                    <span>%{workportal-project-plan-action-delete}<span>
+                </li>
+            {{/if}}
+            {{if (currentState ==  "EXECUTING"  && completed)  }}
+                  <li id="close">
+                    <span>%{workportal-project-plan-action-close}<span>
+                  </li>
+            {{/if}}
+        </ul>
+</script>

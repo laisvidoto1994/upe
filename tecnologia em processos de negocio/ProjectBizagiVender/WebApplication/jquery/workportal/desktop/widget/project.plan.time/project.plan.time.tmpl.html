@@ -1,0 +1,32 @@
+<script id="project-plan-time" type="text/x-jsrender" >
+   <div>
+      <div class="bz-wp-widget ui-bizagi-wp-project-plan-time">
+          <h3 class="bz-wp-section">%{workportal-project-plan-time-title}</h3>
+
+          <div class="plan-time">
+
+            <p class="bz-wp-date">
+                <span id="fromDate">{{>fromDate}}</span>
+                {{if toDate }}
+                   <span class="separator"> - </span>
+                   <span id="toDate">{{>toDate}}</span>
+                {{/if}}
+
+            </p>
+
+            <div class="remaining-days">
+               <div class="time-remaining">
+                  <div class="bz-wp-progress-bar-wrapper bar-fullTime">
+                     <div class="bz-wp-progress-bar bar-completed {{>colorBar}}" style="width:{{>percentBar}}%;"></div>
+                  </div>
+                  <div class="bz-wp-widget-text-default" title="%{workportal-project-title-time-based-by-schedule}">
+                      {{>valueOfTimeCalculated}} {{>messageDescripionDifference}}
+                  </div>
+               </div>
+            </div>
+
+          </div>
+
+       </div>
+    </div>
+</script>

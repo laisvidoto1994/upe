@@ -1,0 +1,28 @@
+<script id="project-activity-plan-sidebar" type="text/x-jsrender">
+   <div><!--Div is necessary, fix-->
+        <div><!--Div is necessary, fix-->
+            <div id="home-project-activity-plan-sidebar-wrapper" class="bz-wp-widget">
+                {{if showPlanAction}}
+                    <h3 class="bz-wp-section">%{workportal-project-activity-plan}</h3>
+                    <ul class="ui-bizagi-wp-project-activity-plan-sidebar-actions">
+                        <li class="ui-bizagi-wp-project-activity-plan-sidebar-action-add">
+
+                            <a href="javascript:void(0)" class="bz-wp-btn bz-wp-btn-primary">
+
+
+                                    {{if hasRelatedPlan}}
+										<i class="bz-icon bz-icon-16 bz-icon-plan-outline"></i>
+                                        <span>%{workportal-project-casedashboard-view-plan}</span>
+                                    {{else}}
+										<i class="bz-icon bz-icon-16 bz-icon-plan-add-outline"></i>
+                                        <span>%{workportal-project-casedashboard-add-plan}</span>
+                                    {{/if}}
+
+                            </a>
+                        </li>
+                    </ul>
+                {{/if}}
+            </div>
+        </div>
+   </div>
+</script>

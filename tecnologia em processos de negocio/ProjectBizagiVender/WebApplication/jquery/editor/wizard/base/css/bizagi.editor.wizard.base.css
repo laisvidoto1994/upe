@@ -1,0 +1,41 @@
+﻿/********
+* Filename: bizagi.editor.wizard.base.css
+* Create Date: 2012-11-08
+* Author: Diego Parra Diego.Parra@bizagi.com
+*
+* $__popup
+* $__buttons
+*
+********/
+
+/* __popup
+--------*/
+.bz-fm-wizard-overlay{
+    /* maxvalue fro ie7 2.147.483.647 */
+    z-index: 89;
+}
+.bz-fm-wizard-popup {
+    top: 100px;
+    left: 100px;
+    bottom: 100px;
+    right: 100px;
+}
+
+.bz-fm-wizard-popup .ui-widget-actions{
+    position: absolute;
+    right: -5px;
+    top: -52px;
+    width: auto;
+}
+
+/* __buttons
+--------*/
+.bz-fm-wizard-popup .bz-fm-wizard-buttons{
+    position:absolute;
+    bottom:4%;
+    width: 100%;
+    text-align:center;
+}
+.bz-fm-wizard-popup .bz-fm-wizard-buttons li {
+    display: inline-block;
+}

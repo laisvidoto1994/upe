@@ -1,0 +1,93 @@
+<script id="defaultvalue-frame" type="text/x-jquery-tmpl">
+    <div class="defaultvalue-container ui-control-container">
+        <label class="defaultvalue-name">${caption}</label>
+    </div>
+</script>
+
+<script id="defaultvalue-frame-date-fixed-legacy" type="text/x-jquery-tmpl">
+    <div class="defaultvalue-date-container ${showTime}">
+        <input type="text" class="defaultvalue-date-value ui-control-input" readonly="readonly" value="${value.fixedvalue}" />
+        <i class="biz-ico biz-ico-default-value defaultvalue-rule-external bz-studio bz-expresion-ex_16x16_standard" title="%{formmodeler-component-editor-all-create-rule}"></i>
+    </div>
+</script>
+
+<script id="defaultvalue-frame-date-fixed" type="text/x-jquery-tmpl">
+    <div class="defaultvalue-date-container ${showTime} ui-control-input">
+        <div class="biz-complex-btn biz-action-btn ui-corner-left defaultvalue-button-value {{if isOffline}}biz-value-longer{{/if}}">
+            <input type="text" class="defaultvalue-date-value" value="${value.fixedvalue}" />
+        </div>
+        {{tmpl "#defaultvalue-actions-dropdown-fixed"}}        
+    </div>
+</script>
+
+<script id="defaultvalue-frame-number-fixed" type="text/x-jquery-tmpl">
+    <div class="defaultvalue-number-container ${allowDecimals} ui-control-input">
+        <div class="biz-complex-btn biz-action-btn ui-corner-left defaultvalue-button-value {{if isOffline}}biz-value-longer{{/if}}">
+            <input type="text" class="defaultvalue-number-value" value="${value.fixedvalue}" />
+        </div>
+        {{tmpl "#defaultvalue-actions-dropdown-fixed"}}                
+    </div>
+</script>
+
+<script id="defaultvalue-frame-string-fixed" type="text/x-jquery-tmpl">
+    <div class="ui-control-input">
+        <div class="biz-complex-btn biz-action-btn ui-corner-left defaultvalue-button-value {{if isOffline}}biz-value-longer{{/if}}">
+            <input type="text" class="defaultvalue-string-value ui-control-input" value="${value.fixedvalue}" />
+        </div>
+        {{tmpl "#defaultvalue-actions-dropdown-fixed"}}        
+    </div>
+</script>
+
+<script id="defaultvalue-frame-boolean-fixed" type="text/x-jquery-tmpl">
+    <div class="ui-control-input">
+        <div class="biz-complex-btn biz-action-btn ui-corner-left defaultvalue-button-value {{if isOffline}}biz-value-longer{{/if}}">
+            <div class="defaultvalue-boolean-value ui-control-input" data-value="${value.fixedvalue}" tabindex="0">
+                <span class="biz-action-btn  biz-btn defaultvalue-boolean-button defaultvalue-boolean-button-yes${selectedYes}">%{formmodeler-component-editor-defaultvalue-boolean-yes}</span>
+                <span class="biz-action-btn  biz-btn defaultvalue-boolean-button defaultvalue-boolean-button-no${selectedNo}">%{formmodeler-component-editor-defaultvalue-boolean-no}</span>
+            </div>
+        </div>
+         {{tmpl "#defaultvalue-actions-dropdown-fixed"}}        
+    </div>
+</script>
+
+<script id="defaultvalue-frame-onlyrule" type="text/x-jquery-tmpl"> 
+    <div class="defaultvalue-rule-container">
+        <div class="defaultvalue-rule-value ui-control-input">
+            <div class="biz-complex-btn biz-action-btn ui-corner-left defaultvalue-button-value {{if isOffline}}biz-value-longer{{/if}}">
+                <div class="defaultvalue-rule-value-caption" ></div>
+            </div>
+            {{tmpl "#defaultvalue-actions-dropdown-rule"}}            
+        </div>
+    </div>
+</script>
+
+<script id="defaultvalue-frame-rule" type="text/x-jquery-tmpl">
+    <div class="defaultvalue-rule-container">
+        <div class="defaultvalue-rule-value ui-control-input">
+            <div class="biz-complex-btn biz-action-btn ui-corner-left defaultvalue-button-value {{if isOffline}}biz-value-longer{{/if}}" title="${nameRule}">
+                <span class="defaultvalue-rule-value-caption">${nameRule}</span>
+            </div>
+            {{tmpl "#defaultvalue-actions-dropdown-rule"}}           
+        </div>
+    </div>
+</script>
+
+<script id="defaultvalue-actions-dropdown-fixed" type="text/x-jquery-tmpl">
+    <div class="biz-complex-btn biz-complex-dropdown ui-corner-right">
+        <div class="biz-action-btn"><i class="biz-ico defaultvalue-image-edit bz-studio bz-edit_16x16_standard" title="%{formmodeler-component-editor-all-edit-this-field}"></i></div>
+        <div class="biz-action-btn"><i class="biz-ico defaultvalue-image-fixed-delete bz-studio bz-delete_16x16_standard" title="%{formmodeler-component-editor-all-delete-value}"></i></div>
+        {{if !isOffline}}
+            <div class="biz-action-btn"><i class="biz-ico biz-ico-default-value defaultvalue-rule-external bz-studio bz-expresion-ex_16x16_standard" title="%{formmodeler-component-editor-all-create-rule}"></i></div>
+        {{/if}}
+    </div>
+</script>
+
+<script id="defaultvalue-actions-dropdown-rule" type="text/x-jquery-tmpl">
+    <div class="biz-complex-btn biz-complex-dropdown ui-corner-right">
+        <div class="biz-action-btn"><i class="biz-ico defaultvalue-image-edit bz-studio bz-edit_16x16_standard" title="%{formmodeler-component-editor-all-edit-this-field}"></i></div>
+        <div class="biz-action-btn"><i class="biz-ico defaultvalue-image-rule-delete bz-studio bz-delete_16x16_standard" title="%{formmodeler-component-editor-all-delete-value}"></i></div>        
+        {{if !isOffline}}
+            <div class="biz-action-btn"><i class="biz-ico biz-ico-default-value defaultvalue-rule-external bz-studio bz-expresion-ex_16x16_standard" title="%{formmodeler-component-editor-all-create-rule}"></i></div>            
+        {{/if}}
+    </div>
+</script>

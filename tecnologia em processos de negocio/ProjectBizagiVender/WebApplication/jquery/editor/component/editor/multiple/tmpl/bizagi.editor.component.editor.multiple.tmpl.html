@@ -1,0 +1,30 @@
+<script id="multiple-frame" type="text/x-jquery-tmpl">
+    <fieldset class="biz-accordion multiple-container">
+        <h3 class="ui-legend ui-title">${caption}<div class="ui-control-arrow-box"><i class="biz-btn-caret"></i></div></h3>
+        <div class="multiple-category-group ui-content"></div>
+    </div>
+</script>
+
+<script id="multiple-frame-property" type="text/x-jquery-tmpl">
+    <div></div>
+</script>
+
+<script id="multiple-frame-exclusive" type="text/x-jquery-tmpl">
+    <fieldset class="biz-accordion multiple-container">
+        <h3 class="multiple-category-name ui-legend ui-title">${caption}<div class="ui-control-arrow-box"><i class="biz-btn-caret"></i></div></h3>
+        <div class="ui-content">
+            <div class="multiple-selector ui-control-container">
+                {{each properties}}
+                    {{tmpl(this) "#multiple-frame-subproperty"}}   
+                {{/each}}
+                <div class="multiple-name ui-control-input multiple-none-option {{if isEmpty}} selected {{/if}}"><span><i class="biz-ico multiple-ico-radio-uncheck bz-studio  {{if isEmpty }} bz-radio_16x16_standard {{else}} bz-radio-unselected_16x16_standard {{/if}}"></i></span><span>${noneCaption}</span></div>                
+            </div>
+            <hr/>
+            <div class="multiple-category-group ui-control-container"></div>
+        </div>
+    </fieldset>
+</script>
+
+<script id="multiple-frame-subproperty" type="text/x-jquery-tmpl">
+    <div class="multiple-name${selectedcss} ui-control-input"><span><i class="biz-ico multiple-ico-radio-uncheck bz-studio {{if selectedcss }} bz-radio_16x16_standard {{else}} bz-radio-unselected_16x16_standard {{/if}}"></i></span><span>${caption}</span></div>
+</script>

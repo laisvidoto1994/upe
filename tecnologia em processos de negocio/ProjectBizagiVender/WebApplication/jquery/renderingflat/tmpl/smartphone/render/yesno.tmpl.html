@@ -1,0 +1,10 @@
+﻿<div class="bz-rn-radio-container">
+    <label for="radio#= data.id #yes" class="bz-rn-yesno">
+        <input class="bz-cm-icon bz-rn-boolean-radio bz-radio-true bz-mo-icon bz-unchecked" type="radio" id="radio#= data.id #yes" value="true"  name="radio#= data.id #name" />
+        %{render-boolean-yes}
+    </label>
+    <label for="radio#= data.id #no" class="bz-rn-yesno">
+        <input class="bz-cm-icon bz-rn-boolean-radio bz-radio-false bz-mo-icon bz-unchecked" type="radio" id="radio#= data.id #no" value="false" name="radio#= data.id #name"/>
+        %{render-boolean-no}
+    </label>
+</div>

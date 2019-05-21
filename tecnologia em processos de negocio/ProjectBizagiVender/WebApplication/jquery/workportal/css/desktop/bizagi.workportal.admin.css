@@ -1,0 +1,270 @@
+.wrapper {
+    font-size: 115%;
+}
+
+#form-search-cases,
+#form-search-users {
+    width: 100%;
+    margin: 1em auto;
+}
+
+.admin-form-search-users {
+    margin-top: 1em;
+}
+
+.admin-form-search-cases {
+    padding: 1.5em 3em;
+    border-radius: 6px;
+    background: #E4E4E4;
+    box-shadow: inset 1px 1px 0 rgb(238, 238, 238), 1px 1px 0 #D3D3D3;
+}
+
+.admin-form-search-cases .ui-dialog-buttonset {
+    padding-top: 1.5em;
+    border-top: 1px solid #D3D3D3;
+    margin: 1.5em 0 1em;
+    font-size: 12px;
+    text-align: center;
+    box-shadow: inset 0 1px 0 #EBEBEB;
+}
+
+.sc-title {
+    padding-bottom: .5em;
+    border-bottom: 1px solid #D3D3D3;
+    margin-top: 0;
+    margin-bottom: 1em;
+    text-shadow: 0 1px 0 #F5F5F5;
+    box-shadow: 0 1px 0 #EBEBEB;
+}
+
+.admin-form-row {
+    margin: 1em 0;
+}
+
+.admin-form-row label,
+.admin-form-field label {
+    float: left;
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+    height: 24px;
+    line-height: 24px;
+    text-align: left;
+}
+
+.biz-widget-searchlist label.case-title {
+    display: block;
+    height: 24px;
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+}
+
+.admin-form-row li {
+    margin: .25em 0;
+}
+
+.admin-form-field label {
+    margin: 1px 0;
+}
+
+.admin-form-search-cases span {
+    vertical-align: middle;
+}
+
+.admin-form-search-cases span.skill-data {
+    width: 155px;
+    height: auto;
+    line-height: 24px;
+}
+
+.admin-form-row ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 120px;
+}
+
+.admin-form-field {
+    overflow: hidden;
+    margin: .8em 0;
+}
+
+.admin-form-field > input[type="text"] {
+    float: right;
+    width: 65%;
+}
+
+#user-list-wrapper {
+    margin: 1.5em auto;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#user-list-wrapper .user-list-footer .current-page {
+    color: #1F74B2;
+}
+
+#user-list-content {
+    width: 100%;
+}
+
+#user-list-content td {
+    padding: 4px 0;
+}
+
+#user-list-content .user-list-header {
+    background: #CCC;
+    color: #2F526C;
+}
+
+#user-list-content .user-list-item {
+    background-color: #e6e6e6;
+}
+
+#user-list-content .user-list-item.biz-ui-even {
+    background: #DCDCDC;
+}
+
+#user-list-footer-wrapper {
+    padding: .5em 0;
+    margin: 0;
+    color: #2F526C;
+    text-align: center;
+    list-style: none;
+}
+
+#user-list-footer-wrapper li {
+    display: inline-block;
+    padding: 5px 2px;
+    cursor: pointer;
+}
+
+.result-message-wrapper {
+    padding: .5em 1em;
+    border: 1px solid #ECECEC;
+    margin: .5em 0;
+    background: #ECECEC;
+    text-align: center;
+    box-shadow: inset 0px 0px 8px 2px #D6D6D6, inset 0 0 2px #A7A7A7;
+}
+
+.ui-dialog-checkbox span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
+.ui-dialog-checkbox > span.ui-icon {
+    background-image: url(images/sprite.png);
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+}
+
+.ui-dialog-checkbox > span[data-state=uncheck]:hover {
+    background-position: -78px -459px;
+}
+
+.ui-dialog-checkbox > span[data-state=uncheck] {
+    background-position: -44px -459px;
+}
+
+.ui-dialog-checkbox > span[data-state=check] {
+    background-position: -112px -459px;
+}
+
+.biz-wp-admin-holidays-calendar-container {
+    border: 1px solid #D3D3D3;
+    box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.2);
+    background-color: #FFF;
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 5px;
+    text-align: center;
+    padding-bottom: 6px;
+}
+
+.biz-wp-admin-holidays-calendar-container > hr {
+    margin: 4px 0 4px 0;
+}
+
+#biz-wp-admin-holidays-calendar {
+    width: 85%;
+    margin: 0 auto;
+}
+
+#biz-wp-admin-holidays-calendar > td.selected {
+    background-color: red;
+    color: blue;
+}
+
+#biz-wp-admin-holidays-schemas select {
+    border-radius: 6px;
+    font-weight: bold;
+    width: 300px;
+}
+
+.bz-ui-save-status {
+    position: absolute;
+    float: right;
+    right: 50px;
+    width: 300px;
+    border-radius: 0 0 0 5px;
+    text-align: right;
+    padding: 0 10px;
+    font-weight: bold;
+    display:none;
+}
+
+.ui-datepicker-selected > a.ui-state-default {
+    background-color: #99C7E8;
+    color: black;
+}
+
+.ui-datepicker-notselected > a {
+    background-color: #fafafa;
+    color: #333333;
+}
+
+.ui-datepicker-notselected > a.ui-state-default,
+.ui-datepicker-notselected > a.ui-state-active,
+.ui-datepicker-notselected > a.ui-state-highlight {
+    background-color: #fafafa;
+}
+
+.ui-datepicker-unselectable.ui-state-disabled.ui-datepicker-selected > span {
+    background-color: #99C7E8 !important;
+}
+
+.bz-wp-admin-projectname {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.bz-wp-admin-projectname input {
+    height: 30px;
+    width: 500px;
+    border-radius: 5px;
+}
+.bz-wp-admin-projectname > .projectname-message-status{
+    /*border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    margin-bottom: 4px;*/
+    font-weight: bold;
+    display:none;
+}
+.bz-wp-admin-projectname > .status-success, .status-success{
+   /* background-color: #c1e2b3;*/
+    color:green;
+}
+
+
+.bz-wp-admin-projectname > .status-error, .status-error{
+    /*background-color: #e7c3c3;*/
+    color:red;
+}
+
+.bz-wp-admin-projectname > input.status-error, input.status-error{
+    /*background-color: #e7c3c3;*/
+    border:1px solid red;
+}

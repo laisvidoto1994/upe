@@ -1,0 +1,78 @@
+<script id="ui-bizagi-workportal-widget-reports" type="text/x-jquery-tmpl" >
+    <div class="modalMenuBt">
+        <div id="selectArrow"></div>   
+        <!--<div id="modalMenuBtHeader" class="clearfix">
+            <div id="bt-back">
+                <span></span>
+            </div>
+            <div id="modalTitle">%{workportal-widget-reports-reports}</div>			
+        </div>-->
+        <div id="modalMenuBtList" class="clearfix">
+            <ul id="categoryTree" class="categoryTree">
+                <li data-id-parent="">
+                    %{workportal-widget-reports-reports}
+                </li>
+            </ul>
+            <div id="reports" {{loading}}></div>
+        </div>    
+    </div>
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-reports-elements" type="text/x-jquery-tmpl">
+    {{each nodes}}
+    <ul class="reportsListDisplay" data-idquery="${idQuery}" data-id-element='${idElement}' data-endpoint='${endPoint}' data-displayname='${displayName}' data-maximized='${maximized}' data-id-parentreport='${idParentQuery}' data-extra-args='${extraArgs}'>
+        <li class="category ${icon}">
+            {{if childs.length > 0 }}
+            <!-- category withOut link -->
+            <div class="categoryIco"></div>
+            <span id="arrow">&GT;</span>
+            {{else}}        
+            {{if categoryWithLink}}
+            <!-- category with link -->
+            <div class="categoryLinkIco"></div>                     
+            {{else}}
+            <div class="processIco"></div>
+            {{/if}}
+            {{/if}}
+			{{if activeEdit}}
+            <span class="editButton"></span>
+            <span class="deleteButton"></span>
+            {{/if}}
+            <h3>${displayName}</h3>
+			<p class="newCaseDescription">${description}</p>
+        </li>
+    </ul>  
+    {{/each}}
+</script>
+
+<script id="ui-bizagi-workportal-widget-reports-empty-elements" type="text/x-jquery-tmpl" > 
+    <div>%{workportal-widget-reports-no-queries}</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-reports-query-tree" type="text/x-jquery-tmpl" >   
+    <li  data-id-element="${idElement}">
+        &GT; ${queryDisplayName}       
+    </li>
+</script>
+
+<script id="ui-bizagi-workportal-widget-reports-confirm" type="text/x-jquery-tmpl" > 
+    <p>
+        <span class="ui-icon ui-icon-alert"></span>
+        %{workportal-widget-reports-confirm}
+    </p>
+</script>
+
+<script id="ui-bizagi-workportal-widget-reports-edit" type="text/x-jquery-tmpl" > 
+	<div id='report-edit-dialog' data-idquery="${idQuery}">
+		<fieldset>
+			<legend>%{workportal-widget-reports-query-name}</legend>
+			<input id='namequery' type='text' value='${name}'>
+		</fieldset>
+
+		<fieldset>
+			<legend>%{workportal-widget-reports-query-description}</legend>
+			<textarea id='querydescripcion'>${description}</textarea>
+		</fieldset>
+	</div>
+</script>

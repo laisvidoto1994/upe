@@ -1,0 +1,16 @@
+﻿{
+    "actiontype": "CheckoutForm",
+    "result": {
+        "success": true,
+        "parameters": [
+            {
+                "key": "isInCheckout",
+                "value": "False"
+            },
+            {
+                "key": "userInfo",
+                "value": "{\"userId\":\"be2bef2e-25b1-48f0-a9f4-2b9a5e839480\",\"userName\":\"manuelmg\",\"userFullName\":\"Manuel Alexander Mejia Garzon\",\"CheckOutDate\":\"27/02/2014 11:53\"}"
+            }
+        ]
+    }
+}

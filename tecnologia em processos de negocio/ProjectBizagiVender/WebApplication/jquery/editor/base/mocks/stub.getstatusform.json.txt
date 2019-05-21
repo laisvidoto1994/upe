@@ -1,0 +1,12 @@
+﻿{
+    "actiontype": "CheckoutForm",
+    "result": {
+        "success": true,
+        "parameters": [
+            {
+                "key": "isInCheckout",
+                "value": "True"
+            }
+        ]
+    }
+}

@@ -1,0 +1,577 @@
+<PROPERTY	NAME="preset" />
+<EVENT		NAME="onerror"			ID="error" />
+<ATTACH		EVENT="ondocumentready" onevent="DoInit()" />
+<PROPERTY	name="maxLength" />
+<PROPERTY	name="ReType" />
+<PROPERTY	name="TextTyped" />
+<PROPERTY	name="TextChanged" />
+<ATTACH		event="onkeypress" handler="doKeypress" />
+<ATTACH		event="onbeforepaste" handler="doBeforePaste" />
+<ATTACH		event="onpaste" handler="doPaste" />
+
+<script language="VBScript">
+
+setLocale(BA_CULTURE)
+
+sub DoInit()
+    sTag = LCase(tagName)
+
+    if (sTag = "span" OR sTag = "div" OR sTag = "a" OR sTag = "p" _
+        OR sTag = "td" OR sTag = "th" OR sTag = "button" _
+        OR Left(sTag,1) = "h") then
+   
+        FormatValue()
+    else
+		if sTag = "input" OR sTag = "textarea" then
+			attachEvent "onfocus", GetRef("InputFocus")
+			attachEvent "onblur", GetRef("InputBlur")
+			attachEvent "onkeyup", GetRef("DoKey")
+			
+			TextTyped = value			
+			InputBlur()
+			TextTyped = value
+			TextChanged = false
+		else 
+			ReturnError("Element not supported")
+		end if
+    end if
+end sub
+
+sub FormatValue()
+	select case (preset)
+		case "shortdate"
+			innerText = MaskDate(innerText, false)
+		case "shortdatetime"
+			innerText = MaskDate(innerText, true)
+		
+		case "currency" 
+			innerText = MaskMoney(innerText, true)
+
+		case "bigint" 
+			innerText = MaskNumber(innerText, preset)
+		case "int" 
+			innerText = MaskNumber(innerText, preset)
+		case "smallint" 
+			innerText = MaskNumber(innerText, preset)
+		case "tinyint" 
+			innerText = MaskNumber(innerText, preset)
+		case "decimal" 
+			innerText = MaskNumber(innerText, preset)
+		case "numeric" 
+			innerText = MaskNumber(innerText, preset)
+		case "float" 
+			innerText = MaskNumber(innerText, preset)
+		case "real" 
+			innerText = MaskNumber(innerText, preset)
+		case "number" 
+			innerText = MaskNumber(innerText, preset)
+
+		case "texto"
+			innerText = MaskTexto(innerText)
+
+		case "atexto"
+			innerText = MaskATexto(innerText)
+
+		case "documento" 
+			innerText = MaskDoc(innerText)
+
+		case "hour"
+			innerText = MaskHour(innerText)
+
+		case "min"
+			innerText = MaskMin(innerText)
+	end select
+end sub
+
+sub InputFocus()
+end sub
+
+sub DoKey()
+	keyCode = BAGetWindowKeyCode()
+	sVal = CStr(value)
+	
+	if (keyCode > 47 AND keyCode < 58) OR (keyCode > 95 AND keyCode < 106) OR (keyCode = 8) then
+			select case (preset) 
+			case "currency"
+				if (value <> "") AND (value <> "0") Then
+					value = MaskMoney(value, false)
+				end if
+		end select
+	end if
+end sub
+
+sub InputBlur()
+    sUnformattedValue = value
+    if ReType = "true" then
+		if value <> TextTyped and TextTyped<>"" then
+		    value = ""		  
+		end if			
+	end if
+	
+	select case (preset)
+		case "shortdate"
+			value = MaskDate(value, false)
+		case "shortdatetime"
+			value = MaskDate(value, true)
+		
+		case "currency"
+			value = MaskMoney(value, true)
+
+		case "percent"
+			value = MaskPercent(value)
+
+		case "bigint" 
+			value = MaskNumber(value, preset)
+		case "int" 
+			value = MaskNumber(value, preset)
+		case "smallint" 
+			value = MaskNumber(value, preset)
+		case "tinyint" 
+			value = MaskNumber(value, preset)
+		case "decimal" 
+			value = MaskNumber(value, preset)
+		case "numeric" 
+			value = MaskNumber(value, preset)
+		case "float" 
+			value = MaskNumber(value, preset)
+		case "real" 
+			value = MaskNumber(value, preset)
+		case "number" 
+			value = MaskNumber(value, preset)
+
+		case "texto"
+			value = MaskTexto(value)
+
+		case "atexto"
+			value = MaskATexto(value)
+
+		case "documento"
+			value = MaskDoc(value)
+
+		case "hour"
+			value = MaskHour(value)
+
+		case "min"
+			value = MaskMin(value)
+			
+	end select
+	
+	bPrintMessage = false
+	if ReType = "true" then
+	    if TextTyped = "" and value <>"" then
+	       TextTyped = sUnformattedValue
+	       value = ""
+	       bPrintMessage = true
+	       focus()
+	    else if value <> TextTyped then	    
+	       TextTyped = ""
+	       end if
+	    end if       	    
+	end if	
+	printReTypeMessage(bPrintMessage)
+	if bPrintMessage = false then
+	       TextChanged = false	   
+	end if
+	
+		
+end sub
+
+
+function MaskTexto(sValue)
+	Dim sRetorno
+	Dim sLocal
+	Dim iCont
+
+	sLocal=sValue
+	If len(sValue) = 0 then
+			sLocal = ""
+	Else
+			sLocal = Replace(sLocal,"""","")
+	End if
+	MaskTexto=sLocal
+end function
+
+function MaskATexto(sValue)
+	Dim sRetorno
+	Dim sLocal
+	
+	sLocal=sValue
+	If len(sValue) = 0 then
+			MaskATexto = ""
+	End if
+	
+	MaskATexto=sLocal
+end function
+
+function MaskDate(sValue, bIsDateTime)
+	
+    if len(sValue) = 0 then
+		MaskDate = "" 
+    end if
+	
+	sValue = Replace(sValue, "a.m.", "AM") 'a.m. format is not allowed in VBScript
+	sValue = Replace(sValue, "p.m.", "PM")
+
+	thisDateFormat = BA_DATE_FORMAT_MASK
+    if(bIsDateTime) then
+		thisDateFormat = thisDateFormat & " " & BA_TIME_FORMAT_MASK			
+	end if
+    formatedDate = getDateFromFormat(sValue, thisDateFormat)
+    if (formatedDate = "0") then
+		ReturnError("Not a valid date")
+		MaskDate = ""
+	else
+		MaskDate = BAFormatDateTime(getDateFromFormat(sValue, thisDateFormat), thisDateFormat)
+	end if
+
+end function
+
+
+function MaskGeneralNumber(sValue, sType, bRound)
+	if (Len(sValue) = 0) then
+		MaskGeneralNumber =  ""
+	else	
+		On Error Resume Next
+		err.clear
+				
+		sDecimals = ""
+		iValue = 0
+		
+		'Clear group separator
+		sValue = Replace(sValue, BA_GROUP_SEPARATOR, "")
+		
+		'Convert (x) format of negative numbers into -x format
+		If (inStr(sValue, "(") = 1) Then
+			sValue = Replace(sValue, "(", "")
+			sValue = Replace(sValue, ")", "")
+			sValue = "-" & sValue
+		End If
+		
+		'Manage negative numbers
+		bNegativeNumber = false
+		If (inStr(sValue, "-") = 1) Then
+			bNegativeNumber = true
+			sValue = Replace(sValue, "-", "")
+		End If
+		
+		'Resolve decimals
+		iPos = inStr(sValue, BA_DECIMAL_SEPARATOR)
+		
+		'Manage decimals (rounding them if necessary)
+		If (iPos <> 0) Then
+			sDecimals = Mid(sValue, iPos + 1)
+			sDecimals = Replace(sDecimals, BA_DECIMAL_SEPARATOR, "")
+			dblTestDecimals = CDbl(sDecimals)
+			dblRealDecimals = CDbl(sDecimals / (10 ^ Len(sDecimals)))
+			
+			'Validate if there was an error with last instruction
+			If (err.number <> 0) Then
+				MaskGeneralNumber =  ""
+				Exit Function
+			End If			
+			
+			If (bRound)	Then
+				sDecimals = Round(dblRealDecimals, BA_DIGITS_AFTER_DECIMAL)
+				sDecimals = Replace(sDecimals, ",", BA_DECIMAL_SEPARATOR)
+				sDecimals = Replace(sDecimals, ".", BA_DECIMAL_SEPARATOR)
+			Else
+				sDecimals = BA_DECIMAL_SEPARATOR & Mid(sDecimals, 1 , BA_DIGITS_AFTER_DECIMAL)
+			End If
+			
+			'Checks if the decimals has been rounded to 1
+			If inStr(sDecimals, BA_DECIMAL_SEPARATOR) <> 0 Then
+				sDecimals = Mid(sDecimals, 	inStr(sDecimals, BA_DECIMAL_SEPARATOR))
+			Else
+				sDecimals = ""
+			End If
+			
+			iValue = Mid(sValue, 1 ,iPos - 1)
+			
+		Else
+			iValue = sValue
+		End If
+		
+		'Integer part
+		iValue = CDbl(iValue)	
+		
+		'Validate if there was an error with last instruction
+		If (err.number <> 0) Then
+			MaskGeneralNumber =  ""
+			Exit Function
+		End If
+		
+		'get result based on number type
+		select case (sType)
+			case "bigint"
+				iValue = Round(iValue + dblRealDecimals)
+				IF iValue > 9223372036854775807 OR iValue < -9223372036854775807 THEN
+					iValue = ""
+				END IF
+				sResult = iValue
+				sResult = Replace(sResult, ",", BA_DECIMAL_SEPARATOR)
+				sResult = Replace(sResult, ".", BA_DECIMAL_SEPARATOR)
+			case "int"
+				iValue = CLng(iValue)
+				IF iValue > 2147483647 OR iValue < -2147483647 THEN
+					iValue = ""
+				END IF
+				sResult = iValue
+			case "smallint"
+				iValue = CInt(iValue)
+				IF iValue > 32767 OR iValue < -32767 THEN
+					iValue = ""
+				END IF
+				sResult = iValue
+			case "tinyint"
+				iValue = CInt(iValue)
+				IF iValue > 255 OR iValue < 0 THEN
+					iValue = ""
+				END IF
+				sResult = iValue
+			case "decimal"
+				iValue = CDbl(iValue + dblRealDecimals)
+				IF iValue > 999999999999999 OR iValue < -999999999999999 THEN
+					iValue = ""
+				END IF 
+				sResult = iValue
+				sResult = Replace(sResult, ",", BA_DECIMAL_SEPARATOR)
+				sResult = Replace(sResult, ".", BA_DECIMAL_SEPARATOR)
+			case "numeric"
+				iValue = CDbl(iValue + dblRealDecimals)
+				IF iValue > 999999999999999 OR iValue < -999999999999999 THEN
+					iValue = ""
+				END IF
+				sResult = iValue
+				sResult = Replace(sResult, ",", BA_DECIMAL_SEPARATOR)
+				sResult = Replace(sResult, ".", BA_DECIMAL_SEPARATOR)
+			case "float"
+				iValue = CDbl(iValue + dblRealDecimals)
+				IF iValue > 999999999999999 OR iValue < -999999999999999 THEN
+					iValue = ""
+				END IF
+				sResult = iValue
+				sResult = Replace(sResult, ",", BA_DECIMAL_SEPARATOR)
+				sResult = Replace(sResult, ".", BA_DECIMAL_SEPARATOR)
+			case "real"
+				iValue = CDbl(iValue + dblRealDecimals)
+				IF iValue > 999999999999999 OR iValue < -999999999999999 THEN
+					iValue = ""
+				END IF
+				sResult = iValue
+				sResult = Replace(sResult, ",", BA_DECIMAL_SEPARATOR)
+				sResult = Replace(sResult, ".", BA_DECIMAL_SEPARATOR)
+			case "number"
+				iValue = CDbl(iValue + dblRealDecimals)
+				sResult = iValue
+				sResult = Replace(sResult, ",", BA_DECIMAL_SEPARATOR)
+				sResult = Replace(sResult, ".", BA_DECIMAL_SEPARATOR)
+			case "currency"
+				'Resolve Group Separator
+				sFinalValue = ""
+				i = 1
+				For iCount = Len(iValue) To 1 Step -1
+					digit = Mid(iValue, iCount, 1)
+					If (i Mod BA_GROUP_SIZE = 0) Then
+						sFinalValue = BA_GROUP_SEPARATOR & digit & sFinalValue 
+					Else
+						sFinalValue = digit & sFinalValue 
+					End If		
+					i = i + 1
+				Next
+				
+				If Mid(sFinalValue, 1, 1) = BA_GROUP_SEPARATOR Then
+					sFinalValue = Mid(sFinalValue, 2)
+				End If 
+			
+				sResult = sFinalValue & sDecimals
+				
+		end select
+		
+		If (bNegativeNumber = true) Then
+			sResult = "-" & sResult
+		End If
+		
+		MaskGeneralNumber = sResult
+
+	end if
+end function
+
+
+function MaskMoney(sValue, bRound) 
+	MaskMoney = MaskgeneralNumber(sValue, "currency", bRound)
+end function
+
+function MaskDoc(sValue) 
+    if (Len(sValue) = 0) then
+		MaskDoc =  ""
+	else
+
+		on error resume next
+		err.clear
+		if sValue < 0 then
+			sValue=sValue*-1
+		End if
+		
+		iValue = CDbl(sValue)
+		iValue = Round(iValue * 100) / 100
+		if err.number = 13 then
+		    on error goto 0
+		    ReturnError "Valor invalido"
+		    MaskDoc = ""
+		end if
+		on error goto 0
+    
+
+		sValue = CStr(iValue)
+	
+
+		if (inStr(sValue, ".")  > 4) then 
+		    sValue = MID(sValue, 1, Instr(sValue,".")-4) & "," & MID(sValue, InStr(sValue, ".") - 3)
+		end if
+	end if
+	
+	MaskDoc = "" & sValue
+end function
+
+
+function MaskNumber(sValue, preset) 
+	MaskNumber = MaskGeneralNumber(sValue, preset, false)
+end function
+
+function MaskHour(sValue)
+	Dim tTime
+	tTime = DateAdd("n", -10, Now())	
+	
+	if Len(sValue) = 0 then
+		if Hour(tTime) > 12 then
+			MaskHour = Hour(tTime) - 12
+		else
+			MaskHour = Hour(tTime)
+		end if
+	else
+		if  Not isnumeric (sValue) or sValue="0" then
+			MaskHour =12		
+		else
+			If sValue>=13 and  sValue<=24 then
+				MaskHour =  sValue -12
+			elseIf sValue>24 or  sValue < 0 then
+				MaskHour =  12
+			else
+				MaskHour =  sValue
+			end if			
+		end if
+	end if
+end function
+
+function MaskMin(sValue) 
+	Dim tTime
+	tTime = DateAdd("n", -10, Now())
+	
+	if Len(sValue) = 0 then
+		if minute(tTime) < 10 then
+			MaskMin =  "0" & minute(tTime)
+		else
+			MaskMin =minute(tTime)
+		end if
+	else
+		if  Not isnumeric (sValue) then
+				MaskMin = "00"
+		else
+			If sValue>59 or  sValue < 0 then
+				MaskMin =  "00"
+			else
+				MaskMin =  sValue
+			end if			
+		end if
+	end if
+end function
+
+
+function MaskPercent(sValue)
+
+    if (len(sValue) = 0) then
+		MaskPercent = ""
+	else
+		on Error resume next
+		err.clear
+		iValue = parseFloat(sValue)
+		if err.number = 13 then
+			ReturnError("Valor invalido")
+		    on error goto 0
+		    MaskPercent = ""
+		end if
+		on error goto 0
+    
+		    iValue = iValue * 100
+	end if
+   
+    MaskPercent = iValue & "%"
+end function
+
+
+sub ReturnError(sMsg)
+    set oEvent = createEventObject
+    oEvent.setAttribute "error", sMsg
+    error.fire oEvent
+end sub
+
+</script>
+
+<SCRIPT language="JScript">
+var oBARetypeMCont = null;
+function printReTypeMessage(bPrint){
+   	 if (bPrint){
+		if (!oBARetypeMCont){      
+			oBARetypeMCont = document.createElement("<span>");
+			oBARetypeMCont.innerText = " "+BA_RETYPEVALUE;
+			oBARetypeMCont.className = "WarningMessage";
+			this.insertAdjacentElement ("afterEnd", oBARetypeMCont)
+		}
+		oBARetypeMCont.style.display = "inline";
+	 }
+	 else{
+	    if (oBARetypeMCont){
+	         oBARetypeMCont.style.display = "none";
+	     }
+	 }
+}
+// Keep user from entering more than maxLength characters
+function doKeypress(){
+    if (TextChanged == false){
+        TextChanged = true;
+        TextTyped = "";
+    }
+	if(!isNaN(maxLength)){
+		maxLength = parseInt(maxLength);
+		var oTR = element.document.selection.createRange();
+		// Allow user to type character if at least one character is selected
+		if(oTR.text.length >= 1)
+			event.returnValue = true;
+		else if(value.length > maxLength-1)
+			event.returnValue = false;
+	}
+}
+// Cancel default behavior
+function doBeforePaste(){
+	if(maxLength != null && !isNaN(maxLength))
+		event.returnValue = false;
+}
+// Cancel default behavior and create a new paste routine
+function doPaste(){
+	if(maxLength != null && !isNaN(maxLength)){
+		event.returnValue = false;
+		maxLength = parseInt(maxLength);
+		var oTR = element.document.selection.createRange();
+		var iInsertLength = maxLength - value.length + oTR.text.length;
+		var sData = window.clipboardData.getData("Text").substr(0,iInsertLength);
+		oTR.text = sData;
+	}
+}
+
+function BAFormatDateTime(dateParam, dateFormatParam){
+	return dateParam.format(dateFormatParam);
+}
+function BAGetWindowKeyCode(){
+	return window.event.keyCode;
+}
+</SCRIPT>

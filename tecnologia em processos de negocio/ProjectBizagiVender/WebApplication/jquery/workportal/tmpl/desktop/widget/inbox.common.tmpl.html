@@ -1,0 +1,453 @@
+<script id="ui-bizagi-workportal-widget-inbox-common-processes" type="text/x-jquery-tmpl">
+    <div id="ui-bizagi-wp-app-inbox-processes-container" class="ui-bizagi-wp-app-inbox-processes-container">
+        {{if categories.length == 0}}
+        <div>%{workportal-widget-inboxcommon-no-results-found}</div>
+        {{/if}}
+        <div class="scrollProcess">
+            {{each categories}}
+
+            {{if name.length !== 0}}
+                <div class="ui-bizagi-wp-app-inbox-processes-title" ><span class="arrow Right"><i></i></span>${name}</div>
+            {{/if}}
+
+            {{if name.length !== 0}}
+            <ul class="nodisplay">
+            {{else}}
+            <ul>
+            {{/if}}
+
+                {{each workflows}}
+                <li>
+                    <i id="ui-bizagi-wp-app-inbox-processes-ico-paper" class="bz-icon bz-icon-16 bz-icon-case-outline"></i>
+                    <span id="ui-bizagi-wp-app-inbox-processes-name" class="ui-bizagi-wp-app-inbox-processes-name">${$value["name"].substr(0,60)} {{if $value["name"].length>60}}...{{/if}}</span>
+                    {{if count > 0}}
+                        <span class="ui-bizagi-wp-app-inbox-processes-ncase"{{if $value["name"].match(/[^\s]{15,}/)!=null }} style="margin-top: 0px" {{/if}}>${$value["count"]}</span>
+                    {{/if}}
+                    <input type="hidden" id="idWorkflow" value="${idworkflow}">
+                    <input type="hidden" id="isFavorite" value="${isFavorite}">
+                    <input type="hidden" id="guidWFClass" value="${guidWFClass}">
+                    <input type="hidden" id="guidFavorite" value="${guidFavorite}">
+                </li>
+                {{/each}}
+            </ul>
+            {{/each}}
+            <div id="queryFormShortcutContainer" class="nodisplay ui-bizagi-wp-app-inbox-processes-title">
+                <span class="arrow Right"><i></i></span>%{workportal-widget-queries-stored-query-forms}
+            </div>
+            <div class="nodisplay" id="queryFormShortcut" class="clearfix">
+            </div>
+        </div>
+
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-common-header" type="text/x-jquery-tmpl">
+        <div id="ui-bizagi-wp-app-inbox-tab-container">
+            <ul>
+                <li class="ui-bizagi-wp-app-inbox-tab active" id="all">
+                    <div class="ui-bizagi-wp-points-container">
+                        <i class="bz-icon bz-icon-20 bz-icon-1-point point-red"></i>
+                        <i class="bz-icon bz-icon-20 bz-icon-2-point point-yellow"></i>
+                        <i class="bz-icon bz-icon-20 bz-icon-3-point point-green"></i>
+                        <i class="bz-icon bz-icon-20 bz-icon-checklist ui-bizagi-wp-base-points"></i>
+                    </div>
+
+                    <span class="toolTip">${All}</span>
+                </li>
+                <li  class="ui-bizagi-wp-app-inbox-tab" id="red">
+                    <i class="bz-icon bz-icon-12 bz-icon-point point-red" ></i>
+                    <span class="toolTip">${Red}</span>
+                </li>
+                <li class="ui-bizagi-wp-app-inbox-tab" id="yellow">
+                    <i class="bz-icon bz-icon-12 bz-icon-point point-yellow" ></i>
+                    <span class="toolTip">${Yellow}</span>
+                </li>
+                <li class="ui-bizagi-wp-app-inbox-tab" id="green">
+                    <i class="bz-icon bz-icon-12 bz-icon-point point-green" ></i>
+                    <span class="toolTip">${Green}</span>
+                </li>
+                <li class="ui-bizagi-wp-app-inbox-tab" id="favourites">
+                   <i class="bz-icon bz-icon-16 bz-icon-star point-yellow" ></i>
+                </li>
+                <span id="ui-bizagi-wp-app-inbox-tap-selector" class="All" ></span>
+            </ul>
+        </div>
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-common-case-description" type="text/x-jquery-tmpl">
+    <div id="ui-bizagi-wp-app-inbox-description-container" class="ui-bizagi-wp-app-inbox-description-container">
+        <div class="scrollSummary" {{adjustable}}>
+            <div class="ui-bizagi-wp-app-inbox-processes-title">
+                {{if isActivityPlan }}
+                    <!--If(s) nested have problems... with negation-->
+                {{else}}
+                    {{if security }}
+                        {{if security.GraphicQuery }}
+                            <div class="ui-bizagi-wp-app-inbox-cases-ico-view bz-icon bz-icon-16 bz-icon-diagram-outline">
+                                <span></span>
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
+                ${caseNumber}
+            </div>
+            <div id="descriptionPadding">
+                {{each currentState}}
+                <div class="ui-bizagi-wp-app-inbox-activity-description">
+                    <div>
+                        <div id="ui-bizagi-wp-app-inbox-cases-ico-state-${colorState}" class="ui-bizagi-wp-app-inbox-cases-description-ico-state">
+                            <span></span>
+                        </div>
+                        <!--<span class="ui-bizagi-wp-app-inbox-description-cases-name">${caseNumber}</span>-->
+                        <h2 class="ui-bizagi-wp-app-inbox-description-activity-name">
+                            {{if isEvent=="true"}}
+                            <div id="ui-bizagi-wp-app-inbox-cases-ico-event">
+                                <span></span>
+                            </div>
+                            {{/if}}
+                            ${state}
+                        </h2>
+                        <dl class="box-description">
+                            <dt>%{workportal-widget-inboxcommon-creation-date}</dt>
+                            <dd class="formatDate">${creationDate}</dd>
+                            {{if isEvent=="false"}}
+                            <dt>%{workportal-widget-inboxcommon-state-expires-on}</dt>
+                            <dd class="formatDate">${estimatedSolutionDate}</dd>
+                            {{/if}}
+                            {{if tskDescription}}
+                            <dt>%{workportal-widget-inboxcommon-description}</dt>
+                            <dd>${tskDescription}</dd>
+                            {{/if}}
+                        </dl>
+                        {{if showWorkOnIt}}
+                            <button type="button" class="workonitRow">
+                                %{workportal-widget-inboxcommon-work-on-it}
+                            </button>
+                            <input type="hidden" id="idWorkItem" value="${idWorkItem}" />
+                            <input type="hidden" id="idTask" value="${idTask}" />
+                        {{/if}}
+                    </div>
+                </div>
+                {{/each}}
+
+                <div id="ui-bizagi-details-tabs">
+                    <ul>
+                        {{if showForm}}
+                        <li><a href="#formSummary">%{workportal-widget-inboxcommon-summary}</a></li>
+                        {{/if}}
+                        <li><a href="#details">%{workportal-widget-inboxcommon-details}</a></li>
+                        {{if hasComments}}
+                        <li><a href="#comments">%{workportal-widget-comments} <span class="messageIndicatorIcon"></span></a></li>
+                        {{/if}}
+                        {{if showSubProcess}}
+                        <li><a href="#subprocess">%{workportal-widget-inboxcommon-subprocess}</a></li>
+                        {{/if}}
+                        {{if showAssignees}}
+                        <li><a href="#assignees">%{workportal-widget-inboxcommon-assignees}</a></li>
+                        {{/if}}
+                        {{if showEvents}}
+                        <li><a href="#events">%{workportal-widget-inboxcommon-events}</a></li>
+                        {{/if}}
+                    </ul>
+                    {{if showForm}}
+                    <div id="formSummary" {{loading}}></div>
+                    {{/if}}
+                    <div id="details">
+                        <p>${caseDescription}</p>
+                        <dl class="box-description">
+                            {{if isAborted}}
+                            {{if  isAborted == 'true'}}
+                            <dt>%{workportal-widget-inboxcommon-aborted}</dt>
+                            <dd>%{render-boolean-yes}</dd>
+                            {{/if}}
+                            {{/if}}
+                                <dt>%{workportal-widget-inboxcommon-creation-date}</dt>
+                                <dd class="formatDate">${creationDate}</dd>
+                                <!--<dt>%{workportal-widget-inboxcommon-state-expires-on}</dt>
+                                <dd>${estimatedSolutionDate}</dd>-->
+                                <dt>%{workportal-widget-inboxcommon-created-by}</dt>
+                                <dd>${createdByName}</dd>
+                                <!--<dt>%{workportal-widget-inboxcommon-person-in-charge}</dt>
+                                <dd>{{each person}}
+                                    ${Name} &nbsp;
+                                    {{/each}}
+                                </dd>-->
+                                <!--<dt>%{workportal-widget-inboxcommon-current-state}</dt>
+                                <dd> {{each currentState}}
+                                    ${state} <br />
+                                    {{/each}}
+                                </dd>-->
+                                <dt>%{workportal-widget-inboxcommon-case-number}</dt>
+                                <dd>${caseNumber}</dd>
+                                {{if process}}
+                                    <dt>%{workportal-widget-inboxcommon-process}</dt>
+                                    <dd>${process}</dd>
+                                {{/if}}
+                                {{if processPath}}
+                                    <dt>%{workportal-widget-inboxcommon-process-path}</dt>
+                                    <dd>${processPath}</dd>
+                                {{/if}}
+                                {{if showParentProcess}}
+                                <dt>%{workportal-widget-inboxcommon-parent-process}</dt>
+                                <dd class="summaryLink">
+                                    <a href="#">${radNumberParentCase} - ${parentProcess.displayName}</a>
+                                    <input type="hidden" id="idCase" value="${parentProcess.idCase}" />
+                                </dd>
+                                {{/if}}
+                                {{if isClosed}}
+                                    <dt>%{workportal-widget-inboxcommon-state}</dt>
+                                    <dd>
+                                        {{if isAborted == "true"}}
+                                            <i class="bz-icon bz-icon-16 bz-icon-abort-outline" alt="Aborted" title="Aborted"></i> <span class="bz-icon-text">%{workportal-widget-inboxcommon-aborted}</span>
+                                        {{else}}
+                                            <div id="ui-bizagi-wp-app-inbox-cases-ico-close">
+                                                <span></span>
+                                            </div>
+                                            <span>%{workportal-widget-inboxcommon-state-closed}</span>
+                                        {{/if}}
+                                    </dd>
+                                    {{if isAborted == "true"}}
+                                        <dt>%{workportal-widget-inboxcommon-state-reason}</dt>
+                                        <dd>${abortReason}</dd>
+                                    {{/if}}
+                               {{/if}}
+                            </dl>
+                        </div>
+						{{if hasComments}}
+						<div id="comments" class="bz-wp-widget-render-social" {{loading}}></div>
+						{{/if}}
+                        {{if showSubProcess}}
+                        <div id="subprocess" {{loading}}></div>
+                        {{/if}}
+
+                        {{if showAssignees}}
+                        <div id="assignees" {{loading}}></div>
+                        {{/if}}
+
+                        {{if showEvents}}
+                        <div id="events" {{loading}}></div>
+                        {{/if}}
+
+                        {{if showActivities}}
+                        <div id="activities" ></div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-common-case-description-form" type="text/x-jquery-tmpl">
+        <div class="summaryFormContainer" {{loading}}></div>
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-common-case-description-subprocess" type="text/x-jquery-tmpl">
+    <!-- @source: inbox.common.tmpl.html -->
+    {{if showSubProcess}}
+    {{if showSubProcesColumns }}
+    <div class="personalizedColumnsContainer">
+        <input type="hidden" id="totalCustomFields" value="${CustFields.length}" />
+        {{each subProcPersonalized}}
+        <table cellspacing="0" border="0" cellpading="0" class="personalizedColumnsData">
+            <thead>
+                <tr>
+                    <td>identificador</td>
+                    <td>subproceso</td>
+                    {{each CustFields[0]}}
+                    <td>${$value}</td>
+                    {{/each}}
+                </tr>
+            </thead>
+            <tbody>
+                {{each subProcesses}}
+                <tr>
+                    <td>
+                        <div>
+                            {{if isOpen == "false"}}
+                            <div id="ui-bizagi-wp-app-inbox-cases-ico-close">
+                                <span></span>
+                            </div>
+                            {{/if}}
+                            <span>${radNumber}</span>
+                        </div>
+                    </td>
+                    <td class="summaryLink">
+                        <a href="#">
+                            ${displayName}
+                            <input type="hidden" id="idCase" value="${idCase}" />
+                        </a>
+                    </td>
+                    {{each(i, item) custData}}
+                        {{if custDataTypes }}
+                            {{if custDataTypes[i] == "Money"}}
+                                <td>{{html bizagi.util.formatMonetaryCell(item)}}</td>
+                            {{else}}
+                                {{if custDataTypes[i] == "Float" || custDataTypes[i] == "Real"}}
+                                    <td>{{html bizagi.util.formatDecimalCell(item)}}</td>
+                                {{else}}
+                                    {{if custDataTypes[i] == "Boolean"}}
+                                        <td>{{html bizagi.util.parseBoolean(item)}}</td>
+                                    {{else}}
+                                        {{if typeof item === "function"}}
+                                            <td></td>
+                                        {{else}}
+                                            <td>${item}</td>
+                                        {{/if}}
+                                    {{/if}}
+                                {{/if}}
+                            {{/if}}
+                        {{else}}
+                            <td>${item}</td>
+                        {{/if}}
+                    {{/each}}
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{/each}}
+    </div>
+    {{else}}
+    <dl class="box-description">
+        {{each subProcesses}}
+        <dt>%{workportal-widget-inboxcommon-subprocess}</dt>
+        <dd class="summaryLink">
+            <a href="#">
+                {{if isOpen == "false"}}
+                <div id="ui-bizagi-wp-app-inbox-cases-ico-close">
+                    <span></span>
+                </div>
+                {{/if}}
+                <span>${radNumber} - ${displayName}</span>
+            </a>
+            <input type="hidden" id="idCase" value="${idCase}" />
+        </dd>
+        {{/each}}
+    </dl>
+    {{/if}}
+    {{/if}}
+
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-common-case-description-assignees" type="text/x-jquery-tmpl">
+        {{if showAssignees}}
+        <dl class="box-description">
+            {{if events.length > 0}}
+            <dt>%{workportal-widget-render-events}</dt>
+            <dd>
+                ${events}
+            </dd>
+            {{/if}}
+
+            {{if activities.length > 0}}
+            <dt>%{workportal-widget-render-activities}</dt>
+            <dd>
+                ${activities}
+            </dd>
+            {{/if}}
+        </dl>
+        {{/if}}
+
+
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-common-case-description-events" type="text/x-jquery-tmpl">
+        {{if showEvents}}
+        <dl class="box-description">
+            {{each events}}
+            {{each $value}}
+            <dt>%{workportal-widget-inboxcommon-event-name}</dt>
+            <dd class="summaryLink">
+                <a>${displayName}</a>
+                <input type="hidden" id="idWorkflow" value="${idWorkFlow}" />
+                <input type="hidden" id="idWorkItem" value="${idWorkitem}" />
+                <input type="hidden" id="idTask" value="${idTask}" />
+                <input type="hidden" id="idCase" value="${idCase}" />
+                <input type="hidden" id="eventAsTasks" value="true" />
+            </dd>
+            {{/each}}
+            {{/each}}
+        </dl>
+        {{/if}}
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-common-case-description-activities" type="text/x-jquery-tmpl">
+        {{if showActivities}}
+        <div class="box-description">
+            {{each currentState}}
+            {{if idWorkItem  != globalIdWorkitem }}
+            <dl class="activity-separator">
+                <dt>%{workportal-widget-inboxcommon-activities-name}</dt>
+                <dd class="summaryLink">
+                    <a>${state}</a>
+                    <input type="hidden" id="idCase" value="${idCase}" />
+                    <input type="hidden" id="idWorkflow" value="${idWorkflow}" />
+                    <input type="hidden" id="idWorkItem" value="${idWorkItem}" />
+                </dd>
+                {{if tskDescription}}
+                <dt>%{workportal-widget-inboxcommon-description}</dt>
+                <dd>${tskDescription}</dd>
+                {{/if}}
+                <dt>%{workportal-widget-render-creation-date}</dt>
+                <dd class="formatDate">${creationDate}</dd>
+                <dt>%{workportal-widget-render-state-expires-on}</dt>
+                <dd class="formatDate">${estimatedSolutionDate}</dd>
+            </dl>
+            {{/if}}
+            {{/each}}
+        </div>
+        {{/if}}
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-common-header-view" type="text/x-jquery-tmpl">
+        <div class="modalEyePopup">
+            <ul class="clearfix">
+                <li id="viewDetailsEvent">
+                    <i id="ui-bizagi-wp-app-inbox-bt-modal-view" class="bz-icon bz-icon-16 bz-icon-zoom-in-outline"></i>
+                    <span>%{workportal-widget-inboxcommon-details}</span>
+                </li>
+                <li id="viewGridEvent">
+                    <i id="ui-bizagi-wp-app-inbox-bt-modal-view" class="bz-icon bz-icon-16 bz-icon-list-outline"></i>
+                    <div id="ui-bizagi-wp-app-inbox-bt-modal-view" class="ui-bizagi-wp-app-inbox-bt-modal-view-grid"></div>
+                    <span>%{workportal-widget-inboxcommon-grid}</span>
+                </li>
+                <!--
+                <li id="viewBatchEvent">>
+                        <div id="ui-bizagi-wp-app-inbox-bt-modal-view" class="ui-bizagi-wp-app-inbox-bt-modal-view-batch"></div>
+						<span>%{workportal-widget-inboxcommon-batch}</span>
+                </li>
+                -->
+            </ul>
+        </div>
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-folders" type="text/x-jquery-tmpl">
+        <div class="modalFoldersPopup">
+            <ul>
+                {{each folders}}
+                <li data-id="${id}" data-idParent="${idParent}" data-urlParameters="${urlParameters}">
+                    <div class="categoryIco"></div>
+                    <span id="arrow">&gt;</span>
+                    ${name}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-common-pagination-grid" type="text/x-jquery-tmpl">
+        <div id="casesPagination" class='gridCasePagination'>
+            {{tmpl "#ui-bizagi-workportal-widget-inbox-common-pagination"}}
+        </div>
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-common-pagination-inbox" type="text/x-jquery-tmpl">
+        <div id="casesPagination" class='detailsPagination'>
+            {{tmpl "#ui-bizagi-workportal-widget-inbox-common-pagination"}}
+        </div>
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-common-pagination" type="text/x-jquery-tmpl">
+        {{if pagination}}
+        <ul>
+            {{each pages}}
+            <li {{if page==pageNumber}} class="bz-page active" {{else}} class="bz-page" {{/if}} data-page="${pageNumber}">
+                <span class="number">${pageNumber}</span>
+            </li>
+            {{/each}}
+        </ul>
+        <span id="tooltipPagination" >Pag: ${page} / ${totalPages}</span>
+        {{/if}}
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-common-noresults" type="text/x-jquery-tmpl">
+        <div>%{workportal-widget-inboxcommon-no-results-found}</div>
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-common-oldrender" type="text/x-jquery-tmpl">
+		<iframe src="${url}" id="bz-wp-widget-oldrender" class="bz-wp-widget-oldrenderintegration" frameborder="0" style="width: 100%;min-height: 500px; height: 98%; border: 0px;"></iframe>
+</script>

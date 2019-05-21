@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html debug="true">
+    <head>
+        <title>FormModeler</title>
+        <link href="../../../../../jquery/editor/test/manual/cva/cva.css" rel="stylesheet" type="text/css" />
+        <style>
+            #cva-render-list{
+                z-index: 3000;
+                position: absolute;
+                top: 271px;
+                left: 213px;
+                font-family: Courier;
+            }
+            #cva-render-list ul{
+                border: 1px solid #ccc;
+                background-color: white;
+                list-style: none;      
+                padding: 0;          
+            }
+            #cva-render-list ul li{
+                height: 24px;
+                line-height: 24px;
+                width: 150px;
+                padding-left: 10px;
+            }
+            #cva-render-list ul li.cva-selected{
+                background-color: #77F;
+                color: white;
+            }
+        </style>
+        <!--<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>-->
+        <script type='text/javascript' src='../../../../../jquery/steal.js'></script>
+        <script type='text/javascript' src='../../../../../jquery/bizagi.loader.js'></script>
+        <script type="text/javascript" language="javascript">
+            // Redefine path to base. To the default site
+            var BIZAGI_PATH_TO_BASE = "../../../../../";
+            
+            // Gets the loader instance, and load the module
+            var loader = bizagi.loader;
+            loader.init( function () {
+            	loader.start("formModeler").then(function() {
+                    bizagi.formModeler = new bizagi.editor.modelerView();
+            		
+            		$.when(bizagi.formModeler.ready())
+            		.done(function(){
+            			setTimeout(customize, 1000);
+            		});
+            		
+            		function customize() {
+            			// Add ribbon button
+            			$('<li><span class="ribbon-image-save"/><span class="ribbon-label">Actions & Validations</span></li>').insertAfter($(".bizagi_editor_component_ribbon ul li:eq(1)"))
+            			
+            			// Add an overlay
+            			$('<div class="ui-widget-overlay" style="z-index:1000"></div>').appendTo($("body", document));
+            			
+            			// Add the cva-editor in a 'dialog'
+            			$("#cva-editor").show();
+            			
+            			// Add tabs
+            			$("#cva-editor").load("jquery/editor/test/manual/cva/cva.content.html", function () {
+            			    $("#cva-editor").children().wrapAll("<div id='cva-tabs'>");
+            			    $("#cva-tabs").prepend(
+            			        $("<ul/>").append("<li><a href='#cva-rules-editor'>Rules</li><li><a href='#cva-validations-editor'>Validations</li>")
+            			    ).tabs();	
+            			});
+            			
+            			// Add another overlay
+            			$('<div class="ui-widget-overlay" style="z-index:2000"></div>').appendTo($("body", document));
+            			
+            			// Add the cva-rule-editor in a 'dialog'
+            			$("#cva-rule-editor").show();
+            			$("#cva-rule-editor").load("jquery/editor/test/manual/cva/cva.rule.edition.html");
+            			
+            			$(document).click(function() {
+            			    // Add a final overlay
+            			    $('<div class="ui-widget-overlay" style="z-index:9999"></div>').appendTo($("body", document));
+                			
+            			    $("body", document).fadeOut(1000, function () {
+            				    window.location = "cva06.html";
+            			    });
+            		    });
+            		}
+            	});
+            }); 
+        </script>         
+    </head>
+    <body>
+        <div id="cva-editor">
+        </div>
+        <div id="cva-rule-editor">            
+        </div>
+        <div id="cva-render-list">
+            <ul>
+                <li>Client name</li>
+                <li class="cva-selected">Client last name</li>
+                <li>Client phone</li>
+                <li>Client address</li>
+                <li>Is VIP</li>
+                <li>Discount</li>
+            </ul>
+        </div>
+    </body>
+</html>

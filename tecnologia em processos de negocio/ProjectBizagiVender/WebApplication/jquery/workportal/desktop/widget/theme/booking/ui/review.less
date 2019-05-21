@@ -1,0 +1,101 @@
+﻿@import "base/variables";
+@import "base/mixins";
+
+.biz-theme-review-message-content {
+    background: @gray-4;
+    padding: 10px;
+    width: 800px;
+    margin-top: 12px;
+    border-radius: 3px;
+    margin-left: 80px;
+}
+
+.biz-theme-review-message-icon {
+    color: @white;
+    background: @black;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    padding-top: 4px;
+    margin-right: 5px;
+}
+
+.biz-theme-review-message-text {
+    color: @black;
+}
+
+.biz-theme-review-items {
+    width: 800px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    position: relative;
+    margin-left: 80px;
+}
+
+.biz-theme-review-items-left, .biz-theme-review-items-right,
+.biz-theme-review-item-left, .biz-theme-review-item-right {
+    .width-100;
+}
+
+.biz-theme-review-item-left, .biz-theme-review-item-right {
+    position: relative;
+}
+
+.biz-theme-review-item-left-message, .biz-theme-review-item-right-message {
+    background: #EEF1F8;
+    color: @black-1;
+    padding: 13px;
+    width: 45%;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 53, 128, 0.17);
+    box-shadow: 0 2px 0 rgba(0, 53, 128, 0.23);
+    font-size: 13px;
+    line-height: 17px;
+}
+
+.biz-theme-review-items-right {
+    border-right: 1px solid @gray-2;
+    margin-bottom:5px;
+}
+
+.biz-theme-review-item-left-message {
+    text-align: left;
+    float: left;
+    width: 45%;
+}
+
+.biz-theme-review-item-right-message {
+    text-align: right;
+    float: right;
+    width: 45%;
+    background: #F2FEE6;
+}
+
+.biz-theme-review-item-left-icon, .biz-theme-review-item-right-icon {
+    background: #009EE8;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin: auto;
+    position: absolute;
+    left: 392px;
+    bottom: 0;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+}
+
+.biz-theme-review-items-vertical-line {
+    position: absolute;
+    left: 402px;
+    top: 0;
+    width: 2px;
+    background: @gray-4;
+    height: 100%;
+    border-right: 1px solid @white;
+}
+
+.biz-theme-home-right-review {
+    /*background: transparent; */
+}

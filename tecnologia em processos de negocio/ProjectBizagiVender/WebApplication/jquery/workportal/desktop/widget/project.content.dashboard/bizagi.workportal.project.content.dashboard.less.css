@@ -1,0 +1,12 @@
+/*layout frames*/
+
+#ui-bizagi-wp-project-dashboard-sidebar-right .subtitle {
+    margin-bottom: 0.6em;
+    color: #374C58;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+#ui-bizagi-wp-project-plan-content-dashboard{
+    margin-bottom: 50px;
+}

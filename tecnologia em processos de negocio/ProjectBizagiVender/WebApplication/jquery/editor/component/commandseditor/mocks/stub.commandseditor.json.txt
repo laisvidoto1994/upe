@@ -1,0 +1,86 @@
+{
+	"actions":[
+        {
+			"guid": "1",
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple":  {"operator": "equals", "xpath": "test.boolean1", "argument": true, "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"xpath": "client.lastName", "command": "set-value", "argument": "parra", "argumentType": "const" }
+	        ],
+			"elseCommands": [
+                {"xpath": "client.lastName", "command": "set-value", "argument": "NADA", "argumentType": "const" }
+	        ]
+        },
+		{
+			"guid": "2",
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple":  {"operator": "equals", "xpath": "test.boolean2", "argument": true, "argumentType": "const"} },
+					{"simple":  {"operator": "not-equals", "xpath": "test.boolean3", "argument": true, "argumentType": "const"} },
+					{"simple":  {"operator": "equals", "xpath": "a.ciudad", "argument": {"value": "1", "label": "Bogota"}, "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"xpath": "client.lastName", "command": "set-value", "argument": "parra", "argumentType": "const" }
+	        ],
+			"elseCommands": [
+                {"xpath": "client.lastName", "command": "set-value", "argument": "NADA", "argumentType": "const" }
+	        ]
+        },
+		{
+			"guid": "3",
+            "conditions":{
+				"operator": "and",
+				"expressions": [
+					{"simple": {"operator": "equals", "xpath": "client.name", "argument": "nada", "argumentType": "const"}},
+					{"complex": { 
+						"conditions":{
+							"operator": "or",
+							"expressions":[
+								{"simple":  {"operator": "equals", "xpath": "test.boolean2", "argument": true, "argumentType": "const"} },
+								{"simple":  {"operator": "not-equals", "xpath": "test.boolean3", "argument": true, "argumentType": "const"} }
+							]
+						}
+					}}
+				]
+			},
+            "commands": [
+                {"xpath": "client.lastName", "command": "set-value", "argument": "parra", "argumentType": "const" }
+	        ],
+			"elseCommands": [
+                {"xpath": "client.lastName", "command": "set-value", "argument": "NADA", "argumentType": "const" }
+	        ]
+        }
+		
+	],
+	"validations": [
+		{ 
+			"guid": "4",
+			"conditions":{
+				"operator": "and",
+				"expressions": [
+					{"simple": {"operator": "equals", "xpath": "client.name", "argument": "nada", "argumentType": "const"}}
+				]
+			},
+			"validationCommand": {"message": "No se puede colocar nada como nombre", "focus": "client.name"}
+		}
+	], 
+	"controls": {
+		"test.boolean1": {"label": "vip", "type": "boolean", "render" : true },
+		"test.boolean2": {"label": "has discount", "type": "boolean", "render" : true },
+		"test.boolean3": {"label": "is senior", "type": "boolean", "render" : true },
+		"client.lastName": {"label": "apellido", "type": "string", "render" : true },
+		"client.name": {"label": "nombre", "type": "string", "render" : true },
+		"a.date": {"label": "fecha1", "type": "date", "render" : true },
+		"a.number": {"label": "number1", "type": "number", "render" : true },
+		"a.ciudad": {"label": "ciudad", "type": "entity", "render" : true },
+		"guidGrupo1": {"label": "Grupo 1", "type": "group", "container" : true },
+		"guidTabItem1": {"label": "tab 1", "type": "tabItem", "container" : true },
+		"guidTabItem2": {"label": "tab 2", "type": "tabItem", "container" : true }
+	}
+}

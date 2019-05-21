@@ -1,0 +1,16 @@
+{
+    "displayName": "Render Type",
+    "name": "renderType",
+    "type": "rendertype",
+    "value": "letter",
+    "data": [{
+        "name" : "button"
+    }, {
+        "name" : "hidden"
+    }, {
+        "name" : "label"
+    }, {
+        "name" : "letter",
+        "selected" : true
+    }]
+}

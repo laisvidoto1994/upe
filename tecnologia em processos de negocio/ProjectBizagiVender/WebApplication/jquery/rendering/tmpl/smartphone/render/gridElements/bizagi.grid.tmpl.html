@@ -1,0 +1,116 @@
+<script id="ui-bizagi-grid" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-grid">
+        <div data-bizagi-component="header" class="bz-rn-grid-cn-header">
+            <span class="bz-rn-grid-header-title">${label}</span>
+              {{element buttons}}
+              {{element rowButtons}}
+        </div>
+       
+        {{element table}}
+        
+        <div data-bizagi-component="pager" data-bizagi-position="replace">
+         {{element pager}}
+        </div>
+         <div data-bizagi-component="dynamicPager" data-bizagi-position="replace">
+         {{element dynamicPager}}
+        </div>
+        <div data-bizagi-component="emptyTable" data-bizagi-position="replace">
+         {{element emptyTable}}
+        </div>
+    </div>
+   
+
+</script>
+
+<script id="ui-bizagi-grid-waiting" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-waiting"></div>
+</script>
+
+
+
+<script id="ui-bizagi-grid-table" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-grid-smartphone" data-bizagi-component="table">
+     <div data-bizagi-component="rows" style="bz-gd-rows">
+        {{element rows}} 
+    </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-table-empty" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-grid-noRecords">%{render-grid-no-records}</div>
+</script>
+
+
+<script id="ui-bizagi-grid-row" type="text/x-jquery-tmpl">
+  <div data-bizagi-component="cells"  data-key="${key}" data-business-key="${businessKey}" {{if isNewRow}}data-new-row="true"{{/if}}  class="bz-rn-grid-cell">
+    {{element cells}}
+  </div>
+</script>
+
+
+
+<script id="ui-bizagi-grid-cell" type="text/x-jquery-tmpl">
+ <div class="{{if isKey}}ui-bizagi-grid-key {{/if}}{{if hidden}} ui-bizagi-column-hidden{{/if}}" data-bizagi-component="cellContent">
+         {{element cellContent}}
+    </div>
+</script>
+
+
+<script id="ui-bizagi-grid-cell-special" type="text/x-jquery-tmpl">
+    
+        <div class="ui-bizagi-grid-cell" data-bizagi-component="cellContent"> {{element cellContent}}</div>
+</script>
+
+
+
+<script id="ui-bizagi-grid-pager" type="text/x-jquery-tmpl">
+   <div class="ui-bizagi-grid-pager">
+        <ul>
+            <li data-page-number="previous" class="bz-cm-icon"><</li>
+            <li class="bz-rn-grid-pager"> ${page}/${records}</li>
+            <li data-page-number="next" class="bz-cm-icon">></li>
+        </ul>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-buttons" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-grid-buttons"  data-bizagi-component="buttons">
+        <ul class="bz-common-webkit-reset-ul bz-cm-width">
+            {{if add}}
+                <li class="ui-state-active" data-action="add"><div class="bz-cm-icon ui-icon ui-icon-plus"></div></li>
+            {{/if}}
+
+            {{if remove}}
+                <li class="ui-state-active" data-action="remove"><div class="bz-cm-icon ui-icon ui-icon-trash"></div></li>
+            {{/if}}
+               
+            {{if edit}}
+                <li class="ui-state-active" data-action="edit"><div class="bz-cm-icon ui-icon ui-icon-pencil"></div></li>
+            {{/if}}
+        </ul>
+    </div>
+</script>
+
+
+<script id="ui-bizagi-grid-row-buttons" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-grid-row-buttons" data-bizagi-component="rowButtons">
+        <ul>
+            {{if edit}}
+                <li class="ui-state-active" data-action="edit"><div class="bz-cm-icon ui-icon ui-icon-pencil"></div></li>
+            {{/if}}
+            {{if remove}}
+                <li class="ui-state-active" data-action="remove"><div class="bz-cm-icon ui-icon ui-icon-trash"></div></li>
+            {{/if}}   
+        </ul>
+    </div>
+</script>
+
+
+<script id="ui-bizagi-grid-column" type="text/x-jquery-tmpl">
+
+</script>
+
+
+<script id="ui-bizagi-grid-column-special" type="text/x-jquery-tmpl">
+
+</script>

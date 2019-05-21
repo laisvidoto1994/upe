@@ -1,0 +1,148 @@
+﻿
+<script id="project-plan-activities" type="text/x-jsrender">
+
+    <div class="project-plan-content-wrapper">
+        <div id="project-plan-activities-wrapper">
+            {{if statePlan}}
+            <div class="ui-bizagi-wp-project-plan-activities-header">
+                {{if showContextByMenuDashboard === contextPlanActivities}}
+                    <h2 class="bz-wp-cd-title">%{workportal-project-plan-acitivitiestitle}</h2>
+                    {{if statePlan == statePendingPlan}}
+                        <div class="plan-activities-action-button">
+                            <a href="#" id="to-execute-plan" class="bz-wp-btn bz-wp-btn-primary">
+                                <i class="bz-icon bz-icon-16 bz-icon-plan-executing-outline"></i>
+                                <span class="description">%{workportal-project-plan-action-execute-plan}</span>
+                            </a>
+                        </div>
+                    {{else}}
+                        {{if statePlan != "CLOSED_PLAN"}}
+                        <div class="plan-activities-action-button">
+                            <a href="#" id="to-close-plan" class="bz-wp-btn bz-wp-btn-primary">
+                                <i class="bz-icon bz-icon-16 bz-icon-plan-closed-outline"></i>
+                                <span class="description">%{workportal-project-plan-action-close-plan}</span>
+                            </a>
+                        </div>
+                        {{/if}}
+                    {{/if}}
+                {{else}}
+                <h2 class="bz-wp-cd-title">{{>plan.name}}</h2>
+                <p>{{>plan.description}}</p>
+                {{/if}}
+            </div>
+
+            {{if (statePlan == statePendingPlan || (statePlan == stateExecutingPlan)) && (showContextByMenuDashboard === contextPlanActivities)}}
+            <form id="project-plan-activity-createform">
+                <input type="text" id="project-plan-activity-create" class="bz-wp-form-control" autofocus placeholder="%{workportal-project-plan-addactivity}" maxlength="100">
+            </form>
+            {{/if}}
+
+            <ol class="project-plan-activity-list" start="1"></ol>
+            <span id="popupNotification"></span>
+
+            {{/if}}
+        </div>
+    </div>
+</script>
+
+<script id="project-plan-activities-item" type="text/x-jsrender">
+    {{for activities}}
+        <li data-name="{{>name}}" data-id="{{>id}}" class="clearfix {{>classEnabledActionActivities}}">
+            <div>
+                <p class="biz-wp-position-relative">
+                    {{if workItemState === "Completed"}}
+                        <i class="fa fa-check bz-icon-position-absolute-left" title="%{workportal-project-plan-activity-finished}"></i>
+                    {{else}}
+                        {{if #ctx.root.statePlan === #ctx.root.stateExecutingPlan}}
+                            {{if workItemState === "Active" || workItemState === "Inactive"}}
+                                <i class="bz-icon bz-icon-16 bz-icon-executing-outline" title="%{workportal-project-plan-activity-running}"></i>
+                            {{else}}
+                                {{if !workItemState}}
+                                    <i class="bz-icon bz-icon-16 bz-icon-pending-outline" title="%{workportal-project-plan-activity-pending}"></i>
+                                {{else}}
+                                    <i class="bz-icon bz-icon-16 bz-icon-closed-outline" title="%{workportal-project-plan-activity-cancel}"></i>
+                                {{/if}}
+                            {{/if}}
+                        {{else}}
+                            {{if #ctx.root.statePlan === #ctx.root.statePendingPlan}}
+                                <i class="bz-icon bz-icon-16 bz-icon-pending-outline" title="%{workportal-project-plan-activity-pending}"></i>
+                            {{else}}
+                                <i class="bz-icon bz-icon-16 bz-icon-closed-outline" title="%{workportal-project-plan-activity-cancel}"></i>
+                            {{/if}}
+                        {{/if}}
+                    {{/if}}
+                    <span>{{>name}}</span>
+                </p>
+                {{if workItemState !== "Completed"}}
+                    {{if #ctx.root.statePlan === #ctx.root.stateExecutingPlan}}
+                        {{if !(workItemState === "Active" || workItemState === "Inactive")}}
+                            {{if !workItemState}}
+                                <div class="ui-bizagi-wrapper-parallel-icon">
+                                    <div class="wrapper-arrow-css">
+                                    {{if parallel}}
+                                        <i class="bz-icon bz-icon-16 bz-icon-arrow-right-outline" title="%{workportal-project-plan-activity-parallel}"></i>
+                                    {{else}}
+                                        <i class="bz-icon bz-icon-16 bz-icon-arrow-down-outline" title="%{workportal-project-plan-activity-sequential}"></i>
+                                    {{/if}}
+                                    </div>
+                                </div>
+                            {{/if}}
+                        {{/if}}
+                    {{else}}
+                        {{if #ctx.root.statePlan === #ctx.root.statePendingPlan}}
+                            <div class="ui-bizagi-wrapper-parallel-icon">
+                                <div class="wrapper-arrow-css">
+                                    {{if parallel}}
+                                    <i class="bz-icon bz-icon-16 bz-icon-arrow-right-outline" title="%{workportal-project-plan-activity-parallel}"></i>
+                                    {{else}}
+                                    <i class="bz-icon bz-icon-16 bz-icon-arrow-down-outline" title="%{workportal-project-plan-activity-sequential}"></i>
+                                    {{/if}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
+
+                <div class="ui-bizagi-wp-project-plan-activity-infobox" data-iduser="{{>userAssigned}}">
+                    {{if #ctx.root.statePlan != #ctx.root.statePendingPlan}}
+                    <span class="{{>status}}-ico">
+                        <div class="bz-icon bz-icon-clock"></div>
+                    </span>
+                    {{/if}}
+                    {{if numTotalItems}}
+
+                    <i class="bz-icon bz-icon-16 bz-icon-checklist-outline"></i>
+                    <span>{{>numResolvedItems}} / {{>numTotalItems}}</span>
+                    {{/if}}
+                    <div class="bz-wp-avatar bz-wp-avatar-24">
+                        <img style="display:none" src="">
+                        <span class="ui-bizagi-user-initials"></span>
+                    </div>
+                </div>
+                {{if #ctx.root.context === "PLANACTIVITIES"}}
+                    <div class="item-edit-button">
+                        {{if workItemState === "Completed" || #ctx.root.statePlan === "CLOSED_PLAN" }}
+                            <i class="bz-icon bz-icon-16 bz-icon-search-outline activity-view" data-id="{{>id}}"></i>
+                        {{else}}
+                            <i class="bz-icon bz-icon-16 bz-icon-pencil-outline activity-view" data-id="{{>id}}"></i>
+                            {{if workItemState !== "Active" && workItemState !== "Inactive" }}
+                                <i class="bz-icon bz-icon-16 bz-icon-trash-outline" data-id="{{>id}}"></i>
+                            {{/if}}
+                        {{/if}}
+                    </div>
+
+                    {{if #ctx.root.statePlan === #ctx.root.stateExecutingPlan }}
+                        {{if (workItemState === "Active" || workItemState === "Inactive") && (#ctx.root.currentUserId == userAssigned) }}
+                        <div class="item-edit-button item-workonit-button" title="%{workportal-widget-render-work-on-it}">
+                            <i class="bz-icon bz-icon-16 bz-icon-play-outline" data-id="{{>id}}"></i>
+                        </div>
+                        {{else}}
+                        <div class="item-edit-button item-workonit-button" style="display: none;" title="%{workportal-widget-render-work-on-it}">
+                            <i class="bz-icon bz-icon-16 bz-icon-play-outline" data-id="{{>id}}"></i>
+                        </div>
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
+            </div>
+        </li>
+    {{/for}}
+</script>

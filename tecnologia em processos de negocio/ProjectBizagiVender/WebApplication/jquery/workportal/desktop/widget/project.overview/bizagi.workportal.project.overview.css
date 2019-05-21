@@ -1,0 +1,16 @@
+﻿/*#ui-bizagi-wp-project-overview-wrapper
+{
+    padding-right: 39px;
+}*/
+
+#ui-bizagi-wp-project-overview-not-found {
+    text-align: center;
+}
+#ui-bizagi-wp-project-overview-not-found i {
+    font-size: 256px;
+
+}
+#ui-bizagi-wp-project-overview-not-found p {
+    margin-top: .6em;
+    font-size: 1.5em;
+}

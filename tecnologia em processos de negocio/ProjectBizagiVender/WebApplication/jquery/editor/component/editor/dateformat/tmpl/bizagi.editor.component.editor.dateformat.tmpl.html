@@ -1,0 +1,80 @@
+<script id="dateformat-frame" type="text/x-jquery-tmpl">
+    <div class="dateformat-container">
+        <label class="dateformat-name">${caption}</label>
+        <div class="dateformat-fields ${showTime} ui-control-container">
+            <i class="biz-ico dateformat-image-small-date bz-studio bz-date_16x16_standard"></i>
+            <input type="text" class="dateformat-field-date ui-control-input" readonly="readonly" value="${valueDate}" />
+            <i class="biz-ico dateformat-image-small-modal bz-studio bz-form-buttons_16x16_standard" title="%{formmodeler-component-editor-dateformat-edit-date-format}"></i>
+            <div class="dateformat-time-group">
+                <i class="biz-ico dateformat-image-small-time bz-studio bz-date_16x16_standard"></i>
+                <input type="text" class="dateformat-field-time" readonly="readonly" value="${valueTime}" />
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="dateformat-frame-options" type="text/x-jquery-tmpl">
+    <div class="editor-dateformat-value  dateformat-false" tabindex="0">
+        <span class="editor-dateformat-pin"></span>
+        <div class="dateformat-container-values">
+            <span class="editor-dateformat-text-value-true">${optionTrue}</span>
+            <span class="editor-dateformat-text-value-false">${optionFalse}</span>
+        </div>
+    </div>
+</script>
+
+<script id="dateformat-modal" type="text/x-jquery-tmpl">
+    <div class="dateformat-modal">
+        <div class="dateformat-modal-container ${showTime}">
+
+            <div class="dateformat-modal-item dateformat-enabled dateformat-default-format">
+                <span class="dateformat-modal-name">%{formmodeler-component-editor-dateformat-use-default-format}</span>
+                <div class="ui-control-editor ui-control-editor-inline dateformat-check-container dateformat-modal-default-format"></div>
+            </div>
+
+            <div class="dateformat-options-default-format-false">
+                <div class="dateformat-modal-item dateformat-disabled">
+                    <span class="dateformat-modal-name">%{formmodeler-component-editor-dateformat-use-short-date}</span>
+                    <div class="ui-control-editor ui-control-editor-inline dateformat-check-container dateformat-modal-short-date"></div>
+                </div>
+
+                <div class="dateformat-options-short-date-false">
+                    <div class="dateformat-modal-item">
+                        <span class="dateformat-modal-name">%{formmodeler-component-editor-dateformat-short-date-separator}</span>
+                        <div class="ui-bizagi-editor-comboBox-selector ui-control-select ui-control-editor dateformat-short-date">
+                            <!-- ShortDateFormat -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dateformat-format">
+                    <div class="dateformat-modal-item dateformat-col2 dateformat-modal-format">
+                        <span class="dateformat-modal-name">%{formmodeler-component-editor-dateformat-date-format}</span>
+                        <div class="ui-bizagi-editor-comboBox-selector ui-control-select ui-control-editor date-format">
+                            <!-- DateFormat -->
+                        </div>
+                    </div>
+                    <div class="dateformat-modal-item dateformat-col2 dateformat-modal-time">
+                        <span class="dateformat-modal-name">%{formmodeler-component-editor-dateformat-time-format}</span>
+                        <div class="ui-bizagi-editor-comboBox-selector ui-control-select ui-control-editor time-format">
+                            <!-- TimeFormat -->
+                        </div>
+                    </div>
+                </div> 
+                <div class="dateformat-modal-item dateformat-sample">
+                    <span class="dateformat-modal-name">%{formmodeler-component-editor-dateformat-sample-date}</span>
+                    <span class="dateformat-modal-date-sample ui-modal-dark-background"></span>
+                </div>               
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="dateformat-modal-actions" type="text/x-jquery-tmpl">
+    <div class="dateformat-modal-buttons editor-ui-actions-container biz-actions-bar">
+        <span class="editor-ui-button-actions biz-action-btn biz-btn">%{formmodeler-component-editor-dateformat-ok}</span>
+        <span class="editor-ui-button-actions biz-action-btn biz-btn">%{formmodeler-component-editor-dateformat-cancel}</span>
+    </div>
+</script>
+
+

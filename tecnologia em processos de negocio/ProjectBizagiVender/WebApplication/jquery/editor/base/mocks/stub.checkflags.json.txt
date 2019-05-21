@@ -1,0 +1,37 @@
+﻿{
+    "actiontype": "CheckFlags",
+    "result": {
+        "success": true,
+        "parameters": [
+			{
+				"key": "EnableButtonExecutionProperty",
+				"value": "true"
+			},     
+			{
+				"key": "EnableContentPanelContainer",
+				"value": "true"
+			},
+            {
+                "key": "EnableRefreshCommand",
+                "value": "true"
+            },
+            {
+                "key": "EnableCustomButtons",
+                "value": "true"
+            },
+			{
+				"key" : "EnableShowAlwaysReverseAction",
+				"value" : "false"
+			},
+			{
+                "key": "EnableCssClassProperty",
+                "value": "true"
+            },
+			{
+                "key": "EnableReadOnlyForms",
+                "value": "true"
+            }
+			
+        ]
+    }
+}

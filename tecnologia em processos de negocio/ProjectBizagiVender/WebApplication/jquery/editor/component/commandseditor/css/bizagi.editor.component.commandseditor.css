@@ -1,0 +1,827 @@
+/********
+* Filename: bizagi.editor.component.commandseditor.css
+* Create Date: 2012-07-04
+* Author: Diego Parra Diego.Parra@bizagi.com
+*
+* $__commandseditor
+* $__actioneditor
+* $__list
+*
+********/
+
+/* __commandseditor
+--------*/
+.bz-fm-commandseditor-overlay {
+    /* maxvalue fro ie7 2.147.483.647 */
+    z-index: 100000;
+
+    
+}
+
+
+.bz-fm-commandseditor-popup {
+    top: 100px;
+    left: 100px;
+    bottom: 100px;
+    right: 100px;
+}
+
+.bz-fm-commandseditor-popup .ui-widget-actions{
+    position: absolute;
+    right: -5px;
+    top: -52px;
+    width: auto;
+}
+
+#bz-fm-commandseditor-editor{
+    display: none;
+    z-index: 1000000;
+    top: 100px;
+    left: 100px;
+    bottom: 100px;
+    right: 100px;
+    position: absolute;
+    background-color: white;
+}
+.biz-actions-bar.bz-fm-commandseditor-buttons {
+    position: absolute;
+    bottom: 16px;
+    text-align: right;
+    padding-right: 18px;
+}
+
+.bz-fm-actionvalidationeditor-popup-content .bz-fm-actionvalidationeditor {
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 10px;
+    
+    list-style: none;
+    bottom: 56px;
+    top: 40px;
+    right: 20px;
+    left: 20px;
+    overflow-y: auto;
+    position: absolute;
+
+    text-align: left;
+}
+.bz-fm-commandseditor-button-bar{
+    position: relative;
+    height: 30px;
+}
+
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-condition-new,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-statement-new{
+
+    padding: 0 0 0 20px;
+    text-align: left;
+    cursor:pointer;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-statement-new{
+    left: 0px;
+    right: 0px;
+}
+
+.bz-fm-actionvalidationeditor .bz-fm-state-empty {
+
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.bz-fm-commandseditor-message-argument .bz-fm-state-empty {
+    padding: 0px;
+}
+
+.bz-fm-commandseditor-message .bz-fm-commandseditor-message-argument {
+    margin: 0px 10px;
+}
+
+
+
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-conditions,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-statements,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-messages {
+    background-color: white;
+    border: 1px solid #CCC;
+    padding: 5px 0px 15px 15px;
+    margin: 10px auto 0px 1.5%;
+    line-height: 28px;
+    width:98.5%;
+    position: relative;
+}
+
+.bz-fm-actionvalidationeditor > .bz-fm-commandseditor-conditions,
+.bz-fm-actionvalidationeditor > .bz-fm-commandseditor-statements,
+.bz-fm-actionvalidationeditor > .bz-fm-commandseditor-messages {
+    padding: 5px 15px 15px 15px;
+}
+
+
+/* __list
+--------*/
+.bz-fm-commandseditor-list {
+    position: absolute;
+    z-index: 110000;
+    background-color: white;
+    list-style: none;
+    padding: 0;      
+    margin-top: 6px;
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.bz-fm-commandseditor-icons.biz-ico{
+    display: inline-block;
+    visibility: visible!important;
+}
+.bz-fm-commandseditor-icons.biz-btn {
+    min-width: 26px!important;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.bz-fm-actionvalidationeditor .biz-action-btn:hover{
+    color:#888;
+}
+
+.biz-action-btn:hover .bz-fm-commandseditor-icons{
+    display: inline-block;
+}
+
+.bz-fm-commandseditor-list li{
+    height: auto;
+    min-height: 24px;
+    min-width: 200px;
+}
+
+.bz-fm-commandseditor-list li .biz-btn{
+    display: block;
+    padding-left: 10px;
+    line-height: 20px;
+}
+
+.bz-fm-commandseditor-list li .biz-ico {
+    top: -3px;
+    left: -4px;
+    position: relative;    
+}
+
+.bz-fm-commandseditor-list .biz-btn-horizontal > .biz-btn{
+    height: auto;
+}
+
+li.bz-fm-commandseditor-item .biz-ico,
+.bz-fm-commandseditor-overlay .biz-actions-bar li .biz-ico{
+    visibility: hidden;
+    position: absolute;
+}
+
+li.bz-fm-commandseditor-item:hover > .biz-ico,
+.bz-fm-commandseditor-overlay .biz-actions-bar li:hover > .biz-ico{
+    visibility: visible;
+    position: relative;
+}
+
+li.bz-fm-commandseditor-item{
+    border:solid 1px rgba(233,237,241,0);
+}
+
+li.bz-fm-commandseditor-item:hover{
+    background-color: rgba(233,237,241,0.3);
+    border:solid 1px rgba(233,237,241,0.8);
+}
+
+
+.bz-fm-commandseditor-button-bar .biz-action-btn .biz-ico {
+    visibility: visible!important;
+    position: relative;
+    left: -3px!important;
+    top: -4px!important;
+}
+
+/***********************/
+
+/***********************/
+
+/***********************/
+
+/***********************/
+
+/***********************/
+
+/***********************/
+
+#bz-fm-commandseditor-tabs{
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    top: 10px;
+    bottom: 10px;           
+}
+#bz-fm-commandseditor-editor > #bz-fm-commandseditor-actions-editor{
+    top: 5%;
+    left: 1%;
+    bottom: 50%;
+    right: 1%;
+    position: absolute;
+    border: 1px solid darkGray;
+    text-align: left;
+}
+#bz-fm-commandseditor-editor > #bz-fm-commandseditor-validations-editor{
+    top: 51%;
+    left: 1%;
+    bottom: 5%;
+    right: 1%;
+    position: absolute;
+    border: 1px solid darkGray;
+}
+#bz-fm-commandseditor-actions-editor .ui-widget-header, #bz-fm-commandseditor-validations-editor .ui-widget-header{
+    height: 36px;
+    line-height: 36px;
+    border: 0;
+}
+#bz-fm-commandseditor-actions-editor .ui-widget-header label, #bz-fm-commandseditor-validations-editor .ui-widget-header label{
+    margin-left: 20px;
+}
+#bz-fm-commandseditor-actions-editor .ui-widget-header button, #bz-fm-commandseditor-validations-editor .ui-widget-header button{
+    border: 0;
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    width: 25px;
+    color: green;
+    font-weight: bolder;
+    font-size: 20px;
+    height: 25px;
+    cursor: pointer;
+    border: 1px solid gray;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+}
+
+#bz-fm-commandseditor-actions-editor .ui-widget-content ,
+#bz-fm-commandseditor-validations-editor .ui-widget-content {
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+
+/* Actions & Validations */            
+.bz-fm-commandseditor-actions, .bz-fm-commandseditor-validations {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 10px;
+    list-style: none;
+    text-align: left;
+    margin-top: 5px;
+}
+.bz-fm-commandseditor-component-disable {
+    background: rgba(204,204, 204, 0.2);
+}
+.bz-fm-commandseditor-component-disable span {
+    color: #969696;
+}
+
+.bz-fm-commandseditor-actions-enable-text{
+    float: right;
+    padding: 1px;
+    margin-left: 3px;
+    margin-right: 8px;
+}
+
+.bz-fm-commandseditor-action {
+    padding: 8px 28px 8px 15px;
+}
+
+.bz-fm-commandseditor-validation {
+    padding: 8px 28px 30px 15px;
+}
+.bz-fm-commandseditor-action, .bz-fm-commandseditor-validation {
+    position: relative;
+    margin-top: 10px;
+    border: 1px solid rgba(178,182,188, 0.2);
+}
+.bz-fm-commandseditor-validation.bz-fm-commandseditor-validation-inherent {
+    -webkit-filter: grayscale(white);
+}
+.bz-fm-commandseditor-action:hover, .bz-fm-commandseditor-validation:hover
+{
+    border: 1px solid rgba(178,182,188, 1);
+}
+
+
+.bz-fm-commandseditor-action .bz-fm-commandseditor-edit-bar, .bz-fm-commandseditor-validation .bz-fm-commandseditor-edit-bar{
+    display:none;
+}
+
+.bz-fm-commandseditor-action:hover .bz-fm-commandseditor-edit-bar, .bz-fm-commandseditor-validation:hover .bz-fm-commandseditor-edit-bar,
+.bz-fm-commandseditor-action.bz-state-selected .bz-fm-commandseditor-icons, .bz-fm-commandseditor-validation.bz-state-selected .bz-fm-commandseditor-icons {
+    display: inline-block;
+    background-color:#fff;
+    border: 1px solid rgba(178,182,188, 0.7);
+    padding:4px;
+    top: 4px;
+    right: 4px;
+    position:absolute;
+}
+
+.bz-fm-commandseditor-conditions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.bz-fm-commandseditor-context {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+.bz-fm-commandseditor-conditions.bz-fm-commandseditor-complex {
+    display: inline-block;
+    padding-top: 5px;
+    padding-left: 8px;
+}
+.bz-fm-commandseditor-condition {
+    font-weight: bold;
+    font-size: 13px;
+    position: relative;
+}
+
+.bz-fm-commandseditor-condition-operator{ 
+    padding-left: 8px;
+}
+.bz-fm-commandseditor-condition-argument{    
+    padding-left: 8px;
+}
+
+.bz-fm-commandseditor-condition-logicOperator.bz-fm-commandseditor-condition-logicOperator-complex{
+    padding-top: 5px;
+    float: left;
+}
+
+.bz-fm-commandseditor-statements{
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 8px 0;
+    padding-left: 20px;
+    padding-bottom: 10px
+}
+.bz-fm-commandseditor-statement{
+    font-weight: bold;
+    font-size: 13px;
+    position: relative;
+}
+.bz-fm-commandseditor-statement.bz-fm-commandseditor-item-hidden {
+    display: none;        
+}
+
+/*.bz-fm-commandseditor-statement-command{
+    color: violet;
+}*/
+.bz-fm-commandseditor-statement-xpath
+{
+	padding-left: 8px;
+    color: blue;
+}
+.bz-fm-commandseditor-statement-connector
+{
+	padding-left: 8px;
+   /*color: violet;*/
+}
+.bz-fm-commandseditor-statement-argument
+{
+	padding-left: 8px;
+    color: green;
+}
+.bz-fm-commandseditor-messages-label{
+    font-size: 16px;
+    line-height: 20px;
+    height: 20px;
+    color: red;
+    font-weight: bold;
+}
+.bz-fm-commandseditor-statements-else-action 
+{
+    color: gray;       
+    padding-left: 8px;  
+    font-size: 14px;
+}
+.bz-fm-commandseditor-messages{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 10px
+}
+.bz-fm-commandseditor-message{
+    font-weight: bold;
+    font-size: 13px;
+    position: relative;
+}
+
+.bz-fm-commandseditor-message-argument:before, .bz-fm-commandseditor-message-argument:after {
+    content: "\"";
+}
+
+/* __actioneditor
+--------*/
+.bz-fm-actionvalidationeditor-overlay {
+    z-index: 100010;
+}
+
+.bz-fm-actionvalidationeditor-overlay .ui-popup-modal{
+    top: 120px;
+    right: 120px;
+    bottom: 120px;
+    left: 120px;
+}
+
+.bz-fm-actionvalidationeditor-popup {
+    top: 100px;
+    left: 100px;
+    bottom: 100px;
+    right: 100px;
+}
+.bz-fm-actionvalidationeditor-popup-close {
+    position: absolute;
+    font-size: 12px;
+    font-family: cursive;
+    border: 1px solid #666;
+    -webkit-border-radius: 15px;
+    padding: 2px 4px;
+    -webkit-box-shadow: 1px 1px 10px gray;
+    color: red;
+    cursor: pointer;
+    top: 8px;
+    right: 26px;
+}
+.bz-fm-actionvalidationeditor-popup-content .bz-fm-actionvalidationeditor-header {
+    height: 32px;
+    line-height: 32px;
+    padding-left: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    -webkit-border-radius: 2px;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+
+
+.bz-fm-actionvalidationeditor {
+    
+}
+
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-conditions .bz-fm-commandseditor-complex {
+    border: none;
+    -webkit-box-flex: 1;
+    margin-top: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-orient: vertical;
+    -webkit-align-content: center;
+    -webkit-box-pack: center;
+    border-left: solid 2px rgba(233,237,241,0.8);
+    border-radius: 5px;
+}
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-condition-logicOperator.bz-fm-commandseditor-condition-logicOperator-complex{
+    padding-top: 0;
+    float: none;
+}
+
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-condition:hover .bz-fm-commandseditor-icons-delete,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-statement:hover .bz-fm-commandseditor-icons-delete{
+    border: 0;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    position: absolute;
+    right: 5px;
+    font-weight: bold;
+    line-height: 16px;
+    font-size: 14px;
+    top: 4px;
+    cursor: pointer;
+    display: inline-block;
+} 
+
+
+
+/*.bz-fm-actionvalidationeditor .bz-fm-commandseditor-condition-new:hover .bz-fm-commandseditor-icons {
+    display: inline-block;
+}*/
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-statements-else-action 
+{
+    cursor: pointer;  
+    color: gray;       
+    padding-left: 8px;  
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-context-control,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-condition-xpath,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-condition-logicOperator,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-condition-operator,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-condition-argument,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-statement-xpath,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-statement-command,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-statement-argument,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-message-argument {
+    cursor: pointer;
+}
+/*.bz-fm-actionvalidationeditor .bz-fm-commandseditor-condition-xpath .bz-fm-state-empty,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-condition-logicOperator .bz-fm-state-empty,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-condition-operator .bz-fm-state-empty,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-condition-argument .bz-fm-state-empty,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-statement-xpath .bz-fm-state-empty,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-statement-command .bz-fm-state-empty,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-statement-argument .bz-fm-state-empty,
+.bz-fm-actionvalidationeditor .bz-fm-commandseditor-message-argument .bz-fm-state-empty {
+    color: lightgray;
+    cursor: pointer;
+}*/
+
+/* __list
+--------*/
+
+
+
+/* __ arguments
+-------*/
+.bz-fm-commandseditor-argument {
+     z-index: 110000;
+    background-color: white;
+    display: inline-block;
+    border: 1px solid #999;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 3px;
+}
+
+.bz-fm-commandseditor-argument .bz-fm-commandseditor-argument-container {
+    border: 1px solid rgba(209,213,220,0.8);
+    background-color: rgba(233,237,241,1);
+    border-radius: 2px;
+    margin: 3px 1px;
+    padding: 4px;
+    position: relative;
+    min-width: 135px;
+}
+
+.bz-fm-commandseditor-argument-xpath {
+    border: 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+.bz-fm-commandseditor-argument-boolean span{
+    background-image: url(images/argument_boolean.png); 
+    background-repeat: repeat-y;
+    background-position: -2px -2px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 18px;
+}
+.bz-fm-commandseditor-argument-boolean span:hover {
+    background-position: -2px -26px;
+}
+.bz-fm-commandseditor-argument-boolean span.bz-state-selected{
+    background-position: -2px -51px;
+}
+.bz-fm-commandseditor-argument-boolean span label
+{
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    padding-right: 6px;
+}
+.bz-fm-commandseditor-argument-string input{
+    
+}
+.bz-fm-commandseditor-argument-date {
+    border: none;
+}
+
+.bz-fm-commandseditor-argument .bz-fm-commandseditor-argument-localizable {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	background-position: -416px -32px;
+}
+
+.bz-fm-commandseditor-argument-textarea textarea{
+    width: 100%;
+    height: 100%;
+	font-family: "Segoe UI", Arial, sans-serif;    
+    font-size: 1.2em;
+}
+.bz-fm-commandseditor-argument-editor .bz-fm-commandseditor-list {
+    display: inline-block;
+    position: relative;   
+}
+
+.bz-fm-commandseditor-condition .bz-fm-commandseditor-condition-logicOperator{
+    margin-left: 1.5%;
+    padding-left: 8px;
+}
+
+
+
+/************************************************/
+
+.bz-fm-commandseditor-overlay,
+.bz-fm-actionvalidationeditor-overlay {
+    background: none!important;
+}
+
+.bz-fm-commandseditor-overlay .ui-popup-modal,
+.bz-fm-actionvalidationeditor-overlay .ui-popup-modal {
+    right: auto;
+    bottom: auto;
+    width: 55%;
+    height: 75%;
+}
+
+
+/************************* ALLOW ACTIONS AND VALIDATIONS ON/OFF TOGGLE ***********************/
+.bz-fm-commandseditor-onoffswitch {
+    position: relative;
+    width: 50px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+    float: right;
+}
+.bz-fm-commandseditor-onoffswitch-checkbox {
+    display: none;
+}
+.bz-fm-commandseditor-onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #D4D6D9;
+    border-radius: 20px;
+}
+.bz-fm-commandseditor-onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s;
+    -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s;
+    transition: margin 0.3s ease-in 0s;
+}
+.bz-fm-commandseditor-onoffswitch-inner:before, .bz-fm-commandseditor-onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 17px;
+    padding: 0;
+    line-height: 17px;
+    font-size: 10px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.bz-fm-commandseditor-onoffswitch-inner:before {
+    content: "YES";
+    background-color: #A0C84D;
+    color: #FFFFFF;
+    padding-right: 7px;
+}
+.bz-fm-commandseditor-onoffswitch-inner:after {
+    content: "NO";
+    padding-right: 8px;
+    background-color: #EEEEEE;
+    color: #999999;
+    text-align: right;
+}
+.bz-fm-commandseditor-onoffswitch-switch {
+    display: block; width: 7px;
+    margin: 6px;
+    background: #FFFFFF;
+    border: 1px solid #D4D6D9;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 24px;
+    -moz-transition: all 0.3s ease-in 0s;
+    -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s;
+    transition: all 0.3s ease-in 0s;
+}
+.bz-fm-commandseditor-onoffswitch-checkbox:checked + .bz-fm-commandseditor-onoffswitch-label .bz-fm-commandseditor-onoffswitch-inner {
+    margin-left: 0;
+}
+.bz-fm-commandseditor-onoffswitch-checkbox:checked + .bz-fm-commandseditor-onoffswitch-label .bz-fm-commandseditor-onoffswitch-switch {
+    right: 0px;
+}
+
+/************************* search actions and validations ***********************/
+.bz-fm-commandseditor-search-flags{
+    width: 70px;
+    float: left;
+}
+.bz-fm-commandseditor-search-flag-item{
+    height: 20px;
+    text-align: left;
+}
+
+.bz-fm-commandseditor-search-flag-item label{
+    margin: 0px 0px 0px 8px;
+}
+
+#bz-fm-commandseditor-actions-editor .bz-fm-commandseditor-search-options{
+    height: 60px;
+}
+
+#bz-fm-commandseditor-validations-editor .bz-fm-commandseditor-search-options{
+    height: 22px;
+}
+
+.bz-fm-commandseditor-search{
+    text-align: left;
+    width: 210px;
+    height:30px;
+    float: left;
+}
+
+#bz-fm-commandseditor-actions-editor .bz-fm-commandseditor-search{
+    margin: 15px 0px 0px 0px;
+}
+#bz-fm-commandseditor-validations-editor .bz-fm-commandseditor-search{
+    margin: 0px 0px 0px 0px;
+}
+.bz-fm-commandseditor-search .ui-autocomplete-input{
+    margin: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 29px;
+}
+
+.bz-fm-commandseditor-search .ui-bizagi-render-icon-search {
+    background: url(../../../../rendering/css/desktop/images/sprite.png) -7px -149px no-repeat;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    position: relative;
+    top: 6px;
+    right: -7px;
+    margin: -27px 25px 0px 0px;
+    float: right;
+}
+
+.bz-fm-commandseditor-condition-checkbox,
+.bz-fm-commandseditor-statement-checkbox,
+.bz-fm-commandseditor-elsestatement-checkbox{
+    float: left;
+    margin: 3px 0px 0px 0px;
+}
+
+
+.bz-fm-commandseditor-icons-action-move-up,
+.bz-fm-commandseditor-icons-validation-move-up{
+    margin: 10px 0px 0px 2px;
+    background-position: -1281px -48px;
+    display: block !important;
+}
+
+.bz-fm-commandseditor-icons-action-move-down,
+.bz-fm-commandseditor-icons-validation-move-down{
+    margin: 10px 0px 0px 2px;
+    background-position: -1281px;
+    display: block !important;
+}
+
+.bz-fm-commandseditor-icons-toogle{
+    float:none !important;
+    display: block !important;
+}

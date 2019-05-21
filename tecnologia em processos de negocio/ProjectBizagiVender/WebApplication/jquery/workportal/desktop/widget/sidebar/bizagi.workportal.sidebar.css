@@ -1,0 +1,12 @@
+.bz-wp-sidebar-inbox {
+    float: left;
+    width: 260px;
+}
+.wgd-sidebar #sidebarcontent{
+    height: 100%;
+}
+
+#sidebarcontent > .fixdiv{
+    height: 100%;
+}
+

@@ -1,0 +1,652 @@
+{
+   "renders":[
+      {
+         "render":{
+            "name":"form",
+            "type":"container",
+            "elements":[
+               {
+                    "container" : {
+                            "type" : "tab",
+                            "name" : "basicInformation",
+                            "displayName" : {"resource" : "bizagi-editor-container-basicInformation-displayName"},
+                            "elements" : [
+                            {
+                                "property":{
+                                    "type":"lstring",
+                                    "name":"internalName",
+                                    "displayName": {"resource" : "bizagi-editor-property-internalName-displayName"},
+                                    "helptext"   : {"resource" : "bizagi-editor-property-internalName-helptext"} 
+                                }
+                            },
+                            {
+                                "property":{
+                                    "type":"lstring",
+                                    "name":"description",
+                                    "displayName" : { "resource" : "bizagi-editor-property-description-displayName"},
+                                    "helptext"    : { "resource" : "bizagi-editor-property-description-helptext"} 
+                                }
+                            },
+                            {
+                                "property":{
+                                    "name" : "xpath",
+                                    "type" : "xpath",
+                                    "displayName"  : {"resource" : "bizagi-editor-property-xpath-displayName"} ,
+                                    "helptext"     : {"resource" : "bizagi-editor-property-xpath-helptext"} ,
+                                    "visible" : "false"
+                                }
+                            },
+                            {
+                                "property":{
+                                    "name" : "needsUserConfirmation",
+                                    "type" : "lstring",
+                                    "displayName"  : {"resource" : "bizagi-editor-property-needsUserConfirmation-displayName"} ,
+                                    "helptext"     : {"resource" : "bizagi-editor-property-needsUserConfirmation-helptext"} ,
+                                    "defaultValue" : "false"
+                                }
+                            },
+                            {
+                                "property":{
+                                    "name" : "isWizard",
+                                    "type" : "lstring",
+                                    "displayName"  : {"resource" : "bizagi-editor-property-isWizard-displayName"} ,
+                                    "helptext"     : {"resource" : "bizagi-editor-property-isWizard-helptext"} ,
+                                    "defaultValue" : "false"
+                                }
+                            },
+                            {
+                                "property":{
+                                    "name" : "isQueryForm",
+                                    "type" : "lstring",
+                                    "displayName"  : {"resource" : "bizagi-editor-property-isQueryForm-displayName"} ,
+                                    "helptext"     : {"resource" : "bizagi-editor-property-isQueryForm-helptext"} ,
+                                    "defaultValue" : "false"
+                                }
+                            }
+
+                            ] 
+                    }
+            
+               }
+            ]
+         }
+      },
+      {
+         "render":{
+            "name":"label",
+            "type":"render",
+            "renderGroup":{"resource" : "bizagi-editor-controlsnavigator-basicrenders-displayName"},
+            "elements":[
+               {
+                  "container" : {
+                     "type" : "tab",
+                     "name" : "basicInformation",
+                     "displayName" : {"resource" : "bizagi-editor-container-basicInformation-displayName"},
+                     "elements" : [
+                        {
+                          "property":{
+                              "type":"string",
+                              "name":"displayName",
+                              "showLocalization":true,
+                              "orientation":"horizontal",
+                              "displayName": {"resource" : "bizagi-editor-property-displayName-displayName"},
+                              "helptext"   : {"resource" : "bizagi-editor-property-displayName-helptext"} 
+                           }
+                        },
+                        {
+                          "property":{
+                              "type":"lstring",
+                              "name":"description",
+                              "displayName" : { "resource" : "bizagi-editor-property-description-displayName"},
+                              "helptext"    : { "resource" : "bizagi-editor-property-description-helptext"} 
+                           }
+                        },
+                        {
+                           "property":{
+                              "type" : "rendertype",
+                              "name":"type",
+                              "displayName" :{ "resource" : "bizagi-editor-property-type-displayName"},
+                              "helptext"    :{ "resource" : "bizagi-editor-property-type-helptext"},
+                              "defaultValue" : "label",
+                                "data": [{
+                                    "name" : "button"
+                                }, {
+                                    "name" : "hidden"
+                                }, {
+                                    "name" : "label",
+                                    "selected" : true
+                                }, {
+                                    "name" : "letter"
+                                }]    
+                           }
+                        },                                    
+                        { 
+                           "property" :  {
+                                "name" : "visible",
+                                "type" : "booleanrule",
+                                "displayName"  : {"resource" : "bizagi-editor-property-visible-displayName"} ,
+                                "helptext"     : {"resource" : "bizagi-editor-property-visible-helptext"},
+                                "defaultValue" : { "name": "true", "id": "1" }
+                           }
+                        },
+                        {
+                           "property" :  {
+                                "name" : "editable",
+                                "type" : "lstring",
+                                "displayName"  : {"resource" : "bizagi-editor-property-editable-displayName"} ,
+                                "helptext"     : {"resource" : "bizagi-editor-property-editable-helptext"},
+                                "defaultValue" : "true"
+                           }
+                        },
+                        {
+                           "property" :  {
+                                "name" : "required",
+                                "type" : "boolean",
+                                "orientation":"horizontal",
+                                "displayName"  : {"resource" : "bizagi-editor-property-required-displayName"} ,
+                                "helptext"     : {"resource" : "bizagi-editor-property-required-helptext"},
+                                "defaultValue" : "false"
+                           }
+                        }
+                     ] 
+                  }
+               },
+               {
+                  "container" : {
+                     "type" : "tab",
+                     "name" : "appearanceInfo",
+                     "displayName" : {"resource" :"bizagi-editor-container-appearanceInfo-displayName"},
+                     "elements": [
+                           {
+                             "property":{
+                                 "type":"lstring",
+                                 "name":"displayType",
+                                 "displayName": {"resource" : "bizagi-editor-property-displayType-displayName"},
+                                 "helptext"   : {"resource" : "bizagi-editor-property-displayType-helptext"} ,
+                                 "defaultValue":"Both"
+                              }
+                           },
+                           {
+                             "property":{
+                                 "type":"lstring",
+                                 "name":"labelAlign",
+                                 "displayName" : { "resource" : "bizagi-editor-property-labelAlign-displayName"},
+                                 "helptext"    : { "resource" : "bizagi-editor-property-labelAlign-helptext"} ,
+                                 "defaultValue":"Default"
+                              }
+                           },
+                           {
+                             "property":{
+                                 "type":"lstring",
+                                 "name":"valueAlign",
+                                 "displayName" : { "resource" : "bizagi-editor-property-valueAlign-displayName"},
+                                 "helptext"    : { "resource" : "bizagi-editor-property-valueAlign-helptext"} ,
+                                 "defaultValue":"Default"
+                              }
+                           },
+                           {
+                             "property":{
+                                 "type":"lstring",
+                                 "name":"labelWidth",
+                                 "displayName" : { "resource" : "bizagi-editor-property-labelWidth-displayName"},
+                                 "helptext"    : { "resource" : "bizagi-editor-property-labelWidth-helptext"} ,
+                                 "defaultValue":"0"
+                              }
+                           },
+                           {
+                             "property":{
+                                 "type":"lstring",
+                                 "name":"valueWidth",
+                                 "displayName" : { "resource" : "bizagi-editor-property-valueWidth-displayName"},
+                                 "helptext"    : { "resource" : "bizagi-editor-property-valueWidth-helptext"} ,
+                                 "defaultValue":"0"
+                              }
+                           } 
+                     ]
+                  }                  
+               }               
+            ]
+         }
+      },
+      {
+         "render":{
+            "name":"text",
+            "type":"render",
+            "renderGroup":"basicRenders",
+            "elements":[
+               {
+                  "container" : {
+                        "type" : "tab",
+                        "name" : "basicInformation",
+                        "displayName" : {"resource" : "bizagi-editor-container-basicInformation-displayName"},
+                        "elements" : [
+                           {
+                             "property":{
+                                 "type":"lstring",
+                                 "name":"displayName",
+                                 "displayName": {"resource" : "bizagi-editor-property-displayName-displayName"},
+                                 "helptext"   : {"resource" : "bizagi-editor-property-displayName-helptext"} 
+                              }
+                           },
+                           {
+                             "property":{
+                                 "type":"lstring",
+                                 "name":"description",
+                                 "displayName" : { "resource" : "bizagi-editor-property-description-displayName"},
+                                 "helptext"    : { "resource" : "bizagi-editor-property-description-helptext"} 
+                              }
+                           },
+                           {
+                              "property":{
+                                 "type" : "lstring",
+                                 "name":"type",
+                                 "displayName"  : { "resource" : "bizagi-editor-property-type-displayName"},
+                                 "helptext"     : { "resource" : "bizagi-editor-property-type-helptext"} ,
+                                 "defaultValue" : "text"   
+                              }
+                           },                                   
+                           {
+                             "property":{
+                                "name" : "xpath",
+                                "type" : "lstring",
+                                "displayName"  : {"resource" : "bizagi-editor-property-xpath-displayName"} ,
+                                "helptext"     : {"resource" : "bizagi-editor-property-xpath-helptext"} 
+                              }
+                           },
+                           { 
+                              "property" :  {
+                                   "name" : "visible",
+                                   "type" : "lstring",
+                                   "displayName"  : {"resource" : "bizagi-editor-property-visible-displayName"} ,
+                                   "helptext"     : {"resource" : "bizagi-editor-property-visible-helptext"},
+                                   "defaultValue" : "true"
+                              }
+                           },
+                           {
+                              "property" :  {
+                                   "name" : "editable",
+                                   "type" : "lstring",
+                                   "displayName"  : {"resource" : "bizagi-editor-property-editable-displayName"} ,
+                                   "helptext"     : {"resource" : "bizagi-editor-property-editable-helptext"},
+                                   "defaultValue" : "true"
+                              }
+                           },
+                           {
+                              "property" :  {
+                                   "name" : "required",
+                                   "type" : "lstring",
+                                   "displayName"  : {"resource" : "bizagi-editor-property-required-displayName"} ,
+                                   "helptext"     : {"resource" : "bizagi-editor-property-required-helptext"},
+                                   "defaultValue" : "false"
+                              }
+                           }
+                        ] 
+                  }
+                                          
+               },
+               {
+                  "container" : {
+                     "type" : "tab",
+                     "name" : "render",
+                     "displayName" : {"resource" :"bizagi-editor-container-render-displayName"},
+                     "elements": [
+                        {
+                          "property":{
+                              "type":"lstring",
+                              "name":"regularExpression",
+                              "displayName": {"resource" : "bizagi-editor-property-regularExpression-displayName"},
+                              "helptext"   : {"resource" : "bizagi-editor-property-regularExpression-helptext"} ,
+                              "tooltip"    : {"resource" : "bizagi-editor-property-regularExpression-tooltip"} 
+                           }
+                        },
+                        {
+                          "property":{
+                              "type":"lstring",
+                              "name":"reType",
+                              "displayName" : {"resource" : "bizagi-editor-property-reType-displayName"},
+                              "helptext"    : {"resource" : "bizagi-editor-property-reType-helptext"} ,
+                              "defaultValue": "false"
+                           }
+                        },
+                        {
+                          "property":{
+                              "type":"lstring",
+                              "name":"isExtended",
+                              "displayName" : {"resource" : "bizagi-editor-property-isExtended-displayName"},
+                              "helptext"    : {"resource" : "bizagi-editor-property-isExtended-helptext"} ,
+                              "defaultValue": "false"
+                           }
+                        }, 
+                        {
+                          "property":{
+                              "type":"lstring",
+                              "name":"maxLength",
+                              "displayName": {"resource" : "bizagi-editor-property-maxLength-displayName"},
+                              "helptext"   : {"resource" : "bizagi-editor-property-maxLength-helptext"} 
+                           }
+                        },
+                        {
+                          "property":{
+                              "type":"lstring",
+                              "name":"size",
+                              "displayName": {"resource" : "bizagi-editor-property-size-displayName"},
+                              "helptext"   : {"resource" : "bizagi-editor-property-size-helptext"} 
+                           }
+                        }
+                     ]
+                  }
+               },
+               {
+                  "container" : {
+                     "type" : "tab",
+                     "name" : "appearanceInfo",
+                     "displayName" : {"resource" :"bizagi-editor-container-appearanceInfo-displayName"},
+                     "elements": [
+                           {
+                             "property":{
+                                 "type":"lstring",
+                                 "name":"displayType",
+                                 "displayName": {"resource" : "bizagi-editor-property-displayType-displayName"},
+                                 "helptext"    : {"resource" : "bizagi-editor-property-displayType-helptext"} ,
+                                 "defaultValue":"both"
+                              }
+                           },
+                           {
+                             "property":{
+                                 "type":"lstring",
+                                 "name":"labelAlign",
+                                 "displayName" : { "resource" : "bizagi-editor-property-labelAlign-displayName"},
+                                 "helptext"     : { "resource" : "bizagi-editor-property-labelAlign-helptext"} ,
+                                 "defaultValue":"Default"
+                              }
+                           },
+                           {
+                             "property":{
+                                 "type":"lstring",
+                                 "name":"valueAlign",
+                                 "displayName" : { "resource" : "bizagi-editor-property-valueAlign-displayName"},
+                                 "helptext"     : { "resource" : "bizagi-editor-property-valueAlign-helptext"} ,
+                                 "defaultValue":"Default"
+                              }
+                           },
+                           {
+                             "property":{
+                                 "type":"lstring",
+                                 "name":"labelWidth",
+                                 "displayName" : { "resource" : "bizagi-editor-property-labelWidth-displayName"},
+                                 "helptext"    : { "resource" : "bizagi-editor-property-labelWidth-helptext"} ,
+                                 "defaultValue":"0"
+                              }
+                           },
+                           {
+                             "property":{
+                                 "type":"lstring",
+                                 "name":"valueWidth",
+                                 "displayName" : { "resource" : "bizagi-editor-property-valueWidth-displayName"},
+                                 "helptext"    : { "resource" : "bizagi-editor-property-valueWidth-helptext"} ,
+                                 "defaultValue":"0"
+                              }
+                           }
+                     ]
+                  }                  
+               }
+
+            ]
+         }
+      },
+      {
+         "render":{
+            "type":"render",
+            "name":"button",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+      {
+         "render":{
+            "type":"render",
+            "name":"number",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+      {
+         "render":{
+            "type":"container",
+            "name":"group",
+            "renderGroup":"basicContainers",
+            "elements":[
+
+            ]
+         }
+      },
+      {
+         "render":{
+            "type":"container",
+            "name":"tab",
+            "renderGroup":"basicContainers",
+            "elements":[
+
+            ]
+         }
+      },
+      {
+         "render":{
+            "type":"container",
+            "name":"panel",
+            "renderGroup":"basicContainers",
+            "elements":[
+
+            ]
+         }
+      },
+      {
+         "render":{
+            "type":"render",
+            "name":"money",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+      {
+         "render":{
+            "type":"render",
+            "name":"boolean",
+            "renderGroup":"basicRenders",
+            "elements":[
+
+            ]
+         }
+      },
+      {
+         "render":{
+            "type":"render",
+            "name":"date",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+      {
+         "render":{
+            "type":"render",
+            "name":"combo",
+            "renderGroup":"basicRenders",
+            "elements":[
+
+            ]
+         }
+      },
+      {
+         "render":{
+            "type":"render",
+            "name":"list",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"cascadingCombo",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"search",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+      {
+         "render":{
+            "type":"render",
+            "name":"radio",
+            "renderGroup":"basicRenders",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"link",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"formLink",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"upload",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"letter",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"hidden",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"grid",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"association",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"searchList",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"innerForm",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"userField",
+            "renderGroup":"userFields",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"queryForm",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+     {
+         "render":{
+            "type":"render",
+            "name":"uploadECM",
+            "renderGroup":"advancedRenders",
+            "elements":[
+
+            ]
+         }
+      },
+      {
+         "render":{
+         }
+      }
+   ]      
+}

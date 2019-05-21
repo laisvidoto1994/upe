@@ -1,0 +1,115 @@
+{
+  "type": "form",
+  "guid": "f6739323-191a-483e-86ea-2a7591c11b92",
+  "properties": {
+    "displayName": {
+      "i18n": {
+        "uri": "f6739323-191a-483e-86ea-2a7591c11b92:displayName",
+        "default": "CardiologyRequestsList",
+        "languages": {}
+      }
+    }
+  },
+  "elements": [
+    {
+      "type": "label",
+      "guid": "c6343c7b-be11-4834-8418-4dab9c55e6c6",
+      "properties": {
+        "type": "label",
+        "displayName": {
+          "i18n": {
+            "uri": "c6343c7b-be11-4834-8418-4dab9c55e6c6:displayName",
+            "default": "Cardiology Investigations",
+            "languages": {}
+          }
+        },
+        "format": {
+          "background": "#17365d",
+          "color": "#b8cce4",
+          "bold": true
+        }
+      }
+    },
+    {
+      "type": "formlink",
+      "guid": "906741e4-2af3-4d95-b649-70c5e288d9c0",
+      "properties": {
+        "type": "formlink",
+        "displayName": {
+          "i18n": {
+            "uri": "906741e4-2af3-4d95-b649-70c5e288d9c0:displayName",
+            "default": "Cardiac Department Request",
+            "languages": {}
+          }
+        },
+        "format": {},
+        "showascheck": true,
+        "xpath": {
+          "xpath": {
+            "baxpath": {
+              "xpath": "PateintEncounter.ChemistryIP1",
+              "contextentity": "44ef7815-6000-4384-917a-fcacf114f4e7"
+            }
+          },
+          "relatedentity": {
+            "baref": {
+              "ref": "37fd3023-7c38-449f-9208-ceee055661cd"
+            }
+          }
+        },
+        "form": {
+          "baref": {
+            "ref": "e6a34f54-95eb-42cb-8776-18b03c3ee8d2"
+          }
+        }
+      }
+    },
+    {
+      "type": "formlink",
+      "guid": "168b6b2f-2e50-454c-8726-fd9a13336b3f",
+      "properties": {
+        "type": "formlink",
+        "displayName": {
+          "i18n": {
+            "uri": "168b6b2f-2e50-454c-8726-fd9a13336b3f:displayName",
+            "default": "ECG",
+            "languages": {}
+          }
+        },
+        "format": {},
+        "showascheck": true,
+        "xpath": {
+          "xpath": {
+            "baxpath": {
+              "xpath": "PateintEncounter",
+              "contextentity": "44ef7815-6000-4384-917a-fcacf114f4e7"
+            }
+          },
+          "relatedentity": {
+            "baref": {
+              "ref": "3b43725c-ec34-497a-ba68-34049beaed85"
+            }
+          }
+        },
+        "form": {
+          "baref": {
+            "ref": "0979ee6a-1982-40fa-932f-2c15799747da"
+          }
+        }
+      }
+    }
+  ],
+  "actions": [],
+  "validations": [],
+  "contextentity": {
+    "baref": {
+      "ref": "44ef7815-6000-4384-917a-fcacf114f4e7"
+    }
+  },
+  "scopedefinition": {
+    "baref": {
+      "ref": "00000000-0000-0000-0000-000000000000"
+    }
+  },
+  "version": "1.0"
+}

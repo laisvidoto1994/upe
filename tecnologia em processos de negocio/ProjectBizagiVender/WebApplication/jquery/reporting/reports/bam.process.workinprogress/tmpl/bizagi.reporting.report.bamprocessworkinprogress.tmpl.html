@@ -1,0 +1,36 @@
+﻿<script id="bz-rp-bam-process-workinprogress-main" type="text/x-jquery-tmpl">
+<div class="row">
+    <div class="large-6 columns">
+        <div class="bz-rp-report">
+            {{component bam-process-workinprogress-casestatus}}
+        </div>
+    </div>
+    <div class="large-6 columns">
+        <div class="bz-rp-report">
+            {{component bam-process-workinprogress-casesgoingoverdue}}
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-bam-process-worinprogress-casestatus" type="text/x-jquery-tmpl">
+<div class="bz-rp-chart">
+    <div class="custom-overlay"><p class="message">%{bz-rp-nodata}</p></div>     
+</div>
+<div class="bz-rp-info">
+    <h6 class="bz-rp-info-breadcrumb">%{bam-title} / %{bam-process-title} / %{bam-process-workinprogress-casestatus-title}</h6>
+    <h3 class="bz-rp-info-title">%{bam-process-workinprogress-casestatus-title}</h3>
+    <p class="bz-rp-info-description">%{bam-process-workinprogress-casestatus-description}</p>
+</div>
+</script>
+
+<script id="bz-rp-bam-process-worinprogress-casesgoingoverdue" type="text/x-jquery-tmpl">
+<div class="bz-rp-chart">
+    <div class="custom-overlay"><p class="message">%{bz-rp-nodata}</p></div>     
+</div>
+<div class="bz-rp-info">
+    <h6 class="bz-rp-info-breadcrumb">%{bam-title} / %{bam-process-title} / %{bam-process-workinprogress-casesgoingoverdue-title}</h6>
+    <h3 class="bz-rp-info-title">%{bam-process-workinprogress-casesgoingoverdue-title}</h3>
+    <p class="bz-rp-info-description">%{bam-process-workinprogress-casesgoingoverdue-description}</p>
+</div>
+</script>

@@ -1,0 +1,24 @@
+﻿.admin-businesspolicies-content
+{
+    position: absolute;
+    width: 95%;
+    height: 95%;
+}
+.amin-businesspolicies-policiestree
+{
+    width: 49%;
+    height: 100%;
+    position: relative;
+    border: 1px solid grey;
+    background-color: red;
+    display: inline-block;
+}
+.amin-businesspolicies-rightframe
+{
+    width: 49%;
+    height: 100%;
+    position: relative;
+    border: 1px solid grey;
+    background-color: yellow;
+    display: inline-block;
+}

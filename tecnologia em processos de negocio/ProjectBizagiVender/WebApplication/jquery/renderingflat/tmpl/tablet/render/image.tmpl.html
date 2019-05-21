@@ -1,0 +1,89 @@
+<script id="ui-bizagi-render-image" type="text/x-kendo-template">
+    <div class="ui-bizagi-render-upload-wrapper image-wrapper">
+        <div class="ui-bizagi-render-image-wrapper">
+            <div class="bz-rn-image-container #
+			if( data.editable ) {
+				if( !data.url ) {
+					# bz-rn-image-actions-add bz-mo-icon bz-plus#
+					if( data.width == -1 ) {
+						# fit-to-size#
+					}
+				}
+				else {
+					# bz-rn-image-actions-zoom#
+				}
+			}
+			else {
+				# bz-rn-read-only#
+			}
+			#">
+                <input type="file" class="bz-rn-upload-image-web" accept="image/jpeg,image/jpg,image/png">
+                <img src="#= data.url #" style="display:none">
+            </div>
+            <div class="bz-rn-image-options-container">
+                <div class="bz-rn-image-actions-add bz-mo-icon bz-upload" style="display:none"></div>
+                <div class="bz-rn-image-actions-delete bz-mo-icon bz-trash" style="display:none"></div>
+            </div>
+        </div>
+        <div class="bz-resolution-container"></div>
+    </div>
+</script>
+<script id="ui-bizagi-render-image-item" type="text/x-kendo-template">
+    <input type="file" class="bz-rn-upload-image-web" accept="image/jpeg,image/jpg,image/png" style="display: none">
+    <div class="bz-rn-image-container">
+        #if (data.hasUrl){#
+        <img src="#= data.url #">
+        #} else {#
+        <div class="bz-cm-icon image-file bz-mo-icon bz-image"></div>
+        #}#
+        #if(data.allowDelete){#
+        <button type="button" class="bz-rn-image-actions-button bz-rn-image-actions-delete bz-mo-icon bz-trash-icon" style="display: none"></button>
+        #}#
+    </div>
+    #if(data.editable) {#
+    <div class="bz-rn-image-actions-container">
+        <button type="button" class="bz-rn-image-actions-button bz-rn-image-actions-add bz-mo-icon bz-plus"></button>
+        <div class="bz-rn-image-actions-resolution"></div>
+    </div>
+    #}#
+</script>
+<script id="ui-bizagi-render-image-modalview" type="text/x-kendo-template">
+    <div data-role="modalview" class="bz-wp-modalview-container" dir="#if (typeof data.orientation !== 'undefined'){ ##= data.orientation ##}else{#auto#}#">
+        <div data-role="header">
+            <div id="filter-header" data-role="navbar">
+                <div class="bz-wp-modalview-header-top-item">
+                    <span class="bz-wp-modalview-title">
+                        #if(typeof (data.displayName) !== "undefined" && data.displayName != ""){#
+                            #= data.displayName #
+                        #} else {#
+                            Image
+                        #}#
+                    </span>
+                    <span class="bz-wp-modalview-close bz-mo-icon bz-cancel"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bz-wp-modalview-results-wrapper">
+            <ul class="bz-rn-image-options">
+                <li data-role="image">
+                    <button type="button" class="bz-cm-icon bz-upload-button image bz-mo-icon bz-image"></button>
+                    <label class="bz-image-control-label">%{workportal-actionsheet-upload-choose-photo}</label>
+                </li>
+                <li data-role="cimage">
+                    <button type="button" class="bz-cm-icon bz-upload-button cimage bz-mo-icon bz-attach-photo"></button>
+                    <label class="bz-image-control-label">%{workportal-actionsheet-upload-take-photo}</label>
+                </li>
+                <li data-role="dimage">
+                    <button type="button" class="bz-cm-icon bz-upload-button cimage bz-mo-icon bz-cancel"></button>
+                    <label class="bz-image-control-label">%{workportal-actionsheet-upload-remove-photo}</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</script>
+<script id="bz-rd-upload-render-edition" type="text/x-kendo-template">
+    <div class="bz-rn-image-render-preview-holder">
+        <img class="bz-rn-image-render-preview" src="#=data.url#">
+    </div>
+</script>

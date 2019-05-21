@@ -1,0 +1,31 @@
+<script id="project-discussion-sidebar" type="text/x-jsrender" >
+   <div><!--Div is necessary, fix-->
+      {{if isOpen}}
+          <div><!--Div is necessary, fix-->
+             <div id="home-project-discussions-sidebar-wrapper">
+                <ul class="ui-bizagi-wp-project-discussions-sidebar-actions">
+                   <li class="ui-bizagi-wp-project-discussions-sidebar-action-add">
+
+                      <a href="javascript:void(0)" class="bz-wp-btn bz-wp-btn-primary">
+                          <i class="bz-icon bz-icon-16 bz-icon-comment-add-outline"></i>
+                          <span>%{workportal-project-discussion-adddiscussion}</span>
+                      </a>
+
+                   </li>
+                </ul>
+                <hr class="ui-bizagi-wp-hr-separator">
+             </div>
+          </div>
+      {{/if}}
+      <div>
+         <div {{layout "caseState" /}}>
+
+         </div>
+      </div>
+      <div>
+         <div {{layout "activityMap" /}}>
+
+         </div>
+      </div>
+   </div>
+</script>

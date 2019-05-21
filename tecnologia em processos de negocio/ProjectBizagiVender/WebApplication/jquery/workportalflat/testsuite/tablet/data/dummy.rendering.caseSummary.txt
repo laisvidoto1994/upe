@@ -1,0 +1,44 @@
+﻿{
+  "idCase": 651,
+  "caseNumber": "651",
+  "process": "Access Management",
+  "processPath": "Access Management/Access Management/",
+  "creationDate": "09/17/2014 18:31",
+  "estimatedSolutionDate": "09/18/2014 15:00",
+  "solutionDate": "09/17/2014 18:31",
+  "isOpen": "true",
+  "idParentCase": -1,
+  "radNumberParentCase": "",
+  "isFavorite": "false",
+  "guidFavorite": "",
+  "parentDisplayName": "",
+  "canAccesToParentProcess": "false",
+  "isDelegatedCase": "false",
+  "isAborted": "false",
+  "hasComments": "false",
+  "countEvents": 0,
+  "countSubProcesses": 0,
+  "countAssigness": 1,
+  "helpUrl": "",
+  "hasGlobalForm": "true",
+  "currentState": [
+    {
+      "idWorkItem": 852,
+      "idTask": 1170,
+      "state": "Enter Permission Request",
+      "colorState": "Red",
+      "tskDescription": "",
+      "estimatedSolutionDate": "09/18/2014 15:00",
+      "isEvent": "false",
+      "helpUrl": "",
+      "allowsReassign": "false",
+      "assignToCurrentUser": "true",
+      "allowReleaseActivity": false
+    }
+  ],
+  "createdBy": {
+    "userName": "admon",
+    "Name": "admon"
+  },
+  "caseDescription": ""
+}

@@ -1,0 +1,437 @@
+/*
+    Document   : bizagi.workportal.plans
+    Author     : Bizagi
+    Description:
+        Styles for home plans
+*/
+
+.bz-card
+{
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    padding: 1.4em 2em;
+    position: relative;
+    transition: min-height 0.5s, transform 0.5s;
+}
+.bz-card__icon
+{
+    float: left;
+    margin-right: 1rem;
+}
+
+.wdg-plans-card-vc, .wdg-plans-manager-card
+{
+    cursor: pointer;
+    padding: 1.5em;
+    position: relative;
+}
+
+.wdg-plans-title
+{
+    font-size: 16px;
+    font-weight: normal;
+    word-wrap: break-word;
+}
+
+.wdg-plans-title > i
+{
+    margin-right: 8px;
+}
+
+.wdg-plans-title > span
+{
+    vertical-align: middle;
+}
+
+.wdg-plans-middle-content
+{
+    text-align: center;
+}
+
+.wdg-plans-middle-content .wdg-plans-icon
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 74px;
+}
+
+.wdg-plans-card p
+{
+    font-size: 13px;
+    text-align: center;
+}
+
+.wdg-plans-title + p
+{
+    color: #00bff3;
+    font-size: 18px;
+}
+
+.wdg-plans-row
+{
+    float:left;
+    font-size:14px;
+    padding-bottom:5px;
+    padding-top:5px;
+    width:100%;
+}
+
+.wdg-plans-row.wdg-plans-workonit-row
+{
+    display: none;
+}
+
+.wdg-plans-panel
+{
+    border-bottom: solid 1px #E7E7E7;
+    padding-bottom: 26px;
+    padding-top: 10px;
+}
+
+.wdg-plans-card-cases
+{
+    min-height: 120px;
+}
+
+
+.sidebar-content .wdg-plans-header
+{
+    color: #374C58;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    padding: 1em .8em;
+}
+
+#home-content .wdg-plans-header
+{
+    margin: 0 0 2em;
+    padding-bottom: .6em;
+}
+
+#home-content .wdg-plans-panel
+{
+    border-bottom: none;
+    margin-bottom: 1em;
+    padding: 0;
+}
+
+.sidebar-content .wdg-plans-card
+{
+    background: #E7EAEB;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    list-style: none;
+    margin-bottom: 1px;
+    min-height: 40px;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+.sidebar-content .wdg-plans-list:last-child .wdg-plans-card
+{
+    border-bottom: solid 1px #bdced9;
+}
+
+.sidebar-content .wdg-plans-panel
+{
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-content .wdg-plans-card:hover
+{
+    background-color: #F5F6F7;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.sidebar-content .wdg-plans-title
+{
+    font-size: 14px;
+    font-weight: 400;
+    height: 100%;
+    line-height: 35px;
+    padding: 9px 15px;
+}
+
+.sidebar-content .wdg-plans-title .wdg-plans-icon
+{
+    float: left;
+    margin-right: 25px;
+    margin-top: 0;
+    position: relative;
+}
+
+.sidebar-content .wdg-plans-icon.plans-ico svg
+{
+    fill: #6e7077;
+}
+
+.sidebar-content .wdg-plans-list[class*='col-']
+{
+    width: 100%;
+}
+
+#plans-manager-dataviewer-list
+{
+    height: 100%;
+    margin-right: -9px;
+    overflow-y: scroll;
+    padding-bottom: 80px;
+}
+
+
+@media (min-width: 1600px)
+{
+
+    .wdg-plans .wdg-plans-middle-content + p.col-xl-8
+    {
+        font-size: 16px;
+        font-weight: normal;
+        width: 60%;
+    }
+
+    .wdg-plans-middle-content,
+    .wdg-plans p
+    {
+        display: inline-block;
+        float: none;
+        vertical-align: middle;
+    }
+}
+
+.wdg-plans-card-dial
+{
+    text-align:center;
+    width:100%;
+}
+.wdg-plans-manager
+{
+    height:calc(100% - 70px);
+    margin:1em 3.5em;
+}
+.wdg-plans-manager-card
+{
+    float: left;
+
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    width: 300px;
+}
+.wdg-plans-card-state
+{
+    color:#aaa;
+    font-size:38px;
+    padding-bottom:100px;
+    padding-top:100px;
+    text-align:center;
+    width:100%;
+}
+
+.wdg-plans-card-state > span
+{
+    display: block;
+}
+
+.wdg-plans-users
+{
+    float:left;
+    list-style: none;
+    margin:-5px 0;
+    padding:0;
+}
+.bz-wp-avatar-32
+{
+    height: 32px;
+    width: 32px;
+}
+.wdg-plans-row .bz-icon
+{
+    color:#999;
+    float:left;
+    margin-right:10px;
+    margin-top:2px;
+}
+
+.wdg-plans-row .bz-icon.bz-icon-play
+{
+    margin-right: 0px;
+    padding: 3px;
+}
+
+.wdg-plans-row .bz-wp-avatar
+{
+    float:left;
+    margin-right:6px;
+}
+.wdg-plans-row .bz-wp-avatar span
+{
+    display: none;
+    line-height: 32px;
+}
+.wdg-plans-row .bz-wp-avatar-img
+{
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.wdg-plans-tooltip-user-avatar ul
+{
+    list-style: none;
+}
+
+.wdg-plans-tooltip-user-avatar .bz-wp-avatar span
+{
+    float: left;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    top: 7px;
+    width: 100%;
+}
+
+.wdg-plans-tooltip-user-avatar .bz-wp-avatar img
+{
+    position: relative;
+    top: 0px;
+}
+
+.wdg-plans-tooltip-user-info .wdg-plans-tooltip-user-avatar
+{
+    float: left;
+    margin-left: -52px;
+    margin-top: -20px;
+}
+
+.wdg-plans-tooltip-user-info .wdg-plans-tooltip-user-name
+{
+    left: 10px;
+    position: relative;
+    width:200px
+}
+
+.wdg-plans-tooltip-user-info
+{
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+ul.wdg-plans-tooltip-user-activities
+{
+    left: -25px;
+    list-style: none;
+    margin: 0 0 20px 0;
+    position: relative;
+    top: 15px;
+}
+
+.wdg-plans-card-dial
+{
+    margin-bottom:20px;
+    margin-top:30px;
+    position:relative;
+}
+.wdg-plans-card-dial-layer
+{
+    height:100%;
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+}
+.wdg-plans-row-activities
+{
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 225px;
+}
+
+.wdg-plans-row-activity-tooltip
+{
+    margin: 5px 5px 5px 5px;
+}
+
+.wdg-plans-row-activity-tooltip span
+{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.wdg-plans-row-activity-tooltip .wdg-plans-item-name
+{
+    max-width: 132px;
+}
+
+.wdg-plans-row-activity-tooltip .wdg-plans-item-value
+{
+    font-weight: bold;
+}
+
+.wdg-plans-leftmenu
+{
+    display: inline-block;
+    float: right;
+    font-size:16px;
+    line-height: 30px;
+    position: relative;
+    right: -6px;
+    text-align: center;
+    top: -7px;
+    vertical-align: middle;
+    width: 30px;
+}
+
+.wdg-plans-leftmenu:hover
+{
+    color: #0B8BCB;
+}
+
+.plans-manager-context-menu-list
+{
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    z-index: 1000;
+}
+
+.plans-manager-context-menu-list li
+{
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 8px 10px 8px 6px;
+}
+
+.plans-manager-context-menu-list li:hover
+{
+    background-color: #e2e2e2;
+}
+
+
+#project-plan-popup-wrapper .ui-bizagi-input-required
+{
+    background-color: red;
+    border-radius: 2px 0 0 2px;
+    -webkit-border-radius: 2px 0 0 2px;
+    display: inline-block;
+    height: 28px;
+    left: 1px;
+    line-height: normal;
+    position: relative;
+    top: 34px;
+    vertical-align: top;
+    width: 3px;
+    z-index: 1;
+}

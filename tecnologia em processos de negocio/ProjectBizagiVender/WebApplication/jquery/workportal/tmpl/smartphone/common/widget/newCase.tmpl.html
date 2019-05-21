@@ -1,0 +1,54 @@
+<script id="ui-bizagi-workportal-widget-newcase" type="x-jquery-tmpl" >
+<div class="bz-wp-nc-container">
+       <input type="search" results="1" id="searchNewCase"   placeholder="%{workportal-menu-search}">
+       <nav class="bz-wp-nc-content">
+            <ul class="bz-common-webkit-reset-ul bz-cm-width bz-wp-categoryTree">
+                <li class="bz-wp-icon-left"><span class="bz-cm-icon bz-cm-ib"></span></li>
+            </ul>
+            <div class="bz-wp-nc-categories" {{loading}} ></div>
+       </nav> 
+
+        <div id="modalNewCaseMessage" class="bz-wp-nc-loading ui-widget-content ui-corner-all">
+            <div id="loading" {{loading}}></div>
+            <div id="case"></div>            
+        </div>
+         
+</div>  
+</script>
+
+
+
+<script id="ui-bizagi-workportal-widget-newcase-categories" type="x-jquery-tmpl" >
+<ul class="bz-common-webkit-reset-ul bz-cm-width bz-wp-nc-list-items">
+ {{each category}}
+
+ {{if  ((typeof(renderVersion)!="undefined" && ( renderVersion==2 || renderVersion==0 ) ) || typeof(renderVersion)==="undefined" ) }}
+    <li data-appid="${appId}" data-category="${idCategory}"  data-category-name"${categoryName}"
+      class="{{if typeof(isProcess)!="undefined" && isProcess=="true" }}bz-nc-process process{{else}}bz-nc-category category {{/if}}"  >
+
+         <div class="bz-nc-item-arrow"><span class="bz-cm-icon"></span> </div>
+         <div class="bz-cm-icon  {{if typeof(isProcess)!="undefined" && isProcess=="true" }}processIco {{else}}categoryIco {{/if}}  "></div>
+         <h3>${categoryName}</h3>
+         {{if typeof(isProcess)!="undefined" && isProcess=="true" }}
+          <p class="newCaseDescription">${description}</p>
+         {{/if}}
+
+    </li>
+ {{/if}}
+ {{/each}}
+</ul>
+
+{{if truncate}}
+ <div class="loadMoreElements"><span id="loadMoreElementsIcon" class="plus_load_icon"></span><span>%{workportal-widget-newcase-loadmore}</span></div>
+{{/if}}
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-newcase-categories-tree" type="x-jquery-tmpl" >
+    <li>
+        <span data-appid="${appId}" data-p-cat="${idParentCategory}" >${categoryName}</span>    
+    </li>
+</script>
+
+
+

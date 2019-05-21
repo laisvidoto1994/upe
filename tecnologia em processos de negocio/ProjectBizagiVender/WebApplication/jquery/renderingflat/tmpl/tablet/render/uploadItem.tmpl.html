@@ -1,0 +1,16 @@
+﻿<li class="ui-bizagi-render-upload-item #if(!data.allowDelete){#dontAllowDelete#}#" data-id="#= data.id #" data-url="#= data.url #" data-name="#=data.filename#">
+    # if (!data.isCordovaSupported) { #
+    <a href="#= data.url #" #if (data.mode == "execution" ) { # target="_blank" #}# title="#= data.filename #">#= data.filename #</a>
+
+    # } else { #
+        #if (typeof(data.isOfflineForm) !== 'undefined' && data.isOfflineForm) { #
+            <span title="#= data.filename #"> #= data.filename #</span>    
+        #} else {#
+            <a href="javascript:void(0)" data-url="#= data.url #" title="#= data.filename #" class="ui-bizagi-render-link button"> #= data.filename #</a>
+        # } #
+    # } #    
+
+    #if(data.allowDelete && data.editable){#    
+      <div class="bz-rn-upload-delete-icon bz-mo-icon bz-cross"></div>
+    #}#
+</li>

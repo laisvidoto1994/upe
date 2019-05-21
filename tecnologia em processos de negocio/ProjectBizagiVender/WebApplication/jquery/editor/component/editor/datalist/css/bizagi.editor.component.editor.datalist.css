@@ -1,0 +1,22 @@
+/********
+* Filename: bizagi.editor.component.editor.datalist.css
+* Create Date: 2012-07-03
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__datalist
+*
+********/
+
+/* __datalist
+--------*/
+
+.bizagi_editor_component_properties > div > .bizagi_editor_component_editor_datalist{
+	padding-left: 0px!important;
+}
+
+.bizagi_editor_component_editor_datalist .datalist-group .datalist-subproperty-external
+{
+   position:absolute;
+   bottom: 5px;
+   right: -20px;
+}

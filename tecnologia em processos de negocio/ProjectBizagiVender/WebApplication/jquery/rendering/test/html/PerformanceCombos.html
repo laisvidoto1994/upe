@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow:auto">
+<head>
+    <link href="../../../../jquery/themes/bizagiDefault/devices/desktop/default.less.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../jquery/common/base/css/desktop/bizagi.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../jquery/common/bizagi.notifications/css/desktop/bizagi.notifications.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../jquery/workportal/css/desktop/bizagi.workportal.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../jquery/workportal/css/desktop/bizagi.workportal.render.css" rel="stylesheet" type="text/css" />
+    <title>Layout</title>
+</head>
+<body  style="overflow:auto">
+    <script type='text/javascript' src='../../../../jquery/steal.js'></script>
+    <script type='text/javascript' src='../../../../jquery/bizagi.loader.js'></script>
+    <script type="text/javascript" language="javascript">
+        // Redefine path to base
+        var BIZAGI_PATH_TO_BASE = "../../../../";
+
+        // Gets the loader instance, and load the module
+        var loader = bizagi.loader;
+        loader.init(function () {
+            loader.start("rendering")
+            .loadFile(bizagi.loader.getResource("js", "common.base.dev.jquery.mockjax"))
+            .loadFile(bizagi.loader.getResource("js", "common.base.dev.jquery.mockjson"))
+            .then(function () {
+                // BEGIN OF SCRIPT
+
+                $.mockjax({
+                    url: 'App/Render/RenderHandler.ashx',
+                    responseTime: 0,
+                    response: function () {
+                        this.responseText = $.mockJSON.generateFromTemplate({
+                            "form": {
+                                "properties": { "id": 1, "xpathContext": "", "title": "Cycle 1",
+                                    "buttons": [{ "action": "save", "text": "Save", "validate": "true", "submitData": "true", "refresh": "true" }, { "action": "next", "text": "Next", "validate": "true", "submitData": "true", "refresh": "true"}]
+                                },
+                                "elements": [
+                                            { "render": { "properties": { "id": 10004, "displayName": "Combo (local) with value", "type": "combo", "xpath": "intermediate.comboLocalWithValue", "data": [{ "id": "1111", "value": "Pera" }, { "id": "2222", "value": "Manzana" }, { "id": "3333", "value": "Durazno"}], "value": [{ "id": "2222", "value": "Durazno"}]}} },
+                                            { "container": {
+                                                "properties": { "id": 2, "displayName": "My First Panel", "type": "panel" },
+                                                "elements|100-100": [
+                                                        { "render": { "properties": { "id": "@NUMBER@NUMBER@NUMBER@NUMBER", "displayName": "@LOREM", "type": "combo", "xpath": "@LOREM.@LOREM", "data|50-50": [{ "id": "@NUMBER@NUMBER@NUMBER@NUMBER", "value": "@LOREM @LOREM"}]}} },
+                                                    ]
+                                            }
+                                            }
+                                        ]
+                            }
+                        });
+                    }
+                });
+
+                // END OF SCRIPT
+            })
+            .then(function () {
+                var rendering;
+                // BEGIN SCRIPT
+                var buttonTmpl = $("<button>LOAD TEMPLATES</button>");
+                buttonTmpl.click(function () {
+                    rendering = new bizagi.rendering.facade();
+                });
+                buttonTmpl.appendTo("body");
+
+                var button = $("<button>CLICK</button>");
+                button.click(function () {
+                    var rendering = new bizagi.rendering.facade();
+                    rendering.execute();
+                });
+                button.appendTo("body");
+
+                var buttonClear = $("<button>CLEAR</button>");
+                buttonClear.click(function () {
+                    $(".ui-bizagi-container-form").detach();
+                });
+                buttonClear.appendTo("body");
+
+                // END OF SCRIPT
+            });
+        });
+    </script>
+</body>
+</html>

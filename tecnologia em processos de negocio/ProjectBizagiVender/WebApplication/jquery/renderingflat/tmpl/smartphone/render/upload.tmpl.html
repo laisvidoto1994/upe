@@ -1,0 +1,34 @@
+﻿<script id="bz-rn-upload-container" type="text/x-kendo-template">
+    <ul class="ui-bizagi-render-upload-container">
+        # if (typeof(data.noFiles) !== 'undefined' && data.noFiles && !data.editable){#
+            <li class="noFiles">%{render-upload-no-files}</li>
+        #} else {#
+            <ul class="files">
+                {{files}}
+            </ul>
+        #}#
+
+        #if(data.editable){#
+        <li class="bz-rn-upload-show-menu">
+            <label>%{render-upload-link-label}</label>
+            <span class="bz-cm-icon bz-mo-icon bz-upload"></span>
+            <div class="bz-rn-upload-resolution-container" style="display: none"></div>
+        </li>
+        <input type="file" class="bz-rn-upload-web" style="display: none">
+        #}#
+    </ul>
+</script>
+
+<script id="bz-rn-upload-item" type="text/x-kendo-template">
+    <li class="ui-bizagi-render-upload-item #if(!data.allowDelete){#dontAllowDelete#}#" data-id="#= data.id #">
+        # if (!data.isCordovaSupported) { #
+            <a href="#= data.url #" #if (data.mode == "execution" ) { # target="_blank" #}# title="#= data.filename #" class="ui-bizagi-render-link">#= data.filename #</a>
+        # } else { #
+            <a href="javascript:void(0)" data-url="#= data.url #" title="#= data.filename #" class="ui-bizagi-render-link button"> #= data.filename #</a>
+        # } #
+
+        #if(data.allowDelete && data.editable){#
+            <div class="bz-rn-upload-delete-icon bz-mo-icon bz-cross"></div>
+        #}#
+    </li>
+</script>

@@ -1,0 +1,15 @@
+﻿<div class="ui-bizagi-container ${cssClass} ui-bizagi-container-contentpanel" guid="${guid}" data-unique-id="${uniqueId}">
+
+    {{if mode !== "execution"}}
+        <div class="ui-bizagi-container-contentpanel-header-container">
+            <span class="ui-bizagi-container-contentpanel-header">${displayName}</span>
+        </div>
+    {{/if}}
+    {{if mode == "design" && messageValidation}}
+        <span class="bz-studio bz-warning-red_16x16_standard ui-icon-override ui-icon-help ui-bizagi-render-icon-msg-validation ui-bizagi-render-icon-editor-msg-validation" title="${messageValidation}" style="display:inline-block"></span>
+    {{/if}}
+        
+    <div class="ui-bizagi-container-contentpanel-wrapper">
+        {{children}}
+    </div>
+</div>

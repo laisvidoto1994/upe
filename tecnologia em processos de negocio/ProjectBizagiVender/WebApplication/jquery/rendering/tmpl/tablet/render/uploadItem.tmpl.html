@@ -1,0 +1,9 @@
+﻿<li class="ui-bizagi-render-upload-item"  data-url='${url}'>
+ {{if typeof (cordova) === "undefined" }}
+   <!-- <label>${filename}</label>-->
+    <a href="${url}" {{if mode == "execution"}} target="_blank" {{/if}} title="${filename}" >${filename}</a>
+
+{{else}}
+  <a href='javascript:void(0)'  onclick="window.open('${url}', '_system');"  title="${filename}"  >${filename}</a>
+{{/if}}
+</li>

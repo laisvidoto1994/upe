@@ -1,0 +1,27 @@
+﻿/* ==========================================================================
+   Process and version filter
+   ========================================================================== */
+
+.bizagi_reporting_component_processversionfilter {
+	float: left;
+	margin-right: 2em;
+}
+
+@media only screen and (max-width: 689px) {
+    .bizagi_reporting_component_processversionfilter {
+        margin-bottom: 1em;
+    }
+}
+
+.filters-process {
+    float: left;
+    max-width: 20em;
+    min-width: 20em;
+    margin-right: 1em;
+}
+
+.filters-version {
+    float: left;
+    max-width: 6em;
+    min-width: 6em;
+}

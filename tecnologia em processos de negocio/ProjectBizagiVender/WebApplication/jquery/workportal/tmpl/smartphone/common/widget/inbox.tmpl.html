@@ -1,0 +1,52 @@
+<div id="ui-bz-wp-inbox"  data-bizagi-component="workportal">
+    
+        <div class="bz-wp-container-fts bz-wp-foother-static">
+        <ul>
+            <li data-taskstate="all"       data-value="%{workportal-widget-inboxcommon-filter-all}"  class="active"><span class="bz-cm-icon"></span></li>
+            <li data-taskstate="Red"       data-value="%{workportal-widget-inboxcommon-filter-red}" ><span class="bz-cm-icon"></span></li>
+            <li data-taskstate="Yellow"    data-value="%{workportal-widget-inboxcommon-filter-yellow}"><span class="bz-cm-icon"></span></li>
+            <li data-taskstate="Green"     data-value="%{workportal-widget-inboxcommon-filter-green}"><span class="bz-cm-icon"></span></li>
+            <li data-taskstate="Favorites" data-value="%{workportal-widget-inboxcommon-filter-favorites}"><span class="bz-cm-icon"></span></li>
+        </ul>
+       </div>
+
+       <div class="bz-wp-summary-menu-bar-bottom bz-wp-foother-static">
+        <button type="button" ordinal="0"  class="bz-cancel_case">Close Case</button>
+        <button type="button" ordinal="3"  class="bz-work_case">%{workportal-widget-inboxcommon-work-on-it}</button>
+        <button type="button" ordinal="1"  class="bz-reassign_case">Reassign</button>
+       </div>
+
+
+
+        <div id="bz-wp-container-workflow" class="scroll-iphone" >
+           <div id="bz-wp-container-categories-process"   {{loading}}></div>
+        </div>	
+        
+        <div id="ui-bz-wp-cases-list" class="scroll-iphone"  >
+          <div class="bz-wp-cases-container" {{loading}}>
+	          <div class="bz-wp-cases-header">
+	           <div class="container-left">
+	            <span class="bz-cm-icon bz-cm-ib "></span>
+	           </div>
+	           <div class="container-right">
+	            <span></span>
+	           </div>
+	          </div> 
+	          <ul class="bz-common-webkit-reset-ul bz-cm-width bz-wp-list-cases" ></ul>
+          </div>
+        </div>
+
+        <div id="ui-bz-wp-case-summary" class="scroll-iphone" {{loading}}>
+        </div>
+
+        <div id="ui-bz-wp-no-results" class="scroll-iphone">
+        <span class="bz-cm-icon bz-wp-no-results"></span>
+        </div>
+
+
+
+</div>
+
+
+
+

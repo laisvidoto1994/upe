@@ -1,0 +1,23 @@
+﻿<script id="ui-bizagi-workportal-widget-admin-holidays" type="text/x-jquery-tmpl">
+<div>
+    <span class="bz-ui-save-status"></span>
+    <div id="biz-wp-admin-holidays-schemas"></div>
+</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-holidays-calendar-schema" type="text/x-jquery-tmpl">
+<div class="biz-wp-admin-holidays-calendar-container">
+    <select name="holidays-schema">
+        <option value="">%{workportal-general-pick-option}</option>
+        {{each schemas}}
+            <option value="${id}">${displayName}</option>
+        {{/each}}
+    </select>
+    <span class="holidays-status"></span>
+    <hr>
+    <div id="biz-wp-admin-holidays-calendar"></div>
+    <hr>
+    <button name="save">%{confirmation-savebox-save}</button> &nbsp;&nbsp;&nbsp;
+    <button name="cancel">%{confirmation-savebox-cancel}</button>
+</div>
+</script>

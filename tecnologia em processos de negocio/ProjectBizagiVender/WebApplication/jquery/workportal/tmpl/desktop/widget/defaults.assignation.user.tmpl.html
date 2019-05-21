@@ -1,0 +1,96 @@
+﻿<script id="ui-bizagi-workportal-widget-admin-defaults-assignation-user" type="text/x-jquery-tmpl" >
+
+    <div class= "biz-wp-window">
+        <div id="defaults-assignation-user-home">
+            <strong>
+                <span id="generalTitle" class="biz-wp-window-title">
+                    %{workportal-widget-admin-defaults-assignation-user-subtitle}
+                </span>
+            </strong> 
+            <strong>
+                <span id="generalSubtitle" class="biz-wp-window-Subtitle">
+                    %{workportal-widget-admin-defaults-assignation-user-title-set}
+                </span>
+            </strong> 
+        </div>          
+           
+        <div id="dinamicContent"></div>         
+        <div id="dinamicContent2" class="biz-wp-form clearfix"></div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-defaults-assignation-user-fields" type="text/x-jquery-tmpl" >
+    
+        <div id="mainForm" class="biz-wp-form clearfix"> 
+            <div id="processTree">
+            
+        </div>
+        <br/>
+          <div class="biz-wp-form-row clearfix">
+             <span class="biz-wp-window-Subtitle">
+                <strong>%{workportal-widget-admin-defaults-assignation-user-title-get}</strong> 
+             </span>
+               <div>
+                  <div class="biz-wp-form-cell">%{workportal-widget-admin-defaults-assignation-user-title-current}</div>      
+                  <div class="biz-wp-form-cell"><input id="txtTextUserAssignation" class="auth-text" type="text"/> </div>
+              </div>
+			  <button id="btn-searchUser" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+				  <span class="ui-button-text">%{workportal-widget-admin-defaults-assignation-button-label-searchUser}</span>
+			  </button>
+			  <button id="btn-clearUser" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+				  <span class="ui-button-text">%{workportal-widget-admin-defaults-assignation-button-label-clearUser}</span>
+			  </button>
+          </div>    
+        <br/>
+        <div class="biz-wp-buttonset">
+            <ul>
+                <li>
+                    <button id="btn-saveUser" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                        <span class="ui-button-text">%{workportal-widget-admin-defaults-assignation-button-label-saveUser}</span>
+                    </button>
+                </li>
+            </ul>
+        </div>        
+        </div>
+
+     
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-defaults-assignation-user-search" type="text/x-jquery-tmpl" >
+        
+        <div id="mainForm" class="biz-wp-form clearfix"> 
+        <br/>
+          <div class="biz-wp-form-row clearfix">
+             <span class="biz-wp-window-title">
+                <strong>%{workportal-widget-admin-defaults-assignation-user-title-search}</strong> 
+             </span>
+               <div>
+                  <div class="biz-wp-form-cell">%{workportal-widget-admin-defaults-assignation-user-title-domain}</div>      
+                  <div class="biz-wp-form-cell"><input id="txtTextDomain" class="auth-text" type="text"/> </div>
+              </div>
+              <div>
+                  <div class="biz-wp-form-cell">%{workportal-widget-admin-defaults-assignation-user-title-userName}</div>      
+                  <div class="biz-wp-form-cell"><input id="txtTextuserName" class="auth-text" type="text"/> </div>
+              </div>
+              <div>
+                  <div class="biz-wp-form-cell">%{workportal-widget-admin-defaults-assignation-user-title-fullName}</div>      
+                  <div class="biz-wp-form-cell"><input id="txtTextfullName" class="auth-text" type="text"/> </div>
+              </div>
+          </div>    
+        <br/>
+        <div class="biz-wp-buttonset">
+            <ul>
+                <li>
+                    <button id="btn-searchUser" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                        <span class="ui-button-text">%{workportal-widget-admin-defaults-assignation-button-label-search}</span>
+                    </button>
+                </li>
+                <li>
+                    <button id="btn-clearUser" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                        <span class="ui-button-text">%{workportal-widget-admin-defaults-assignation-button-label-clear}</span>
+                    </button>
+                </li>
+            </ul>
+        </div>    
+        </div>
+</script>

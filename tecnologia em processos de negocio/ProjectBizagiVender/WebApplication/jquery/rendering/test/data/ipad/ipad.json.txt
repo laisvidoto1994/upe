@@ -1,0 +1,34 @@
+{
+	"form": {
+		"properties" : {"id": 1, "xpathContext": "", "title": "Cycle 1", 
+		"buttons": [
+			{"action": "save", "text": "Guardar", "validate": "true", "submitData": "true", "refresh": "true"},
+			{"action": "next", "text": "Siguiente", "validate": "true", "submitData": "true", "refresh": "true"}
+		]},
+		"elements": [
+			{
+				"container": {
+					"properties": {
+						"id" : 1,
+						"displayName" : "My First Panel",
+						"type": "panel"
+					},
+					"elements": [
+						{ "render": {	"properties": { "id" : 10001, "displayName" : "Text", "xpath" : "text1", "type": "text"}}},
+						{ "render": {	"properties": { "id" : 10002, "displayName" : "Text with value", "xpath" : "text2", "type": "text", "value": "Enabled text"}}},
+						{ "render": {	"properties": { "id" : 10003, "displayName" : "Text value-less read-only", "xpath" : "text3", "type": "text", "editable": "false"}}},
+						{ "render": {	"properties": { "id" : 10004, "displayName" : "Text read-only with value", "xpath" : "text14", "type": "text", "editable": "false", "value": "Read only text"}}},
+						{ "render": {	"properties": { "id" : 10005, "displayName" : "Enabled button", "xpath" : "button1", "type": "button", "caption": "Click me now"}}},
+						{ "render": {	"properties": { "id" : 10006, "displayName" : "Disabled button", "xpath" : "button1", "type": "button", "caption": "Click me now", "editable":"false"}}},
+						{ "render": {	"properties": { "id" : 10007, "displayName" : "Text", "xpath" : "text1", "type": "text"}}},
+						{ "render": {	"properties": { "id" : 10008, "displayName" : "Text with value", "xpath" : "text2", "type": "text", "value": "Text with value"}}},
+						{ "render": {	"properties": { "id" : 10009, "displayName" : "Text read-only", "xpath" : "text3", "type": "text", "editable": "false", "value": "Guest list"}}},
+						{ "render": {	"properties": { "id" : 10010, "displayName" : "Radio with items", "xpath" : "text3", "type": "radio", "data":[{"id":"1A", "value":"Item 1"},{"id":"2A", "value":"Item 2"}, {"id":"3A", "value":"Item 3"},{"id":"4A", "value":"Item 4"}, {"id":"5A", "value":"Item 5"} ]}}},
+						{ "render": {	"properties": { "id" : 10011, "displayName" : "Combo with items", "xpath" : "text3", "type": "combo", "data":[{"id":"1A", "value":"Item 1"},{"id":"2A", "value":"Item 2"}, {"id":"3A", "value":"Item 3"} ]}}}
+						
+					]
+				}				
+			}
+		]
+	}
+}

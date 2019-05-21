@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://tempuri.org/getCategories.xsd" xmlns="http://tempuri.org/getCategories.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="categories">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="category">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="categoryId" type="xs:string" minOccurs="0" />
+							<xs:element name="categoryName" type="xs:string" minOccurs="0" />
+							<xs:element name="categoryDisplayName" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="categoryDescription" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="categoryHelpText" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="categoryDisplayOrder" type="xs:string" minOccurs="0" />
+							<xs:element name="categoryCreationDate" type="xs:string" minOccurs="0" />
+							<xs:element name="parentCategoryId" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

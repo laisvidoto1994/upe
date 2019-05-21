@@ -1,0 +1,225 @@
+﻿<script id="ui-bizagi-workportal-widget-admin-dimensions" type="text/x-jquery-tmpl">
+     
+     <div class="dimensions-content-wrapper" >
+        <div id="content-wrapper">
+            <div id="column-dimensions-admin-wrapper">
+            </div>
+
+            <div id="column-dimensions-properties-wrapper">
+            </div>
+
+            <div id="column-dimensions-edit-properties-wrapper">
+            </div>
+
+            <div id="entities-tree-wrapper" style="display:none" class="admin-dimensions-tree-wrapper">
+                <div id="tree-title" class="admin-dimensions-tree-title">
+                    <div class="admin-dimensions-tree-title-label"><label>Bizagi</label></div>
+                    <a id="btn-close-tree" class="btn-close-tree" href="#"> X </a>
+                </div>
+                <div id="tree-content" class="admin-dimensions-tree-content"></div>
+                <div id="tree-buttons" class="admin-dimensions-tree-buttons">
+                    <div class="biz-wp-buttonset">                       
+                           <button id="btn-save-tree" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                             <span class="ui-button-text">Ok</span>
+                           </button>
+                        
+                          <button id="btn-cancel-tree" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                             <span class="ui-button-text">Cancel</span>
+                          </button>                       
+                    </div>      
+                </div>
+            </div>
+            <div id="shadow-panel"></div>
+        </div>
+    </div>  
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-dimensions-administrable" type="text/x-jquery-tmpl" >
+
+   <div id="content-table-dimensions-types">
+      <div id="table-fixes-dimensions">
+         <fieldset class="dimensions dimensions-content dimensions-corner-all">
+            <div class="dimensionstitleType dimensions dimensions-header dimensions-corner-all">
+                <span id="lblFixedDimensions">%{workportal-widget-admin-dimensions-titles-fixed}</span>
+            </div>
+            <table class="dimensionTypeTable">
+              <tbody>
+                <tr>
+                  <td>
+                    <div id="divFixedDimensionList" class="divDimensionGroup">
+                        <dl id="DimenListFixed">
+                        </dl>
+                    </div>
+                  </td>
+                 </tr>
+               </tbody>
+            </table>
+         </fieldset>                   
+      </div>
+      <br>
+      <div id="table-admin-dimensions">
+         <fieldset class="dimensions dimensions-content dimensions-corner-all">
+            <div class="dimensionstitleType dimensions dimensions-header dimensions-corner-all">
+               <span id="lbladminDimensions">%{workportal-widget-admin-dimensions-titles-admin}</span>
+            </div>
+            <table class="dimensionTypeTable">
+               <tbody>
+                 <tr>
+                   <td>
+                     <div id="divAdminDimensionList" class="divDimensionGroup">
+                        <dl id="DimenListAdmin">
+                        </dl>
+                     </div>
+                   </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="biz-wp-buttonset">
+               <ul>
+                 <li>
+                   <button id="btn-newDimensions" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                   <span class="ui-button-text">%{workportal-widget-admin-dimensions-button-label-newDimensions}</span>
+                   </button>
+                </li>
+              </ul>
+            </div>      
+        </fieldset>      
+      </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-dimensions-properties" type="text/x-jquery-tmpl" >
+
+   <div id="content-table-dimensions-admin">
+      <div id="table-dimensions-read">
+         <fieldset class="dimensions-properties dimensions-content dimensions-corner-all">
+             <div class="dimensionstitleProperties dimensions-properties dimensions-header dimensions-corner-all">
+                <span id="lblFixedDimensions">%{workportal-widget-admin-dimensions-titles-properties}</span>
+             </div>
+             <table class="dimensionPropertiesTable">
+                <div class="biz-wp-form clearfix">
+                    <div class="biz-wp-form-row clearfix">
+                        <div class="biz-wp-form-cell-table">%{workportal-widget-admin-dimensions-text-name}:</div>      
+                        <div id="lblNameRead" class="biz-wp-form-cell-table"></div>
+                    </div>
+                    <div class="biz-wp-form-row clearfix">
+                        <div class="biz-wp-form-cell-table">%{workportal-widget-admin-dimensions-text-displayName}:</div>      
+                        <div id="lblDisplayNameRead" class="biz-wp-form-cell-table"></div>
+                    </div>
+                    <div class="biz-wp-form-row clearfix">
+                        <div class="biz-wp-form-cell-table">%{workportal-widget-admin-dimensions-text-description}:</div>      
+                        <div id="lblDescriptionRead" class="biz-wp-form-cell-table"></div>
+                    </div>
+                    <div class="biz-wp-form-row clearfix">
+                        <div class="biz-wp-form-cell-table">%{workportal-widget-admin-dimensions-text-process}:</div>      
+                        <div id="lblProcessRead" class="biz-wp-form-cell-table"></div>
+                    </div>
+                    <div class="biz-wp-form-row clearfix">
+                        <div class="biz-wp-form-cell-table">%{workportal-widget-admin-dimensions-text-path}:</div>      
+                        <div id="lblPhatRead" class="biz-wp-form-cell-table"></div>
+                        <input id="lblId" type="hidden"/>
+                        <input id="lblIsAdministrable" type="hidden"/>
+                        <input id="lblidWfClass" type="hidden"/>
+                    </div>
+                </div>
+             </table>
+             <br>
+             <div class="biz-wp-buttonset">
+               <ul>
+                 <li>
+                   <button id="btn-editDimensions" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                   <span class="ui-button-text">%{workportal-widget-admin-dimensions-button-label-edit}</span>
+                   </button>
+                </li>
+                <li>
+                  <button id="btn-deleteDimensions" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                  <span class="ui-button-text">%{workportal-widget-admin-dimensions-button-label-delete}</span>
+                  </button>
+                </li>
+              </ul>
+            </div>        
+         </fieldset>            
+      </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-dimensions-edit-properties" type="text/x-jquery-tmpl" >
+
+   <div id="content-table-dimensions-edit">
+      <div id="table-dimensions-edit">
+         <fieldset class="dimensions-properties dimensions-content dimensions-corner-all">
+             <div class="dimensionstitleProperties dimensions-properties dimensions-header dimensions-corner-all">
+                <span id="lblFixedDimensions">%{workportal-widget-admin-dimensions-titles-properties}</span>
+             </div>
+             <div class="dimensionPropertiesTable">
+                <div class="biz-wp-form clearfix">
+                    <div class="biz-wp-form-row clearfix">
+                        <div class="biz-wp-form-cell-table">%{workportal-widget-admin-dimensions-text-name}:</div>      
+                        <div class="biz-wp-form-cell-table"><input id="txtNameEdit" class="auth-text" type="text"/> </div>
+                    </div>
+                    <div class="biz-wp-form-row clearfix">
+                        <div class="biz-wp-form-cell-table">%{workportal-widget-admin-dimensions-text-displayName}:</div>      
+                        <div class="biz-wp-form-cell-table"><input id="txtDisplayNameEdit" class="auth-text" type="text"/> </div>
+                    </div>
+                    <div class="biz-wp-form-row clearfix">
+                        <div class="biz-wp-form-cell-table">%{workportal-widget-admin-dimensions-text-description}:</div>      
+                        <div class="biz-wp-form-cell-table"><input id="txtDescriptionEdit" class="auth-text" type="text"/> </div>
+                    </div>
+                    <div class="biz-wp-form-row clearfix">
+                        <div class="biz-wp-form-cell-table">%{workportal-widget-admin-dimensions-text-process}:</div>      
+                        <div id="procees-type-combo" class="biz-wp-form-cell-table">                
+                            <select id="processTypeList" class="biz-wp-input-combo">                      
+                                {{each(i,item) processList }}   
+                                    <option value="${item.id}">${item.displayName}</option>
+                                {{/each}}
+                            </select>                    
+                        </div>
+                    </div>
+                    <div class="biz-wp-form-row clearfix">
+                        <div class="biz-wp-form-cell-table">%{workportal-widget-admin-dimensions-text-path}:</div>      
+                        <div class="biz-wp-form-cell-table"><input id="txtPhatEdit" class="auth-text" type="text" readonly/> <i id= "img_select_path"class="iconSelectPath"></i> </div>
+                    </div>
+                </div>
+             </div>
+             <br>
+             <div class="biz-wp-buttonset">
+               <ul>
+                 <li>
+                   <button id="btn-applyDimensions" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                   <span class="ui-button-text">%{workportal-widget-admin-dimensions-button-label-apply}</span>
+                   </button>
+                </li>
+                <li>
+                  <button id="btn-cancelDimensions" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                  <span class="ui-button-text">%{workportal-widget-admin-dimensions-button-label-cancel}</span>
+                  </button>
+                </li>
+              </ul>
+            </div>        
+         </fieldset>            
+    </div>
+</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-dimensions-process-tree" type="text/x-jquery-tmpl" >
+
+   <div class="dimensions-dialog dimensions-properties dimensions-content dimensions-corner-all  dimensions-draggable" tabindex="-1" role="dialog" aria-labelledby="dimensions-dialog-title-6">
+        <div class="dimensions-dialog-titlebar dimensions-header dimensions-corner-all  dimensions-helper-clearfix" unselectable="on">
+            <span class="dimensions-dialog-title" id="dimensions-dialog-title-6" unselectable="on">%{workportal-widget-admin-dimensions-title-process-tree}</span>
+                <a href="#" class="dimensions-dialog-titlebar-close dimensions-corner-all" role="button" unselectable="on"> 
+            <span class="dimensions-icon dimensions-icon-closethick" unselectable="on">%{workportal-widget-admin-dimensions-button-label-close}</span>
+            </a>            
+        </div>
+        <div class="dimensions-dialog-content dimensions-content" style="width: auto; min-height: 0px; height: 229px;">
+            <iframe class="clsPopupDlg" marginwidth="0" marginheight="0" frameborder="0" scrolling="auto" src="./pathSelectWindow.aspx?wfClassId=2&amp;selectedNodePath=PVApp.prueba6.idEntity1.Entity1.booleanField" style="width: 100%; height: 100%;"></iframe>
+        </div>
+        <div class="dimensions-dialog-buttonpane dimensions-content dimensions-helper-clearfix">
+            <button type="button" class="dimensions-button dimensions-content dimensions-corner-all dimensions-button-text-only" role="button" aria-disabled="false">
+                <span class="dimensions-button-text">%{workportal-widget-admin-dimensions-button-label-ok}</span>
+            </button>
+            <button type="button" class="dimensions-button dimensions-content imensions-corner-all dimensions-button-text-only" role="button" aria-disabled="false">
+                <span class="dimensions-button-text">%{workportal-widget-admin-dimensions-button-label-process-cancel}</span>
+            </button>
+        </div>
+   </div>    
+</script>

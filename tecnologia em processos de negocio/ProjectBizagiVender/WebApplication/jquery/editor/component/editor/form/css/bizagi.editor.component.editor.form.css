@@ -1,0 +1,212 @@
+/********
+* Filename: bizagi.editor.component.editor.form.css
+* Create Date: 2012-08-02
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__form
+*
+********/
+
+/* __form
+--------*/
+
+.bizagi_editor_component_editor_form{
+    display: inline-block;
+}
+
+
+.bizagi_editor_component_editor_form .form-button-container
+{
+    position: relative;
+    margin: 0;
+}
+
+.bizagi_editor_component_editor_form .form-button-container .form-button-caption
+{
+    text-align: left;
+    cursor: pointer;
+    border-radius: 3px 0px 0px 3px;
+    float: left;
+    display: inline-block;
+    margin: 0px;
+}
+.bizagi_editor_component_editor_form .form-button-container .form-button-caption:hover
+{
+    color: #333;
+    text-decoration: none;
+    background-color: #E6E6E6;
+    background-position: 0 -15px;
+}
+
+.bizagi_editor_component_editor_form .form-button-container .form-button-dropdown .biz-btn-caret{
+    position: relative;
+    top: 2px;
+}
+
+.bizagi_editor_component_editor_form .form-button-container .form-button-dropdown
+{
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0px 3px 3px 0px;
+    border-left: none;
+    margin-left: 0px;
+}
+.bizagi_editor_component_editor_form .form-button-container .form-button-dropdown:hover
+{
+    color: #333;
+    text-decoration: none;
+    background-color: #E6E6E6;
+    background-position: 0 -15px;
+}
+.bizagi_editor_component_editor_form .form-button-container .form-button-dropdown.form-open
+{
+    color: #333;
+    text-decoration: none;
+    background-color: #E6E6E6;
+    background-position: 0 -15px;
+}
+
+
+.bizagi_editor_component_editor_form .form-button-container .form-menu-section{
+    padding: 2px 4px;
+    line-height: 14px;
+}
+
+.bizagi_editor_component_editor_form .form-button-container .form-menu
+{
+    position: absolute;
+    padding: 5px;
+    width: 220px;
+    list-style: none;
+    display: none;
+    top: 24px;
+    left: 0px;
+    z-index: 600;
+    background-color: white;
+}
+
+.bizagi_editor_component_editor_form .form-button-container .form-menu.form-open
+{
+    display: block;
+    z-index: 801;
+}
+
+.bizagi_editor_component_editor_form .form-menu .form-submenu
+{
+    list-style: none;
+    padding: 0px;
+    max-height: 120px;
+    overflow-y: scroll;
+}
+
+.bizagi_editor_component_editor_form .form-menu .form-submenu li
+{
+    text-align: left;   
+    position: relative;
+}
+
+.bizagi_editor_component_editor_form .form-button-dropdown,
+.bizagi_editor_component_editor_form .form-captions{
+    display: inline-block;
+}
+
+.bizagi_editor_component_editor_form .form-menu .form-submenu li .biz-ico,
+.bizagi_editor_component_editor_form .form-menu .form-submenu li span
+{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.bizagi_editor_component_editor_form .form-menu .form-submenu li span{
+    margin-left: 5px;
+}
+
+.bizagi_editor_component_editor_form .form-image-plus
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: transparent url("images/plus.png") no-repeat center center;
+}
+.bizagi_editor_component_editor_form .form-image-minus
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: transparent url("images/minus.png") no-repeat center center;
+}
+.bizagi_editor_component_editor_form .form-image-corner
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: transparent url("images/corner.png") no-repeat center center;
+    position: absolute;
+    left: 0px;
+    top: 2px;
+}
+
+.bizagi_editor_component_editor_form .form-item-expandable .form-image-plus,
+.bizagi_editor_component_editor_form .form-item-expandable .form-image-minus
+{
+    position: absolute;
+    top: 3px;
+    left: 0px;
+}
+.bizagi_editor_component_editor_form [class*="form-image-form"]
+{
+    position: absolute;
+    left: 21px;
+    top: 2px;
+    
+}
+
+.bizagi_editor_component_editor_form .form-submenu-text
+{
+    padding: 3px 0px 0px 40px;
+}
+.bizagi_editor_component_editor_form .form-item-selectable .form-submenu-text
+{
+    font-weight: bold;
+    white-space: nowrap;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.bizagi_editor_component_editor_form .ui-ellipsis.form-button-caption{
+    max-width: 165px;
+    min-width: 130px;
+}
+
+.bizagi_editor_component_editor_form .form-submenu-text {
+    margin-left: 0px;
+    padding-left: 28px!important;
+}
+
+.bizagi_editor_component_editor_form .ui-badge{
+}
+
+.bizagi_editor_component_editor_form .form-submenu ul{
+    margin-left: 12px;
+}
+
+.bizagi_editor_component_editor_form .form-submenu ul li .ui-ellipsis{
+    width:138px;
+}
+
+
+.biz-accordion .biz-accordion .bizagi_editor_component_editor_form.ui-editor.ui-editor-highlight {
+    margin-right: -26px;
+    padding-left: 16px!important;
+    padding-right: 39px;
+}
+
+.biz-accordion .bizagi_editor_component_editor_form.ui-editor.ui-editor-highlight {
+    padding-bottom: 4px;
+    margin-left: -11px;
+    padding-left: 12px!important;
+    padding-right: 61px;
+}

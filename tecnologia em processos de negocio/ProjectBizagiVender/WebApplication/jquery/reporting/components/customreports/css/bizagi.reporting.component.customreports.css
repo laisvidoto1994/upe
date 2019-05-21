@@ -1,0 +1,50 @@
+﻿.bizagi_reporting_component_customreports {
+    float: left;
+    margin-right: 2em;
+}
+
+.bz-rp-components-custom-reports ul {
+    max-width: 70%;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.bz-rp-components-custom-reports-title {
+	margin: 0 0 1em;
+	font-size: 14px;
+}
+
+.bz-rp-components-custom-reports-form .bz-rp-form-control { margin-bottom: 1em; }
+
+@media only screen and (max-width: 1067px) {
+    .bz-rp-components-custom-reports-dialog {
+        position: absolute;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 50% !important;
+        max-height: 315px !important;
+        min-height: 150px  !important;
+        margin: auto;
+        font-size: 10px;
+    }
+    
+}
+
+@media only screen and (min-width: 1067px) {
+    .bz-rp-components-custom-reports-dialog {
+        position: absolute;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;   
+        width: 25% !important;
+        max-height: 315px !important;
+        min-height: 150px  !important;
+        margin: auto;
+        font-size: 10px; 
+    }    
+    
+}

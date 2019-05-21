@@ -1,0 +1,252 @@
+{{css "jquery/workportal/css/desktop/bizagi.workportal.render.css"}}
+<script id="ui-bizagi-workportal-widget-start-form" type="text/x-jquery-tmpl">
+    <div id="contentFramework" class="clearfix">
+        <ul>
+            <li id="ui-bizagi-wp-app-render-form" class="wp-wgd-starform-wrapper">
+                <div id="ui-bizagi-wp-app-render-form-content "  {{loading}} {{adjustable}}>
+                    <div class="ui-widget ui-widget-content">
+                        <div class="ui-widget-content">
+                            {{component render}}
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-start-form-case-description" type="text/x-jquery-tmpl" >
+
+    <div class="ui-bizagi-wp-app-inbox-processes-title ">
+        ${caseNumber}
+        {{if (isActivityPlan) }}
+            <!--If(s) nested have problems... with negation-->
+        {{else}}
+            <div class="ui-bizagi-wp-app-inbox-cases-ico-view bz-icon bz-icon-16 bz-icon-diagram-outline">
+                <span></span>
+            </div>
+        {{/if}}
+    </div>
+
+    <div id="descriptionPadding">
+        {{each currentState}}
+            {{if idWorkItem  == params["idWorkitem"] }}
+                <div class="ui-bizagi-wp-app-inbox-activity-description">
+                    <div>
+                        <div id="ui-bizagi-wp-app-inbox-cases-ico-state-${colorState}" class="ui-bizagi-wp-app-inbox-cases-description-ico-state">
+                            <span></span>
+                        </div>
+                        <!--<span class="ui-bizagi-wp-app-inbox-description-cases-name">${caseNumber}</span>-->
+                        {{if isEvent=="true"}}
+                            <div id="ui-bizagi-wp-app-inbox-cases-ico-event">
+                                <span></span>
+                            </div>
+                        {{/if}}
+                        <h2 class="ui-bizagi-wp-app-inbox-description-activity-name">
+                            ${state}
+                        </h2>
+                        <dl class="box-description">
+                            <dt>%{workportal-widget-render-creation-date}</dt>
+                            <dd class="formatDate">${creationDate}</dd>
+                            <dt>%{workportal-widget-render-solution-date}</dt>
+                            <dd class="formatDate">${solutionDate}</dd>
+
+                            {{if estimatedSolutionDate}}
+                                <dt>%{workportal-widget-render-state-expires-on}</dt>
+                                <dd class="formatDate">${estimatedSolutionDate}</dd>
+                            {{/if}}
+
+                            {{if tskDescription}}
+                                <dt>%{workportal-widget-inboxcommon-description}</dt>
+                                <!-- If abengoa wants to inject HTML into this field then uncomment and comment the next line
+                                <dd>{{html tskDescription}}</dd>
+                                -->
+                                <dd>${tskDescription}</dd>
+                            {{/if}}
+                        </dl>
+                    </div>
+                </div>
+            {{/if}}
+        {{/each}}
+
+        <div id="ui-bizagi-details-tabs">
+            <div id="ui-bizagi-details-tabs-container">
+                <ul>
+                    <li><a href="#details">%{workportal-widget-render-details}</a></li>
+                    {{if showComments}}
+                        <li>
+                            <a href="#comments" data-isclosed="${isClosed}">%{workportal-widget-comments}
+                                {{if hasComments == 'true'}}
+                                    <span class="messageIndicatorIcon"></span>
+                                {{/if}}
+                            </a>
+                        </li>
+                    {{/if}}
+
+                    {{if showSubProcess}}
+                        <li>
+                            <a href="#subprocess">%{workportal-widget-render-subprocess}</a>
+                        </li>
+                    {{/if}}
+
+                    {{if showAssignees}}
+                        <li>
+                            <a href="#assignees">%{workportal-widget-render-assignees}</a>
+                        </li>
+                    {{/if}}
+
+                    {{if showEvents}}
+                        <li>
+                            <a href="#events">%{workportal-widget-render-events}</a>
+                        </li>
+                    {{/if}}
+
+                    {{if showActivities}}
+                        <li>
+                            <a href="#activities">%{workportal-widget-render-activities}</a>
+                        </li>
+                    {{/if}}
+                </ul>
+            </div>
+            <div id="details">
+                <p>${caseDescription}</p>
+                <dl class="box-description">
+                    <dt>%{workportal-widget-render-creation-date}</dt>
+                    <dd class="formatDate">${creationDate}</dd>
+                    <!--<dt>%{workportal-widget-render-state-expires-on}</dt>
+                    <dd>${estimatedSolutionDate}</dd>-->
+                    <dt>%{workportal-widget-render-created-by}</dt>
+                    <dd>${createdByName}</dd>
+                    <!--<dt>%{workportal-widget-render-person-in-charge}</dt>
+                    <dd>{{each person}}
+                        ${Name} &nbsp;
+                        {{/each}}
+                    </dd>-->
+                    <!--<dt>%{workportal-widget-render-current-state}</dt>
+                    <dd> {{each currentState}}
+                        ${state} <br />
+                        {{/each}}
+                    </dd>-->
+                    <dt>%{workportal-widget-render-case-number}</dt>
+                    <dd>${caseNumber}</dd>
+                    {{if process}}
+                        <dt>%{workportal-widget-inboxcommon-process}</dt>
+                        <dd>${process}</dd>
+                    {{/if}}
+                    {{if processPath}}
+                        <dt>%{workportal-widget-inboxcommon-process-path}</dt>
+                        <dd>${processPath}</dd>
+                    {{/if}}
+
+                    {{if showParentProcess}}
+                        <dt>%{workportal-widget-inboxcommon-parent-process}</dt>
+                        <dd class="summaryLink">
+                            <a href="#">${radNumberParentCase} - ${parentProcess.displayName}</a>
+                            <input type="hidden" id="idCase" value="${parentProcess.idCase}" />
+                        </dd>
+                    {{/if}}
+
+                    {{if isClosed}}
+                        <dt>%{workportal-widget-inboxcommon-state}</dt>
+                        <dd>
+                            {{if isAborted == "true"}}
+                                <div class="ui-bizagi-wp-app-inbox-cases-aborted-summary">
+                                <span></span>
+                                </div>
+                                &nbsp; %{workportal-widget-inboxcommon-aborted} </dd>
+                            {{else}}
+                                <div id="ui-bizagi-wp-app-inbox-cases-ico-close">
+                                    <span></span>
+                                </div>
+                                <span>%{workportal-widget-inboxcommon-state-closed}</span>
+                            {{/if}}
+                        </dd>
+                        {{if isAborted == "true"}}
+                            <dt>%{workportal-widget-inboxcommon-state-reason}</dt>
+                            <dd>${abortReason}</dd>
+                        {{/if}}
+                    {{/if}}
+                </dl>
+            </div>
+
+            {{if showComments}}
+                <div id="comments" class="bz-wp-widget-render-social" {{loading}}></div>
+            {{/if}}
+
+            {{if showSubProcess}}
+                <div id="subprocess" {{loading}}></div>
+            {{/if}}
+
+            {{if showAssignees}}
+                <div id="assignees"  {{loading}}></div>
+            {{/if}}
+
+            {{if showEvents}}
+                <div id="events"  {{loading}}></div>
+            {{/if}}
+
+            {{if showActivities}}
+                <div id="activities"  {{loading}}></div>
+            {{/if}}
+        </div>
+
+        <div class="ui-bizagi-wp-app-render-actions">
+            <ul>
+                {{if stateLog }}
+                    <li>
+                        <div id="bt-case-action-log" class="bt-case-action log bz-icon-24"></div>
+                        <span class="tooltip">%{render-actions-log}</span>
+                    </li>
+                {{/if}}
+
+                {{if isOpen=="true"}}
+                    {{if allowsReassign=="true"}}
+                        <li>
+                            <div id="bt-case-action-reassing" class="bt-case-action reassing bz-icon-24"></div>
+                            <span class="tooltip">%{render-actions-reassign}</span>
+                        </li>
+                    {{/if}}
+                {{/if}}
+                {{if allowReleaseActivity===true}}
+                    <li>
+                        <div id="bt-case-action-release" class="bt-case-action release bz-icon-24"></div>
+                        <span class="tooltip">%{render-actions-release}</span>
+                    </li>
+                {{/if}}
+                {{if printableVersion }}
+                    <li>
+                        <div id="bt-case-action-print" class="bt-case-action print bz-icon-24"></div>
+                        <span class="tooltip">%{render-actions-print}</span>
+                    </li>
+                {{/if}}
+                {{if helpUrl!=""}}
+                    <li>
+                        <div id="bt-case-action-help" class="bt-case-action help">
+                            <input type="hidden" id="helpUrl" value="${helpUrl}" />
+                        </div>
+                        <span class="tooltip">%{render-actions-help}</span>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-global-options" type="text/x-jquery-tmpl" >
+    <ul id="ui-bizagi-workportal-widget-global-options" class="ui-bizagi-workportal-widget-global-options">
+        <li id="ui-bizagi-wp-app-inbox-bt-back" class="ui-bizagi-wp-app-inbox-bt-back">
+            <span></span>
+        </li>
+    </ul>
+</script>
+
+<script id="ui-bizagi-workportal-widget-start-form-navigation" type="text/x-jquery-tmpl" >
+    <ul class="renderNavigation">
+    </ul>
+</script>
+
+<script id="bz-wp-widget-release" type="text/x-jquery-tmpl" >
+    <p>
+        %{workportal-widget-dialog-box-release}
+    </p>
+</script>

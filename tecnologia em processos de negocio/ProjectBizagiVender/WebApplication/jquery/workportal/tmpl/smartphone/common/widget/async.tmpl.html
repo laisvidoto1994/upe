@@ -1,0 +1,35 @@
+{{css "jquery/workportal/css/smartphone/ios/bizagi.workportal.async.css"}}
+<div id="ui-bizagi-wp-async-wrapper" {{adjustable}}>    
+    <div id="ui-bizagi-wp-async">
+        <div id="ui-bizagi-wp-async-box" class="ui-widget-content ui-corner-all">    
+            <div class="ui-bizagi-wp-async-case-number">
+                ${radNumber}
+            </div>
+            {{if errorMessage.length == 0 }}
+                <div>
+                    <dl class="ui-bizagi-wp-async-description">
+                        <dt>%{workportal-async-processing-name}</dt> 
+                        <dd>${taskName}</dd>
+                    </dl>
+                </div>
+                
+                <div class="ui-bizagi-wp-waiting-message">
+                    <div class='ui-bizagi-loading-icon'></div>
+                    <div class='ui-bizagi-wp-waiting-message-text'>%{render-form-waiting-message}</div>
+                </div>
+            {{else}}
+                <div class="ui-bizagi-wp-async-error ui-widget-content ui-state-error">
+                    ${errorMessage}
+                </div>
+                <div id="link-go-to-inbox" class="ui-bizagi-wp-async-goToInbox">
+                    <a href="javascript:void(0)">%{workportal-pending-link}</a>
+                </div>
+                <div id="link-back" style="display:none" class="biz-wp-link">
+                    <a href="javascript:void(0)">%{workportal-general-back}</a>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
+<div id="footer" >
+</div>

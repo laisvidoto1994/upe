@@ -1,0 +1,11 @@
+﻿<div ng-controller="suggestionController">
+    <div ng-repeat="suggestion in suggestions" class="biz-theme-home-collection">
+        <h3 class="biz-theme-home-collection-title">{{suggestion.category}}</h3>
+        <div class="biz-theme-home-collection-items">
+            <div ng-repeat="item in suggestion.items" ng-click="gotoSuggestion(item)" class="biz-theme-home-collection-item">
+                <div class="biz-theme-home-item {{icon != undefined? icon: 'bz-icon bz-icon-48'}} {{item.icon}}"> </div>
+                <span class="biz-theme-home-collection-item-label">{{item.displayName}}</span>
+            </div>
+        </div>
+    </div>
+</div>

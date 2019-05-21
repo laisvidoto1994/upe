@@ -1,0 +1,28 @@
+<script id="paginator-wrapper" type="text/x-jsrender" >
+{{if !hide}} <div id="paginator-frame"></div> {{/if}}
+</script>
+
+<script id="paginator-content" type="text/x-jsrender" >
+    {{if !hide}}
+    <div id="paginator-container">
+        <div class="clearfix">
+            <div class="total-cases">
+                <span>{{:totalRecords}} {{:displayName}}</span>
+            </div>
+            <div class="filter-cases">
+            </div>
+            <div class="paginator-controls">
+                <ul class="controls-wrapper">
+                    <li>%{workportal-widget-paginator-label-page} {{:currentPage}} %{workportal-widget-paginator-label-of} {{:totalPages}}</li>
+                    <li class="control-icon fastrewind-ico {{if currentPage == 1}}ui-state-disabled{{/if}}" data-type="fastrewind"></li>
+                    <li class="control-icon rewind-ico {{if currentPage == 1}}ui-state-disabled{{/if}}" data-type="rewind"></li>
+                    <li class="control-icon forward-ico {{if currentPage == totalPages}}ui-state-disabled{{/if}}" data-type="forward"></li>
+                    <li class="control-icon fastforward-ico {{if currentPage == totalPages}}ui-state-disabled{{/if}}" data-type="fastforward"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+</script>
+
+

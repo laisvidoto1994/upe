@@ -1,0 +1,225 @@
+/* 1 */
+/********
+* Filename: bizagi.editor.component.properties.css
+* Create Date: 2012-03-26
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__properties
+*
+********/
+
+/* __properties
+--------*/
+
+.bizagi_editor_component_properties
+{
+    width: 280px;
+    padding:0px;
+    margin:0px;
+    z-index: 999;
+    position: absolute;
+    left: 10px;
+    top: 124px;
+    bottom: 14px;
+}
+
+.bizagi_editor_component_properties .prop-close { 
+
+    width:18px;
+    height:18px;
+}
+
+.bizagi_editor_component_properties .prop-close-image
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("images/sprite_icons_16px.png") no-repeat -48px -16px;
+    cursor: pointer;
+    margin:1px;
+}
+
+/*overwrite tabs*/
+.bizagi_editor_component_properties.ui-tabs .ui-tabs-nav li
+{
+    border-radius:0px;
+    top:0px;
+    margin:0px;
+    padding:0px;
+    border: solid 1px #c5c5c5;
+    border-left: none;
+}
+ 
+.bizagi_editor_component_properties.ui-tabs .ui-tabs-panel
+{
+    border:none;
+    background:none;
+    padding:7px;
+    margin:0;
+    
+    overflow: auto;
+    top: 60px;
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+}
+
+.bizagi_editor_component_properties.ui-tabs .ui-tabs-nav
+{
+    box-shadow: inset 0px 1px 0px 0px hsla(255, 0%, 100%, .5);
+    border-radius:0px;
+    margin:0px;
+    padding:0px;
+}
+
+.bizagi_editor_component_properties.ui-tabs .ui-tabs-nav li.ui-tabs-active
+{
+    background:white;
+    border:none;
+    border-right: 1px solid hsla(219, 20%, 60%, 1);
+    border-left: 1px solid hsla(219, 20%, 60%, 1);
+    border-top: 1px solid hsla(219, 20%, 60%, 1);
+    border-bottom:1px solid white;
+    top:1px;
+    padding-top: 2px;
+    margin-top: -2px;
+}
+
+.bizagi_editor_component_properties.ui-tabs .ui-tabs-nav li.ui-tabs-active a { color:hsl(209, 19%, 35%); }
+
+.bizagi_editor_component_properties.ui-tabs .ui-tabs-nav li.ui-tabs-activef a { background:none; }
+
+.bizagi_editor_component_properties.ui-tabs .ui-tabs-panel > div
+{
+    margin-top:6px;
+}
+
+.bizagi_editor_component_properties.ui-tabs .ui-tabs-panel label
+{
+    color:hsl(209, 19%, 45%);
+    margin-bottom:5px;
+}
+.bizagi_editor_component_properties input, .bizagi_editor_component_properties label{
+    width:86%;
+}
+
+/*.bizagi_editor_component_properties input{
+    padding:4px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}*/
+
+.bizagi_editor_component_properties > div > [class*="bizagi_editor_component_editor"]{
+    padding-left: 10px;
+}
+
+.bizagi_editor_component_properties [class*="bizagi_editor_component_editor"] label{
+    margin: 3px 0px 3px 0px;
+    display:block;
+}
+
+.bizagi_editor_component_properties .ui-tabs-panel{
+    overflow-y:auto;
+}
+
+/* scrollbars para properties */
+.bizagi_editor_component_properties .ui-tabs-panel::-webkit-scrollbar {
+    width: 10px;
+}
+.bizagi_editor_component_properties .ui-tabs-panel::-webkit-scrollbar-track {
+    background-color: rgba(72,90,106,.2);
+}
+.bizagi_editor_component_properties .ui-tabs-panel::-webkit-scrollbar-thumb{
+    background-color: rgba(72,90,106,1);
+    -webkit-border-radius:7px;
+    border-radius:7px;
+    border:2px solid rgba(255,255,255,.7);
+    width:8px;
+}
+
+
+.bizagi_editor_component_properties .ui-content-group{
+    width: 100%
+}
+
+.bizagi_editor_component_properties .properties-group-radio-uncheck {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    margin: 2px;
+    border-radius: 2px;
+    min-width: auto;
+
+    -webkit-box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, .1);
+    box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, .1);
+}
+
+.bizagi_editor_component_properties .properties-group-exclusive-head {
+    margin-left: -5px;  margin-right: -10px;
+}
+
+.bizagi_editor_component_properties .properties-group-radio-check {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    margin: 2px;
+    border-radius: 2px;
+    background: #A0C84D;
+    padding: 0px 8px 0px 8px;
+    border:solid 1px #708C35;
+
+    -webkit-box-shadow:inset  0px 1px 2px 1px rgba(0, 0, 0, .2);
+    box-shadow: inset 0px 1px 2px 1px rgba(0, 0, 0, .2);
+}
+.bizagi_editor_component_properties .properties-group-exclusive-text{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+.bizagi_editor_component_properties .properties-group-exclusive {
+    border: 1px solid rgba(217, 224, 238, 0.74);
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+    box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+    margin: 8px -4px 2px -4px;
+    padding: 6px;
+    background-color: rgba(250, 250, 250, 1);
+
+    border-radius: 3px;
+}
+
+.bizagi_editor_component_properties .properties-group-exclusive .properties-group-exclusive-header {
+     border: 1px solid rgba(217, 224, 238, 0.74);
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+    box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+
+    margin: 2px 0px;
+
+    background: #F0F1F3;
+    border-radius: 3px;
+    padding: 1px;
+
+}
+
+.bizagi_editor_component_properties  .properties-group-hidden{
+    width: 100%;
+    border:none; 
+    background: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    box-shadow: none;
+}
+
+.bizagi_editor_component_properties  .properties-group-hidden .ui-content{
+    margin: 0;
+    padding: 0;
+}
+.bizagi_editor_component_properties .properties-group-hidden .properties-category-name.ui-legend{
+    display: none;
+}
+
+
+fieldset.biz-accordion fieldset.biz-accordion {
+    width: 100%;
+}

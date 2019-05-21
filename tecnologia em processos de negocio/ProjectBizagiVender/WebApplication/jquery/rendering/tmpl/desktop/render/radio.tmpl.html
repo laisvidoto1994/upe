@@ -1,0 +1,9 @@
+﻿<span class="ui-bizagi-render-radio {{if vertical}}ui-bizagi-render-radio-vertical{{/if}}">
+  {{each(i, item) items}}
+  <span class="ui-bizagi-render-radio-item">
+    <label for="radio-${unique}-${xpath}-${item.id}" >
+      <input id="radio-${unique}-${xpath}-${item.id}" type="radio" value="${item.id}">{{if value}} ${value} {{else}} &nbsp; {{/if}}
+    </label>
+  </span>
+  {{/each}}
+</span>

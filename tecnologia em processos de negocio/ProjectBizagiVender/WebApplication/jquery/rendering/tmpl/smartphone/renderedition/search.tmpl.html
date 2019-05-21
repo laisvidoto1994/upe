@@ -1,0 +1,18 @@
+<!--type="search"-->
+<script id="bz-rn-search" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-render-search-container">
+        <input class="ui-bizagi-render-search" type="text"  autocapitalize="off" autocorrect="off" spellcheck="false" {{if !allowTyping}} readonly {{/if}}/>
+         {{if advancedSearch}}
+               <div class="bz-cm-icon bz-rn-search-button" ></div>
+        {{/if}}
+    </div>
+</script>
+
+
+<script id="bz-rn-search-item" type="text/x-jquery-tmpl">
+<li class="ui-bizagi-render-search-item" >
+    <a>
+        <label class="ui-bizagi-render-search-item-label">{{html label}}</label>
+    </a>
+</li>
+</script>

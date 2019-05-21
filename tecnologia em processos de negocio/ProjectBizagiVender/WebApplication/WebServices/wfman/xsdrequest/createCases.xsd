@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://tempuri.org/createCases.xsd" xmlns="http://tempuri.org/createCases.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="BizAgiWSParam">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="domain" type="xs:string" nillable="true" />
+				<xs:element name="userName" type="xs:string" nillable="true" />
+				<xs:element name="Cases" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Case" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="domain" type="xs:string" nillable="true" />
+										<xs:element name="userName" type="xs:string" nillable="true" />
+										<xs:element name="Process" type="xs:string" minOccurs="1" />
+										<xs:element name="Organization" type="xs:string" minOccurs="0" />
+										<xs:element name="Entities" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="XmlSchema" form="unqualified" type="xs:string" />
+												<xs:attribute name="XslName" form="unqualified" type="xs:string" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

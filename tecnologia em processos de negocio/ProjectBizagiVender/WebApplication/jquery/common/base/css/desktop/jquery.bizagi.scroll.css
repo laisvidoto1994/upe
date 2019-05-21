@@ -1,0 +1,32 @@
+/* 
+    Document   : jquery.bizagi.scroll
+    Created on : Jul 6, 2011, 7:10:36 PM
+    Author     : Edward Morales edward.morales{_at_}bizagi.com    
+*/
+
+.bizagiScrollContainer{
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    background-color: #f5f5f5;
+    width: 2px;
+    top: 24px;    
+}
+
+
+.scrollDrag{
+    position: relative;
+    height: 40px;
+    background-color: #ff0000;
+    width: 7px;
+    font-size: 5pt;
+    color:#EAEFF5;
+    text-align: center;
+}
+
+
+/*.scrollContentContainer{
+    height: 100%;
+    overflow: hidden;
+    
+}*/

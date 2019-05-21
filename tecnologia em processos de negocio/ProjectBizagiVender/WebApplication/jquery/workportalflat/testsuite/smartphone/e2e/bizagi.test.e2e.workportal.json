@@ -1,0 +1,176 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "http://localhost:8001/jquery/workportalflat/testsuite/smartphone/html/index.html"
+    },
+    {
+      "type": "waitForTextPresent",
+      "text": "61101"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "xpath",
+        "value": "//ul/li/div[@data-case='61101']"
+      }
+    },
+    {
+      "type": "waitForElementAttribute",
+      "locator": {
+        "type": "id",
+        "value": "closeModalView"
+      },
+      "attributeName": "data-role",
+      "value": "button"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "closeModalView"
+      }
+    },
+    {
+      "type": "waitForTextPresent",
+      "text": "61101"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "xpath",
+        "value": "//ul/li/div[@data-case='61101']"
+      }
+    },
+    {
+      "type": "waitForElementAttribute",
+      "locator": {
+        "type": "id",
+        "value": "WorkOnItModalView"
+      },
+      "attributeName": "data-role",
+      "value": "button"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "WorkOnItModalView"
+      }
+    },
+    {
+      "type": "waitForTextPresent",
+      "text": "Render"
+    },
+    {
+      "type": "doubleClickElement",
+      "locator": {
+        "type": "css selector",
+        "value": ".km-leftitem .km-back"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "#taskFeed .km-header .bz-header-left-btn"
+      }
+    },
+    {
+      "type": "doubleClickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "input.bz-wp-mu-input-search-menu"
+      }
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "css selector",
+        "value": "input.bz-wp-mu-input-search-menu"
+      },
+      "text": "61101"
+    },
+    {
+      "type": "sendKeysToElement",
+      "locator": {
+        "type": "css selector",
+        "value": "#menu-drawer input.bz-wp-mu-input-search-menu"
+      },
+      "text": "\n"
+    },
+    {
+      "type": "waitForElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "#menu-drawer .bz-wp-mu-button-search"
+      }
+    },
+    {
+      "type": "waitForElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "#menu-drawer .bz-wp-mu-button-search"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "#menu-drawer .bz-wp-mu-button-search"
+      }
+    },
+    {
+      "type": "waitForElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "#taskFeed .km-header .bz-header-right-btn"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "#taskFeed .km-header .bz-header-right-btn"
+      }
+    },
+    {
+      "type": "verifyElementValue",
+      "locator": {
+        "type": "css selector",
+        "value": "input.bz-newcase-search"
+      },
+      "value": ""
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "css selector",
+        "value": "input.bz-newcase-search"
+      },
+      "text": "non"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "xpath",
+        "value": "//ul[@id='select-process-type']//span[.='All process']"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "span.km-text"
+      }
+    }
+  ],
+  "data": {
+    "configs": {},
+    "source": "none"
+  },
+  "inputs": []
+}

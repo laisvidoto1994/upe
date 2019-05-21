@@ -1,0 +1,30 @@
+﻿<script id="mysearchcriteria-wrapper" type="text/x-jsrender" >
+    <div class="fixdiv">
+        <div class="wdg-mysearchcriteria-header">
+            <h3>%{workportal-my-search-criteria-title}:</h3>
+        </div>
+        <div class="wdg-mysearchcriteria-content">
+            <div class="wdg-mysearchcriteria-list">
+                <div class="clearfix wdg-mysearchcriteria-card dsb-card">
+                    <div class="wdg-mysearchcriteria-title">
+                        <span>%{workportal-widget-inboxcommon-filter-all}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="mysearchcriteria-list" type="text/x-jsrender" >
+    {{for criterias }}
+        {{if !isHidden}}
+            <div class="wdg-mysearchcriteria-list">
+                <div class="clearfix wdg-mysearchcriteria-card dsb-card" data-xpath="{{:xpath}}">
+                    <div class="clearfix wdg-mysearchcriteria-title">
+                        <pre>{{:displayName}}: {{if displayValue}}{{:displayValue}}{{else}}{{:value}}{{/if}}</pre> <i class="bz-icon bz-icon-16 bz-icon-trash" data-xpath="{{:xpath}}"></i>
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+    {{/for}}
+</script>

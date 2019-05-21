@@ -1,0 +1,186 @@
+{
+    "theme": {
+        "title": "Theme Builder",
+        "version": "11.0.14",
+        "date": "",
+        "brand": {
+            "url": "http://www.bizagi.com",
+			"logo": "libs/css/img/logo-white.png",
+			"defaultLogo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAAgCAYAAACBxi9RAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gsFFiAHt6V4HwAABDpJREFUaN7tmF+IV0UUx79nNVJbbdtV2EpL1BBJidz+iT3tSxr50Ev0UELZQ1lLRUkP/SExitoo8qUeDPoHliBBS0lB9pRKFFtabqSFaSLmbm6G6W9Zf58enIXrMPfembvrQ3UP/OA3Z845c853Zu45Z6SaJoRMkoBXM+NHzYwamgrEubS3RiSdWvJOaU3jB7KmGsgayH89TY5IRK2SLpT0l5mNRMh3SEKSmdlQhj9TUrOkgjAzG0xIkh2SMLM/xplsL3GH6riZNSPkx2JpmtlwbtYG5gEDhOlroC2yAnjH8SZRTqNAL/BVSRCv5Og3gRcSwFsLNHJsbUmoctbkTRwGdgH7SwJ/O2KRHxKA3AasAk4CzYDdxcTTwgIQpiTYuTcixvfzvpENSSOSTpds6mrg27KN19n7eqZEriFpUFKPpGmSDGjPON4taU/Cbf0RuCHnCp9KsPMm8GJMjCGE97ldmwm0u18bcCNwMLBrzxfs1vfe3AJgfua3YAwwYLune6XjX5BzWu4COpyf9+fITCrwbYyeAjpdnKuAUwGZawvsbM6bGCj5PqzzV4kFssDm0TybwIFY/4AjeV0a8IY31yiw80lCjNWAdPI7PJ2eqkACZwInYFneKUpsdxmHnRFP5fIiIKvWkSu88X0VSo42F5Dvwxwz2+lkbvLmnosw/Z63zkJgiiezO8LOHd74kQkvyM3shMeanQjiYknHQ3Wtmf2WGXd5830R5rd64/mS/HLtowg7O7zxklQgL66A7XACiHcGMvBpO0t+dv/dG7fGPg16WdWvQGZVfXIsAzJbt10aAUa3x+qPBPFlSZs99l4zm5qj8oU3fqniDfI3evX56rU/9ALeVqL3uTdeFwHiBkmPeewtZnZ1AQB+u9gFzKsY69+Z/1OBe87Hw25LIHP2hfpu18pl6WRM+ROw/0Skb08HdLsL5G/3ZFc6/jUBO48X2JnhyX5alLUnu51vAg9Lei1j6zaXVQ9K+lPSXEnTA2u2V9i7tZKmA7sDiUCSDpnZcufbBgf6Rdkb4SqYAUmjjjcq6VfHC53u74AvJS3PsHuBXkk/Z04skn6S9Fml1x8z2+haqGc9mSsK9DvNrJEI4npJi9x3Ki+xzQGuMrN9zrdW4ERgIxdlE5akoaKkYGY3A99IWhrI7Fnan9hKnpu1zWy9pGURer9IajGzoxVqzz2SVkZUB3i+zZC0qUB+1GX1Rkni6ZL0YImd2YEnRqv63VwKfAAcAobca9CTwLQSvded/CCw1Zu7DHgL6Hfzeb8hoLNgjbuBncAx115uB251c0sy6w8B1xfYucW1g0ecfD/wgJub5X0LN2X0Ps74+kz9rF18IN71gFxRo5IO4nWpvXlNgXo3UCZtrJEJg/VQwiv5cI1YPpDHIkE8UKn8+T9hGSGzxszmTsiLxn/4RPbkdGSHJfUl1sc1TST9A8dlwGaWhuvsAAAAAElFTkSuQmCC",
+            "alt": "Bizagi"
+        },
+        "support": [
+            "Chrome",
+            "Firefox",
+            "IE9+"
+        ],
+        "less": "libs/js/json/base.theme.json.txt",
+        "templates": [
+            {
+                "name": "custom.theme.layout",
+                "src": "libs/tmpl/layout.theme.generator.tmpl.html"
+            },
+            {
+                "name": "custom.theme.layout.tabs",
+                "src": "libs/tmpl/previewTabs.theme.generator.tmpl.html"
+            },
+            {
+                "name": "custom.theme.category.list",
+                "src": "libs/tmpl/categoryControls.theme.generator.tmpl.html"
+            },
+            {
+                "name": "custom.theme.ui.controls.select",
+                "src": "libs/tmpl/select.theme.ui.control.tmpl.html"
+            },
+            {
+                "name": "custom.theme.ui.controls.new",
+                "src": "libs/tmpl/new.theme.ui.control.tmpl.html"
+            },
+            {
+                "name": "custom.theme.ui.controls.switch",
+                "src": "libs/tmpl/switch.theme.ui.control.tmpl.html"
+            },
+            {
+                "name": "custom.theme.ui.controls.radio",
+                "src": "libs/tmpl/radio.theme.ui.control.tmpl.html"
+            },
+            {
+                "name": "custom.theme.ui.controls.preview.workportal",
+                "src": "libs/tmpl/preview.workportal.theme.ui.control.tmpl.html"
+            },
+            {
+                "name": "custom.theme.ui.controls.preview.webparts",
+                "src": "libs/tmpl/preview.webparts.theme.ui.control.tmpl.html"
+            },
+            {
+                "name": "custom.theme.ui.controls.themes",
+                "src": "libs/tmpl/prebuild.theme.ui.control.tmpl.html"
+            },
+            {
+                "name": "custom.theme.ui.controls.save.panel",
+                "src": "libs/tmpl/save.theme.ui.control.tmpl.html"
+            },
+            {
+                "name": "custom.theme.ui.controls.new.panel",
+                "src": "libs/tmpl/new.dialog.theme.ui.control.tmpl.html"
+            },
+            {
+                "name": "custom.theme.ui.controls.change.background.image.panel",
+                "src": "libs/tmpl/changeBackgroundImages.dialog.ui.control.tmpl.html"
+            },
+            {
+                "name": "custom.theme.ui.controls.changeLogo.panel",
+                "src": "libs/tmpl/changeLogo.dialog.theme.ui.control.tmpl.html"
+            },
+            {
+                "name": "custom.theme.ui.controls.update.panel",
+                "src": "libs/tmpl/update.theme.ui.control.tmpl.html"
+            },
+            {
+                "name": "custom.theme.ui.controls.color.base",
+                "src": "libs/tmpl/color.base.theme.ui.control.tmpl.html"
+            },
+            {
+                "name": "access.denied.form",
+                "src": "libs/tmpl/access.denied.form.tmpl.html"
+            }
+        ],
+        "css": {
+            "securefonts": [
+                {
+                    "label": "Arial",
+                    "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
+                },
+                {
+                    "label": "Franklin Gothic",
+                    "value": "'Franklin Gothic Medium', 'Franklin Gothic', 'ITC Franklin Gothic', Arial, sans-serif"
+                },
+                {
+                    "label": "Geneva",
+                    "value": "Geneva, Tahoma, Verdana, sans-serif"
+                },
+                {
+                    "label": "Helvetica Neue",
+                    "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+                },
+                {
+                    "label": "Optima",
+                    "value": "Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif"
+                },
+                {
+                    "label": "Open Sans",
+                    "value": "'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif"
+                },
+                {
+                    "label": "Tahoma",
+                    "value": "Tahoma, Verdana, Segoe, sans-serif"
+                },
+                {
+                    "label": "Trebuchet MS",
+                    "value": "'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif"
+                },
+                {
+                    "label": "Verdana",
+                    "value": "Verdana, Geneva, sans-serif"
+                }
+            ],
+            "sideBackgrounds":[
+                {
+                    "label": "Mountains",
+                    "value": "url('jquery/workportal/css/desktop/images/bg-landscape.png')",
+                    "src":"../jquery/workportal/css/desktop/images/bg-landscape.png"
+                },
+                {
+                    "label": "Artic",
+                    "value": "url('jquery/workportal/css/desktop/images/bg-landscape-artic.png')",
+                    "src":"../jquery/workportal/css/desktop/images/bg-landscape-artic.png"
+                },
+                {
+                    "label": "Island",
+                    "value": "url('jquery/workportal/css/desktop/images/bg-landscape-island.png')",
+                    "src":"../jquery/workportal/css/desktop/images/bg-landscape-island.png"
+                },
+                {
+                    "label": "Ligth House",
+                    "value": "url('jquery/workportal/css/desktop/images/bg-landscape-lighthouse.png')",
+                    "src":"../jquery/workportal/css/desktop/images/bg-landscape-lighthouse.png"
+                },
+                {
+                    "label": "Analytics",
+                    "value": "url('jquery/workportal/css/desktop/images/bg-landscape-analytics.png')",
+                    "src":"../jquery/workportal/css/desktop/images/bg-landscape-analytics.png"
+                },
+                {
+                    "label": "None",
+                    "value": "none",
+                    "src":"../jquery/workportal/css/desktop/images/not-alowed.png"
+                }
+            ]
+        },
+        "previewPanels": [
+            {
+                "id": "tabsWorkportal",
+                "name": "WorkPortal",
+                "url": "../index.html",
+                "css": "biz-ui-theme-panel-workportal"
+            }
+        ],
+        "localization": {
+            "en": "resources/bizagi.resources.json.txt",
+            "en_us": "resources/bizagi.resources.json.txt",
+            "es": "resources/bizagi.resources.es.json.txt",
+            "es_es": "resources/bizagi.resources.es-es.json.txt",
+            "de": "resources/bizagi.resources.de.json.txt",
+            "fr": "resources/bizagi.resources.fr.json.txt",
+            "it": "resources/bizagi.resources.it.json.txt",
+            "ja": "resources/bizagi.resources.ja.json.txt",
+            "nl": "resources/bizagi.resources.nl.json.txt",
+            "pt-br": "resources/bizagi.resources.pt-br.json.txt",
+            "pt": "resources/bizagi.resources.pt.json.txt",
+            "ru": "resources/bizagi.resources.ru.json.txt",
+            "zh": "resources/bizagi.resources.zh.json.txt",
+			"cs-cz": "resources/bizagi.resources.cs-cz.json.txt",
+			"cs": "resources/bizagi.resources.cs-cz.json.txt"
+        }
+    }
+}

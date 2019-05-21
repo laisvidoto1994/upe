@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        ///reload whitout tag
+        if (location.href.indexOf("#") != -1) {
+            document.location = "index_release.html";
+        }
+    </script>
+
+</head>
+<body>
+
+<script type='text/javascript' src='../../../../../jquery/steal.js'></script>
+<script type='text/javascript' src='../../../../../jquery/bizagi.loader.js'></script>
+<script type="text/javascript" language="javascript">
+    //var BIZAGI_USE_ABSOLUTE_PATH = false;
+    // var BIZAGI_PATH_TO_BASE = "../../../../";
+    var BIZAGI_USE_ABSOLUTE_PATH = false;
+    var BIZAGI_PATH_TO_BASE = "../../../../../";
+    var BIZAGI_LANGUAGE = 'en';
+    var BIZAGI_ENVIRONMENT = "release";
+    //var BIZAGI_DEFAULT_DEVICE = "smartphone_ios";
+    var BIZAGI_ENABLE_LOG = false;
+    var BIZAGI_ENABLE_MOCKS = false;
+    //var BIZAGI_MOCKS_PATH = "jquery/test/app/mocks/";
+    var loader = bizagi.loader;
+
+    loader.init({
+        url: "/jquery/bizagi.module.definition.json.txt",
+        callback: function () {
+            loader.start("workportalflat").then(function () {
+                //loader.loadFile("jquery/workportalflat/testsuite/smartphone/data/mock.bizagi.json.js").then(function(){
+                    var workportal = new bizagi.workportal.facade({
+                        proxyPrefix: ""
+                    });
+                    workportal.execute().done(function(d){
+                        console.log("Finalizo ejecución de workportal");
+                    });
+                //});
+            });
+        }
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+/*     NOTIFICATION PANEL    */
+
+.notification-panel {
+    border: 1px solid;
+    border-color: rgb(226,226,226);
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 0px;
+    width: 500px;
+    right: 25px;
+    bottom: 35px;
+    z-index: 10;
+}
+
+.notification-panel .wrapper {
+    padding: 0;
+    margin: 0;
+}
+
+.notification-panel .message {
+    list-style: none;
+    position: relative;
+    background-color: #ecf0f1;
+    border-bottom: 1px dashed #bdc3c7;
+    color: #7f8c8d;
+    cursor: default;
+    white-space: nowrap;
+}
+
+.notification-panel .icon {
+    max-width: 80px;
+    padding: 3px;
+    float: left;
+}
+
+.notification-panel .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    color: #c1c1c1;
+    font-size: 12pt;
+    cursor: pointer;
+}
+.notification-panel .close:hover {
+    color:#0b8bcb;
+}
+
+.notification-panel .close:hover {
+
+}
+
+.notification-panel .title {
+    margin: 0;
+}
+
+.notification-panel .description {
+    font-style: normal;
+    margin: 0;
+}
+
+.color-red{
+    color:darkred;
+}
+
+/*    NOTIFICATION TOOLTIP     */
+/*-----------------------------*/
+.notification-tooltip {
+    position: absolute;
+}
+
+.notification-tooltip:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 12px;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid #bdc3c7;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+
+.notification-tooltip .wrapper {
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.notification-tooltip .message {
+    list-style: none;
+    position: relative;
+    background-color: #ecf0f1;
+    border-top: 1px solid #bdc3c7;
+    color: #7f8c8d;
+    cursor: default;
+    white-space: nowrap;
+}
+
+.notification-tooltip .icon {
+    max-width: 80px;
+}
+
+.notification-tooltip .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: #95a5aa;
+    font-size: 20pt;
+    cursor: pointer;
+}
+
+.notification-tooltip .close:hover {
+
+}
+
+.notification-tooltip .title {
+    font-weight: bold;
+    margin: 0;
+}
+
+.notification-tooltip .description {
+    margin: 0;
+}
+
+
+/*    NOTIFICATION MODAL       */
+/*-----------------------------*/
+.notification-modal .icon {
+    max-width: 80px;
+    padding: 3px;
+    color: green;
+    font-size: 45pt;
+}
+
+.notification-modal .title {
+    font-size: 13pt;
+    font-weight: bold;
+}

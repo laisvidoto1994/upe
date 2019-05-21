@@ -1,0 +1,50 @@
+<script id="project-subprocesses-wrapper" type="text/x-jsrender" >
+    <div>
+        <div id="ui-bizagi-wp-project-subprocesses-wrapper" class="clearfix bz-wp-widget">
+            <h3 class="bz-wp-section">
+                %{workportal-project-subprocesses-title}
+            </h3>
+            <ul class="list-subprocesses">
+                {{for auxArrayListSubprocesses}}
+                <li class="li-subprocess">
+                    <a href="#" title="">
+                        {{if isOpen == "false"}}
+                        <i id="ui-bizagi-wp-app-inbox-cases-ico-close" class="bz-icon bz-icon-16 bz-icon-lock-outline">
+
+                        </i>
+                        {{/if}}
+                        <span class="name">{{>radNumber}} - {{>displayName}}</span>
+                    </a>
+                    <input type="hidden" id="idCase" value="{{>idCase}}" />
+                    <input type="hidden" id="indexSubprocess" value="{{>indexSubprocess}}" />
+                    <input type="hidden" id="idCustData" value="{{>idCustData}}" />
+                </li>
+
+                {{/for}}
+            </ul>
+        </div>
+    </div>
+</script>
+
+
+<script id="project-subprocesses-tooltip-custom-properties-wrapper" type="text/x-jsrender" >
+<div class="ui-bizagi-wp-project-subprocesses-root-wrapper bizagi-custom-tooltip-subprocesses">
+    <div class="namesubprocess">{{>nameSubprocess}}</div>
+    <div class="scroll-custom-properties">
+        <table>
+            <tbody>
+                {{for arrayCustomsProperties}}
+                <tr>
+                    <td class="column1">
+                        <span class="nameProperty">{{:nameProperty}}</span>
+                    </td>
+                    <td class="column2">
+                        <span class="valueProperty">{{:valueProperty}}</span>
+                    </td>
+                </tr>
+                {{/for}}
+            </tbody>
+        </table>
+    </div>
+</div>
+</script>

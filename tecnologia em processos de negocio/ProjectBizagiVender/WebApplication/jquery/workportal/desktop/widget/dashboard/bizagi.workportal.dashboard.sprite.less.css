@@ -1,0 +1,32 @@
+﻿/*
+    Document   : bizagi.workportal.dashboard
+    Created on : Jan 13, 2015, 10:23:00 AM
+    Author     : Ramiro Gomez
+    Description:
+        Styles for icons home dashboard widget
+*/
+
+.ontime-ico .bz-icon {
+    color: #37B464;
+}
+
+.delayed-ico .bz-icon {
+    color: #F5645A;
+}
+
+.atrisk-ico .bz-icon {
+    color: #F4AA34;
+}
+
+.wdg-db-title span {
+    vertical-align: middle;
+}
+
+#home-content .wdg-cases-header {
+    padding-bottom: .6em;
+    margin: 0 0 2em;
+}
+
+.wdg-db-next .bz-icon {
+    color: #e1e6ea !important;
+}

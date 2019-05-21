@@ -1,0 +1,155 @@
+﻿/* ==========================================================================
+   Dimension filter
+   ========================================================================== */
+
+.biz-rp-dimensions-dialog {
+    top: 0 !important;
+    bottom: 0 !important;
+    max-height: 50em !important;
+    margin: auto !important;
+}
+
+.bizagi_reporting_component_dimensionfilter {
+    float: left;
+    margin-right: 2em;
+}
+
+@media only screen and (max-width: 689px) {
+    .bizagi_reporting_component_dimensionfilter {
+        margin-bottom: 1em;
+    }
+}
+
+.bz-rp-filters-dimension-description {
+    margin: 1em 0;
+    font-size: 12px;
+}
+
+.bz-rp-filters-dimension-wrapper { margin: 0; }
+
+.bizagi_reporting_component_dimensionfilter .bz-rp-filters-label { visibility: hidden; }
+
+#bz-rp-filters-dimension-tree > div {
+    padding: 1em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.biz-ui-controls-treeview ul {
+    overflow-y: auto;
+    max-height: 15em;
+    padding: 0;
+    list-style: none;
+}
+
+.bz-rp-filters-dimension-desc { font-size: 12px; }
+
+.biz-ui-controls-treeview ul:first-child { padding-left: 2em; }  
+
+.biz-ui-controls-treeview li {
+    padding: .25em 1em;
+    margin: 0;
+    font-size: 12px;    
+}
+
+.biz-ui-controls-treeview-row label {
+    display: block;
+    line-height: 24px; 
+}
+
+.biz-ui-controls-treeview-row i,
+.biz-ui-controls-treeview-row input,
+.bz-rp-filters-dimension-null-value input {
+    float: left;
+    height: 24px;
+    margin: 0 .5em 0 0;
+    vertical-align: middle;
+}
+
+.biz-ui-controls-treeview-row i { width: 24px; }
+
+.bz-rp-filters-dimension-null-value {
+    padding: 0;
+    margin: 1em;
+    font-size: 12px;
+}
+
+.bz-rp-filters-dimension-nulls-info { line-height: 24px; }
+
+.biz-ui-controls-multiselect ul {
+    box-shadow: inset 0 1px 6px 0 rgba(50, 50, 50, .2);
+    border-color: #ccc;
+    list-style: none;
+}
+
+.biz-ui-controls-multiselect ul > li { float: left; }
+
+.biz-ui-controls-multiselect ul li.selected-item {
+    padding: 0 4px 0 10px;
+    line-height: 22px;
+}
+
+.bz-rp-filters-dimension-pills {
+    padding: .8em 2em .3em;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.bz-rp-filters-dimensions-pill {
+    float: left;
+    padding: 0 .5em 0 1em;
+    border-radius: 4px;
+    margin-right: .5em;
+    margin-bottom: .5em;
+    background: #293f55;
+    color: #fff;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+.bz-rp-filters-dimensions-pill-block { float: left; }
+
+.bz-rp-filters-dimensions-pill-block:first-child { margin-right: .5em; }
+
+.bz-rp-filters-dimensions-pill-data {
+    padding: 0;
+    margin: 0;
+    line-height: 30px;
+}
+
+.bz-rp-filters-dimension-pill-type { text-transform: uppercase; }
+
+.bz-rp-filters-dimension-pill-null { text-decoration: underline; }
+
+/* Buttons
+   ========================================================================== */
+
+.bz-rp-filters-dimension-button:focus { box-shadow: none; }
+
+.bz-rp-filters-dimensions-pill .bz-rp-button-secondary {
+    max-height: 30px;
+    min-height: 30px;
+    font-size: 10px;
+    color: #fff;
+}
+
+.biz-ui-controls-multiselect label {
+    display: inline-block;
+    margin-bottom: 0.5em;
+    font-size: 12px;
+}
+
+.biz-ui-controls-multiselect .biz-widget-input-search {
+    height: 30px;
+    font-size: 12px;
+}
+
+.biz-ui-controls-multiselect a.closebutton {
+    width: 24px;
+    height: 30px;
+    margin-left: 4px;
+    background: url(../../../common/css/images/biz-rp-icons-sprite.png) -24px -93px;
+}
+
+.biz-ui-controls-multiselect a.closebutton:hover { background-position: -24px -93px; }
+
+.ui-menu .ui-menu-item a { padding: .8em 1.5em; }

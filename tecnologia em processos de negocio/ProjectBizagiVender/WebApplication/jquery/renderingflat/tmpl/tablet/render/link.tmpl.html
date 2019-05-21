@@ -1,0 +1,10 @@
+#if(data.likeButton){#
+    <div class="bz-rn-link-button">
+        <a href="javascript:void(0)" class="ui-bizagi-render-link bz-rn-formlink-as-button">#= data.displayName #</a>
+    </div>
+#} else {#
+    <div class="bz-rn-container-control-icon #= data.align #">
+        <a class="bz-rn-align-class ui-bizagi-render-link" href="javascript:void(0)">#= data.displayName #</a>
+        <span class="bz-rn-icon bz-rn-link-selector bz-mo-icon bz-open"></span>
+    </div>
+#}#

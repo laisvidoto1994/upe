@@ -1,0 +1,124 @@
+/* 1 */
+/**********************************************************************
+ * Filename    : bizagi.editor.base.css (document)
+ * Create Date : 18 Jul 2012
+ * Author      : Ramiro Gomez ramiro.gomez@bizagi.com
+ * Description : Main css for the form modeler
+ * Template    : N/A
+
+ ==STRUCTURE======================================================
+
+
+
+
+**********************************************************************/
+form-modeler *
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-weight: normal;
+}
+
+.ui-bizagi-notifications-container.ui-bizagi-log-container{
+    z-index: 2000;
+}
+
+.ui-bizagi-render-confirmation{
+  display: inline-block;
+}
+
+.ui-bizagi-render-confirmation i{
+    cursor: pointer;
+}
+
+.ui-bizagi-container-contentpanel-formmodeler
+{
+    position: relative;
+    margin: 6px;
+    padding: 6px;
+    min-height: 35px;
+    border: 1px inset #FF8F00;
+    border-radius: 6px;
+    background-color: #f9f9f7;
+    font-weight: normal;
+    color: #283238;
+    margin-left: -1px;
+}
+
+.ui-bizagi-container-contentpanel-header-container{
+    text-align: center;
+}
+
+.ui-bizagi-container-contentpanel-header{
+    position: relative;
+    top: -16px;
+    height: 14px;
+    font-size: 9px!important;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    text-align: center;
+    line-height: 12px;
+    color: hsl(60, 14%, 97%);
+    background: #FF8F00;
+    border-radius: 3px;
+    letter-spacing: 0.15em;
+    padding: 0.1em 1em 0.5em 1em;
+}
+
+.biz-work-area .ui-dialog {
+    padding: 1em;
+    background: #fff;
+}
+
+.biz-work-area .ui-dialog .ui-dialog-titlebar {
+    position: static;
+    border-bottom-color: #eee;
+    border-radius: 0;
+    background: transparent;
+}
+
+.biz-work-area .ui-dialog .ui-dialog-title {
+    padding-bottom: .6em;
+    line-height: normal;
+}
+
+.biz-work-area .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    padding: 2em 0 1em;
+}
+
+.biz-work-area .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button {
+    background: #ddd;
+}
+
+.biz-work-area .ui-dialog-buttonset button:only-child {
+    margin: 0;
+}
+
+.biz-work-area .ui-dialog .ui-dialog-titlebar-close,
+.biz-work-area .ui-dialog .ui-dialog-titlebar-close:hover {
+    top: 14px !important;
+    width: 16px;
+    height: 16px;
+    background-image: url(images/sprite_icons_16px.png);
+    background-position: -48px -16px;
+}
+
+.biz-modify-placeholder::-webkit-input-placeholder {
+   content: attr(data-attr);
+   color: red;
+}
+
+.biz-modify-placeholder-underline::-webkit-input-placeholder {
+   text-decoration: underline;
+}
+
+.biz-modify-placeholder-through::-webkit-input-placeholder {
+   text-decoration: line-through;
+}
+
+.biz-modify-placeholder-through-underline::-webkit-input-placeholder {
+   text-decoration: line-through underline;
+}

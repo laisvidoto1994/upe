@@ -1,0 +1,10 @@
+﻿ <div id="${id}" class="bz-rn-combo-list-edit" {{loading}}>
+  {{each items}}
+    <div id="${id}" {{if hidden}}class="bz-rn-hidden"{{/if}}>  
+      <div class="bz-rn-combo-text">
+       <span>${value}</span> 
+      </div>
+      <span class="bz-cm-icon bz-rn-combo-check bz-rn-cm-icons-list"></span> 
+    </div>
+  {{/each}}
+</div>

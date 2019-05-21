@@ -1,0 +1,13 @@
+﻿ <div class="bz-rn-combo-cn-select-div" >
+     <span class="bz-rn-combo-select" >
+         <span class="bz-rn-cm-text-label bz-rn-text"></span>
+         <span class="bz-rn-cm-icons-list bz-rn-combo-icon-arrow" >&nbsp;</span>
+     </span>
+ 
+     <select class="bz-rn-combo-list" id="${id}" > 
+         {{each items}}
+         <option  value="${id}" {{if hidden}}class="bz-rn-hidden"{{/if}}>${value}</option> 
+         {{/each}}
+     </select>
+ </div>
+ 

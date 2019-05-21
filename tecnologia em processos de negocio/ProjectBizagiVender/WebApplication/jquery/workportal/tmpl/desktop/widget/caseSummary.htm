@@ -1,0 +1,66 @@
+<script id="ui-bizagi-workportal-widget-case-summary" type="text/x-jquery-tmpl" >
+    <div id="ui-bizagi-workportal-widget-case-summary-container" class="ui-bizagi-workportal-widget-case-summary-container">
+        <div class="ui-bizagi-workportal-widget-case-summary-title">${caseNumber}</div>
+        <div id="descriptionPadding">
+            <div id="ui-bizagi-wp-app-inbox-bg-action-container">
+                <span id="ui-bizagi-wp-app-inbox-bt-comments" class="ui-bizagi-wp-app-inbox-bt-comments"></span>
+                <span id="ui-bizagi-wp-app-inbox-bt-undo" class="ui-bizagi-wp-app-inbox-bt-undo"></span>
+                <span id="ui-bizagi-wp-app-inbox-bt-folder" class="ui-bizagi-wp-app-inbox-bt-folder"></span>
+                <span id="ui-bizagi-wp-app-inbox-bt-trash" class="ui-bizagi-wp-app-inbox-bt-trash"></span>
+            </div>
+            <hr class="separator" />
+            <div>
+                <div class="ui-bizagi-wp-app-inbox-description-actions-cont">
+                    <div id="ui-bizagi-wp-wg-bt-start-on" class="bz-icon bz-icon-star bz-icon-16 ui-bizagi-wp-app-inbox-description-start"></div>
+                    <div class="ui-bizagi-wp-app-inbox-cases-ico-view ui-bizagi-wp-app-inbox-description-ico-view"></div>
+                    <div id="ui-bizagi-wp-app-inbox-cases-ico-state-${taskState}" class="ui-bizagi-wp-app-inbox-cases-description-ico-state"></div>
+                <span class="ui-bizagi-wp-app-inbox-description-cases-name">${caseNumber}</span>
+            </div>
+        </div>
+        <hr class="separator" />
+        <table class="box-description">
+            <tr>
+                <td class="key">Due date</td>
+                <td class="value">${estimatedSolutionDate}</td>
+                <td class="key">Created by</td>
+                <td class="value">${createdByName}</td>
+            </tr>
+            <tr>
+                <td class="key">Creation date</td>
+                <td class="value">${creationDate}</td>
+                <td class="key">Person in charge</td>
+                <td class="value">
+                    {{each person}}
+                    ${Name} &nbsp;
+                    {{/each}}
+                </td>
+            </tr>
+            <tr>
+                <td class="key">Solution date</td>
+                <td class="value">${solutionDate}</td>
+                <td class="key">Current state</td>
+                <td class="value">
+                    {{each currentState}}
+                    ${state} <br />
+                    {{/each}}
+                </td>
+            </tr>
+        </table>
+        <hr class="separator" />
+        <br/>
+        <br/>
+        <div class="text-description-title">
+            Details
+        </div>
+        <div class="text-description">
+            ${caseDescription}
+        </div>
+        {{if showWorkOnIt}}
+        <div class="workonitRow">
+            <div class="contentWorkonit">Work on it</div>
+            <div class="rightBorder"></div>
+        </div>
+        {{/if}}
+        <br/>
+    </div>
+</script>

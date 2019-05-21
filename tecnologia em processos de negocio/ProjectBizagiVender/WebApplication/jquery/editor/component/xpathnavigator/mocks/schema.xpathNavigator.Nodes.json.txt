@@ -1,0 +1,19 @@
+{
+    "node": {
+        "type": "array",
+        "items": {
+            "type" : "object",
+            "properties": {
+                "guid": { "type": "string" },
+                "displayName": { "type": "string" },
+                "canHasChildren": { "type": "boolean", "default" : "false" },
+                "isScopeAttribute" : { "type": "boolean", "optional": "true", "default" : "false" },
+                "renderType": { "type" : "string", "optional" : "true" },
+                "style": { "type" : "string" },
+                "xpath": { "type" : "string", "optional" : "true" },
+                "isDragabble": { "type" : "boolean", "optional" : "true", "default" : "true"} ,
+                "nodes": { "type" : "node", "optional" : "true" }
+            }                
+        }
+    }        
+}

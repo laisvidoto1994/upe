@@ -1,0 +1,17 @@
+{
+    "workflows": {
+        "workflow|5-20": [{
+            "idworkflow|0-99": 0,
+            "guidWFClass": "@BIZAGI_GUID ",
+            "name": "@LOREM @LOREM",
+            "path": "@BIZAGI_CATEGORY/@LOREM/",
+            "count|0-99": 0,
+            "isFavorite|0-1": true,
+            "icon": "",
+            "category": "@BIZAGI_CATEGORY",
+            "spriteUrl": "imagen.png",
+            "spritePosition": "0px 0px"            
+        }],
+        "taskState": "All"
+    }
+}

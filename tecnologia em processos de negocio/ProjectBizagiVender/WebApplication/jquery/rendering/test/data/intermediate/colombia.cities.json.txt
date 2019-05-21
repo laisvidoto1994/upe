@@ -1,0 +1,66 @@
+﻿[
+{
+	"id": 1,
+	"value": "Bogota"}, {
+	"id": 2,
+	"value": "Medellin"}, {
+	"id": 3,
+	"value": "Cali"}, {
+	"id": 4,
+	"value": "Barranquilla"}, {
+	"id": 5,
+	"value": "Pereira"}, {
+	"id": 6,
+	"value": "Armenia"}, {
+	"id": 7,
+	"value": "Manizales"}, {
+	"id": 8,
+	"value": "Pasto"}, {
+	"id": 9,
+	"value": "Monteria"}, {
+	"id": 10,
+	"value": "Sincelejo"}, {
+	"id": 11,
+	"value": "Cartagena"}, {
+	"id": 12,
+	"value": "Riohacha"}, {
+	"id": 13,
+	"value": "Santa Marta"}, {
+	"id": 14,
+	"value": "Valledupar"}, {
+	"id": 15,
+	"value": "Cucuta"}, {
+	"id": 16,
+	"value": "Bucaramanga"}, {
+	"id": 17,
+	"value": "Tunja"}, {
+	"id": 18,
+	"value": "Yopal"}, {
+	"id": 19,
+	"value": "Villavicencio"}, {
+	"id": 20,
+	"value": "Quibdo"}, {
+	"id": 21,
+	"value": "Vichada"}, {
+	"id": 22,
+	"value": "Arauca"}, {
+	"id": 23,
+	"value": "Leticia"}, {
+	"id": 24,
+	"value": "Puerto Inirida"}, {
+	"id": 25,
+	"value": "Mitu"}, {
+	"id": 26,
+	"value": "Florencia"}, {
+	"id": 27,
+	"value": "Mocoa"}, {
+	"id": 28,
+	"value": "Popayan"}, {
+	"id": 29,
+	"value": "Ibague"}, {
+	"id": 30,
+	"value": "Neiva"}, {
+	"id": 31,
+	"value": "San Andres"}, {
+	"id": 32,
+	"value": "San Jose del Guaviare"}]

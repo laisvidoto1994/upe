@@ -1,0 +1,45 @@
+/********
+* Filename: bizagi.editor.component.editor.orientation.css
+* Create Date: 2012-08-28
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__orientation
+*
+********/
+
+/* __orientation
+--------*/
+.bizagi_editor_component_editor_orientation
+{
+    position: relative;
+}
+.bizagi_editor_component_editor_orientation .ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-option
+{
+    background-position: top left;
+}
+.bizagi_editor_component_editor_orientation .ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-check
+{
+     background-position:0 -25px;
+}
+
+.orientation-group-container
+{
+    position: relative;
+}
+
+.bizagi_editor_component_properties .bizagi_editor_component_editor_orientation .bizagi-editor-booleandisplay-inline label
+{
+    display:inline-block;
+    width:55%;
+}
+
+.bizagi_editor_component_editor_orientation .bizagi-editor-orientation-inline .ui-control-editor
+{
+    display:inline-block;
+    width:30%;
+}
+
+.bizagi_editor_component_editor_orientation .multiple-container .bizagi-editor-orientation-inline .ui-control-editor
+{
+    width:58px;
+}

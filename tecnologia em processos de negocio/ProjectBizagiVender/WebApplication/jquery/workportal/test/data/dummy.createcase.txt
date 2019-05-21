@@ -1,0 +1,14 @@
+{
+    "idCase|0-9999": 0,
+    "hasGlobalForm": "false",
+    "formsRenderVersion": 2,
+    "workItems": [{
+        "idWorkItem|0-9999": 0,
+        "idTask|0-9999": 0,
+        "displayName": "@LOREM @LOREM",
+        "estimatedSolutionDate": "@DATE_DD/@DATE_MM/@DATE_YYYY @TIME_HH:@TIME_MM",
+        "isAsynch": "false",
+        "taskType": "UserInteraction"
+    }],
+    "subProcesses": []
+}

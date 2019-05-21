@@ -1,0 +1,112 @@
+<script id="ui-bizagi-workportal-menu-content" type="text/x-jquery-tmpl">
+
+<div class="ui-bz-wp-menu-content " >
+     
+        <div class="bz-menu-visible-bar bz-wp-menu-content-static" ><!--style="top:0;"-->
+           <ul class="bz-common-webkit-reset-ul" >
+            <li>             
+                  <div class="bz-wp-mu-back-container">
+                      <div class="bz-cm-icon back  bz-common-li-item-center " ordinal="0"></div>
+                  </div>                        
+            </li>
+
+             <li>
+                 <span class="bz-cm-icon bz-wp-header-logo"></span>
+            </li>
+
+            <li class="bz-wp-mu-btn">
+                  <div class="bz-wp-header-title "> 
+                        <span class="bz-wp-titleCase">Bizagi</span>
+						
+                  </div> 
+                  <span class="bz-cm-icon bz-wp-header-arrow"></span>
+            </li>
+
+
+            <li> 
+
+               <div class="bz-wp-mu-search-conatiner">
+                  <div class="bz-cm-icon search bz-item-menu-img-foother bz-common-li-item-center"></div> 
+               </div>
+               
+               <div class="bz-wp-mu-btn-custom" style="display:none;" >
+                    <span class="bz-cm-icon"></span>
+               </div>
+
+               <div class="bz-wp-mu-btn-dynamic" style="display:none;" >
+                  <div class="bz-cm-icon dynamic bz-common-li-item-center" ></div> 
+               </div>
+            </li>
+          </ul>
+  	    </div> 
+
+
+        <div class="bz-wp-components-container" style="display:none">
+          <div class="bz-wp-component-search">
+            <div class="bz-cm-icon  bz-wp-mu-search-icon"> </div>
+            <input type="text" class="bz-wp-mu-input-search-menu">
+          </div>
+
+           <div class="bz-wp-component-dynamic-btn">
+            </div>
+
+        </div>
+
+        <div class="bz-wp-menu-background" style="display:none">
+            <div class="bz-wp-menu-expand" style="display:none">
+                <div  class="menu-items" style=""></div>   
+                {{if environment == "debug"}}<span class="build">${build}</span>{{/if}}
+            </div>
+        </div>
+</div>
+
+
+</script>
+<script id="ui-bizagi-workportal-widget-menu-items2" type="text/x-jquery-tmpl">
+    {{if authNewCase}}
+    <div class="new-case">
+        <span class="bz-cm-icon bz-wp-mu-common img-new-case"></span>
+        <span>%{workportal-menu-new}</span>
+    </div>
+    {{/if}}            
+    <div class="inbox-shortcut" >
+        <span class="bz-cm-icon bz-wp-mu-common img-inbox-shortcut"></span>
+        <span class="bz-wp-inbox-label-text">%{workportal-menu-inbox-msg}</span>
+    </div>
+    {{if authAnalysisReports}}
+    <div>
+        <span class="bz-cm-icon bz-wp-mu-common img-menu-reports"></span>
+        <span>%{workportal-menu-reports}</span>
+    </div>
+    {{/if}}            
+       
+    {{if authAdmin}}
+    <div>
+        <span class="bz-cm-icon bz-wp-mu-common img-menu-admin"></span>
+        <span>%{workportal-menu-admin}</span>
+    </div> 
+    {{/if}}            
+    {{if authCurrentUserAdministration}}
+    <div>
+        <span class="bz-cm-icon bz-wp-mu-common img-preferences"></span>
+        <span>%{workportal-menu-preferences}</span>
+    </div>
+    {{/if}}
+    
+     {{if enableSettings}}
+        <div class="settings-shortcut">
+            <span class="bz-cm-icon bz-wp-mu-common img-settings-shortcut"></span>
+            <span>%{workportal-menu-preferences}</span>
+        </div>
+    {{/if}}  
+    
+    {{if enableLogOut}}
+    <div class="logout">
+         <span class="bz-cm-icon bz-wp-mu-common img-logout"></span>
+         <span>%{workportal-menu-logout}</span>
+    </div>
+    {{/if}}
+</script>
+<script id="ui-bizagi-workportal-widget-menu-custom-buttons" type="text/x-jquery-tmpl">
+  {{each buttons}}<div class="bz-wp-mu-buttons" data-bz-ordinal="${ordinal}">${caption}</div>{{/each}}
+</script>

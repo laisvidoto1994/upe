@@ -1,0 +1,29 @@
+﻿.ui-bizagi-workportal-workarea ui-bizagi-component-loading ui-bizagi-component-adjustable ui-bizagi-adjustable
+{
+    background:red;
+}
+
+
+.bz-wp-oldrender-notification
+{
+position: relative;
+top: 10%;
+color: hsl(0, 0%, 30%);
+border-top: 1px solid rgba(255, 255, 255, .2);
+-webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
+background: #f2f2f2;
+width: 50%;
+border-radius: 6px;
+margin-left: 25%;
+padding: 20px 10px 20px 10px;
+font-size: 12px;
+text-align:center;
+}
+
+.bz-wp-oldrender-icon
+{
+background-position: 443px -190px;
+width: 109px;
+height: 120px; 
+}
+

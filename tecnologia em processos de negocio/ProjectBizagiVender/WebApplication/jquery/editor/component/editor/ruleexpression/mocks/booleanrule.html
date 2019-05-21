@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Editor BooleanRule</title>
+        <meta charset="utf-8" />
+       <link rel="stylesheet" href="../../../../../../jquery/common/jquery.ui/css/desktop/jquery.ui.css" />
+        <style>
+            #main-container
+            {
+                border: solid 1px gainsboro;
+                width: 400px;
+                border-radius: 4px;
+            }
+            
+            .editor
+            {
+                margin: 70px 0 70px 0;
+            }
+            .editor.editor-selected
+            {
+                background-color: yellow;
+            }
+            
+            .editor > .editor-horizontal
+            {
+                border: solid 1px steelblue;
+                border-radius: 4px;
+                padding: 4px;
+                position: relative;
+            }
+            
+            .editor > .editor-horizontal > label
+            {
+                display: inline-block;
+                width: 70px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .editor > .editor-horizontal > input
+            {
+                width: 140px;
+            }
+            
+            .editor > div > label,
+            .editor > div > input,
+            .editor > div > span
+            {
+                vertical-align: middle;
+            }
+            
+            
+            .editor .editor-options.editor-options-enabled
+            {
+                display: block;
+                position: absolute;
+                top: 29px;
+                left: 78px;
+                background-color: teal;
+                z-index: 10;
+                width: 140px;
+            }
+            .editor .editor-options.editor-options-disabled
+            {
+                display: none;
+            }
+            
+            
+            .editor .editor-options
+            {
+                border: solid 1px black;
+            }
+            .editor .editor-options ul,
+            .editor .editor-options li
+            {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            .editor .editor-options li
+            {
+                border: solid 1px transparent;
+            }
+            .editor .editor-options li:hover
+            {
+                background-color: rosybrown;
+                cursor: pointer;
+            }
+            
+            .editor .editor-options li.editor-selected-option
+            {
+                background-color: rosybrown;
+            }
+            
+            
+            .editor .editor-options li
+            {
+                vertical-align: middle;
+            }
+            .editor .editor-options .editor-image-small
+            {
+                width: 24%;
+            }
+            .editor .editor-options .editor-option
+            {
+                width: 74%;
+            }
+            
+            
+            .editor .editor-arrow-down-enabled
+            {
+                display: inline-block;
+            }
+            .editor .editor-arrow-down-disabled
+            {
+                display: none;
+            }
+            .editor .editor-image-small
+            {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+            }
+            .editor .editor-image-tiny-extended
+            {
+                border: solid 1px red;
+                width: 16px;
+                height: 20px;
+                position: absolute;
+                top: 6px;
+                left: 221px;
+            }
+            .editor .editor-image-true { background: url("true.png") center center no-repeat; }
+            .editor .editor-image-false { background: url("false.png") center center no-repeat; }
+            .editor .editor-image-expression { background: url("troll.png") center center no-repeat; }
+            .editor .editor-image-arrow-down { background: url("arrow-down.png") center center no-repeat white; }
+        </style>
+        <<script src="../../../../../../jquery/common/base/js/lib/jquery.js"></script>
+	    <script src="../../../../../../jquery/common/jquery.ui/js/desktop/jquery.ui.js"></script>
+        <script>
+            $(document).ready(function() {
+                
+                // Seleccion
+                $(".editor").click(function() {
+                    $(".editor").removeClass("editor-selected");
+                    $(this).addClass("editor-selected");
+                });
+                
+                // Foco del control
+                $(".editor-booleanrule input").focus(function() {
+                    $(".editor-booleanrule input").next().removeClass("editor-arrow-down-enabled").addClass("editor-arrow-down-disabled");
+                    $(this).next().removeClass("editor-arrow-down-disabled").addClass("editor-arrow-down-enabled");
+                });
+                $(".editor-booleanrule label").click(function() {
+                    $(this).next().focus();
+                });
+                
+                // Caja de opciones
+                $(".editor-booleanrule .editor-image-arrow-down").click(function() {
+                    var box = $(this).next();
+                    if(box.hasClass("editor-options-disabled")) {
+                        box.removeClass("editor-options-disabled").addClass("editor-options-enabled");
+                    } else {
+                        box.removeClass("editor-options-enabled").addClass("editor-options-disabled");
+                    }
+                });
+                $(".editor-booleanrule .editor-options li").hover(function() {
+                    if(!$(this).hasClass("editor-selected-option")) {
+                        $(this).closest(".editor-options").find("li").removeClass("editor-selected-option");
+                        $(this).addClass("editor-selected-option");
+                    }
+                });
+                $(".editor-booleanrule .editor-options li").click(function() {
+                    $(this).closest(".editor-booleanrule").find("input").val($(this).find(".editor-option").text());
+                    $(this).closest("div").removeClass("editor-options-enabled").addClass("editor-options-disabled");
+                });
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main-container">
+            
+            <div class="editor editor-booleanrule">
+                <div class="editor-horizontal">
+                    <label title="Required">Required</label>
+                    <input type="text" value="true" readonly="readonly" />
+                    <span class="editor-image-tiny-extended editor-image-arrow-down editor-arrow-down-disabled"></span>
+                    <div class="editor-options editor-options-disabled">
+                        <ul>
+                            <li class="editor-selected-option"><span class="editor-image-small editor-image-true"></span><span class="editor-option">True</span></li>
+                            <li><span class="editor-image-small editor-image-false"></span><span class="editor-option">False</span></li>
+                            <li><span class="editor-image-small editor-image-expression"></span><span class="editor-option">Expression</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="editor editor-booleanrule editor-selected">
+                <div class="editor-horizontal">
+                    <label title="Editable">Editable</label>
+                    <input type="text" value="false" readonly="readonly" />
+                    <span class="editor-image-tiny-extended editor-image-arrow-down editor-arrow-down-disabled"></span>
+                    <div class="editor-options editor-options-disabled">
+                        <ul>
+                            <li><span class="editor-image-small editor-image-true"></span><span class="editor-option">True</span></li>
+                            <li class="editor-selected-option"><span class="editor-image-small editor-image-false"></span><span class="editor-option">False</span></li>
+                            <li><span class="editor-image-small editor-image-expression"></span><span class="editor-option">Expression</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

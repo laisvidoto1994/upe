@@ -1,0 +1,136 @@
+﻿﻿﻿﻿<!-- WRAPPERS -->
+<script id="ui-bizagi-workportal-widget-admin-adhoc-entity-wrapper" type="text/x-jquery-tmpl">
+    <div id="adhoc-entity-main-wrapper"></div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-entity-panel-wrapper" type="text/x-jquery-tmpl">
+    <div id="admin-entity-wrapper">
+        <div id="admin-entity-list-wrapper" class="admin-dialog-leftframe"></div>
+        <div id="admin-entity-instances-wrapper" {{loading}} class="admin-dialog-rightframe">
+            <i id="adhocEntityEdit" class="bz-icon bz-icon-24 bz-icon-cog-outline"></i>
+            <div id="jsGrid"></div>
+        </div>
+    </div>
+</script>
+
+<!-- CONTENT -->
+<script id="ui-bizagi-workportal-widget-admin-adhoc-entity-list" type="text/x-jquery-tmpl">
+    <input type="hidden" autofocus="autofocus" /><!-- Problem with focus input in filters -->
+    <div class="ui-bizagi-control ui-bizagi-render-align-left  ac-is-visible">
+        <div class="ui-bizagi-control-wrapper">
+            <div class="ui-bizagi-render-control">
+                <input id="searchEntity" class="ui-bizagi-render-search ui-autocomplete-input" type="text" value="">
+                <i class="bz-icon bz-icon-16 bz-icon-search-outline"></i>
+            </div>
+        </div>
+    </div>
+
+    <select id="entitiesList" class="biz-wp-input-combo" size="25" style="-webkit-appearance: none;">
+        <optgroup label="%{workportal-adhoc-entity-form-parametrics-title}">
+            {{each(i, parametric) parametricEntityList}}
+                <option value="${parametric.id}">${parametric.displayName}</option>
+            {{/each}}
+        </optgroup>
+        <optgroup label="%{workportal-adhoc-entity-form-master-title}">
+            {{each(i, master) masterEntityList}}
+                <option value="${master.id}">${master.displayName}</option>
+            {{/each}}            
+        </optgroup>
+    </select>
+
+    <i id="adhocEntityAdd" class="bz-icon bz-icon-24 bz-icon-plus"></i>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-entity-nodata" type="text/x-jquery-tmpl">
+    <div class="admin-entity-message">
+        <i id="entityNoData" class="bz-icon bz-icon-64 bz-icon-plus"></i>
+        <p class="bz-wp-empty__info bz-wp-empty__info--first">${errorMessage}</p>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-entity-error" type="text/x-jquery-tmpl">
+    <div class="admin-entity-message">
+        <i class="bz-wp-empty__img"></i>
+        <p class="bz-wp-empty__info bz-wp-empty__info--first">${errorMessage}</p>
+    </div>
+</script>
+
+<script id="adhoc-entity-form-popup" type="text/x-jsrender">
+    <div id="adhoc-entity-form-popup-wrapper">
+        <form>
+            <div class="details-form-field">
+                <div class="column-label"><label for="name">%{workportal-adhoc-entity-form-name}:</label></div>                
+                <div class="column-content">
+                    <input id="input-name-adhoc-entity" name="name-adhoc-entity" class="bz-wp-rub-input required" value=""
+                           type="text" maxlength="100" required validationMessage="Name is required" />
+                    <div class="position-message-validate">
+                        <span data-for="name-adhoc-entity"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="details-form-field">
+                <div class="column-label"><label for="name">%{workportal-adhoc-entity-form-display-name}:</label></div>
+                <div class="column-content">
+                    <input id="input-displayname-adhoc-entity" name="displayname-adhoc-entity" class="bz-wp-rub-input required" value="" type="text" maxlength="100"/>
+                </div>
+            </div>
+            <div class="details-form-field">
+                <div class="column-label">
+                    <label>%{workportal-adhoc-entity-form-description}:</label>
+                </div> 
+                <div class="column-content">
+                    <textarea id="input-desc-adhoc-entity" name="desc-adhoc-entity" class="ui-rubik-input" />
+                </div>
+            </div>
+            <div class="details-form-field">
+                <div class="column-label">
+                    <label>%{workportal-adhoc-entity-form-type}:</label>
+                </div>
+                <div class="column-content">
+                    <select id="entType" class="biz-wp-input-combo">                        
+                        <option value="21" selected>Parametric</option>                        
+                        <option value="1">Master</option> 
+                    </select>
+                </div>
+            </div>
+            <div class="details-form-field">
+                <label>%{workportal-adhoc-entity-form-fields}:</label>
+            </div>
+            <div class="details-form-field">
+                <div id="entityFieldsGrid"></div>
+            </div>
+            <div class="details-form-field">
+                <div class="column-label">
+                    <label>%{workportal-adhoc-entity-form-display-attrib}:</label>
+                </div>
+                <div class="column-content">
+                    <div id="adhoc-entity-displayattrib-wrapper"></div>    
+                </div>
+            </div>
+            <div class="ui-bizagi-wp-project-popupform-actions">
+                <button id="button-cancel-adhoc-entity-form" type="reset" class="ui-rubik-button ui-rubik-button-cancel" type="reset">%{text-cancel}</button>
+                <button id="button-accept-adhoc-entity-form" type="submit" class="ui-rubik-button ui-rubik-button-accept" type="submit">%{text-save}</button>
+            </div>
+        </form>
+    </div>
+</script>
+
+<script id="adhoc-entity-form-attribtype" type="text/x-jsrender">
+    <select id="select_attribtype">
+        {{each categories}}
+        <optgroup label="${this.name}">
+            {{each this.options}}
+                <option data-id='${this.value.id}' {{if this.id === selectedValue }}selected="selected"{{/if}}>${this.label}</option>
+            {{/each}}
+        </optgroup>        
+        {{/each}}        
+    </select>
+</script>
+
+<script id="adhoc-entity-form-displayattrib" type="text/x-jsrender">
+    <select id="attribsList" class="biz-wp-input-combo">
+        {{each attribsList}}
+        <option value="${this.attribGuid}">${this.displayName}</option>
+        {{/each}}
+    </select>
+</script>

@@ -1,0 +1,7 @@
+﻿{
+	"actiontype":"GetCurrentCulture",
+	 "result": {
+		"success":true,
+		"parameters":[{"key":"culture","value":"es"}]
+	 }
+}

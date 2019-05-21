@@ -1,0 +1,323 @@
+﻿#admin-language-wrapper h3 {
+    font-size: 1rem;
+}
+
+#bizagi_objects #bizagi-objects-list-wrapper .bz-rn-grid-data-wraper,
+#admin-language-wrapper #entities-list-wrapper .bz-rn-grid-data-wraper {
+    overflow-x: hidden;
+}
+
+.admin-language-content
+{
+    position: absolute;
+    width: 95%;
+    height: 95%;
+}
+
+.amin-language-leftframe
+{
+    height: 100%;
+    margin: 5px;
+    position: relative;
+   /* background-color: #fa99fa;*/
+    vertical-align: top;
+}
+.amin-language-rightframe
+{
+    margin:0 auto;
+    border: 1px solid #C3C3C3 !important;
+    background: #EDEDED;
+    padding: 20px;
+    -webkit-box-shadow:  0px 0px 2px 0px rgba(0, 0, 0, .1);
+    box-shadow:  0px 0px 2px 0px rgba(0, 0, 0, .1);
+    width: 75%;
+    height: 100%;
+    position: relative;
+    /*background-color: #da99da;*/
+    display: inline-block;
+}
+#massive-resources-upload-form-wrapper{
+    width: 20px;
+    display:inline;
+    top:-5;
+}
+.amin-language-rightframe .ui-bizagi-label,  .amin-language-leftframe .ui-bizagi-label{
+    float:left;
+}
+
+.ui-icon.upload-file {
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 7px;
+}
+.ui-tabs .ui-tabs-panel {
+    padding: 1em 1.4em 1.4em;
+}
+#all-language-list-wrapper .ui-bizagi-grid, #reset-language-list-wrapper .ui-bizagi-grid {
+    max-height: 225px;
+    overflow-x: auto;
+}
+
+#all-language-list-wrapper .bottom-toolbar {
+    text-align: center;
+    padding: 15px 0 5px 0;
+}
+
+#all-language-list-wrapper .multilang-error-msg {
+    text-align: center;
+    color: red;
+    padding: 15px 0 5px 0;
+}
+
+#bizagi-objects-list-wrapper ul#ListBoxBizagiObject {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+}
+
+#bizagi-objects-list-wrapper ul#ListBoxBizagiObject li {
+    margin-bottom: 5px;
+}
+
+#bizagi-objects-list-wrapper ul#ListBoxBizagiObject li > input {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#admin-language-wrapper .ui-bizagi-render-upload-container {
+    display: inline-block;
+}
+
+#admin-language-wrapper .lang-list-button {
+    text-align: center;
+    padding: 10px;
+}
+
+#admin-language-wrapper .lang-list-button button {
+    padding: 5px;
+}
+
+#admin-language-wrapper .lang-list-button button[disabled],
+#admin-language-wrapper button#upload-file[disabled] {
+    background: #fff !important;
+    cursor:default;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    -moz-opacity: 0.4;
+    opacity: 0.4;
+}
+
+#admin-language-wrapper .lang-list-button button[disabled]:hover,
+#admin-language-wrapper button#upload-file[disabled]:hover {
+    background: #fff !important;
+    color: #555555;
+    text-shadow: none;
+}
+
+#admin-language-wrapper button#upload-file[disabled]:hover .ui-button-text {
+    color: #555555;
+    text-shadow: none;
+}
+
+#admin-language-wrapper .ui-accordion-header {
+    padding: 1em;
+    text-indent: 28px;
+}
+
+#admin-language-wrapper .ui-widget .ui-bizagi-container-form {
+    margin: 0;
+}
+
+.dp-hidden {
+    display: none;
+}
+
+.workportal-icon-search{
+    background: url(images/sprite.png) -7px -149px no-repeat;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    display: block;
+    float: right;
+    position: relative;
+    top: -23px;
+}
+
+.all-languages-filter{
+    margin: 5px;
+    padding: 0px 5px 0px 0px;
+}
+
+.languages-table-container {
+    overflow-x: auto;
+    width: 100%;
+    display: block;
+    min-height: 300px;
+}
+
+.bizagi-entities-wrapper {
+    width: 44%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.bizagi-entities-wrapper.ent-search-field {
+    padding-left: 0.35%;
+}
+
+.bizagi-entities-entity-selected,
+.bizagi-objects-object-selected{
+    background-color:#C2C7CC
+}
+
+#entities-list-wrapper .ui-bizagi-grid,
+#bizagi-objects-list-wrapper .ui-bizagi-grid {
+    max-height: 145px;
+    overflow-x: auto;
+}
+
+.entities-container {
+    text-align: center;
+}
+
+.entities-buttons,
+.objects-buttons {
+    width: 100%;
+    margin: 4px 0;
+}
+
+.entities-buttons-container {
+    width: 9%;
+    text-align: center;
+    padding: 2px 10px 0 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.entities-align-inline {
+    display: inline-block;
+    vertical-align: top;
+    min-height: 145px;
+}
+
+#all_langs_tab_item {
+    float: right;
+}
+
+.ui-dialog-minimized #main-wrapper, .ui-dialog-minimized #main-wrapper #admin-language-wrapper, .ui-dialog-minimized #main-wrapper #admin-language-wrapper #internals, .ui-dialog-minimized #main-wrapper #admin-language-wrapper #bizagi_objects, .ui-dialog-minimized #main-wrapper #admin-language-wrapper #entities_localization, .ui-dialog-minimized #main-wrapper #admin-language-wrapper #all_languages, .ui-dialog-minimized #main-wrapper #admin-language-wrapper #message-container, .ui-dialog-minimized #main-wrapper #internals_internal_tabs, .ui-dialog-minimized #main-wrapper #bizagi_objects_internal_tabs, .ui-dialog-minimized #main-wrapper #entities_internal_tabs, .ui-dialog-minimized #main-wrapper #extended, .ui-dialog-minimized #main-wrapper #extended_internal_tabs, .ui-dialog-minimized #main-wrapper #reset {
+    height: 96%;
+}
+
+.ui-dialog-minimized #main-wrapper .ui-tabs-panel * div,
+.ui-dialog-minimized #main-wrapper #reset-language-list-wrapper {
+     height: 90%;
+}
+
+.ui-dialog-minimized #reset-language-template-list .ui-bizagi-grid {
+    max-height: 100%;
+}
+
+.ui-dialog-minimized #main-wrapper .ui-tabs-panel .entities-align-inline {
+    height: 102% !important;
+}
+
+.ui-dialog-minimized #main-wrapper #all-language-list-wrapper, .ui-dialog-minimized #main-wrapper #all-language-list-wrapper .ui-bizagi-grid {
+    height: 88%;
+    max-height: 100%;
+}
+
+.ui-dialog-minimized #main-wrapper .ui-tabs-panel * div.lang-list-button, .ui-dialog-minimized #main-wrapper .ent-search-field, .ui-dialog-minimized #main-wrapper .biz-wp-form, .ui-dialog-minimized #main-wrapper #massive-resources-upload-form-wrapper * div, .ui-dialog-minimized #main-wrapper .ui-select-dropdown  {
+     height: auto !important;
+}
+
+.ui-dialog-minimized #entities-list-wrapper .ui-bizagi-grid, .ui-dialog-minimized #bizagi-objects-list-wrapper .ui-bizagi-grid {
+    max-height: none;
+    height: auto !important;
+}
+
+#admin-language-wrapper #massive-resources-upload-form-wrapper > div {
+    margin-top: 21px;
+}
+
+#admin-language-wrapper #massive-resources-upload-form-wrapper input#languageConfiguration {
+    color: #777;
+}
+
+.lang_upload_file .biz-wp-form-row > .biz-wp-form-cell:first-child {
+    min-width: 140px;
+}
+
+.ui-bizagi-culturecombo {
+    min-width: 250px;
+}
+
+.loading-language {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(images/modal_bg.png) 50% 50% repeat;
+    z-index: 900;
+}
+
+.loading-language .loading-language-icon {
+    background-image: url(images/loader2.gif);
+    width: 33px;
+    height: 32px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -16px;
+    margin-left: -16px;
+}
+
+.cursor-loading {
+    cursor: wait;
+}
+
+#admin-language-wrapper.ui-tabs .ui-tabs-nav li,
+#admin-language-wrapper.ui-tabs .ui-tabs-nav li.ui-state-focus {
+    outline: none !important;
+}
+
+#admin-language-wrapper.ui-tabs .ui-tabs-nav li a {
+    overflow: hidden;
+    float: left;
+    padding: 1em;
+    font-size: 1rem;
+    text-overflow: ellipsis;
+}
+
+#admin-language-wrapper #tab_entities_localization {
+    max-width: 250px;
+}
+
+#admin-language-wrapper #tab_bizagi_objects {
+    max-width: 91px;
+}
+
+#admin-language-wrapper #tab_internals {
+    max-width: 144px;
+}
+
+#admin-language-wrapper #tab_extended {
+    max-width: 124px;
+}
+
+#admin-language-wrapper #tab_reset {
+    max-width: 98px;
+}
+
+#admin-language-wrapper #tab_all_languages {
+    max-width: 116px;
+}
+
+.ui-dialog-minimized #admin-language-wrapper.ui-tabs .ui-tabs-nav li a {
+    max-width: 100% !important;
+}

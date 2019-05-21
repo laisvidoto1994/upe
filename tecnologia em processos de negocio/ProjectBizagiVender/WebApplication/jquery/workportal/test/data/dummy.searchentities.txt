@@ -1,0 +1,34 @@
+{
+    "category": "entities",
+	"filter": {
+		"entities|1-3": [{
+			"name": "@LOREM @LOREM",
+			"count|0-9999": 0
+		}],
+		"values|1-3": [{
+			"name": "@LOREM @LOREM",
+			"xpath": "@LOREM.@LOREM",
+			"instances|1-10": [ { 
+					"value": "@LOREM @LOREM",
+					"count|0-9999": 0
+				}
+			]
+		}]
+	},
+	"entities|1-3": [
+		{
+			"id|0-99999": 0,
+			"name": "@LOREM @LOREM",
+			"instances|1-6": [
+				{
+					"key": "@NUMBER@NUMBER@NUMBER@NUMBER",
+					"title": "@LOREM @LOREM",
+					"summary": "@LOREM_IPSUM",
+					"values|2-8": {
+						"@LOREM": "@LOREM"
+					}
+				}
+			]
+		}
+	]
+}

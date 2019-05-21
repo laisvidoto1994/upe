@@ -1,0 +1,89 @@
+/* OFFLINE
+=========================================================*/
+
+.sync-notification-offline-container {
+    position: fixed;
+    bottom: 50%;
+    left: 25%;
+    width: 50%;
+    z-index: 999;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 0;
+    border-width: 0 0 1px 0;
+    background: white;
+    box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.sync-notification-offline-title {
+    font-family: Arial,Helvetica,sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.sync-notification-offline-container.warning,
+.sync-notification-offline-container.warning span {
+    color: rgb(252, 171, 83);
+}
+
+.sync-notification-offline-container.error,
+.sync-notification-offline-container.error span {
+    color: rgb(255, 51, 102);
+}
+
+.sync-notification-offline-container.success,
+.sync-notification-offline-container.success span {
+    color: rgb(8, 210, 194);
+}
+
+.sync-notification-offline-container.info,
+.sync-notification-offline-container.info span {
+    color: #195891;
+}
+
+.sync-notification-offline-container.default,
+.sync-notification-offline-container.default span {
+    color: rgb(40, 166, 219);
+}
+
+#left-pane > div.km-view {
+    border-right: 1px solid #E5E5E5;
+}
+
+.km-flat .km-rowinsert, .km-flat .km-state-active,
+.km-flat .km-scroller-pull,
+.km-flat .km-loader:before,
+.km-flat .k-slider-selection,
+.km-flat .km-touch-scrollbar,
+.km-flat .km-pages .km-current-page,
+.km-flat .k-slider .k-draghandle,
+.km-flat .k-slider .k-draghandle:hover,
+.km-flat .km-tabstrip .km-state-active,
+.km-flat .km-scroller-refresh.km-load-more,
+.km-flat .km-popup .k-state-hover,
+.km-flat .km-popup .k-state-focused,
+.km-flat .km-popup .k-state-selected,
+.km-flat .km-actionsheet > li > a:active,
+.km-flat .km-actionsheet > li > a:hover,
+.km-flat .km-actionsheet > li > .km-state-active,
+.km-flat li.km-state-active .km-listview-link,
+.km-flat li.km-state-active .km-listview-label,
+.km-flat .km-listview-label input[type=radio]:checked,
+.km-flat .km-listview-label input[type=checkbox]:checked {
+    background: rgb(116, 207, 241);
+}
+
+/* Overrride icons
+=========================================================*/
+
+.km-drawer:before, .km-drawer:after {
+    content: "" !important;
+}
+
+#right-pane .km-content.km-widget.km-scroll-wrapper {
+    z-index: 999;
+    overflow: auto;
+    background: #EBEDF1 !important;
+}

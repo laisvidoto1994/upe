@@ -1,0 +1,316 @@
+/********
+* Filename: bizagi.editor.component.layout.css
+* Create Date: 2012-03-26
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com / Alexander Díaz alexander.diaz@bizagi.com / Ramiro Gomez  / Jair Cardenas jair.tellez@bizagi.com
+*
+* $__layout
+*
+********/
+
+/* __layout
+--------*/
+
+
+.bizagi_editor_component_layout
+{
+    display: -webkit-box;
+    min-height: 300px;
+    height: 100%;
+    position: relative;
+    -webkit-box-sizing: border-box;
+}
+
+#container-layout
+{
+    position: relative;
+    height: 100%; 
+}
+
+
+.bizagi_editor_component_ribbon * 
+{ 
+    box-sizing: border-box; 
+}
+
+#ribbon-panel
+{
+    position: fixed;
+    width: 100%;
+    height: 89px;
+    z-index: 999;
+    -webkit-user-select: none;
+    min-width: 1024px;
+}
+
+/* WRAPPER */
+.wrapper-left-panel
+{
+  position: fixed;
+  margin-top: 90px;
+  padding: 2px 7px;
+  width: 300px;
+  height: 100%;
+  -webkit-user-select: none;
+}
+
+#left-panel{
+  height: 100%;
+  bottom: 10px;
+}
+.wrapper-search-scroll,
+.wrapper-main-scroll{
+    height: 100%;
+    overflow-y: scroll;
+    padding: 20px 0px 20px 20px;
+    position: relative;
+}
+
+.wrapper-button-scroll {
+    display: none;    
+}
+.bz-form-buttons-enabled .wrapper-main-scroll{
+    height: 89%;
+}
+.wrapper-search-scroll{
+    padding: 0px 0px 0 20px;
+    margin-top: 4px;
+    
+}
+.wrapper-main-panel
+{
+    padding: 90px 0px 0 305px;
+    height: 100%;
+    width: 100%;
+    -webkit-user-select: none;
+}
+.bz-form-buttons-enabled .wrapper-button-scroll {
+    height: 11%;
+    width: 97%;
+    padding: 0px 8px 15px 20px;
+    display: block; 
+}
+#button-editor-panel {
+    height: auto;
+    width: 100%;
+}
+
+/* MAIN PANEL */
+
+#main-panel
+{
+    padding: 15px;
+    height: 100%;
+    width:97%;
+    position: relative;
+}
+
+#main-panel .ui-bizagi-container-form
+{
+    padding: 15px;
+    -webkit-box-flex: 1;
+    -webkit-box-sizing: border-box;
+    min-height: 100%;
+    margin: 0px;
+}
+
+/*#main-panel .ui-bizagi-container-form .ui-bizagi-container:first-child{ margin-top: 0;}
+#main-panel .ui-bizagi-container-form .ui-bizagi-container:last-child { margin-bottom: 0; }*/
+
+#main-panel.bz-main-layout-mode .ui-bizagi-container-panel { background-color: rgba(239,240,241,.6); }
+
+
+#main-panel.bz-main-layout-mode .ui-bizagi-render{ opacity:0.5;}
+
+#main-panel.bz-main-dashed-grid .ui-bizagi-container.ui-bizagi-container-panel
+{				
+
+    font-weight: normal;
+    color: #283238;    	
+}
+
+
+#main-panel .ui-bizagi-container.ui-bizagi-container-panel
+{				
+    /*display: table-cell !important;*/
+    border: 1px dashed rgba(152, 161, 168, .4);
+    background-color: #f5f5f5;
+    font-weight: normal;
+    color: #283238;
+    padding: 2px;	
+}
+
+.ui-bizagi-container-form > .ui-bizagi-container-horizontal.ui-bizagi-container {
+    /*display: table !important;*/
+    height: 25px;
+    background: none;
+}
+
+#main-panel .ui-bizagi-container.ui-bizagi-container-panel.ui-bizagi-itemfordrag .children {
+    position: relative;
+}
+
+#main-panel .ui-bizagi-container.ui-bizagi-container-nestedform,
+#main-panel.bz-main-layout-mode .ui-bizagi-container.ui-bizagi-container-nestedform
+{
+    position: relative;
+    margin: 6px;
+    padding: 6px;
+    border: 1px solid #468BFF !important;
+    border-radius: 6px;
+    background-color: #e6e6e6;
+    font-weight: normal;
+    color: #283238;
+    margin-left: -1px;  
+    min-height: 40px;  	
+}
+
+#main-panel .ui-bizagi-container.ui-bizagi-container-collectionnavigator,
+#main-panel.bz-main-layout-mode .ui-bizagi-container.ui-bizagi-container-collectionnavigator
+{
+    position: relative;
+    margin: 6px;
+    padding: 6px;
+    border: 1px solid #6CE26C !important;
+    border-radius: 6px;
+    background-color: #f9f9f7;
+    font-weight: normal;
+    color: #283238;
+    
+}
+
+#main-panel .ui-bizagi-container.ui-bizagi-container-collectionnavigator .bz-collectionnavigator-controls,
+#main-panel.bz-main-layout-mode .ui-bizagi-container .ui-bizagi-container-collectionnavigator .bz-collectionnavigator-controls {
+	background-color: #e6e6e6;
+}
+
+#main-panel .ui-bizagi-container.ui-bizagi-container-collectionnavigator .ui-bizagi-container-collectionnavigator-header,
+#main-panel.bz-main-layout-mode .ui-bizagi-container .ui-bizagi-container-collectionnavigator .ui-bizagi-container-collectionnavigator-header {
+	position: absolute;
+	top: -7px;
+	left: 50%;
+	height: 14px;
+	font-size: 9px!important;
+	margin-left: -70px;
+	width: 120px;
+	text-align: center;
+	line-height: 12px;
+	color: hsl(60, 14%, 97%);
+	background: #6CE26C;
+	border-radius: 3px;
+	letter-spacing: 0.15em;
+}
+
+#main-panel.bz-main-dashed-grid .ui-bizagi-container.ui-bizagi-container-panel{
+    background-color: rgba(239,240,241,1);
+}
+
+
+.wrapper-main-panel::before,
+.wrapper-main-panel::after
+{
+  display: table;
+  content: "";
+}
+
+.wrapper-main-panel::before,
+.wrapper-main-panel::after{ clear: both; }
+
+/* SEARCH FORMS */
+.bz-fm-searchform-wrapper .wrapper-search-scroll{
+    height: 38%;
+}
+.bz-fm-searchform-wrapper .wrapper-main-scroll {
+    height:60%;
+}
+
+
+.bz-fm-searchform-wrapper #search-result-panel {
+    padding: 20px;
+    height: 94%;
+    width: 97%;
+    position: relative;
+    margin-top: 1%;
+}
+.bz-fm-searchform-wrapper #search-result-panel > label
+{
+    color: gray;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+}
+
+.bz-fm-searchform-wrapper #search-result-panel .bz-fm-searchresult-content
+{
+    height: 100%;
+    padding-top: 10px;
+}
+
+/* BUTTON EDITOR */
+
+
+
+.scroll-content{}
+.top-scroll-grad{
+    background-color: green;
+    width: 96%;
+    height: 30px;
+    position: fixed;
+    top: 22px;
+    left:300px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(201, 205, 210,1)), color-stop(100%,rgba(201, 205, 210, 0)));
+    display: none;
+    padding:0 2px 0 2px;
+}
+.bottom-scroll-grad{
+    background-color: green;
+    width: 96%;
+    height: 30px;
+    position: fixed;
+    bottom: 22px;
+    left:300px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(201, 205, 210,0)), color-stop(100%,rgba(201, 205, 210, 1)));
+    display: none;
+    padding:0 2px 0 2px;
+}
+
+.biz-auto-height + div.top-scroll-grad:hover .top-scroll-dragging{
+    opacity:1;
+}
+.biz-auto-height + div + div.bottom-scroll-grad:hover .bottom-scroll-dragging{
+    opacity:1;
+}
+
+.bottom-scroll-grad .bottom-scroll-dragging,
+.top-scroll-grad .top-scroll-dragging{
+    opacity:0;
+    display: block;
+    text-align: center;
+    transition: opacity 0.4s ease-in;
+    -moz-transition: opacity 0.4s ease-in;
+    -webkit-transition: opacity 0.4s ease-in;
+}
+.bottom-scroll-grad .bottom-scroll-dragging{
+    margin-top: 10px;
+}
+
+
+
+/*****
+FIX DEMO
+**/
+
+/*fix*/
+
+
+/*.ui-widget-content .ui-bizagi-placeholder ~ .ui-bizagi-placeholder,
+.ui-widget-content div .ui-bizagi-placeholder ~ .ui-bizagi-placeholder,
+.ui-widget-content > .ui-bizagi-placeholder + div.ui-bizagi-render + .ui-bizagi-placeholder,
+.ui-widget-content > .ui-bizagi-placeholder + div.ui-bizagi-render + .ui-bizagi-placeholder ~ .ui-bizagi-placeholder,
+.ui-bizagi-container .ui-bizagi-placeholder ~ .ui-bizagi-placeholder,
+.ui-bizagi-container div .ui-bizagi-placeholder ~ .ui-bizagi-placeholder,
+.ui-bizagi-container > .ui-bizagi-placeholder + div.ui-bizagi-render + .ui-bizagi-placeholder,
+.ui-bizagi-container > .ui-bizagi-placeholder + div.ui-bizagi-render + .ui-bizagi-placeholder ~ .ui-bizagi-placeholder { display: none; }
+
+.ui-bizagi-container > .ui-bizagi-placeholder:first-child { display: block; }*/
+
+.bizagi_editor_xpathnavigator_container.xpathnavigator { overflow: visible; }

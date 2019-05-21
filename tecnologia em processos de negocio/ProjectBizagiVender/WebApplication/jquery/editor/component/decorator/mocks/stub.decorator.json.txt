@@ -1,0 +1,12 @@
+{
+    "decorator": {
+        "position": {
+            "top": 5, 
+            "left": 5, 
+            "width": 100
+        }
+    }, 
+    "properties": {
+        "render": { }
+    }
+}

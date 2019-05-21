@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <script type='text/javascript' src="../../../common/base/js/lib/desktop/jquery.js"></script>
+    <title>Untitled Page</title>
+    
+</head>
+<body>
+    <button type="button" id="btnCrear">CREAR</button>
+    <button type="button" id="btnLimpiar">LIMPIAR</button>
+    <table id="grid">
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+</body>
+<script type="text/javascript" language="javascript">
+    BIZAGI_PATH_TO_BASE = "../../../../";
+
+    $(document).ready(function () {
+        // create columns
+        var thead = $("#grid thead");
+        for (var i = 0; i < 30; i++) {
+            thead.append("<th>COLUMNA " + (i + 1) + "</th>");
+        }
+
+        // add handlers
+        $("#btnCrear").click(function () {
+            var tbody = $("#grid tbody");
+            for (var i = 0; i < 100; i++) {
+                var row = $("<tr />");
+                for (var j = 0; j < 30; j++) {
+                    row.append("<td><input type='text'></td>");
+                }
+                tbody.append(row);
+            }
+        });
+        $("#btnLimpiar").click(function () {
+            var tbody = $("#grid tbody");
+            tbody.empty();
+        });
+    });
+    
+    
+</script>
+</html>
+

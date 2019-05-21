@@ -1,0 +1,53 @@
+﻿<script id="ui-bz-mobile-combo-control" type="text/x-kendo-template">
+    <div class="bz-rn-container-combo bz-rn-container-control-icon">
+        <input type="text" class="bz-rn-align-class bz-rn-text bz-rn-combo-control"/>
+        <span class="bz-rn-icon bz-mo-icon bz-inbox-combo"></span>
+    </div>
+</script>
+
+<script id="ui-bz-wp-popup-combo-control" type="text/x-kendo-template">
+    <div data-role="modalview" class="bz-wp-modalview-container" dir="#if (typeof data.orientation !== 'undefined'){ ##= data.orientation ##}else{#auto#}#" style="width: 50%; height: 100%">
+        <div data-role="header">
+            <div id="filter-header" data-role="navbar">
+                <div class="bz-wp-modalview-header-top-item">
+                    <span class="bz-wp-modalview-title">
+                        #if(data.displayName != ""){#
+                            #= data.displayName #
+                        #} else {#
+                            Combo
+                        #}#
+                    </span>
+                    <span class="bz-wp-modalview-close bz-mo-icon bz-cancel"></span>
+                </div>
+                <div class="bz-wp-modalview-header-bottom-item">
+                    <input class="bz-wp-modalview-header-input-search" type="text" placeholder="" />
+                    <span class="bz-wp-modalview-header-search-icon bz-mo-icon bz-search"></span>
+                    <span class="bz-mo-icon bz-circle-cross-full bz-wp-modalview-header-cancel-search"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bz-wp-modalview-results-wrapper">
+            <ul class="bz-wp-modalview-results-list">
+                # if(data.items){ #
+                    # for (var i=0, len= data.items.length ; i < len; i++){ #
+                        <li id="ui-bizagi-list-#= data.items[i].id #" data-value="#= data.items[i].id #">#= data.items[i].value #</li>
+                    #}#
+                #}#
+            </ul>
+        </div>
+
+        <div data-role="footer">
+            <div id="filter-footer" data-role="navbar">
+                <button id="ui-bizagi-cancel-button" class="left-button" type="button">%{workportal-general-button-label-cancel}</button>
+                <button class="ui-bizagi-apply-button right-button" type="button">%{workportal-general-button-label-apply}</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bz-mobile-readonly-combo-control" type="text/x-kendo-template">
+    <div class="bz-rn-container-combo bz-rn-container-control-icon">
+        <span type="text" class="bz-rn-align-class bz-rn-text bz-rn-combo-control" />
+    </div>
+</script>

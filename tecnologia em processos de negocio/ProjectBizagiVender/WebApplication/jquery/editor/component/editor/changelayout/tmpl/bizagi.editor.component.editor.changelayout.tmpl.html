@@ -1,0 +1,53 @@
+<script id="changelayout-frame" type="text/x-jquery-tmpl">
+    <div class="changelayout-container">
+        <label class="changelayout-name">${caption}</label>
+        <div class="changelayout-fields"></div>
+        <div class="changelayout-external-button">
+            <span class="changelayout-external-image"></span>
+        </div>
+    </div>
+</script>
+
+<script id="changelayout-field" type="text/x-jquery-tmpl">
+    <div class="changelayout-field">
+        <span class="changelayout-field-number">%{formmodeler-component-editor-changelayout-field} ${(index + 1)}</span>
+        <span class="changelayout-field-image"></span>
+        <span class="changelayout-field-value">${width}</span>
+    </div>
+</script>
+
+<script id="changelayout-columns" type="text/x-jquery-tmpl">
+    <div class="changelayout-container ui-control-container">
+        <div class="changelayout-data">
+            <label class="changelayout-open">%{formmodeler-component-editor-changelayout-columns}</label>
+            <span class="changelayout-concat-value biz-bg-color biz-dark-border-color biz-border-all">${width}</span>
+            <i class="biz-ico changelayout-image-small-popup ui-control-modal bz-studio bz-form-buttons_16x16_standard" title="%{formmodeler-component-editor-changelayout-edit-layout}"></i>
+        </div>
+        <div class="changelayout-group"></div>
+    </div>
+</script>
+
+<script id="changelayout-popupcontent" type="text/x-jquery-tmpl">
+    <div class="changelayout-popup-container">
+        <div class="changelayout-wrapper-container"></div>
+        <div class="changelayout-slider-container"></div>
+    </div>
+</script>
+
+<script id="changelayout-wrapper" type="text/x-jquery-tmpl">
+    <div class="changelayout-box-wrapper" data-value="${parseInt(width)}" style="width:${parseInt(width)}%">
+        <div class="changelayout-box"></div>
+        <div class="changelayout-value">${width}</div>
+    </div>
+</script>
+
+<script id="changelayout-slider" type="text/x-jquery-tmpl">
+    <div class="changelayout-slider" id="slider_${index}"></div>
+</script>
+
+<script id="changelayout-popupactions" type="text/x-jquery-tmpl">
+    <div class="changelayout-popup-buttons">
+        <span class="editor-ui-button-actions biz-action-btn  biz-btn changelayout-popup-buttons-ok"></span>
+        <span class="editor-ui-button-actions biz-action-btn  biz-btn changelayout-popup-buttons-cancel"></span>
+    </div>
+</script>

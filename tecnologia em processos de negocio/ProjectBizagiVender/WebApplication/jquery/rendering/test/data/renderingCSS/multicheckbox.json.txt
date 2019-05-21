@@ -1,0 +1,30 @@
+﻿{
+	"form": {
+		"properties" : {"id": 1, "xpathContext": "", "title": "Cycle 1", 
+		"buttons": [
+			{"action": "save", "text": "Save", "validate": "true", "submitData": "true", "refresh": "true"},
+			{"action": "next", "text": "Next", "validate": "true", "submitData": "true", "refresh": "true"}
+		]},
+		"elements": [
+			{
+				"container": {
+					"properties": {
+						"id" : 1,
+						"displayName" : "My First Panel",
+						"type": "panel"
+					},
+					"elements": [
+						{"render": {	"properties": {
+							"id" : 10020, 
+							"displayName" : "Radio (local) with value", 
+							"type": "radio", 
+							"xpath": "intermediate.radioLocalWithValue", 
+							"data": [{"id":"1111", "value":"Pera"}, {"id":"2222", "value":"Manzana"}, {"id":"3333", "value":"Durazno"}], 
+							"value": [{"id": "2222", "value": "Manzana"}] 
+						}}}
+					]
+				}				
+			}
+		]
+	}
+}

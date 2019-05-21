@@ -1,0 +1,17 @@
+.ui-bizagi-dialog-genericiframe
+{
+	width: 100%;
+	height: 97%;
+}
+
+.iframeContent{
+    height: 100%;
+    overflow: hidden !important;
+    width: 100%;
+	padding: 0px !important;
+}
+
+.loading-iframe{
+	background:  url("images/loader2.gif") no-repeat center;
+    background-size: 24px;
+}

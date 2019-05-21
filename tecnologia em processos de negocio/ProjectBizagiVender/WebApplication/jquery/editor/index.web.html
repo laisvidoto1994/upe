@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class="biz-work-area">
+    <head>
+        <title>FormModeler</title>
+        <script type='text/javascript' src='../../jquery/editor/base/js/bizagi.form.modeler.js'></script>
+        <script type='text/javascript' src='../../jquery/steal.js'></script>
+        <script type='text/javascript' src='../../jquery/bizagi.loader.js'></script>
+        <script type="text/javascript" language="javascript">
+            // Redefine path to base. To the default site
+            var BIZAGI_PATH_TO_BASE = "../../";
+            var BIZAGI_LOCAL_RESOURCES = true;
+            /// required for find the path to the jquery root folder
+            //var BIZAGI_ENVIRONMENT = "release";
+            
+            // Gets the loader instance, and load the module
+            var loader = bizagi.loader;
+            var formModelerReady = false;
+            loader.init(function () {
+                loader.start("formModeler")
+                .then(function () {
+                    // Creates a new instance of the modeler
+                    bizagi.form.modeler.createForm();
+                });
+            });
+            
+        </script> 
+    </head>
+    <body class="biz-font biz-normal-font biz-text-color"></body>
+</html>

@@ -1,0 +1,62 @@
+﻿.bz-fm-dialog-border     {
+    border-bottom: 1px solid rgba(209,213,220,0.8);
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+    box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+
+.bz-fm-dialog-container{
+    padding: 12px;
+    margin: 10px;
+    text-align: left;	
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.bz-fm-dialog-button {
+    padding: 5px;
+    margin: 10px;
+    text-align: left;
+    font-size: 1.2em;	  
+
+    border: 1px solid rgba(209,213,220,0.7);
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+    box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8); 
+
+    border-radius: 3px; 
+    padding-bottom: 8px;
+}
+
+.bz-fm-dialog-button span{
+    display: block;
+    padding-left: 30px;
+    padding-bottom: 0;
+    font-size: 1.2em;
+}
+
+.bz-fm-dialog-button span.cite{
+    display: block;
+    padding: 0;
+    padding-left: 30px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.bz-fm-dialog-button i{
+    position: absolute;
+    top: 14px;
+    left: 10px;
+}
+.bz-fm-dialog-button.ui-button:hover{
+    background: #FFF;
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 100%);
+    border: 1px solid rgba(209,213,220,0.7);
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+    box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8); 
+    color: #666666;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0);
+}
+
+.bz-fm-dialog-button.ui-button:hover span{
+    color: #666666;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0);
+}

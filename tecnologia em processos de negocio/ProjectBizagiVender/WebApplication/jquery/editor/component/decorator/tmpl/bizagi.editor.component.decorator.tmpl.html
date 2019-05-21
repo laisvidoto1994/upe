@@ -1,0 +1,23 @@
+<script id="decorator-frame" type="text/x-jquery-tmpl">
+    <div class="biz-decorator-frame">
+        {{if standardOptions}}
+        <div class="biz-decorator-standard-options">
+            {{each(index, value) standardOptions}}
+                <i class="biz-ico decorator-image decorator-${value.id} ${value.css}" title="${value.displayName}"></i>
+            {{/each}}
+        </div>
+        {{/if}}
+        {{if specificOptions}}
+        <div class="biz-decorator-specific-options">
+            <div class="modal-editor-buttons editor-ui-actions-container biz-dark-bg-color biz-actions-bar">
+                {{each(index, value) specificOptions}}
+                <span class="editor-ui-button-actions biz-action-btn grideditor-button-config biz-btn" data-id="${value.id}" title="${value.displayName}">
+                    <i class="biz-ico theme-icon-${value.id} ${value.css}"></i><label>${value.displayName}</label>
+                </span>
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+    </div>
+
+</script>

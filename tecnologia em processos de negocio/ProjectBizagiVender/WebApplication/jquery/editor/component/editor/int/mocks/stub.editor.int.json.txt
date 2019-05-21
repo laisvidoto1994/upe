@@ -1,0 +1,17 @@
+{
+    "caption": "Int",
+    "name": "int",
+    "type": "int",
+    "value": "125",
+    "default":"false",
+    "data": [{
+        "name" : "button"
+    }, {
+        "name" : "hidden"
+    }, {
+        "name" : "label"
+    }, {
+        "name" : "letter",
+        "selected" : true
+    }]
+}

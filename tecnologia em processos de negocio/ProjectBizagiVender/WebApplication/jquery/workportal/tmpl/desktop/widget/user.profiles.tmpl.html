@@ -1,0 +1,177 @@
+﻿<script id="ui-bizagi-workportal-widget-admin-user-profiles" type="text/x-jquery-tmpl">
+
+   <div class= "biz-wp-window">
+        <div>
+            <strong>
+                <span id="generalTitle" class="biz-wp-window-title">
+                    %{workportal-widget-admin-user-profiles-subtitle}
+                </span>
+            </strong> 
+            <strong>
+                <span id="generalSubtitle" class="biz-wp-window-Subtitle">
+                    %{workportal-widget-admin-user-profiles-title-set}
+                </span>
+            </strong> 
+        </div>  
+        <div id="general-content">
+
+        </div>    
+        <div id="dinamicContent"></div>         
+        <div id="dinamicContent2" class="biz-wp-form clearfix"></div>
+    </div> 
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-user-profiles-fields" type="text/x-jquery-tmpl">
+    
+        <div id="mainForm" class="biz-wp-form clearfix"> 
+          <div class="biz-wp-form-row clearfix">
+               <div>
+                  <div class="biz-wp-form-cell">%{workportal-widget-admin-user-profiles-title-type}</div>      
+                  <div id="profile-type-combo" class="biz-wp-form-cell">                
+                    <select id="profileTypeList" class="biz-wp-input-combo">                      
+                        {{each(i,item) profileList }}   
+                            <option value="${item.id}">${item.displayName}</option>
+                        {{/each}}
+                    </select>                    
+                   </div>
+              </div>
+           </div>
+           <div id="organizationListDiv" class="biz-wp-form-row clearfix" style="display:none">
+               <div>
+                  <div class="biz-wp-form-cell">%{workportal-widget-admin-user-profiles-title-organization}</div>      
+                  <div id="organization-combo" class="biz-wp-form-cell">                
+                    <select id="organizationList" class="biz-wp-input-combo">                      
+                        {{each(i,item) orgList }}   
+                            <option value="${item.id}">${item.displayName}</option>
+                        {{/each}}
+                    </select>                    
+                   </div>
+              </div>
+           </div>
+           <div>
+             <div class="biz-wp-form-cell">%{workportal-widget-admin-user-profiles-title-name}</div>      
+             <div class="biz-wp-form-cell"><input id="txtTextnameProfile" class="auth-text" type="text"/> </div>
+           </div> 
+                     
+        </div>   
+        <div id="case-search-log-data-buttonset" class="biz-wp-buttonset">
+            <button id="btn-clearUserProfiles" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admin-user-profiles-button-label-clearProfiles}</span>
+            </button>
+                
+            <button id="btn-searchUserProfiles" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admin-user-profiles-button-label-searchProfiles}</span>
+        </button> 
+     </div>     
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-user-profiles-table" type="text/x-jquery-tmpl">
+    
+    <div id="profilesTableId">
+        <table class="biz-wp-table" cellspacing="2" cellpadding="2" width="100%" border="0">
+            <thead class="biz-wp-table-head">          
+                <span >
+                    <th></th>
+                </span>
+                <span >
+                    {{if profileList.length == 0}}
+                        <th>%{workportal-widget-admin-user-profiles-no-records}</th>
+                    {{else}}
+                        <th>%{workportal-widget-admin-user-profiles-table-titles-Id}</th>
+                    {{/if}}
+                </span>
+            </thead>
+            <tbody class="biz-wp-table-body">  
+                {{each(i,item) profileList}}                 
+                <tr>
+                    <td class="row-item BorderCell BAMainFontColor"> 
+                        <span>
+                            <a id="${item.id}" class="manageLink active">%{workportal-widget-admin-user-profiles-select-manage}</a>
+                        </span>
+                    </td>
+                    <td class="row-item BorderCell BAMainFontColor">
+                        <span> ${item.displayName}</span>
+                    </td>                        
+                </tr>           
+                {{/each}}            
+            </tbody>        
+        </table>
+
+        <div id="users-requests-summary-wrapper" class="biz-wp-table-summary-wrapper">
+            <ul id="users-requests-pager-wrapper" class="biz-wp-table-pager-wrapper">
+            </ul>            
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-user-profiles-table-administrator" type="text/x-jquery-tmpl">
+    
+    <div class="biz-wp-window" >           
+        <div class= "general-window">
+            <span class="biz-wp-window-title">
+                <strong>%{workportal-widget-admin-user-profiles-subtitle-admin}</strong>
+            </span>
+        </div>
+    </div>   
+    <table class="biz-wp-table" cellspacing="2" cellpadding="2" width="100%" border="0">
+        <thead class="biz-wp-table-head">          
+            <span >
+                <th></th>
+            </span>
+            <span >
+                <th>%{workportal-widget-admin-user-profiles-table-titles-UserName}</th>
+            </span>    
+        </thead>
+        <tbody class="biz-wp-table-body">  
+            {{each(i,item) userList}}                 
+            <tr>
+                <td class="row-item BorderCell BAMainFontColor"> 
+                    {{if item.removableFromUserGroup == false }}
+                    {{else}}
+                    <span>
+                        <a id="${item.idUser}" class="deleteLink active"> %{workportal-widget-admin-user-profiles-delete}</a>
+                    </span>
+                    {{/if}}
+                </td>
+                <td class="row-item BorderCell BAMainFontColor">
+                    <span> ${item.user}</span>
+                </td>
+            </tr>
+            {{/each
+}}            
+        </tbody>        
+    </table>
+
+    <div id="users-requests-summary-wrapper" class="biz-wp-table-summary-wrapper">
+        <ul id="users-requests-pager-wrapper" class="biz-wp-table-pager-wrapper">
+        </ul>            
+    </div>
+
+    <div class="biz-wp-buttonset">
+            <ul>
+                <li>
+                    <button id="btn-returnUserProfiles" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                        <span class="ui-button-text">%{workportal-widget-admin-user-profiles-button-label-returnProfiles}</span>
+                    </button>
+                </li>
+                <li>
+                    <button id="btn-newUserProfiles" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                        <span class="ui-button-text">%{workportal-widget-admin-user-profiles-button-label-newUserProfiles}</span>
+                    </button>
+                </li>
+            </ul>
+        </div> 
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-user-profiles-pagination" type="text/x-jquery-tmpl">
+   <div>
+
+        {{each pages}}
+        <li {{if page==pageNumber}} class="bz-page active" {{else}} class="bz-page" {{/if}} data-page="${pageNumber}">
+            <span class="number">${pageNumber}</span>
+        </li>
+        {{/each}}
+  
+    </div>
+</script>
+

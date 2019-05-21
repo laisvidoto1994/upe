@@ -1,0 +1,51 @@
+
+.bizagi_editor_component_editor_tags .biz-ico[class*="tag-"]{
+    opacity: 1;
+    position: absolute;
+    right: -22px;
+    top: 27px;
+    cursor: pointer;
+}
+
+.tag-item-container {
+    list-style:none;
+    padding: 0 10px;
+    border: 1px solid #D4D6D9;
+}
+
+.tag-item {
+    margin: 6px 0;
+}
+
+.tag-item .item-image-delete-tag{
+    background-position: -800px -32px;
+    cursor: pointer;
+}
+
+.tag-item span
+{
+    float: left;
+    width: 155px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tag-item i
+{
+    float: left;
+}
+
+.tag-item.tag-value > span:hover
+{
+    cursor:pointer;
+}
+
+.tag-item:before,
+.tag-item:after {
+    content:"";
+    display:table;
+}
+.tag-item:after {
+    clear:both;
+}

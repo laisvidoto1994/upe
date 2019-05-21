@@ -1,0 +1,159 @@
+﻿* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  
+} 
+
+body
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    }
+
+
+.page-title { color: hsl(0, 0%, 90%); }
+
+/* class icon reusable for all application
+*/
+.bz-cm-icon {
+background-image: url('images/bizagi-tablet-sprite-s.png');
+-webkit-appearance: none;
+border: none;
+min-height:20px;
+min-width: 20px;
+margin: 0 auto;
+display: block;
+}
+
+.bz-common-webkit-reset-ul
+{
+	-webkit-padding-start: 0px;
+	-webkit-margin-after: 0px;
+	-webkit-margin-before: 0px;
+	margin: 0;
+	display: inline-block;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2 ), 
+only screen and (min-device-pixel-ratio: 2) {
+    .bz-cm-icon
+	{
+		background-image:url('images/bizagi-tablet-sprite.png');
+        background-size: 450px 300px;
+	}
+	
+}
+
+
+.ui-state-info
+{
+    color: hsl(0, 0%, 30%);
+	border-top: 1px solid white;
+	-webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
+	background: #f2f2f2;
+	padding: 30px 15px;
+	margin: 15px;
+	border-radius: 6px;
+}
+.ui-bizagi-info-message-text
+{
+    word-break: normal;
+    min-width: 50%;
+    display: inline-block;
+    position: relative;
+    margin: -6px;
+    max-width: 70%;
+    white-space:normal;
+}
+
+.ui-bizagi-info-message-button
+{
+   background: -webkit-gradient(linear, left top, left bottom, from(#155376), to(#103D56));
+    color: white;
+    height: 40px;
+    -webkit-appearance: none;
+    border: 1px solid #2b323b;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 0 0 #2b6181;
+    position: relative;
+    float: right;
+    padding: 5px 10px;
+    top: -10px;
+}
+
+/*bug fixing ipad outline input table on summary*/
+.ui-tabs .ui-tabs-nav li a
+{
+	outline: 0;	
+}
+
+
+/*
+__loading smartphone
+*/
+
+.bz-util-loading-container
+{
+			display: inline-block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 8;
+            top: 0;
+            left: 0;
+}
+
+.bz-util-loading
+{
+			left: 50%;
+            top: 50%;
+            margin-top: -16px;
+            margin-left: -16px;
+            position: absolute;
+
+}
+
+.ui-tabs .ui-tabs-nav li a {
+    padding: .6em 1em !important;
+    white-space: nowrap;
+    position: relative;
+    width: inherit;
+    display: block;
+    font-family: inherit;
+    
+}
+
+.ui-tabs .ui-tabs-nav li:first-child {
+    margin: 0px 0px 0px 5px;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active
+{
+	width:auto;
+}
+.ui-tabs .ui-tabs-nav li{
+    background: #E6E6E6;
+    border: 1px solid transparent;
+    box-shadow: 0 -1px 1px 0px rgba(0, 0, 0, 0.1);
+    float: none;
+    margin: 0px 0px 0px 5px;
+}
+
+/* Synchronization */
+#sync-notification {
+    font-family: Arial,Helvetica,sans-serif;
+    position: fixed;
+    bottom: 50%;
+    left: 23%;
+    width: 50%;
+    z-index: 999;
+    text-align: center;
+    font-weight: 100;
+    font-size: 16px;
+    color: #134D74;
+    padding: 20px 0px 20px 0px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(20%,#F0F0F0), color-stop(100%,#CACACA));
+    border-radius: 6px;
+    box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.2);
+    border: 1px solid #ADADAD;
+}

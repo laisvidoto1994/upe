@@ -1,0 +1,45 @@
+/********
+* Filename: bizagi.editor.component.editor.rangequery.css
+* Create Date: 2014-05-06
+* Author: Cristian Olaya Cristian.Olaya@bizagi.com
+*
+* $__rangequery
+*
+********/
+
+/* __rangequery
+--------*/
+.bizagi_editor_component_editor_rangequery
+{
+    position: relative;
+}
+.bizagi_editor_component_editor_rangequery .ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-option
+{
+    background-position: top left;
+}
+.bizagi_editor_component_editor_rangequery .ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-check
+{
+     background-position:0 -25px;
+}
+
+.rangequery-group-container
+{
+    position: relative;
+}
+
+.bizagi_editor_component_properties .bizagi_editor_component_editor_rangequery .bizagi-editor-booleandisplay-inline label
+{
+    display:inline-block;
+    width:55%;
+}
+
+.bizagi_editor_component_editor_rangequery .bizagi-editor-rangequery-inline .ui-control-editor
+{
+    display:inline-block;
+    width:30%;
+}
+
+.bizagi_editor_component_editor_rangequery .multiple-container .bizagi-editor-rangequery-inline .ui-control-editor
+{
+    width:58px;
+}

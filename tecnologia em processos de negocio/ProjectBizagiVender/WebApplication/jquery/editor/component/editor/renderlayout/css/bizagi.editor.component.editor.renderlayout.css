@@ -1,0 +1,348 @@
+/********
+* Filename: bizagi.editor.component.editor.renderlayout.css
+* Create Date: 2012-05-31
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__renderlayout
+*
+********/
+
+/* __renderlayout
+--------*/
+
+.bizagi_editor_component_editor_renderlayout{
+    position: relative;
+}
+
+.bizagi_editor_component_editor_renderlayout .renderlayout-image-small-popup
+{
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.ui-modal-layout .renderlayout-splitter {
+    width: 90%;
+    /*border: solid 1px black;
+    border-radius: 4px;*/
+    line-height: 30px;
+    margin: 4px auto 4px auto;
+    text-align: center;
+}
+
+.ui-modal-layout .renderlayout-names {
+    display: block;
+    vertical-align: middle;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ui-modal-layout  .renderlayout-px-active{
+    display: none;
+}
+
+
+.ui-modal-layout .renderlayout-splitter > .renderlayout-names > div {
+    display: inline-block;
+    width: 49%;
+    text-align:center;
+}
+
+.ui-modal-layout .renderlayout-splitter > .renderlayout-container-box1 {
+    left: 60px;
+}
+
+.ui-modal-layout .renderlayout-splitter > .renderlayout-container-box2 {
+    right: 60px;
+}
+
+.ui-modal .renderlayout-separator {
+    position:relative;
+    width: 90%;
+    margin-left:auto;
+    margin-right: auto;
+    height: 40px;
+    max-width: none;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+
+    border:1px solid #BFC4CE;
+
+    -webkit-box-shadow:  1px 1px 0px 0px rgba(255, 255, 255, .8);
+     box-shadow:  1px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+
+.bizagi_editor_component_editor_renderlayout .renderlayout-splitter > .renderlayout-separator > div.renderlayout-split {
+    display: inline-block;
+    width: 2px;
+    height: 40px;
+    background-color: #BFC4CE;
+    z-index: 100;
+    position:relative;
+    
+    border: none;
+    border-radius: 0px;
+    margin: 0;
+    padding: 0;
+    -webkit-box-shadow:  1px 1px 0px 0px rgba(255, 255, 255, .8);
+     box-shadow:  1px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+
+.bizagi_editor_component_editor_renderlayout .renderlayout-splitter > .renderlayout-separator > div.renderlayout-split:hover {
+    cursor: col-resize;
+}
+
+.renderlayout-container-box1{    
+    -webkit-border-radius: 4px 0px 0px 4px;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.ui-modal .renderlayout-box1,
+.ui-modal .renderlayout-box2{
+   display: block;
+   line-height: 22px;
+}
+
+.ui-modal .renderlayout-box-px{
+    display: inline-block;
+}
+
+.ui-modal .renderlayout-box-px input{
+    width: 50px;
+    margin: 0 auto;
+}
+
+.ui-modal .renderlayout-split{
+    width:0px;
+    height: 100%;
+}
+
+.renderlayout-container-box2,
+.renderlayout-container-box1{
+    float:left;
+}
+
+.renderlayout-splitter{
+    color:#5D7389;
+}
+
+.bizagi_editor_component_editor_renderlayout .renderlayout-data label{
+    padding-right: 8px;
+}
+.bizagi_editor_component_editor_renderlayout .renderlayout-data label,
+.bizagi_editor_component_editor_renderlayout .renderlayout-data span.renderlayout-value{
+    display: inline-block!important;
+    width:auto!important;
+    vertical-align:middle;
+    -webkit-box-shadow: inset 0px 1px 2px 0 rgba(194, 197, 200, .32);
+    box-shadow: inset 0px 1px 2px 0 rgba(194, 197, 200, .32);
+}
+
+.rendelayout-container{
+    padding: 8px 0px 8px 0px;
+}
+
+.renderlayout-value{
+
+    padding: 2px 5px 2px 5px;
+    float: right;
+
+    cursor:pointer;
+    vertical-align:middle;
+}
+
+.ui-modal-layout .ui-vertical-line{
+    position: absolute;
+    top:0;
+}
+
+/*-----------------------*/
+
+.bizagi_editor_component_editor_renderLayout .renderLayout-image-small-number{
+    display: none;
+}
+
+.bizagi_editor_component_editor_renderLayout .renderLayout-image-small-time{
+    display: none;
+}
+
+.bizagi_editor_component_editor_renderLayout .renderLayout-field-time{
+    display: none;
+}
+
+.bizagi_editor_component_editor_renderLayout .renderLayout-image-small-modal {
+    position: absolute;
+    right: -20px;
+    top: 3px;
+    cursor: pointer;
+    background-position: -512px -32px;
+}
+
+.bizagi_editor_component_editor_renderLayout .renderLayout-time-group {
+    width: 100%;
+    margin-top: -2px;
+}
+
+.renderLayout-modal {
+    width: 100%;
+    color:#5D7389;
+}
+
+.renderLayout-modal-name{
+    text-align: center;
+}
+
+.renderLayout-modal .renderLayout-modal-item {
+    margin: 1%;
+    padding: 1%;
+}
+
+.content-modal .renderLayout-modal-item {
+    margin: 15px 0 15px 0;
+}
+
+.renderLayout-options-default-format-false,
+.renderLayout-modal-container > .renderLayout-modal-item.renderLayout-default-format{
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+    box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+    border: 1px solid rgb(226,230,233);
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+}
+
+.renderLayout-options-default-format-false{
+    width: 95%;
+    padding-bottom: 5px;
+}
+
+.renderLayout-modal .renderLayout-modal-item > .ui-control-select,
+.renderLayout-modal .renderLayout-modal-item > span {
+    display: inline-block;
+    width: 190px;
+    vertical-align: middle;
+}
+
+.renderLayout-modal .renderLayout-modal-item {
+    display: block;
+}
+
+.renderLayout-modal .renderLayout-modal-item > span.renderLayout-modal-number-sample {
+
+    display: block;
+    width: auto;
+    font-size: 16px;
+    padding: 15px;
+    font-weight: bold;
+    margin: 4px;
+
+    border-radius: 4px;
+    border: 1px solid #BFC4CE;
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+    box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+    text-align: center;
+    margin-left: 5px;
+}
+
+.renderLayout-modal .renderLayout-modal-buttons {
+    border: solid 1px red;
+    border-radius: 4px;
+    margin: 4px;
+    padding: 4px;
+    text-align: center;
+}
+
+.renderLayout-modal .renderLayout-modal-buttons > span {
+    display: inline-block;
+    border: solid 1px blue;
+    border-radius: 4px;
+    width: 100px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.bizagi_editor_component_properties .renderLayout-time-group {
+    width: 100%;
+    margin-top: -2px;
+}
+
+.bizagi_editor_component_properties .renderLayout-time-group input{
+    /*display: inline-block;*/
+    width: 60%;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.bizagi_editor_component_editor_renderLayout .renderLayout-property span,
+.bizagi_editor_component_editor_renderLayout .renderLayout-property input {
+    vertical-align: middle;
+}
+
+.renderLayout-modal .renderLayout-disabled{
+    display:none!important;
+}
+
+.renderLayout-check-container{
+    position: relative;
+    display:inline-block;
+    vertical-align: middle;
+    height: 22px;
+    width: 120px;
+    left: 5px;
+}
+
+.renderLayout-check-container .biz-ico-0{
+    display:none;
+}
+
+.bizagi_editor_component_editor_renderLayout .editor-renderLayout-value
+{
+
+    height:20px;
+    width:58px;
+
+    border: 1px solid rgb(151,151,151);
+    border-top: 1px solid #999;
+    border-radius: 3px;
+
+    display:inline-block;
+    overflow: hidden;
+
+    position:relative;
+    cursor:pointer;
+}
+
+.renderLayout-options-short-number-false,
+.renderLayout-options-default-format-false{
+    height: auto;
+}
+
+.renderLayout-format {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #BFC4CE;
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+    box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.renderLayout-format .renderLayout-col2{
+    width: 45%;
+    white-space: nowrap;
+}
+
+.renderLayout-format .renderLayout-col1{
+    display:block;
+    width: auto;
+}
+
+.bizagi_editor_component_editor_renderLayout .renderLayout-not-show-time .renderLayout-time-group{
+    display:none;
+}

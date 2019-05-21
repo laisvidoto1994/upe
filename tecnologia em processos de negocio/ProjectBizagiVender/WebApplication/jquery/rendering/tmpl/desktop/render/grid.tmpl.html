@@ -1,0 +1,11 @@
+﻿<table id="${id}" class="ui-bizagi-render-grid">
+</table>
+<div id="${pagerId}">
+</div>
+<div class="ui-jqgrid ui-bizagi-render-grid-norecords ui-widget-content">
+    <div class="ui-widget-header ui-jqgrid-titlebar ui-jqgrid-title">${displayName}</div>
+    <label>%{render-grid-no-records}</label>
+</div>
+{{if allowAdd}}
+    <a class="ui-bizagi-render-grid-add" href="#">${addLabel}</a>
+{{/if}}

@@ -1,0 +1,85 @@
+/*
+    Document   : bizagi.workportal.dashboard
+    Created on : Jan 13, 2015, 10:23:00 AM
+    Author     : Ramiro Gomez
+    Description:
+        Styles for home dashboard widget
+*/
+
+/*@import "../../../../themes/bizagiDefault/devices/desktop/variables";*/
+
+@brand-primary : #374C58;
+@brand-secondary : #5E7D8D;
+
+@active-color : #0B8BCB;
+@inactive-color : #DDDDDD;
+
+@gray-base : #EEEEEE;
+
+@font-family : "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+@body-bg : @gray-base ;
+
+@text-color : #374C58;
+@text-color-contrast :#FAFAFA;
+@link-color : #0B8BCB;
+@link-hover-color : ligthen(@link-color , 10%);
+
+@border-radius : 4px;
+
+
+.bz-wp-wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.bz-wp-truncate-text-100percent{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.wdg-db-panel {
+    margin-bottom: 1em;
+}
+
+
+.wdg-db-card > .bz-icon {
+    float: left;
+
+}
+
+.wdg-db-card > .bz-card-text {
+
+    margin-left: 3rem;
+}
+
+.wdg-db-title {
+    font-weight: normal;
+    font-size: 16px;
+    margin: 0;
+}
+
+.wdg-db-middle-content {
+    text-align: center;
+}
+
+.wdg-db-middle-content .wdg-db-icon {
+    margin: 0 auto;
+}
+
+.wdg-db-next {
+    position: absolute;
+    top: 50%;
+    right: 4%;
+    margin-top: -12px;
+}
+
+.bz-wp-btn > * {
+    display: inline-block !important;
+    vertical-align: middle;
+}
+
+.bz-wp-btn i {
+    margin-right: .2rem;
+}

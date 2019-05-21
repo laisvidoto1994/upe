@@ -1,0 +1,43 @@
+﻿<script id="bizagi-ui-controls-uitreeview-items" type="text/x-jquery-tmpl">
+
+<ul class="biz-ui-controls-tree">
+    {{each(i, val) list}}
+        <li class="biz-ui-controls-tree-item">
+            <div class="biz-ui-controls-treeview-row  {{if val.defaults}} biz-ui-controls-uitreeview-items-active {{/if}}" data-value='${$item.itemValue(val)}'  data-text="${$item.itemText(val)}">
+                <i  class="biz-wp-tree-icon biz-ico {{if val.subitems}} biz-wp-tree-expand-icon biz-ui-controls-treeview-subitems {{else}}  biz-wp-tree-image-process {{/if}}"></i>
+                <input type="checkbox"  value="${$item.itemValue(val)}" {{if val.defaults}}checked{{/if}} />
+                <label>${$item.itemText(val)}</label>
+            </div>
+            {{if val.defaults}}
+                ${$item.setDefaults(val)}
+            {{/if}}
+            {{if val.subitems}}
+                {{html $item.renderSubItems(val) }}
+            {{/if}}
+
+        </li>
+    {{/each}}
+</ul>
+
+</script>
+
+<script id="bizagi-ui-controls-uitreeview-subitems" type="text/x-jquery-tmpl">
+<div>
+    <ul class="biz-ui-controls-treeview-subitems-collapse">
+       {{each(i, val) subitems}}
+            <li class="biz-ui-controls-tree-item">
+                <div class="biz-ui-controls-treeview-row  {{if val.defaults}} biz-ui-controls-uitreeview-items-active {{/if}}" data-value='${$item.itemValue(val)}' data-text="${$item.itemText(val)}">   
+                    <i  class="biz-wp-tree-icon biz-ico {{if val.subitems}} biz-wp-tree-expand-icon  biz-ui-controls-treeview-subitems{{else}}  biz-wp-tree-image-process {{/if}}"></i>
+                    <input type="checkbox" value="${$item.itemValue(val)}" {{if val.defaults}} checked="checked" {{/if}}/><label>${$item.itemText(val)}</label>
+                </div>
+                {{if val.defaults}}
+                    ${$item.setDefaults(val)}
+                {{/if}}
+                {{if val.subitems}}
+                        {{html $item.renderSubItems(val) }}
+                {{/if}}  
+            </li>
+        {{/each}}
+    </ul>
+</div>
+</script>

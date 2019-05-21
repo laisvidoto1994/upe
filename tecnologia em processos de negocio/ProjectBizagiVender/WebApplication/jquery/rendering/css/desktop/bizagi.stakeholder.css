@@ -1,0 +1,266 @@
+﻿.ui-bizagi-render-stakeholder-container
+{
+    display: inline-block;
+    width: 100%;
+}
+.ui-bizagi-render-stakeholder-container div, .ui-bizagi-render-stakeholder-container span, .ui-bizagi-render-stakeholder-container a
+{
+    display: inline-block;
+    vertical-align: top;
+}
+.ui-bizagi-render-stakeholder-bar
+{
+    width: 100%;
+}
+.ui-bizagi-render-stakeholder-content
+{
+    width: 100%;
+}
+.ui-bizagi-render-stakeholder-left, .ui-bizagi-render-stakeholder-right
+{
+    float: left;
+    height: 305px;
+}
+.ui-bizagi-render-stakeholder-left
+{
+    width: 30%;
+    border-right: 1px solid #98A1A8;
+}
+.ui-bizagi-render-stakeholder-right
+{
+    width: 69%;
+    height: 200px;
+    float: left;
+}
+
+.ui-bizagi-render-stakeholder-number
+{
+    background-color: #ccc;
+    color: #000;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.ui-bizagi-render-stakeholder-title2
+{
+    color: #787878;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.ui-bizagi-render-stakeholder-item
+{
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+.ui-bizagi-render-stakeholder-name
+{
+    width: 100%;
+    font-weight: bold;
+}
+
+.ui-bizagi-render-stakeholder-entity
+{
+    color: #565656;
+}
+
+.ui-bizagi-render-stakeholder-entity-row
+{
+    width: 100%;
+    padding-top: 4px;
+    height: 30px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.ui-bizagi-render-stakeholder-entity-row:hover, .ui-bizagi-render-stakeholder-item:hover
+{
+    background-color: #ddd;
+}
+
+.ui-bizagi-render-stakeholder-link
+{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-image: url(images/stakeholder-associated.png);
+    position: absolute;
+    top: 6px;
+    right: 5px;
+}
+
+.ui-bizagi-render-stakeholder-label
+{
+    margin-top: 165px;
+    width: 100%;
+    padding-right: 15px;
+}
+
+.ui-bizagi-render-stakeholder-add
+{
+    background-repeat: no-repeat;
+    background-image: url(images/user.png);
+    width: 100%;
+    text-align: center;
+    background-position: 55% 60%;
+    height: 200px;
+    cursor: pointer;
+    padding-left: 40px;
+}
+
+.ui-bizagi-render-stakeholder-entity-list, .ui-bizagi-render-stakeholder-entities
+{
+    width: 100%;
+}
+
+.ui-bizagi-render-stakeholder-entities
+{
+    margin-top: 10px;
+    padding-right: 20px;
+    height: 260px;
+    overflow: auto;
+}
+
+.ui-bizagi-render-stakeholder-grid
+{
+    padding-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.ui-bizagi-render-stakeholder-items-bar-label
+{
+    float: left;
+}
+
+#ui-bizagi-render-stakeholder-entity-list, #ui-bizagi-render-stakeholder-add-instance, #ui-bizagi-render-stakeholder-grid
+{
+    display: none;
+}
+
+.ui-bizagi-render-stakeholder-items-bar
+{
+    width: 100%;
+}
+
+.ui-bizagi-render-stakeholder-container-title
+{
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 25px;
+    float: left;
+}
+
+.ui-bizagi-render-stakeholder-add-instance
+{
+    background-image: url(images/grid.png);
+    background-position: 53% 71%;
+    cursor: default;
+}
+
+.ui-bizagi-render-stakeholder-associated
+{
+    margin-right: 20px;
+    height: 275px;
+    overflow: auto;
+    width: 225px;
+}
+
+.ui-bizagi-render-stakeholder-items-grid
+{
+    width: 100%;
+    margin-top: 11px;
+}
+
+.ui-bizagi-render-stakeholder-table-head
+{
+    border: 1px solid #3c4046;
+}
+
+.ui-bizagi-render-stakeholder-items-grid-content
+{
+    height: 217px;
+    overflow: auto;
+    width: 100%;
+}
+
+.ui-bizagi-render-stakeholder-paginator
+{
+    width: 100%;
+    text-align: center;
+}
+
+.ui-bizagi-render-stakeholder-back
+{
+    background-image: url(images/back.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 28px;
+    height: 29px;
+    margin-right: 10px;
+    float:left;
+}
+
+#ui-bizagi-render-stakeholder-back
+{
+    display:none;
+}
+
+.ui-bizagi-render-stakeholder-selected
+{
+    background-color: #ccc;
+}
+
+.ui-bizagi-render-stakeholder-table-link
+{
+    background-image: url(images/stakeholder-disassociated.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width:16px;
+    height:16px;
+    margin-top:7px;
+}
+
+.ui-bizagi-render-stakeholder-table-link-close
+{
+    background-image: url(images/stakeholder-associated.png);
+}
+
+.ui-bizagi-render-stakeholder-table-stakeholder-associated-other-user
+{
+    background-image: url(images/stakeholder-associated-other-user.png);
+}
+
+.ui-bizagi-render-stakeholder-table-link span
+{
+    margin-left: 20px;
+}
+
+.ui-bizagi-render-stakeholder-container-title
+{
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+.ui-bizagi-render-stakeholder-items-bar input.ui-bizagi-render-stakeholder-search
+{
+    float: right;
+    width: 200px;
+    background-image: url(images/bz-wp-icons-sprite.png);
+    background-position: 0px 0px;
+    background-size: 10px;
+    background-repeat: no-repeat;
+}

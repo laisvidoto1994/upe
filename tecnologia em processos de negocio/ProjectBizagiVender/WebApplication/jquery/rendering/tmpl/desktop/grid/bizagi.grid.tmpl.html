@@ -1,0 +1,518 @@
+<script id="ui-bizagi-grid" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-grid">
+        <div data-bizagi-component="header" class="bz-rn-grid-cn-header{{if collapse}} bz-rn-grid-header-collapse{{/if}}">
+            {{if collapse}}<span class="ui-icon {{if collapseState}} ui-state-collapse{{else}} ui-state-expand{{/if}}"></span>{{/if}}
+            <span class="bz-rn-grid-header-title">${label}</span>
+        </div>
+        <div class="bz-rn-grid-wrapper {{if collapseState}} bz-rn-grid-body-collapse{{/if}}">
+            {{if buttonsPst == true}}
+            <div class="bz-rn-grid-buttonsbar-top">
+                <table class="bz-rn-grid-table-buttons">
+                    <tr>
+                        <th class="bz-rn-grid-actionbuttons-row">
+                            <div data-bizagi-component="buttons">
+                                {{element buttons}}
+                            </div>
+                        </th>
+                        <th class="bz-rn-grid-exportbuttons-row">
+                            <div data-bizagi-component="gridExportOptions" class="ui-bizagi-grid-export-options-wrapper">
+                                {{element gridExportOptions}}
+                            </div>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            {{/if}}
+
+            <div data-bizagi-component="table" class="bz-rn-grid-data-wraper">
+                {{element table}}
+            </div>
+            <div data-bizagi-component="emptyTable">
+                {{element emptyTable}}
+            </div>
+            <div class="bz-rn-grid-container-foother">
+                <table>
+                    <tr class="bz-rn-grid-foother-row">
+                        {{if buttonsPst === false}}
+                        <th>
+                            <div data-bizagi-component="buttons">
+                                {{element buttons}}
+                            </div>
+                        </th>
+                        {{/if}}
+                        <th class="bz-rn-grid-foother-pagination">
+                            <div data-bizagi-component="pager">
+                                {{element pager}}
+                            </div>
+                            <div data-bizagi-component="dynamicPager" class="">
+                                {{element dynamicPager}}
+                            </div>
+                        </th>
+                        {{if buttonsPst === false}}
+                        <th>
+                            <div data-bizagi-component="gridExportOptions" class="ui-bizagi-grid-export-options-wrapper">
+                                {{element gridExportOptions}}
+                            </div>
+                        </th>
+                        {{/if}}
+                    </tr>
+                </table>
+            </div>
+            <div data-bizagi-component="rowButtons">
+                {{element rowButtons}}
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-rtl" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-grid">
+        <div data-bizagi-component="header" class="bz-rn-grid-cn-header-rtl{{if collapse}} bz-rn-grid-header-collapse{{/if}}">
+            {{if collapse}}<span class="ui-icon {{if collapseState}} ui-state-collapse{{else}} ui-state-expand{{/if}}"></span>{{/if}}
+            <span class="bz-rn-grid-header-title-rtl">${label}</span>
+        </div>
+        <div class="bz-rn-grid-wrapper {{if collapseState}} bz-rn-grid-body-collapse{{/if}}">
+            {{if buttonsPst == true}}
+            <div class="bz-rn-grid-buttonsbar-top-rtl">
+                <table class="bz-rn-grid-table-buttons-rtl">
+                    <tr>
+                        <th class="bz-rn-grid-exportbuttons-row-rtl">
+                            <div data-bizagi-component="gridExportOptions" class="ui-bizagi-grid-export-options-wrapper-rtl">
+                                {{element gridExportOptions}}
+                            </div>
+                        </th>
+                        <th class="bz-rn-grid-actionbuttons-row-rtl">
+                            <div data-bizagi-component="buttons">
+                                {{element buttons}}
+                            </div>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            {{/if}}
+
+            <div data-bizagi-component="table" class="bz-rn-grid-data-wraper">
+                {{element table}}
+            </div>
+            <div data-bizagi-component="emptyTable">
+                {{element emptyTable}}
+            </div>
+            <div class="bz-rn-grid-container-foother-rtl">
+                <table>
+                    <tr class="bz-rn-grid-foother-row-rtl">
+                        {{if buttonsPst === false}}
+                        <th>
+                            <div style="float: right;" data-bizagi-component="buttons">
+                                {{element buttons}}
+                            </div>
+                        </th>
+                        {{/if}}
+                        <th class="bz-rn-grid-foother-pagination-rtl">
+                            <div data-bizagi-component="pager">
+                                {{element pager}}
+                            </div>
+                            <div data-bizagi-component="dynamicPager" class="">
+                                {{element dynamicPager}}
+                            </div>
+                        </th>
+                        {{if buttonsPst === false}}
+                        <th>
+                            <div data-bizagi-component="gridExportOptions" class="ui-bizagi-grid-export-options-wrapper-rtl">
+                                {{element gridExportOptions}}
+                            </div>
+                        </th>
+                        {{/if}}                        
+                    </tr>
+                </table>
+            </div>
+            <div data-bizagi-component="rowButtons">
+                {{element rowButtons}}
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<script id="ui-bizagi-grid-waiting" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-waiting"></div>
+</script>
+
+<script id="ui-bizagi-grid-table" type="text/x-jquery-tmpl">
+    <table class="ui-bizagi-grid-table  ${tableCssClass}" dir="${orientation}">
+        <thead class="ui-bizagi-grid-header ui-state-default">
+            <tr data-bizagi-component="columns">
+                {{element columns}}
+            </tr>
+        </thead>
+        <tbody class="ui-bizagi-grid-body" data-bizagi-component="rows">
+            {{element rows}}
+        </tbody>
+        {{if showSummary}}
+        <tfoot class="ui-bizagi-grid-summary" data-bizagi-component="summary">
+            {{element summary}}
+        </tfoot>
+        {{/if}}
+    </table>
+</script>
+
+<script id="ui-bizagi-grid-table-empty" type="text/x-jquery-tmpl">
+    <label>%{render-grid-no-records}</label>
+</script>
+
+<script id="ui-bizagi-grid-column" type="text/x-jquery-tmpl">
+    {{if isKey}}
+    <th class="ui-bizagi-grid-key">
+        {{else}}
+        {{if hidden}}
+    <th class="ui-bizagi-column-hidden">
+        {{else}}
+    <th class="${columnCssClass} resizableColumn">
+        {{/if}}
+        {{/if}}
+
+        <div class="ui-bizagi-grid-column" data-column-index="${index}" style="${headerStyles}">
+            <label style="${headerLabelStyles}">${label}</label>
+            <div class="ui-bizagi-grid-column-sort {{if sortActive}}ui-bizagi-active{{/if}}">
+                <div class="ui-icon ui-icon-triangle-1-n {{if sortType == 'asc'}}ui-bizagi-active{{/if}}"></div>
+                <div class="ui-icon ui-icon-triangle-1-s {{if sortType == 'desc'}}ui-bizagi-active{{/if}}"></div>
+            </div>
+        </div>
+    </th>
+</script>
+
+
+<script id="ui-bizagi-grid-column-special" type="text/x-jquery-tmpl">
+    <th class="ui-bizagi-grid-column-special"></th>
+</script>
+
+<script id="ui-bizagi-grid-row" type="text/x-jquery-tmpl">
+    <tr data-bizagi-component="cells" data-key="${key}" data-business-key="${businessKey}" {{if isNewRow}} data-new-row="true" {{/if}}>
+        {{element cells}}
+    </tr>
+</script>
+
+<script id="ui-bizagi-grid-summary" type="text/x-jquery-tmpl">
+    <tr data-bizagi-component="summary-cells">
+        {{element summary-cells}}
+    </tr>
+</script>
+
+<script id="ui-bizagi-grid-summary-cell" type="text/x-jquery-tmpl">
+    {{if hidden}}
+    <td class="ui-bizagi-column-hidden"></td>
+    {{else}}
+    {{if summarizeBy}}
+    <td>
+        <div class="ui-bizagi-grid-cell" data-bizagi-component="cellContent">
+            {{element cellContent}}
+        </div>
+    </td>
+    {{else}}
+    <td></td>
+    {{/if}}
+    {{/if}}
+</script>
+
+<script id="ui-bizagi-grid-cell" type="text/x-jquery-tmpl">
+    {{if isKey}}
+    <td class="ui-bizagi-grid-key">
+        {{else}}
+        {{if hidden}}
+    <td class="ui-bizagi-column-hidden">
+        {{else}}
+    <td class="${columnCssClass}">
+        {{/if}}
+        {{/if}}
+        <div class="ui-bizagi-grid-cell" data-bizagi-component="cellContent">
+            {{element cellContent}}
+            {{if isDesign && messageValidation}}
+            <span class="ui-icon ui-icon-help ui-bizagi-render-icon-msg-validation" title="${messageValidation}" style="display:inline-block"></span>
+            {{/if}}
+        </div>
+    </td>
+</script>
+
+<script id="ui-bizagi-grid-cell-special" type="text/x-jquery-tmpl">
+    <td class="ui-bizagi-grid-cell-special">
+        <div class="ui-bizagi-grid-cell" data-action="more">
+            <span class="ui-bizagi-cell-more">{{control}}</span>
+        </div>
+    </td>
+</script>
+
+<script id="ui-bizagi-grid-pagination" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-grid-pager ui-state-default">
+        {{if pagination}}
+        <ul>
+            {{each pages}}
+            <li {{if page==pageNumber}} class="bz-page active" {{else}} class="bz-page" {{/if}} data-page="${pageNumber}">
+                <span class="number">${pageNumber}</span>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="ui-bizagi-grid-pager-tooltip-wrapper">
+            <span id="tooltipPagination">Pag: ${page} / ${totalPages}</span>
+        </div>
+        {{/if}}
+    </div>
+</script>
+
+
+<script id="ui-bizagi-grid-pager" type="text/x-jquery-tmpl">
+    {{if pages.length > 1}}
+    <div class="ui-bizagi-grid-pager ui-state-default">
+        <ul>
+            <li data-page="previous"><</li>
+            <li class="bz-rn-grid-pager" style="padding: 4px;"> <label>%{render-grid-page}</label> <span>${page}</span>  <label>%{render-grid-conector}</label>  <span>${pages.length}</span></li>
+            <li data-page="next">></li>
+        </ul>
+    </div>
+    {{/if}}
+</script>
+
+<script id="ui-bizagi-grid-buttons" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-grid-buttons ui-state-default">
+        <ul>
+            {{if add || inlineAdd}}
+            <li class="" data-action="add" alt="${addLabel}" title="${addLabel}"><div class="ui-icon ui-icon-plus"></div></li>
+            {{/if}}
+            {{if edit}}
+            <li class="" data-action="edit" alt="${editLabel}" title="${editLabel}"><div class="ui-icon ui-icon-pencil"></div></li>
+            {{/if}}
+            {{if remove}}
+            <li class="" data-action="remove" alt="${deleteLabel}" title="${deleteLabel}"><div class="ui-icon ui-icon-trash"></div></li>
+            {{/if}}
+            {{if details}}
+            <li class="" data-action="details" alt="${detailLabel}" title="${detailLabel}"><div class="ui-icon ui-icon-detailform"></div></li>
+            {{/if}}
+            {{if inlineAdd}}
+            <li class="ui-helper-hidden" data-action="cancel"><div class="ui-icon ui-icon-cancel"></div><label>%{text-cancel}</label></li>
+            <li class="ui-helper-hidden" data-action="save"><div class="ui-icon ui-icon-disk"></div><label>%{text-save}</label></li>
+            {{/if}}
+        </ul>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-buttons-rtl" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-grid-buttons-rtl ui-state-default">
+        <ul>
+            {{if inlineAdd}}
+            <li class="ui-helper-hidden" data-action="save"><div class="ui-icon ui-icon-disk"></div><label>%{text-save}</label></li>
+            <li class="ui-helper-hidden" data-action="cancel"><div class="ui-icon ui-icon-cancel"></div><label>%{text-cancel}</label></li>
+            {{/if}}
+            {{if details}}
+            <li class="" data-action="details" alt="${detailLabel}" title="${detailLabel}"><div class="ui-icon ui-icon-detailform"></div></li>
+            {{/if}}
+            {{if remove}}
+            <li class="" data-action="remove" alt="${deleteLabel}" title="${deleteLabel}"><div class="ui-icon ui-icon-trash"></div></li>
+            {{/if}}
+            {{if edit}}
+            <li class="" data-action="edit" alt="${editLabel}" title="${editLabel}"><div class="ui-icon ui-icon-pencil"></div></li>
+            {{/if}}
+            {{if add || inlineAdd}}
+            <li class="" data-action="add" alt="${addLabel}" title="${addLabel}"><div class="ui-icon ui-icon-plus"></div></li>
+            {{/if}}
+        </ul>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-row-buttons" type="text/x-jquery-tmpl">
+
+</script>
+
+<script id="ui-bizagi-grid-row-buttons-rtl" type="text/x-jquery-tmpl">
+
+</script>
+
+<script id="ui-bizagi-grid-dynamic-pager" type="text/x-jquery-tmpl">
+    <input type="button" class="ui-bizagi-button ui-button-text ui-button ui-widget ui-state-default ui-corner-all ui-bizagi-grid-dynamic-pager" value="%{render-grid-dynamic-pager}" role="button" aria-disabled="false" />
+</script>
+
+<script id="ui-bizagi-grid-export-options" type="text/x-jquery-tmpl">
+    {{if orientation == 'rtl'}}
+    {{if enableXlsExport || enablePdfExport}}
+    <div class="ui-bizagi-grid-buttons-rtl ui-state-default">
+        <ul>
+            <li class="grid-button-grid-export-options-rtl" data-action="show-grid-export-options" alt="${exportOptionsLabel}" title="${exportOptionsLabel}"><div class="ui-icon ui-icon-document"></div></li>
+        </ul>
+    </div>
+    <div class="ui-bizagi-grid-export-options-content-rtl hidden">
+        <ul>
+            {{if enableXlsExport}}
+            <li id="print-grid-xls">
+                <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary ui-state-hover" role="button" aria-disabled="false">
+                    <span class="extension ui-bizagi-document-type ui-bizagi-document-upload-item-xls"></span>
+                    <span class="ui-button-text">%{render-grid-export-options-print-xls}</span>
+                </button>
+
+            </li>
+            {{/if}}
+
+            {{if enablePdfExport}}
+            <li id="print-grid-pdf">
+                <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary ui-state-hover" role="button" aria-disabled="false">
+                    <span style="padding: 0; margin: 3px 2px; float: left;" class="extension ui-bizagi-document-type ui-bizagi-document-upload-item-pdf "></span>
+                    <span class="ui-button-text">%{render-grid-export-options-print-pdf}</span>
+                </button>
+
+            </li>
+            {{/if}}
+
+            <li id="print-grid-save-first" hidden>
+                %{render-grid-export-options-save-first}
+            </li>
+        </ul>
+    </div>
+    {{/if}}
+    {{else}}
+    {{if enableXlsExport || enablePdfExport}}
+    <div class="ui-bizagi-grid-buttons ui-state-default">
+        <ul>
+            <li class="grid-button-grid-export-options" data-action="show-grid-export-options" alt="${exportOptionsLabel}" title="${exportOptionsLabel}"><div class="ui-icon ui-icon-document"></div></li>
+        </ul>
+    </div>
+    <div class="ui-bizagi-grid-export-options-content hidden">
+        <ul>
+            {{if enableXlsExport}}
+            <li id="print-grid-xls">
+                <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary ui-state-hover" role="button" aria-disabled="false">
+                    <span class="extension ui-bizagi-document-type ui-bizagi-document-upload-item-xls"></span>
+                    <span class="ui-button-text">%{render-grid-export-options-print-xls}</span>
+                </button>
+
+            </li>
+            {{/if}}
+
+            {{if enablePdfExport}}
+            <li id="print-grid-pdf">
+                <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary ui-state-hover" role="button" aria-disabled="false">
+                    <span class="extension ui-bizagi-document-type ui-bizagi-document-upload-item-pdf "></span>
+                    <span class="ui-button-text">%{render-grid-export-options-print-pdf}</span>
+                </button>
+
+            </li>
+            {{/if}}
+
+            <li id="print-grid-save-first" hidden>
+                %{render-grid-export-options-save-first}
+            </li>
+        </ul>
+    </div>
+    {{/if}}
+    {{/if}}
+</script>
+
+
+<!-- GROUPED GRID TEMPLATES -->
+<script id="ui-bizagi-grid-grouped-table" type="text/x-jquery-tmpl">
+    <!-- table -->
+    <table class="ui-bizagi-grid-table ${tableCssClass}">
+        <thead class="ui-bizagi-grid-header ui-state-default">
+
+            <tr data-bizagi-component="columns">
+                {{each groupByColumns}}
+                <th class="ui-bizagi-grid-ignore">&nbsp;</th>
+                {{/each}}
+                {{element columns}}
+            </tr>
+        </thead>
+        <tbody class="ui-bizagi-grid-body" data-bizagi-component="rows">
+            {{element rows}}
+        </tbody>
+        {{if showSummary}}
+        <tfoot class="ui-bizagi-grid-summary ui-bizagi-grid-grouped-table-summary" data-bizagi-component="summary">
+            {{element summary}}
+        </tfoot>
+        {{/if}}
+    </table>
+</script>
+
+<script id="ui-bizagi-grid-grouped-column" type="text/x-jquery-tmpl">
+    <!-- column -->
+    {{if isKey}}
+    <th class="ui-bizagi-grid-key">
+        {{else}}
+        {{if hidden}}
+    <th class="ui-bizagi-column-hidden">
+        {{else}}
+    <th class="${columnCssClass} resizableColumn">
+        {{/if}}
+        {{/if}}
+
+        <div class="ui-bizagi-grid-column" data-column-index="${index}" style="${headerStyles}">
+            <label style="${headerLabelStyles}">${label}</label>
+            <div class="ui-bizagi-grid-column-sort {{if sortActive}}ui-bizagi-active{{/if}}">
+                <div class="ui-icon ui-icon-triangle-1-n {{if sortType == 'asc'}}ui-bizagi-active{{/if}}"></div>
+                <div class="ui-icon ui-icon-triangle-1-s {{if sortType == 'desc'}}ui-bizagi-active{{/if}}"></div>
+            </div>
+        </div>
+    </th>
+</script>
+
+<script id="ui-bizagi-grid-grouped-row" type="text/x-jquery-tmpl">
+    <tr data-bizagi-component="cells" data-key="${key}" data-business-key="${businessKey}" {{if isNewRow}} data-new-row="true" {{/if}}>
+        {{element empty-cells}}
+        <!-- row -->
+        {{element cells}}
+    </tr>
+</script>
+
+<script id="ui-bizagi-grid-grouped-header-row" type="text/x-jquery-tmpl">
+
+    <tr class="ui-bizagi-grid-grouped-header" data-grouped-name="${columnGroupedName}" data-grouped-value="${columnGroupedValue}" data-grouped-visibility="true" data-grouped-level="${level}">
+        {{element empty-cells}}
+        {{each columns}}
+
+        {{if index != 0}}
+        <!-- should show this in first column, $index==0 -->
+        {{if $index == 0}}
+        <td colspan='${colspan}'>
+            <span class="ui-icon ui-icon-triangle-1-s"></span>
+            {{if columnTitle.length > 0 }}<label>${columnTitle}</label><br />{{/if}}
+            {{if summarizeBy}}
+            <div class="ui-bizagi-grid-grouped-first-td">
+                <label class="bz-groupedgrid-sum-aling">{{element cellContent}}</label>
+            </div>
+            {{/if}}
+        </td>
+        {{else}}
+        <td class="ui-bizagi-grid-grouped-header-totalizer">
+            {{if columnTitle.length > 0 }}<br />{{/if}}
+            {{if summarizeBy}}<label class="bz-groupedgrid-sum-aling"> {{element cellContent}}</label>{{/if}}
+        </td>
+        {{/if}}
+        {{/if}}
+
+        {{/each}}
+
+    </tr>
+
+</script>
+
+<script id="ui-bizagi-grid-grouped-summary" type="text/x-jquery-tmpl">
+    <tr data-bizagi-component="grouped-summary-cells" data-summary-grouped-level="${level}">
+        {{element empty-cells}}
+        {{element summary-cells}}
+    </tr>
+</script>
+
+<script id="ui-bizagi-grid-grouped-summary-cell" type="text/x-jquery-tmpl">
+    {{if hidden}}
+    <td class="ui-bizagi-column-hidden"></td>
+    {{else}}
+    {{if summarizeBy}}
+    <td data-grouped-summary-key="${summary}">
+        <div class="ui-bizagi-grid-cell" data-bizagi-component="cellContent">
+            {{element cellContent}}
+
+        </div>
+    </td>
+    {{else}}
+    <td></td>
+    {{/if}}
+    {{/if}}
+</script>
+
+<script id="ui-bizagi-grid-grouped-empty-cell" type="text/x-jquery-tmpl">
+    <td class="ui-bizagi-grid-ignore {{if conectorH}} ui-bizagi-grid-conector-h {{/if}}{{if conectorV}} ui-bizagi-grid-conector-v{{/if}}{{if conectorCorner}} ui-bizagi-grid-conector-corner{{/if}}">&nbsp;</td>
+</script>

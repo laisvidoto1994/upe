@@ -1,0 +1,222 @@
+<script id="ui-bizagi-workportal-widget-menu" type="text/x-jquery-tmpl">
+    <div id="ui-bizagi-wp-app-menu-container">
+        <div id="ui-bizagi-wp-app-menu-logo-container">
+            <div id="ui-bizagi-wp-app-menu-logo-client">
+                <img src="${base64image}">
+            </div>
+        </div>
+        <div id="ui-bizagi-wp-widget-searchContainer">
+            <div id="ui-bizagi-wp-widgetpc" class="ui-bizagi-wp-widgetpc">
+                <div class="top">
+                    <span></span>
+                </div>
+                <div class="content"><span></span>
+                    <!--widget content-->
+                    <input type="hidden" name="categoryProceccess" value="1" />
+                    <input type="hidden" name="categoryCases" value="1" />
+                    <input type="hidden" name="categoryQueries" value="1" />
+                    <div >
+                        <ul id="widgetContent">
+                            <li>
+                                <input type="radio" id="testRadioB">
+                                <label for="testRadioB"><div class="ui-bizagi-wp-app-menu-ico-search-miniproc-on">%{workportal-menu-process}</div></label>
+                            </li><li>
+                                <input type="radio" id="testRadioC">
+                                <label for="testRadioC"><div class="ui-bizagi-wp-app-menu-ico-search-minicases-on">%{workportal-menu-cases}</div></label>
+                            </li><li>
+                                <input type="radio" id="testRadioD">
+                                <label for="testRadioD"><div class="ui-bizagi-wp-app-menu-ico-search-miniqueries-off">%{workportal-menu-queries}</div></label>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--end widget content-->
+                </div>
+                <div class="bottom"><span></span></div>
+            </div>
+            <div id="ui-bizagi-wp-app-search" class="ui-bizagi-wp-app-menu-search-off">
+                <i id="ui-bizagi-wp-app-bt-search" class="bz-icon bz-icon-search-outline bz-icon-16"></i>
+                <input type="text" name="menuQuery"  id="menuQuery" placeholder="%{workportal-menu-search}" />
+                <div id="searchNotFound" class="nodisplay">%{workportal-menu-search-found-no-cases}</div>
+            </div>
+        </div>
+        <div id="ui-bizagi-wp-app-menu-bt-container">
+            <ul id="main_menu">
+                {{component menuItems}}
+                <!-- empty space -->
+            </ul>
+        </div>
+        <div id="user">
+            {{if hasPicture}}
+                <div class="bz-wp-avatar bz-wp-avatar-48 menu-user-photo bz-wp-avatar-cleaned">
+                    <img class="bz-wp-avatar-img" src="${photo}">
+                </div>
+            {{else}}
+                <div class="bz-wp-avatar bz-wp-avatar-48 menu-user-photo">
+                    <span class="bz-wp-avatar-label">${initials}</span>
+                </div>
+            {{/if}}
+            <i class="adm-user bz-icon bz-icon-16 bz-icon-cog-outline"></i>
+        </div>
+        <div id="user-profile">
+            <ul>
+                <li class="ui-bizagi-wp-bt-classic-theme" style="display:none"><i class="bz-icon bz-icon-16 bz-icon-paint"></i> <span>Classic</span></li>
+                <li class="ui-bizagi-wp-bt-modern-theme"><i class="bz-icon bz-icon-16 bz-icon-paint"></i> <span>Modern</span></li>
+                <li class="ui-bizagi-wp-bt-booking-theme"><i class="bz-icon bz-icon-16 bz-icon-paint"></i> <span>Booking</span></li>
+                <li class="ui-bizagi-wp-bt-font"><i class="bz-icon bz-icon-16 bz-icon-accessibility-outline"></i> <span>%{workportal-menu-accessibility}</span></li>
+                {{if security.CurrentUserAdministration}}
+                    <li id="menuListPreferences"><i class="bz-icon bz-icon-16 bz-icon-cog-outline"></i> <span>%{workportal-menu-preferences}</span></li>
+                {{/if}}
+                <li id="about"><i class="bz-icon bz-icon-16 bz-icon-info-outline"></i> <span>%{workportal-menu-about}</span></li>
+                <li id="logout"><i class="bz-icon bz-icon-16 bz-icon-sign-out-outline"></i> <span>%{workportal-menu-logout}</span></li>
+            </ul>
+        </div>
+         <!--{{if environment == "debug"}}
+            <div id="build">${build}</div>
+        {{/if}}-->
+        <div id="contentSearchResults" class="hidden nodisplay"></div>
+    </div>
+    {{if security.AdhocProcessAdmin == true}}
+    <div class="bz-speed-dial">
+        <div class="bz-speed-dial__actions">
+            <button class="bz-speed-dial__action-button bz-mdl-button bz-mdl-button--mini">
+                <div class="bz-speed-dial__action-button-label bz-speed-dial__action-buton-label--hover">
+                    <span>%{workportal-adhoc-dashboard}</span>
+                </div>
+                <div class="bz-speed-dial__action-button-icon">
+                    <i class="bz-icon bz-icon-overview-outline bz-icon-16"></i>
+                </div>
+            </button>
+        </div>
+
+        <button class="bz-speed-dial__btn-trigger bz-mdl-button js-bz-speed-dial__btn-trigger">
+            <div class="bz-speed-dial__btn-trigger-label bz-speed-dial__btn-trigger-label--hover">
+                <span>%{workportal-adhoc-new-quickprocess}</span>
+            </div>
+            <div class="bz-speed-dial__btn-trigger-icon">
+                <i class="bz-icon bz-icon-plus bz-icon-16"></i>
+            </div>
+            <div class="bz-speed-dial__btn-trigger-icon bz-speed-dial__btn-trigger-icon--hover">
+                <i class="bz-icon bz-icon-edit bz-icon-16"></i>
+            </div>
+        </button>
+    </div>
+    {{/if}}
+</script>
+
+<script id="ui-bizagi-workportal-widget-menu-permissions" type="text/x-jquery-tmpl">
+
+    {{if associatedStakeholders}}
+    <li  id="menuListHome">
+        <a href="javascript:void(0);">
+            <span class="bz-icon bz-icon-home-outline bz-icon-24"></span>
+            <span class="text">%{workportal-widget-home-title}</span>
+        </a>
+    </li>
+    {{/if}}
+
+    {{if associatedStakeholders}}
+    <li  id="menuListInbox">
+        <a href="javascript:void(0);">
+            <span class="bz-icon bz-icon-inbox-outline bz-icon-24"></span>
+            <span class="text">%{workportal-menu-inbox-msg}</span>
+        </a>
+    </li>
+    {{else}}
+    <li  id="menuListInbox" class="activeMenu">
+        <a href="javascript:void(0);">
+            <span class="bz-icon bz-icon-inbox-outline bz-icon-24"></span>
+            <span class="text">%{workportal-menu-inbox-msg}</span>
+        </a>
+    </li>
+    {{/if}}
+
+    {{if NewCase}}
+    <li  id="menuListNew">
+        <a href="javascript:void(0);">
+            <span class="bz-icon bz-icon-case-add-outline bz-icon-24"></span>
+            <span class="text">%{workportal-widget-newcase-title}</span>
+        </a>
+        <span id="Span1" class="ui-bizagi-wp-mini-arrow"></span>
+    </li>
+    {{/if}}
+    <!-- <li id="menuListFavorites">
+         <a href="javascript:void(0);">
+             <span class="icon favorites"></span>
+             <span class="text">%{workportal-menu-favorites}</span>
+         </a>
+     </li>-->
+	{{if BizagiQueries}}
+    <li  id="menuListQueries">
+        <a href="javascript:void(0);">
+            <span class="bz-icon bz-icon-search-outline bz-icon-24"></span>
+            <span class="text">%{workportal-menu-queries}</span>
+        </a>
+        <span id="Span1" class="ui-bizagi-wp-mini-arrow"></span>
+    </li>
+	{{/if}}
+    {{if $item.reportsSecurity()}}
+    <li  id="menuListReports">
+        <a href="javascript:void(0);">
+            <span class="bz-icon bz-icon-reports-outline bz-icon-24"></span>
+            <span class="text">%{workportal-menu-reports}</span>
+        </a>
+        <span id="Span2" class="ui-bizagi-wp-mini-arrow"></span>
+    </li>
+    {{/if}}
+    {{if authEntities}}
+    <li  id="tempEntities">
+        <a href="javascript:void(0);">
+            <span class="bz-icon bz-icon-cog-outline bz-icon-24"></span>
+            <span class="text">Entities</span>
+        </a>
+        <span id="Span4" class="ui-bizagi-wp-mini-arrow"></span>
+    </li>
+    {{/if}}
+    {{if Admin}}
+    <li  id="menuListAdmin">
+        <a href="javascript:void(0);">
+            <span class="bz-icon bz-icon-cog-outline bz-icon-24"></span>
+            <span class="text">%{workportal-menu-admin}</span>
+        </a>
+        <span id="Span3" class="ui-bizagi-wp-mini-arrow"></span>
+    </li>
+    {{/if}}
+</script>
+
+<script id="ui-bizagi-workportal-widget-menu-custom-button" type="text/x-jquery-tmpl">
+    <li id="${id}">
+        <a href="javascript:void(0);">
+            <span class="${className}"></span>
+            <span class="text" >${text}</span>
+        </a>
+        {{if submenu}}
+        <span class="ui-bizagi-wp-mini-arrow"></span>
+        {{/if}}
+    </li>
+</script>
+
+<script id="ui-bizagi-workportal-widget-menu-submenu" type="text/x-jquery-tmpl">
+    <div class="modalMenuBt Admin Reports">
+        <div id="modalMenuBtList" class="clearfix">
+            <div id="categories" {{loading}}>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-menu-submenu-list" type="text/x-jquery-tmpl">
+    {{each listmenu}}
+    <ul>
+        <li class="category ${categoryKey}" data-id="${categoryKey}">
+            {{if categoryClassName}}
+                <i class="bz-icon bz-icon-24 ${categoryClassName}"></i>
+            {{else}}
+                <div class="categoryIco"></div>
+            {{/if}}
+            <span class="title">${categoryName}</span>
+            <span id="arrow">&GT;</span>
+            <input type="hidden" id="categoryUrl" value="${categoryUrl}" />
+        </li>
+    </ul>
+    {{/each}}
+</script>

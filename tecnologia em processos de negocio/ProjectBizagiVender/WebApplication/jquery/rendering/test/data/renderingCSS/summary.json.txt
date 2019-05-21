@@ -1,0 +1,38 @@
+﻿{
+    "process":"0400401 سنت الاتصالات المتحركة",
+    "guidFavorite":"",
+    "currentState":[{
+        "helpUrl":"",
+        "estimatedSolutionDate":"09/21/2011",
+        "assignToCurrentUser":"true",
+        "isEvent":"false",
+        "idWorkItem":7365,
+        "state":"Ingresar Solicitud",
+        "allowsReassign":"false",
+        "colorState":"Red",
+        "tskDescription":" ",
+        "idTask":11593
+    }],
+    "createdBy":{
+        "Name":"fpozo",
+        "userName":"fpozo"
+    },
+    "helpUrl":"",
+    "idParentCase":-1,
+    "countAssigness":3,
+    "hasGlobalForm":"true",
+    "processPath":"نموذج الأعمال عملية / صدر / الموارد البشرية / العلاقات الصناعية /",
+    "estimatedSolutionDate":"09/21/2011",
+    "creationDate":"09/14/2011",
+    "parentDisplayName":"",
+    "countSubProcesses":0,
+    "idCase":1378,
+    "caseNumber":"K36-NOC-452",
+    "countEvents":0,
+    "caseDescription":"",
+    "isOpen":"true",
+    "solutionDate":"12/13/2011",
+    "isFavorite":"false",
+    "radNumberParentCase":"",
+	"hasComments": "false"
+}

@@ -1,0 +1,94 @@
+.ui-bizagi-workportal-routing {
+	
+}
+
+#ui-bizagi-wp-app-inbox-activities-routing-wrapper
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 9999;
+	width: 100%;
+	height: 100%;
+	background-color: hsla(0, 0%, 0%, .4);
+}
+#ui-bizagi-wp-app-inbox-activities-routing
+{
+	z-index: 10000;
+	margin: 5% 0 0 19%;
+	text-align: center;
+	width: 64%;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#F0F0F0), to(#CACACA));
+    border: 2px solid #2e4161;
+    border-radius: 6px;
+    padding:20px;
+}
+
+#ui-bizagi-wp-app-routing-activity-wf
+{
+    background:#f2f2f2;
+    width:100%;
+    border-radius:6px;
+    border-left: 1px solid #adadad;
+    border-bottom: 1px solid #adadad;
+}
+
+#ui-bizagi-wp-app-inbox-activities-routing .text-description-title
+{
+	
+	font-size: 15px;
+	font-weight: bold;
+    text-shadow: 0 1px 0 white;
+    color: #31414c;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    height: 25px;
+    float: left;
+    text-align: left;
+    margin-bottom: 10px !important;
+    
+}
+
+#ui-bizagi-wp-app-inbox-activities-routing thead tr {
+background-image: -webkit-gradient(linear, left top, left bottom, from(#D6D8DC), to(#C3C6CB));
+}
+
+#ui-bizagi-wp-app-inbox-activities-routing td
+{
+	padding: 10px 5px;
+    border-top: 1px solid #adadad;
+    border-right: 1px solid #adadad;
+    font-size: 13px;
+    color: #535b61;
+}
+
+#ui-bizagi-wp-app-inbox-activities-routing td:first-child
+{
+    border-radius:6px 0 0 0;
+} 
+
+#ui-bizagi-wp-app-inbox-activities-routing td button,
+.wp-routing-container-fother button
+{
+	border-radius: 6px !important;
+    background:-webkit-gradient(linear, left top, left bottom, from(#155376), to(#103D56));
+    color: hsl(0, 0%, 87%) !important;
+    text-shadow: 1px 1px 1px #333 !important;
+    border: 1px solid #2b323b !important;
+    -webkit-box-shadow: 0px 0px 10px hsl(0,0%,35%) !important;
+    letter-spacing: 1px !important;
+    font-family: Arial !important;
+    box-shadow: inset 0 1px 0 0 #2b6181 !important;
+    float: right;
+    padding: 4px 10px !important;
+    margin: 4px 10px 0px 0px;
+    text-shadow: 0px -1px 0 #1D252C;
+
+}
+
+
+.wp-routing-container-fother button
+{
+	float: none;
+	margin-bottom: 10px;
+}

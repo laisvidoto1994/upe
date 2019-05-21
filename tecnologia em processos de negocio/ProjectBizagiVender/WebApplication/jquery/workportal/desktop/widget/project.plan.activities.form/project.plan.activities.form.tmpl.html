@@ -1,0 +1,99 @@
+﻿<script id="project-plan-activities-form" type="text/x-jsrender">
+    <div>
+        <div id="ui-bizagi-wp-project-wrapper-form-with-items">
+          <div id="project-plan-activity-form-wrapper">
+            <div class="bz-wp-widget container-items editing-mouse">
+                <h3 class="bz-wp-section">%{workportal-project-plan-activity-work-title}</h3>
+                <a href="#" id="link-add-new-item" class="bz-wp-btn bz-wp-btn-primary"><i class="bz-icon bz-icon-16 bz-icon-new-outline"></i> <span>%{workportal-project-plan-activity-action-add}</span></a>
+                <span>%{workportal-project-plan-activity-work-no-items}</span>
+                <ul class="list-items"></ul>
+            </div>
+
+            <form id="project-plan-activity-form">
+                <div class="ui-bizagi-wp-project-plan-activity-header">
+                    <h3 class="bz-wp-section">%{workportal-project-plan-title-activity-properties}</h3>
+                </div>
+
+                <div class="bz-wp-form-group">
+                    <label class="bz-wp-form-label" for="activity-form-itemname">%{workportal-project-plan-popup-field-name}</label>
+                        <input id="activity-form-itemname" class="bz-wp-rub-input" name="item-name" type="text" maxlength="100"  value="" />
+                        <div class="position-message-validate">
+                            <span data-for="name-plan"></span>
+                        </div>
+                </div>
+
+                <div class="bz-wp-form-group">
+                    <label class="bz-wp-form-label" for="activity-form-description">%{workportal-project-plan-activity-goal}</label>
+                    <textarea id="activity-form-description" class="bz-wp-form-control bz-wp-rub-textarea" rows="2"></textarea>
+                </div>
+
+                <div class="bz-wp-form-group">
+                    <label class="bz-wp-form-label" for="activity-form-assignee">%{workportal-project-plan-assignee}</label>
+                    <div class="bz-wp-pp-af-control">
+                        <input type="text" id="activity-form-assignee" />
+                        <div class="position-message-validate">
+                            <span  data-for="name-user"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bz-wp-form-group">
+                    <label class="bz-wp-form-label" for="activity-form-date">%{workportal-project-plan-estimatedend}</label>
+                    <div class="bz-wp-pp-af-control">
+                        <div class="ui-bizagi-wp-project-container-validator-relative text-right bz-calendar-container">
+                            <input class="ui-rubik-input" id="activity-form-date" maxlength="0">
+                            <i class="bz-icon bz-icon-16 bz-icon-calendar-outline"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bz-wp-form-group">
+                    <label class="bz-wp-form-label" for="activity-form-duration">%{workportal-project-plan-activity-duration}</label>
+                    <div class="bz-wp-pp-af-control">
+                        <input  id="activity-form-duration" />
+                    </div>
+                </div>
+                {{if contextualized }}
+                    <div class="bz-wp-form-checkbox">
+                        <input type="checkbox" id="activity-form-allowedition" />
+                        <label for="activity-form-allowedition">%{workportal-project-plan-allowedition}</label>
+                    </div>
+                {{/if}}
+            </form>
+
+          </div>
+
+            <div class="ui-bizagi-wp-project-form-buttons-actions">
+                <button id="project-plan-activity-form-cancel"
+                        class="bz-wp-btn bz-wp-btn-default">
+                    %{workportal-project-plan-summary}</button>
+                <button id="project-plan-activity-form-save"
+                        class="bz-wp-btn bz-wp-btn-primary">
+                    %{workportal-widget-reports-confirm-save}</button>
+            </div>
+        </div>
+        <span id="popupNotification"></span>
+   </div>
+</script>
+
+<script id="project-activity-items" type="text/x-jsrender">
+   {{for items}}
+      <li class="item">
+
+
+        {{if resolved}}
+            <input type="checkbox" disabled readonly checked class="check">
+        {{else}}
+            <input type="checkbox" disabled readonly class="check">
+        {{/if}}
+
+
+        <input class="inputtext" type="text" value="{{>name}}" title="{{>name}}" placeholder="%{workportal-project-plan-activity-anything-else}">
+        <span class="showtext">{{>name}}</span>
+
+
+        <i class="item-button delete bz-icon bz-icon-16 bz-icon-trash-outline"></i>
+
+      </li>
+   {{/for}}
+</script>

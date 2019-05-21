@@ -1,0 +1,21 @@
+<script id="dashboard-wrapper" type="text/x-jsrender">
+    <div class="bz-wp-wrapper wdg-dash-board">
+        <div {{layout "stuff" css = "stuff-content" /}} ></div>
+        {{for home}}
+            <h3 class="wdg-cases-header">{{:title}}</h3>
+            <div id="row-{{:type}}" class="row wdg-db-panel">
+                {{for items ~type = type}}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="bz-card wdg-db-card clearfix wdg-db-card-{{:~type}} {{:iconclass}}" data-route="{{:data}}">
+                            <i class="bz-icon bz-icon-24 bz-icon-{{:icon}}"></i>
+                            <div class="bz-card-text">
+                                <h4 class="wdg-db-title">{{:title}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                {{/for}}
+            </div>
+        {{/for}}
+        <div {{layout "plans" css = "plans-content" /}} ></div>
+    </div>
+</script>

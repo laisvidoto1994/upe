@@ -1,0 +1,47 @@
+.bz-rp-summary {
+    font-size: 10px !important;
+}
+
+    .bz-rp-summary ul {
+        list-style-type: none;
+    }
+
+.bz-rp-detaillist-summary-opencase {
+    cursor: none !important;
+}
+
+
+.ui-dialog .ui-dialog-titlebar {
+    background: #293f55 !important;
+}
+
+.bz-rp-form-control {
+    box-shadow: none !important;
+}
+
+table td,
+table th {
+    padding: 9px 10px !important;
+}
+
+table.ui-datepicker-calendar td,
+table.ui-datepicker-calendar th {
+    padding: 7px 7px !important;
+}
+
+button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only {
+    background: #e5e5e5 !important;
+    border-radius: 0 !important;
+    max-height: 30px !important;
+    min-height: 30px !important;
+    padding: 0 .5em !important;
+    border: 1px solid #999 !important;
+}
+
+    button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only:hover {
+        background: #9e9e9e !important;
+    }
+
+.ui-bizagi-render-control-required:before {
+    margin-top: 0 !important;
+}

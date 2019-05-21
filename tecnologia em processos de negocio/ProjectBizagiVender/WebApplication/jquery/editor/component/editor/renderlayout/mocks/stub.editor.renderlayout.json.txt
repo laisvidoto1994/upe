@@ -1,0 +1,25 @@
+{
+    "name": "layout", 
+    "bas-type": "render-layout", 
+    "caption": "Layout", 
+    "subproperties": [
+        {
+            "property": {
+                "name": "labelwidth", 
+                "bas-type": "int", 
+                "caption": "Label Width", 
+                "value": 30, 
+                "user-editable": false
+            }
+        }, 
+        {
+            "property": {
+                "name": "valuewidth", 
+                "bas-type": "int", 
+                "caption": "Control Width", 
+                "value": 70, 
+                "user-editable": false
+            }
+        }
+    ]
+}

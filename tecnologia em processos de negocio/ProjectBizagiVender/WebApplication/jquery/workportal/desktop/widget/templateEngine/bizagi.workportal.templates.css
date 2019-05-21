@@ -1,0 +1,225 @@
+/*
+    Document   : bizagi.workportal.templates
+    Author     : Alexander Mejia - Danny González
+    Description:
+        Styles for templates
+*/
+#template-dataviewer {
+    margin-bottom: 55px;
+}
+
+#template-dataviewer > ul {
+    min-height: 100px;
+    overflow: visible;
+    padding: 0;
+    margin: 1em 0;
+    list-style: none;
+}
+
+#template-dataviewer > ul > li {
+    margin-bottom: 1em;
+}
+
+ul > li.bz-wp-empty {
+    position: static;
+    width: auto;
+    margin: 0;
+}
+
+#template-dataviewer-list > li > div {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+}
+
+#template-dataviewer-list .template-box-header {
+    padding: .4em 1em;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#template-dataviewer-list .template-box-header input {
+    align-self: center;
+}
+
+#template-dataviewer-list .template-box-header #casetoolbar {
+    align-self: center;
+}
+
+#template-dataviewer-list > li > div.template-box-element {
+    position: relative;
+    width: 100%;
+}
+
+#template-dataviewer-list > li > div.template-box-element > div.bz-layout-1.ui-bizagi-rendering-mode-execution > h3 {
+    border-bottom: 1px solid #f2f2f2;
+    margin: 5px 0;
+    font-size: 18px;
+    padding: 5px 0;
+}
+
+.template-actions-section {
+    border-top: 1px solid #E3E9EF;
+    background-color: #F8FAFC;
+    padding-left: 15px;
+
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.template-actions-section > ul {
+    list-style: none;
+    white-space: nowrap;
+    margin: 0;
+    padding: 10px 3px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.template-actions-section > ul > li {
+    display: inline-block;
+    margin-right: 6px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.template-actions-section > div.ellipsis-icon {
+    width: 28px;
+    height: 17px;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 17px;
+    line-height: 8px;
+    color: #a8b6bf;
+}
+
+.template-actions-section > ul > li.action-opt-hidden {
+    display: none;
+}
+
+.template-box-element > div.bz-layout-1.ui-bizagi-rendering-mode-execution > div.bz-right > ul {
+    margin: 0;
+}
+
+.template-box-element > div.template-actions-section > div.template-box-tooltip {
+    border: 1px solid #c0c7cc;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    width: auto;
+    max-width: 200px;
+    background: #FFF;
+    position: absolute;
+    overflow-y: auto;
+}
+
+.template-box-element > div.template-actions-section > div.template-box-tooltip ul {
+    color: #405866;
+    margin: 5px 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.template-box-element > div.template-actions-section > div.template-box-tooltip > ul > li {
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+
+.template-box-element .ui-bizagi-render-label, .bz-action-launcher-container .ui-bizagi-render-label{
+    padding: 0;
+}
+
+.template-box-element .template-box-header{
+    min-height: 23px;
+}
+
+.template-box-element .template-box-header input[type='checkbox']{
+    display: none;
+}
+
+.bz-action-launcher-container .ui-bizagi-render-upload-item a{
+    line-height: 16px;
+    vertical-align: sub;
+}
+
+#template-navigator {
+    height: 30px;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    left: 0;
+    z-index: 0;
+}
+
+.template-box-footer {
+    padding: 0 1em;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.ui-bizagi-rendering-mode-execution .layout-text-template{
+    max-height: 140px;
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+.wdg-tple-button {
+    padding: 0.4em 1em;
+    border-radius: 4px;
+}
+
+.template-actions-section .actions-hidden-container .icon,
+.template-actions-section .wdg-tple-button .arrow-icon,
+.template-actions-container .wdg-tple-button .arrow-icon {
+    display: inline-block;
+    margin-right: 2px;
+    font-size: 10px;
+    vertical-align: baseline;
+}
+
+.template-actions-section .actions-hidden-container span,
+.template-actions-section .wdg-tple-button span,
+.template-actions-container .wdg-tple-button span {
+    vertical-align: middle;
+}
+
+.wdg-tple-button:hover .icon,
+.wdg-tple-button:hover .arrow-icon {
+    background-position: 0 -2px;
+}
+
+.wdg-usmry-user-info {
+    margin-top: .4em;
+    margin-left: 5em;
+}
+
+.wdg-usmry-user-info p {
+    margin: 0;
+}
+
+.wdg-usmry-username {
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.wdg-usmry-user-info .ellipsis-icon {
+    width: 28px;
+    height: 17px;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 17px;
+    line-height: 8px;
+    color: #a8b6bf;
+    margin: 0 10px;
+}

@@ -1,0 +1,125 @@
+.ui-bizagi-notifications-container
+{
+    right: 25px;    
+    position:fixed;   
+    display:none;
+    z-index: 1999;
+	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius:4px;
+	box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.5);
+	padding:1px;
+}
+.ui-bizagi-notifications-container-bottom
+{
+	bottom: 25px;
+}
+.ui-bizagi-notifications-content
+{   
+    max-height: 350px;    
+    overflow-y: auto;    
+    position: relative;
+	-moz-border-radius:0px 0px 4px 4px; -webkit-border-radius:0px 0px 4px 4px; border-radius:0px 0px 4px 4px;
+	padding:6px 6px;
+	border-top:none;
+	background-color: #CECECE !important;
+}
+.ui-bizagi-notifications-header
+{
+    height: 24px;
+    line-height: 24px;
+	padding-left: 5px;
+	padding-right: 50px;
+	-moz-border-radius:4px 4px 0px 0px; -webkit-border-radius:4px 4px 0px 0px; border-radius:4px 4px 0px 0px;
+	font-family: 'NeoSansStdMedium', sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	border-bottom:none;
+}
+.ui-bizagi-notifications-container.ui-bizagi-state-collapsed {
+	width: auto;
+}
+.ui-bizagi-notifications-container.ui-bizagi-state-collapsed .ui-bizagi-notifications-header{
+	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius:4px;
+}
+
+.ui-bizagi-notifications-container.ui-bizagi-notification-reverse {
+    right: auto;
+}
+
+.ui-bizagi-notifications-container.ui-bizagi-notification-rtl {
+    right: auto;
+    left: 25px;
+}
+
+.ui-bizagi-notifications-container.ui-bizagi-state-expanded {
+	width: 500px;
+}
+.ui-bizagi-notifications-box-button
+{
+    position:absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+.ui-bizagi-notifications-clear-button
+{
+    position:absolute;
+    right: 25px;
+    top: 5px;
+    cursor: pointer;
+}
+.ui-bizagi-notification-item
+{
+    cursor: pointer;
+    position: relative;
+	border:none;
+	padding-left: 25px;
+	padding-top: 5px; 
+	padding-right: 0px; 
+	padding-bottom: 5px;
+}
+.ui-bizagi-notification-item .ui-icon
+{
+    top:5px;
+	left:0px;
+    position: absolute;
+	background-image: url("images/ui-icons_cd0a0a_256x240.png") !important;
+}
+.ui-bizagi-notification-item label
+{
+    display: inline-block;
+    cursor: pointer;
+}
+.ui-bizagi-notification-item .ui-icon-alert
+{
+	background-image: url("images/ui-icons_eb990f_256x240.png") !important;
+}
+
+.ui-bizagi-notification-reverse .ui-bizagi-notifications-header {
+    direction: rtl;
+}
+
+.ui-bizagi-notification-reverse .ui-bizagi-notifications-box-button.ui-icon-triangle-1-s ,
+.ui-bizagi-notification-reverse .ui-bizagi-notifications-box-button.ui-icon-triangle-1-n {
+    right: auto;
+    left: 5px;
+}
+
+.ui-bizagi-notification-reverse .ui-bizagi-notifications-header {
+    text-align: right;
+    padding: 0 10px 0 50px;
+}
+
+.ui-bizagi-notification-reverse .ui-bizagi-notification-item {
+    text-align: right;
+}
+
+.ui-bizagi-notification-reverse .ui-bizagi-notifications-content .ui-bizagi-notification-item .ui-icon 
+{
+       top: 5px;
+       left: auto;
+       right: 0;
+}
+.ui-bizagi-notification-reverse .ui-bizagi-notification-item label {
+    display: block;
+    margin-right: 20px;
+}

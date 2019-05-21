@@ -1,0 +1,36 @@
+<script id="contextmenu-container" type="text/x-jquery-tmpl">
+    <div class="contextmenu-container biz-shadow-right-angle biz-border-all contextmenu-border">
+        <ul class="contextmenu-group"></ul>
+    </div>
+</script>
+
+<script id="contextmenu-button-separator" type="text/x-jquery-tmpl">
+    <li class="contextmenu-group-row">
+        <hr class="contextmenu-hr" />
+    </li>
+</script>
+
+<script id="contextmenu-button" type="text/x-jquery-tmpl">
+    <li class="contextmenu-group-row">
+        <div class="biz-btn-horizontal {{if disabled}}biz-btn-disabled{{/if}} is-active biz-btn-contextmenu">
+            <div class="biz-btn" data-guid="${guid}">
+                <i class="biz-ico ribbon-ico-${style} ${css} ${icon}"></i> 
+                <span class="contextmenu-caption">${caption}</span>
+                {{if hasItems}}
+                    <i class="biz-arrow-right contextmenu-arrow"></i>
+                {{/if}}
+                {{if value}}
+                 {{if selected}}
+                <i class="biz-ico ui-comboBox-image-small-check bz-studio bz-point_16x16_standard"></i>
+                    {{else}}
+                <i class="biz-ico ui-comboBox-image-small-uncheck bz-studio bz-black bz-point_16x16_black"></i>
+                    {{/if}}
+                {{/if}}
+            </div>
+            {{if hasItems}}
+                <ul class="biz-dropdown fade-in">
+                </ul>
+            {{/if}}
+        </div>
+    </li>
+</script>

@@ -1,0 +1,27 @@
+<div class="bz-wp-render-association">
+    <div class="association-label">
+        {{if flipped}}
+            <label>${leftLabel} / ${rightLabel}</label>
+        {{else}}
+            <label>${rightLabel} / ${leftLabel}</label>
+        {{/if}}
+        <button class="bz-cm-icon association-flip-button"></button>
+    </div>
+    <div class="association-container">
+    {{each $item.getColumnData(0) }}
+        <h3><a href="#">${value}</a></h3>
+        <div>
+            <ul data-parent-id="${id}">
+                {{each $item.getRightAssociation(id) }}
+                    <li>
+                        <label>
+                            <input class="bz-cm-icon ui-bizagi-render-boolean-check" type="checkbox" data-id="${id}" {{if checked}}checked{{/if}}/>
+                            <span>${name}</span>
+                        </label>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    {{/each}}
+    </div>
+</div>

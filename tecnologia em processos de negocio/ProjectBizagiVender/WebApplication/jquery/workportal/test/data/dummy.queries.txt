@@ -1,0 +1,33 @@
+{
+    "query": [{
+        "id": 1,
+        "queryType": 2,
+        "queryDisplayName": "Application",
+        "idParent": -1,
+        "idStoredQuery": -1,
+        "idCube": -1,
+        "prefix": "",
+        "queryId": -1,
+        "nodes": [{
+            "id": 2,
+            "queryType": 2,
+            "queryDisplayName": "CAF",
+            "idParent": 1,
+            "idStoredQuery": -1,
+            "idCube": -1,
+            "prefix": "",
+            "queryId": -1,
+            "nodes": [{
+                "id": 30001,
+                "queryType": 0,
+                "queryDisplayName": "CAF Status Overview",
+                "idParent": 2,
+                "idStoredQuery": -1,
+                "idCube": -1,
+                "prefix": "prefix_QueryForm",
+                "queryId": 1,
+                "nodes": []
+            }]
+        }]
+    }]
+}

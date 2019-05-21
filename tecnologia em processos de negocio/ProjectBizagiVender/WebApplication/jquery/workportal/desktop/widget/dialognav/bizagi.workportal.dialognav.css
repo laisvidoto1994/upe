@@ -1,0 +1,25 @@
+﻿
+/*
+dialog
+*/
+.ui-dialog #paginator-container {
+  width: auto;
+  bottom: auto;
+  margin: 0 auto;
+}
+
+.ui-dialog .casetemplate-box-footer
+{
+   display:none;
+}
+
+#dialognavdata-frame
+{
+    padding-bottom: 50px;
+}
+
+#dialognavdata-frame #paginator-container
+{
+    border: 1px solid #E2E2E2;
+    padding-left: auto;
+}

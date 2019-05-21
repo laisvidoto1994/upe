@@ -1,0 +1,64 @@
+<script id="project-files-wrapper" type="text/x-jsrender" >
+<div>
+
+    <form id="project-files-notifier-window-wrapper">
+    </form>
+
+    <div id="home-project-files-wrapper">
+        <form class="bz-wp-files-upload">
+            <input type="file" name="file[]" id="project-files-upload" title="%{workportal-project-attachments-addfiles}" />
+        </form>
+    </div>
+
+    <div id="project-files-list" class="row">
+        {{include tmpl="#project-files-list"/}}
+    </div>
+    <div id="project-files-showmore" class="ui-bizagi-wp-project-discussion-showmore-comments">
+        <button class="bz-wp-btn bz-wp-btn-link">
+            %{workportal-project-discussion-comment-showmore}
+        </button>
+        <div id="project-files-nomore">%{workportal-project-files-nomore}</div>
+    </div>
+    <div id="home-project-files-notifier-window">
+    </div>
+
+</div>
+</script>
+
+<script id="project-files-list" type="text/x-jsrender" >
+    {{for files}}
+        <div class="col-md-4 ui-bizagi-wp-project-files-wrapitem"  data-fileGuid="{{:guid}}" data-attchGuid="{{if uid}}{{:uid}}{{else}}{{:attachment.guid}}{{/if}}">
+            <div class="clearfix bz-card">
+                <div class="bz-wp-files-thumb ui-bizagi-wp-project-files-iconwrapper">
+                    <div class="ui-bizagi-wp-project-files-icon {{fileClass name /}}"></div>
+                    <img class="ui-bizagi-wp-project-files-thumbnail" src="">
+                </div>
+                <div class="ui-bizagi-wp-project-files-titlewrapper">
+                    <h3 class="bz-wp-section ui-bizagi-wp-project-files-file bz-wp-truncate-text-100percent" title="{{:name}}">{{:name}}</h3>
+                    <h4 class="ui-bizagi-wp-project-files-itemtitle ui-bizagi-wp-project-files-user" data-userId="{{:user}}">{{:userName}}</h4>
+                    <p class="bz-wp-timestamp bz-wp-timestamp-small ui-bizagi-wp-project-files-date" data-date="{{:date}}">{{relativeTime date /}}</p>
+                </div>
+            </div>
+
+        </div>
+    {{/for}}
+</script>
+
+<script id="project-files-uploaditem" type="text/x-jsrender" >
+    <ul class="k-upload-files k-reset">
+        {{for files}}
+            <li class="k-file k-file-progress" data-guid="{{:uid}}">
+                <span class="k-progress"></span>
+                <span class="k-icon"></span>
+                <span class="k-filename">{{>name}}</span>
+                <strong class="k-upload-status">
+                    <span class="k-errormsg"></span>
+                    <span class="k-upload-pct k-icon k-loading"></span>
+                    <button type="button" class="k-button k-button-bare k-upload-action">
+                        <span class="k-icon k-cancel" title="%{workportal-widget-reports-confirm-cancel}"></span>
+                    </button>
+                </strong>
+            </li>
+        {{/for}}
+    </ul>
+</script>

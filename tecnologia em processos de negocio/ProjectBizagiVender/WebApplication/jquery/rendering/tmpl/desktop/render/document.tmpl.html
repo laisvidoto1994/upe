@@ -1,0 +1,64 @@
+﻿<script id="bz-document-generator" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-render-documentgenerator">
+        <div class="ui-bizagi-div-button-documentgenerator">
+            {{if allowgenerate}}
+            <button class="ui-bizagi-render-button ui-button ui-widget ui-corner-all ui-bizagi-button-documentgenerator {{if noActivateButton}} ui-button-disabled ui-state-disabled {{/if}}" type="button" onclick="" {{if noActivateButton}} disabled {{/if}}>${caption}</button>
+            {{/if}} 
+            <div class="ui-bizagi-div-error-container"></div>
+            <div class="ui-bizagi-div-documentgenerator">
+                <ol class="ui-bizagi-container-documents">
+                    {{if editable}}
+                    <li class="ui-bizagi-document-upload-item">
+                        <span class="ui-bizagi-document-type"></span>
+                        <a href="#"><span>document.pdf</span></a>
+                    </li>
+                    <li class="ui-bizagi-document-upload-item-design">...</li>
+                    {{/if}} 
+                    {{files}}
+                    {{if noFiles}}
+                    <li><span></span></li>
+                    {{/if}}
+                </ol>
+            </div>
+        </div>
+        {{if allowSendInMail}}
+        <span class="ui-bizagi-render-documentgenerator-sendmail" title="%{render-document-sendemail}"></span>
+        {{/if}}
+    </div>
+</script>
+
+<script id="bz-document-generator-item" type="text/x-jquery-tmpl">
+    
+    <li class="ui-bizagi-document-upload-item" data-filename="${filename}" {{if joined}} data-joined="${joined}" {{/if}} >   
+        <span class="ui-bizagi-document-type"></span>
+        <a href="${url}" target="_blank"><span>${filename}</span></a>
+        {{if allowDelete}}
+        <span class="ui-bizagi-container-documents-item-delete ui-bizagi-render-upload-icon ui-icon ui-icon-close" style="visibility: hidden;" data-filename="${filename}"></span>
+        {{/if}}
+        <button type="button" class="ui-bizagi-document-preview ui-bizagi-button ui-button-text ui-button ui-widget ui-state-default ui-corner-all" data-url="${url}" data-filename="${filename}" data-joined="${joined}"><i class="ui-bizagi-render-icon-search"></i></button>
+    </li>
+</script>
+
+<script id="bz-document-generator-column-item" type="text/x-jquery-tmpl">
+    
+    <li class="ui-bizagi-document-upload-item ui-bizagi-document-upload-column-item" data-filename="${filename}" {{if joined}} data-joined="${joined}" {{/if}} >   
+        <span class="ui-bizagi-document-type"></span>
+        <a href="${url}" target="_blank"><span>${filename}</span></a>
+        {{if allowDelete}}
+        <span class="ui-bizagi-container-documents-item-delete ui-bizagi-render-upload-icon ui-icon ui-icon-close" data-filename="${filename}"></span>
+        {{/if}}
+    </li>
+</script>
+
+<script id="bz-document-generator-item-preview" type="text/x-jquery-tmpl">
+   <iframe width="100%" height="99%"  src="${url}" id="ui-bizagi-document-pdf-preview">
+    <p>The pdf cannot be displayed, please click <a href="${url}">here></a> to open the file</p>
+  </iframe>
+  
+</script>
+
+<script id="bz-document-generator-item-preview-object" type="text/x-jquery-tmpl">
+ <object width="100%" height="100%" type="application/pdf"  data="${url}" id="ui-bizagi-document-pdf-preview" class="ui-bizagi-document-pdf-preview">
+  <p>The pdf cannot be displayed, please click <a href="${url}">here></a> to open the file</p>
+  </object>
+</script>

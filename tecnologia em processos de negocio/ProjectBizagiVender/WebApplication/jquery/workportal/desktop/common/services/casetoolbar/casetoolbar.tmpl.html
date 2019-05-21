@@ -1,0 +1,18 @@
+﻿﻿﻿<script id="casetoolbar-wrapper" type="text/x-jsrender-tmpl">
+    <div class="casetoolbar">
+        <ul>
+            {{if casetoolbarData.referrer == "CasesTemplate"}}
+                <li class="btn-fallowing" data-guid="{{:casetoolbarData.guidFavorite}}" data-idcase="{{:casetoolbarData.idcase}}" title="%{workportal-service-casetoolbar-following}">
+                    <i class="bz-icon bz-icon-16 bz-icon-star {{if casetoolbarData.guidFavorite}} on {{/if}}"></i>
+                </li>
+                <li class="btn-view" data-idworkflow="{{:casetoolbarData.idWorkflow}}" data-idcase="{{:casetoolbarData.idcase}}" title="%{workportal-service-casetoolbar-view-path}">
+                    <i class="bz-icon bz-icon-16 bz-icon-diagram-outline"></i>
+                </li>
+            {{/if}}
+            <li class="bz-wp-btn bz-wp-btn-xs bz-wp-btn-primary btn-workonit" data-idcase="{{:casetoolbarData.idcase}}" title="%{workportal-service-casetoolbar-work-on-it}">
+                <i class="bz-icon bz-icon-play"></i>
+                <span>%{workportal-service-casetoolbar-work-on-it}</span>
+            </li>
+        </ul>
+    </div>
+</script>

@@ -1,0 +1,166 @@
+/********
+* Filename: bizagi.editor.component.gridcolumneditor.css
+* Create Date: 2012-07-04
+* Author: Manuel Alexander Mejia Manuel.Mejia@bizagi.com
+*
+********/
+
+.bz-fm-grid-table
+{
+   display:table;
+   width:100%;   
+}
+
+.bz-grid-column-table-cell
+{
+    display:table-cell;
+    height:60px;
+}
+
+.biz-overflow-x
+{
+    width:100%;
+    overflow:auto;
+    padding-top: 8px;
+    height:80px;
+}
+
+.bz-grid-columneditor-container-main{
+	position: absolute;
+	left: 0;
+	top: 0;	
+	z-index: 800;
+    width: 100%;
+    height: 100%;    
+    background-color: hsla(0, 0%, 0%, .4);
+}
+
+#bz-fm-grid-columneditor{
+	border:1px solid #B3B3B3;
+
+	background: rgb(218,218,218); /* Old browsers */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(218,218,218,1)), color-stop(6%,rgba(218,218,218,1)), color-stop(8%,rgba(250,250,250,1)), color-stop(100%,rgba(245,245,245,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(218,218,218,1) 0%,rgba(218,218,218,1) 6%,rgba(250,250,250,1) 8%,rgba(245,245,245,1) 100%); /* Chrome10+,Safari5.1+ */
+
+	z-index: 900;
+	display: -webkit-box;
+    -webkit-box-orient: horizontal;	
+    border-radius: 3px;
+
+    padding: 0px 2px 15px 2px;
+
+    -webkit-box-shadow:  0px 0px 4px 4px rgba(166,166,166,0.25);
+    box-shadow:  0px 0px 4px 4px rgba(166,166,166,0.25);
+    position: fixed;
+    height:120px!important;
+	
+}
+
+#bz-fm-grid-columneditor .bz-grid-column{
+	border: 1px solid #D6D6D6;
+	background-color: #F2F2F2;
+	border-radius: 2px;
+	margin-left: 1px;
+	margin-right: 1px;
+	padding: 3px;
+}
+
+#bz-fm-grid-columneditor .bz-grid-column .bz-grid-column-type-name{
+	display: block;
+	background-color: #DCDCDC;
+	text-align: center;
+	padding: 2px;
+
+	text-shadow: 1px 1px 1px #ffffff;
+	color:#5C5C5C;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#bz-fm-grid-columneditor .bz-grid-column:hover,
+#bz-fm-grid-columneditor .bz-grid-column:focus,
+#bz-fm-grid-columneditor .bz-grid-column:active{
+	border: 1px solid #7C7C7C;
+	-webkit-box-shadow:  0px 0px 2px 2px rgba(166,166,166,0.25);
+    box-shadow:  0px 0px 2px 2px rgba(166,166,166,0.25);
+}
+#bz-fm-grid-columneditor .bz-grid-column:hover .bz-grid-column-type-name,
+#bz-fm-grid-columneditor .bz-grid-column:focus .bz-grid-column-type-name,
+#bz-fm-grid-columneditor .bz-grid-column:active .bz-grid-column-type-name
+{
+	color:#000;
+}
+
+#bz-fm-grid-columneditor .ui-sortable-placeholder{
+	border: 1px dashed #A8A8A8;
+}
+
+#bz-fm-grid-columneditor .ui-sortable-placeholder:hover,
+#bz-fm-grid-columneditor .ui-sortable-placeholder:focus,
+#bz-fm-grid-columneditor .ui-sortable-placeholder:active{
+	border: 1px dashed #7C7C7C;
+	background-color: #DCDCDC;
+}
+
+#bz-fm-grid-columneditor .options{
+	position: absolute;
+	bottom: 5px;
+	width: 98%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0px;
+	text-align: right;
+}
+
+
+#bz-fm-grid-columneditor > .bz-grid-column,
+#bz-fm-grid-columneditor > .ui-sortable-placeholder
+{
+	-webkit-box-flex: 1;
+	/*height: 85%;*/
+	margin-bottom: 23px;
+	margin-right:4px;
+}
+
+.bz-options-grid
+{
+	 background-color: #ccc;
+	 cursor:pointer;
+}
+ 
+.bz-options-grid:hover
+{
+	  cursor:pointer;
+}
+
+.bz-fm-grid-columneditor-placeholder
+{
+	border: 1px dashed #A8A8A8;
+	padding: 2px;
+	height: 55%;
+	-webkit-box-flex: 1;
+} 
+ 
+.bz-fm-grid-columneditor-placeholder-custom
+{
+	border: 1px dashed #A8A8A8;
+	display: table-cell;
+    min-width: 20px;
+} 
+
+
+#bz-fm-grid-columneditor[class*="drop-here"]::before{
+	width:99%;
+}
+
+#bz-fm-grid-columneditor .bz-grid-column .ui-resizable-e
+{
+    background-image: url(../css/images/separator.png);
+    width:13px;
+    z-index: 10;
+}
+
+#bz-fm-grid-columneditor .bz-grid-column .ui-resizable-e:hover
+{  
+   background-image: url(../css/images/biz-separator-activate.png);   
+}

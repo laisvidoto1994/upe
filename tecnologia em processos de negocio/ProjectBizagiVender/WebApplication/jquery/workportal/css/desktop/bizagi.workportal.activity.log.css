@@ -1,0 +1,151 @@
+#ui-bizagi-render-activity-log .ui-dialog-buttonset {
+    text-align: center;
+    margin: 5px 0;
+}
+
+#ui-bizagi-render-activity-log .case-detail .title {
+    color: #666;
+    display: block;
+    padding: 3px 0;
+}
+
+#ui-bizagi-render-activity-log .main-menu {
+    list-style: none;
+    padding: 0;
+
+    margin-bottom: 0;
+}
+
+#activity-log-data-wrapper {
+    padding: 0 30px;
+}
+
+#ui-bizagi-render-activity-log .main-menu li {
+    display: inline-block;
+    margin-bottom: -2px;
+}
+
+
+
+#ui-bizagi-render-activity-log a {
+    text-decoration: none;
+}
+
+#ui-bizagi-render-activity-log .main-menu li a {
+    display: inline-block;
+    padding: 1em;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+
+
+#ui-bizagi-render-activity-log .main-menu li a span {
+    vertical-align: middle;
+}
+
+#ui-bizagi-render-activity-log .header {
+
+    background-color: rgb(204, 204, 204);
+    background-position: initial initial;
+    background-repeat: repeat no-repeat;
+
+    border-color: rgb(179, 179, 179);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+    color: rgb(47, 82, 108);
+
+    font-weight: bold;
+
+    padding: 6px;
+
+
+}
+
+#ui-bizagi-render-activity-log .view-log-types {
+
+}
+
+#ui-bizagi-render-activity-log .activity-log-table .listHeaderLinks {
+    padding: 1em;
+    vertical-align: middle;
+}
+
+
+#ui-bizagi-render-activity-log .activity-log-table .listHeaderLinks a {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+
+}
+
+#ui-bizagi-render-activity-log .activity-log-table tr[style="height:8px;"],
+#ui-bizagi-render-activity-log .activity-log-table .tdshadow {
+    display: none;
+}
+
+#ui-bizagi-render-activity-log .activity-log-table tr[class^="gridline"] > td {
+    padding: 1em;
+}
+
+#ui-bizagi-render-activity-log .activity-log-table tr[class^="gridline"] > td span {
+    color: #666;
+    display: block;
+}
+
+#ui-bizagi-render-activity-log .activity-log-table .icon {
+    width: 16px;
+    height: 16px;
+}
+
+#ui-bizagi-render-activity-log .activity-log-table .icon.reassigned-icon {
+    background: url('images/Reasign.gif') no-repeat;
+}
+
+#ui-bizagi-render-activity-log .activity-log-table .icon.annulated-icon {
+    background: url('../desktop/images/lista/BombilloAnulado.gif') no-repeat;
+}
+
+#ui-bizagi-render-activity-log .activity-log-table .gridline1 {
+
+}
+
+#ui-bizagi-render-activity-log .activity-log-table .gridline2 {
+
+}
+
+#activity-log-data-detail-header-wrapper {
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+#activity-log-data-detail-header-wrapper #case-detail-wrapper {
+    float: left;
+}
+
+#activity-log-data-detail-header-wrapper #log-filter-wrapper {
+    float: right;
+    min-width: 275px;
+    margin-bottom: 5px;
+}
+
+#activity-log-data-detail-header-wrapper .filter-field {
+    overflow: hidden;
+}
+
+#activity-log-data-detail-header-wrapper .filter-field > input[type="text"] {
+    float: right;
+    width: 40%;
+    height: 24px;
+}
+
+#activity-log-data-detail-header-wrapper .filter-field > label {
+    float: left;
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+    height: 24px;
+    line-height: 24px;
+    text-align: left;
+}

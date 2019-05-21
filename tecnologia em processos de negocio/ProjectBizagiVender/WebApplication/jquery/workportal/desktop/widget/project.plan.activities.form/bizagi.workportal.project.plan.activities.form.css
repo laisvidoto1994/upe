@@ -1,0 +1,232 @@
+﻿.ui-bizagi-workportal-opacity {
+    opacity: 0.5;
+}
+
+.ui-bizagi-workportal-textarea {
+    resize: none;
+}
+
+#project-plan-activity-form {
+    margin-bottom: 2em;
+}
+
+#project-plan-activity-form table td {
+    padding: 5px 0;
+}
+
+#project-plan-activity-form textarea {
+    width: 100%;
+}
+
+#project-plan-activity-form table .first-column {
+    width: 120px;
+}
+
+#project-plan-activity-form .ui-bizagi-wp-project-plan-activity-header
+{
+    overflow: hidden;
+    position: relative;
+}
+
+#project-plan-activity-form .ui-bizagi-wp-project-plan-activity-header h4
+{
+    float: left;
+    margin-top: 0px;
+}
+
+#project-plan-activity-form .ui-bizagi-wp-project-plan-activity-header .wrapper-menu-rubik
+{
+    float: right;
+}
+
+.ui-bizagi-wp-project-plan-activity-action-menu > li {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+#ui-bizagi-wp-project-wrapper-form-with-items .ui-bizagi-wp-project-form-buttons-actions {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+    background-color: #DDD;
+    border-top: 1px solid #DDD;
+    text-align: right;
+
+}
+
+#ui-bizagi-wp-project-wrapper-form-with-items .container-items > span {
+	display: none;
+}
+
+#project-plan-activity-form-wrapper h4 {
+	font-size: 16px;
+}
+
+#project-plan-activity-form-wrapper .list-items {
+    overflow-y: auto;
+    overflow-x: hidden;
+	max-height: 135px;
+    margin: 0;
+    padding: 0;
+
+}
+
+/*Begin Items*/
+#project-plan-activity-form-wrapper .item {
+
+
+
+}
+
+#project-plan-activity-form-wrapper .item:first-child {
+    margin-top: 1rem;
+}
+
+#project-plan-activity-form-wrapper .item .check {
+    height: 28px;
+    margin-right: .2rem;
+    vertical-align: middle;
+}
+
+#project-plan-activity-form-wrapper .item .inputtext {
+    display: none;
+    width: 224px;
+    vertical-align: middle;
+}
+
+#project-plan-activity-form-wrapper .item .showtext {
+    overflow: hidden;
+    width: 224px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+#project-plan-activity-form-wrapper .item-button {
+
+    cursor: pointer;
+    display: none;
+
+}
+
+#project-plan-activity-form-wrapper .item-button.delete:hover {
+    color: #0B8BCB;
+}
+
+/*End Items*/
+
+/*When mouse is editing*/
+#project-plan-activity-form-wrapper .container-items.is-editing.editing-mouse .item:hover .item-button {
+    display: inline-block;
+}
+
+#project-plan-activity-form-wrapper .container-items.is-editing.editing-mouse .item:hover .inputtext {
+    display: inline-block;
+}
+
+#project-plan-activity-form-wrapper .container-items.is-editing.editing-mouse .item:hover .showtext {
+    display: none;
+}
+
+/*When item is editing*/
+#project-plan-activity-form-wrapper .item.edit .inputtext {
+    display: inline-block;
+}
+
+#project-plan-activity-form-wrapper .item.edit .showtext {
+    display: none;
+}
+
+.text-right {
+    text-align: right;
+}
+
+#project-plan-activity-form-wrapper .k-widget.k-tooltip-validation {
+    bottom: auto;
+    display: block;
+    padding: 4px;
+}
+
+#project-plan-activity-form-wrapper .ui-spinner a:hover
+{
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+}
+
+#project-plan-activity-form-wrapper .ui-spinner a.ui-spinner-button.ui-spinner-up
+{
+    border-radius: 0;
+    border-top-right-radius: 4px;
+}
+
+#project-plan-activity-form-wrapper .ui-spinner a.ui-spinner-button.ui-spinner-down
+{
+    border-radius: 0;
+    border-bottom-right-radius: 4px;
+}
+
+#project-plan-activity-form-wrapper .ui-rubik-input.hasDatepicker
+{
+    border: 0;
+}
+
+/* ==========================================================================
+   Project plan activities form component
+   ========================================================================== */
+
+.bz-wp-pp-af-control .k-autocomplete {
+    background: #FAFAFA !important;
+    color: #374C58;
+}
+
+.bz-wp-pp-af-control > span {
+    width: 100%;
+}
+
+.bz-wp-pp-af-control input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: .6em 1em !important;
+    min-height: 32px !important;
+
+    resize: none;
+    vertical-align: middle;
+}
+
+.bz-wp-pp-af-control input:focus {
+    border: none;
+}
+
+.bz-wp-pp-divisor-wrapper {
+    border-top: solid 2px #CACFD2;
+    margin: 1.8em 0;
+    text-align: center;
+}
+
+.bz-wp-pp-divisor {
+    position: relative;
+    top: -17px;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 20px;
+    margin: 0;
+    background: #374C58;
+    color: #FAFAFA;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+
+#project-plan-activity-form-save {
+	display: none;
+}
+
+.position-message-validate>span {
+	color: #F50E0E;
+    font-weight: bold;
+}

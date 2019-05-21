@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Properties (Tabs)</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../../../../common/jquery.ui/css/desktop/jquery.ui.css">
+        <style type="text/css">
+            #tabs-container
+            {
+                width: 300px;
+                display: none;
+            }
+            
+            .prop-property-label
+            {
+                display: block;
+            }
+            .prop-property
+            {
+                margin: 15px 0px 15px 0px;
+            }
+            .element
+            {
+                width: 400px;
+                border: black dotted 1px;
+                border-collapse: separate;
+                height: 80px;
+                text-align: center;
+                display: table-cell;
+                vertical-align: middle;
+                font-size: xx-large;
+            }
+            .element.selected
+            {
+                border-color: white;
+                color: white;
+                background-color: black;
+            }
+        </style>
+        <script type="text/javascript" src="../../../../common/base/js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../../../common/jquery.ui/js/desktop/jquery.ui.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                //$("#tabs-container").tabs();
+                $(".element").click(function() {
+                    $(".element").removeClass("selected");
+                    $(this).addClass("selected");
+                    pintarPropiedades($(this));
+                });
+            });
+            function pintarPropiedades(el) {
+                console.debug(el);
+                var coords = el.offset();
+                $.extend(coords, { top : coords.top + 90 });
+                $("#tabs-container").show().offset(coords);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="canvas">
+                <div class="element">Element 1</div>
+                <div class="element">Element 2</div>
+            </div>
+            <div id="tabs-container">
+                <ul>
+                    <li><a href="#prop-tab-generalSettings">General Settings</a></li>
+                    <li><a href="#prop-tab-render">Render</a></li>
+                </ul>
+                <div id="prop-tab-generalSettings">
+                    <div class="prop-property">
+                        <label class="prop-property-label">Display Name</label>
+                        <input class="prop-property-value" type="text" value="Value">
+                    </div>
+                    <div class="prop-property">
+                        <label class="prop-property-label">Description</label>
+                        <input class="prop-property-value" type="text" value="Description 1">
+                    </div>
+                    <div class="prop-property">
+                        <label class="prop-property-label">Fruits</label>
+                        <select class="prop-property-value">
+                            <option value="1">Apple</option>
+                            <option value="2" selected="selected">Orange</option>
+                            <option value="3">Tangerine</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="prop-tab-render">
+                    <div class="prop-property">
+                        <label class="prop-property-label">Pin Render</label>
+                        <input class="prop-property-value" type="text" value="1123">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

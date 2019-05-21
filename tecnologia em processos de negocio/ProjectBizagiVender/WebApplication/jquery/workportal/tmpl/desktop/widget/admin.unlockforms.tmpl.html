@@ -1,0 +1,105 @@
+<script id="ui-bizagi-workportal-widget-admin-unlock-forms" type="text/x-jquery-tmpl" >
+
+    <div class="biz-wp-window">
+        <div>
+            <strong>
+                <span id="generalTitle" class="biz-wp-window-title" style="display:none">
+                    %{workportal-widget-adminunlockforms-subtitle}
+                </span>
+            </strong>
+        </div>
+    </div>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-unlock-forms-buttons" type="text/x-jquery-tmpl" >
+
+        <div id="unlock-forms-log-data-buttonset" class="biz-wp-buttonset">
+            <button id="btn-admin-unlock-forms" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-adminunlockforms-button-unlock}</span>
+            </button>
+        </div>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-unlock-forms-result" type="text/x-jquery-tmpl">
+    <div id="dinamicContent"></div>
+    <table class="biz-wp-table" cellspacing="2" cellpadding="2" width="100%" border="0">
+
+
+        {{each(i, item) headers }}
+
+            {{if item.fieldName == "I_formName"}}
+                <col style="width:35%">
+            {{/if}}
+
+            {{if item.fieldName == "I_userName"}}
+                <col style="width:35%">
+            {{/if}}
+
+            {{if item.fieldName == "I_userfullName"}}
+                <col style="width:27%">
+            {{else}}
+                <col style="width:3%">
+            {{/if}}
+
+        {{/each}}
+
+        <col style="width:1%">
+
+        <thead class="biz-wp-table-head">
+             {{each(i, item) headers }} 
+                <th> 
+                    <a href="#" class="forms-column-header" data-columnOrder="${item.order}" data-columnOrderName="${item.orderFieldName}" data-orderType="${item.orderType}">${item.displayName}</a>
+                </th>
+             {{/each}}
+             <th></th>
+        </thead>
+
+        <tbody class="biz-wp-table-body">
+            {{each(i, rowItem) rows }}
+                {{each(j, element) rowItem.data }}
+                    {{if element.attr == "first_row"}}
+                        <tr>
+                            {{each(k, item) element.data }}
+
+                                {{if item.id == "checkFormAdmin" }}
+                                    <td class="row-item BorderCell BAMainFontColor" rowspan="${totalTask}">
+                                        {{if item.totalTask > 1}}rowspan="${element.totalTask}"  {{/if}}
+
+                                        <input class="biz-wp-float-left biz-wp-margin-right-2" type="checkbox" name="FormAdmin" value="${item.value}" data-subprocess="${item.isSubProcess}" data-radNumber="${radNumber}"/>
+                                    </td>
+                                {{/if}}
+
+                                {{if item.id == "idWorkItem" }}
+                                    <td class="row-item BorderCell BAMainFontColor" rowspan="${totalTask}">
+                                        <span>${item.value}</span>
+                                    </td>
+                                {{/if}}
+                            {{/each}}
+                        </tr>
+                    {{/if}}
+                {{/each}}
+            {{/each}}
+        </tbody>
+    </table>
+
+    <div id="biz-wp-table-summary-wrapper" class="biz-wp-table-summary-wrapper">
+          <ul id="biz-wp-table-pager-wrapper" class="biz-wp-table-pager-wrapper">
+          </ul>
+    </div>
+
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-admin-unlock-forms-pagination" type="text/x-jquery-tmpl">
+   <div>
+
+        {{each pages}}
+        <li {{if page==pageNumber}} class="bz-page active" {{else}} class="bz-page" {{/if}} data-page="${pageNumber}">
+            <span class="number">${pageNumber}</span>
+        </li>
+        {{/each}}
+
+    </div>
+</script>

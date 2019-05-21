@@ -1,0 +1,12 @@
+<script id="ui-bizagi-render-fileprint" type="x-jquery-tmpl" >
+    <button class="ui-bizagi-render-button" type="button" ><span class="ui-icon file-print"></span>{{if caption}}{{resource caption}}{{/if}}</button>
+</script>
+
+<script id="ui-bizagi-render-fileprint-iframe" type="x-jquery-tmpl" > 
+    <iframe id="${id}" name="bz-render-fileprint-iframe" src="${url}" width="0px" height="0px" style="display:none;"></iframe> 
+</script>
+
+<script id="ui-bizagi-render-fileprint-object" type="x-jquery-tmpl" >     
+    <object class="fileobj" id="fileobj" name="fileobj" type="application/pdf"  data="${url}" height="0px" width="0px"></object>          
+</script>
+

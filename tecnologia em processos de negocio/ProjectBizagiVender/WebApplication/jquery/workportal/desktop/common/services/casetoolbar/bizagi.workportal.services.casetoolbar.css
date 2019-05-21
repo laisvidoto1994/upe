@@ -1,0 +1,34 @@
+﻿#casestemplate-dataviewer {
+
+}
+
+#casestemplate-dataviewer .casetoolbar {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#casestemplate-dataviewer .casetoolbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 3px 0;
+}
+
+#casestemplate-dataviewer .casetoolbar ul li {
+    display: inline-block;
+    margin-right: .4em;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#casestemplate-dataviewer .casetoolbar ul li i {
+    color: #DDD;
+    vertical-align: baseline;
+}
+
+#casestemplate-dataviewer .casetoolbar ul li i:hover,
+#casestemplate-dataviewer .casetoolbar ul li i.on {
+    color: #374C58;
+}

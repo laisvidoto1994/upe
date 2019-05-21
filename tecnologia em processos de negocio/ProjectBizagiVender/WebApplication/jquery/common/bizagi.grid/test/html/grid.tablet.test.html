@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Grid Test</title>
+    <style>
+    html, body {
+	    height: 100%;
+	    width: 100%;
+	    margin: 0;
+	    padding: 0;
+	    font-family: "Segoe UI";
+	    text-align: center;
+    }
+    h1{
+        display: block;
+        text-align: center;
+        margin: 20px !important;
+    }
+    h2 {
+        display: block;
+        text-align: center;
+        margin: 10px !important;
+    }
+    .grid{
+        width: 60%;
+        left: 20%;
+        position: relative;
+    }
+    .ui-bizagi-grid-row-buttons{
+        left: -56px;
+        top: 56px;
+    }
+    #normalGridLog{
+        border: 1px dotted #CCC;
+        text-align: center;        
+        width: 940px;
+        display: inline-block;
+        padding: 10px;
+    }
+    #normalGridLog div {
+        margin-bottom: 5px;
+    }
+    </style>
+    <link href="../../../../../jquery/common/base/css/normalize.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../../jquery/common/base/css/tablet/bizagi.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../../jquery/common/jquery.ui/css/tablet/jquery.ui.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../../jquery/common/bizagi.notifications/css/tablet/bizagi.notifications.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../../jquery/common/bizagi.grid/css/tablet/bizagi.grid.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../../jquery/rendering/css/tablet/bizagi.rendering.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../../jquery/rendering/css/tablet/bizagi.rendering.controls.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../../jquery/workportal/css/tablet/bizagi.workportal.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" language="javascript">
+        // Redefine path to base
+        var BIZAGI_PATH_TO_BASE = "../../../../../";
+    </script>
+    <script type='text/javascript' src='../../../../../jquery/common/base/js/lib/json2.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/base/js/lib/jquery.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/base/js/lib/jquery.class.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/base/js/lib/jquery.tmpl.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/jquery.ui/js/desktop/jquery.ui.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/base/js/lib/jquery.ui.subclass.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/bizagi.loader.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/bizagi.notifications/js/bizagi.notifications.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/bizagi/js/bizagi.util.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/bizagi/js/bizagi.logging.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/bizagi/js/bizagi.l10n.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/bizagi/js/services/bizagi.services.ajax.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/bizagi/js/services/bizagi.services.service.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/bizagi/js/services/bizagi.template.services.service.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/bizagi.grid/js/bizagi.grid.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/base/js/dev/jquery.mockjax.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/base/js/dev/jquery.mockjson.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/common/bizagi.grid/js/tablet/bizagi.grid.tablet.js'></script>
+    <script type='text/javascript' src='../js/grid.test.js'></script>
+</head>
+<body>
+    <h1>iPad look n' feel</h1>
+    <h2> Normal grid</h2>
+    <div id="normalGrid" class="grid"></div>
+    <h1> Empty grid</h1>
+    <div id="emptyGrid" class="grid"></div>
+    <h2>Log</h2>
+    <div id="normalGridLog"></div>
+    
+    <script type="text/javascript" language="javascript">
+        // Redefine path to base
+        var BIZAGI_PATH_TO_BASE = "../../../../../";
+        var BIZAGI_DEVICE = "tablet";
+    </script>
+</body>
+</html>

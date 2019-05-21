@@ -1,0 +1,1123 @@
+﻿{
+    "form": {
+        "properties": {},
+        "elements": [
+            {
+                "container": {
+                    "properties": {
+                        "id": "tab",
+                        "type": "tab"
+                    },
+                    "elements": [
+                        {
+                            "container": {
+                                "properties": {
+                                    "id": "tabItem1",
+                                    "type": "tabItem",
+                                    "displayName": "Bizagi render layout"
+                                },
+                                "elements": [
+                                    {
+                                        "container": {
+                                            "properties": {
+                                                "id": 1,
+                                                "displayName": "Display Types",
+                                                "type": "panel"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 10001,
+                                                            "displayName": "Display normal",
+                                                            "xpath": "text1_1",
+                                                            "type": "text",
+                                                            "helpText": "ALOOO"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 10002,
+                                                            "displayName": "Display vertical",
+                                                            "xpath": "text1_2",
+                                                            "type": "text",
+                                                            "displayType": "vertical"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 10003,
+                                                            "displayName": "Display reversed",
+                                                            "xpath": "text1_3",
+                                                            "type": "text",
+                                                            "displayType": "reversed"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 10004,
+                                                            "displayName": "Display vertical reversed",
+                                                            "xpath": "text1_4",
+                                                            "type": "text",
+                                                            "displayType": "verticalReversed"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 10005,
+                                                            "displayName": "Display just label",
+                                                            "xpath": "text1_5",
+                                                            "type": "text",
+                                                            "displayType": "label"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 10006,
+                                                            "displayName": "Display just value",
+                                                            "xpath": "text1_6",
+                                                            "type": "text",
+                                                            "displayType": "value"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "container": {
+                                            "properties": {
+                                                "id": 2,
+                                                "displayName": "Label Align",
+                                                "type": "panel"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 20001,
+                                                            "displayName": "Label left align",
+                                                            "xpath": "text2_1",
+                                                            "type": "text",
+                                                            "labelAlign": "left"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 20002,
+                                                            "displayName": "Label center align",
+                                                            "xpath": "text2_2",
+                                                            "type": "text",
+                                                            "labelAlign": "center"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 20003,
+                                                            "displayName": "Label right align",
+                                                            "xpath": "text2_3",
+                                                            "type": "text",
+                                                            "labelAlign": "right"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "container": {
+                                            "properties": {
+                                                "id": 3,
+                                                "displayName": "Value Align",
+                                                "type": "panel"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 30001,
+                                                            "displayName": "Value left align",
+                                                            "xpath": "text3_1",
+                                                            "type": "text",
+                                                            "valueAlign": "left"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 30002,
+                                                            "displayName": "Value center align",
+                                                            "xpath": "text3_2",
+                                                            "type": "text",
+                                                            "valueAlign": "center"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 30003,
+                                                            "displayName": "Value right align",
+                                                            "xpath": "text3_3",
+                                                            "type": "text",
+                                                            "valueAlign": "right"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "container": {
+                                            "properties": {
+                                                "id": 4,
+                                                "displayName": "Internal widths",
+                                                "type": "panel"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 40001,
+                                                            "displayName": "20% - 80%",
+                                                            "xpath": "text4_1",
+                                                            "type": "text",
+                                                            "labelWidth": "20.01%",
+                                                            "valueWidth": "79.99%"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 40002,
+                                                            "displayName": "60% - 40%",
+                                                            "xpath": "text4_2",
+                                                            "type": "text",
+                                                            "labelWidth": "60%",
+                                                            "valueWidth": "40%"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 40003,
+                                                            "displayName": "30% - 70%",
+                                                            "xpath": "text4_3",
+                                                            "type": "text",
+                                                            "labelWidth": "30%",
+                                                            "valueWidth": "70%"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "container": {
+                                "properties": {
+                                    "id": "tabItem2",
+                                    "type": "tabItem",
+                                    "displayName": "Bizagi render columns"
+                                },
+                                "elements": [
+                                    {
+                                        "container": {
+                                            "properties": {
+                                                "id": 5,
+                                                "displayName": "Uniform columns",
+                                                "type": "panel"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 50001,
+                                                            "displayName": "Label Standard",
+                                                            "xpath": "text5_1",
+                                                            "type": "text"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "container": {
+                                                        "properties": {
+                                                            "id": "h1",
+                                                            "type": "horizontal"
+                                                        },
+                                                        "elements": [
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 50002,
+                                                                        "displayName": "Label Standard",
+                                                                        "xpath": "text5_2",
+                                                                        "type": "text"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 50003,
+                                                                        "displayName": "Label Standard",
+                                                                        "xpath": "text5_3",
+                                                                        "type": "text"
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "container": {
+                                                        "properties": {
+                                                            "id": "h2",
+                                                            "type": "horizontal"
+                                                        },
+                                                        "elements": [
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 50004,
+                                                                        "displayName": "Label Standard",
+                                                                        "xpath": "text5_4",
+                                                                        "type": "text"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 50005,
+                                                                        "displayName": "Label Standard",
+                                                                        "xpath": "text5_5",
+                                                                        "type": "text"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 50006,
+                                                                        "displayName": "Label Standard",
+                                                                        "xpath": "text5_6",
+                                                                        "type": "text"
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "container": {
+                                                        "properties": {
+                                                            "id": "h3",
+                                                            "type": "horizontal"
+                                                        },
+                                                        "elements": [
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 50007,
+                                                                        "displayName": "Label Standard",
+                                                                        "xpath": "text5_7",
+                                                                        "type": "text"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 50008,
+                                                                        "displayName": "Label Standard",
+                                                                        "xpath": "text5_8",
+                                                                        "type": "text"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 50009,
+                                                                        "displayName": "Label Standard",
+                                                                        "xpath": "text5_9",
+                                                                        "type": "text"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 50009,
+                                                                        "displayName": "Label Standard",
+                                                                        "xpath": "text5_9",
+                                                                        "type": "text"
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "container": {
+                                                        "properties": {
+                                                            "id": "h1",
+                                                            "type": "horizontal"
+                                                        },
+                                                        "elements": [
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 50002,
+                                                                        "": "Label Standard",
+                                                                        "xpath": "text5_2",
+                                                                        "type": "label",
+                                                                        "displayType": "label"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 50003,
+                                                                        "displayName": "Help",
+                                                                        "xpath": "text5_3",
+                                                                        "type": "boolean",
+                                                                        "display": "check",
+                                                                        "displayType": "reversed",
+                                                                        "labelWidth": "1%",
+                                                                        "valueAlign": "right"
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "container": {
+                                            "properties": {
+                                                "id": 6,
+                                                "displayName": "Variable columns",
+                                                "type": "panel"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "container": {
+                                                        "properties": {
+                                                            "id": "h4",
+                                                            "type": "horizontal"
+                                                        },
+                                                        "elements": [
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 60001,
+                                                                        "displayName": "40%",
+                                                                        "xpath": "text6_1",
+                                                                        "type": "text",
+                                                                        "width": "40.00%"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 60002,
+                                                                        "displayName": "60%",
+                                                                        "xpath": "text6_1",
+                                                                        "type": "text",
+                                                                        "width": "60.00%"
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "container": {
+                                                        "properties": {
+                                                            "id": "h2",
+                                                            "type": "horizontal"
+                                                        },
+                                                        "elements": [
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 60003,
+                                                                        "displayName": "20%",
+                                                                        "xpath": "text6_3",
+                                                                        "type": "text",
+                                                                        "width": "20%"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 60004,
+                                                                        "displayName": "40%",
+                                                                        "xpath": "text6_4",
+                                                                        "type": "text",
+                                                                        "width": "40%"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 60005,
+                                                                        "displayName": "40%",
+                                                                        "xpath": "text6_5",
+                                                                        "type": "text",
+                                                                        "width": "40%"
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "container": {
+                                                        "properties": {
+                                                            "id": "h3",
+                                                            "type": "horizontal"
+                                                        },
+                                                        "elements": [
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 60006,
+                                                                        "displayName": "50%",
+                                                                        "xpath": "text6_6",
+                                                                        "type": "text",
+                                                                        "width": "50%"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 60007,
+                                                                        "displayName": "25%",
+                                                                        "xpath": "text6_7",
+                                                                        "type": "text",
+                                                                        "width": "25%"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 60008,
+                                                                        "displayName": "25%",
+                                                                        "xpath": "text6_8",
+                                                                        "type": "text",
+                                                                        "width": "25%"
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "container": {
+                                "properties": {
+                                    "id": "tabItem3",
+                                    "type": "tabItem",
+                                    "displayName": "Containers"
+                                },
+                                "elements": [
+                                    {
+                                        "container": {
+                                            "properties": {
+                                                "id": 7,
+                                                "displayName": "Panel",
+                                                "type": "panel"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 70001,
+                                                            "displayName": "Label Standard",
+                                                            "xpath": "text7_1",
+                                                            "type": "text"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 70002,
+                                                            "displayName": "Label Standard",
+                                                            "xpath": "text7_2",
+                                                            "type": "text"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 70003,
+                                                            "displayName": "Label Standard",
+                                                            "xpath": "text7_3",
+                                                            "type": "text"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "container": {
+                                            "properties": {
+                                                "id": 71,
+                                                "type": "panel"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 710001,
+                                                            "displayName": "Label Standard",
+                                                            "xpath": "text71_1",
+                                                            "type": "text"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 710002,
+                                                            "displayName": "Label Standard",
+                                                            "xpath": "text71_2",
+                                                            "type": "text"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 710003,
+                                                            "displayName": "Label Standard",
+                                                            "xpath": "text71_3",
+                                                            "type": "text"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "container": {
+                                            "properties": {
+                                                "id": 8,
+                                                "displayName": "Tab",
+                                                "type": "panel"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "container": {
+                                                        "properties": {
+                                                            "id": "miniTab",
+                                                            "type": "tab"
+                                                        },
+                                                        "elements": [
+                                                            {
+                                                                "container": {
+                                                                    "properties": {
+                                                                        "id": "miniTabItem1",
+                                                                        "displayName": "Tab 1",
+                                                                        "type": "tabItem"
+                                                                    },
+                                                                    "elements": [
+                                                                        {
+                                                                            "render": {
+                                                                                "properties": {
+                                                                                    "id": 80001,
+                                                                                    "displayName": "Element from tab 1",
+                                                                                    "xpath": "text8_1",
+                                                                                    "type": "text"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "container": {
+                                                                    "properties": {
+                                                                        "id": "miniTabItem2",
+                                                                        "displayName": "Tab 2",
+                                                                        "type": "tabItem"
+                                                                    },
+                                                                    "elements": [
+                                                                        {
+                                                                            "render": {
+                                                                                "properties": {
+                                                                                    "id": 80002,
+                                                                                    "displayName": "Element from tab 2",
+                                                                                    "xpath": "text8_2",
+                                                                                    "type": "text"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "container": {
+                                                                    "properties": {
+                                                                        "id": "miniTabItem3",
+                                                                        "displayName": "Tab 3",
+                                                                        "type": "tabItem"
+                                                                    },
+                                                                    "elements": [
+                                                                        {
+                                                                            "render": {
+                                                                                "properties": {
+                                                                                    "id": 80003,
+                                                                                    "displayName": "Element from tab 3",
+                                                                                    "xpath": "text8_3",
+                                                                                    "type": "text"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "container": {
+                                            "properties": {
+                                                "id": 9,
+                                                "displayName": "Accordion",
+                                                "type": "panel"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "container": {
+                                                        "properties": {
+                                                            "id": "miniAccordion",
+                                                            "type": "accordion"
+                                                        },
+                                                        "elements": [
+                                                            {
+                                                                "container": {
+                                                                    "properties": {
+                                                                        "id": "miniAccordionItem1",
+                                                                        "displayName": "Accordion 1",
+                                                                        "type": "accordionItem"
+                                                                    },
+                                                                    "elements": [
+                                                                        {
+                                                                            "render": {
+                                                                                "properties": {
+                                                                                    "id": 90001,
+                                                                                    "displayName": "Element from accordion 1",
+                                                                                    "xpath": "text9_1",
+                                                                                    "type": "text"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "container": {
+                                                                    "properties": {
+                                                                        "id": "miniAccordionItem2",
+                                                                        "displayName": "Accordion 2",
+                                                                        "type": "accordionItem"
+                                                                    },
+                                                                    "elements": [
+                                                                        {
+                                                                            "render": {
+                                                                                "properties": {
+                                                                                    "id": 90002,
+                                                                                    "displayName": "Element from accordion 2",
+                                                                                    "xpath": "text9_2",
+                                                                                    "type": "text"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "container": {
+                                                                    "properties": {
+                                                                        "id": "miniAccordionItem3",
+                                                                        "displayName": "Accordion 3",
+                                                                        "type": "accordionItem"
+                                                                    },
+                                                                    "elements": [
+                                                                        {
+                                                                            "render": {
+                                                                                "properties": {
+                                                                                    "id": 90003,
+                                                                                    "displayName": "Element from accordion 3",
+                                                                                    "xpath": "text9_3",
+                                                                                    "type": "text"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "container": {
+                                            "properties": {
+                                                "id": 10,
+                                                "displayName": "Group",
+                                                "type": "panel"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "container": {
+                                                        "properties": {
+                                                            "id": "group",
+                                                            "type": "group",
+                                                            "displayName": "Group"
+                                                        },
+                                                        "elements": [
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 100001,
+                                                                        "displayName": "Label Standard",
+                                                                        "xpath": "text10_1",
+                                                                        "type": "text"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 100002,
+                                                                        "displayName": "Label Standard",
+                                                                        "xpath": "text10_2",
+                                                                        "type": "text"
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": 100003,
+                                                                        "displayName": "Label Standard",
+                                                                        "xpath": "text10_3",
+                                                                        "type": "text"
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "container": {
+                                "properties": {
+                                    "id": "tabItem5",
+                                    "type": "tabItem",
+                                    "displayName": "Customization"
+                                },
+                                "elements": [
+                                    {
+                                        "container": {
+                                            "properties": {
+                                                "id": 11,
+                                                "displayName": "Color, required and background customization",
+                                                "type": "panel"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 110001,
+                                                            "displayName": "Color blue",
+                                                            "xpath": "text10_1",
+                                                            "type": "text",
+                                                            "color": "blue"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 110002,
+                                                            "displayName": "Color #9955FF",
+                                                            "xpath": "text10_2",
+                                                            "type": "text",
+                                                            "color": "#9955FF"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 110003,
+                                                            "displayName": "Required render",
+                                                            "xpath": "text10_3",
+                                                            "type": "text",
+                                                            "required": "true"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "render": {
+                                                        "properties": {
+                                                            "id": 110004,
+                                                            "displayName": "Background color (Aqua)",
+                                                            "xpath": "text10_4",
+                                                            "type": "text",
+                                                            "backgroundColor": "Aqua"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "container": {
+                                "properties": {
+                                    "id": "tabItem6",
+                                    "type": "tabItem",
+                                    "displayName": "Horizontal Panels"
+                                },
+                                "elements": [
+                                    {
+                                        "container": {
+                                            "properties": {
+                                                "id": "b6a207d4-07ae-47f0-8f6d-13bc32109395",
+                                                "type": "horizontal"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "container": {
+                                                        "properties": {
+                                                            "id": "d2e1b3ab-74dc-45ae-af94-88c4435e6056",
+                                                            "type": "panel",
+                                                            "width": "50%"
+                                                        },
+                                                        "elements": [
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": "09531ff5-93d0-4a01-99c1-ee286e2b1d6f",
+                                                                        "type": "number",
+                                                                        "xpath": "SecuenciaR20.CodigoSecuenciaR20",
+                                                                        "displayName": "Código Secuencia R 2.0",
+                                                                        "editable": false,
+                                                                        "dataType": 3,
+                                                                        "textFormat": {},
+                                                                        "helpText": ""
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": "e714584c-b4e2-4d3d-90e6-414dad33cc2b",
+                                                                        "type": "date",
+                                                                        "xpath": "SecuenciaR20.FechaSecuenciaR20",
+                                                                        "displayName": "Fecha Secuencia R 2.0",
+                                                                        "editable": false,
+                                                                        "dataType": 12,
+                                                                        "textFormat": {},
+                                                                        "helpText": ""
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": "f1c107ba-73f6-43be-877c-8f7f9cb2c1bb",
+                                                                        "type": "text",
+                                                                        "xpath": "SecuenciaR20.NotasSecuenciaR20",
+                                                                        "displayName": "Notas Secuencia R 2.0",
+                                                                        "editable": false,
+                                                                        "dataType": 15,
+                                                                        "textFormat": {},
+                                                                        "helpText": ""
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "container": {
+                                                        "properties": {
+                                                            "id": "358d8721-60f3-4183-9103-f4ed14a2ec50",
+                                                            "type": "panel",
+                                                            "width": "50%"
+                                                        },
+                                                        "elements": [
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": "0eeec0aa-0684-4383-8625-90be22877dc1",
+                                                                        "type": "boolean",
+                                                                        "xpath": "SecuenciaR20.RegistradoSecuenciaR20",
+                                                                        "displayName": "Registrado Secuencia R 2.0 ?",
+                                                                        "editable": false,
+                                                                        "dataType": 5,
+                                                                        "textFormat": {},
+                                                                        "helpText": ""
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": "eb89d006-4801-4d91-8cc7-d3a23f47486f",
+                                                                        "type": "combo",
+                                                                        "xpath": "SecuenciaR20.ClaseSecuenciaR20",
+                                                                        "value": [],
+                                                                        "displayName": "Clase Secuencia R 2.0",
+                                                                        "editable": false,
+                                                                        "dataType": 2,
+                                                                        "data": [
+                                                                            {
+                                                                                "id": 1,
+                                                                                "value": "Clase Uno"
+                                                                            },
+                                                                            {
+                                                                                "id": 2,
+                                                                                "value": "Clase Dos"
+                                                                            },
+                                                                            {
+                                                                                "id": 3,
+                                                                                "value": "Clase Tres"
+                                                                            },
+                                                                            {
+                                                                                "id": 4,
+                                                                                "value": "Clase Cuatro"
+                                                                            },
+                                                                            {
+                                                                                "id": 5,
+                                                                                "value": "Clase Cinco"
+                                                                            }
+                                                                        ],
+                                                                        "textFormat": {},
+                                                                        "helpText": ""
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "render": {
+                                                                    "properties": {
+                                                                        "id": "6fc8a2db-35c7-4e94-9cb8-cfa33c44f264",
+                                                                        "type": "money",
+                                                                        "xpath": "SecuenciaR20.ValorSecuenciaR20",
+                                                                        "displayName": "Valor Secuencia R 2.0",
+                                                                        "dataType": 8,
+                                                                        "textFormat": {},
+                                                                        "helpText": ""
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "render": {
+                    "properties": {
+                        "id": 150007,
+                        "displayName": "Label Standard",
+                        "xpath": "text15_7",
+                        "type": "text"
+                    }
+                }
+            },
+            {
+                "container": {
+                    "properties": {
+                        "id": "h1",
+                        "type": "horizontal"
+                    },
+                    "elements": [
+                        {
+                            "render": {
+                                "properties": {
+                                    "id": 150002,
+                                    "displayName": "Label Standard",
+                                    "xpath": "text15_2",
+                                    "type": "text"
+                                }
+                            }
+                        },
+                        {
+                            "render": {
+                                "properties": {
+                                    "id": 150003,
+                                    "displayName": "Label Standard",
+                                    "xpath": "text15_3",
+                                    "type": "text"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,125 @@
+
+<script id="ui-bizagi-workportal-widget-search" type="text/x-jquery-tmpl">
+<div class="bz-wp-wg-search" data-bizagi-component="searchW" >
+</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-search-details" type="text/x-jquery-tmpl">
+    <div class="bz-wd-search-container" >
+     {{if noresults}}
+       <div class="bz-wd-search-container-noresults">
+          <span class="bz-cm-icon bz-wp-no-results"></span> 
+          <span class="bz-wd-search-text-noresults">%{workportal-menu-search-found-no-cases}</span>
+       </div>
+     {{/if}}
+
+      {{each rows}}
+        <div class="bz-wd-search-rows"  data-bizagi-idcase="${id}" data-bizagi-favorite="${isFavorite}" data-bizagi-guidfavortie="${guidFavorite}" data-bizagi-taskstate="${taskState}">
+         
+           <div class="bz-wd-search-header-content">		             
+             <div class="container-left"> <span class="bz-cm-icon bz-cm-ib {{if isFavorite == 'true'}}favorite-true{{else}}favorite-false {{/if}}"  /> </div>
+             <div class="container-right"> <span class="rad-number">${id}</span> </div>
+           </div>
+           
+             {{each(i, item) fields}}    
+								
+                    {{if typeof item != 'object'}}                                      
+                                              
+					    <div class="bz-wd-search-fields">
+							    <div class="bz-wd-search-column-title" >
+					                <span >${ columnTitle[i].displayName}</span>
+					            </div>  
+                                                                                
+                                <div class="bz-wd-search-column-value" > 
+								    {{if bizagi.util.isDate(item)}} 
+	                                    <span class="formatDate">${item}</span>
+	                                {{else}}
+	                                    ${item || '&nbsp;'}
+	                                {{/if}}
+							    </div>
+                        </div>
+                    {{/if}}
+                                
+            {{/each}}
+
+            <div class="bz-wd-search-fields-fix"/>
+
+            {{each(i, item) fields}}
+                {{if typeof item == 'object'}}
+                
+                    <div class="bz-wd-search-fields ">						    
+
+                            {{if item["workitems"]}}
+                                
+                                    <ul class="bz-common-webkit-reset-ul bz-cm-width activity-list-search activity-list-fix-style" >
+                                        
+                                        {{each(j, workitem) item["workitems"]}}                                                   
+
+                                                    <div class="bz-wd-search-fields">
+                                                            <div class="bz-wd-search-column-title" >
+					                                            <span >${ columnTitle[i].displayName}</span>
+					                                        </div>  
+
+                                                            <div class="bz-wd-search-column-value" >
+
+                                                                <li class="bz-wd-search-container-state" data-bizagi-taskname="${workitem['TaskName']}" data-bizagi-idtask="${workitem['idTask']}" data-bizagi-idworkitem="${workitem['idWorkItem']}" data-bizagi-idcase="${id}">
+                                                                    <span class="ui-bizagi-wp-app-inbox-activity-name">
+                                                                        <span class="bz-cm-icon state-light state-color-${workitem['State']}"></span>
+                                                                        ${workitem["TaskName"]}
+                                                                        <input type="hidden" id="idTask" value="${workitem['idTask']}" />
+                                                                        <input type="hidden" id="idWorkItem" value="${workitem['idWorkItem']}" />
+                                                                        <input type="hidden" id="idCase" value="${id}" />
+                                                                    </span>
+                                                                </li>
+
+                                                
+                                                            </div>
+                                                    </div>
+
+                                                    {{each(m, item) fields}}
+        
+                                                        {{if typeof item == 'object'}}
+                                                            {{if !item["workitems"]}}
+                                                            <div class="bz-wd-search-fields">
+                                                                    
+                                                                        {{each(k, subItem) item}}                
+                                                                                    {{if subItem[j].length>0}}
+                                                                                        <div class="bz-wd-search-column-title" >
+					                                                                        <span >${ columnTitle[m].displayName}</span>
+					                                                                    </div>
+                                                                                    
+                                                                                        <div class="bz-wd-search-column-value" >                                                                                                                                       
+                                                                                            {{if bizagi.util.isDate(subItem[j])}} 
+                                                                                                <span class="formatDate" style="text-align:center;width: 100%">${subItem[j]}</span>
+                                                                                            {{else}}
+                                                                                                ${subItem[j] || '&nbsp;'}
+                                                                                            {{/if}}
+                                                                                            <br/>	
+                                                                               	        </div>	
+                                                                                    {{/if}}												
+                                                                        {{/each}}
+                                                                        
+                                                                  </div>
+                                                            {{/if}}
+                                                        {{/if}}
+                                                
+                                                   {{/each}}	
+                                                   
+                                                   {{if j < item["workitems"].length-1 }}
+                                                    <HR width=95% align="center" style="margin-top: 20px;margin-bottom: 20px;">
+                                                   {{/if}}
+                                             
+                                        {{/each}}	
+                                         													
+                                    </ul>                                 
+                            
+                            {{/if}}
+                   </div>
+               {{/if}}
+            {{/each}}
+        </div>
+      {{/each}}
+
+    </div>
+</script>
+

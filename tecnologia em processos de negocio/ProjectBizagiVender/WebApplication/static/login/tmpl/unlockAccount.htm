@@ -1,0 +1,19 @@
+﻿     <div class="login-data">
+				<fieldset>
+					<legend>Please type your account’s information to log in</legend>
+					<div class="login-field">
+			            <label for="username">Username</label>
+			            <select id="username" class="login-select" tabindex="2">
+                        {{each domain}}
+							<option value="${$name}"></option>
+                        {{/each}}
+						</select>						
+					</div>
+					<div class="login-field">
+						<input id="login" class="login-button" type="submit" name="login" value="Login" tabindex="3" />
+					</div>
+				</fieldset>
+                <div class="login-error">
+                	<p class="secondary-data"></p>             
+                </div>
+			</div>	

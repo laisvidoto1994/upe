@@ -1,0 +1,117 @@
+﻿.bz-at-recorder {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 9999;
+    background-color: #cccccc;
+    border: 1px solid #dddddd;
+    padding: 9px 25px;
+    border-radius: 5px;
+}
+
+.bz-at-recorder button
+{
+    padding: 4px 8px;
+    margin-right: 10px;
+    border: 1px solid white;
+    color: red;
+    cursor: pointer;
+}
+
+.bz-at-recorder .bz-at-recorder-start{
+    
+}
+
+.bz-at-recorder .bz-at-recorder-stop{
+    
+}
+
+.quickLogin select 
+{
+    width:223px !important;
+    padding: 5px 5px 5px 10px;
+    border-radius: 6px;
+    color: #7B8693;
+    margin: 5px 0 5px 0;
+}
+
+#main_menu{
+    display: none !important;
+}
+
+#ui-bizagi-wp-app-search {
+ 
+    display: none !important;
+}
+
+.no-close .ui-dialog-titlebar-close {
+    display: none   
+}
+
+.no-close .ui-dialog-titlebar-maximize {
+    display: none  
+}
+
+.no-close .ui-dialog-titlebar-minimize {
+    display: none
+}
+
+.bz-at-loading-container
+{
+			display: inline-block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 8;
+            top: 0;
+            left: 0;
+}
+
+.ui-bizagi-loading-icon {
+    background-image: url(../../workportal/css/desktop/images/loader2.gif);
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+}
+
+.bz-util-loading
+{
+			left: 50%;
+            top: 50%;
+            margin-top: -16px;
+            margin-left: -16px;
+            position: absolute;
+
+}
+
+#contentInbox .ui-bizagi-workportal-widget-global-options {
+    display: none
+}
+
+#contentInbox .renderNavigation {
+    display: none
+}
+
+#contentInbox .widget-title {
+    display: none
+}
+
+
+.bz-at-tab-container {
+    height: 400px;
+}
+
+.bz-at-soap-upload {}
+.bz-at-soap-xml {}
+.bz-at-soap-message { color: red; }
+.bz-at-scenario-upload {}
+.bz-at-init-panel {}
+.bz-at-tab-process-widget {}
+.bz-at-tab-queryforms-widget {}
+
+.bz-at-init-panel {
+    z-index: 10010;
+}
+.bz-at-tab-container {
+    z-index: 10010;    
+}

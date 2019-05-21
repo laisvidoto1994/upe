@@ -1,0 +1,33 @@
+/********
+* Filename: bizagi.editor.component.editor.buttonactions.css
+* Create Date: 4 Feb 2013   
+* Author: Diego Parra diego.parra@bizagi.com
+*
+* $__buttonactions
+*
+********/
+
+.bizagi_editor_component_editor_buttonactions{
+    position: relative;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.buttonactions-group-container{
+    position: relative;
+}
+
+.bizagi_editor_component_properties .bizagi_editor_component_editor_buttonactions .bizagi-editor-buttonactions-inline label{
+    display:inline-block;
+    width:55%;
+}
+
+.bizagi_editor_component_editor_buttonactions .bizagi-editor-buttonactions-inline .ui-control-editor{
+    float: right;	
+	right: 0px;
+	top: 0px;
+}
+
+.bizagi_editor_component_editor_buttonactions .bizagi-editor-buttonactions-inline .buttonactions-group-container{
+    width:100% !important;
+}

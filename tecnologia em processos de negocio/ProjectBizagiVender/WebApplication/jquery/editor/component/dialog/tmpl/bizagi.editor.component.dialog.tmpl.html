@@ -1,0 +1,21 @@
+﻿
+<script id="dialog-container" type="text/x-jquery-tmpl">
+<div id='bz-fm-dialog'>
+    <div class=" bz-fm-dialog-border bz-fm-dialog-container">
+        <p>${message}</p>
+        {{if date}} <p>${date}</p> {{/if}}
+    </div>
+    {{each buttons}}
+        {{tmpl(this) "#dialog-button"}}   
+    {{/each}}
+</div>
+</script>
+
+
+<script id="dialog-button" type="text/x-jquery-tmpl">
+    <div class= "bz-fm-dialog-border bz-fm-dialog-button ui-button" data-key="${text}">
+        <i class= "biz-ico bz-fm-dialog-${icon} ${style}"></i>
+        <span>${text}</span>
+        {{if legend}} <span class="cite">${legend}</span> {{/if}}
+    </div>
+</script>

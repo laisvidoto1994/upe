@@ -1,0 +1,38 @@
+{{css "jquery/workportal/css/desktop/bizagi.workportal.queries.css"}}
+<script id="ui-bizagi-workportal-widget-queries-shortcut" type="x-jquery-tmpl" >
+	<div id="modalMenuBtList" class="clearfix">
+			<div id="queries-shortcut"{{loading}}></div>
+	</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-queries-confirm-shortcut" type="x-jquery-tmpl" >
+    <p>
+        <span class="ui-icon ui-icon-alert"></span>
+        %{workportal-widget-queries-confirm}
+    </p>
+</script>
+
+<script id="ui-bizagi-workportal-widget-queries-message-error-shortcut" type="text/x-jquery-tmpl" >
+<div class="shortcut-error-message-migrate-form">
+     <p>
+        ${messageError}
+    </p>
+</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-queries-flat-list-shortcut" type="text/x-jquery-tmpl">
+	{{each(i, item) storedQueryForm }}
+	<ul class="queriesListDisplay">
+		<li class="storedQuery" data-guid="${item.guid}" data-id="${item.id}" data-idNode="${item.idNode}">
+			<div class="processIco"></div>
+			<span class="bz-shorcut__title">${item.definition.name}</span>
+                {{if item.owner}}
+                    <div class="bz-shorcut__icons">
+                        <i class="bz-icon bz-icon-pencil-outline bz-shorcut__icon"></i>
+                        <i class="bz-icon bz-icon-close bz-shorcut__icon bz-shorcut__icon--delete"></i>
+                    </div>
+                {{/if}}
+		</li>
+	</ul>
+	{{/each}}
+</script>

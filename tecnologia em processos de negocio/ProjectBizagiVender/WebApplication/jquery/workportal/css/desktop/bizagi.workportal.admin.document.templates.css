@@ -1,0 +1,21 @@
+#uploaded-template-list-wrapper .ui-bizagi-container-form {
+	margin-top: 0;
+	margin-left: 15px;
+}
+
+#uploaded-template-list-wrapper .ui-tabs {
+    margin-left: 15px;
+}
+
+#uploaded-template-list-wrapper .biz-wp-window-title {
+	margin-top: 0;
+	padding-left: 14px;
+}
+
+#uploaded-template-list-wrapper .ui-tabs {
+	margin-bottom: 1px;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a {
+	cursor:default;
+	}
+	

@@ -1,0 +1,55 @@
+/********
+* Filename: bizagi.editor.component.editor.rule.css
+* Create Date: 2012-08-18
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__rule
+*
+********/
+
+/* __rule
+--------*/
+
+.bizagi_editor_component_editor_rule input[type="text"].input {
+    width:100%;
+    padding-left: 4px;
+}
+
+.bizagi_editor_component_editor_rule input[type="text"].input:focus {
+    background-color: #FFF;
+}
+
+.bizagi_editor_component_editor_rule div.rule-value {
+    border: solid 1px transparent;
+    height: 20px;
+    display: none;
+    position: relative;
+}
+.bizagi_editor_component_editor_rule div.rule-value.active {
+    display: inline-block;
+}
+.bizagi_editor_component_editor_rule .biz-complex-btn {
+    overflow: hidden;
+}
+
+
+.ui-tooltip.ui-propertybox-tooltip.ui-rule-editor-tooltip{
+    max-width: 180px;
+}
+.ui-tooltip.ui-propertybox-tooltip.ui-rule-editor-tooltip:before{
+    top: -8px;
+    left: 5px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 7px solid  hsl(0, 0%, 98%);
+    border-left: 8px solid transparent;
+}
+
+.ui-tooltip.ui-propertybox-tooltip.ui-rule-editor-tooltip:after{
+    top: -9px;
+    left: 5px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 7px solid hsla(0, 0%, 80%, .5);
+    border-left: 8px solid transparent;
+}

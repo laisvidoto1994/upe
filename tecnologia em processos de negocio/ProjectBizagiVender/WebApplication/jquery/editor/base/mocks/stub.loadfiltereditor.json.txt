@@ -1,0 +1,8 @@
+﻿{
+ "actiontype":"LoadFilterEditor",
+ "result": 
+	{
+		"success":true,
+		"parameters":[{"key":"filter","value":"Nombre = null"}]
+	}
+}

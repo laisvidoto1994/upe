@@ -1,0 +1,24 @@
+﻿{
+    "result": {
+        "success": true,
+        "values": [{
+            "id": "f7d75fab-0cc7-4777-a1ec-20cb55edc604",
+            "displayName": "pais",
+            "xpath": "Diego.ciudad.departamento.pais",
+            "parentRelation": null,
+            "parentEntity": "00000000-0000-0000-0000-000000000000"
+        }, {
+            "id": "8c06088b-0875-429c-b865-02c726115ed5",
+            "displayName": "departamento",
+            "xpath": "Diego.ciudad.departamento",
+            "parentRelation": "pais",
+            "parentEntity": "f7d75fab-0cc7-4777-a1ec-20cb55edc604"
+        }, {
+            "id": "f67594ec-fce1-4540-a860-7f572eff1bfd",
+            "displayName": "Ciudad",
+            "xpath": "Diego.ciudad",
+            "parentRelation": "departamento",
+            "parentEntity": "8c06088b-0875-429c-b865-02c726115ed5"
+        }]
+    }
+}

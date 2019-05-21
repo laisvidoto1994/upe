@@ -1,0 +1,1551 @@
+/****************************/
+
+/****** RIBBON **************/
+
+/* Icons
+   ========================================================================== */
+
+/* Width of labels */
+
+.ribbon-ico-copy-from + h3 {
+    max-width: 3.5em;
+}
+
+.ribbon-ico-copy-format + h3 {
+    max-width: 3.5em;
+}
+
+.ribbon-ico-actions-validations + h3 {
+    max-width: 5em;
+}
+
+.ribbon-ico-email-template + h3 {
+    min-width: 7em;
+    max-width: 14em;
+}
+
+/* Icons normal state
+   ========================================================================== */
+
+[class^="bizagi_editor_component_"] .biz-ico-default {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity .4s ease-in;
+    cursor: pointer;
+}
+
+.bizagi_editor_component_editor_int .biz-ico-default {
+    right: -18px;
+    bottom: 3px;
+}
+
+.bizagi_editor_component_editor_boolean .biz-ico-default {
+    top: 5px;
+    right: -18px;
+}
+
+.bizagi_editor_component_editor_xpath:hover .biz-ico-default,
+.bizagi_editor_component_editor_xpathmultiple:hover .biz-ico-default,
+.bizagi_editor_component_editor_int:hover .biz-ico-default,
+.bizagi_editor_component_editor_boolean:hover .biz-ico-default,
+.bizagi_editor_component_editor_tags:hover .biz-ico-default{
+    opacity: 1;
+}
+
+.biz-dropdown.language {
+    width: 220px;
+    padding: 0 0 0 4px;
+}
+
+.biz-dropdown.language .biz-ico[class*="ribbon-ico-"] {
+    display: none;
+}
+
+.biz-ico-default {
+    background-position: -656px -16px;
+}
+
+.biz-btn-horizontal .ribbon-ico-save {
+    /*background-position: -768px 0;*/
+}
+
+.ribbon-ico-save {
+    /*background-position: 0 0;*/
+}
+
+.ribbon-ico-checkout {
+    background-position: -1136px 0;
+}
+
+.ribbon-ico-undo {
+    background-position: -128px 0;
+}
+
+.ribbon-ico-redo {
+    background-position: -128px -32px;
+}
+
+.ribbon-ico-copy-format {
+    background-position: -1040px 0;
+}
+
+.ribbon-ico-form-properties {
+    background-position: -32px 0;
+}
+
+.ribbon-ico-validate {
+    background-position: -1024px 0;
+}
+
+.ribbon-ico-copy-from {
+    background-position: -384px -352px;
+}
+
+.biz-btn-horizontal .ribbon-ico-copy-from {
+    background-position: -800px 0;
+}
+
+.ribbon-ico-actions-validations {
+    background-position: -96px 0;
+}
+
+.biz-btn-horizontal .ribbon-ico-actions-validations {
+    background-position: -784px 0;
+}
+
+.ribbon-ico-convertTo,
+.ribbon-ico-convert-to {
+    background-position: -144px 0;
+}
+
+.ribbon-ico-delete {
+    background-position: -144px -32px;
+}
+
+.ribbon-ico-rename {
+    background-position: -160px 0;
+}
+
+.ribbon-ico-visible {
+    background-position: -160px -32px;
+}
+
+.ribbon-ico-editable {
+    background-position: -176px 0;
+}
+
+.ribbon-ico-required {
+    background-position: -176px -32px;
+}
+
+.ribbon-ico-yes-no {
+    background-position: -208px -32px;
+}
+
+.ribbon-ico-checkbox {
+    background-position: -368px -32px;
+}
+
+.ribbon-ico-button {
+    background-position: -224px 0;
+}
+
+.ribbon-ico-label {
+    background-position: -272px 0;
+}
+
+.ribbon-ico-true {
+    background-position: -384px 0;
+}
+
+.ribbon-ico-false {
+    background-position: -384px -32px;
+}
+
+.ribbon-ico-expression {
+    background-position: -400px 0;
+}
+
+.ribbon-ico-editentity {
+    background-position: -832px -48px;
+}
+
+.ribbon-ico-viewall {
+    background-position: -848px 0;
+}
+
+.ribbon-ico-addelement {
+    background-position: -848px -16px;
+}
+
+.ribbon-ico-addchildelements {
+    background-position: -848px -32px;
+}
+
+.ribbon-ico-editvalues {
+    background-position: -656px 0;
+}
+
+.ribbon-ico-refresh {
+    background-position: -848px -48px;
+}
+
+.ui-bizagi-type-form {
+    background-position: -864px 0;
+}
+
+.ribbon-ico-newform {
+    background-position: -832px -32px;
+}
+
+.ribbon-ico-language {
+    /*background-position: -992px -48px;*/
+}
+
+.ribbon-ico-properties {
+    background-position: -1072px 0;	
+}
+
+.ribbon-ico-offline {
+	background-position: -1344px 0;	
+}
+
+.ribbon-ico-online {
+	background-position: -1328px -48px;	
+}
+
+/* Icons disabled state
+   ========================================================================== */
+
+.biz-btn-disabled .ribbon-ico-save {
+    /*background-position: 0 -32px;*/
+}
+
+.biz-btn-disabled .ribbon-ico-checkout {
+    background-position: -1136px -32px;
+}
+
+.biz-btn-horizontal.biz-btn-disabled .ribbon-ico-save {
+    background-position: -768px -16px;
+}
+
+.biz-btn-disabled .ribbon-ico-undo {
+    background-position: -128px -16px;
+}
+
+.biz-btn-disabled .ribbon-ico-redo {
+    background-position: -128px -48px;
+}
+
+.biz-btn-disabled .ribbon-ico-copy-format {
+    background-position: -1040px -32px;
+}
+
+.biz-btn-disabled .ribbon-ico-form-properties {
+    background-position: -32px -32px;
+}
+
+.biz-btn-disabled .ribbon-ico-validate {
+    background-position: -976px 0;
+}
+
+.ribbon-ico-enable-email {
+	 background-position: -1024px 0;	
+}
+.ribbon-ico-email-template {
+	 background-position: -1438px 0;
+}
+
+.biz-btn-disabled .ribbon-ico-email-template {
+    background-position: -160px -16px;
+}
+
+.biz-btn-checked .ribbon-ico-enable-email {
+    background-position: -1024px -32px;
+}
+
+.biz-btn-disabled .ribbon-ico-copy-from {
+    background-position: -64px -32px;
+}
+
+.biz-btn-horizontal.biz-btn-disabled .ribbon-ico-copy-from {
+    background-position: -800px -16px;
+}
+
+.biz-btn-disabled .ribbon-ico-actions-validations {
+    background-position: -384px -320px;
+}
+
+.biz-btn-horizontal.biz-btn-disabled .ribbon-ico-actions-validations {
+    background-position: -784px -16px;
+}
+
+.biz-btn-disabled .ribbon-ico-convert-to {
+    background-position: -144px -16px;
+}
+
+.biz-btn-disabled .ribbon-ico-delete {
+    background-position: -144px -48px;
+}
+
+.biz-btn-disabled .ribbon-ico-rename {
+    background-position: -160px -16px;
+}
+
+.biz-btn-disabled .ribbon-ico-visible {
+    background-position: -160px -48px;
+}
+
+.biz-btn-disabled .ribbon-ico-editable {
+    background-position: -176px -16px;
+}
+
+.biz-btn-disabled .ribbon-ico-required {
+    background-position: -176px -48px;
+}
+
+.biz-btn-disabled .ribbon-ico-yes-no {
+    background-position: -208px -48px;
+}
+
+.biz-btn-disabled .ribbon-ico-checkbox {
+    background-position: -368px -48px;
+}
+
+.biz-btn-disabled .ribbon-ico-button {
+    background-position: -224px -16px;
+}
+
+.biz-btn-disabled .ribbon-ico-label {
+    background-position: -272px -16px;
+}
+
+.biz-btn-disabled .ribbon-ico-true {
+    background-position: -384px -16px;
+}
+
+.biz-btn-disabled .ribbon-ico-false {
+    background-position: -384px -48px;
+}
+
+.biz-btn-disabled .ribbon-ico-expression {
+    background-position: -400px -16px;
+}
+
+.biz-btn-checked .ribbon-ico-validate {
+    background-position: -1024px -32px;
+}
+
+/* Data icons
+   ========================================================================== */
+
+.ui-bizagi-type-metadata-process,
+.mtool-item-image-queryprocess {
+    background-position: -1168px 0;
+}
+
+.ui-bizagi-type-metadata-task {
+    background-position: -1168px -16px;
+}
+
+.ui-bizagi-type-metadata-task-current,
+.mtool-item-image-querytaskcurrenttask {
+    background-position: -1168px -32px;
+}
+
+.ui-bizagi-type-metadata-task-previous,
+.mtool-item-image-querytaskprevioustask {
+    background-position: -1168px -48px;
+}
+
+.ui-bizagi-type-metadata-task-entry-date,
+.mtool-item-image-querytaskentrydate {
+    background-position: -1184px 0;
+}
+
+.ui-bizagi-type-metadata-task-expiry-date,
+.mtool-item-image-querytaskexpirydate {
+    background-position: -1184px -16px;
+}
+
+.ui-bizagi-type-metadata-task-state,
+.mtool-item-image-querytaskstate {
+    background-position: -1184px -32px;
+}
+
+.ui-bizagi-type-metadata-cases {
+    background-position: -1184px -48px;
+}
+
+.ui-bizagi-type-metadata-case-creation-date,
+.mtool-item-image-querycasecreationdate {
+    background-position: -1200px 0;
+}
+
+.ui-bizagi-type-metadata-case-creation-date { background-position: -1200px 0; }
+
+.ui-bizagi-type-metadata-case-creator,
+.mtool-item-image-querycasecreator {
+     background-position: -1200px -16px;
+}
+
+.ui-bizagi-type-metadata-case-id,
+.mtool-item-image-querycaseid {
+     background-position: -1200px -32px;
+}
+
+.ui-bizagi-type-metadata-case-number,
+.mtool-item-image-querycasenumber {
+     background-position: -1200px -48px;
+}
+
+.ui-bizagi-type-metadata-case-solution-date,
+.mtool-item-image-querycasesolutiondate {
+     background-position: -1216px 0;
+}
+
+.ui-bizagi-type-metadata-case-state,
+.mtool-item-image-querycasestate {
+     background-position: -1216px -16px;
+}
+
+.ui-bizagi-type-metadata-users { background-position: -1216px -32px; }
+
+.ui-bizagi-type-metadata-users-creator { background-position: -1216px -48px; }
+
+.ui-bizagi-type-metadata-users-creator-fullname,
+.mtool-item-image-querycreatorfullname {
+     background-position: -1232px 0;
+}
+
+.ui-bizagi-type-metadata-users-creator-username,
+.mtool-item-image-querycreatorusername {
+     background-position: -1232px -16px;
+}
+
+.ui-bizagi-type-metadata-users-creator-position,
+.mtool-item-image-querycreatorposition {
+     background-position: -1232px -32px;
+}
+
+.ui-bizagi-type-metadata-users-currentuser,
+.mtool-item-image-queryusercurrentuser {
+     background-position: -1232px -48px;
+}
+
+.ui-bizagi-type-metadata-users-currentuser-fullname,
+.mtool-item-image-queryuserfullname {
+     background-position: -1248px 0;
+}
+
+.ui-bizagi-type-metadata-users-currentuser-username,
+.mtool-item-image-queryuserusername {
+     background-position: -1248px -16px;
+}
+
+.ui-bizagi-type-metadata-users-currentuser-position,
+.mtool-item-image-queryuserposition {
+     background-position: -1248px -32px;
+}
+
+.ui-bizagi-type-metadata-users-previoususer,
+.mtool-item-image-queryuserprevioususer {
+     background-position: -1248px -48px;
+}
+
+.ui-bizagi-type-metadata-users-previoususer-fullname,
+.mtool-item-image-queryprevioususerfullname {
+     background-position: -1264px 0;
+}
+
+.ui-bizagi-type-metadata-users-previoususer-username,
+.mtool-item-image-queryprevioususerusername {
+     background-position: -1264px -16px;
+}
+
+.ui-bizagi-type-metadata-users-previoususer-position,
+.mtool-item-image-queryprevioususerposition {
+     background-position: -1264px -32px;
+}
+
+.ui-bizagi-type-metadata-metadata { background-position: -1264px -48px; }
+
+.ui-bizagi-type-metadata-applications,
+.mtool-item-image-queryapplication {
+     background-position: -1280px 0;
+}
+
+.ui-comboBox-image-large-none { background-position: -1280px -16px; }
+
+.ui-comboBox-image-large-from { background-position: -1280px -32px; }
+
+.ui-comboBox-image-large-to { background-position: -1280px -48px; }
+
+.ui-comboBox-image-large-approx { background-position: -1296px 0; }
+
+.ui-comboBox-image-large-exact { background-position: -1296px -16px; }
+
+.ui-comboBox-image-large-casestate-all { background-position: -1296px -32px; }
+
+.ui-comboBox-image-large-casestate-pending { background-position: -1296px -48px; }
+
+.ui-comboBox-image-large-casestate-aborted { background-position: -1312px 0; }
+
+.ui-comboBox-image-large-casestate-closed { background-position: -1312px -16px; }
+
+.ui-comboBox-image-large-taskstate-all { background-position: -1312px -32px; }
+
+.ui-comboBox-image-large-taskstate-expired { background-position: -1312px -48px; }
+
+.ui-comboBox-image-large-taskstate-expires-today { background-position: -1328px 0; }
+
+.ui-comboBox-image-large-taskstate-expires-future { background-position: -1328px -16px; }
+
+/****************************************/
+
+/************ CONTEXT MENU **************/
+
+.contextmenu-container {
+    background-color: #fff;
+}
+
+.contextmenu-border {
+    border-color: #a7abb0;
+}
+
+.contextmenu-hr {
+    border-color: #c7c8c9;
+}
+
+:not(.biz-btn-disabled) .biz-btn-contextmenu {
+    color: #733979;
+}
+
+.biz-btn-contextmenu .biz-arrow-right {
+    border-left-color: #566392;
+}
+
+/****************************************/
+
+/****** CONTROLS NAVIGATOR **************/
+
+.ribbon-ico-association,
+.mtool-item-image-association {
+    background-position: -864px -32px;
+}
+
+.editor-ico-boolean,
+.editor-ico-queryboolean,
+.editor-ico-offlineboolean,
+.editor-ico-columnboolean,
+.editor-ico-offlinecolumnboolean,
+.ribbon-ico-searchboolean,
+.ribbon-ico-boolean,
+.ribbon-ico-queryboolean,
+.ribbon-ico-offlineboolean,
+.ribbon-ico-columnboolean,
+.ribbon-ico-offlinecolumnboolean,
+.mtool-item-image-boolean,
+.mtool-item-image-layoutBoolean,
+.mtool-item-image-queryboolean,
+.mtool-item-image-offlineboolean,
+.mtool-item-image-columnboolean,
+.mtool-item-image-offlinecolumnboolean,
+.mtool-item-image-columnResultBoolean,
+.mtool-item-image-searchboolean {
+    background-position: -208px -32px;
+}
+
+.mtool-item-image-columnimage,
+.mtool-item-image-offlinecolumnimage,
+.mtool-item-image-offlineimage,
+.mtool-item-image-layoutImage,
+.mtool-item-image-image {
+    background-position: -1008px 0;
+}
+
+.editor-ico-button,
+.editor-ico-columnbutton,
+.ribbon-ico-button,
+.ribbon-ico-columnbutton,
+.mtool-item-image-button,
+.mtool-item-image-formbutton,
+.mtool-item-image-columnbutton,
+.editor-ico-activityFlowButton{
+    background-position: -224px 0;
+}
+
+.ribbon-ico-fileprint,
+.mtool-item-image-fileprint,
+.mtool-item-image-columnfileprint {
+    background-position: -1104px 0;
+}
+
+.editor-ico-querycascadingcombo,
+.editor-ico-cascadingcombo,
+.ribbon-ico-cascadingcombo,
+.ribbon-ico-querycascadingcombo,
+.mtool-item-image-cascadingcombo,
+.mtool-item-image-querycascadingcombo{
+    background-position: -224px -32px;
+}
+
+.editor-ico-combo,
+.editor-ico-querycombo,
+.editor-ico-offlinecombo,
+.editor-ico-columncombo,
+.editor-ico-offlinecolumncombo,
+.ribbon-ico-combo,
+.ribbon-ico-querycombo,
+.ribbon-ico-offlinecombo,
+.ribbon-ico-columncombo,
+.ribbon-ico-offlinecolumncombo,
+.ribbon-ico-searchcombo,
+.mtool-item-image-combo,
+.mtool-item-image-querycombo,
+.mtool-item-image-offlinecombo,
+.mtool-item-image-columncombo,
+.mtool-item-image-offlinecolumncombo,
+.mtool-item-image-searchcombo {
+    background-position: -240px 0;
+}
+
+.editor-ico-date,
+.editor-ico-querydate,
+.editor-ico-offlinedate,
+.editor-ico-columndate,
+.editor-ico-offlinecolumndate,
+.ribbon-ico-date,
+.ribbon-ico-querydate,
+.ribbon-ico-offlinedate,
+.ribbon-ico-columndate,
+.ribbon-ico-offlinecolumndate,
+.ribbon-ico-searchdate,
+.mtool-item-image-date,
+.mtool-item-image-querydate,
+.mtool-item-image-offlinedate,
+.mtool-item-image-layoutDateTime,
+.mtool-item-image-columndate,
+.mtool-item-image-offlinecolumndate,
+.mtool-item-image-columnResultDate,
+.mtool-item-image-searchdate,
+.ui-comboBox-image-large-date {
+    background-position: -240px -32px;
+}
+
+.editor-ico-document,
+.editor-ico-columndocument,
+.ribbon-ico-document,
+.ribbon-ico-columndocument,
+.mtool-item-image-columndocument,
+.mtool-item-image-document {
+    background-position: -976px -48px;
+}
+
+.editor-ico-geolocation,
+.editor-ico-offlinegeolocation,
+.ribbon-ico-geolocation,
+.ribbon-ico-offlinegeolocation,
+.mtool-item-image-offlinegeolocation,
+.mtool-item-image-geolocation {
+    background-position: -1122px -17px;
+}
+
+.editor-ico-groupedgrid,
+.ribbon-ico-groupedgrid,
+.mtool-item-image-groupedgrid {
+    background-position: -1120px -33px;
+}
+
+.editor-ico-collectionnavigator,
+.ribbon-ico-collectionnavigator,
+.mtool-item-image-collectionnavigator {
+    background-position: -1120px -50px;
+}
+
+.ribbon-ico-large-hour,
+.ui-comboBox-image-large-hour {
+    background-position: -432px -32px;
+}
+
+.ui-comboBox-image-large-separator {
+    background-position: -928px 0;
+}
+
+.editor-ico-formlink,
+.editor-ico-columnformlink,
+.ribbon-ico-formlink,
+.ribbon-ico-columnformlink,
+.mtool-item-image-formlink,
+.mtool-item-image-columnformlink {
+    background-position: -256px 0;
+}
+
+.editor-ico-grid,
+.editor-ico-offlinegrid,
+.ribbon-ico-grid,
+.ribbon-ico-offlinegrid,
+.mtool-item-image-offlinegrid,
+.mtool-item-image-grid {
+    background-position: -256px -32px;
+}
+
+.editor-ico-hidden,
+.editor-ico-queryhidden,
+.editor-ico-offlinehidden,
+.editor-ico-columnhidden,
+.editor-ico-offlinecolumnhidden,
+.ribbon-ico-hidden,
+.ribbon-ico-queryhidden,
+.ribbon-ico-offlinehidden,
+.ribbon-ico-columnhidden,
+.ribbon-ico-offlinecolumnhidden,
+.mtool-item-image-hidden,
+.mtool-item-image-queryhidden,
+.mtool-item-image-offlinehidden,
+.mtool-item-image-offlinecolumnhidden,
+.mtool-item-image-columnhidden {
+    background-position: -864px -16px;
+}
+
+.editor-ico-label,
+.editor-ico-querylabel,
+.editor-ico-offlinelabel,
+.editor-ico-columnlabel,
+.ribbon-ico-label,
+.ribbon-ico-querylabel,
+.ribbon-ico-offlinelabel,
+.ribbon-ico-columnlabel,
+.ribbon-ico-searchlabel,
+.mtool-item-image-label,
+.mtool-item-image-layoutLabel,
+.mtool-item-image-querylabel,
+.mtool-item-image-offlinelabel,
+.mtool-item-image-columnlabel,
+.mtool-item-image-searchlabel {
+    background-position: -272px 0;
+}
+
+.editor-ico-letter,
+.editor-ico-columnletter,
+.ribbon-ico-letter,
+.ribbon-ico-columnletter,
+.mtool-item-image-columnletter,
+.mtool-item-image-letter {
+    background-position: -272px -32px;
+}
+
+.editor-ico-link,
+.editor-ico-columnlink,
+.ribbon-ico-link,
+.ribbon-ico-columnlink,
+.mtool-item-image-link,
+.mtool-item-image-layoutLink,
+.mtool-item-image-columnlink {
+    background-position: -288px 0;
+}
+
+.mtool-item-image-template{
+    /*background-position: -1470px -16px;*/
+}
+
+.mtool-item-image-layoutPlaceholder{
+    background-position: -1470px 0;
+}
+
+.editor-ico-list,
+.editor-ico-querylist,
+.editor-ico-offlinelist,
+.editor-ico-columnlist,
+.editor-ico-offlinecolumnlist,
+.ribbon-ico-list,
+.ribbon-ico-querylist,
+.ribbon-ico-offlinelist,
+.ribbon-ico-columnlist,
+.ribbon-ico-offlinecolumnlist,
+.mtool-item-image-list,
+.mtool-item-image-querylist,
+.mtool-item-image-offlinelist,
+.mtool-item-image-offlinecolumnlist,
+.mtool-item-image-columnlist {
+    background-position: -288px -32px;
+}
+
+.editor-ico-money,
+.editor-ico-querymoney,
+.editor-ico-offlinemoney,
+.editor-ico-columnmoney,
+.editor-ico-offlinecolumnmoney,
+.ribbon-ico-money,
+.ribbon-ico-querymoney,
+.ribbon-ico-offlinemoney,
+.ribbon-ico-columnmoney,
+.ribbon-ico-offlinecolumnmoney,
+.ribbon-ico-searchmoney,
+.mtool-item-image-money,
+.mtool-item-image-layoutMoney,
+.mtool-item-image-querymoney,
+.mtool-item-image-offlinemoney,
+.mtool-item-image-columnmoney,
+.mtool-item-image-offlinecolumnmoney,
+.mtool-item-image-columnResultMoney,
+.mtool-item-image-searchmoney {
+    background-position: -304px 0;
+}
+
+.editor-ico-number,
+.editor-ico-querynumber,
+.editor-ico-offlinenumber,
+.editor-ico-columnnumber,
+.editor-ico-offlinecolumnnumber,
+.mtool-item-image-float,
+.ribbon-ico-number,
+.ribbon-ico-querynumber,
+.ribbon-ico-offlinenumber,
+.ribbon-ico-columnnumber,
+.ribbon-ico-offlinecolumnnumber,
+.ribbon-ico-searchnumber,
+.mtool-item-image-number,
+.mtool-item-image-layoutNumber,
+.mtool-item-image-querynumber,
+.mtool-item-image-offlinenumber,
+.mtool-item-image-columnnumber,
+.mtool-item-image-offlinecolumnnumber,
+.mtool-item-image-columnResultNumber,
+.mtool-item-image-searchnumber {
+    background-position: -304px -32px;
+}
+
+.editor-ico-radio,
+.editor-ico-queryradio,
+.editor-ico-offlineradio,
+.editor-ico-columnradio,
+.editor-ico-offlinecolumnradio,
+.ribbon-ico-radio,
+.ribbon-ico-queryradio,
+.ribbon-ico-offlineradio,
+.ribbon-ico-columnradio,
+.ribbon-ico-offlinecolumnradio,
+.mtool-item-image-radio,
+.mtool-item-image-queryradio,
+.mtool-item-image-offlineradio,
+.mtool-item-image-offlinecolumnradio,
+.mtool-item-image-columnradio {
+    background-position: -320px 0;
+}
+
+.editor-ico-text,
+.editor-ico-querytext,
+.editor-ico-offlinetext,
+.editor-ico-columntext,
+.editor-ico-offlinecolumntext,
+.ribbon-ico-text,
+.ribbon-ico-querytext,
+.ribbon-ico-offlinetext,
+.ribbon-ico-columntext,
+.ribbon-ico-offlinecolumntext,
+.ribbon-ico-searchtext,
+.mtool-item-image-text,
+.mtool-item-image-layoutText,
+.mtool-item-image-querytext,
+.mtool-item-image-offlinetext,
+.mtool-item-image-columntext,
+.mtool-item-image-offlinecolumntext,
+.mtool-item-image-columnResultText,
+.mtool-item-image-searchtext {
+    background-position: -320px -32px;
+}
+
+.editor-ico-upload,
+.editor-ico-offlineupload,
+.editor-ico-columnupload,
+.editor-ico-offlinecolumnupload,
+.ribbon-ico-upload,
+.ribbon-ico-offlineupload,
+.ribbon-ico-columnupload,
+.ribbon-ico-offlinecolumnupload,
+.mtool-item-image-upload,
+.mtool-item-image-offlineupload,
+.mtool-item-image-columnupload,
+.mtool-item-image-offlinecolumnupload,
+.ui-bizagi-type-attribute-attachment {
+    background-position: -336px 0;
+}
+
+.editor-ico-uploadecm,
+.editor-ico-columnuploadecm,
+.ribbon-ico-uploadecm,
+.ribbon-ico-columnuploadecm,
+.mtool-item-image-columnuploadecm,
+.mtool-item-image-uploadecm {
+    background-position: -1088px 0;
+}
+
+.editor-ico-group,
+.editor-ico-offlinegroup,
+.ribbon-ico-group,
+.ribbon-ico-offlinegroup,
+.mtool-item-image-offlinegroup,
+.mtool-item-image-group {
+    background-position: -336px -32px;
+}
+
+.editor-ico-contentpanel,
+.editor-ico-offlinecontentpanel,
+.ribbon-ico-contentpanel,
+.ribbon-ico-offlinecontentpanel,
+.mtool-item-image-offlinecontentpanel,
+.mtool-item-image-contentpanel {
+    background-position: -1120px 0;
+}
+
+.editor-ico-tab,
+.editor-ico-offlinetab,
+.ribbon-ico-tab,
+.ribbon-ico-offlinetab,
+.mtool-item-image-offlinetab,
+.mtool-item-image-tab {
+    background-position: -352px 0;
+}
+
+.editor-ico-tabitem,
+.editor-ico-offlinetabitem,
+.ribbon-ico-tabitem,
+.ribbon-ico-offlinetabitem,
+.mtool-item-image-offlinetabitem,
+.mtool-item-image-tabitem {
+    background-position: -352px -32px;
+}
+
+.editor-ico-search,
+.editor-ico-columnsearch,
+.ribbon-ico-search,
+.ribbon-ico-querysearch,
+.ribbon-ico-columnsearch,
+.mtool-item-image-columnsearch,
+.mtool-item-image-search {
+    background-position: -368px 0;
+}
+
+.mtool-item-image-querysearch {
+    background-position: -368px 0;
+}
+
+.mtool-item-image-columnsuggest,
+.mtool-item-image-offlinecolumnsuggest,
+.mtool-item-image-offlinesuggest,
+.mtool-item-image-searchsuggest,
+.mtool-item-image-suggest {
+    background-position: -1008px -32px;
+}
+
+.mtool-item-image-querysuggest {
+    background-position: -1008px -32px;
+}
+
+.ribbon-ico-plus,
+.mtool-image-plus {
+    background-position: -736px -48px;
+}
+
+.ribbon-ico-searchlist,
+.mtool-item-image-columnsearchlist,
+.mtool-item-image-searchlist {
+    background-position: -912px 0;
+}
+
+.editor-ico-suggest,
+.editor-ico-querysuggest,
+.editor-ico-offlinesuggest,
+.editor-ico-columnsuggest,
+.editor-ico-offlinecolumnsuggest,
+.ribbon-ico-suggest,
+.ribbon-ico-querysuggest,
+.ribbon-ico-offlinesuggest,
+.ribbon-ico-columnsuggest,
+.ribbon-ico-offlinecolumnsuggest,
+.ribbon-ico-searchsuggest,
+.mtool-item-image-offlinesuggest.mtool-item-image-searchsuggest {
+    background-position: -912px -16px;
+}
+
+.mtool-item-image-searchform,
+.mtool-item-image-offlineform,
+.mtool-item-image-queryform,
+.mtool-item-image-form,
+.mtool-item-image-nestedform,
+.editor-ico-nestedform{
+    background-position: -832px -32px;
+}
+
+.mtool-item-image-multiselect {
+    background-position: -1088px -48px;
+}
+
+.ribbon-ico-actionlauncher,
+.editor-ico-actionlauncher,
+.mtool-item-image-actionlauncher {
+    background-position: -1406px 0;
+}
+
+.ribbon-ico-entitytemplate,
+.editor-ico-entitytemplate,
+.mtool-item-image-entitytemplate {
+    background-position: -1406px -16px;
+}
+
+
+
+/********** buttons and themes ******/
+
+.biz-action-btn .biz-ico {
+    position: relative;
+    top: -4px;
+    left: -4px;
+}
+
+.theme-icon-edit {
+    background-position: -176px 0;
+}
+
+.theme-icon-add {
+    background-position: -736px -48px;
+}
+
+.theme-icon-config {
+    background-position: -560px -48px;
+}
+
+.mtool-item-image-horizontal {
+    background-position: -208px 0;
+}
+
+/************************************/
+
+/****** COMMANDSEDITOR **************/
+
+.biz-ico.commandseditor-add {
+    background-position: -736px -48px;
+}
+
+.bz-fm-commandseditor-icons-complex {
+    background-position: -832px 0;
+}
+
+.bz-fm-commandseditor-icons-simple {
+    background-position: -1088px -32px;
+}
+
+.bz-fm-commandseditor-validation.ui-state-active,
+.bz-fm-commandseditor-action.ui-state-active {
+    background: none rgba(139,144,151,0.1) !important;
+}
+
+/****************************************/
+
+/****** 	XPATH NAVIGATOR **************/
+
+.xpathnavigator_collapse_icon {
+    background-position: -720px -48px;
+}
+
+.xpathnavigator_expand_icon {
+    background-position: -720px -32px;
+}
+
+.ui-bizagi-type-scope-entity-application,
+.ui-bizagi-type-entity-application {
+    background-position: -576px -48px;
+}
+
+.ui-bizagi-type-scope-entity-param,
+.ui-bizagi-type-entity-param {
+    background-position: -816px 0;
+}
+
+.ui-bizagi-type-scope-entity-parametric,
+.ui-bizagi-type-entity-parametric {
+    background-position: -816px -32px;
+}
+
+.ui-bizagi-type-scope-entity-system,
+.ui-bizagi-type-entity-system {
+    background-position: -816px -48px;
+}
+
+.ui-bizagi-type-scope-entity-stakeholder,
+.ui-bizagi-type-entity-stakeholder {
+    background-position: -1328px -32px;
+}
+
+.ui-bizagi-type-scope-attribute-money,
+.ui-bizagi-type-attribute-money {
+    background-position: -304px 0;
+}
+
+.ui-bizagi-type-scope-collection,
+.ui-bizagi-type-collection {
+    background-position: -720px -16px;
+}
+
+.ui-bizagi-type-scope-entity,
+.ui-bizagi-type-entity-master {
+    background-position: -720px 0;
+}
+
+.ui-bizagi-type-scope-attribute-boolean,
+.ui-bizagi-type-attribute-boolean {
+    background-position: -208px -32px;
+}
+
+.ui-bizagi-type-scope-attribute-button,
+.ui-bizagi-type-attribute-button {
+    background-position: -224px 0;
+}
+
+.ui-bizagi-type-scope-attribute-cascadingcombo,
+.ui-bizagi-type-attribute-cascadingcombo {
+    background-position: -224px -32px;
+}
+
+.ui-bizagi-type-scope-attribute-combo,
+.ui-bizagi-type-attribute-combo {
+    background-position: -240px 0;
+}
+
+.ui-bizagi-type-scope-attribute-date,
+.ui-bizagi-type-attribute-date {
+    background-position: -240px -32px;
+}
+
+.ui-bizagi-type-scope-attribute-formlink,
+.ui-bizagi-type-attribute-formlink {
+    background-position: -256px 0;
+}
+
+.ui-bizagi-type-scope-attribute-uploadecm,
+.ui-bizagi-type-attribute-uploadecm {
+    background-position: -1088px 0;
+}
+
+.ui-bizagi-type-scope-attribute-text,
+.ui-bizagi-type-scope-attribute-label,
+.ui-bizagi-type-attribute-label {
+    background-position: -272px 0;
+}
+
+.ui-bizagi-type-scope-attribute-letter,
+.ui-bizagi-type-attribute-letter {
+    background-position: -272px -32px;
+}
+
+.ui-bizagi-type-scope-attribute-link,
+.ui-bizagi-type-attribute-link {
+    background-position: -288px 0;
+}
+
+.ui-bizagi-type-scope-attribute-list,
+.ui-bizagi-type-attribute-list {
+    background-position: -288px -32px;
+}
+
+.ui-bizagi-type-scope-attribute-currency,
+.ui-bizagi-type-attribute-currency {
+    background-position: -304px 0;
+}
+
+.ui-bizagi-type-attribute-float,
+.ui-bizagi-type-attribute-oracleNumber,
+.ui-bizagi-type-scope-attribute-float,
+.ui-bizagi-type-scope-attribute-number,
+.ui-bizagi-type-scope-attribute-oracleNumber,
+.ui-bizagi-type-attribute-number {
+    background-position: -304px -32px;
+}
+
+.ui-bizagi-type-scope-attribute-radio,
+.ui-bizagi-type-attribute-radio {
+    background-position: -320px 0;
+}
+
+.ui-bizagi-type-scope-attribute-string,
+.ui-bizagi-type-attribute-string {
+    background-position: -320px -32px;
+}
+
+.ui-bizagi-type-scope-attribute-upload,
+.ui-bizagi-type-attribute-upload {
+    background-position: -336px 0;
+}
+
+.ui-bizagi-type-scope-attribute-uploadecm,
+.ui-bizagi-type-attribute-uploadecm {
+    background-position: -1088px 0;
+}
+
+.ui-bizagi-type-scope-attribute-group,
+.ui-bizagi-type-attribute-group {
+    background-position: -336px -32px;
+}
+
+.ui-bizagi-type-scope-attribute-tab,
+.ui-bizagi-type-attribute-tab {
+    background-position: -352px 0;
+}
+
+.ui-bizagi-type-scope-attribute-image,
+.ui-bizagi-type-attribute-image {
+    background-position: -1008px 0;
+}
+
+.ui-comboBox-image-large-tab,
+.ui-bizagi-type-scope-attribute-tabitem,
+.ui-bizagi-type-attribute-tabitem {
+    background-position: -352px -32px;
+}
+
+[class*="ui-bizagi-type-scope"].biz-ico {
+    position: relative;
+}
+
+[class*="ui-bizagi-type-scope"]:before {
+    content: "";
+    position: absolute;
+    right: -4px;
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+    background: url(images/sprite-ico.png) no-repeat -1072px -16px;
+}
+
+/*********************************/
+
+/******** LAYOUT *****************/
+
+.top-scroll-grad .top-scroll-dragging .scroll-top-drag {
+    background-position: -928px -16px;
+}
+
+.bottom-scroll-grad .bottom-scroll-dragging .scroll-bottom-drag {
+    background-position: -928px -32px;
+}
+
+.biz-ico.mtool-item-image-layout {
+    background-position: -208px 0;
+}
+
+#main-panel.bz-main-layout-mode .ui-dashed-layout.ui-table {
+    margin: 10px 0;
+    padding: 6px!important;
+    border: 1px dashed hsla(216,100%,50%,.5) !important;
+    background: hsla(201,100%,94%,.5) !important;
+}
+
+#main-panel .ui-bizagi-container-horizontal.ui-dashed-layout.ui-table {
+    padding: 6px 0 6px 0!important;
+    background: #f5f5f5;
+}
+
+.ui-bizagi-container-form > .children,
+.bizagi_editor_component_searchresulteditor > .children,
+.ui-drop-here-layout {
+    position: relative;
+    min-height: 30px;
+}
+
+.ui-drop-here-layout::before,
+.ui-bizagi-container-form > .children::before,
+.bizagi_editor_component_searchresulteditor > .children::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .children::before {
+    content: attr(drophere);
+    position: absolute;
+    top: 0;
+    border-width: 1px;
+    border-radius: 2px;
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(175,223,0,0.2) ), color-stop(100%,rgba(175,223,0,0.1) ) );
+    background: -moz-gradient(linear,left top,left bottom,color-stop(0%,rgba(175,223,0,0.2) ), color-stop(100%,rgba(175,223,0,0.1) ) );
+}
+
+.ui-bizagi-container-form > .children::before,
+.ui-bizagi-container-form > .ui-drop-here-layout::before {
+    content: attr(drophere);
+}
+
+.bizagi_editor_component_searchresulteditor > .children::before {
+    content: 'Drop Column Fields Here';
+}
+
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-horizontal:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-horizontal:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-tab:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-tab:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-group:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-group:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-nestedform:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-nestedform:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-render:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-render:first-child {
+    margin-top: 30px;
+}
+
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-horizontal:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-horizontal:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-tab:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-tab:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-group:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-group:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-nestedform:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-nestedform:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-render:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-render:last-child {
+    margin-bottom: 30px;
+}
+
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-horizontal:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-horizontal:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-horizontal:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-horizontal:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-tab:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-tab:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-tab:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-tab:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-group:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-group:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-group:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-group:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-nestedform:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-nestedform:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-nestedform:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-nestedform:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-render:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-render:last-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-render:first-child,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-render:last-child {
+    position: relative;
+    overflow: visible!important;
+}
+
+.ui-drop-here-layout::before,
+.ui-bizagi-container-form > .children::before,
+.bizagi_editor_component_searchresulteditor > .children::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-horizontal:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-horizontal:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-horizontal:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-horizontal:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .children::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .children::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-tab:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-tab:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-tab:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-tab:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-group:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-group:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-group:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-group:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-nestedform:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-nestedform:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-nestedform:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-nestedform:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-render:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-render:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-render:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-render:last-child::after {
+    visibility: visible;
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    margin-left: 0;
+    border: #DCDFD3 solid 1px;
+    border-radius: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
+    line-height: 25px;
+    color: #617C01;
+    opacity: 0.7;
+}
+
+.bizagi_editor_component_searchresulteditor > .children::before {
+    top: 10px;
+    left: 1%;
+    width: 98%;
+}
+
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-horizontal:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-horizontal:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .children::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-tab:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-tab:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-group:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-group:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-nestedform:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-nestedform:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-render:first-child::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-render:first-child::before {
+    content: attr(drophere);
+    top: -31px;
+    margin-bottom: 4px;
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(175,223,0,0.2) ), color-stop(100%,rgba(175,223,0,0.1) ) );
+    background: -moz-gradient(linear,left top,left bottom,color-stop(0%,rgba(175,223,0,0.2) ), color-stop(100%,rgba(175,223,0,0.1) ) );
+}
+
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-horizontal:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-horizontal:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-tab:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-tab:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-group:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-group:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-container-nestedform:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-container-nestedform:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form > .ui-bizagi-render:last-child::after,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .ui-bizagi-render:last-child::after {
+    content: attr(drophere);
+    bottom: -31px;
+    margin-top: 4px;
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(175,223,0,0.1) ), color-stop(100%,rgba(175,223,0,0.2) ) );
+    background: -moz-gradient(linear,left top,left bottom,color-stop(0%,rgba(175,223,0,0.1) ), color-stop(100%,rgba(175,223,0,0.2) ) );
+}
+
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .children::before,
+#main-panel.ui-start-drag:not(.bz-edit-mode) .ui-bizagi-container-form .ui-col > .children::after {
+    top: 0;
+    bottom: 0;
+}
+
+#main-panel .ui-bizagi-container > .ui-bizagi-container-nestedform .ui-bizagi-container {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#main-panel .ui-bizagi-container > .ui-bizagi-container-nestedform .ui-bizagi-container::after,
+#main-panel .ui-bizagi-container-nestedform .ui-bizagi-render::after,
+#main-panel .ui-bizagi-container-nestedform .ui-bizagi-render::before {
+    content: none!important;
+    display: none!important;
+}
+
+#main-panel .ui-bizagi-container-nestedform .ui-bizagi-render:first-child,
+#main-panel .ui-bizagi-container-nestedform .ui-bizagi-render:last-child {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#main-panel .ui-bizagi-container.ui-bizagi-container-nestedform {
+    margin-top: 10px!important;
+}
+
+#main-panel .ui-bizagi-container.ui-bizagi-container-nestedform .ui-bizagi-container-nestedform-title {
+    position: absolute;
+    top: -7px;
+    left: 12px;
+    width: auto;
+    height: 14px;
+    margin-left: 5px;
+    padding: 0 10px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 9px!important;
+    line-height: 12px;
+    letter-spacing: 0.15em;
+    color: hsl(60,14%,97%);
+    background: #468BFF;
+}
+
+.preview .ui-bizagi-render:first-child,
+.preview .ui-bizagi-render:last-child {
+    margin-top: 0!important;
+    margin-bottom: 0!important;
+}
+
+.preview .ui-bizagi-render::after,
+.preview .ui-bizagi-render::before {
+    content: none!important;
+    display: none!important;
+    margin: 0!important;
+    padding: 0!important;
+}
+
+#main-panel .preview .ui-bizagi-container.ui-bizagi-container-panel {
+    border: none;
+}
+
+#main-panel .ui-table,
+.ui-table {
+    display: table;
+    width: 100%;
+    padding: 2px;
+    table-layout: fixed;
+}
+
+#main-panel .ui-bizagi-container-horizontal > .ui-table.ui-col.ui-bizagi-container,
+#main-panel .ui-table .ui-col,
+.ui-col {
+    display: table-cell!important;
+    height: 33px;
+    overflow: hidden;
+}
+
+.ui-col-hover {
+    color: red;
+}
+
+.ui-bizagi-container-tab .ui-bizagi-container.ui-tabs-panel {
+    position: relative;
+}
+
+.bizagi_editor_component_gridcolumneditor:hover .ui-drop-here-layout::after,
+.bizagi_editor_component_gridcolumneditor:hover .ui-drop-here-layout::before,
+.ui-bizagi-container-form:hover > .ui-drop-here-layout::after,
+.ui-col:active .ui-drop-here-layout::after,
+.ui-col:active .ui-drop-here-layout::before,
+.ui-col:focus .ui-drop-here-layout::after,
+.ui-col:focus .ui-drop-here-layout::before,
+.ui-col:hover .ui-drop-here-layout::after,
+.ui-col:hover .ui-drop-here-layout::before,
+.ui-col:active::after,
+.ui-col:active::before,
+.ui-col:focus::after,
+.ui-col:focus::before,
+.ui-col:hover::after,
+.ui-col:hover::before {
+    border-color: hsl(195,0%,90%);
+    color: #8E9499 !important;
+}
+
+.bizagi_editor_component_properties:hover {
+    border: 1px solid rgb(122,128,133) !important;
+    -webkit-box-shadow: 0 0 5px rgba(255,255,255,0.5) !important;
+    -moz-box-shadow: 0 0 5px rgba(255,255,255,0.5) !important;
+}
+
+/********************** ribbon overlay perform save ********************/
+
+.bz-dialog-perfomsave-overlay {
+    z-index: 100000;
+}
+
+.bz-dialog-perfomsave-popup {
+    position: relative;
+    top: 30%;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 400px;
+}
+
+.bz-dialog-perfomsave-popup .bz-fm-dialog-button.ui-button,
+.bz-dialog-perfomsave-popup .bz-fm-dialog-button.ui-button:hover {
+    display: block;
+}
+
+.ui-wbanner-space-show {
+    bottom: 68px!important;
+}
+
+.ui-wbanner-space-hide {
+    bottom: 10px!important;
+}

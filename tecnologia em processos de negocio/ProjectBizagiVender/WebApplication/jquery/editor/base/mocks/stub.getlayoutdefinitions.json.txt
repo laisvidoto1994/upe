@@ -1,0 +1,12 @@
+﻿{
+    "actiontype": "GetLayoutsDefinitions",
+    "result": {
+        "success": true,
+        "parameters": [
+            {
+                "key": "layouts",
+                "value": "{\"layouts\": [\r\n{\r\n\t\"id\" : \"full-layout\",\t\t\t\r\n\t\"caption\": { \"resource\": \"formmodeler-component-editor-layoutnavigator-fulllayout\"},\r\n\t\"childrens\": [\r\n\t\t{\r\n\t\t\t\"type\" : \"panel\",\r\n\t\t\t\"properties\" : { \"width\": \"100%\" }  \t\t\t\t\t\t\t\t\r\n\t\t}\r\n\t]\r\n}\r\n,\r\n{\r\n\t\"id\" : \"70-30\",\r\n\t\"caption\": \"70% - 30%\",\r\n\t\"childrens\": [\r\n\t\t{\r\n\t\t\t\"type\" : \"panel\",\r\n\t\t\t\"properties\": { \"width\": \"70%\"}\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"type\" : \"panel\",\r\n\t\t\t\"properties\": { \"width\": \"30%\" }\r\n\t\t}\r\n\t]\r\n}\r\n,\r\n{\r\n\t\"id\" : \"33-33-33\",\r\n\t\"caption\": \"33% - 34% -33%\",\r\n\t\"childrens\": [\r\n\t\t{\r\n\t\t\t\"type\" : \"panel\",\r\n\t\t\t\"properties\": { \"width\": \"33%\"}\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"type\" : \"panel\",\r\n\t\t\t\"properties\": { \"width\": \"34%\" }\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"type\" : \"panel\",\r\n\t\t\t\"properties\": { \"width\": \"33%\" }\r\n\t\t}\r\n\t]\r\n}\r\n,\r\n{\r\n\t\"id\" : \"30-70\",\r\n\t\"caption\": \"30% - 70%\",\r\n\t\"childrens\": [\r\n\t\t{\r\n\t\t\t\"type\" : \"panel\",\r\n\t\t\t\"properties\": { \"width\": \"30%\"}\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"type\" : \"panel\",\r\n\t\t\t\"properties\": { \"width\": \"70%\" }\r\n\t\t}\r\n\t]\r\n}\r\n,\r\n{\r\n\t\"id\" : \"50-50\",\r\n\t\"caption\": \"50% - 50%\",\r\n\t\"childrens\": [\r\n\t\t{\r\n\t\t\t\"type\" : \"panel\",\r\n\t\t\t\"properties\": { \"width\": \"50%\"}\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"type\" : \"panel\",\r\n\t\t\t\"properties\": { \"width\": \"50%\" }\r\n\t\t}\r\n\t]\r\n}\r\n]}\r\n"     
+			}		
+		]
+	}
+}

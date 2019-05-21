@@ -1,0 +1,20 @@
+﻿#bz-rp-sensors-processlist ul{
+
+    display: none;
+    
+}
+
+#bz-rp-sensors-processlist li.bz-rp-sensors-selected ul {
+
+    display: block;
+}
+
+#bz-rp-reports-sensors-create button[disabled], #bz-rp-reports-sensors-buttons button[disabled] {
+    opacity: 0.5;
+    cursor: default;
+}
+
+#bz-rp-reports-sensors-scrollablecontent {
+    width: 100%;
+    clear: both;    
+}

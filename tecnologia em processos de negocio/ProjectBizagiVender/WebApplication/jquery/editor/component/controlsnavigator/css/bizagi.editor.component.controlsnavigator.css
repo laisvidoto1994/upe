@@ -1,0 +1,118 @@
+/********
+* Filename: bizagi.editor.component.controlsnavigator.css
+* Create Date: 2012-03-26
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com / Ramiro Gomez Ramiro.Gomez@bizagi.com
+*
+* $__controlsnavigator
+*
+********/
+
+/* __controlsnavigator
+--------*/
+
+
+.bizagi_editor_component_controlsnavigator
+{
+    margin:0px;
+    padding:12px;
+    height: 100%;
+    -webkit-box-flex: 1;
+    overflow:auto;
+    -webkit-box-sizing: border-box;
+} 
+
+.bizagi_editor_component_controlsnavigator.ui-accordion .ui-accordion-header .ui-icon { left:0px; }
+
+.bizagi_editor_component_controlsnavigator .ui-accordion-header, .bizagi_editor_component_controlsnavigator .ui-accordion-content,.bizagi_editor_component_controlsnavigator .ui-accordion-header.ui-state-active
+{
+    background:0px;
+    border-radius:0px;
+    border:none;
+}
+
+.bizagi_editor_component_controlsnavigator .mtool-group
+{
+    border-bottom:1px solid hsl(195, 0%, 88%);
+    padding:8px 0px;
+}
+
+.bizagi_editor_component_controlsnavigator .mtool-group:first-child { padding-top:0px; }
+
+.bizagi_editor_component_controlsnavigator .ui-accordion-content { padding:5px 5px 5px 12px; }
+
+.bizagi_editor_component_controlsnavigator .ui-accordion-header .mtool-group-name { margin-left:20px; }
+
+.bizagi_editor_component_controlsnavigator .mtool-group-items { overflow: visible; }
+
+.bizagi_editor_component_controlsnavigator .biz-btn-horizontal,
+.bizagi_editor_component_controlsnavigator .biz-btn-horizontal:hover
+{
+    cursor: move !important;
+    color: hsl(209, 19%, 45%);
+}
+
+.bizagi_editor_component_controlsnavigator .mtool-item.ui-state-hover
+{
+    border:1px solid hsl(195, 0%, 88%);
+    background:white;
+    box-shadow: inset 0px 1px 3px 0px hsla(195, 0%, 78%, .2);
+}
+#mtool-container-helper .mtool-item-image,
+.bizagi_editor_component_controlsnavigator .mtool-item-image
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0px 5px;
+    vertical-align: top;
+}
+
+#mtool-container-helper .mtool-image-plus,
+.bizagi_editor_component_controlsnavigator .mtool-image-plus { 
+    position: absolute;
+    left: 15px;
+    top: 8px;
+}
+
+#mtool-container-helper .mtool-image-sort,
+.bizagi_editor_component_controlsnavigator .mtool-image-sort { 
+    background: url(images/sort.png) no-repeat center center;
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    left: 15px;
+    top: 8px;
+}
+
+
+#mtool-container-helper.mtool-helper{
+    border: 1px solid rgba(179,179,179,0.3);
+    -webkit-border-radius: 4px;
+    margin: 0px!important;
+    height: 28px!important;
+    display: inline-block;
+    position: absolute;
+
+    text-align: left;
+    padding: 0px 15px 8px 5px!important;
+
+    background-color: rgb(239,240,241);
+    z-index: 600;
+
+     -webkit-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, .2);
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, .2);
+    cursor: move;
+}
+
+#mtool-container-helper.mtool-helper label{
+    display: block;
+    margin-left: 22px;
+    font-size: 12px;
+    margin-top: 7px;
+    cursor: move;
+}
+
+    #mtool-container-helper.mtool-helper i.biz-ico {
+        position: absolute;
+        top: 5px;
+    }

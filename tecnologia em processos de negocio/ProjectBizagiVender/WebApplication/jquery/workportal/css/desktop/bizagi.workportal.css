@@ -1,0 +1,1157 @@
+/*
+   Document   : bizagi-workportal
+   Created on : May 4, 2011, 10:19:38 AM
+   Author     : Edward Morales edward.morales{_at_}bizagi.com
+   Description:
+       General Cascading Style Sheet
+*/
+
+:root {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+dd,
+dt {
+    margin-bottom: 3px;
+}
+
+p {
+    margin-top: 0;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#ui-bizagi-wp-sprite {
+    background-image: url(images/sprite.png);
+    height: 200px;
+}
+
+
+/*-------------*/
+
+
+/*     APP     */
+
+
+/*-------------*/
+
+#ui-bizagi-wp-application {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0;
+    height: 100%;
+    min-width: 1024px;
+}
+
+#ui-bizagi-wp-workarea {
+    min-width: 1024px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#loadModuleStatus #modalModuleStatus{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loadModuleStatus  p,
+#loadModuleStatus  label{
+    text-align: center;
+    color:#619e8e;
+    font-weight:bold;
+}
+#loadModuleStatus #ui-widget-overlay{
+    z-index: auto;
+}
+
+#modalModuleStatus.show{
+    display: inline;
+    position: fixed;
+    z-index: 1011;
+    width: 350px;
+    height: auto;
+    box-shadow: 0 0 13px 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 0 13px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 13px 2px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background-color: #FFFFFF;
+}
+#modalModuleStatus #case{
+    color: #2F526C;
+    font-size: 22.5px;
+    font-weight: normal;
+    text-align: center;
+}
+#modalModuleStatus #loading{
+    height: 50px;
+}
+
+/*-------------*/
+
+
+/*   WIDGETS   */
+
+
+/*-------------*/
+
+#widgetContent li {
+    list-style: none;
+}
+
+#footer {
+    z-index: 100;
+    bottom: 0;
+    position: fixed;
+    height: 30px;
+    width: 100%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.nodisplay {
+    display: none;
+}
+
+.visible {
+    visibility: visible;
+}
+
+
+/* styles for loading message */
+
+.ui-bizagi-loading-message {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ui-bizagi-loading-message-center {
+    width: 18px;
+    height: 18px;
+}
+
+.ui-bizagi-loading-icon {
+    background-image: url(images/loader2.gif);
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+/* style for loading next content*/
+
+.scrollContLoading {
+    padding-left: 45%;
+    width: 30px;
+    height: 30px;
+}
+
+
+/*jQery ui override*/
+
+.ui-button {
+    font-weight: normal;
+}
+
+.ui-bizagi-adjustable {
+    overflow-y: visible;
+    overflow-x: visible;
+}
+
+
+/*
+* Not compatible template classes
+*/
+
+#ui-bizagi-wp-notCompatibleIE-wrapper {
+    position: relative;
+    font-size: 12px;
+    height: 100%;
+    width: 100%;
+}
+
+#ui-bizagi-wp-notCompatibleIE-box {
+    position: absolute;
+    width: 500px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    margin-top: -125px;
+    margin-left: -200px;
+    padding: 20px;
+}
+
+.ui-bizagi-wp-notCompatibleIE-error {
+    margin: 8px;
+    height: 70px;
+    overflow-y: auto;
+}
+
+.ui-bizagi-wp-notCompatibleIE-goToOldApplication {
+    color: #2f526c;
+}
+
+.ui-bizagi-error {
+    background: url("images/ui-bg_glass_95_fef1ec_1x400.png") repeat-x scroll 50% 50% #FEF1EC;
+    border: 1px solid #ff0000;
+    border-radius: 6px;
+    font-size: 125%;
+    height: auto !important;
+    max-height: 350px !important;
+    overflow: auto;
+}
+
+.ui-bizagi-error .ui-bizagi-error-message-text {
+    word-wrap: break-word;
+}
+
+.ui-bizagi-error > .ui-widget-header,
+.ui-bizagi-error > .ui-state-error {
+    border-radius: 4px;
+}
+
+.ui-bizagi-info-inbox-detail .ui-bizagi-info {
+    top: 40px;
+    padding: 10px;
+    width: 225px;
+    max-width: 225px;
+    left: 6px;
+}
+
+.ui-bizagi-info-container {
+    clear: both;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+}
+
+.ui-bizagi-info {
+    background-color: #dadada;
+    border: 1px solid #9b9b9b;
+    border-radius: 6px;
+    box-shadow: 0 0 17px 1px #9b9b9b;
+    color: #1F74B2;
+    font-size: 125%;
+    margin: auto;
+    max-width: 287px;
+    padding: 10px 20px;
+    position: relative;
+    top: 20%;
+}
+
+.ui-bizagi-info .ui-bizagi-info-message-text {
+    word-wrap: break-word;
+    padding-left: 20px;
+}
+
+.ui-bizagi-info > .ui-widget-content {
+    background: none;
+}
+
+.ui-bizagi-info span.ui-icon {
+    background-image: url("images/ui-icons_469bdd_256x240.png");
+}
+
+.ui-bizagi-info span.ui-icon-info {
+    float: left;
+}
+
+.ui-bizagi-info > .ui-widget-header,
+.ui-bizagi-info > .ui-state-info {
+    border-radius: 4px;
+}
+
+
+/* ============================================
+   Workportal Components
+   ============================================ */
+
+
+/* workportal modal window
+   ============================================ */
+
+.biz-wp-window {
+    padding-left: 4px;
+    padding-top: 10px;
+    margin-right: 4px;
+    height: 97%;
+}
+
+.biz-wp-window-title {
+    display: block;
+    padding: 3px 0;
+    font-size: medium;
+}
+
+.biz-wp-window-Subtitle {
+    display: block;
+    padding: 3px 0;
+    font-size: small;
+}
+
+.biz-wp-buttonset {
+    margin: 5px 0;
+    padding-top: 5px;
+}
+
+
+/* workportal modal form
+   ============================================ */
+
+.biz-wp-form {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.biz-wp-form-row {
+    width: 100%;
+    padding-top: 2px;
+}
+
+.biz-wp-form-cell {
+    min-width: 200px;
+    float: left;
+    padding: 0 2px;
+    min-height: 8px;
+}
+
+.biz-wp-form-noTab-cell {
+    float: left;
+    min-height: 8px;
+}
+
+.biz-wp-form *,
+.biz-wp-form *:before,
+.biz-wp-form *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#biz-wp-userstable-wrapperform {
+    width: 415px;
+    padding: 5px 0;
+    margin: 0 auto;
+}
+
+#biz-wp-userstable-pager {
+    margin-top: 6px;
+}
+
+
+/* workportal table
+   ============================================= */
+
+.biz-wp-table {
+    text-align: center;
+    margin-top: 15px;
+    margin: 0 auto;
+}
+
+
+
+.biz-wp-table-head {
+    background-color: #ccc;
+    border-bottom: 1px solid #3c4046;
+    color: #555555;
+}
+
+.biz-wp-table-head a {
+    text-decoration: none;
+}
+
+.biz-wp-table-head th
+{
+    padding: 8px 20px 8px 8px;
+    cursor: default;
+}
+.biz-wp-table-head th.cases-column-header
+{
+    cursor: default;
+}
+.biz-wp-table-head th label {
+    font-weight: normal;
+    cursor: inherit;
+}
+
+.biz-wp-table th,
+.biz-wp-table td {
+    border-width: 1px;
+}
+
+.biz-wp-table th>.ui-bizagi-wp-app-inbox-grouped{
+    text-decoration: underline;
+    cursor:pointer;
+}
+.biz-wp-table .biz-wp-table-grouped{
+    text-align: left;
+}
+.biz-wp-table .hidden{
+    display:none;
+}
+.biz-wp-table-summary-wrapper,
+.biz-wp-table-pager-wrapper {
+    overflow: hidden;
+    text-align: center;
+    padding: 3px 0;
+}
+
+.biz-wp-table-pager-wrapper {
+    margin-top: 6px;
+}
+
+.biz-wp-table-summary-wrapper ul {
+    margin: 0 auto;
+    height: 24px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: inline;
+}
+
+.biz-wp-table-pager-wrapper li {
+    list-style: none;
+    display: inline-block;
+    color: #787878;
+    text-align: center;
+    margin-left: 0;
+    cursor: pointer;
+    padding: 2px 5px;
+    min-width: 10px;
+}
+
+.biz-wp-table-pager-wrapper li.active {
+    color: #f5f5f5;
+    background-color: #949494;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3) inset;
+}
+
+.biz-wp-table-total {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background-color: #f7fff1;
+    color: #68737b;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3) inset;
+    padding: 2px 8px;
+    margin-right: 4px;
+}
+
+#users-table-buttonset button {
+    margin: 0 2px;
+}
+
+
+/* workportal input text & datePicker
+   ============================================ */
+
+.biz-wp-input-text,
+.biz-wp-form-datepicker {
+    display: inline-block;
+    height: 24px;
+    max-height: 24px;
+    padding: 0 4px;
+    line-height: 24px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+
+/* WorkPortal Combo
+   ============================================ */
+
+.biz-wp-combo-data-container {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.biz-wp-combo-label {
+    display: block;
+    margin-bottom: .5em;
+}
+
+input.biz-wp-combo-input {
+    line-height: 1.8em;
+    padding-left: 4px;
+    padding-top: 4px;
+    box-sizing: inherit;
+    padding-right: 18px;
+    border: none !important;
+    width: 100%;
+    box-shadow: 0 1px #ddd;
+    font: 12px/normal normal Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+}
+
+input.biz-wp-combo-input:focus {
+    box-shadow: none;
+    border-color: #ddd;
+    outline: 5px auto #293f55;
+}
+
+.biz-wp-combo-btn {
+    position: absolute;
+    right: 0.25em;
+    bottom: .2em;
+    width: 24px;
+    height: 24px;
+}
+
+.biz-wp-combo-btn-caret {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -5px;
+    margin-top: -2px;
+    border: solid transparent;
+    border-color: rgba(153, 153, 153, 0);
+    border-width: 5px;
+    border-top-color: #bbb;
+    pointer-events: none;
+}
+
+.ui-select-dropdown {
+    border-radius: 4px;
+    border: 1px solid #e6e4e4 !important;
+}
+
+.ui-select-dropdown li {
+    padding: .4em 1em;
+    line-height: 1.5;
+    color: #444;
+}
+
+
+/* workportal Link
+   ============================================ */
+
+.biz-wp-link {
+    text-decoration: underline;
+    color: #2F526C;
+}
+
+
+/* workportal Checks
+   ============================================ */
+
+.biz-wp-checks-wrapper {
+    margin: 5px auto;
+    padding-top: 5px;
+    width: 100%;
+}
+
+.biz-wp-checks-wrapper ul {
+    padding: 0;
+    margin: 0;
+}
+
+.biz-wp-checks-wrapper li {
+    display: inline-block;
+    list-style: none;
+}
+
+.biz-wp-check-title {
+    min-width: 50px;
+}
+
+.biz-wp-check-element {
+    vertical-align: middle
+}
+
+
+/* processing gif
+============================================== */
+
+.processing-gif {
+    background: url("images/processing.gif") no-repeat;
+    width: 60px;
+    height: 55px;
+    margin: 15px 45%;
+}
+
+
+/* workportal Process Tree
+   ============================================ */
+
+.biz-wp-tree-selected-option {
+    background: url("images/ui-icons_cd0a0a_256x240.png") -33px -16px no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.biz-wp-tree-not-selected-option {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.biz-wp-tree-list {
+    margin-left: -40px;
+    margin-top: 5px;
+}
+
+.biz-wp-tree-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 0 5px 3px 0;
+    background: url("images/biz-wp-icons-sprite.png") 0 0 no-repeat;
+}
+
+.biz-wp-tree-collapse-icon {
+    background-position: -242px -461px;
+}
+
+.biz-wp-tree-expand-icon {
+    background-position: -219px -460px;
+}
+
+.biz-wp-tree-none-icon {
+    background: none;
+}
+
+.biz-wp-tree-image-application {
+    background-position: -197px -460px;
+}
+
+.biz-wp-tree-image-category {
+    background-position: -264px -461px;
+}
+
+.biz-wp-tree-image-process {
+    background-position: -286px -461px;
+}
+
+
+/* workportal state/status icons
+   ============================================ */
+
+.biz-wp-state-icon-red {
+    background-image: url(images/sprite.png);
+    background-position: -237px -115px;
+    width: 13px;
+    height: 13px;
+    float: right;
+}
+
+.biz-wp-state-icon-yellow {
+    background-image: url(images/sprite.png);
+    background-position: -237px -132px;
+    width: 13px;
+    height: 13px;
+    float: right;
+}
+
+.biz-wp-state-icon-green {
+    background-image: url(images/sprite.png);
+    background-position: -237px -147px;
+    width: 13px;
+    height: 13px;
+    float: right;
+}
+
+.biz-wp-state-icon-standard {
+    background-image: url(images/biz-wp-icons-sprite.png);
+    width: 13px;
+    height: 13px;
+    float: right;
+}
+
+.biz-wp-state-icon-aborted {
+    background-position: -321px -480px;
+}
+
+.biz-wp-state-icon-cancelled {
+    background-position: -337px -480px;
+}
+
+.biz-wp-state-icon-compensation {
+    background-position: -353px -480px;
+}
+
+.biz-wp-state-icon-lock {
+    background-position: -369px -480px;
+}
+
+
+/* workportal diagram view icon
+   ============================================ */
+
+.biz-wp-diagram-view-icon {
+    background-image: url(images/sprite.png);
+    background-position: -2px -92px;
+    width: 18px;
+    height: 17px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.biz-wp-diagram-view-icon:hover {
+    background-image: url(images/sprite.png);
+    background-position: -24px -92px;
+    width: 18px;
+    height: 17px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bz-wp-button-secondary {
+    -webkit-appearance: none;
+    display: inline-block;
+    max-height: 30px;
+    min-height: 30px;
+    padding: 0 .2em;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+/* workportal utils
+   ============================================ */
+
+.biz-wp-float-left {
+    float: left;
+}
+
+.biz-wp-margin-left-20 {
+    margin-left: 20px;
+}
+
+.biz-wp-margin-right-2 {
+    margin-right: 2px;
+}
+
+.biz-wp-padding-bottom-3 {
+    padding-bottom: 3px;
+}
+
+
+/* workportal entities tree
+    ========================================== */
+
+.biz-wp-entities-tree-selected {
+    background-color: #C1DBEC;
+    border-radius: 2px;
+    padding: 0 6px;
+}
+
+.biz-wp-tree-entities-icon {
+    width: 12px;
+    height: 13px;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 0 5px 3px 0;
+}
+
+.biz-wp-tree-image-master {
+    background: url("images/MasterEntity.png");
+}
+
+.biz-wp-tree-image-parameter {
+    background: url("images/ParameterEntity.png");
+}
+
+.biz-wp-tree-image-boolean {
+    background: url("images/boolean.png");
+}
+
+
+/*   workportal basic icons styles
+    ========================================== */
+
+.biz-wp-icon {
+    display: inline-block;
+    text-indent: -999em;
+    vertical-align: middle;
+    background: url(images/bz-wp-icons-sprite.png) 0 0;
+}
+
+.bz-wp-generic-icons {
+    display: inline-block;
+    text-indent: -999em;
+    vertical-align: middle;
+    background: url("images/biz-wp-icons-sprite.png") 0 0 no-repeat;
+}
+
+.biz-wp-icon-24 {
+    width: 24px;
+    height: 24px;
+}
+
+.biz-wp-icon-16 {
+    width: 16px;
+    height: 16px;
+}
+
+.biz-wp-icon-edit {
+    background-position: 0 0 !important;
+}
+
+.biz-wp-icon-log {
+    background-position: -24px 0 !important;
+}
+
+.bz-render-getUser-icon {
+    width: 30px;
+    height: 24px;
+}
+
+.ui-bizagi-render-icon-getUser-clear {
+    background-position: -45px 0;
+}
+
+.ui-bizagi-render-icon-getUser-search {
+    background-position: -70px 0;
+}
+
+.bz-wp-table-head-wrapper .bz-wp-usertable-sorticons {
+    position: absolute;
+    height: 12px;
+    width: 8px;
+    margin-top: -6px;
+    top: 50%;
+    right: -15px;
+}
+
+.bz-wp-table-head-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.bz-wp-table-centermessage {
+    text-align: center;
+    font-weight: bold;
+}
+
+.bz-widget-mainloading {
+    padding-top: 36%;
+}
+
+.bz-wp-queryForm-check-all {
+    padding: 2px;
+}
+
+
+/* ==========================================================================
+   Rubik WorkPortal CSS
+   ========================================================================== */
+
+
+/* Empty placeholder
+   ========================================================================== */
+
+.bz-wp-empty {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    margin-top: -50px;
+    list-style: none;
+}
+
+.bz-wp-empty__img {
+    display: block;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 1em;
+    background-image: url("images/placeholder-empty.png");
+    background-size: contain;
+}
+
+.bz-wp-empty__info {
+    margin: 0;
+    font-size: 1em;
+    text-align: center;
+}
+
+.bz-wp-empty__info--first {
+    margin-bottom: 0.2em;
+    font-size: 1.6em;
+}
+
+
+/* Project plan illustrations
+   ========================================================================== */
+
+.bz-wp-pp-img {
+    display: block;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 1em;
+    background-size: contain;
+}
+
+.bz-wp-pp-img-basic-info {
+    background-image: url("images/plan-define-basic-info.png");
+}
+
+.bz-wp-pp-img-basic-activities {
+    background-image: url("images/plan-define-activities.png");
+}
+
+.bz-wp-pp-img-basic-invite {
+    background-image: url("images/plan-invite.png");
+}
+
+.bz-wp-files-upload .k-upload-button::before {
+    background-image: url("images/placeholder-files.png");
+}
+
+
+/* Project files placeholder
+   ========================================================================== */
+
+.ui-bizagi-files-xls,
+.ui-bizagi-files-xlsx {
+    background: url("images/placeholder-xls.png") no-repeat;
+    background-size: contain;
+}
+
+.ui-bizagi-files-doc,
+.ui-bizagi-files-docx {
+    background: url("images/placeholder-doc.png") no-repeat;
+    background-size: contain;
+}
+
+.ui-bizagi-files-ppt,
+.ui-bizagi-files-pptx {
+    background: url("images/placeholder-ppt.png") no-repeat;
+    background-size: contain;
+}
+
+.ui-bizagi-files-regular {
+    background: url("images/placeholder-file.png") no-repeat;
+    background-size: contain;
+}
+
+.ui-bizagi-files-zip,
+.ui-bizagi-files-rar {
+    background: url("images/placeholder-zip-rar.png") no-repeat;
+    background-size: contain;
+}
+
+.ui-bizagi-files-txt {
+    background: url("images/placeholder-text.png") no-repeat;
+    background-size: contain;
+}
+
+.ui-bizagi-files-pdf {
+    background: url("images/placeholder-pdf.png") no-repeat;
+    background-size: contain;
+}
+
+.ui-bizagi-files-png,
+.ui-bizagi-files-jpg,
+.ui-bizagi-files-gif {
+    background: url("") no-repeat;
+    background-size: contain;
+}
+
+
+/* Discover more
+   ========================================================================== */
+/*cosmetic, delete if it bothers*/
+/*
+#left-sidebar-wrapper,
+#right-sidebar-wrapper {
+    transition: width 0.4s;
+}*/
+
+#left-sidebar-wrapper,
+.bz-wp-sidebar-inbox {
+   background-image: url("images/bg-landscape.png");
+   background-repeat: no-repeat;
+   background-position: center bottom;
+}
+
+.bannerfootersidebar-logo {
+    background: url("images/logo-bizagi.png") no-repeat;
+}
+
+
+/****/
+
+
+/*FIX BUTTON UI
+/****/
+
+.ui-button,
+.ui-button.ui-state-default,
+.ui-bizagi-button-container .ui-bizagi-button,
+.ui-dialog .ui-button,
+.ui-bizagi-wp-app-routing-container table .ui-button {
+
+    border: 1px solid #1D292F;
+    border-radius: 4px;
+
+
+}
+
+#btn-get-user,
+#btn-clear-user {
+    padding: 3px;
+    color: #FFFFFF;
+    -webkit-text-stroke-width: 0px;
+}
+
+
+/* FIX LABELS PREFERENCES */
+
+.ui-bizagi-render-display-normal .ui-bizagi-label.ui-bizagi-render-align-left label,
+.ui-bizagi-render-display-label > .ui-bizagi-label label {
+    font-weight: lighter;
+}
+
+.ui-button span {
+    color: #FFFFFF;
+}
+
+.ui-button-desktop-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden!important;
+    max-width: 100%;
+}
+
+.ui-button-windows8 {
+    white-space: normal;
+}
+
+
+
+.ui-bizagi-wp-app-inbox-activity-description:hover .workonitRow.ui-button,
+.ui-bizagi-wp-app-routing-container table tr:hover .workonitRow.ui-button {
+    border: solid 1px #39515F;
+}
+
+#workportal-theme-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all linear 0.3s;
+    background-color: #000;
+    z-index: 999;
+}
+
+.ui-widget-overlay {
+    background: rgba(0, 0, 0, .2);
+}
+
+.ui-dialog {
+    min-height: 145px;
+    padding: 2em;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.ui-dialog.ui-dialog-minimized {
+    box-sizing: border-box;
+}
+
+.ui-dialog .ui-bizagi-container-form {
+    padding: 0;
+    border: 0;
+    margin-bottom: 4em;
+    background: none;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    position: relative;
+    padding-bottom: 1em;
+
+    border-radius: 0;
+    margin-bottom: 1em;
+    background: transparent;
+    text-overflow: ellipsis;
+}
+
+.ui-dialog .ui-dialog-title {
+    margin: 0;
+    background: none;
+    font-size: 24px;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+.ui-dialog .ui-dialog-titlebar-close,
+.ui-dialog .ui-dialog-titlebar-close:hover,
+.ui-dialog .ui-dialog-titlebar-close:focus,
+.ui-dialog .ui-dialog-titlebar-close.ui-state-hover {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    background: none;
+    text-align: center;
+}
+
+.ui-dialog .ui-dialog-content {
+    position: static !important;
+}
+
+.ui-dialog .ui-dialog-titlebar-maximize,
+.ui-dialog .ui-dialog-titlebar-maximize:hover,
+.ui-dialog .ui-dialog-titlebar-maximize:focus,
+.ui-dialog .ui-dialog-titlebar-maximize.ui-state-hover {
+    position: absolute;
+    top: 4px;
+    right: 36px;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    background: none;
+    text-align: center;
+}
+
+.bz-dialog-perfomsave-popup-content .bz-fm-dialog-button.ui-button:hover span {
+    color: #FFF !important;
+}
+
+#workportal-theme-layer.workportal-theme-layer-visible {
+    opacity: 1;
+}
+
+.fix-row-margin {
+    margin-left: 0;
+    margin-right: 0;/*QAF-1327*/
+}

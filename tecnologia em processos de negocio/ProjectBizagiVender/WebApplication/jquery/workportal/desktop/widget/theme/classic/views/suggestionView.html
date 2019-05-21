@@ -1,0 +1,16 @@
+﻿<div ng-controller="suggestionController">
+    <div class="wdg-srcts-panel">
+        <h3 class="wdg-stf-header wgd-user-srcts-category">Relevant to me</h3>
+        <ul class="wdg-srcts-list">
+            <div ng-repeat="suggestion in suggestions">
+                <li class="bz-wp-ls-list-category wdg-srcts-card-category">
+                    {{suggestion.category}}
+                </li>
+                <li ng-repeat="item in suggestion.items" ng-click="gotoSuggestion(item)" class="bz-wp-ls-list-item wdg-srcts-container">
+                    <i class="bz-icon bz-icon-16 bz-icon-case-add-outline"></i>
+                    <span class="wdg-srcts-title">{{item.displayName}}</span>
+                </li>
+            </div>
+        </ul>
+    </div>
+</div>

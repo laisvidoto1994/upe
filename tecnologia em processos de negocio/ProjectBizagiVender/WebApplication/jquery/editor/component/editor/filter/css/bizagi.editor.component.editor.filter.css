@@ -1,0 +1,18 @@
+/********
+* Filename: bizagi.editor.component.editor.filter.css
+* Create Date: 2012-07-27
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__filter
+*
+********/
+
+/* __filter
+--------*/
+.bizagi_editor_component_editor_filter{
+	position: relative;
+}
+
+.bizagi_editor_component_editor_filter .ui-control-container{
+	position:relative;
+}

@@ -1,0 +1,17 @@
+﻿{
+	"actiontype":"GetAttributeDisplayName",
+	"result": { 
+		"success": true,
+		"parameters":
+		[
+			{
+				"key":"displayname",
+				"value":"Comments"
+			},
+			{
+				"key":"default",
+				"value":"Comments"
+			}
+		]
+	}
+}

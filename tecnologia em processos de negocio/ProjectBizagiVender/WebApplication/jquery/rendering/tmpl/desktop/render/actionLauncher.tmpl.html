@@ -1,0 +1,171 @@
+<script id="bz-rendering-actionLauncher" type="text/x-jquery-tmpl">
+    <div class="bz-action-launcher-container">
+    {{if allowactions}}
+        <div class="bz-action-launcher-actions-container"></div>
+        <div class="actions-to-execute-title"><label>%{render-action-launcher-actions-to-execute}</label></div>
+        <div class="bz-action-launcher-actions-to-execute-container"></div>
+    {{else}}
+        <div class="bz-action-launcher-actions-container"></div>
+    {{/if}}
+    </div>
+</script>
+
+<script id="bz-rendering-actionLauncher-horizontal" type="text/x-jquery-tmpl">
+    {{if template}}
+        <div class="actions-container actions-container-template bz-tpl-img-txt">          
+        </div>
+    {{/if}}
+    {{if allowactions}}
+    <div class="ui-bizagi-render-horizontal-buttons">
+    {{/if}}
+    {{each actions}}
+    <input class="action-launcher-control ui-bizagi-render-button ui-button ui-widget ui-state-default ui-corner-all ui-button-desktop-ellipsis" type="button"
+           title="${actions[$index][2]}" value="${actions[$index][1]}" role="button" aria-disabled="false"
+           data-guidprocess="${actions[$index][0]}" data-display-name="${actions[$index][1]}" data-action-type="${actions[$index][3]}"
+           data-guidaction="${actions[$index][4]}" data-xpathcontext="${actions[$index][5]}" data-readonlyform="${actions[$index][6]}" />
+    {{/each}}
+    {{if isMoreActions}}
+        <input class="action-launcher-more  ui-bizagi-render-button ui-button ui-widget ui-state-default ui-corner-all ui-button-desktop-ellipsis" type="button" title="%{render-action-launcher-more-actions}" value="%{render-action-launcher-more-actions}" role="button" aria-disabled="false" />
+    {{/if}}
+    </div>
+</script>
+
+<script id="bz-rendering-actionLauncher-horizontal-more" type="text/x-jquery-tmpl">
+<ul style = "list-style-type: none;  margin: 0; padding: 0;">
+    {{each actions}}
+    <li class="action-launcher-control-more action-launcher-control" title="${actions[$index][2]}" value="${actions[$index][1]}"
+        data-guidprocess="${actions[$index][0]}" data-display-name="${actions[$index][1]}" data-action-type="${actions[$index][3]}"
+        data-guidaction="${actions[$index][4]}" data-xpathcontext="${actions[$index][5]}" data-readonlyform="${actions[$index][6]}">${actions[$index][1]}</li>
+    {{/each}}
+</ul>
+</script>
+
+<script id="bz-rendering-actionLauncher-vertical" type="text/x-jquery-tmpl">
+    {{if allowSearch}}
+    <div class="ui-bizagi-render-actionLauncher-filter">
+        <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+        <input id="ui-bizagi-render-action-launcher-filter-input" class="ui-bizagi-render-search ui-autocomplete-input" type="text"  value=""/>
+        <i class="ui-bizagi-render-icon-search"></i>
+    </div>
+    <div class="ui-bizagi-render-actionLauncher-actions-list ui-bizagi-render-vertical-items">
+        {{each actions}}
+        <div class="ui-bizagi-render-actionLauncher-vertical-item">
+            <label>${actions[$index][1]}</label>
+            <i class="ui-bizagi-render-icon-actionLauncher ui-bizagi-render-icon-actionLauncher-add action-launcher-control" title="${actions[$index][2]}"
+               data-guidprocess="${actions[$index][0]}" data-display-name="${actions[$index][1]}" data-action-type="${actions[$index][3]}"
+               data-guidaction="${actions[$index][4]}" data-xpathcontext="${actions[$index][5]}" data-readonlyform="${actions[$index][6]}" ></i>
+        </div>
+        {{/each}}
+    </div>
+
+    {{else}}
+
+    <div class="ui-bizagi-render-actionLauncher-actions-list ui-bizagi-render-vertical-buttons">
+        {{each actions}}
+        <div class="ui-bizagi-render-actionLauncher-vertical-item">
+            <input class="action-launcher-control  ui-bizagi-render-button ui-button ui-widget ui-state-default ui-corner-all ui-button-desktop-ellipsis" type="button"
+                   title="${actions[$index][2]}" value="${actions[$index][1]}" role="button" aria-disabled="false"
+                   data-guidprocess="${actions[$index][0]}" data-display-name="${actions[$index][1]}" data-action-type="${actions[$index][3]}"
+                   data-guidaction="${actions[$index][4]}" data-xpathcontext="${actions[$index][5]}" data-readonlyform="${actions[$index][6]}"/>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    {{if isMoreActions}}
+    <div class="ui-bizagi-render-actionLauncher-vertical-more">
+        <input class="action-launcher-more-vertical {{if isExpanded}}expanded{{/if}} ui-bizagi-render-button ui-button ui-widget ui-state-default ui-corner-all ui-button-desktop-ellipsis" type="button" title="%{render-action-launcher-more-actions}" value="${moreButtonTitle}" role="button" aria-disabled="false" />
+    </div>
+    {{/if}}
+</script>
+
+<script id="bz-rendering-actionLauncher-actions-to-execute" type="text/x-jquery-tmpl">
+    <div class="actions-to-execute-list">
+    {{if actions}}
+    {{each actions}}
+        <div class="action-to-execute-control" data-index="${$index}" data-title="${displayName}"
+             data-guidprocess="${guidProcess}" data-guidaction="${guidAction}" data-params="${params}"
+             data-idstartscope="${idStartScope}" data-actiontype="${actionType}" data-idpagecache="${idPageCache}"
+             data-xpathcontext="${xpathContext}"  data-readonlyform="${readOnlyForm}" data-identity="${idEntity}">
+            <label>${displayName}</label>
+            <i class="ui-bizagi-render-icon-actionLauncher ui-bizagi-render-icon-actionLauncher-clear"></i>
+        </div>
+    {{/each}}
+    {{/if}}
+    </div>
+</script>
+
+<script id="bz-rendering-actionLauncher-design" type="text/x-jquery-tmpl">
+        {{if !isHorizontal && allowactions}}
+        <ul class="biz-al-btn-list">
+          {{if allowSearch}}
+          <li class="biz-al-search">
+            <i class="biz-al-icn biz-al-icn-search"></i>
+          </li>
+          {{/if}}
+          <li class="biz-al-btn biz-al-v-btn">
+            <i class="biz-al-icn biz-al-v-icn"></i>
+            <i class="biz-al-icn biz-al-icn-add"></i>
+            <span class="biz-al-txt biz-al-v-txt"></span>
+          </li>
+          <li class="biz-al-btn biz-al-v-btn">
+            <i class="biz-al-icn biz-al-v-icn"></i>
+            <i class="biz-al-icn biz-al-icn-add"></i>
+            <span class="biz-al-txt biz-al-v-txt"></span>
+          </li>
+          <li class="biz-al-btn biz-al-v-btn">
+            <i class="biz-al-icn biz-al-v-icn"></i>
+            <i class="biz-al-icn biz-al-icn-add"></i>
+            <span class="biz-al-txt biz-al-v-txt"></span>
+          </li>
+        </ul>
+        <!-- end vertical buttons -->
+        {{/if}}
+        {{if isHorizontal}}
+        {{if templateDefined || type == 'entityTemplate'}}
+        <div class="biz-al-tmpl">
+            <i class="biz-al-img"></i>
+            <ul class="biz-al-list">
+                <li class="biz-al-txt biz-al-tmpl-txt"></li>
+                <li class="biz-al-txt biz-al-tmpl-txt"></li>
+                <li class="biz-al-txt biz-al-tmpl-txt"></li>
+            </ul>
+            <ul class="biz-al-list">
+                <li class="biz-al-txt biz-al-tmpl-txt"></li>
+                <li class="biz-al-txt biz-al-tmpl-txt"></li>
+                <li class="biz-al-txt biz-al-tmpl-txt"></li>
+            </ul>
+        </div>
+        <!-- end template -->
+        {{/if}}
+        {{if allowactions}}
+        <div class="biz-al-btn biz-al-h-btn">
+          <i class="biz-al-icn biz-al-h-icn"></i>
+          <span class="biz-al-txt biz-al-h-txt"></span>
+        </div>
+        <div class="biz-al-btn biz-al-h-btn">
+          <i class="biz-al-icn biz-al-h-icn"></i>
+          <span class="biz-al-txt biz-al-h-txt"></span>
+        </div>
+        <div class="biz-al-btn biz-al-h-btn">
+          <i class="biz-al-icn biz-al-h-icn"></i>
+          <span class="biz-al-txt biz-al-h-txt"></span>
+        </div>
+        <div class="biz-al-btn biz-al-h-btn">
+          <i class="biz-al-icn biz-al-h-icn"></i>
+          <span class="biz-al-txt biz-al-h-txt"></span>
+        </div>
+        <div class="biz-al-btn biz-al-h-btn">
+          <i class="biz-al-icn biz-al-h-icn"></i>
+          <span class="biz-al-txt biz-al-h-txt"></span>
+        </div>
+        {{/if}}
+        {{/if}}
+        <!-- end horizontal buttons -->
+</script>
+
+<script id="bz-rendering-actionLauncher-confirm" type="x-jquery-tmpl" >
+    <p>
+        ${confirmationMessage}
+    </p>
+</script>

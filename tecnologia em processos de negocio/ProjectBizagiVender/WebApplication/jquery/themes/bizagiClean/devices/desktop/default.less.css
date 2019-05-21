@@ -1,0 +1,1195 @@
+/*******************************************************************************
+    @title: Theme Bizagi Work Portal
+    @theme: Bizagi Clean
+    @version: 1.0
+    @author: UX TEAM at Bizagi
+    @date: Thu Jul 04 2013 14:56:48 GMT-0500
+    @description: This theme bla bla bla bla......
+********************************************************************************/
+
+/***************************
+-----Table of contents -----
+    - Colors
+    - Fonts
+    - Advanced configuration
+    - Images
+    - Global
+    - Components
+        - Menu
+        - Inbox bar
+        - Processes area
+        - Cases area
+            - Grid mode
+            - Details mode
+            - Summary
+        - Footer
+    - Render
+    - Widgets
+    - Mixins
+
+----------------------------
+***************************/
+
+/** =========================================================================
+    Colors
+    ========================================================================= */
+    
+    @one-color-palette:                     #EE5113;
+
+/** Global
+    ========================================================================= */
+
+/**
+    label:                                  Background
+    oneColorPalette:                        @one-color-palette
+*/
+    @background:                            #F7B914;
+
+/**
+    label:                                  Text
+    oneColorPalette:                        darken(@one-color-palette, 20%)
+*/
+    @text:                                  #29223F;
+
+/**
+    label:                                  Title
+    oneColorPalette:                        darken(@one-color-palette, 25%)
+*/
+    @title:                                 #423B58;
+
+/**
+    label:                                  Focus
+    oneColorPalette:                        lighten(@one-color-palette, 20%)
+*/
+    @focus:                                 #C48600;
+
+/** Navigation
+    ========================================================================= */
+
+/**
+    label:                                  Link
+    oneColorPalette:                        lighten(@one-color-palette, 55%)
+*/
+    @link-navigation:                       #EEE9C0;
+
+/**
+    label:                                  Border
+    oneColorPalette:                        lighten(@one-color-palette, 5%)
+*/
+    @border-navigation:                     #FFC621;
+
+/**
+    label:                                  Background
+    oneColorPalette:                        desaturate(darken(@one-color-palette, 10%), 30%)
+*/
+    @navigation:                            #DE701F;
+
+/**
+    label:                                  Activate
+    oneColorPalette:                        desaturate(darken(@one-color-palette, 5%), 30%)
+*/
+    @navigation-activate:                   #F78938;
+
+/** Content
+    ========================================================================= */
+
+/**
+    label:                                  Link
+    oneColorPalette:                        darken(@one-color-palette, 10%)
+*/
+    @link-content:                          #68617E;
+
+/**
+    label:                                  Border
+    oneColorPalette:                        desaturate(lighten(@one-color-palette, 30%), 15%)
+*/
+    @border-content:                        #EEE9C0;
+
+/**
+    label:                                  Panel
+    oneColorPalette:                        desaturate(lighten(@one-color-palette, 50%), 50%)
+*/
+    @panel:                                 #FFFFF8;
+
+/** 
+    label:                                  Background
+    oneColorPalette:                        desaturate(lighten(@one-color-palette, 45%), 30%)
+*/
+    @content:                               #FFFFF3;
+
+/** 
+    label:                                  Even
+    oneColorPalette:                        desaturate(lighten(@one-color-palette, 40%), 30%)
+*/
+    @content-even:                          #F2F2E6;
+
+/** 
+    label:                                  Activate
+    oneColorPalette:                        desaturate(lighten(@one-color-palette, 35%), 30%)
+*/
+    @content-activate:                      #E6E6DA;
+
+/** 
+    label:                                  Relevant
+    oneColorPalette:                        desaturate(lighten(@one-color-palette, 30%), 30%)
+*/
+    @content-relevant:                      #D9D9CD;
+
+/** Menu
+    ========================================================================= */
+
+/**
+    label:                                  Gradient Start
+    oneColorPalette:                        @one-color-palette
+*/
+    @menu-top:                              #F7B914;
+
+/**
+    label:                                  Gradient End
+    oneColorPalette:                        darken(@one-color-palette, 5%)
+*/
+    @menu-bottom:                           #DEA000;
+
+/**
+    label:                                  Responsive Background
+    oneColorPalette:                        lighten(@one-color-palette, 80%)
+*/
+    @menu-responsive:                       #FFF;
+
+/** Inbox
+    ========================================================================= */
+
+/**
+    label:                                  Gradient Start
+    oneColorPalette:                        darken(@one-color-palette, 25%)
+*/
+    @inbox-top:                             #DE701F;
+
+/**
+    label:                                  Gradient End
+    oneColorPalette:                        darken(@one-color-palette, 20%)
+*/
+    @inbox-bottom:                          #F78938;
+
+/** Footer
+    ========================================================================= */
+
+/** 
+    label:                                  Gradient Start
+    oneColorPalette:                        darken(@one-color-palette, 5%)
+*/
+    @footer-top:                            #F7B914;
+
+/** 
+    label:                                  Gradient End
+    oneColorPalette:                        @one-color-palette
+*/
+    @footer-end:                            #DEA000;
+
+/** Widgets
+    ========================================================================= */
+
+/** 
+    label:                                  Modal Background
+    oneColorPalette:                        desaturate(lighten(@one-color-palette, 50%), 60%)
+*/
+    @widgets-modal:                         #F5F5EE;
+
+/** 
+    label:                                  Modal Border
+    oneColorPalette:                        desaturate(lighten(@one-color-palette, 55%), 55%)
+*/
+    @widgets-modal-border:                  #FFFFFD;
+
+/** Render
+    ========================================================================= */
+
+/** 
+    label:                                  Button Background
+    oneColorPalette:                        lighten(@one-color-palette, 60%)
+*/
+    @button:                                #F7F7F7;
+
+/** 
+    label:                                  Button Hover
+    oneColorPalette:                        lighten(@one-color-palette, 55%)
+*/
+    @button-hover:                          #EBEBEB;
+
+/** 
+    label:                                  Button Hover Border
+    oneColorPalette:                        lighten(lighten(@one-color-palette, 5%), 40%)
+*/
+    @button-hover-border:                   #F7F7F7;
+
+/** =========================================================================
+    Fonts
+    ========================================================================= */
+
+/** 
+    label:                                  Font family
+*/
+    @font-family:                           'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+
+/** =========================================================================
+    Special Effects
+    ========================================================================= */
+
+/** 
+    label:                                  Text Shadow
+*/
+    @active-text-shadow:                    false;
+
+/** 
+    label:                                  Box Shadow
+*/
+    @active-box-shadow:                     true;
+
+/** 
+    label:                                  Border Radius
+*/
+    @active-border-radius:                  true;
+
+/** =========================================================================
+    Icon Style
+    ========================================================================= */
+
+/** 
+    label:                                  Skeuomorphic
+*/
+    @skeuomorphic:                          active;
+
+/** 
+    label:                                  Flat
+*/
+    @flat:                                  inactive;
+
+/** 
+    label:                                  lineal
+*/
+    @lineal:                                inactive;
+
+/* ==========================================================================
+   Global
+   ========================================================================== */
+
+:focus { outline-color: @focus; }
+
+/* Elements */
+html,
+body {
+    background-color: @background;
+    color: @text;
+    font-family: @font-family;
+    font-size: 10.5px;
+}
+
+a {
+    color: @link-content;
+    text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+/* Overrides */
+.ui-button { font-family: @font-family; }
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+/* Menu
+   ========================================================================== */
+
+/* Menu background */
+#ui-bizagi-wp-app-menu-container { background: none; }
+
+#ui-bizagi-wp-menu {
+    .gradient(@menu-top, @menu-bottom);
+    border-top: 0;
+}
+
+/* Menu logo */
+#ui-bizagi-wp-app-menu-logo-client {
+    position: relative;
+    top: -10px;
+}
+
+#ui-bizagi-wp-app-menu-selector.vertical_division {
+    .drop-shadow(1px, 0, 0, 0, @border-navigation);
+    background: darken(@border-navigation, 10%);
+}
+
+/* Sprite search 
+#ui-bizagi-wp-app-bt-search { .sprite(url('images/desktop-sprite.png'), -7px, -148px); } */
+
+/* Menu search */
+#ui-bizagi-wp-app-search input {
+    .inner-shadow();    
+    .border-radius(8px);
+    border: 1px solid @border-navigation;
+    background: @navigation;
+    font-family: @font-family;
+    color: @link-navigation;    
+}
+
+#ui-bizagi-wp-app-search:hover input, 
+#ui-bizagi-wp-app-search input:focus, 
+#ui-bizagi-wp-app-search input:hover {
+    background: @navigation-activate;
+    color: lighten(@link-navigation, 10%);
+}
+
+#ui-bizagi-wp-app-search.searchNewCase {
+    padding: 3px 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Menu text */
+#main_menu li a .text {
+    .text-shadow() !important;  
+    .border-radius();
+    color: @link-navigation;
+    font-family: @font-family;     
+}
+
+#main_menu li a:hover .text,
+#main_menu li.active .text,
+#logout .ui-button-text {
+    .text-shadow();
+    color: darken(@link-navigation, 15%);
+}
+
+#ui-bizagi-wp-app-menu-container #userprofile { margin-right: 30px; }
+
+#userprofile > button {
+    height: 59px;
+    margin: 0;
+}
+
+#userprofile > button .ui-button-text {
+    .text-shadow();
+
+    color: @link-navigation;
+}
+
+#userprofile > button:hover .ui-button-text {
+    .text-shadow();
+    color: darken(@link-navigation, 15%);
+}
+
+
+
+.ui-bizagi-wp-font-content .font-switcher {
+    .drop-shadow(0, 1px, 0, 0, @border-content);
+    .border-radius();
+    .text-shadow();
+    border-color: @border-content;
+    color: @link-content;
+}
+
+.ui-bizagi-wp-font-content .font-switcher.active,
+.ui-bizagi-wp-font-content .font-switcher:hover {
+    .inner-shadow(0, 1px, 5px, 0, fadeout(@link-content, 15%));
+    border-color: lighten(@link-content, 10%);
+    color: @link-content;
+}
+
+/* Menu username */
+#ui-bizagi-wp-menu-username {
+    /*.sprite(@sprite, -354px, -165px);*/
+    background-position: -354px -165px;
+    height: 59px;
+    margin: 0;
+    color: @text;
+    font-family: @font-family;
+    line-height: 59px;
+    text-align: right;      
+}
+
+#ui-bizagi-wp-menu-username .text {
+    .text-shadow();
+    color: @link-navigation;
+    line-height: 59px;
+}
+
+/* Menu logout */
+#userprofile > button .ui-icon-logout { left: 0; }
+
+#userprofile > button .ui-icon-logout,
+#userprofile > button .ui-icon-about {
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+}
+
+#userprofile > button .ui-icon-about {
+    width: 17px;
+    height: 17px;
+}
+
+#userprofile > button .ui-icon-about { background-position: -149px -459px; }
+
+#userprofile > button:hover .ui-icon-about { background-position: -173px -459px; }
+
+#main_menu li a .text,
+#ui-bizagi-wp-menu-username .text,
+#logout .ui-button-text {
+    -moz-transition: opacity .3s ease-in-out;
+    -webkit-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out; 
+}
+
+/* Menu build */
+#ui-bizagi-wp-app-menu-container #build {   
+    .text-shadow();
+    right: 100px;
+    color: @text;
+}
+
+#searchNotFound {
+    .text-shadow();
+    margin-top: 3px;
+    color: @text;
+    text-align: center;
+}
+
+@media screen and (max-width: 1140px) {
+    #logout .ui-button-text,
+    #ui-bizagi-wp-menu-username .text {
+        background: @menu-responsive;
+        border-color: @border-navigation;
+    }    
+
+    #logout .ui-button-text:before,
+    #ui-bizagi-wp-menu-username .text:before { background: none; }
+}
+
+@media screen and (max-width: 1230px) {
+    #userprofile > button, 
+    #ui-bizagi-wp-menu-username { padding: 0; }
+
+    #userprofile > button span { margin-right: 0; }
+
+    #logout .ui-button-text,
+    #ui-bizagi-wp-menu-username .text {
+        .drop-shadow();
+        padding: 2px 5px;
+        border-color: @border-navigation;
+        background: @menu-responsive;
+        color: @link-content;
+    }
+
+    #userprofile > button:hover .ui-button-text { color: @link-content; }
+
+    #logout:hover .ui-button-text,
+    #logout .ui-button-text {
+        .border-radius();
+        top: 51px;
+    }
+
+    #ui-bizagi-wp-menu-username .text, 
+    #ui-bizagi-wp-menu-username:hover .text {
+        .border-radius();
+        top: 31px;
+    }
+
+    #ui-bizagi-wp-menu-username .text:before,
+    #logout .ui-button-text:before, 
+    #about .ui-button-text:before { background: none; }
+}
+
+@media screen and (max-width: 1416px) {
+    #main_menu li a .text {
+        .drop-shadow();
+        border-color: @border-navigation;
+        background: @menu-responsive;
+    }
+    #main_menu li a .text:before { background: none; }
+
+    #main_menu li a:hover .text,
+    #main_menu li.active .text,
+    #logout .ui-button-text { color: @link-content; }    
+}
+
+/* Menu triangle */
+#main_menu li .ui-bizagi-wp-mini-arrow { border-top-color: @link-navigation; }
+
+#main_menu li:hover .ui-bizagi-wp-mini-arrow,
+#main_menu li.active .ui-bizagi-wp-mini-arrow { border-top-color: darken(@link-navigation, 15%); }
+
+/* Menu icons sprite */
+/*#main_menu li .icon { .sprite(@sprite); }*/
+
+#main_menu li .widgets{ background-position: 0 0; }
+
+#main_menu li .new { background-position: -3px -3px; }
+
+#main_menu li .favorites { background-position: -141px -3px; }
+
+#main_menu li .inbox { background-position: -49px -3px; }
+
+#main_menu li .preferences { background-position: -95px -3px; }
+
+#main_menu li .queries { background-position: -187px -3px; }
+
+#main_menu li .admin { background-position: -233px -3px; }
+
+#main_menu li .reports { background-position: -279px -3px; }
+
+/* Inbox bar
+   ========================================================================== */
+
+/* Inbox bar background */
+#contentInbox {
+    .gradient(@inbox-top, @inbox-bottom);
+    .drop-shadow();
+    height: auto;
+}
+
+#innerContentInbox {
+    background: none;
+    border-top: 1px solid @border-navigation;
+    border-bottom: 1px solid darken(@border-navigation, 20%);
+}
+
+/* Inbox bar text */
+#contentInbox h2 {
+    .text-shadow();
+    color: @link-navigation;   
+}
+
+#contentInbox h2:hover {
+    .text-shadow();
+    color: darken(@link-navigation, 15%);
+}
+
+.modalEyePopup li span {
+    .text-shadow();
+    color: @link-content;
+}
+
+.modalEyePopup li:hover span {
+    .text-shadow();
+    color: @link-content;
+    text-decoration: underline;
+}
+
+.modalEyePopup li:active {
+    .inner-shadow();
+    background: none;
+}
+
+/* Processes area
+   ========================================================================== */
+
+/* Processes background and borders */
+#contentProc {
+    .drop-shadow();
+    background: @panel;
+    border-right: 1px solid lighten(@border-content, 25%);
+}
+
+/* Processes titles */
+.ui-bizagi-wp-app-inbox-processes-title {
+
+}
+
+/* Processes triangles */
+#contentProc .ui-bizagi-wp-app-inbox-processes-title .arrow.Right { border-left: 5px solid @border-content; }
+
+.ui-bizagi-wp-app-inbox-processes-title .arrow.Down { border-top: 4px solid @border-content; }
+
+.ui-bizagi-wp-app-inbox-processes-title .arrow.Left { border-right: 6px solid @border-content; }
+
+/* Processes container */
+#ui-bizagi-wp-app-inbox-processes-container ul {
+    .border-radius();
+    border: 1px solid @border-content;
+    background: @content;
+}
+
+#ui-bizagi-wp-app-inbox-processes-container ul li { border-top: 1px solid @border-content; }
+
+#ui-bizagi-wp-app-inbox-processes-container ul li:first-child{ .border-radiuses(4px, 0, 0, 4px); }
+
+#ui-bizagi-wp-app-inbox-processes-container ul li:last-child{ .border-radiuses(0, 4px, 4px, 0); }
+
+#ui-bizagi-wp-app-inbox-processes-container ul li:only-child { .border-radius(4px); }
+
+#ui-bizagi-wp-app-inbox-processes-container li:nth-child(2n) { background-color: @content-even; }
+
+#ui-bizagi-wp-app-inbox-processes-container li:hover { background: @content-activate; }
+
+#ui-bizagi-wp-app-inbox-processes-container .selected, 
+#ui-bizagi-wp-app-inbox-processes-container li.selected:hover, 
+#ui-bizagi-wp-app-inbox-processes-container li:nth-child(2n).selected { background: @content-activate !important; }
+
+.ui-bizagi-wp-app-inbox-processes-name {
+    .text-shadow();
+    font-size: 115%;    
+    color: @text;
+    font-weight: normal;
+}
+
+/* Processes number of cases */
+.ui-bizagi-wp-app-inbox-processes-ncase {
+    .inner-shadow();
+    .border-radius();
+    background: @content;    
+    color: @text;    
+}
+
+#ui-bizagi-wp-app-inbox-processes-container .selected .ui-bizagi-wp-app-inbox-processes-ncase, 
+#ui-bizagi-wp-app-inbox-processes-container li:hover .ui-bizagi-wp-app-inbox-processes-ncase {
+    .inner-shadow(); 
+    background-color: @content-activate;
+}
+
+/* Cases area
+   ========================================================================== */
+
+/* -------------- Grid mode -------------- */
+
+/* Grid area background */
+#contentFramework #contentCases { .drop-shadow(); }
+
+#contentCases.casesGrid {
+    .drop-shadow();
+    background: lighten(@panel, 2%);
+}
+
+/* Grid background and border */
+.ui-bizagi-wp-app-inbox-grid-cases-container table,
+.personalizedColumnsContainer table {
+    background: @content;
+    border: 1px solid @border-content;
+    border-radius: 0;  
+}
+
+/* Grid links color */
+.gridListWorkItems li .ui-bizagi-wp-app-inbox-activity-name,
+.ui-bizagi-wp-app-inbox-activity-name { color: @link-content; }
+
+/* Grid top border cells */
+.ui-bizagi-wp-app-inbox-grid-cases-container table td,
+.personalizedColumnsContainer table td {
+    border-top: 1px solid @border-content !important;
+}
+
+/* Grid header */
+.ui-bizagi-wp-app-inbox-grid-cases-container thead td,
+.personalizedColumnsContainer table thead td {        
+    .text-shadow();
+    background: @content-relevant;
+    color: @title;
+    font-size: 115%;
+}
+
+/* Grid arrows */
+.arrowUpIcon { border-bottom-color: @title; }
+
+.arrowDownIcon { border-top-color: @title; }
+
+/* Grid even rows */
+#ui-bizagi-wp-app-inbox-grid-cases tbody .event, 
+.personalizedColumnsContainer table tbody .event {
+    background-color: @content-even; 
+}
+
+/* Grid hover rows */
+#ui-bizagi-wp-app-inbox-grid-cases .selected td, 
+.ui-bizagi-wp-app-inbox-grid-cases-container tbody tr:hover td, 
+.personalizedColumnsContainer table tbody tr:hover td {
+    background: @content-activate;
+}
+
+.ui-bizagi-wp-app-inbox-grid-cases-container table tr:hover .workonitRow.ui-button { background-image: url(../../../../workportal/css/desktop/images/lupa-on.png) !important; }
+
+/* -------------- Details mode -------------- */
+
+/* Details area background */
+#contentCases {
+    .drop-shadow(2px, 0, 3px, 0, rgba(0, 0, 0, .2));
+    border-right: 1px solid lighten(@border-content, 25%);
+    background: lighten(@panel, 2%);
+}
+
+/* Details case background and border */
+.ui-bizagi-wp-app-inbox-cases-container ul {
+    border: 1px solid @border-content;
+    background: @content;  
+}
+
+.ui-bizagi-wp-app-inbox-cases-container ul { .border-radius(); }
+
+#ui-bizagi-wp-app-inbox-cases-container li { .border-radius(4px); }
+
+#ui-bizagi-wp-app-inbox-cases-container li:hover,
+#ui-bizagi-wp-app-inbox-cases-container .selected,
+#ui-bizagi-wp-app-inbox-cases-container li.selected:hover {
+    background: @content-activate !important;
+}
+
+/* Details activity title */
+#ui-bizagi-wp-app-inbox-cases-container #caseId h3 {
+    .text-shadow();
+    font-weight: normal;   
+    font-family: @font-family;
+    font-size: 135%;    
+    color: @title;
+}
+
+/* Details activity name color and borders */
+#ui-bizagi-wp-app-inbox-cases-container #caseActivity span { color: @text; }
+
+#ui-bizagi-wp-app-inbox-cases-container li #caseActivity { border-color: @border-content; }
+
+#ui-bizagi-wp-app-inbox-cases-container li:hover #caseActivity,
+#ui-bizagi-wp-app-inbox-cases-container .selected #caseActivity { border-color: @border-content; }
+
+/* Details activity content color */
+#ui-bizagi-wp-app-inbox-cases-container li dl,
+#ui-bizagi-wp-app-inbox-cases-container li:hover dl,
+#ui-bizagi-wp-app-inbox-cases-container li.selected dl { color: @text; }
+
+/* -------------- Summary -------------- */
+
+/* Summary area background */
+#contentDesc { background: lighten(@panel, 2%); }
+
+/* Summary activity border, background and text */
+.ui-bizagi-wp-app-inbox-activity-description {
+    .border-radius();
+    border-color: @border-content;
+    color: @text;
+}
+
+.ui-bizagi-wp-app-inbox-activity-description > div {
+    .border-radius();
+    background: @content;
+}
+
+.ui-bizagi-wp-app-inbox-activity-description .ui-bizagi-wp-app-inbox-cases-description-ico-state { .border-radiuses(0, 0, 4px, 4px); }
+
+/* Summary activity state */
+.ui-bizagi-wp-app-inbox-activity-description #ui-bizagi-wp-app-inbox-cases-ico-state-Red {
+    background: #FF5917;
+}
+
+.ui-bizagi-wp-app-inbox-activity-description #ui-bizagi-wp-app-inbox-cases-ico-state-Green {
+    background: #379C44;
+}
+
+.ui-bizagi-wp-app-inbox-activity-description #ui-bizagi-wp-app-inbox-cases-ico-state-Yellow {
+    background: #379C44;
+}
+
+/* Summary activity title */
+.ui-bizagi-wp-app-inbox-activity-description h2 {
+    .text-shadow();
+    font-size: 175%;
+    font-weight: normal;
+    font-family: @font-family;
+    color: @title;
+    border-bottom: 1px solid @border-content;
+}
+
+/* Summary activity data */
+#ui-bizagi-details-tabs dd, .box-description dd { background: @content-relevant; }
+
+/* Summary tabs */
+
+.ui-tabs .ui-tabs-nav li { border-color: transparent; }
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+    border-color: @border-content;
+    background: @content;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+    .text-shadow();
+    background: none;
+    color: lighten(@title, 10%);
+    font-family: @font-family;
+}
+
+.ui-tabs .ui-tabs-nav li:hover a,
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a {
+    background: none;
+    color: @title;
+}
+
+.ui-corner-top { .border-radiuses(2px, 0, 0, 2px); }
+
+#ui-bizagi-details-tabs .ui-tabs-panel {
+    .border-radius();
+    border-color: @border-content;
+    background: @content;
+}
+
+/* Footer
+   ========================================================================== */
+
+/* Footer background */
+#footer {
+    .drop-shadow(0, -2px);
+    .gradient(@footer-top, @footer-end);
+    border-top: 1px solid @border-navigation;
+}
+
+/* Footer inbox borders */
+#ui-bizagi-wp-app-inbox-tab-container { border-right: 1px solid @border-navigation; }
+
+#ui-bizagi-wp-app-inbox-tab-container ul li.ui-bizagi-wp-app-inbox-tab {
+    border-left: 1px solid @border-navigation;
+    line-height: 2;
+}
+
+#ui-bizagi-wp-app-inbox-tab-container #favourites { border-right: none; }
+
+/* Footer buttons */
+#ui-bizagi-wp-app-inbox-tab-container .toolTip {
+    .inner-shadow();
+    .border-radius();
+    background: @navigation;
+    color: @link-navigation;
+    font-weight: bold;    
+    text-align: center;    
+}
+
+#ui-bizagi-wp-app-inbox-tab-container ul li.ui-bizagi-wp-app-inbox-tab.active .toolTip,
+#ui-bizagi-wp-app-inbox-tab-container ul li.ui-bizagi-wp-app-inbox-tab:hover .toolTip {
+    .inner-shadow();
+    background: @navigation;
+    color: @link-navigation;
+}
+
+#ui-bizagi-wp-app-inbox-tab-container ul li.ui-bizagi-wp-app-inbox-tab.active,
+#ui-bizagi-wp-app-inbox-tab-container ul li.ui-bizagi-wp-app-inbox-tab:hover {
+    .inner-shadow();
+    background: @navigation-activate;
+}
+
+/* Footer pagination */
+.gridCasePagination #tooltipPagination { .border-radiuses(4px, 0, 0, 4px); }
+
+#casesPagination { border-right: 1px solid @border-navigation; }
+
+#casesPagination ul li {
+    .text-shadow();
+    color: @link-navigation;    
+    text-align: center;    
+}
+
+#casesPagination ul li:hover span { color: darken(@link-navigation, 15%); }
+
+#casesPagination ul li.active, 
+#casesPagination ul li.active:hover { .inner-shadow(); }
+
+#casesPagination ul li.active, 
+#casesPagination ul li.active:hover,
+#casesPagination ul li.active:hover span {
+    .border-radius();
+    background-color: @navigation;    
+    color: darken(@link-navigation, 15%);
+}
+
+#casesPagination ul li.active span { .text-shadow(0, -1px, 0, rgba(0, 0, 0, .25)); }
+
+/* ==========================================================================
+   Render
+   ========================================================================== */
+
+.ui-bizagi-container-form.ui-widget-content { background: @content; }
+
+#panelArrowContainer { background-color: desaturate(lighten(@one-color-palette, 50%), 60%); }
+
+/* Description panel background */
+#ui-bizagi-wp-app-render-desc-panel { background: @panel; }
+
+/* Form background */
+#ui-bizagi-wp-app-render-form { background: desaturate(lighten(@one-color-palette, 50%), 60%); }
+
+/* Form render background */
+.ui-bizagi-container-form  > .ui-bizagi-render { background-color: #F7F7F7 !important; }
+
+/* Form render text */
+.ui-bizagi-render > span > label, .ui-bizagi-render > .ui-bizagi-control > .ui-bizagi-control-wrapper { color: #666 !important; }
+
+/* Form control */
+input[type='text'], 
+input[type='password'], 
+select,
+textarea {
+    border-color: #F7F7F7;
+    background: #DEDEDE;
+    color: #666;
+    font-weight: bold;
+    box-shadow: none;
+}
+
+/* -------------- Buttons -------------- */
+
+/* General */
+.ui-button,
+.ui-button.ui-state-default,
+.ui-bizagi-button-container .ui-bizagi-button,
+.ui-dialog .ui-button,
+.ui-bizagi-wp-app-routing-container table .ui-button  {
+    .drop-shadow(0, 1px, 2px, 0, fadeout(@text, 65%));
+    .border-radius(4px);
+    border-color: lighten(@button, 25%);
+    border-width: 1px;
+    background-color: @button !important;
+    background-image: none;
+    color: @link-content;
+    font-family: @font-family;
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: color 0 ease-in;
+    transition: none;    
+}
+
+.ui-button:hover,
+.ui-button.ui-state-default:hover,
+.ui-bizagi-button-container .ui-bizagi-button:hover,
+.ui-dialog .ui-button:hover,
+.ui-bizagi-wp-app-routing-container table .ui-button:hover {
+    .text-shadow();
+    border-color: @button-hover-border;
+    background-color: @button-hover !important;
+    background-image: none;
+    color: @text;
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: color 0 ease-in;
+    transition: none;
+}
+
+.ui-button span { .text-shadow(); }
+
+/* Grid text */
+.ui-button .ui-button-text {
+    .border-radius();
+    color: @link-content;
+}
+
+.ui-bizagi-wp-app-inbox-activity-description:hover .workonitRow.ui-button span,
+.ui-bizagi-wp-app-inbox-grid-cases-container table tr:hover .workonitRow.ui-button span,
+.ui-bizagi-wp-app-routing-container table tr:hover .workonitRow.ui-button span {
+    .text-shadow();
+    color: desaturate(lighten(@text, 20%), 20%);
+}
+
+/* Grid */
+.ui-bizagi-wp-app-inbox-activity-description:hover .workonitRow.ui-button, 
+.ui-bizagi-wp-app-inbox-grid-cases-container table tr:hover .workonitRow.ui-button, 
+.ui-bizagi-wp-app-routing-container table tr:hover .workonitRow.ui-button {
+    border-color: lighten(@button, 25%);
+    background-color: @button !important;
+    background-image: none;
+    color: @link-content;    
+}
+
+.ui-bizagi-wp-app-inbox-activity-description:hover .workonitRow.ui-button:hover, 
+.ui-bizagi-wp-app-inbox-grid-cases-container table tr:hover .workonitRow.ui-button:hover, 
+.ui-bizagi-wp-app-routing-container table tr:hover .workonitRow.ui-button:hover {
+    border-color: @button-hover-border !important;
+    background: @button-hover !important;    
+    color: desaturate(lighten(@text, 20%), 20%);
+}
+
+/* Modal hover */
+.ui-button:hover span,
+.ui-dialog .ui-bizagi-button:hover,
+.ui-bizagi-button-container .ui-bizagi-button:hover {
+    .text-shadow();
+    color: desaturate(lighten(@text, 20%), 20%); 
+}
+
+/* ==========================================================================
+   Widgets
+   ========================================================================== */
+
+.ui-widget-content { color: @text; }
+
+/* -------------- Dialog -------------- */
+
+.ui-dialog {
+    .border-radius();
+    border-color: @widgets-modal-border;
+    background-color: @widgets-modal;
+}
+
+/* Dialog title */
+.ui-dialog .ui-dialog-titlebar {
+    background: @widgets-modal-border;
+    border-bottom: none;
+}
+
+.ui-dialog .ui-dialog-title {
+    .text-shadow();
+    padding-left: 1.5em;
+    margin: 0;
+    background: none;
+    color: @title;
+    font-family: @font-family;
+}
+
+/* Modal box */
+.modal {
+    .drop-shadow();
+    .border-radius();
+    overflow: hidden;
+    border: 7px solid @widgets-modal-border;
+}
+
+.modal .selectarrow { display: none; }
+
+/* Modal menu */
+.frecuentCasesOn,
+#casesList.casesListOn,
+#frecuentCases:hover,
+#casesList:hover {
+    .border-radiuses(6px, 0, 0, 6px);
+    background: @widgets-modal;
+    box-shadow: none;
+}
+
+#modalMenuBtHeader {
+    background: @widgets-modal-border;
+    border-bottom: none;
+    margin-bottom: 0;  
+}
+
+.modal #modalTitle {
+    .text-shadow();
+    color: @title;
+    font-family: @font-family;
+}
+
+.modal .content {
+    background: @widgets-modal;
+    padding: 0;
+}
+
+#modalMenuBtList { background: @widgets-modal; }
+
+#modalMenuBtList > div ul {
+    border-color: @border-content;
+    background: @content;
+}
+
+#modalMenuBtList > div ul,
+#modalMenuBtList > div ul li { .border-radius(); }
+
+#modalMenuBtList > div li:hover { background: @content-activate; }
+
+#modalMenuBtList > div li h3 {
+    color: @text;
+    font-family: @font-family;
+}
+
+.categoryTree {
+    border-color: @border-content;
+    box-shadow: none;
+}
+
+.categoryTree li { color: @link-content; }
+
+.ui-bizagi-notifications-header { font-family: @font-family; }
+
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+.gradient (@startColor, @endColor) {
+    background-color: @startColor;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, @startColor), color-stop(100%, @endColor));
+    background: -webkit-linear-gradient(top, @startColor 20%, @endColor 100%);
+    background: -moz-linear-gradient(top, @startColor 20%, @endColor 100%);
+    background: -ms-linear-gradient(top, @startColor 20%, @endColor 100%);
+    background: -o-linear-gradient(top, @startColor 20%, @endColor 100%);
+}
+
+.drop-shadow (@x: 0, @y: 0, @blur: 0, @spread: 0, @color: rgba(0, 0, 0, 0)) when (@active-box-shadow = false) {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;    
+}
+
+.drop-shadow (@x: 0, @y: 1px, @blur: 5px, @spread: 0, @color: fade(darken(@one-color-palette, 10%), 20%)) when (@active-box-shadow = true) {
+    -webkit-box-shadow: @arguments;
+    -moz-box-shadow:    @arguments;
+    box-shadow:         @arguments;
+}
+
+.inner-shadow (@x: 0, @y: 0, @blur: 0, @spread: 0, @color: rgba(0, 0, 0, 0)) when (@active-box-shadow = false) {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;    
+}
+
+.inner-shadow (@x: 0, @y: 0, @blur: 5px, @spread: 0, @color: fade(darken(@one-color-palette, 15%), 15%)) when (@active-box-shadow = true) {
+    -webkit-box-shadow: inset @arguments;
+    -moz-box-shadow:    inset @arguments;
+    box-shadow:         inset @arguments;
+}
+
+/*.sprite (@url, @x: 0, @y: 0, @repeat: no-repeat) { }
+
+.sprite (@url, @x: 0, @y: 0, @repeat: no-repeat) when (@active-sprite = true) { background: @arguments; }*/
+
+.text-shadow (@x: 0, @y: 0, @blur: 0, @color: rgba(0, 0, 0, 0)) when (@active-text-shadow = false) { text-shadow: none; }
+
+.text-shadow (@x: 0, @y: 1px, @blur: 0, @color: rgba(250, 250, 250, 1)) when (@active-text-shadow = true) { text-shadow: @arguments; }
+
+.border-radius (@radius: 0) when (@active-border-radius = false) {
+    -webkit-border-radius: 0;
+    -moz-border-radius:    0;
+    border-radius:         0;
+}
+
+.border-radius (@radius: 6px) when (@active-border-radius = true) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius:    @radius;
+    border-radius:         @radius;
+}
+
+.border-radiuses (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) when (@active-border-radius = false) {
+    -webkit-border-top-right-radius:    0;
+    -webkit-border-bottom-right-radius: 0;
+    -webkit-border-bottom-left-radius:  0;
+    -webkit-border-top-left-radius:     0;
+
+    -moz-border-radius-topright:        0;
+    -moz-border-radius-bottomright:     0;
+    -moz-border-radius-bottomleft:      0;
+    -moz-border-radius-topleft:         0;
+
+    border-top-right-radius:            0;
+    border-bottom-right-radius:         0;
+    border-bottom-left-radius:          0;
+    border-top-left-radius:             0;
+}
+
+.border-radiuses (@topright: 6px, @bottomright: 6px, @bottomleft: 6px, @topleft: 6px) when (@active-border-radius = true) {
+    -webkit-border-top-right-radius:    @topright;
+    -webkit-border-bottom-right-radius: @bottomright;
+    -webkit-border-bottom-left-radius:  @bottomleft;
+    -webkit-border-top-left-radius:     @topleft;
+
+    -moz-border-radius-topright:        @topright;
+    -moz-border-radius-bottomright:     @bottomright;
+    -moz-border-radius-bottomleft:      @bottomleft;
+    -moz-border-radius-topleft:         @topleft;
+
+    border-top-right-radius:            @topright;
+    border-bottom-right-radius:         @bottomright;
+    border-bottom-left-radius:          @bottomleft;
+    border-top-left-radius:             @topleft;
+}

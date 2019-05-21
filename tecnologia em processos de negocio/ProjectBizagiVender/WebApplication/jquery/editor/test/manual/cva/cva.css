@@ -1,0 +1,439 @@
+body{
+    position: relative
+}
+/* LAYOUT */
+#cva-editor{
+    display: none;
+    z-index: 1001;
+    top: 100px;
+    left: 100px;
+    bottom: 100px;
+    right: 100px;
+    position: absolute;
+    background-color: white;
+}
+#cva-tabs{
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    top: 25px;
+    bottom: 25px;  
+    border: 1px solid lightgray;              
+}
+#cva-editor > #cva-rules-editor{
+    top: 5%;
+    left: 1%;
+    bottom: 50%;
+    right: 1%;
+    position: absolute;
+    border: 1px solid darkGray;
+}
+#cva-editor > #cva-validations-editor{
+    top: 51%;
+    left: 1%;
+    bottom: 5%;
+    right: 1%;
+    position: absolute;
+    border: 1px solid darkGray;
+}
+#cva-rules-editor .ui-widget-header, #cva-validations-editor .ui-widget-header{
+    height: 36px;
+    line-height: 36px;
+    border: 0;
+}
+#cva-rules-editor .ui-widget-header label, #cva-validations-editor .ui-widget-header label{
+    margin-left: 20px;
+}
+#cva-rules-editor .ui-widget-header button, #cva-validations-editor .ui-widget-header button{
+    border: 0;
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    width: 25px;
+    color: green;
+    font-weight: bolder;
+    font-size: 20px;
+    height: 25px;
+    cursor: pointer;
+    border: 1px solid gray;
+    -webkit-border-radius: 6px;
+}
+#cva-rules-editor .ui-widget-content, #cva-validations-editor .ui-widget-content{
+    top: 36px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background-image: -webkit-linear-gradient(left , rgb(255,255,255) 0%, rgb(217,217,217) 76%);
+}
+/* RULES & VALIDATIONS */            
+.cva-rules, .cva-validations {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 10px;
+    font-family: Courier;
+    list-style: none;
+}
+.cva-rule, .cva-validation {
+    border: 1px darkGray solid;
+    -webkit-border-radius: 10px;
+    padding: 8px 15px;
+    background-color: white;
+    position: relative;
+    background-image: -webkit-linear-gradient(top, rgb(227,224,227) 30%, rgb(255,255,255) 76%);
+    margin-top: 10px;
+    -webkit-filter: grayscale(100%);  
+}
+.cva-rule.cva-selected, .cva-validation.cva-selected 
+{
+	-webkit-filter: none;
+	border-width: 2px;
+}
+.cva-icons {
+	position: absolute;
+	right: 10px;
+}
+.cva-icons button {
+	border: 0;
+	padding: 0;
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	background-image: url(sprite.png);
+	background-repeat: no-repeat;
+}
+.cva-icons button.cva-icons-delete {
+	background-position: 0px 0px;
+}
+.cva-icons button.cva-icons-edit {
+	background-position: -16px 0px;
+}
+.cva-conditions-label {
+    font-size: 16px;
+    line-height: 20px;
+    height: 20px;
+    color: red;
+    font-weight: bold;
+}
+.cva-conditions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 10px
+}
+.cva-condition {
+    font-weight: bold;
+    font-size: 13px;
+    position: relative;
+}
+.cva-condition-xpath{
+    color: blue;                
+}
+.cva-condition-operator{
+    color: violet;      
+    padding-left: 8px;
+}
+.cva-condition-argument{
+    color: green;       
+    padding-left: 8px;
+}
+.cva-actions-label{
+    font-size: 16px;
+    line-height: 20px;
+    height: 20px;
+    color: red;
+    font-weight: bold;
+}
+.cva-actions{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 10px
+}
+.cva-action{
+    font-weight: bold;
+    font-size: 13px;
+    position: relative;
+}
+.cva-action-command{
+    color: violet;
+}
+.cva-action-xpath
+{
+	padding-left: 8px;
+    color: blue;
+}
+.cva-action-connector
+{
+	padding-left: 8px;
+    color: violet;
+}
+.cva-action-argument
+{
+	padding-left: 8px;
+    color: green;
+}
+.cva-messages-label{
+    font-size: 16px;
+    line-height: 20px;
+    height: 20px;
+    color: red;
+    font-weight: bold;
+}
+.cva-messages{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 10px
+}
+.cva-message{
+    font-weight: bold;
+    font-size: 13px;
+    position: relative;
+}
+.cva-message-label{
+    color: violet;
+}
+.cva-message-argument{
+    color: green;
+}
+.cva-message-argument:before, .cva-message-argument:after {
+    content: "\"";
+}
+/*
+*	RULE EDITION
+*/
+ #cva-rule-editor{
+    display: none;
+    z-index: 2001;
+    top: 150px;
+    left: 150px;
+    bottom: 150px;
+    right: 150px;
+    position: absolute;
+    background-color: white;
+    padding: 18px;
+}
+#cva-rule-editor .ui-widget-header{
+    height: 36px;
+    line-height: 36px;
+    border: 0;
+}
+#cva-rule-editor .ui-widget-header label{
+    margin-left: 20px;
+}
+#cva-rule-editor .ui-widget-content{
+    top: 54px;
+    bottom: 18px;
+    left: 18px;
+    right: 18px;
+    position: absolute;
+    background-image: -webkit-linear-gradient(left , rgb(255,255,255) 0%, rgb(217,217,217) 76%);
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #BBB;
+}
+#cva-rule-editor .cva-conditions-label{
+    font-size: 22px;
+    line-height: 40px;
+    height: 40px;
+}
+#cva-rule-editor .cva-actions-label{
+    font-size: 22px;
+    line-height: 40px;
+    height: 40px;
+}
+#cva-rule-editor .cva-conditions{
+    background-color: white;
+    border: 1px solid #CCC;
+    padding: 10px 15px;
+}
+#cva-rule-editor .cva-condition{
+    height: 24px;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 5px;
+    margin-top: 6px;
+    line-height: 24px;
+    padding-left: 10px;
+    font-family: Courier;
+}
+#cva-rule-editor .cva-condition.cva-selected{
+    background-color: #FFD;
+    border-color: #AAA;
+}
+#cva-rule-editor .cva-condition .cva-icons-delete:after{
+    content: "x";
+    color: red;
+}
+#cva-rule-editor .cva-condition .cva-icons-delete{
+    border: 0;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    position: absolute;
+    right: 5px;
+    font-weight: bold;
+    line-height: 16px;
+    font-size: 14px;
+    top: 2px;
+}
+#cva-rule-editor .cva-condition-new{
+    height: 24px;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 5px;
+    margin-top: 6px;
+    line-height: 24px;
+    padding-left: 10px;
+    color: lightgray;
+}
+#cva-rule-editor .cva-actions{
+    background-color: white;
+    border: 1px solid #CCC;
+    padding: 10px 15px;
+}
+#cva-rule-editor .cva-action{
+    height: 24px;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 5px;
+    margin-top: 6px;
+    line-height: 24px;
+    padding-left: 10px;
+    font-family: Courier;
+}
+#cva-rule-editor .cva-action.cva-selected{
+    background-color: #FFD;
+    border-color: #AAA;
+}
+#cva-rule-editor .cva-action-new{
+    height: 24px;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 5px;
+    margin-top: 6px;
+    line-height: 24px;
+    padding-left: 10px;
+    color: lightgray;
+}
+/*
+*	VALIDATION EDITION
+*/
+ #cva-validation-editor{
+    display: none;
+    z-index: 2001;
+    top: 150px;
+    left: 150px;
+    bottom: 150px;
+    right: 150px;
+    position: absolute;
+    background-color: white;
+    padding: 18px;
+}
+#cva-validation-editor .ui-widget-header{
+    height: 36px;
+    line-height: 36px;
+    border: 0;
+}
+#cva-validation-editor .ui-widget-header label{
+    margin-left: 20px;
+}
+#cva-validation-editor .ui-widget-content{
+    top: 54px;
+    bottom: 18px;
+    left: 18px;
+    right: 18px;
+    position: absolute;
+    background-image: -webkit-linear-gradient(left , rgb(255,255,255) 0%, rgb(217,217,217) 76%);
+    background-image: -moz-linear-gradient(left , rgb(255,255,255) 0%, rgb(217,217,217) 76%);
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #BBB;
+}
+#cva-validation-editor .cva-conditions-label{
+    font-size: 22px;
+    line-height: 40px;
+    height: 40px;
+}
+#cva-validation-editor .cva-actions-label{
+    font-size: 22px;
+    line-height: 40px;
+    height: 40px;
+}
+#cva-validation-editor .cva-conditions{
+    background-color: white;
+    border: 1px solid #CCC;
+    padding: 10px 15px;
+}
+#cva-validation-editor .cva-condition{
+    height: 24px;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-top: 6px;
+    line-height: 24px;
+    padding-left: 10px;
+    font-family: Courier;
+}
+#cva-validation-editor .cva-condition.cva-selected{
+    background-color: #FFD;
+    border-color: #AAA;
+}
+#cva-validation-editor .cva-condition .cva-icons-delete:after{
+    content: "x";
+    color: red;
+}
+#cva-validation-editor .cva-condition .cva-icons-delete{
+    border: 0;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    position: absolute;
+    right: 5px;
+    font-weight: bold;
+    line-height: 16px;
+    font-size: 14px;
+    top: 2px;
+}
+#cva-validation-editor .cva-condition-new{
+    height: 24px;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-top: 6px;
+    line-height: 24px;
+    padding-left: 10px;
+    color: lightgray;
+}
+#cva-validation-editor .cva-messages{
+    background-color: white;
+    border: 1px solid #CCC;
+    padding: 10px 15px;
+}
+#cva-validation-editor .cva-message{
+    height: 24px;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-top: 6px;
+    line-height: 24px;
+    padding-left: 10px;
+    font-family: Courier;
+}
+#cva-validation-editor .cva-message.cva-selected{
+    background-color: #FFD;
+    border-color: #AAA;
+}
+#cva-validation-editor .cva-message-new{
+    height: 24px;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-top: 6px;
+    line-height: 24px;
+    padding-left: 10px;
+    color: lightgray;
+}

@@ -1,0 +1,20 @@
+<script id="string-frame" type="text/x-jquery-tmpl">
+    <div class="ui-control-container">
+        <label title="${caption}">${caption}</label>
+        <div class="editor-string-input ui-control-input" tabindex="0">
+            {{if isReadOnly}}
+                <label>${value}</label>
+            {{else}}
+                <input type="text" value="${value}" {{if placeholder }} placeholder="%{formmodeler-component-editor-string-example} ${placeholderText}"{{/if}}/>
+            {{/if}}
+        </div>
+    </div>
+</script>
+
+<script id="string-default-value" type="text/x-jquery-tmpl">
+    <i class="biz-ico biz-ico-default-value editor-string-icon-default-value bz-studio bz-undo_16x16_standard" title="%{formmodeler-component-editor-all-set-default}"></i>
+</script>
+
+<script id="string-localization" type="text/x-jquery-tmpl">
+    <i class="biz-ico editor-string-icon-localization bz-studio bz-world_16x16_standard"></i>
+</script>

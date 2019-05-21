@@ -1,0 +1,8 @@
+﻿{
+	"actiontype":"VerifyLetters",
+	"result":
+		{
+			"success":true,
+			"parameters":[{"key":"hasLetters","value":"False"}]
+		}
+}

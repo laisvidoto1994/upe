@@ -1,0 +1,17 @@
+﻿<script id="gridcolumneditor-container" type="text/x-jquery-tmpl">
+        
+        <div id="bz-fm-grid-columneditor" class="ui-bizagi-container ui-bizagi-container-connectedSortable">
+            <div class="biz-overflow-x">
+                <div class="bz-fm-grid-table">
+                    {{each columns}}
+                        <div class="bz-grid-column ui-bizagi-draggable-item ui-bizagi-itemfordrag bz-grid-column-table-cell" data-id = "${guid}"><span class="bz-grid-column-type-name">${displayName}</span></div>    
+                    {{/each}} 
+                </div>
+            </div>
+            <div class="options biz-actions-bar">
+                <span class="biz-btn-ok biz-action-btn">%{formmodeller-biz-btn-ok-label}</span>
+                <span class="biz-btn-cancel biz-action-btn">%{formmodeller-biz-btn-cancel-label}</span>   
+            </div>        
+        </div>
+    
+</script>

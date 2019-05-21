@@ -1,0 +1,30 @@
+/*
+    Document   : mySearchList
+    Created on : May 12, 2015, 11:00:00 AM
+    Author     : Andr�s Arenas andres.arenas{_at_}bizagi.com
+    Description: Purpose of the stylesheet follows.
+*/
+
+#modalMenuBtList > div ul li.ui-bizagi-wp-widget-my-search-list-item {
+    padding: 1em;
+}
+
+#modalMenuBtList > div li .searchIco{
+    padding: 0;
+}
+
+.ui-bizagi-wp-widget-my-search-search-lists-wrapper {
+    min-width: 200px;
+    width: 300px;
+    max-width: 500px;
+    max-height: 760px;
+
+
+    position: relative;
+    display: inline-block;
+}
+
+#modalMenuBtList .ui-bizagi-component-empty{
+    margin: 10px;
+    text-align: center;
+}

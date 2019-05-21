@@ -1,0 +1,81 @@
+﻿<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Inbox</title>
+</head>
+<body>
+    <script type='text/javascript' src='../../../../jquery/steal.js'></script>
+    <script type='text/javascript' src='../../../../jquery/bizagi.loader.js'></script>
+    <script type="text/javascript" language="javascript">
+        // Redefine path to base
+        var BIZAGI_PATH_TO_BASE = "../../../../";
+        var BIZAGI_DEFAULT_WIDGET = "inbox";
+
+        // Gets the loader instance, and load the module
+        var loader = bizagi.loader;
+        loader.init(function () {
+            loader.start("workportal")
+    		.then(function () {
+    		    var workportal = new bizagi.workportal.facade();
+    		    workportal.execute();
+
+
+    		    // TEST 1
+    		    var loadWidget = function (count) {
+    		        if (workportal && workportal.mainController) {
+
+    		            // Execute our test
+    		            if (count % 2 == 0)
+    		                workportal.mainController.setWidget({ widgetName: "inbox" });
+    		            else
+    		                workportal.mainController.setWidget({ eventAsTasks: false, idCase: "51", idTask: 278, idWorkitem: 52, onlyUserWorkItems: "true", referrer: "inboxGrid", widgetName: "activityform" });
+
+    		            setTimeout(function () { loadWidget(count - 1); }, 1000);
+    		        } else {
+    		            setTimeout(function () { loadWidget(count); }, 1000);
+    		        }
+    		    }
+    		    //loadWidget(100);
+
+    		    // TEST 2
+
+    		    // go to render widget
+    		    bizagi.rendering.form.original = $.extend({}, bizagi.rendering.form.prototype, true);
+    		    bizagi.rendering.form.prototype.render = function () {
+    		        var self = this;
+    		        window.lastFormInstance = null;
+    		        var promise = bizagi.rendering.form.original.render.apply(this, arguments);
+    		        return $.when(promise)
+        		            .done(function () {
+        		                window.lastFormInstance = self;
+        		            });
+    		    };
+
+    		    var renderingTest = function (count) {
+    		        if (window.lastFormInstance) {
+    		            window.lastFormInstance.saveForm();
+
+    		            setTimeout(function () { renderingTest(count - 1); }, 1000);
+    		        } else {
+    		            setTimeout(function () { renderingTest(count); }, 1000);
+    		        }
+    		    };
+
+    		    var startTest = function () {
+    		        if (workportal && workportal.mainController) {
+    		            workportal.mainController.setWidget({ eventAsTasks: false, idCase: "51", idTask: 278, idWorkitem: 52, onlyUserWorkItems: "true", referrer: "inboxGrid", widgetName: "activityform" });
+    		            renderingTest(100);
+    		        } else {
+    		            setTimeout(startTest, 1000);
+    		        }
+    		    };
+    		    startTest();
+
+    		});
+        });
+
+        
+    </script>
+</body>
+</html>

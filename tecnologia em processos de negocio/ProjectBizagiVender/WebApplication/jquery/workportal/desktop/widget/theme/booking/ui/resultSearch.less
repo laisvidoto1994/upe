@@ -1,0 +1,163 @@
+﻿@import "base/variables";
+@import "base/mixins";
+
+.biz-theme-home-search-results {
+    background: @white;
+    padding: 0 0 0 20px;
+}
+
+.biz-theme-home-search-results .biz-theme-home-left {
+    width: 265px;
+    background: transparent;
+}
+
+.biz-theme-home-search-results .biz-theme-home-right {
+    padding-top: 20px;
+    width: ~"calc(100% - 265px)";
+    background: #ffffff;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.biz-theme-hotel-item-picture, .biz-theme-hotel-item-picture img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.biz-theme-bookings-item-information {
+    width: ~"calc(100% - 400px)";
+    padding-left: 10px;
+}
+
+.biz-theme-search-results-item-hotel-name {
+    color: #0896ff;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.biz-theme-search-results-item-stars {
+    background: url("//r-ec.bstatic.com/static/img/sprite/main/a2ef5c2bf56e182f14e92c9dcea8e738039f20b2.png");
+    background-position: -1px -26px;
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 12px;
+}
+
+.biz-theme-search-results-item-hotel-location {
+    color: #0896ff;
+    font-weight: normal;
+    font-size: small;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.biz-theme-search-results-item-hotel-deal {
+    background-color: #f08647;
+    padding: 5px 8px 5px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: @white;
+    font-size: 16px;
+}
+
+.biz-theme-search-results-item-hotel-deal i {
+    margin-left: 10px;
+}
+
+.biz-theme-search-results-item-favorites {
+    border: 1px solid #0896ff;
+    padding: 4px 8px 4px 8px;
+    font-weight: bold;
+    color: #0896ff;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.biz-theme-search-results-item-favorites i {
+    margin-right: 5px;
+}
+
+
+.biz-theme-search-results-item-description {
+    color: #003580;
+    font: small;
+    margin-top: 20px;
+}
+
+.biz-theme-hotel-item {
+}
+
+.biz-theme-search-results-item-right {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 144px;
+}
+
+.biz-theme-search-results-item-score {
+    color: #0896ff;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 100%;
+    text-align: right;
+}
+
+.biz-theme-search-results-item-reviews {
+    font-size: 11px;
+    width: 100%;
+    text-align: right;
+    color: #537cb4;
+    margin-bottom: 10px;
+}
+
+.biz-theme-search-results-item-prices {
+    float: right;
+    margin-right: 0;
+}
+
+.biz-theme-search-results-item-cost {
+    width: 100%;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.biz-theme-search-results-item-cost-icon {
+    background: url('http://r-ec.bstatic.com/static/img/experiments/sprite_vp_sr_price_estimates_curr2/5b561a2f798a0486cf68193d190ec1bad2e373a0.png') no-repeat -17px 1px;
+    background-color: #5EAF1F;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    margin-left: 3px;
+}
+
+.biz-theme-search-results-item-cost-icon-false {
+    opacity: 0.3;
+}
+
+.biz-theme-bookings-item:hover {
+    background: #F2F4F8;
+}
+
+.biz-theme-search-results-facets {
+    background: #fff6df;
+    border: 1px solid #feba02;
+    padding: 10px;
+    color: #003580;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+.biz-theme-search-results-facets-message {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.biz-theme-search-results-facet {
+    background: #0896ff;
+    padding: 8px 10px;
+    margin-right: 10px;
+    color: @white;
+    border-radius: 3px;
+}

@@ -1,0 +1,27 @@
+<script id="layout-container" type="text/x-jquery-tmpl">
+    <div id="bz-fm-layout-navigator">
+    </div>
+</script>
+
+<script id="layout-item" type="text/x-jquery-tmpl">
+        <div class="bz-fm-layout-navigator-item ui-bizagi-itemfordrag ui-bizagi-draggable-item" data-id="${id}" data-caption="${caption}" data-style="${style}">
+	    <span class="bz-fm-layout-image ${style}"></span>
+	    <label>${caption}</label>
+	    <div class="bz-fm-layout-width">
+	    </div>
+	</div>
+</script>
+
+<script id="layout-width" type="text/x-jquery-tmpl">
+      <span>${value}</span>
+</script>
+
+<script id="layout-helper" type="text/x-jquery-tmpl">
+      <div id="bz-fm-layout-navigator-helper" class="bz-fm-layout-navigator-helper">
+      	 <span class="bz-fm-layout-image bz-fm-layout-image-${id}"></span>
+      	 <label>${caption}</label>
+      	 <span class="bz-fm-layout-image bz-fm-layout-image-plus"></span>
+      	 <span class="bz-fm-layout-image bz-fm-layout-image-limit-left"></span>
+      	 <span class="bz-fm-layout-image bz-fm-layout-image-limit-right"></span>
+      </div>
+</script>

@@ -1,0 +1,19 @@
+﻿<script id="processeslist-wrapper" type="text/x-jsrender" >
+    <div class="wdg-srcts-panel processeslist">
+        {{for processes}}
+            <div class="wdg-process-card" data-title="{{:process}}" data-idworkflow="{{:idworkflow}}">
+                <div class="card-icon stuff-ico"></div>
+                <div class="wdg-srcts-title">
+                    <i class="bz-icon bz-icon-16 bz-icon-case-add-outline"></i> <span>{{:process}}</span>
+                </div>
+            </div>
+        {{/for}}
+    </div>
+</script>
+
+<script id="processeslist-empty-message" type="text/x-jsrender-tmpl">
+    <div class="bz-wp-empty">
+        <i class="bz-wp-empty__img"></i>
+        <p class="bz-wp-empty__info bz-wp-empty__info--first">%{workportal-general-first-line-no-records-found}</p>
+    </div>
+</script>

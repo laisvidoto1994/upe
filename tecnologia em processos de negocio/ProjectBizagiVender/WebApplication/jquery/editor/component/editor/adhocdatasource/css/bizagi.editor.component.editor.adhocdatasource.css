@@ -1,0 +1,69 @@
+.bizagi_editor_component_editor_adhocdatasource .xpath-container input {
+    min-height: 24px;
+}
+
+.bizagi_editor_component_editor_adhocdatasource .biz-ico[class*="xpath"] {
+    opacity: 1;
+    position: absolute;
+    right: -20px;
+    bottom: 3px;
+    cursor: pointer;
+}
+
+.bizagi_editor_component_editor_adhocdatasource [class*="-default"].biz-ico {
+    right: -38px;
+    top: 34px;
+}
+
+.bizagi_editor_xpathnavigator_overlay .bizagi_editor_component_xpathnavigator {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    z-index: 2000;    
+    width: 250px;
+    line-height: 16px;
+    /*height: auto !important;
+    max-height: 200px;*/
+}
+
+.adhocdatasource-popup-close.ui-properties-close.biz-btn-close {
+    float: right;
+    position: relative;
+    top: 5px;
+    left: -9px;
+    right: 5px;
+    z-index: 20;
+}
+
+.adhocdatasource-popup-close.ui-properties-close .biz-icon.ui-close-btn {    
+    border: none;
+    cursor: pointer;
+}
+
+.adhocdatasource-popup-container
+{
+    margin: 40px 20px 10px 20px;
+    width: 100%;
+}
+
+.adhocdatasource-popup-container .ui-control-container {    
+    margin-bottom: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.adhocdatasource-popup-container .ui-control-container label {
+    color: hsl(209, 19%, 45%);
+    margin-bottom: 5px;
+    margin: 3px 0px 3px 0px;
+    display: block;
+}
+
+#adhocdatasource-predefined-values-popup-wrapper .details-form-field {
+    margin-bottom: 15px;
+}   
+
+#adhocdatasource-predefined-values-popup-wrapper .ui-bizagi-wp-project-popupform-actions {
+    text-align: right;
+    padding-top: 1em;
+}

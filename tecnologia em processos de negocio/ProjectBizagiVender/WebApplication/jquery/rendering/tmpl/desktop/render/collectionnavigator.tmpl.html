@@ -1,0 +1,170 @@
+﻿<script id="ui-bizagi-render-collectionnavigator" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-container clearfix ui-bizagi-container-collectionnavigator" data-unique-id="${uniqueId}" data-render-id="${id}" guid="${guid}">
+        <div class="bz-collectionnavigator-navigationform">
+            {{if showPreview}}
+            {{if mode=="execution"}}
+            {{tmpl "#ui-bizagi-render-collectionnavigator-execution"}}
+            {{else}}
+            {{tmpl "#ui-bizagi-render-collectionnavigator-preview"}}
+            {{/if}}
+            {{/if}}
+            <div class="bz-collectionnavigator-navigationform-children">
+            </div>
+        </div>
+        {{if orientation == 'rtl'}}
+        <div class="bz-collectionnavigator-controls" data-navigation-id="${id}">
+            <div class="actions-group"></div>
+            <div class="bz-collectionnavigator-wrapper">
+                <div class="control-group"></div>
+            </div>
+            <div class="forms-group">
+                <div class="bz-navigation-group">
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="bz-collectionnavigator-controls" data-navigation-id="${id}">
+            <div class="forms-group">
+                <div class="bz-navigation-group">
+                </div>
+            </div>
+            <div class="bz-collectionnavigator-wrapper">
+                <div class="control-group"></div>
+            </div>
+            <div class="actions-group"></div>
+        </div>
+        {{/if}}
+    </div>
+</script>
+
+<script id="ui-bizagi-render-collectionnavigator-form-button" type="text/x-jquery-tmpl">
+    <span title="${title}" class="${buttonClass}"></span>
+</script>
+
+<script id="ui-bizagi-render-collectionnavigator-control" type="text/x-jquery-tmpl">
+    <div class="bz-navigation-controls">
+        <span title="%{render-collection-navigator-first-row}" class="ui-icon ui-icon-circle-triangle-w bz-navigation-first ui-state-disabled"></span>
+        <span title="%{render-collection-navigator-previous-row}" class="ui-icon ui-icon-circle-arrow-w bz-navigation-previous ui-state-disabled"></span>
+        <div class="bz-navigation-control-counter">
+            <input class="bz-navigation-current-row ui-state-disabled" value="0" /><span> / </span><span class="bz-navigation-total-rows">${total}</span>
+        </div>
+        <span title="%{render-collection-navigator-next-row}" class="ui-icon ui-icon-circle-arrow-e bz-navigation-next ui-state-disabled"></span>
+        <span title="%{render-collection-navigator-last-row}" class="ui-icon ui-icon-circle-triangle-e bz-navigation-last ui-state-disabled"></span>
+        {{if inlineAdd || allowDelete}}<span class="ui-separator-vertical ui-separator"></span>{{/if}}
+        {{if inlineAdd}}<span title="%{render-collection-navigator-add-row}" class="ui-icon ui-icon-circle-plus bz-navigation-add"></span>{{/if}}
+        {{if allowDelete}}<span title="%{render-collection-navigator-delete-row}" class="ui-icon ui-icon-circle-close bz-navigation-remove"></span>{{/if}}
+    </div>
+</script>
+
+<script id="ui-bizagi-render-collectionnavigator-control-rtl" type="text/x-jquery-tmpl">
+    <div class="bz-navigation-controls">
+        {{if allowDelete}}<span title="%{render-collection-navigator-delete-row}" class="ui-icon ui-icon-circle-close bz-navigation-remove"></span>{{/if}}
+        {{if inlineAdd}}<span title="%{render-collection-navigator-add-row}" class="ui-icon ui-icon-circle-plus bz-navigation-add"></span>{{/if}}
+        {{if inlineAdd || allowDelete}}<span class="ui-separator-vertical ui-separator"></span>{{/if}}
+        <span title="%{render-collection-navigator-last-row}" class="ui-icon ui-icon-circle-triangle-e bz-navigation-last ui-state-disabled"></span>
+        <span title="%{render-collection-navigator-next-row}" class="ui-icon ui-icon-circle-arrow-e bz-navigation-next ui-state-disabled"></span>
+        <div class="bz-navigation-control-counter">
+            <span class="bz-navigation-total-rows">${total}</span><span></span> / <input class="bz-navigation-current-row ui-state-disabled" value="0" />
+        </div>
+        <span title="%{render-collection-navigator-previous-row}" class="ui-icon ui-icon-circle-arrow-w bz-navigation-previous ui-state-disabled"></span>
+        <span title="%{render-collection-navigator-first-row}" class="ui-icon ui-icon-circle-triangle-w bz-navigation-first ui-state-disabled"></span>
+    </div>
+</script>
+
+<script id="ui-bizagi-render-collectionnavigator-actions" type="text/x-jquery-tmpl">
+    <div class="bz-navigation-actions">
+        <span title="%{render-form-dialog-box-save}" class="ui-icon bz-collectionnavigator-save ui-state-disabled"></span>
+        <span title="%{render-form-dialog-box-cancel}" class="ui-icon bz-collectionnavigator-cancel ui-state-disabled"></span>
+    </div>
+</script>
+
+<script id="ui-bizagi-render-collectionnavigator-actions-rtl" type="text/x-jquery-tmpl">
+    <div class="bz-navigation-actions">
+        <span title="%{render-form-dialog-box-cancel}" class="ui-icon bz-collectionnavigator-cancel ui-state-disabled"></span>
+        <span title="%{render-form-dialog-box-save}" class="ui-icon bz-collectionnavigator-save ui-state-disabled"></span>
+    </div>
+</script>
+
+<script id="ui-bizagi-render-collectionnavigator-preview" type="text/x-jquery-tmpl">
+    <div class="preview">
+        <div class="ui-preview-blocker"></div>
+        <div class="ui-bizagi-container clearfix ui-bizagi-container-group ui-drop-shadow ui-lifted cssClassContainer ui-bizagi-itemfordrag bz-edit-mode">
+
+            <h3 class="ui-bizagi-container-group-header ui-helper-reset ui-state-active ui-corner-top clearfix">
+                <span class="ui-icon ">
+                </span>
+                <a href="#">
+                    Group Demo
+                </a>
+            </h3>
+            <div class="ui-bizagi-container-group-wrapper ui-widget-content">
+                <div class="ui-bizagi-container clearfix ui-bizagi-container-horizontal ui-bizagi-itemfordrag ui-table">
+                    <div class="ui-bizagi-container clearfix ui-bizagi-container-panel ui-bizagi-itemfordrag ui-bizagi-container-connectedSortable ui-sortable ui-col ui-panel-area" style="width: 50%;">
+                        <div class="ui-bizagi-render ui-corner-all ui-widget-content ui-bizagi-render-display-normal ui-bizagi-itemfordrag container-decorator">
+                            <span class="ui-bizagi-label " style="width:50%">
+                                <label> Data Input Demo </label>
+                            </span>
+                            <div class="ui-bizagi-control " style="width:50%">
+                                <div class="ui-bizagi-control-wrapper">
+                                    <div class="ui-bizagi-render-control ">
+                                        <input class="ui-bizagi-render-numeric" type="text" readonly="readonly" disabled>
+                                    </div>
+                                    <div class="ui-bizagi-render-icons ui-widget-content ui-corner-all ui-hidden">
+                                        <span class="ui-icon ui-icon-help ui-bizagi-render-icon-msg-validation" title="">
+                                        </span>
+                                        <span class="ui-icon ui-icon-help ui-bizagi-render-icon-help" title="">
+                                        </span>
+                                        <span class="ui-icon ui-icon-alert ui-bizagi-render-icon-error" title="">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-bizagi-container clearfix ui-bizagi-container-panel ui-bizagi-itemfordrag ui-bizagi-container-connectedSortable ui-sortable ui-col ui-panel-area ui-bizagi-render-last" style="width: 50%;">
+                        <div class="ui-bizagi-render ui-corner-all ui-widget-content ui-bizagi-render-display-normal ui-bizagi-itemfordrag">
+                            <span class="ui-bizagi-label " style="width:50%">
+                                <label> Data Input Demo </label>
+                            </span>
+                            <div class="ui-bizagi-control " style="width:50%">
+                                <div class="ui-bizagi-control-wrapper">
+                                    <div class="ui-bizagi-render-control ">
+                                        <input class="ui-bizagi-render-numeric" type="text" readonly="readonly" disabled>
+                                    </div>
+                                    <div class="ui-bizagi-render-icons ui-widget-content ui-corner-all ui-hidden">
+                                        <span class="ui-icon ui-icon-help ui-bizagi-render-icon-msg-validation" title="">
+                                        </span>
+                                        <span class="ui-icon ui-icon-help ui-bizagi-render-icon-help" title="">
+                                        </span>
+                                        <span class="ui-icon ui-icon-alert ui-bizagi-render-icon-error" title="">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-render-collectionnavigator-execution" type="text/x-jquery-tmpl">
+    <div class="preview">
+        <div class="ui-bizagi-container clearfix ui-bizagi-container-group ui-drop-shadow ui-lifted cssClassContainer ui-bizagi-itemfordrag bz-edit-mode">
+
+            <h3 class="ui-bizagi-container-group-header ui-helper-reset ui-state-active ui-corner-top clearfix">
+                <span class="ui-icon ">
+                </span>
+
+            </h3>
+            <div class="ui-bizagi-container-group-wrapper ui-widget-content">
+                <div class="ui-bizagi-container clearfix ui-bizagi-container-horizontal ui-bizagi-itemfordrag ui-table">
+                    <div data-bizagi-component="emptyTable" class="ui-bizagi-render-align-center">
+                        <div class="ui-bizagi-control-wrapper">%{render-grid-no-records}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,50 @@
+<script id="ui-bizagi-render-image-noflash" type="text/x-jquery-tmpl" >
+	{{if mode == 'execution'}}	
+	<!-- BEGIN wrapper upload file controller -->
+		
+        {{if editable}}            
+            <div class="ui-bizagi-render-image-outerwrapper"><!-- this simple div let the column image be aligned successfully and doesn't affect the normal image control, don't delete at least it affects other stuff -->
+                <a class='ui-bizagi-render-image-wrapper' href="#">
+	    {{/if}}
+
+    	{{tmpl "#ui-bizagi-render-image-item-noflash"}}	
+		
+        {{if editable}}
+            </a>
+          </div>
+        {{/if}}
+
+	<!-- END wrapper upload file controller -->
+	{{if editable}}
+            <div class="ui-bizagi-render-upload-queue image-queue" id="q_${xpath}" ></div>
+	{{/if}}
+	{{else}}
+		<a href="#"><div class="resizable_img"></div></a>
+	{{/if}}
+</script>
+
+<script id="ui-bizagi-render-image-item-noflash" type="text/x-jquery-tmpl" >
+	{{if url}}
+	<div class="img"><img src="${url}" width="100%" height="auto"></div>
+	    {{if allowDelete}}
+	        <span class="delete-button"><i class="bz-icon bz-icon-trash-outline"></i></span> 
+	     {{/if}}
+	{{else}}
+	<div class="resizable_img"></div>
+	{{/if}}
+</script>
+
+
+<script id="ui-bizagi-render-image-dialog-noflash" type="text/x-jquery-tmpl" >
+<div class="ui-bizagi-render-upload-dialog-noflash">
+    <span class="ui-bizagi-title">%{render-upload-dialog-title}</span>
+    <form method="POST" action="${url}" enctype='multipart/form-data' target="iframe-upload-${xpath}" accept-charset="UTF-8">
+        <div id="alert-file-upload"></div>
+        <input type="file" name="${xpath}" id="${xpath}" accept="${processedFileExtension}" />
+        {{each scriptData}}
+        <input type="hidden" name="${key}" value="${value}" />
+        {{/each}}
+        <iframe id="iframe-upload-${xpath}" name="iframe-upload-${xpath}" src="" style="width:1px;height:1px;border:0px solid #fff;"></iframe>
+    </form>    
+</div>
+</script>

@@ -1,0 +1,676 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Bizagi Webpart configuration</title>
+    <style type="text/css">
+        body {
+            background-color: #F5F5F5;
+            color: #030303;
+            font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+        }
+
+        form p {
+            margin-bottom: 2px;
+        }
+         
+        form h5 {
+            margin: 0;
+        }
+
+        form .help {
+            width: 15px;
+            height: 15px;
+            border-radius: 7px;
+            background-color: #83A7BA;
+            color: white;
+            display: inline-block;
+            cursor: help;
+        }
+
+        form .help:after {
+            content: "?";
+            padding-left: 4px;
+        }
+
+        form .tooltip {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        input, textarea, select {
+            border: 1px solid #C6CACC;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            color: #565656;
+            min-height: 24px;
+            height: auto;
+            line-height: 24px;
+            background: #FFF;
+        }
+
+        input[type="submit"] {
+            margin: 5px 5px 0px 5px;
+            color: #ffffff;
+            background-color: #384656;
+            border: 1px solid #1D292F;
+            border-radius: 3px;
+        }
+
+        fieldset {
+            border: 1px solid #E2E2E2;
+            background: #FFF;
+            border-radius: 10px;
+        }
+
+        legend {
+            color: #384656;
+        }
+
+        span#form_elements {
+            visibility: hidden;
+            display: none;
+        }
+
+        .configurationPanel h1 {
+            height: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 10pt;
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        /**
+         * Put here default values for each control
+         * @type {{renderBehavior: string, pageSize: number}}
+         */
+        var parametersMedatada = {
+            "type": {
+                "defaultValue": ''
+            },
+            "renderBehavior": {
+                "displayName": "Render Behavior",
+                "description": "Defines whether the links/buttons will be displayed in a Popup or displayed in a new page",
+                "type": "combo",
+                "visible": false,
+                "defaultValue": '',
+                "value": [
+                    {"displayName": "PopUp", "value": "PopUp"},
+                    {"displayName": "Other Page", "value": "OtherPage"}
+                ]
+            },
+            "graphicQueryBehavior":{
+                "displayName": "Graphic Query Behavior",
+                "description": "Define behavior of graphic query",
+                "type": "combo",
+                "visible": false,
+                "defaultValue": '',
+                "value": [
+                    {"displayName": "PopUp", "value": "PopUp"},
+                    {"displayName": "Other Page", "value": "OtherPage"}
+                ]
+            },
+            "renderPageUrl": {
+                "displayName": "Render Page URL",
+                "description": "Defines the URL where the action of the links/buttons will be rendered when Render Behavior is Other Page",
+                "type": "text",
+                "visible": false,
+                "defaultValue": ''
+            },
+            "summaryBehavior": {
+                "displayName": "Summary Behavior",
+                "description": "Defines whether the links/buttons will be displayed in a Popup or displayed in a new page",
+                "type": "combo",
+                "visible": false,
+                "defaultValue": '',
+                "value": [
+                    {"displayName": "PopUp", "value": "PopUp"},
+                    {"displayName": "Other Page", "value": "OtherPage"}
+                ]
+            },
+            "summaryPageUrl": {
+                "displayName": "Summary page URL",
+                "description": "Defines the URL where the action of the links/buttons will be rendered when Summary Behavior is Other Page",
+                "type": "text",
+                "visible": false,
+                "defaultValue": ''
+            },
+            "DefaultView": {
+                "displayName": "Default View",
+                "description": "Defines how the inbox will displayed",
+                "type": "combo",
+                "visible": false,
+                "defaultValue": '',
+                "value": [
+                    {"displayName": "Details", "value": "details"},
+                    {"displayName": "Grid", "value": "grid"}
+                ]
+            },
+            "cookieName": {
+                "displayName": "Cookie Name(Default view)",
+                "description": "Defines the name of cookie to store the value of default view of workportal, by default cookie name is (casesviewselector) ",
+                "type": "text",
+                "visible": false,
+                "defaultValue": ''
+            },
+            "pageSize": {
+                "displayName": "Page Size",
+                "description": "Defines the <number of records to be displayed in the inbox when the view is Grid",
+                "type": "number",
+                "visible": false,
+                "defaultValue": ''
+            },
+            "idWfClass": {
+                "displayName": "idWfClass",
+                "description": "Defines the process ID of the new case to be created",
+                "type": "number",
+                "visible": false,
+                "defaultValue": ''
+            },
+            "adjustButtonsToContent": {
+                "displayName": "Adjust buttons to content",
+                "description": "Adjust buttons to content",
+                "type": "boolean",
+                "visible": false,
+                "defaultValue": ''
+            },
+            "idCase": {
+                "displayName": "idCase",
+                "description": "ID of the case to be displayed",
+                "type": "number",
+                "visible": false,
+                "defaultValue": ''
+            },
+            "idWorkitem": {
+                "displayName": "idWorkitem",
+                "description": "ID of the process activity to be displayed",
+                "type": "number",
+                "visible": false,
+                "defaultValue": ''
+            },
+            "idWorkflow": {
+                "displayName": "idWorkflow",
+                "description": "ID of the Workflow to be displayed",
+                "type": "number",
+                "visible": false,
+                "defaultValue": ''
+            },
+            "buttonName": {
+                "displayName": "buttonName",
+                "description": "Defines the name displayed in the button",
+                "type": "text",
+                "visible": false,
+                "defaultValue": ''
+            },
+            "caseNumber": {
+                "displayName": "Case Number",
+                "description": "Is the number displayed to the end user in the Work Portal, if you have not customized your case numbers, then use the same value for Id Case",
+                "type": "text",
+                "visible": false,
+                "defaultValue": ''
+            },
+            "showViewToggler":{
+                "displayName": "Show view Toggle",
+                "description": " defines whether the option to display the cases in Grid or details view is displayed (true) or not (false). Default value is true,",
+                "type": "boolean",
+                "visible": false,
+                "defaultValue": true
+            }
+        };
+
+        function printf(msg) {
+            var args = Array.prototype.slice.call(arguments, 1), arg;
+            return msg.replace(/(%[disv])/g, function (a, val) {
+                arg = args.shift();
+                if (arg !== undefined) {
+                    switch (val.charCodeAt(1)) {
+                        case 100:
+                            return +arg; // d
+                        case 105:
+                            return Math.round(+arg); // i
+                        case 115:
+                            return String(arg); // s
+                        case 118:
+                            return arg; // v
+                    }
+                }
+                return val;
+            });
+        }
+
+        function _getValue(control) {
+            return parametersMedatada[control].defaultValue || "";
+        }
+
+        function _textControl(data) {
+            data = data || {};
+            var html = "<p><label for='%s'><h5>%s <span class='help' title='%s' ></span> </h5><input type='text' name='%s' value='%s'/></label></p>";
+            return printf(html, data.idControl, data.displayName, data.description, data.idControl, _getValue(data.idControl));
+        }
+        function _comboControl(data) {
+            data = data || {};
+            var options = "";
+            var html = "<p><label><h5>%s <span class='help' title='%s' ></span></h5></label><select name='%s'>%s</select></p>";
+            var value = _getValue(data.idControl);
+            var selected = "";
+            for (var i in data.value) {
+                selected = (data.value[i].value == value) ? "selected" : "";
+                options += printf("<option value='%s' %s>%s <span class='help' title='%s' ></span></option>", data.value[i].value, selected, data.value[i].displayName);
+            }
+            return printf(html, data.displayName, data.description, data.idControl, options);
+        }
+        function _numberControl(data) {
+            data = data || {};
+            var html = "<p><label><h5>%s <span class='help' title='%s' ></span></h5></label><input type='number' name='%s' value='%s'></p>";
+            return printf(html, data.displayName, data.description, data.idControl, _getValue(data.idControl));
+        }
+        function _booleanControl(data) {
+            data = data || {};
+            var template = "<p><label><h5>%s <span class='help' title='%s' ></span></h5></label>" +
+                    "<fieldset>" +
+                    "<label>True</label>" +
+                    "<input type='radio' name='%s' value='true'>" +
+                    "<label>False</label>" +
+                    "<input type='radio' name='%s' value='false'>" +
+                    "</fieldset>" +
+                    "</p>";
+            var html = printf(template, data.displayName, data.description, data.idControl,data.idControl /*, _getValue(data.idControl)*/ );
+            return html;
+        }
+
+
+        var Control = (function (control) {
+            control = control || {};
+
+            var render = function () {
+                var html = "";
+                switch (control.type) {
+                    case "text":
+                        html = _textControl(control);
+                        break;
+                    case "combo":
+                        html = _comboControl(control);
+                        break;
+                    case "number":
+                        html = _numberControl(control);
+                        break;
+                    case "boolean":
+                        html = _booleanControl(control);
+                        break;
+                    default:
+                        html = "Undefined type of control!";
+                        break;
+                }
+                return html;
+            };
+
+            return {
+                render: render
+            };
+        });
+
+        var Form = (function (metaData, form) {
+            form = form || [];
+            var html = "";
+            var control, parameters;
+            var render = function () {
+                for (var i in form) {
+                    parameters = metaData[form[i]] || {};
+                    parameters.idControl = form[i];
+                    control = new Control(parameters);
+                    html += control.render();
+                }
+                return html;
+            };
+
+            return {
+                render: render
+            };
+        });
+
+        $(document).ready(function () {
+            var parametersMatrix = {
+                "cases": [
+                    "renderBehavior",
+                    "renderPageUrl",
+                    "summaryBehavior",
+                    "summaryPageUrl",
+                    "graphicQueryBehavior",
+                        "showViewToggler",
+                    "DefaultView",
+                    "cookieName",
+                    "pageSize"
+
+                ],
+                "activityform": [
+                    "idWfClass",
+                    "idCase",
+                    "idWorkitem",
+                    "adjustButtonsToContent"
+                ],
+                "casesummary": [
+                    //"idWfClass",
+                    "renderBehavior",
+                    "graphicQueryBehavior",
+                    "renderPageUrl",
+                    "idCase",
+                    "idWorkitem"
+                ],
+                "newcaselist": [
+                    "renderBehavior",
+                    "renderPageUrl"
+                ],
+                "newcasebutton": [
+                    "idWfClass",
+                    "buttonName",
+                    "renderPageUrl",
+                    "renderBehavior"
+                ],
+                "graphicquery": [
+                    "idWorkflow",
+                    "idCase",
+                    "caseNumber"
+                ],
+                "processes": [],
+                "globalform": [
+                 //   "idWfClass", // Dont used in global form code
+                    "idCase",
+                    "idWorkitem"
+                ],
+                "newcase": [
+                    "idWfClass"
+                ],
+                "workportal":[
+                    "DefaultView",
+                    "showViewToggler",
+                    "pageSize"
+                ]
+            };
+
+            $("[name*=type]").change(function (e) {
+                console.log(e.target.value);
+                var controls = parametersMatrix[e.target.value];
+                var form = new Form(parametersMedatada, controls);
+                var render = form.render();
+                $("#options").empty();
+                $("#options").html(render);
+            });
+
+            // Load widget properties
+            $("[name*=type]").val(_getValue("type"));
+            $("[name*=type]").change();
+
+            //Tooltip handler
+            $("form .help").on("click", function () {
+                var helpText = this.getAttribute("title");
+                var $tooltip = $("form .tooltip");
+                var $element = this;
+
+                $tooltip.position({
+                    of: $element,
+                    my: 'left top',
+                    at: 'left button',
+                    offset: '50 90'
+                });
+
+                $("form .tooltip").show().html(helpText);
+            });
+
+            $("form").submit(function (e) {
+                e.preventDefault();
+                var parametrization = $(this).serialize();
+                $("#widgetIframe").attr("src", "../desktop/portal/pages/webpart.htm?" + parametrization);
+            });
+
+            $("[name='newWindow']").click(function(e){
+                e.preventDefault();
+                var parametrization = $("form").serialize();
+                window.open("../desktop/portal/pages/webpart.htm?" + parametrization);
+            });
+
+            $("[name='parameters']").click(function(e){
+                e.preventDefault();
+                var parametrization = $("form").serialize();
+                $("#parameters").val();
+                $("#parameters").val(parametrization);
+            });
+
+            $(".configurationPanel h1").bind("click", function () {
+                $(".optionsPanel").slideToggle("slow");
+            })
+        });
+    </script>
+</head>
+<body>
+<div class="configurationPanel">
+    <h1>Toogle Configuration</h1>
+    <div class="optionsPanel">
+        <form id="bizagiPorletConfig">
+            <span class="tooltip">Help text</span>
+            <section>
+                <fieldset>
+                    <legend>Select Bizagi Webpart:</legend>
+                    <p>
+                        <label>Bizagi Widget:</label>
+                        <select style="width:150px" name="type">
+                            <option value=""></option>
+                            <option value="cases" selected="selected"> Cases</option>
+                            <option value="activityform"> Activity Form</option>
+                            <option value="casesummary"> Case Summary</option>
+                            <option value="newcaselist"> New Case list</option>
+                            <option value="graphicquery"> Graphic Query</option>
+                            <option value="processes"> Processes</option>
+                            <option value="globalform"> Global Form</option>
+                            <option value="newcase"> New Case</option>
+                            <option value="workportal"> Workportal</option>
+                            <option value="newcasebutton"> New case button</option>
+                        </select>
+                    </p>
+                </fieldset>
+            </section>
+            <section>
+                <br/>
+                <fieldset>
+                    <legend>Webpart configuration:</legend>
+                    <div id="options">
+
+                    </div>
+                </fieldset>
+            </section>
+            <button type="submit">Render</button>
+            <button name="newWindow">New window</button>
+            <button name="parameters">Parameters</button>
+            <button type="reset">Clear</button>
+        </form>
+        <input id="parameters"></input>
+    </div>
+    <span id="form_elements">
+   <div id="cases">
+       <p>
+           <label>
+               <h5>Render Behavior
+                   <span class='help'></span>
+               </h5>
+           </label>
+           <select name='renderBehavior'>
+               <option value='PopUp'>PopUp <span class='help' title='%s'></span></option>
+               <option value='OtherPage'>Other Page <span class='help' title='%s'></span></option>
+           </select>
+       </p>
+       <p>
+           <label for='renderPageUrl'>
+               <h5>Render Page URL <span class='help'></span>
+               </h5><input type='text' name='renderPageUrl' value=""/></label></p>
+       <p>
+           <label>
+               <h5>Summary Behavior <span class='help'></span>
+               </h5></label>
+           <select name='summaryBehavior'>
+               <option value='PopUp'>PopUp <span class='help' title='%s'></span></option>
+               <option value='OtherPage'>Other Page <span class='help' title='%s'></span></option>
+           </select>
+       </p>
+       <p>
+           <label for='summaryPageUrl'>
+               <h5>Summary page URL <span class='help'></span>
+               </h5><input type='text' name='summaryPageUrl'
+                           value=''/></label></p>
+       <p>
+           <label>
+               <h5>Default View <span class='help'></span></h5>
+           </label>
+           <select name='DefaultView'>
+               <option value='details'>Details <span class='help' title='%s'></span></option>
+               <option value='grid'>Grid <span class='help' title='%s'></span></option>
+           </select>
+       </p>
+       <p>
+           <label for='cookieName'>
+               <h5>Cookie Name(Default view) <span class='help'></span>
+               </h5><input type='text' name='cookieName'
+                           value=''/></label></p>
+       <p>
+           <label>
+               <h5>Page Size <span class='help'></span>
+               </h5></label><input type='number' name='pageSize' value=''>
+       </p>
+   </div>
+   <div id="activityform">
+       <p>
+           <label>
+               <h5>Process Id <span class='help'></span>
+               </h5></label><input type='number' name='idWfClass'
+                                   value=''></p>
+       <p>
+           <label>
+               <h5>Adjust buttons to content <span class='help'></span></h5>
+           </label><input type='checkbox' name='adjustButtonsToContent'
+                          value=''></p>
+       <p>
+           <label>
+               <h5>Case Id <span class='help'></span></h5></label><input
+               type='number' name='idCase' value=''></p>
+       <p>
+           <label>
+               <h5>Work Item Id <span class='help'></span></h5>
+           </label><input type='number' name='idWorkitem' value=''>
+       </p>
+   </div>
+   <div id="casesummary">
+       <p>
+           <label>
+               <h5>Process Id <span class='help'></span></h5>
+           </label>
+           <input type='number' name='idWfClass' value=''></p>
+       <p>
+           <label>
+               <h5>Render Behavior <span class='help'></span></h5>
+           </label>
+           <select name='renderBehavior'>
+               <option value='PopUp'>PopUp <span class='help' title='%s'></span></option>
+               <option value='OtherPage'>Other Page <span class='help' title='%s'></span></option>
+           </select>
+       </p>
+       <p>
+           <label for='renderPageUrl'>
+               <h5>Render Page URL <span class='help'></span></h5>
+               <input type='text' name='renderPageUrl' value=''/>
+           </label>
+       </p>
+       <p>
+           <label>
+               <h5>Case Id <span class='help'></span></h5></label><input type='number' name='idCase' value=''></p>
+       <p>
+           <label>
+               <h5>Work Item Id <span class='help'></span></h5>
+           </label><input type='number' name='idWorkitem' value=''>
+       </p>
+   </div>
+<div id="newcaselist">
+    <p>
+        <label>
+            <h5>Render Behavior <span class='help'></span>
+            </h5></label>
+        <select name='renderBehavior'>
+            <option value='PopUp'>PopUp <span class='help' title='%s'></span></option>
+            <option value='OtherPage'>Other Page <span class='help' title='%s'></span></option>
+        </select>
+    </p>
+    <p>
+        <label for='buttonName'>
+            <h5>Name of Button <span class='help'></span>
+            </h5><input type='text' name='buttonName'
+                        value=''/></label></p>
+    <p>
+        <label for='renderPageUrl'>
+            <h5>Render Page URL <span class='help'></span>
+            </h5><input type='text' name='renderPageUrl' value=''/></label></p>
+</div>
+<div id="newcasebutton">
+    <p>
+        <label>
+            <h5>Work Flow Id <span class='help'></span></h5></label><input
+            type='number' name='idWorkflow' value=''></p>
+    <p>
+        <label for='buttonName'>
+            <h5>Name of Button <span class='help'></span>
+            </h5><input type='text' name='buttonName' value=''/></label></p>
+    <p>
+        <label for='renderPageUrl'>
+            <h5>Render Page URL <span class='help'></span>
+            </h5><input type='text' name='renderPageUrl' value=''/></label></p>
+    <p>
+        <label>
+            <h5>Render Behavior <span class='help'></span>
+            </h5></label>
+        <select name='renderBehavior'>
+            <option value='PopUp'>PopUp <span class='help' title='%s'></span></option>
+            <option value='OtherPage'>Other Page <span class='help' title='%s'></span></option>
+        </select>
+    </p>
+</div>
+<div id="graphicquery">
+    <p>
+        <label>
+            <h5>Work Flow Id <span class='help'></span></h5></label><input
+            type='number' name='idWorkflow' value=''></p>
+    <p>
+        <label>
+            <h5>Case Id <span class='help'></span></h5></label><input
+            type='number' name='idCase' value=''></p>
+    <p>
+        <label for='caseNumber'>
+            <h5>Case Number <span class='help'></span>
+            </h5><input type='text' name='caseNumber' value=''/></label></p>
+</div>
+<div id="processes"></div>
+<div id="globalform">
+    <p>
+        <label>
+            <h5>Process Id <span class='help'></span>
+            </h5></label><input type='number' name='idWfClass' value=''></p>
+    <p>
+        <label>
+            <h5>Case Id <span class='help'></span></h5></label><input
+            type='number' name='idCase' value=''></p>
+    <p>
+        <label>
+            <h5>Work Item Id <span class='help'></span></h5>
+        </label><input type='number' name='idWorkitem' value=''>
+    </p>
+</div>
+<div id="newcase">
+    <p>
+        <label>
+            <h5>Process Id <span class='help'></span>
+            </h5></label><input type='number' name='idWfClass' value=''></p>
+</div>
+</span>
+</div>
+<iframe id="widgetIframe" width="100%" height="900px"></iframe>
+</body>
+</html>

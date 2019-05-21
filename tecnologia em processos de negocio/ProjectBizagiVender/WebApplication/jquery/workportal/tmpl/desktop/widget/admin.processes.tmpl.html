@@ -1,0 +1,207 @@
+<script id="ui-bizagi-workportal-widget-admin-processes-wrapper" type="text/x-jquery-tmpl" >
+
+    <div class="biz-wp-window" >
+
+        <!-- Processes Header-->
+        <div id="processes-header-wrapper" >
+        </div>
+
+        <div id="admin-processes-map-wrapper" {{loading}}>
+        </div>
+
+        <div id="admin-processes-edit-wrapper">
+            <div id="process-edit-wrapper"></div>
+            <div id="task-edit-wrapper"></div>
+        </div>
+
+    </div>
+
+</script>
+<script id="ui-bizagi-workportal-widget-admin-processes-combo-process" type="text/x-jquery-tmpl" >
+<div class="biz-wp-form ui-corner-all">
+         <div class="biz-wp-form-row clearfix">
+                  <div class="biz-wp-form-cell">
+                     <span class="ui-bizagi-label">%{workportal-widget-processes-field-title-process}:</span>
+                  </div>
+                 <div id="ui-process-name" class="biz-wp-form-cell">
+                 </div>
+
+        </div>
+  </div>
+</script>
+<script id="ui-bizagi-workportal-widget-admin-processes-process-edit" type="text/x-jquery-tmpl" >
+
+    <div id="admin-processes-process-edit" class="ui-bizagi-container clearfix ui-bizagi-container-group ui-drop-shadow ui-lifted cssClassContainer">
+
+        <h3 class="ui-bizagi-container-group-header ui-helper-reset ui-state-active ui-corner-top  clearfix">
+            <a href="#">%{workportal-widget-processes-group-title-process}</a>
+        </h3>
+
+        <div class="biz-wp-form ">
+            <div class="biz-wp-form-row ">
+                <div class="biz-wp-form-cell label">
+                    <span>%{workportal-widget-processes-field-label-name}</span>
+                </div>
+                <div class="biz-wp-form-cell">
+                    <label id="process-name"></label>
+                </div>
+            </div>
+            <div class="biz-wp-form-row ">
+                <div class="biz-wp-form-cell label">
+                    <span>%{workportal-widget-processes-field-label-description}</span>
+                </div>
+                <div class="biz-wp-form-cell description">
+                    <label id="process-description"></label>
+                </div>
+            </div>
+
+            <div id="process-view-fields-wrapper" class="biz-wp-form-row">
+                <div class="biz-wp-form-cell label">
+                    <span>%{workportal-widget-processes-field-label-sla}</span>
+                </div>
+                <div class="biz-wp-form-cell">
+                    <label id="process-duration"></label>
+                </div>
+
+                <!-- Buttons -->
+                <div class="biz-wp-form-cell button-column">
+                    <div class="ui-dialog-buttonset ">
+                        <button type="button" id="btn-process-edit" name="btn-process-edit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                            <span class="ui-button-text">%{workportal-general-button-label-edit}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="process-edit-fields-wrapper" class="biz-wp-form-row ">
+                <div class="biz-wp-form-cell label">
+                    <span>>%{workportal-widget-processes-field-label-sla}</span>
+                </div>
+                <div class="biz-wp-form-cell duration-field-container">
+                    <ul>
+                        <li>
+                        <span>
+                            <input id="txt-process-duration-edit-days" type="text" class="ui-text"> %{workportal-widget-processes-field-abreviation-day}
+                        </span>
+                        </li>
+
+                        <li>
+                            <span>
+                                <input id="txt-process-duration-edit-hours" type="text" class="ui-text">%{workportal-widget-processes-field-abreviation-hour}
+                            </span>
+                        </li>
+
+                        <li>
+                            <span>
+                                <input id="txt-process-duration-edit-minutes" type="text" class="ui-text">%{workportal-widget-processes-field-abreviation-minute}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Buttons -->
+                <div class="biz-wp-form-cell button-column">
+                    <div class="ui-dialog-buttonset">
+                        <button type="button" id="btn-process-apply" name="btn-process-apply" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                            <span class="ui-button-text">%{workportal-general-button-label-apply}</span>
+                        </button>
+
+                        <button type="button" id="btn-process-cancel" name="btn-process-cancel" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                            <span class="ui-button-text">%{workportal-general-button-label-cancel}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-admin-processes-task-edit" type="text/x-jquery-tmpl" >
+
+    <div id="admin-processes-task-edit"class="ui-bizagi-container clearfix ui-bizagi-container-group ui-drop-shadow ui-lifted cssClassContainer">
+
+        <h3 class="ui-bizagi-container-group-header ui-helper-reset ui-state-active ui-corner-top  clearfix">
+            <a href="#">%{workportal-widget-processes-group-title-task}</a>
+        </h3>
+        <div class="biz-wp-form ">
+            <div class="biz-wp-form-row ">
+                <div class="biz-wp-form-cell label">
+                    <span>%{workportal-widget-processes-field-label-name}</span>
+                </div>
+                <div class="biz-wp-form-cell">
+                    <label id="task-name"></label>
+                </div>
+            </div>
+            <div class="biz-wp-form-row ">
+                <div class="biz-wp-form-cell label">
+                    <span>%{workportal-widget-processes-field-label-description}</span>
+                </div>
+                <div class="biz-wp-form-cell description">
+                    <label id="task-description"></label>
+                </div>
+            </div>
+
+            <div id="task-view-fields-wrapper" class="biz-wp-form-row">
+                <div class="biz-wp-form-cell label">
+                    <span>>%{workportal-widget-processes-field-label-sla}</span>
+                </div>
+                <div class="biz-wp-form-cell">
+                    <label id="task-duration"></label>
+                </div>
+
+                <!-- Buttons -->
+                <div class="biz-wp-form-cell button-column">
+                    <div class="ui-dialog-buttonset ">
+                        <button type="button" id="btn-task-edit" name="btn-task-edit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                            <span class="ui-button-text">%{workportal-general-button-label-edit}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="task-edit-fields-wrapper" class="biz-wp-form-row ">
+                <div class="biz-wp-form-cell label">
+                    <span>%{workportal-widget-processes-field-label-sla}</span>
+                </div>
+
+                <div class="biz-wp-form-cell duration-field-container">
+                    <ul>
+                        <li>
+                        <span>
+                            <input id="txt-task-duration-edit-days" type="text" class="ui-text"> %{workportal-widget-processes-field-abreviation-day}
+                        </span>
+                        </li>
+
+                        <li>
+                            <span>
+                                <input id="txt-task-duration-edit-hours" type="text" class="ui-text">%{workportal-widget-processes-field-abreviation-hour}
+                            </span>
+                        </li>
+
+                        <li>
+                            <span>
+                                <input id="txt-task-duration-edit-minutes" type="text" class="ui-text">%{workportal-widget-processes-field-abreviation-minute}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Buttons -->
+                <div class="biz-wp-form-cell button-column">
+                    <div class="ui-dialog-buttonset">
+                        <button type="button" id="btn-task-apply" name="btn-task-apply" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                            <span class="ui-button-text">%{workportal-general-button-label-apply}</span>
+                        </button>
+
+                        <button type="button" id="btn-task-cancel" name="btn-process-cancel" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                            <span class="ui-button-text">%{workportal-general-button-label-cancel}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>

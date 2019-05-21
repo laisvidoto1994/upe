@@ -1,0 +1,12 @@
+﻿
+.wdg-topmenu-panel {
+    padding-left:3.5em;
+}
+
+.wdg-topmenu-add {
+    display:inline-block;
+}
+
+#addPlanForm > position-message-validate > span {
+    color: #374C58;
+}

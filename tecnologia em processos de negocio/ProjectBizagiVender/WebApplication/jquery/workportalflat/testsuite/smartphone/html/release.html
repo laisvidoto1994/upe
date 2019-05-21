@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        ///reload whitout tag
+        if (location.href.indexOf("#") != -1) {
+            document.location = "release.html";
+        }
+    </script>
+
+</head>
+<body>
+    <script type='text/javascript' src='../../../../../jquery/steal.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/bizagi.preloader.js'></script>
+    <script type='text/javascript' src='../../../../../jquery/bizagi.loader.js'></script>
+    <script type="text/javascript" language="javascript">
+
+        bizagiConfig = {};
+        bizagiConfig.proxyPrefix = "";
+
+        var BIZAGI_USE_ABSOLUTE_PATH = false;
+        var BIZAGI_PATH_TO_BASE = "../../../../../";
+        var BIZAGI_LANGUAGE = 'en';
+        var BIZAGI_ENVIRONMENT = "release";
+        var BIZAGI_DEFAULT_DEVICE = "smartphone_ios";
+        //var BIZAGI_DEFAULT_DEVICE = "smartphone_ios";
+        var BIZAGI_ENABLE_LOG = false;
+        var BIZAGI_ENABLE_MOCKS = false;
+        var BIZAGI_LOCAL_RESOURCES = false;
+
+        var BIZAGI_SETTINGS = {
+            "UploadMaxFileSize": "1048576"
+        };
+
+        var BIZAGI_DEFAULT_CURRENCY_INFO = {
+            "symbol": "$",
+            "decimalSeparator": ",",
+            "groupSeparator": ".",
+            "decimalDigits": "2"
+        }; //temporal, hay que ajustarlo
+
+        var loader = bizagi.loader;
+
+        loader.preInit(["bizagiDefault", BIZAGI_ENVIRONMENT, undefined, "./../../../../../"], [BIZAGI_LANGUAGE, false, "",
+        ["$", ",", ".", "2"],
+        ["dd/MM/yyyy", "H:mm", "dddd, dd' de 'MMMM' de 'yyyy"],
+            ["1048576"], "", "ASP.NET_SessionId", false
+        ]);
+
+        loader.init({
+            url: "/jquery/bizagi.module.definition.json.txt",
+            callback: function () {
+                loader.start("workportalflat").then(function () {
+                    loader.loadFile("jquery/workportalflat/testsuite/smartphone/data/mock.bizagi.json.js").then(function () {
+                        var workportal = new bizagi.workportal.facade({
+                            proxyPrefix: bizagiConfig.proxyPrefix || ""
+                        });
+                        workportal.execute().done(function (d) {
+                            console.log("Finalizo ejecución de workportal");
+                            bizagi.kendoMobileApplication.bizagiNavigate("#homePortal");
+                            bizagi.util.smartphone.stopLoading();
+                            $(document).triggerHandler('webpartsLoaded');
+                        });
+                    });
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>

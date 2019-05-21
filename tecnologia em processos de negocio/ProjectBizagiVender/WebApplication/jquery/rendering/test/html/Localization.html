@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="controls">
+        <label for ="cmbLanguages">Lenguages:</label>
+        <select id="cmbLanguages" value="default">
+            <option value ="default">Default (en-US)</option>
+            <option value ="es-co">Español - Colombia</option>
+        </select>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div class="workarea">
+    </div>
+    <script type='text/javascript' src='../../../../jquery/steal.js'></script>
+    <script type='text/javascript' src='../../../../jquery/bizagi.loader.js'></script>
+    <script type="text/javascript" language="javascript">
+        // Redefine path to base
+        var BIZAGI_PATH_TO_BASE = "../../../../";
+        var BIZAGI_LANGUAGE = "";
+        
+    	// Gets the loader instance, and load the module
+        var loader = bizagi.loader;
+    	loader.init(function() {
+    		loader.loadFile("jquery/rendering/test/js/localization.test.js");
+    	});
+    </script>
+</body>
+</html>

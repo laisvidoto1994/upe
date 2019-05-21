@@ -1,0 +1,81 @@
+<script id="bz-rendering-polymorphicLauncher" type="text/x-kendo-template">
+    <div class="bz-polymorphic-launcher-container">
+        <div class="bz-polymorphic-launcher-constructors-container"></div>
+        <div class="actions-to-execute-title">
+            <label>%{render-action-launcher-actions-to-execute}</label>
+        </div>
+        <div class="bz-polymorphic-launcher-constructors-to-execute-container"></div>
+    </div>
+</script>
+
+<script id="bz-rendering-polymorphicLauncher-vertical-tree" type="text/x-kendo-template">
+    # if (data.allowSearch){#
+        <div class="ui-bizagi-render-polymorphicLauncher-filter">
+            <div class="search-container">
+                <input id="ui-bizagi-render-action-launcher-filter-input" name="ui-bizagi-render-action-launcher-filter-input" type="text" placeholder="Search">
+                <label for="ui-bizagi-render-action-launcher-filter-input" class="bz-wp-menu-search-icon bz-mo-icon bz-search"></label>
+            </div>
+        </div>
+    #}#
+    <div class="ui-bizagi-polymorphicLauncher-treeactionslist">
+        #= data.treeActionsList #
+    </div>
+</script>
+
+
+<script id="bz-rendering-polymorphicLauncher-vertical-tree-item" type="text/x-kendo-template">
+    <li title="#= data.displayName #"
+        data-guidentity="#= data.guidEntity #"
+        data-guidobject="#= data.guidObject #"
+        data-display-name="#= data.displayName #"
+        data-action-type="#= data.type #"
+        data-guidconstructor="#= data.guidConstructor #"
+        data-xpathcontext="#= data.xpathContext #"
+        data-title="#= data.displayName #"
+        data-parents="#= data.parents #"
+        data-hasconstructor="#= data.hasConstructor #">
+        <label>#= data.displayName #</label>
+        # if (data.hasConstructor){#
+            <span>
+                <div class="action-button ui-bizagi-form-button"><span class="bz-mo-icon bz-plus"></span></div>
+            </span>
+        #}#
+    </li>
+</script>
+
+<script id="bz-rendering-polymorphicLauncher-actions-to-execute" type="text/x-kendo-template">
+    <div class="action-to-execute-buttons">
+        # if (typeof data.actions !== 'undefined'){#
+            # for(var i = 0, len = data.actions.length; i < len ; i++){#
+                <div class="action-to-execute-control"
+                     data-index="#= i #"
+                     data-guidentity="#= data.actions[i].guidEntity #"
+                     data-xpathcontext="#= data.actions[i].xpathContext #"
+                     data-guidprocess=
+                         "# if(data.actions[i].guidAction){#
+                            #= data.actions[i].guidAction #
+                         #}
+                         else{#
+                            #= data.actions[i].guidObject #
+                         #}#"
+                     data-title="#= data.actions[i].displayName #"
+                     data-guidconstructor="#= data.actions[i].guidConstructor #"
+                     data-actiontype="#= data.actions[i].actionType #"
+                     data-params="#= data.actions[i].params #"
+                     data-idstartscope="#= data.actions[i].params.idStartScope #"
+                     data-displayName="#= data.actions[i].displayName #">
+                        <label>#= data.actions[i].displayName #</label>
+                        <div class="delete-action km-button">
+                            <span class="bz-mo-icon bz-cancel"></span>
+                        </div>
+                </div>
+            #}#
+        #}#
+    </div>
+</script>
+
+<script id="bz-rendering-polymorphicLauncher-confirm" type="text/x-kendo-template" >
+    <p>
+        ${confirmationMessage}
+    </p>
+</script>

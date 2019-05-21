@@ -1,0 +1,16 @@
+﻿<script id="searchresulteditor-container" type="text/x-jquery-tmpl">
+        <div id="bz-fm-searchresult-editor" class="ui-bizagi-container-connectedSortable">
+            {{if resultValidations }}
+                <span class="ui-icon ui-icon-help ui-bizagi-render-icon-msg-validation bz-studio bz-warning-red_16x16_standard" title="${resultValidations}" style="display:inline-block"></span>
+            {{/if}}
+
+            {{each columns}}
+                <div class="bz-searchresult-column ui-bizagi-draggable-item ui-bizagi-itemfordrag" data-id="${guid}">
+                    <label>${displayName}</label>
+                    {{each values}}
+                        <div class="bz-searchresult-value">${value}</div> 
+                    {{/each}}
+                </div>
+            {{/each}} 
+        </div>  
+</script>

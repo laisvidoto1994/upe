@@ -1,0 +1,21 @@
+{
+  "name": "webparts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "compact.js",
+  "scripts": {
+    "build": "node build.js",
+    "make": "node make.js",
+    "install": "node build.js && node make.js",
+    "test": "node build.js && node make.js ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "clean-css": "^3.4.23",
+    "entities": "^1.1.1",
+    "terminal-kit": "^0.26.1",
+    "uglify-js": "^2.7.5"
+  }
+}

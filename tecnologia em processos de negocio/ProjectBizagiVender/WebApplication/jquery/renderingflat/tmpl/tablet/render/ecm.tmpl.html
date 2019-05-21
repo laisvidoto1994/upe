@@ -1,0 +1,160 @@
+<script id="bz-rn-ecm-view-default-item" type="text/x-kendo-template">
+    <div class="bz-rn-ecm-container #if(!data.showMetadata){# noMetadata #}#">
+        <div class="bz-rn-ecm-header">
+            <span> #= data.displayName #</span>
+            # if (data.editable){ #
+                <i data-action="add" title="%{render-form-dialog-box-add}" class="bz-rn-ecm-upload ui-state-active bz-mo-icon bz-plus"></i>
+                <form class="bz-rn-form-upload-files-web"><input type="file" class="bz-rn-upload-files-web" name="file[]"></form>
+            #}#
+        </div>
+        # $.each (data.value, function (i, value) { #
+            <div class="#= data.id #-#= value[0] # bz-rn-ecm-metadata">
+                #= "{{" + data.id + "-" + value[0] + "}}" #
+            </div>
+        #}); #
+    </div>
+</script>
+
+<script id="biz-render-ecm-view-default-yesno" type="text/x-kendo-template">
+    <div class="ecm-metadata-field-edit  biz-render-ecm-upload-boolean">
+        <label for="biz-render-ecm-upload-boolean-radio1">
+            <input type="radio" id="biz-render-ecm-upload-boolean-radio1" name="biz-render-ecm-upload-boolean-radio" value="True" # if (data.checked == '1'){ # checked="checked" #}# />
+            %{render-boolean-yes}
+        </label>
+        <label for="biz-render-ecm-upload-boolean-radio2">
+            <input type="radio" id="biz-render-ecm-upload-boolean-radio2" name="biz-render-ecm-upload-boolean-radio" value="False" # if (data.checked == '0'){ # checked="checked" #}# />
+            %{render-boolean-no}
+        </label>
+    </div>
+</script>
+
+<script id="bz-rn-ecm-metadata" type="text/x-kendo-template">
+    <div class="bz-rn-ecm-file-container" title="#= data.filename #" data-filename="#= data.filename #" data-idfileupload="#= data.idFileUploads #">
+        <div class="bz-rn-ecm-extension">
+            <span class="bz-cm-icon bz-ecm-checkout-#= data.ecm_allowCheckOut #"></span>
+        </div>
+        <div class="bz-rn-ecm-url">
+            <a href="" data-url="#= data.url #" onclick="bizagi.util.media.downloadFile('#= data.url #', '#= data.filename #'); return false;">#= data.filename #</a>
+        </div>
+        # if (data.ecm_allowEdit){ #
+            <div class="bz-rn-ecm-activate-menu">
+                <span class="bz-cm-icon bz-rn-ecm-btn-activate-menu bz-mo-icon bz-render-slider big"></span>
+            </div>
+        #}#
+    </div>
+    <div class="bz-rn-ecm-metadata-container">
+        # $.each (data.metadata, function (i, item) { #
+            <div class="bz-rn-ecm-metadata-item">
+                <div class="bz-rn-ecm-title-item # if (item.required == 'true'){ # bz-rn-ecm-required #}#">
+                    <label class="# if (item.required == 'true') {# bz-rn-ecm-required-label #}#">#= item.description #</label>
+                </div>
+                <div class="bz-rn-ecm-metadata-value" data-value="#= item.value #" data-required="#= item.required #" data-idmetadata="#= item.metadataId #"
+                     data-description="#= item.description #" data-allowupdatemetadata="#= data.ecm_allowUpdateMetadata #" data-metadatatype="#= item.metadataType #"
+                     data-readonly="#= item.readOnly #" data-edit-mode="false" data-ecmstatus="#= data.ecm_ecmStatus #">
+
+                    # if (item.readOnly == 'true') {#
+                        <span class="ecm-metadata-text">
+                            # if (item.metadataType == 'BOOL') {#
+                                # if (item.value == true) {#
+                                    %{render-boolean-yes}
+                                #} else {#
+                                    %{render-boolean-no}
+                                #}#
+                            #} else {#
+                                #= item.value #
+                             #}#
+                        </span>
+                    #}#
+
+                    # if (item.metadataType == 'STRING') {#
+                        <input type="text" # if (item.required) {# required #}# value="#= item.value #" />
+                        <span class="bz-rn-icon bz-mo-icon bz-three-points-full"></span>
+                    #}#
+                   
+                    # if (item.metadataType == 'BOOL') {#
+                        <input type="radio" class="bz-cm-icon bz-rn-ecm-boolean bz-mo-icon # if (item.value == 'true') { # bz-check #}#" id="radio#= item.metadataId #yes" name="ecm-radio#= item.metadataId #name" value="true" #if(item.value == 'true' ){# checked #}# />%{render-boolean-yes}
+                        <input type="radio" class="bz-cm-icon bz-rn-ecm-boolean bz-mo-icon # if (item.value == 'false') { # bz-check #}#" id="radio#= item.metadataId #no" name="ecm-radio#= item.metadataId #name" value="false" #if(item.value == 'false' ){# checked #}# />%{render-boolean-no}
+                    #}#
+
+	                #
+	                if (item.metadataType == 'DATETIME') {
+	                #
+						<input type="date" class="bz-ecm-metadata-date" # if (item.required){# required #}# value="#= item.value #" />
+                        <span class="bz-rn-icon bz-mo-icon bz-calendar-input big"></span>
+                    #}#
+
+                     # if (item.metadataType == 'DECIMAL') {#
+                        <input type="number" # if (item.required) {# required #}# value="#= item.value #" pattern="\d*" />
+                        <span class="bz-rn-icon bz-mo-icon bz-number"></span>
+                    #}#
+
+                </div>
+            </div>
+        #}); #
+        <div class="bz-rn-ecm-metadata-item bz-rn-ecm-buttons-container">
+            <button class="ecm-btn-cancel ui-bizagi-render-button new wide secondary"><i class="bz-mo-icon bz-cancel"></i></button>
+            <button class="ecm-btn-save ui-bizagi-render-button new wide primary"><i class="bz-mo-icon bz-disk"></i></button>
+        </div>
+    </div>
+    <div class="bz-rn-ecm-menu-container">
+        <ul class="bz-common-webkit-reset-ul">
+            <li class="bz-ecm-lock bz-ecm-actions # if (data.ecm_allowCheckOut) {# bz-ecm-item-menu-enable #}#">
+                <span class="bz-cm-icon bz-rn-ecm-btn-lock bz-mo-icon bz-lock-icon"></span>
+            </li>
+            <li class="bz-ecm-unlock bz-ecm-actions # if (data.ecm_allowCancelCheckOut) {# bz-ecm-item-menu-enable #}#">
+                <span class="bz-cm-icon bz-rn-ecm-btn-unlock bz-mo-icon bz-unlock-icon"></span>
+            </li>
+            <li class="bz-ecm-delete bz-ecm-actions # if (data.ecm_allowDelete) {# bz-ecm-item-menu-enable #}#">
+                <span class="bz-cm-icon bz-rn-ecm-btn-delete bz-mo-icon bz-trash-full"></span>
+            </li>
+            <li class="bz-ecm-edit bz-ecm-actions # if (data.ecm_allowUpdateMetadata) {# bz-ecm-item-menu-enable #}#">
+                <span class="bz-cm-icon bz-rn-ecm-btn-edit bz-mo-icon bz-edit"></span>
+            </li>
+        </ul>
+    </div>
+</script>
+
+<script id="ui-bizagi-render-ecm-modalview" type="text/x-kendo-template">
+    <div data-role="modalview" id="modalview-ecm-options" style="width: 60%; height: 300px">
+        <div data-role="header">
+            <div id="filter-header" data-role="navbar">
+                <div class="bz-wp-modalview-header-top-item">
+                    <span class="bz-wp-modalview-title">
+                        #if(typeof (data.displayName) !== "undefined" && data.displayName != ""){#
+                            #= data.displayName #
+                        #} else {#
+                            Upload
+                        #}#
+                    </span>
+                    <span class="bz-wp-modalview-close bz-mo-icon bz-cancel"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bz-wp-modalview-results-wrapper">
+            <ul class="bz-rn-upload-options">
+                <li data-role="image">
+                    <button type="button" class="bz-cm-icon bz-upload-button cimage bz-mo-icon bz-image"></button>
+                    <label class="bz-image-control-label">%{workportal-actionsheet-upload-choose-photo}</label>
+                </li>
+                <li data-role="cimage">
+                    <button type="button" class="bz-cm-icon bz-upload-button image bz-mo-icon bz-attach-photo"></button>
+                    <label class="bz-image-control-label">%{workportal-actionsheet-upload-take-photo}</label>
+                </li>
+                <li data-role="caudio">
+                    <button type="button" class="bz-cm-icon bz-upload-button caudio bz-mo-icon bz-attach-audio"></button>
+                    <label class="bz-image-control-label">%{workportal-actionsheet-upload-record-audio}</label>
+                </li>
+                <li data-role="cvideo">
+                    <button type="button" class="bz-cm-icon bz-upload-button cvideo bz-mo-icon bz-attach-video "></button>
+                    <label class="bz-image-control-label">%{workportal-actionsheet-upload-take-video}</label>
+                </li>
+                <li data-role="file" class="bz-rn-upload-hidden-item">
+                    <button type="button" class="bz-cm-icon bz-upload-button file bz-mo-icon bz-attach-file"></button>
+                    <label class="bz-image-control-label">%{render-upload-dialog-title}</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</script>
+

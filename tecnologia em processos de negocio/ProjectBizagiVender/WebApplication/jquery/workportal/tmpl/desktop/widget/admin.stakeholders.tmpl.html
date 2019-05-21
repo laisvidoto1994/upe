@@ -1,0 +1,37 @@
+<!-- WRAPPERS -->
+<script id="ui-bizagi-workportal-widget-admin-stakeholder-wrapper" type="text/x-jquery-tmpl">
+    <div id="admin-stakeholder-main-wrapper"></div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-stakeholder-panel-wrapper" type="text/x-jquery-tmpl">
+    <div id="admin-stakeholder-wrapper">
+        <div id="admin-stakeholder-list-wrapper" class="admin-dialog-leftframe"></div>
+        <div id="admin-stakeholder-instances-wrapper" {{loading}} class="admin-dialog-rightframe"></div>
+    </div>
+</script>
+
+<!-- CONTENT -->
+<script id="ui-bizagi-workportal-widget-admin-stakeholder-list" type="text/x-jquery-tmpl">
+    <input type="hidden" autofocus="autofocus" /><!-- Problem with focus input in filters -->
+    <div class="ui-bizagi-control ui-bizagi-render-align-left  ac-is-visible">
+        <div class="ui-bizagi-control-wrapper">
+            <div class="ui-bizagi-render-control">
+                <input id="searchStakeholder" class="ui-bizagi-render-search ui-autocomplete-input" type="text" value="">
+                <i class="bz-icon bz-icon-16 bz-icon-search-outline"></i>
+            </div>
+        </div>
+    </div>
+
+    <select id="stakeholdersList" class="biz-wp-input-combo" size="25" style="-webkit-appearance: none;">
+        {{each stakeholdersList}}
+            <option data-allowAdd="${$value.allowAdd}" data-allowEdit="${$value.allowEdit}" data-idDisplayForm="${$value.idDisplayForm}" value="${$value.guid}">${$value.displayName}</option>
+        {{/each}}
+    </select>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-stakeholder-error" type="text/x-jquery-tmpl">
+    <div class="admin-stakeholder-message">
+        <i class="bz-wp-empty__img"></i>
+        <p class="bz-wp-empty__info bz-wp-empty__info--first">${errorMessage}</p>
+    </div>
+</script>

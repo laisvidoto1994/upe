@@ -1,0 +1,73 @@
+﻿.template-usersrelated-section ul.usersrelated-container {
+    list-style: none;
+    width: auto;
+    float: right;
+    margin: 5px 0;
+}
+
+.template-usersrelated-section ul li {
+    display: inline-block;
+    vertical-align: bottom;
+    width: auto;
+    margin: 0px 5px;
+
+}
+
+.template-usersrelated-section .usersrelated {
+    overflow-y: auto;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #374C58;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.template-usersrelated-section .usersrelated ul {
+    padding: 5px;
+}
+
+.template-usersrelated-section ul li img {
+    display: none;
+}
+
+.template-usersrelated-section .usersrelated ul li img {
+    display: inline-block;
+    float: left;
+    margin: 3px 10px;
+}
+
+.template-usersrelated-section .usersrelated {
+    width: 180px;
+    max-width: 210px;
+    color: #415968;
+}
+
+.template-usersrelated-section .usersrelated .name {
+    font-weight: 700;
+}
+
+.template-usersrelated-section .usersrelated .rol {
+    font-size: 11px;
+}
+
+.template-usersrelated-section ul.usersrelated-container li {
+    overflow: hidden;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.rol-assignee::before {
+    content: ","
+}
+
+.rol-assignee:first-of-type::before {
+    content: ""
+}

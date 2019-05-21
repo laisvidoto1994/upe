@@ -1,0 +1,91 @@
+﻿/*
+    Document   : bizagi.workportal.mysearchfilter
+    Created on : May 20, 2015, 8:24:00 AM
+    Author     : Andrés Felipe Arenas Vargas
+    Description: Styles for my search filter
+*/
+
+.bz-wp-my-search ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wgd-mysearchfilter-container {
+    box-shadow: inset 0 -2px 8px rgba(0, 0, 0, .05);
+    min-height: 34px;
+    padding: .6em 0;
+    position: relative;
+}
+
+.wgd-mysearchfilter-container .mysearchfilter-menu > li {
+    width: 100%;
+}
+
+.wgd-mysearchfilter-container .mysearchfilter-menu .wdg-my-search-wrapper-filter > li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.wgd-mysearchfilter-container .mysearchfilter-menu .bz-icon-filter {
+    margin-right: 1.0em;
+}
+
+.wgd-mysearchfilter-container .mysearchfilter-menu .mysearchfilter-list{
+    display: inline-block;
+    width: 100%;
+}
+
+.wgd-mysearchfilter-container .mysearchfilter-menu .mysearchfilter-list .wdg-my-search-wrapper-filter {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 .8em 0 0;
+}
+
+.wgd-mysearchfilter-container .mysearchfilter-menu .mysearchfilter-list li.filter-applied{
+    border: 1px solid #006c5f;
+    border-radius: 3px;
+}
+
+.wgd-mysearchfilter-container .mysearchfilter-menu .mysearchfilter-list li.default-filter{
+    background-color: #374C58;
+    color: white;
+}
+
+.wgd-mysearchfilter-container .wgd-my-search-filter {
+    padding-right: 6px;
+}
+
+.wgd-mysearchfilter-container .wgd-my-search-filter span {
+    display: inline-block;
+    margin: 0 5px;
+    max-width: 160px;
+    overflow: hidden;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wgd-mysearchfilter-container .wgd-my-search-filter i {
+    vertical-align: middle;
+}
+
+.wgd-mysearchfilter-container .filters-loading {
+    background-color: #dfdfdf;
+    box-shadow: inset 0 -2px 8px rgba(0, 0, 0, .05);
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    padding: 15px 0 0 50px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.wgd-mysearchfilter-container .filters-loading .ui-bizagi-loading-icon{
+    height: 100%;
+    top: calc(~"50% - 17px");/*Less minified. Work only release*/
+    position: relative;
+}

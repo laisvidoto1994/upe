@@ -1,0 +1,21 @@
+﻿<span class="ui-bizagi-render-checkList {{if vertical}}ui-bizagi-render-checkList-vertical{{/if}}">
+  {{each(i, item) items}}
+  <span class="ui-bizagi-render-checkList-item {{if checked }}checked {{else resolved }}checked{{/if}} {{if selected }}selected{{/if}}"  data-item-guid="${item.guid}" >
+    <label class="ui-bizagi-render-checkList-label" for="checkList-${unique}-${xpath}-${item.guid}" >
+      <input id="checkList-${unique}-${xpath}-${item.guid}"  data-item-guid = "${item.guid}"
+             type="checkbox" {{if checked }}checked="checked"{{else resolved }}checked="checked" {{/if}} {{if newItem}}disabled="disabled" {{/if}}/>
+    </label>
+     {{if selected}}
+             <input class="ui-bizagi-render-checkList-input-name" type="text" value="{{if name}}${name}{{/if}}" placeholder="%{workportal-project-plan-activity-anything-else}">
+              <div class="item-button delete">
+                  <i class="bz-icon bz-icon-16 bz-icon-trash-outline"></i>
+              </div>
+      {{else}}
+             <label class="item-name"> {{if name}} ${name} {{else}} &nbsp; {{/if}}</label>
+             <div class="item-button delete">
+                  <i class="bz-icon bz-icon-16 bz-icon-trash-outline"></i>
+             </div>
+      {{/if}}
+  </span>
+  {{/each}}
+</span>

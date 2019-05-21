@@ -1,0 +1,66 @@
+﻿@import "base/variables";
+@import "base/mixins";
+
+body {
+    font-family: Helvetica,sans-serif;
+}
+
+#ui-bizagi-wp-workarea {
+    background-color: @background-page !important;
+}
+
+.biz-theme-home-container * {
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.biz-theme-home-container {
+    color: @title-color;
+    .height-100;
+    width: 1090px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.biz-theme-home-left, .biz-theme-home-right {
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    .height-100;
+}
+
+.biz-theme-home-left {
+    padding-top: 20px;
+    background-color: @blue;
+    width: 100px;
+}
+
+.biz-theme-home-right {
+    width: ~"calc(100% - 100px)";
+    overflow-y: auto;
+    background:@white;
+}
+
+.biz-theme-dashboard-content {
+    padding-left: 15px;
+}
+
+.biz-theme-dashboard-content-left {
+    width: 700px;
+}
+
+.biz-theme-dashboard-content-right {
+    width: 258px;
+    vertical-align: top;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.biz-theme-menu-item:hover, .biz-theme-menu-item-selected {
+    background-color: #02214C;
+    color: #3CB3E7;
+}
+
+.biz-theme-menu-item-selected .biz-theme-menu-item-icon, .biz-theme-menu-item-selected .biz-theme-menu-item-title {
+    color: #3CB3E7;
+}

@@ -1,0 +1,159 @@
+/*
+    Document   : bizagi.workportal.project.caseState
+    Created on : Mar 05, 2015
+    Author     : Elkin Fernando Siabato Cruz
+*/
+/*General*/
+#project-caseState-popup-release-wrapper
+{
+    padding-left: 30px;
+    padding: 0px 32px 0px 30px;
+}
+
+/*ICONS*/
+#ui-bizagi-wp-project-case-state-wrapper .sprite-favorite
+{
+    background: url('data:image/png;base64,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') no-repeat top left;
+    display: block;
+    float: left;
+    height: 19px;
+    width: 20px;
+}
+
+.ui-bizagi-wp-project-case-state-number > i {
+    margin-right: .2em;
+}
+
+.bz-case-navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .7em 1.5em;
+    width: 100%;
+}
+
+.bz-case-navigation .case-summary-next,
+.bz-case-navigation .case-summary-back {
+    border-radius: 5px;
+    font-size:11px;
+    padding: .4em .5em;
+}
+
+.bz-case-navigation .case-summary-next i,
+.bz-case-navigation .case-summary-back i {
+    font-size: 7px;
+    margin-top: -2px;
+}
+
+.bz-case-navigation .case-summary-next {
+    float: right;
+    padding-left: 1em;
+}
+.bz-case-navigation .case-summary-back {
+    float: left;
+    padding-right: 1em;
+}
+
+.bz-state-number--active-case {
+    margin-top: 3em;
+}
+
+#ui-bizagi-wp-project-case-state-wrapper .case-summary-favorite,
+#ui-bizagi-wp-project-case-state-wrapper .case-summary-favorite:hover
+{
+    text-decoration: none;
+}
+
+#ui-bizagi-wp-project-case-state-wrapper .case-summary-favorite.on
+{
+    background-position: 0 0;
+}
+
+.ui-bizagi-wp-project-case-state-number
+{
+    margin-top: 0;
+    margin-bottom: .6rem;
+    display: inline-block;
+}
+
+.ui-bizagi-wp-project-case-state-number i {
+    cursor: pointer;
+}
+
+.ui-bizagi-wp-project-case-state-number span
+{
+    vertical-align: middle;
+}
+
+.ui-bizagi-wp-project-case-state-number .wrapper-menu-rubik
+{
+    float: right;
+}
+
+/*End Case Number */
+/*Begin Remaining Date */
+.ui-bizagi-wp-project-case-remaining-date
+{
+    margin-bottom: 1.6em;
+}
+
+.ui-bizagi-wp-project-case-remaining-date .interval-date
+{
+    color: #5E7D8D;
+    font-size: 1.2em;
+    margin-bottom: 0.4em;
+}
+
+.ui-bizagi-wp-project-case-remaining-date .remaining-days
+{
+    overflow: hidden;
+    width: 100%;
+}
+
+.ui-bizagi-wp-project-case-remaining-date .remaining-days .days
+{
+    color: #374C58;
+    display: inline;
+    float: left;
+    font-size: 2.9em;
+    font-weight: bold;
+}
+
+.ui-bizagi-wp-project-case-remaining-date .remaining-days .time-remaining
+{
+    padding-left: 0 !important;
+}
+
+
+.ui-bizagi-wp-project-case-remaining-date .remaining-days .descripcion-remaining
+{
+    color: #5E7D8D;
+    font-size: 1em;
+}
+
+/*End Remaining Date */
+
+#bt-case-action-reassing > span,
+#bt-case-action-release > span
+{
+    color: #515967;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.project-caseState-popup-release-info
+{
+    height: 50px;
+}
+
+.project-caseState-popup-release-info span
+{
+    font-size: 13px;
+}
+
+/*Popup Release*/
+
+#project-caseState-popup-release-wrapper .ui-bizagi-wp-project-popupform-actions
+{
+    padding: 30px 0 5px 0;
+}

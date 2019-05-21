@@ -1,0 +1,141 @@
+
+<div class="ui-bizagi-workportal-render">
+     <label style="color: black; font-size: 20px;">ESTE ES EL WIDGET DE RENDER</label>
+</div>
+
+<script id="ui-bizagi-workportal-widget-render" type="text/x-jquery-tmpl">
+    <div id="contentFramework" class="hide-case-summary ui-bizagi-workportal-render-framework">
+        <div class="render-case-summary ui-bizagi-workportal-inbox-column" {{adjustable}}>
+        	<div class="scroll-content" {{loading}} {{adjustable}}>
+        		{{component summary}}
+        	</div>
+        	<div class="column-footbar">
+        		
+        	</div>
+        </div>
+        <div class="render-form ui-bizagi-workportal-inbox-column" {{adjustable}}>
+    		<div class="scroll-content" {{loading}} {{adjustable}}>
+        		{{component render}}
+    		</div>
+    		<div class="column-footbar">
+        		<a id="render-column-slider" class="bz-cm-icon" href="#"></a>
+        	</div>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-render-case-description" type="text/x-jquery-tmpl" >
+	<h3>${caseNumber}</h3>
+    {{each currentState}}
+    {{if idWorkItem  == params["idWorkitem"] }}
+    <div class="activity-box">
+    	{{if colorState == "Green"}}
+			<span class="activity-indicator indicator-green" />
+		{{/if}}
+		{{if colorState == "Yellow"}}
+			<span class="activity-indicator indicator-yellow" />
+		{{/if}}
+		{{if colorState == "Red"}}
+			<span class="activity-indicator indicator-red" />
+		{{/if}}
+		<h4 class="activity-name">${state}</h4>
+		<dl>
+			<dt>%{workportal-widget-inboxcommon-creation-date}</dt>
+			<dd>${creationDate}</dd>
+			<dt>%{workportal-widget-inboxcommon-state-expires-on}</dt>
+			<dd>${estimatedSolutionDate}</dd>
+			{{if tskDescription}}
+	            <dt>%{workportal-widget-inboxcommon-description}</dt>
+	            <dd>${tskDescription}</dd>
+            {{/if}}
+		</dl>
+    </div>        
+    {{/if}}
+    {{/each}}
+
+        <div id="ui-bizagi-details-tabs">
+            <ul>
+                <li><a href="#details">%{workportal-widget-render-details}</a></li>
+                {{if showSubProcess}}
+                <li><a href="#subprocess">%{workportal-widget-render-subprocess}</a></li>
+                {{/if}}
+                {{if showAssignees}}
+                <li><a href="#assignees">%{workportal-widget-render-assignees}</a></li>
+                {{/if}}
+                {{if showEvents}}
+                <li><a href="#events">%{workportal-widget-render-events}</a></li>
+                {{/if}}
+                {{if showActivities}} 
+                <li><a href="#activities">%{workportal-widget-render-activities}</a></li>
+                {{/if}}
+            </ul>
+            <div id="details">
+                <p>${caseDescription}</p>
+                <dl class="box-description">
+                    <dt>%{workportal-widget-render-creation-date}</dt>
+                    <dd>${creationDate}</dd>
+                    <!--<dt>%{workportal-widget-render-state-expires-on}</dt>
+                    <dd>${estimatedSolutionDate}</dd>-->
+                    <dt>%{workportal-widget-render-created-by}</dt>
+                    <dd>${createdByName}</dd>
+                    <!--<dt>%{workportal-widget-render-person-in-charge}</dt>
+                    <dd>{{each person}}
+                        ${Name} &nbsp;
+                        {{/each}}
+                    </dd>-->
+                    <!--<dt>%{workportal-widget-render-current-state}</dt>
+                    <dd> {{each currentState}}
+                        ${state} <br />
+                        {{/each}}
+                    </dd>-->
+                    <dt>%{workportal-widget-render-case-number}</dt>
+                    <dd>${caseNumber}</dd>
+                    <dt>%{workportal-widget-render-process}</dt>
+                    <dd>${process}</dd>
+                    <dt>%{workportal-widget-render-process-path}</dt>
+                    <dd>${processPath}</dd>
+                    {{if showParentProcess}}
+                    <dt>%{workportal-widget-inboxcommon-parent-process}</dt>
+                    <dd class="summaryLink">
+                        <a href="#">${radNumberParentCase} - ${parentProcess.displayName}</a>
+                        <input type="hidden" id="idCase" value="${parentProcess.idCase}" />
+                    </dd>
+                    {{/if}}
+                    {{if isClosed}}
+                    <dt>%{workportal-widget-inboxcommon-state}</dt>
+                    <dd>
+                        <div id="ui-bizagi-wp-app-inbox-cases-ico-close">                                    
+                            <span></span>
+                        </div> 
+                        %{workportal-widget-inboxcommon-state-closed} </dd>
+                    {{/if}}
+                </dl>
+            </div>
+            {{if showSubProcess}}
+            <div id="subprocess" {{loading}} ></div>
+            {{/if}}
+
+            {{if showAssignees}}
+            <div id="assignees"  {{loading}} ></div>
+            {{/if}}
+
+            {{if showEvents}}
+            <div id="events"  {{loading}} ></div>  
+            {{/if}}
+
+            {{if showActivities}} 
+            <div id="activities"  {{loading}} ></div>
+            {{/if}}
+        </div>
+        {{if allowReleaseActivity===true}}
+            <button id="bt-case-action-release" class="bt-case-action-release">%{render-actions-release}</button>
+            {{/if}}
+</script>
+
+<script id="ui-bizagi-workportal-widget-global-options" type="text/x-jquery-tmpl" > 
+    <ul id="ui-bizagi-workportal-widget-global-options" class="ui-bizagi-workportal-widget-global-options"> 
+        <li id="ui-bizagi-wp-app-inbox-bt-back" class="ui-bizagi-wp-app-inbox-bt-back">
+            <span></span>
+        </li>
+    </ul>
+</script>

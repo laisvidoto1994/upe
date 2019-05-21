@@ -1,0 +1,40 @@
+<script id="textformat-frame" type="text/x-jquery-tmpl">
+    <div class="textformat-container ui-control-container">
+        <label class="textformat-name">${caption}</label>
+        <div class="textformat-actions"></div>
+        <div class="textformat-preview">%{formmodeler-component-editor-textformat-preview}</div>
+        <div class="textformat-size-value"></div>
+        <i class="biz-ico textformat-image-reset bz-studio bz-undo_16x16_standard" title="%{formmodeler-component-editor-all-set-default}"></i>
+    </div>
+</script>
+
+<script id="textformat-frame-bold" type="text/x-jquery-tmpl">
+    <i class="biz-ico textformat-primary-control textformat-image-bold bz-studio bz-format-text-bold_16x16_standard ${selected}" data-preview-style="bold" data-property="${property}.bold"></i>
+</script>
+
+<script id="textformat-frame-italic" type="text/x-jquery-tmpl">
+    <i class="biz-ico textformat-primary-control textformat-image-italic bz-studio bz-format-text-italic_16x16_standard ${selected}" data-preview-style="italic" data-property="${property}.italic"></i>
+</script>
+
+<script id="textformat-frame-underline" type="text/x-jquery-tmpl">
+    <i class="biz-ico textformat-primary-control textformat-image-underline bz-studio bz-format-text-underline_16x16_standard ${selected}" data-preview-style="underline" data-property="${property}.underline"></i>
+</script>
+
+<script id="textformat-frame-strikeout" type="text/x-jquery-tmpl">
+    <i class="biz-ico textformat-primary-control textformat-image-strikeout bz-studio bz-format-text-strikeout_16x16_standard ${selected}" data-preview-style="strikeout" data-property="${property}.strikethru"></i>
+</script>
+
+<script id="textformat-frame-font" type="text/x-jquery-tmpl">
+    <input type="text" class="ui-control-input textformat-secondary-control textformat-image-font" data-property="${property}.font" />
+</script>
+
+<script id="textformat-frame-background" type="text/x-jquery-tmpl">
+    <input type="text" class="ui-control-input textformat-secondary-control textformat-image-background" data-property="${property}.background" />
+</script>
+
+<script id="textformat-frame-size" type="text/x-jquery-tmpl">
+    <div class="textformat-size-container">
+        <i class="biz-ico textformat-tertiary-control textformat-image-size-plus bz-studio bz-format-text-up_16x16_standard" data-property="${property}.size"></i>
+        <i class="biz-ico textformat-tertiary-control textformat-image-size-minus bz-studio bz-format-text-down_16x16_standard" data-property="${property}.size"></i>
+    </div>
+</script>

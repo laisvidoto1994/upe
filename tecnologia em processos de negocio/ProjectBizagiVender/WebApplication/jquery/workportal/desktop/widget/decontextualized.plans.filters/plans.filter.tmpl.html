@@ -1,0 +1,13 @@
+<script id="plans-filter-wrapper" type="text/x-jsrender">
+    <div class="wdg-srcts-panel">
+        <h3 class="wdg-stf-header wgd-user-srcts-category">%{workportal-widget-dashboard-decontextualized-plans-filters-title}</h3>
+        {{for items}}
+        <div class="wdg-plan-filter-card" data-title="{{:title}}" data-data="{{:data}}">
+            <div class="card-icon stuff-ico"></div>
+            <div class="wdg-srcts-title">
+                <i class="bz-icon bz-icon-16 bz-icon-{{:icon}}-outline"></i> <span>{{:title}}</span>
+            </div>
+        </div>
+        {{/for}}
+    </div>
+</script>

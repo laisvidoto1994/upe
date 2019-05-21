@@ -1,0 +1,18 @@
+﻿<ul class="ui-bizagi-render-upload-container">
+  {{files}}
+  {{if editable}}
+      <li class="ui-bizagi-render-upload-wrapper ui-icon upload-file">
+        <input type="file" id="${xpath}" />
+      </li>
+  {{else}}
+        {{if noFiles}}
+            <span>%{render-upload-no-files}</span>
+        {{/if}}
+  {{/if}}
+  {{if allowSendInMail}}
+    <span class="ui-bizagi-render-upload-sendmail" title="%{render-upload-sendemail}"></span>
+  {{/if}}
+</ul>
+{{if editable}}
+    <div class="ui-bizagi-render-upload-queue" id="q_${xpath}" ></div>
+{{/if}}

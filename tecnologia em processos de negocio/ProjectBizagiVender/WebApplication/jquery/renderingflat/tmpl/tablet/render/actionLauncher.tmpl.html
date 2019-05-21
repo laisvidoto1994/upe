@@ -1,0 +1,108 @@
+<script id="bz-rendering-actionLauncher" type="text/x-kendo-template">
+    <div class="bz-action-launcher-container">
+        <div class="bz-action-launcher-actions-container"></div>
+        # if (data.allowactions){ #
+            <div class="action-to-execute-label"><label>%{render-action-launcher-actions-to-execute}</label></div>
+            <div class="bz-action-launcher-actions-to-execute-container"></div>
+        #}#
+    </div>
+</script>
+
+<script id="bz-rendering-actionLauncher-horizontal" type="text/x-kendo-template">
+    # if (data.template){ #
+        <div class="template-container"></div>
+        <div style="clear: both;"></div>
+    #}#
+    # if (data.actions){ #
+        <div class="action-container">
+            #for (var i = 0, len = data.actions.length; i < len; i++){#
+                #if (i == data.maxItems && len > data.maxItems){#
+                    <div class="bz-actions-to-hide hidden">
+                #}#
+                <div class="action-launcher-control ui-bizagi-render-button ui-button ui-widget ui-state-default ui-corner-all ui-button-desktop-ellipsis"
+                     type="button" title="#= data.actions[i][2] #"
+                     value="#= data.actions[i][1] #" role="button" aria-disabled="false"
+                     data-index="#= i #">#= data.actions[i][1] #</div>
+                #if (i == data.maxItems && len > data.maxItems){#
+                </div>
+                #}#
+            #}#
+            #if(data.actions.length > data.maxItems){#
+                <div class="wp-action-more km-widget km-button">
+                    <span class="bz-mo-icon bz-plus"></span>
+                </div>
+            #}#
+        </div>
+    #}#
+</script>
+
+<script id="bz-rendering-actionLauncher-vertical" type="text/x-kendo-template">
+    # if (data.template){ #
+        <div class="template-container">#= data.template #</div>
+        <div style="clear: both;"></div>
+    #}#
+    # if (data.allowSearch){#
+        <div class="action-container">
+            <div class="ui-bizagi-render-actionLauncher-filter">
+                <div class="search-container">
+                    <input id="ui-bizagi-render-action-launcher-filter-input" name="ui-bizagi-render-action-launcher-filter-input" type="text" placeholder="Search">
+                    <label for="ui-bizagi-render-action-launcher-filter-input" class="bz-wp-menu-search-icon bz-mo-icon bz-search" />
+                </div>
+            </div>
+            <div class="ui-bizagi-render-actionLauncher-actions-list">
+                # for(var i = 0, len = data.actions.length; i < len; i++){#
+                    #if (i == data.maxItems && len > data.maxItems){#
+                        <div class="bz-actions-to-hide hidden">
+                    #}#
+                    <div class="action-launcher-control ui-bizagi-render-button ui-button ui-widget ui-state-default ui-corner-all ui-button-desktop-ellipsis"
+                         type="button" title="#= data.actions[i][2] #"
+                         value="#= data.actions[i][1] #" role="button" aria-disabled="false"
+                         data-index="#= i #">#= data.actions[i][1]#</div>
+                    #if (i == data.maxItems && len > data.maxItems){#
+                    </div>
+                    #}#
+                #}#
+                #if(data.actions.length > data.maxItems){#
+                    <div class="wp-action-more km-widget km-button">
+                        <span class="bz-mo-icon bz-plus"></span>
+                    </div>
+                #}#
+            </div>
+        </div>
+    #}else{#
+        <div class="ui-bizagi-render-actionLauncher-actions-list">
+            # for(var i = 0, len = data.actions.length; i < len ; i++){#
+                <div class="ui-bizagi-render-actionLauncher-vertical-item">
+                    <div class="action-launcher-control  ui-bizagi-render-button ui-button ui-widget ui-state-default ui-corner-all ui-button-desktop-ellipsis"
+                         type="button" title="#= data.actions[i][2] #" data-index="#= i #"
+                         role="button" aria-disabled="false" data-guidprocess="#= data.actions[i][0] #" data-display-name="#= data.actions[i][1] #">#= data.actions[i][1] #</div>
+                </div>
+            #}#
+        </div>
+    #}#
+</script>
+
+<script id="bz-rendering-actionLauncher-actions-to-execute" type="text/x-kendo-template">
+    <div class="action-to-execute-buttons">
+        # if (typeof data.actions !== 'undefined'){#
+            # for(var i = 0, len = data.actions.length; i < len; i++){#
+                <div class="action-to-execute-control"
+                     data-index="#= i #"
+                     data-title="#= data.actions[i].displayName #"
+                     data-guidprocess="#= data.actions[i].guidProcess #"
+                     data-params="#= data.actions[i].params #"
+                     data-guidaction="#= data.actions[i].guidAction #"
+                     data-idstartscope="#= data.actions[i].idStartScope || ''#"
+                     data-actiontype="#= data.actions[i].actionType #"
+                     data-idpagecache="#= data.actions[i].idPageCache || ''#"
+                     data-xpathcontext="#= data.actions[i].xpathContext #"
+                     data-identity="#= data.actions[i].params.idEntity #">
+                    <label>#= data.actions[i].displayName#</label>
+                    <div class="delete-action km-button">
+                        <span class="bz-mo-icon bz-cancel"></span>
+                    </div>
+                </div>
+            #}#
+        #}#
+    </div>
+</script>

@@ -1,0 +1,71 @@
+﻿<script id="dialog-send-email" type="text/x-jquery-tmpl">
+    <div class="biz-dialog-send-email">
+        <div class="biz-dialog-send-email-message">
+        </div>
+        <div class="biz-dialog-send-email-content">
+            <h3 class="biz-dialog-send-email-title">%{render-dialog-sendemail}</h3>
+            <div class="biz-dialog-send-email-row">
+                <label for="to">%{render-dialog-sendemail-to}: </label>
+                <input type="text" id="to" />
+            </div>
+            <div class="biz-dialog-send-email-row">
+                <label for="subject">%{render-dialog-sendemail-subject}: </label>
+                <input type="text" id="subject" />
+            </div>
+            <div class="biz-dialog-send-email-row">
+                <label for="message">%{render-dialog-sendemail-message}: </label>
+                <textarea id="message"></textarea>
+            </div>
+            <div class="biz-dialog-send-email-documents">
+                <h3>%{render-dialog-sendemail-documents}</h3>
+                {{if items.length > 0}}
+                <ul id="selected-files">
+                    {{each items}}
+                    <li> <input type="checkbox" checked="checked" data-id="${$value.id}" /> ${$value.name}</li>
+                    {{/each}}
+                </ul>
+                {{else}}
+                %{render-dialog-sendemail-no-documents}
+                {{/if}}
+            </div>
+            <div class="biz-dialog-alert-email-message">
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="dialog-send-email-rtl" type="text/x-jquery-tmpl">
+    <div class="biz-dialog-send-email">
+        <div class="biz-dialog-send-email-message">
+        </div>
+        <div class="biz-dialog-send-email-content">
+            <h3 style="text-align:right;" class="biz-dialog-send-email-title">%{render-dialog-sendemail}</h3>
+            <div class="biz-dialog-send-email-row ui-bizagi-render-align-right">
+                <input type="text" id="to" style="text-align:right;" />
+                <label for="to">%{render-dialog-sendemail-to}: </label>
+            </div>
+            <div class="biz-dialog-send-email-row ui-bizagi-render-align-right">
+                <input type="text" id="subject" style="text-align:right;" />
+                <label for="subject"> :%{render-dialog-sendemail-subject}</label>
+            </div>
+            <div class="biz-dialog-send-email-row ui-bizagi-render-align-right">
+                <textarea id="message" style="text-align:right;"></textarea>
+                <label for="message"> :%{render-dialog-sendemail-message}: </label>
+            </div>
+            <div class="biz-dialog-send-email-documents ui-bizagi-render-align-right">
+                <h3 style="text-align:right;"> :%{render-dialog-sendemail-documents}</h3>
+                {{if items.length > 0}}
+                <ul id="selected-files" style="text-align:right; list-style:none;">
+                    {{each items}}
+                    <li> ${$value.name} <input type="checkbox" checked="checked" data-id="${$value.id}" /></li>
+                    {{/each}}
+                </ul>
+                {{else}}
+                %{render-dialog-sendemail-no-documents}
+                {{/if}}
+            </div>
+            <div class="biz-dialog-alert-email-message" style="text-align:right;">
+            </div>
+        </div>
+    </div>
+</script>

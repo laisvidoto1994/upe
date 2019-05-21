@@ -1,0 +1,23 @@
+﻿.user-profiles {    
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-top: 10px;
+    width: 221px;
+}
+
+.biz-wp-buttonset {
+    text-align: center;
+    margin: 5px auto;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.biz-wp-buttonset ul {
+    padding: 0;
+    margin: 0;
+}
+
+.biz-wp-buttonset li {
+    display: inline-block;
+    list-style: none;
+}

@@ -1,0 +1,26 @@
+<!-- processviewer Version 1.0 -->
+<div class="processviewer-wrapper {{if isIE8}}processviewer-ie8{{/if}}" >
+
+	<div class="processviewer-container" data-processviewercontainer id="${id}">
+		<div data-processviewer-wrapper-container>
+			<div data-processviewercontent></div>
+			<div class="processviewer-pane-preview" data-processviewerpanepanel></div>
+		</div>
+	</div>
+</div>
+<div class="processviewer-control" data-processviewercontrol>
+
+	<div class="processviewer-slider-container">
+		<div class="ui-for-touch">
+			<output for="slider-step" onforminput="value = slider-step.valueAsNumber;" class="processviewer-slider-output"></output>
+			<input type="range" name="slider-step" id="slider-step" value="100" class="processviewer-slider processviewer-inline"/>
+		</div>
+      
+		<div class="ui-for-desktop">
+            <div class="sliderTooltip"></div>
+			<div class="processviewer-slider processviewer-inline" data-processviewerslider></div>
+            <div class="sliderBarRightSide"></div>
+			<div class="processviewer-slider-percent processviewer-inline" data-processviewerpercent></div>
+		</div>
+	</div>
+</div>

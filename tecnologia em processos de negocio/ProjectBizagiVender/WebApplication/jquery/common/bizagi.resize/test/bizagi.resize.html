@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script src="../../base/js/lib/desktop/jquery.js" type="text/javascript"></script>
+    <link href="../css/bizagi.resize.css" rel="stylesheet" type="text/css" />
+    <script src="../js/bizagi.resize.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#button").click(function () {
+                var divNew = document.createElement("div");
+                divNew.innerHTML = "div1112";
+                $("#divszone").append(divNew);
+            });
+
+            var time = document.getElementById("divszone");
+            if (time.attachEvent) {
+                time.onresize = function () { alert("onresize detected"); };
+            }
+            else {
+                bizagi.addResizeListener(time, function (e) {
+                    alert("onresize detected");
+                });
+            }
+
+        });
+    </script>
+</head>
+<body>
+    <div id="divsuperrior" style="background-color: Gray; margin: 10px; padding: 10px;">
+        div contenedor
+        <div id="button" style="background-color: yellow">
+            ... click here add divs ...
+        </div>
+        <div id="divszone" style="background-color: Aqua; margin: 10px;">
+            divs agregados ...
+        </div>
+        <div id="footerdiv" style="background-color: Black; margin: 10px;">
+            footerdiv
+        </div>
+    </div>
+</body>
+</html>

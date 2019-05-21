@@ -1,0 +1,20 @@
+<script id="ui-bizagi-workportal-widget-start-form" type="text/x-jquery-tmpl">
+    <div id="contentFramework" class="hide-case-summary ui-bizagi-workportal-render-framework">
+        <div class="render-case-summary ui-bizagi-workportal-inbox-column" {{adjustable}}>
+        	<div class="scroll-content" {{loading}} {{adjustable}}>
+        		{{component summary}}
+        	</div>
+        	<div class="column-footbar">
+        		
+        	</div>
+        </div>
+        <div class="render-form ui-bizagi-workportal-inbox-column" {{adjustable}}>
+    		<div class="scroll-content" {{loading}} {{adjustable}}>
+        		{{component render}}
+    		</div>
+    		<div class="column-footbar">
+        		<a id="render-column-slider" class="bz-cm-icon" href="#"></a>
+        	</div>
+        </div>
+    </div>
+</script>

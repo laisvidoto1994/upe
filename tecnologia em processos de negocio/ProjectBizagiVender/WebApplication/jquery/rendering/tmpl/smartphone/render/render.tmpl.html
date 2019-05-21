@@ -1,0 +1,43 @@
+<div class="ui-bizagi-render ${displayOptionClass}" 
+    {{if uniqueId}}data-unique-id="${uniqueId}" {{/if}}
+    {{if id}}data-render-id="${id}"{{/if}}
+    {{if xpath}}data-render-xpath="${xpath}"{{/if}}
+    {{if tag}}data-render-tag="${tag}"{{/if}}>
+<div class="bz-container-render-item">
+  <div  class=" bz-container-render-cell1 ">
+        <div class="ui-bizagi-label">  
+          <label>${label}</label>
+        </div>
+        <div class="ui-bizagi-render-control " >
+         {{control}}
+        </div>
+
+
+        {{if helpText}}
+        <div class="bz-container-rn-helptext" data-helptext="${helpText}" >
+           <span class="bz-cm-icon bz-rn-icon-heltext"></span>
+        </div>
+        {{/if}}
+
+
+        <div class="ui-bizagi-render-edition-arrow " >
+          <span class="bz-cm-icon "></span>
+        </div>
+
+      
+
+   </div>
+    <div class="bz-cm-tbl-row bz-rn-messages">  </div>
+
+  </div>
+   
+
+
+</div>
+
+
+
+
+
+
+ 

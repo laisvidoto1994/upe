@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Bizagi</title>
+	<link rel="stylesheet" href="../../jquery/common/base/css/normalize.min.css" />
+	<link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+	<div class="login-wrapper">
+		<h1 class="logo"><img src="css/images/bizagi-logo.png" alt="" /></h1>
+		<form id="loginForm" method="post" action="#">			
+			<div class="login-icon">
+				<img src="css/images/login-users.png" class="icon-users" width="64" height="64" alt="Users Icon" />
+			</div>
+			<div class="login-data">
+				<fieldset>
+					<div class="login-field">
+						<label for="user">Username</label>
+						<input id="user" class="login-input" type="text" tabindex="1" />						
+					</div>
+					<div class="login-field">
+						<label for="password">Password</label>
+						<input id="password" class="login-input" type="password" tabindex="2" />						
+					</div>
+					<div class="login-field">
+			            <label for="domain">Domain</label>
+			            <select id="domain" class="login-select" tabindex="3">
+							<option value=""></option>
+							<option value="domain">domain</option>
+						</select>						
+					</div>					
+					<div class="login-field">
+						<label for="observation">Observation</label>
+						<textarea rows="4" cols="39" id="observation" class="login-textarea" tabindex="4"></textarea>											
+					</div>																
+					<div class="login-field">
+						<input id="login" class="login-button" type="submit" name="login" value="Unlock Account" tabindex="5" />
+					</div>
+					<ul class="login-options">
+						<li class="login-option"><input id="lnkBackToLogin" type="button" title="Back to Login" value="Back to Login" tabindex="6" /></li>
+					</ul>
+				</fieldset>       								
+			</div>		
+		</form>
+	</div>
+	<!-- javascript -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+
+	<script src="js/vendor/jquery.rest.js"></script>
+	<script src="js/core/config.js"></script>
+	<script src="js/events/Events.js"></script>
+	<script src="js/events/EventList.js"></script>
+	
+	<script src="js/model/ServiceManager.js"></script>
+	<script src="js/login.js"></script>
+</body>
+</html>

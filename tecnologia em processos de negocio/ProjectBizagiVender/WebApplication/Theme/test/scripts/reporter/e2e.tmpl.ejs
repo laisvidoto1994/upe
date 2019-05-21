@@ -1,0 +1,77 @@
+<%
+for(var i= 0, len = tests.length; i<len ; i++) {
+    var groups = tests[i];
+        for(var group in groups) {
+        if(groups.hasOwnProperty(group)){
+%>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>
+            <a data-toggle="collapse" data-parent="#container_<%= browser %>" href="#<%= group + "-" + browser %>">
+                <%= group %>
+            </a>
+            <div class="pnl-group-data outer <%= groups[group].success ? "pass" : "fail" %>">
+                <span>(<%= groups[group].pass + '/' + groups[group].total %>)</span>
+            </div>
+        </h4>
+    </div>
+
+    <div id="<%= group + "-" + browser %>" class="panel-collapse collapse <%= groups[group].success ? "" : "in" %>">
+
+        <%  for(var j= 0, leng = groups[group].result.length; j<leng ; j++) {
+            var pivotTest = groups[group].result[j];
+                for(var groupPT in pivotTest) {
+                if(pivotTest.hasOwnProperty(groupPT)){
+            var arrGroup = pivotTest[groupPT];
+        %>
+
+        <div class="panel panel-inside">
+            <div class="panel-heading inside">
+                <h4>
+                    <a data-toggle="collapse" data-parent="#<%= group + "-" + browser %>" href="#<%= groupPT + "-" + browser  %>">
+                        <%= groupPT %>
+                    </a>
+                    <div class="pnl-group-data inner <%= arrGroup.success ? "pass" : "fail" %>">
+                        <span>(<%= arrGroup.pass + '/' + arrGroup.total %>)</span>
+                    </div>
+                </h4>
+            </div>
+
+
+            <div id="<%= groupPT +"-" + browser %>" class="panel-collapse collapse <%= arrGroup.success ? "" : "in" %>">
+
+                <% for(var p= 0, lengthh = arrGroup.result.length; p<lengthh ; p++) {
+                    var lastTest = arrGroup.result[p];
+                %>
+
+                <table class="table-steps" cellspacing="0" cellpadding="0">
+                    <tr class="header"><td>Test</td><td>Step</td><td>Status</td><td>Time</td></tr>
+                    <tr class="<%= lastTest.success ? 'pass' : 'fail' %>">
+                        <td><strong><%= lastTest.name %></strong></td><td></td><td><%= lastTest.success ? 'Success' : 'Failed'%></td><td><%= lastTest.time %> ms </td>
+                    </tr>
+                    <% for(var t= 0, lengt = lastTest.steps.length; t<lengt ; t++) {%>
+                    <tr class="<%= lastTest.steps[t].success ? 'pass' : 'fail' %>">
+                        <td></td><td><%= lastTest.steps[t].jsonStep %></td><td><%= lastTest.steps[t].success ? 'Success' : 'Failed'%></td><td><%= lastTest.steps[t].time %> ms </td>
+                    </tr>
+                    <% } %>
+                </table>
+
+                <%}//End for and close %>
+
+            </div>
+        </div>
+
+        <%
+        }//End if
+        }//Enf for(groupPT)
+        }//End For %>
+
+    </div>
+</div>
+
+<%
+}//If
+}//for
+}//for
+%>

@@ -1,0 +1,315 @@
+﻿.dimensions {    
+    margin: 0 auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+   
+}
+
+.dimensions-properties {    
+    margin: 0 auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    
+}
+
+.dimensions-dialog {
+    display: block;
+    z-index: 1002;
+    outline: 0px;
+    height: 320px;
+    width: 500px;
+    top: 72.99998474121094px;
+    left: 157.9971466064453px;
+    position: absolute;
+    padding: .2em;
+    overflow: hidden;
+}
+
+#DimenListAdmin dt, #DimenListFixed dt {
+    display: none;
+}
+
+.dimensions-dialog .dimensions-dialog-title {
+    float: left;
+    margin: .1em 16px .2em 0;
+}
+
+.dimensions-dialog .dimensions-dialog-titlebar-close {
+    position: absolute;
+    right: .3em;
+    top: 50%;
+    width: 19px;
+    margin: -10px 0 0 0;
+    padding: 1px;
+    height: 18px;
+}
+
+/*.a {
+text-decoration: none;
+outline: none;
+}*/
+
+.dimensions-dialog .dimensions-dialog-titlebar-close span {
+    display: block;
+    margin: 1px;
+}
+
+.dimensions-draggable .dimensions-dialog-titlebar {
+    cursor: move;
+}
+
+.dimensions-dialog .dimensions-dialog-titlebar {
+    padding: .5em 1em .3em;
+    position: relative;
+}
+
+.dimensions-helper-clearfix {
+    display: block;
+}
+
+.dimensions-dialog .dimensions-dialog-buttonpane {
+    text-align: left;
+    border-width: 1px 0 0 0;
+    background-image: none;
+    margin: .5em 0 0 0;
+    padding: .3em 1em .5em .4em;
+}
+
+.dimensions-dialog .dimensions-dialog-buttonpane button {
+    margin: .5em .4em .5em 0;
+    cursor: pointer;
+}
+
+.dimensions-button-text-only .dimensions-button-text {
+    padding: .4em 1em;
+}
+.dimensions-button .dimensions-button-text {
+    display : block;
+    line-height: 1.4;
+}
+.dimensions-icon-closethick {
+    background-position: -96px -128px;
+}
+
+.dimensions-dialog .dimensions-dialog-content {
+    position: relative;
+    border: 0;
+    padding: .5em 1em;
+    background: none;
+    overflow: auto;
+    zoom: 1;
+}
+
+#dimensions-content-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#column-dimensions-admin-wrapper {
+    float:left;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 30px;
+    border-right: 1px solid rgb(143, 137, 137);
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 30%;
+}
+
+#content-table-dimensions-types {    
+}
+
+#column-dimensions-properties-wrapper {
+   float: right;
+   padding-left: 5px;
+   padding-right: 5px;
+   padding-top: 30px;
+   width: 65%;
+   height:100%;
+   display: block;
+}
+
+#column-dimensions-edit-properties-wrapper {
+   float: right;
+   padding-left: 5px;
+   padding-right: 5px;
+   width: 65%;
+   height:100%;
+   display: block;
+}
+
+
+.dimensions .dimensions{
+    font-size: 1.1em;
+}
+
+.dimensions-corner-all {
+   -moz-border-radius: 4px;
+   -webkit-border-radius: 4px;
+   border-radius: 4px;
+}
+
+.dimensionstitleType {
+    padding: 2px;
+}
+
+.dimensionstitleProperties {
+    padding: 5px;
+}
+.dimensions-header {
+    border: 1px solid #999798;
+    font-weight: bold;
+    background: #BDBDBD;
+}
+
+.dimensions-content {
+   border: 1px solid #aaaaaa;
+   color: #222222;
+}
+
+.divDimensionGroup table {
+    width: 100%;
+}
+
+.dimensionTypeTable table {  
+    width: 100%;
+}
+
+.dimensionPropertiesTable table{
+    width: 600px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.biz-wp-form-cell-table {
+    min-width: 200px;
+    float: left;
+    min-height: 8px;
+    padding: 10px;
+    padding-left: 27px;
+    font-weight: bold;
+}
+
+.titleDimensionProcess {
+    background-image: url(images/proc_lit.png);
+    background-repeat: no-repeat;
+    text-indent: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #666666;
+    display: block;
+}
+
+.iconSelectPath {
+    background-image: url(images/view_next.png);
+    display: inline-block;
+    width: 16px; 
+    height: 16px;
+    cursor: pointer;
+    
+}
+
+.ddDimensionsSelect {
+    background: transparent;
+    cursor: pointer;
+    font-size: 10px;
+    height: 18px;
+    overflow: hidden;
+    background-image: url(images/dimension.png);
+    background-repeat: no-repeat;
+    text-indent: 20px;
+}
+
+.biz-wp-buttonset {
+    text-align: center;
+    margin: 5px auto;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.biz-wp-buttonset ul {
+    padding: 0;
+    margin: 0;
+}
+
+.biz-wp-buttonset li {
+    display: inline-block;
+    list-style: none;
+}
+
+.admin-dimensions-tree-wrapper {
+    background-color: white;
+    width: 460px;
+    height: 325px;
+    position: fixed;
+    margin-left: 369px;
+    margin-top: 70px;
+    border: 1px solid grey;
+    z-index: 99999;
+}
+
+.admin-dimensions-tree-title {
+    background: -webkit-linear-gradient(#B1A9A9, #E6DADA); /* For Safari */
+    background: -o-linear-gradient(#B1A9A9, #E6DADA); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#B1A9A9, #E6DADA); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#B1A9A9, #E6DADA); /* Standard syntax (must be last) */
+    width: 99%;
+    height: 30px;
+    border-radius: 7px;
+    border: 1px solid grey;
+    margin: 1px 0px 0px 1px;
+    cursor: all-scroll;
+}
+
+.admin-dimensions-tree-content {
+    width: 94%;
+    height: 209px;
+    margin: 7px 3%;
+    border: 1px solid #C0B2B2;
+    overflow: scroll;
+}
+
+.admin-dimensions-tree-buttons {
+    border-top: 1px solid grey;
+    margin-top: 10px;
+    width: 98%;
+    margin-left: 4px;
+}
+
+.btn-close-tree {
+    float: right;
+    margin: -12px 12px 17px 0px;
+    padding-right: 2px;
+    font-weight: bold;
+    text-align: center;
+    width: 14px;
+    cursor: pointer;
+}
+
+.btn-close-tree:hover {
+    float: right;
+    margin: -13px 11px 17px 0px;
+    padding-right: 2px;
+    font-weight: bold;
+    border: 1px solid grey;
+    text-align: center;
+    width: 14px;
+    background-color: #E6DEDE;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.admin-dimensions-tree-title-label {
+    margin-top: 6px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+

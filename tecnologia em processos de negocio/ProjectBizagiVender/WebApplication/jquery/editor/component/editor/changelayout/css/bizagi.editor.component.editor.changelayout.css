@@ -1,0 +1,114 @@
+/********
+* Filename: bizagi.editor.component.editor.changelayout.css
+* Create Date: 2012-11-02
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__changelayout
+*
+********/
+
+/* __changelayout
+--------*/
+
+.bizagi_editor_component_editor_changelayout .changelayout-field-image {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("images/ico.png") center center no-repeat;
+}
+
+.bizagi_editor_component_editor_changelayout .changelayout-image-small-popup
+{
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.changelayout-box-wrapper {
+    line-height: normal;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+.changelayout-box {
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+    border-top: 1px solid hsla(216, 100%, 50%, .5) !important;
+    border-bottom: 1px solid hsla(216, 100%, 50%, .5) !important;
+    background: hsla(201, 100%, 94%, .5)!important;
+    border-left: 1px dashed hsla(216, 100%, 50%, .5) !important;
+}
+
+.changelayout-box-wrapper .changelayout-box{
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+    box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, .8);
+
+}
+
+.changelayout-box-wrapper:first-child .changelayout-box{
+    -webkit-border-radius: 3px 0px 0px 3px;
+    border-radius: 3px 0px 0px 3px;
+    border-left-style: solid!important;
+}
+
+.changelayout-box-wrapper:last-child .changelayout-box{
+    -webkit-border-radius: 0px 3px 3px 0px;
+    border-radius: 0px 3px 3px 0px;
+    border-right: 1px solid hsla(216, 100%, 50%, .5) !important;
+}
+
+
+
+.changelayout-slider {
+    width: 100%;
+    display:inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    background: transparent;
+}
+
+.changelayout-popup-container{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.bizagi_editor_component_editor_changelayout .changelayout-data label{
+    padding-right: 8px;
+}
+.bizagi_editor_component_editor_changelayout .changelayout-data label,
+.bizagi_editor_component_editor_changelayout .changelayout-data span.changelayout-value{
+    display: inline-block!important;
+    width:auto!important;
+    vertical-align:middle;
+}
+
+.changelayout-container{
+    padding: 8px 0px 8px 0px;
+}
+
+.changelayout-concat-value{
+
+    padding: 2px 5px 2px 5px;
+    float: right;
+
+    cursor:pointer;
+    vertical-align:middle;
+
+    -webkit-box-shadow: inset 0px 1px 2px 0 rgba(194, 197, 200, .32);
+    box-shadow: inset 0px 1px 2px 0 rgba(194, 197, 200, .32);
+}
+
+.changelayout-slider-container{
+    height:20px;
+}
+
+.changelayout-slider{
+    height: 1px;
+    background-color: #ccc;
+}

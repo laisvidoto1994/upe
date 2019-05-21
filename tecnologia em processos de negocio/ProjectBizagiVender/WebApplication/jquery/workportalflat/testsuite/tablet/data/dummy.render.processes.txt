@@ -1,0 +1,33 @@
+{
+  "workflows": {
+    "taskState": "",
+    "workflow": [
+      {
+        "idworkflow": "129",
+        "guidWFClass": "af2430ec-319b-4958-8087-d7aa6e8c6888",
+        "name": "Access Management",
+        "path": "Access Management/Access Management/",
+        "count": "1",
+        "isFavorite": "false",
+        "icon": "",
+        "category": "Access Management",
+        "spriteUrl": "imagen.png",
+        "spritePosition": "0px 0px",
+        "guidFavorite": ""
+      },
+      {
+        "idworkflow": "104",
+        "guidWFClass": "8849c5dc-c19d-4b2a-ab32-0cf1b2c69bc2",
+        "name": "Purchase Request",
+        "path": "Purchase/Purchase/",
+        "count": "3",
+        "isFavorite": "false",
+        "icon": "",
+        "category": "Purchase",
+        "spriteUrl": "imagen.png",
+        "spritePosition": "0px 0px",
+        "guidFavorite": ""
+      }
+    ]
+  }
+}

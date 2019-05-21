@@ -1,0 +1,528 @@
+<!--WRAPPERS-->
+<script id="ui-bizagi-workportal-widget-admin-language-wrapper" type="text/x-jquery-tmpl" >
+<div id="main-wrapper">
+    <div style="margin:20% 0 0 0" {{loading}}></div>
+</div>
+</script>
+<script id="ui-bizagi-workportal-widget-admin-language-panel-wrapper" type="text/x-jquery-tmpl" >
+<div id="admin-language-wrapper">
+	  <ul>
+        <li><a href="#entities_localization" id="tab_entities_localization" >%{workportal-widget-admin-language-entities}</a></li>
+        <li><a href="#bizagi_objects" id="tab_bizagi_objects" >%{workportal-widget-admin-language-bizagi-objects}</a></li>
+		<li><a href="#internals" id="tab_internals">%{workportal-widget-admin-language-internals}</a></li>
+        <li><a href="#extended" id="tab_extended">%{workportal-widget-admin-language-extended}</a></li>
+        <li><a href="#reset" id="tab_reset">%{workportal-widget-admin-language-reset}</a></li>
+        <li id="all_langs_tab_item"><a href="#all_languages" id="tab_all_languages" >%{workportal-widget-admin-language-active-language}</a></li>
+	  </ul>
+	  <div id="internals">
+				<h3 class="biz-wp-window-title">%{workportal-widget-admin-language-internals-info}</h3>
+                <div id="internals_internal_tabs">
+                    <ul class="hidden">
+		                <li><a href="#internals_download_tmpl" class="tab_download_tmp">%{workportal-widget-admin-language-widget-internals-download-tmpl}</a></li>
+		                <li><a href="#internals_upload_file" class="tab_upload_file" >%{workportal-widget-admin-language-widget-internals-upload-file}</a></li>
+	                </ul>
+                    <div id="internals_download_tmpl">
+                        <!-- Active Language List-->
+                        <h3>%{workportal-widget-admin-language-internals-group-info}</h3>
+				        <div id="internals-language-list-wrapper" class="ui-bizagi-container-form ui-widget-content" >
+				        </div>
+	                </div>
+                    <div id="internals_upload_file" class="lang_upload_file">
+					<h3>%{workportal-widget-admin-language-widget-upload-file-info}</h3>
+                    <div class="biz-wp-form">
+                     <div class="biz-wp-form-row clearfix">
+                              <div class="biz-wp-form-cell">
+                              <span class="ui-bizagi-label">%{workportal-widget-admin-language-widget-culture-name-edit}</span>
+                              </div>
+                              <div class="biz-wp-form-cell">
+                               <div class="ui-bizagi-culturecombo"></div>
+                              </div>
+                     </div>
+                   </div>
+                   <div id="massive-resources-upload-form-wrapper"></div><br/>
+	               </div>
+                </div>
+	  </div>
+      <div id="extended">
+				<h3 class="biz-wp-window-title">%{workportal-widget-admin-language-extended-info}</h3>
+                <div id="extended_internal_tabs">
+                    <ul class="hidden">
+		                <li><a href="#extended_download_tmpl" class="tab_download_tmp">%{workportal-widget-admin-language-widget-internals-download-tmpl}</a></li>
+		                <li><a href="#extended_upload_file" class="tab_upload_file" >%{workportal-widget-admin-language-widget-extended-upload-file}</a></li>
+	                </ul>
+                    <div id="extended_download_tmpl">
+                        <!-- Active Language List-->
+                        <h3>%{workportal-widget-admin-language-internals-group-info}</h3>
+				        <div id="extended-language-list-wrapper" class="ui-bizagi-container-form ui-widget-content" >
+				        </div>
+	                </div>
+                    <div id="extended_upload_file" class="lang_upload_file">
+					<h3>%{workportal-widget-admin-language-widget-upload-file-info}</h3>
+                    <div class="biz-wp-form">
+                     <div class="biz-wp-form-row clearfix">
+                              <div class="biz-wp-form-cell">
+                              <span class="ui-bizagi-label">%{workportal-widget-admin-language-widget-culture-name-edit}</span>
+                              </div>
+                              <div class="biz-wp-form-cell">
+                               <div class="ui-bizagi-culturecombo"></div>
+                              </div>
+                     </div>
+                   </div>
+                   <div id="massive-resources-upload-form-wrapper"></div><br/>
+	               </div>
+                </div>
+	  </div>
+	  <div id="reset">
+	            <div id="reset-head">
+				    <h3 class="biz-wp-window-title">%{workportal-widget-admin-language-reset-info}</h3>
+                    <div class="lang-list-button"><button type="button" id="lang-reset-btn" class="ui-bizagi-button ui-button-text ui-button ui-widget ui-state-default ui-corner-all">%{workportal-widget-admin-language-widget-reset}</button></div>
+				</div>
+
+	  </div>
+	  <div id="bizagi_objects">
+		        <h3 class="biz-wp-window-title">%{workportal-widget-admin-language-bizagi-objects-info}</h3>
+                <div id="bizagi_objects_internal_tabs">
+                    <ul class="hidden">
+		                <li><a href="#bizagi_objects_download_tmpl" class="tab_download_tmp">%{workportal-widget-admin-language-widget-download-tmpl}</a></li>
+		                <li><a href="#bizagi_objects_upload_file" class="tab_upload_file" >%{workportal-widget-admin-language-widget-upload-file}</a></li>
+	                </ul>
+                    <div id="bizagi_objects_download_tmpl">
+                        <h3>%{workportal-widget-admin-language-bizagi-objects-group-info}</h3>
+                        <div id="bizagi-objects-accordion">
+                            <h3>1. %{workportal-widget-admin-language-bizagi-objects-select}</h3>
+		                    <div id="bizagi-objects-list-wrapper" class="ui-bizagi-container-form ui-widget-content">
+		                    </div>
+                            <h3>2. %{workportal-widget-admin-language-select-download}</h3>
+                            <!-- Language List-->
+                            <div id="bizagi_objects-language-list-wrapper" class="ui-bizagi-container-form ui-widget-content"></div>
+                        </div>
+	                </div>
+                    <div id="bizagi_objects_upload_file" class="lang_upload_file">
+						<h3>%{workportal-widget-admin-language-widget-upload-file-info}</h3>
+                        <div class="biz-wp-form">
+                            <div class="biz-wp-form-row clearfix">
+                                <div class="biz-wp-form-cell">
+                                    <span class="ui-bizagi-label">%{workportal-widget-admin-language-widget-culture-name-edit}</span>
+                                </div>
+                                <div class="biz-wp-form-cell">
+                                    <div class="ui-bizagi-culturecombo"></div>
+                                </div>
+                            </div>
+                        </div>
+		                <div id="massive-resources-upload-form-wrapper"></div><br/>
+	                </div>
+                </div>
+     </div>
+     <div id="entities_localization">
+		        <h3 class="biz-wp-window-title">%{workportal-widget-admin-language-entities-info}</h3>
+                <div id="entities_internal_tabs">
+                    <ul class="hidden">
+		                <li><a href="#entities_download_tmpl" class="tab_download_tmp">%{workportal-widget-admin-language-widget-download-tmpl}</a></li>
+		                <li><a href="#entities_upload_file" class="tab_upload_file" >%{workportal-widget-admin-language-widget-upload-file}</a></li>
+	                </ul>
+                    <div id="entities_download_tmpl">
+                        <h3>%{workportal-widget-admin-language-entities-group-info}</h3>
+                        <div id="entities-accordion">
+                            <h3>1. %{workportal-widget-admin-language-entities-select}</h3>
+                            <div id="entities-list-wrapper" class="ui-bizagi-container-form ui-widget-content">
+                            </div>
+                            <h3>2. %{workportal-widget-admin-language-select-download}</h3>
+                            <!-- Language List-->
+                            <div id="entities-language-list-wrapper" class="ui-bizagi-container-form ui-widget-content"></div>
+                        </div>
+	                </div>
+                    <div id="entities_upload_file" class="lang_upload_file">
+						<h3>%{workportal-widget-admin-language-widget-upload-file-info}</h3>
+                        <div class="biz-wp-form">
+                            <div class="biz-wp-form-row clearfix">
+                                <div class="biz-wp-form-cell">
+                                    <span class="ui-bizagi-label">%{workportal-widget-admin-language-widget-culture-name-edit}</span>
+                                </div>
+                                <div class="biz-wp-form-cell">
+                                    <div class="ui-bizagi-culturecombo"></div>
+                                </div>
+                            </div>
+                        </div>
+		                <div id="massive-resources-upload-form-wrapper"></div><br/>
+	                </div>
+                </div>
+     </div>
+     <div id="all_languages">
+                <h3 class="biz-wp-window-title">%{workportal-widget-admin-language-all-lang-info}</h3>
+                <div class="all-languages-filter">
+                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                    <input class="ui-all-languages-filter ui-bizagi-render-search ui-autocomplete-input" type="text"  value=""/>
+                        <i class="workportal-icon-search"></i>
+                </div>
+				<!-- Full Language List-->
+				<div id="all-language-list-wrapper" class="ui-bizagi-container-form ui-widget-content" >
+				    <span>%{workportal-widget-admin-language-current-language-settings}</span><br/>
+				</div>
+	 </div>
+     <div id="message-container" class="ui-bizagi-container-form ui-widget-content" style="display: none;">
+		        <p id="template-uploaded" style="display: none;">
+			        %{workportal-widget-admin-document-templates-uploaded-templates-template-uploaded}
+		        </p>
+		        <p id="template-recovered" style="display: none;">
+			        %{workportal-widget-admin-document-templates-uploaded-templates-template-restored}
+		        </p>
+		        <p id="template-reset" style="display: none;">
+                    %{workportal-widget-admin-document-templates-uploaded-templates-template-reset}
+		        </p>
+	 </div>
+</div>
+</script>
+
+<!--CONTENTS-->
+<script id="ui-bizagi-workportal-widget-admin-language-upload-file" type="text/x-jquery-tmpl" >
+ <ul class="ui-bizagi-render-upload-container">
+    <li class="ui-bizagi-render-upload-wrapper">
+        <a href="#" style="display:block!important;">
+            <span class="ui-icon upload-file"></span>
+        </a>
+    </li>
+ </ul>
+ <div class=" ui-widget-content ui-corner-all ui-hidden">
+            <span class="ui-icon ui-icon-alert biz-wp-float-left" title=""></span>
+            <span id="alert-upload-language-template"></span>
+          </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-language-combo-culturename" type="text/x-jquery-tmpl" >
+<div class="biz-wp-form ui-corner-all">
+         <div class="biz-wp-form-row clearfix">
+                  <div class="biz-wp-form-cell">
+                     <span class="ui-bizagi-label">%{workportal-widget-admin-language-widget-culture-name-edit}:</span>
+                  </div>
+                 <div id="ui-culture-name-edit" class="biz-wp-form-cell">
+                 </div>
+        </div>
+  </div>
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-admin-language-template-list" type="text/x-jquery-tmpl" >
+    <div id="${source}-language-template-list" class="admin-languages-content">
+
+     {{if languageTemplates.length > 0 }}
+                    <div class="ui-bizagi-grid">
+                        {{if source === 'all' || source === 'reset'}}
+                            <div data-bizagi-component="table" class="languages-table-container">
+                        {{else}}
+                            <div data-bizagi-component="table" class="bz-rn-grid-data-wraper">
+                        {{/if}}
+                            <table class="ui-bizagi-grid-table">
+                                <thead class="ui-bizagi-grid-header ui-state-default">
+                                    <tr data-bizagi-component="columns">
+                                        <th class=" resizableColumn" style="width: auto;">
+                                            <div class="ui-bizagi-grid-column" data-column-index="1" style="width: auto;">
+                                                {{if (source === 'all') }}
+                                                    <label>%{workportal-widget-admin-language-current-language-settings}</label>
+                                                {{else}}
+                                                    <label>${listTitle}</label>
+                                                {{/if}}
+                                                {{if (source === 'reset')}}
+                                                    <label>%{workportal-widget-admin-language-all-language-list}</label>
+                                                {{/if}}
+                                            </div>
+                                        </th>
+
+                                        <th class=" resizableColumn" style="width: 70px;">
+                                            <div class="ui-bizagi-grid-column" data-column-index="4" style="width: auto;">
+                                                    <label>{{if source === 'all'}}%{workportal-widget-admin-language-enable-column}{{/if}}</label>
+                                            </div>
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody class="ui-bizagi-grid-body" data-bizagi-component="rows">
+
+                                    {{each languageTemplates}}
+                                     {{if (source === 'reset') }}
+                                             <tr class="ui-bizagi-language">
+                                                <td class="ui-bizagi-grid-align-center">
+                                                    <div class="ui-bizagi-grid-cell">
+                                                        <div class="ui-bizagi-cell">
+                                                            <div class="ui-bizagi-cell-readonly">
+                                                                <label class="readonly-control">${$value.value}</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td class="ui-bizagi-grid-align-center">
+                                                    <div class="ui-bizagi-grid-cell">
+                                                        <div class="ui-bizagi-cell">
+                                                            <div class="ui-bizagi-cell-readonly">
+                                                                <input class="reset-checkbox" type="radio" name="active_lang" value="${$value.key}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                      {{/if}}
+                                      {{if (source === 'all' && ($value.enabled || $value.isEnabled)) }}
+                                             <tr class="ui-bizagi-language">
+                                                <td class="ui-bizagi-grid-align-center">
+                                                    <div class="ui-bizagi-grid-cell">
+                                                        <div class="ui-bizagi-cell">
+                                                            <div class="ui-bizagi-cell-readonly">
+                                                                <label class="readonly-control">${$value.value}</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td class="ui-bizagi-grid-align-center">
+                                                    <div class="ui-bizagi-grid-cell">
+                                                        <div class="ui-bizagi-cell">
+                                                            <div class="ui-bizagi-cell-readonly">
+                                                                <input type="checkbox" name="active_lang" value="${$value.key}" {{if ($value.enabled || $value.isEnabled)}} checked{{/if}}>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                      {{else  (source !== 'reset' && ($value.enabled || $value.isEnabled)) }}
+                                            <tr>
+                                                <td class="ui-bizagi-grid-align-center">
+                                                    <div class="ui-bizagi-grid-cell">
+                                                        <div class="ui-bizagi-cell">
+                                                            <div class="ui-bizagi-cell-readonly">
+                                                                <label class="readonly-control">${$value.value}</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td class="ui-bizagi-grid-align-center">
+                                                    <div class="ui-bizagi-grid-cell">
+                                                        <div class="ui-bizagi-cell">
+                                                            <div class="ui-bizagi-cell-readonly">
+                                                                    <input type="radio" name="${source}_template_lang" data-guid="${$value.key}">
+                                                                    <!--<a href="#" class="template-to-recover" data-guid="${$value.key}">
+                                                                        %{workportal-widget-admin-language-widget-download}
+                                                                    </a>-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        {{/if}}
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                            {{if (source === 'all')}}
+                                <hr/>
+                                <table class="ui-bizagi-grid-table">
+                                    <thead class="ui-bizagi-grid-header ui-state-default">
+                                        <tr data-bizagi-component="columns">
+                                            <th class=" resizableColumn" style="width: auto;">
+                                                <div class="ui-bizagi-grid-column" data-column-index="1" style="width: auto;">
+                                                    <label>${listTitle}</label>
+                                                </div>
+                                            </th>
+
+                                            <th class=" resizableColumn" style="width: 70px;">
+                                                <div class="ui-bizagi-grid-column" data-column-index="4" style="width: auto;">
+                                                    <label>{{if source === 'all'}}%{workportal-widget-admin-language-enable-column}{{/if}}</label>
+                                                </div>
+                                            </th>
+
+                                        </tr>
+
+                                    </thead>
+
+                                    <tbody class="ui-bizagi-grid-body" data-bizagi-component="rows">
+
+                                        {{each languageTemplates}}
+                                            {{if (source === 'all' && ($value.enabled == false || $value.isEnabled == false)) }}
+                                                 <tr class="ui-bizagi-language">
+                                                    <td class="ui-bizagi-grid-align-center">
+                                                        <div class="ui-bizagi-grid-cell">
+                                                            <div class="ui-bizagi-cell">
+                                                                <div class="ui-bizagi-cell-readonly">
+                                                                    <label class="readonly-control">${$value.value}</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="ui-bizagi-grid-align-center">
+                                                        <div class="ui-bizagi-grid-cell">
+                                                            <div class="ui-bizagi-cell">
+                                                                <div class="ui-bizagi-cell-readonly">
+                                                                    <input type="checkbox" name="active_lang" value="${$value.key}" {{if ($value.enabled || $value.isEnabled)}} checked{{/if}}>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            {{/if}}
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{if source === 'all'}}
+                    <div class="multilang-error-msg dp-hidden">%{workportal-widget-admin-language-error}</div>
+                    <div class="lang-list-button"><button type="button" id="save-lang-list-btn" class="ui-bizagi-button ui-button-text ui-button ui-widget ui-state-default ui-corner-all">%{workportal-widget-admin-language-widget-save-changes}</button></div>
+                    {{else source !== 'reset'}}
+                    <div class="lang-list-button"><button type="button" id="${source}-tmpl-download-btn" class="ui-bizagi-button ui-button-text ui-button ui-widget ui-state-default ui-corner-all" data-source="${source}" disabled>%{workportal-widget-admin-language-widget-download}</button></div>
+                    {{/if}}
+                {{else}}
+                    <span class="ui-bizagi-label ui-bizagi-render-align-left">
+                        no results
+                    </span>
+                {{/if}}
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-language-bizagi-objects-list" type="text/x-jquery-tmpl" >
+<div class="objects-container">
+    <div class="ui-bizagi-grid entities-align-inline bizagi-entities-wrapper">
+        <div data-bizagi-component="table" class="bz-rn-grid-data-wraper">
+            <table id="table-bizagi-ojects-list" class="ui-bizagi-grid-table">
+                <thead class="ui-bizagi-grid-header ui-state-default">
+                    <tr data-bizagi-component="columns">
+                        <th class=" resizableColumn" style="width: auto;">
+                            <div class="ui-bizagi-grid-column" data-column-index="1" style="width: auto;">
+                                <label>%{workportal-widget-admin-language-bizagi-objects-list-title}</label>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody class="ui-bizagi-grid-body" data-bizagi-component="rows">
+                    {{each elementList}}
+                        <tr class="ui-bizagi-object" data-value="${$value.key}">
+                            <td class="ui-bizagi-grid-align-center">
+                                <div class="ui-bizagi-grid-cell">
+                                    <div class="ui-bizagi-cell">
+                                        <div class="ui-bizagi-cell-readonly">
+                                            <label class="readonly-control">${$value.value}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="entities-align-inline entities-buttons-container">
+        <button id="move-all-objects-right" class="clearfix ui-button objects-buttons" role="button" aria-disabled="true">
+            <span class="ui-button-text">&#62;&#62;</span>
+        </button>
+        <button id="move-objects-right" class="clearfix ui-button objects-buttons" role="button" aria-disabled="true">
+            <span class="ui-button-text">&#62;</span>
+        </button>
+        <button id="move-objects-left" class="clearfix ui-button objects-buttons" role="button" aria-disabled="true">
+            <span class="ui-button-text">&#60;</span>
+        </button>
+        <button id="move-all-objscts-left" class="clearfix ui-button objects-buttons" role="button" aria-disabled="true">
+            <span class="ui-button-text">&#60;&#60;</span>
+        </button>
+    </div>
+
+    <div class="ui-bizagi-grid entities-align-inline bizagi-entities-wrapper">
+         <div data-bizagi-component="table" class="bz-rn-grid-data-wraper">
+            <table id="table-objects-selected" class="ui-bizagi-grid-table">
+                <thead class="ui-bizagi-grid-header ui-state-default">
+                    <tr data-bizagi-component="columns">
+                        <th class=" resizableColumn" style="width: auto;">
+                            <div class="ui-bizagi-grid-column" data-column-index="1" style="width: auto;">
+                                <label>%{workportal-widget-admin-language-bizagi-objects-list-title-selected}</label>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody class="ui-bizagi-grid-body" data-bizagi-component="rows">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-language-entities-list" type="text/x-jquery-tmpl" >
+<div class="entities-container">
+    <div class="bizagi-entities-wrapper ent-search-field">
+        <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+		<input id="ui-entities-filter" class="ui-bizagi-render-search ui-autocomplete-input" type="text"  value=""/>
+            <i class="workportal-icon-search"></i>
+	</div>
+
+    <div class="ui-bizagi-grid entities-align-inline bizagi-entities-wrapper">
+        <div data-bizagi-component="table" class="bz-rn-grid-data-wraper">
+            <table id="table-entities-list" class="ui-bizagi-grid-table">
+                <thead class="ui-bizagi-grid-header ui-state-default">
+                    <tr data-bizagi-component="columns">
+                        <th class=" resizableColumn" style="width: auto;">
+                            <div class="ui-bizagi-grid-column" data-column-index="1" style="width: auto;">
+                                <label>%{workportal-widget-admin-language-entities-list-title}</label>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody class="ui-bizagi-grid-body" data-bizagi-component="rows">
+                    {{each elementList}}
+                        <tr class="ui-bizagi-entity" data-id="${$value.id}">
+                            <td class="ui-bizagi-grid-align-center">
+                                <div class="ui-bizagi-grid-cell">
+                                    <div class="ui-bizagi-cell">
+                                        <div class="ui-bizagi-cell-readonly">
+                                            <label class="readonly-control">${$value.name}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="entities-align-inline entities-buttons-container">
+        <button id="move-all-right" class="clearfix ui-button entities-buttons" role="button" aria-disabled="true">
+            <span class="ui-button-text">&#62;&#62;</span>
+        </button>
+        <button id="move-right" class="clearfix ui-button entities-buttons" role="button" aria-disabled="true">
+            <span class="ui-button-text">&#62;</span>
+        </button>
+        <button id="move-left" class="clearfix ui-button entities-buttons" role="button" aria-disabled="true">
+            <span class="ui-button-text">&#60;</span>
+        </button>
+        <button id="move-all-left" class="clearfix ui-button entities-buttons" role="button" aria-disabled="true">
+            <span class="ui-button-text">&#60;&#60;</span>
+        </button>
+    </div>
+
+    <div class="ui-bizagi-grid entities-align-inline bizagi-entities-wrapper">
+         <div data-bizagi-component="table" class="bz-rn-grid-data-wraper">
+            <table id="table-entities-selected" class="ui-bizagi-grid-table">
+                <thead class="ui-bizagi-grid-header ui-state-default">
+                    <tr data-bizagi-component="columns">
+                        <th class=" resizableColumn" style="width: auto;">
+                            <div class="ui-bizagi-grid-column" data-column-index="1" style="width: auto;">
+                                <label>%{workportal-widget-admin-language-entities-list-title-selected}</label>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody class="ui-bizagi-grid-body" data-bizagi-component="rows">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</script>

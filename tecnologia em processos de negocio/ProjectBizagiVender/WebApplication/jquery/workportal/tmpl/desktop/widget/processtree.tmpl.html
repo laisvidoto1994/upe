@@ -1,0 +1,63 @@
+
+<script id="ui-bizagi-workportal-widget-processTree-links" type="text/x-jquery-tmpl" >
+   <div id="treeLinksId" class="clearfix"> 
+       <div class="biz-wp-form-row clearfix">
+            <div class="biz-wp-form-cell">%{workportal-widget-processTree-classification}</div>
+            <div id="biz-wp-tree-links" class="biz-wp-form-cell" >
+                <i id="allAppsLinkSelected" class="biz-wp-tree-selected-option"></i>  
+                <a id="allAppsLink" class="biz-wp-link" href="#">%{workportal-widget-processTree-all-applications}</a>
+                <br/>
+                <i id="selectAppLinkSelected" class="biz-wp-tree-not-selected-option"></i>  
+                <a id="selectAppLink" class="biz-wp-link" href="#">%{workportal-widget-processTree-select-application}</a>    
+            </div>
+        </div>
+    </div>
+    
+</script>
+
+<script id="ui-bizagi-workportal-widget-processTree-wrapper" type="text/x-jquery-tmpl" >
+   <div class="biz-wp-form-row clearfix">
+        <div class="biz-wp-form-cell"></div>
+        <div id="applicationsTree" style="display:none" class="case-search-border biz-wp-form-cell"></div>               
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-processTree" type="text/x-jquery-tmpl" >
+   
+    <ul class = "case-search-app-ul">
+        {{each(i,item) items }}
+            <li class="biz-wp-tree-node">
+                <div class="biz-wp-tree-data biz-btn-horizontal">
+                    <div class="biz-btn">
+                        {{if (type == "application") }} 
+                            <i data-id="${item.id}" name="app" class="biz-wp-tree-icon biz-ico biz-wp-tree-expand-icon"></i>                       
+                            <i class="biz-ico biz-wp-tree-icon biz-wp-tree-image-application"></i>
+                            <label data-id="${item.id}" data-name="app">${item.displayName}</label>
+                        {{else}} 
+                            {{if (item.process==true)}}
+                                <i  class="biz-wp-tree-icon biz-wp-tree-none-icon"></i>
+                                <i class="biz-ico biz-wp-tree-icon biz-wp-tree-image-process"></i>
+                                <a href="#" class="biz-wp-tree-process" data-id="${item.id}">${item.displayName}</a>
+                            {{else}}
+                                <i data-id="${item.id}" name="cat" class="biz-ico biz-wp-tree-icon biz-wp-tree-expand-icon"></i>
+                                <i class="biz-ico biz-wp-tree-icon biz-wp-tree-image-category"></i>
+                                <label data-id="${item.id}" data-name="cat">${item.displayName}</label>
+                            {{/if}}
+                        {{/if}}                   
+                        
+                    </div>
+                </div>
+                <ul class = "biz-wp-tree-list">
+                </ul>	     
+            </li>
+        {{/each}}
+    </ul>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-processTree-selected" type="text/x-jquery-tmpl" >
+        <div class="biz-wp-form-row clearfix">
+            <div class="biz-wp-form-cell">%{workportal-widget-processTree-search-in}</div>
+            <div class="biz-wp-form-cell"><strong><label id="searchInLabel">%{workportal-widget-processTree-all-applications}</label></strong></div>
+        </div>
+</script>

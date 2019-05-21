@@ -1,0 +1,7 @@
+{
+    "processes|5-10": [{
+        "idWFClass|0-100": 0,
+        "displayName": "@LOREM @LOREM @LOREM",
+        "renderVersion": 2
+    }]
+}

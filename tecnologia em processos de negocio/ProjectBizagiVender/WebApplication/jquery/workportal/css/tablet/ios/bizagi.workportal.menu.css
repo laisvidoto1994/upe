@@ -1,0 +1,712 @@
+/*	WORKPORTAL MENU
+===============================================*/
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+
+.ui-bizagi-workportal-menu {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+
+
+.ui-bizagi-workportal-menu-content {
+    position: absolute;
+    height: 130px;
+    text-align: center;
+    top: -88px;
+    z-index: 100;
+    -webkit-box-shadow: 0 0 7px #333;
+    background: -webkit-gradient(linear, left top, left bottom, from(hsl(202, 18%, 21%)), to(hsl(203, 17%, 18%)), color-stop(.3, hsl(202, 18%, 24%)));
+    width: 100%;
+}
+
+.ui-bizagi-workportal-menu-items-modal {
+    width: 92px;
+    height: 50px;
+    float: right;
+}
+
+
+.ui-bizagi-workportal-menu-items-modal-field {
+    float: left;
+}
+
+#menu-items li {
+    display: inline-block;
+    margin: 0 30px;
+}
+
+    #menu-items li button {
+        -webkit-appearance: none;
+        border: none;
+        display: block;
+        margin: 0 auto;
+        height: 45px;
+        width: 45px;
+        background: url('images/bizagi-tablet-sprite-s.png') no-repeat;
+    }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2 ), only screen and (min-device-pixel-ratio: 2) {
+    #menu-items li button {
+        background-image: url('images/bizagi-tablet-sprite.png');
+        background-size: 450px 300px;
+    }
+}
+
+#menu-items li #new-case {
+    background-position: 0 2px;
+}
+
+#menu-items li #inbox-shortcut {
+    background-position: -99px 4px;
+}
+
+#menu-items li #preferences {
+    background-position: -135px 0;
+}
+
+#menu-items li #menu-reports {
+    background-position: -196px 5px;
+}
+
+#menu-items li #search {
+    background-position: -145px 4px;
+}
+
+#menu-items li #logout {
+    background-position: -146px -189px;
+    width: 30px;
+}
+
+#menu-items li label {
+    color: #FFF;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2 ), only screen and (min-device-pixel-ratio: 2) {
+    #menu-items li #new-case,
+    #menu-items li #inbox-shortcut,
+    #menu-items li #preferences,
+    #menu-items li #search,
+    #menu-items li #logout {
+        background-image: url('images/bizagi-tablet-sprite.png');
+        background-size: 450px 300px;
+    }
+}
+
+.page-title {
+    position: absolute;
+    left: 51px;
+    top: 11px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#build {
+    position: absolute;
+    left: 300px;
+    top: 12px;
+    margin: 0 20 0 0;
+    color: #AAA;
+    opacity: .2;
+}
+
+#menu-toggler {
+    -webkit-appearance: none;
+    position: absolute;
+    width: 160px;
+    height: 35px;
+    z-index: 101;
+    top: -1px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background: url('images/logo-ipad.png') center no-repeat, -webkit-gradient(linear, left top, left bottom, from(#2B373E), to(#263036), color-stop(.3, #313F47));
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2 ), only screen and (min-device-pixel-ratio: 2) {
+    #menu-toggler {
+        background: url('images/logo-ipad-2x.png') center no-repeat, -webkit-gradient(linear, left top, left bottom, from(#2B373E), to(#263036), color-stop(.3, #313F47));
+        background-size: 83px 30px;
+    }
+}
+
+/* MENU VISIBILITY TOGGLE
+===============================================*/
+#menu-visible-bar {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+}
+
+.show-menu {
+    /*-webkit-transition: all .3s ease-in-out;
+    -webkit-transform: translate3d(0,88px,0);*/
+    top: 0;
+    opacity: .95;
+}
+
+.hide-menu {
+    /*-webkit-transition: all .3s ease-in-out;
+    -webkit-transform: translate3d(0,0,0);*/
+    top: -88px;
+    opacity: 1;
+}
+
+/* BACK BUTTON
+=========================================================*/
+#submenu-button,
+#back-button,
+#inbox-view-toggler {
+    background: url('images/bizagi-tablet-sprite-s.png') no-repeat;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2 ), only screen and (min-device-pixel-ratio: 2) {
+    #submenu-button,
+    #back-button,
+    #inbox-view-toggler {
+        background-image: url('images/bizagi-tablet-sprite.png');
+        background-size: 450px 300px;
+    }
+}
+
+#submenu-button {
+    min-width: 150px;
+    height: 37px;
+    position: absolute;
+    float: left;
+    left: 0;
+    background: none;
+    -webkit-appearance: none;
+    border: none;
+}
+
+.input-tray-icon {
+    -webkit-appearance: none;
+    border: none;
+    height: 32px;
+    width: 32px;
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    background-position: -298px -48px;
+}
+
+#back-button {
+    -webkit-appearance: none;
+    border: none;
+    height: 32px;
+    width: 32px;
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    background-position: -298px -48px;
+}
+
+.arrow-down {
+    background: transparent;
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    left: 37px;
+    top: 15px;
+}
+
+    .arrow-down:after {
+        top: 50%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(136, 183, 213, 0);
+        border-top-color: #B7C5D0;
+        border-width: 4px;
+        margin-left: -6px;
+    }
+
+.back-arrow-container {
+    /*height: 20px;
+    position: absolute;*/
+    min-width: 100px;
+    height: 40px;
+    display: inline-block;
+    float: left;
+    left: 107px;
+    top: 11px;
+    display: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+}
+
+.reports-icon-container {
+    min-width: 100px;
+    height: 40px;
+    display: inline-block;
+    float: left;
+    left: 107px;
+    top: 11px;
+    display: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+}
+
+.arrow-back.bz-cm-icon {
+    background-position: -343px -8px;
+    background-color: transparent;
+    float: left;
+}
+
+.reports-icon.bz-cm-icon {
+    background-position: -123px -201px;
+    background-color: transparent;
+    float: left;
+    width: 28px;
+}
+
+.back-title, .reports-title {
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    float: left;
+}
+
+
+
+#inbox-view-toggler {
+    -webkit-appearance: none;
+    border: none;
+    height: 32px;
+    width: 32px;
+    display: block;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    background-position: -298px -270px;
+}
+
+.ui-bizagi-workportal-menu-input-tray-field > div {
+    display: inline-block;
+}
+
+.ui-bizagi-workportal-menu-input-tray-field {
+    padding: 6px 10px 6px 0px;
+    background: transparent;
+    border: none;
+    display: block;
+}
+
+.ui-bizagi-workportal-menu-input-tray-opacity {
+    opacity: 0.5;
+}
+
+.ui-bizagi-workportal-menu-input-tray-label {
+    color: #FFF;
+    font-size: 15px;
+    height: 26px;
+    vertical-align: middle;
+}
+
+.inbox-field-view {
+    -webkit-appearance: none;
+    border: none;
+    height: 26px;
+    width: 26px;
+    display: block;
+    background-position: -303px -50px;
+}
+
+.outbox-field-view {
+    -webkit-appearance: none;
+    border: none;
+    height: 26px;
+    width: 26px;
+    display: block;
+    background-position: -203px -50px;
+}
+
+.draft-field-view {
+    -webkit-appearance: none;
+    border: none;
+    height: 26px;
+    width: 26px;
+    display: block;
+    background-position: -153px -49px;
+}
+
+#submenu-button .inbox-field-view.bz-cm-icon, #submenu-button .outbox-field-view.bz-cm-icon, #submenu-button .draft-field-view.bz-cm-icon {
+    position: absolute;
+    top: 5px;
+    left: 11px;
+}
+
+.change-to-default-view,
+.change-to-grid-view {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 4px;
+    margin: 3px;
+}
+
+.change-to-default-view,
+.change-to-grid-view {
+    background-color: hsla(0,0%,100%,.3);
+}
+
+
+.change-to-default-view {
+    background-position: -391px -231px;
+}
+
+.change-to-grid-view {
+    background-position: -360px -232px;
+}
+
+
+
+
+/* SEARCH FIELD
+=========================================================*/
+#ui-bizagi-wp-app-menu-search {
+    height: 26px;
+    position: relative;
+    width: 182px;
+}
+
+    #ui-bizagi-wp-app-menu-search input {
+        /*background: url("images/sprite_tablet.png") no-repeat scroll 0 -116px transparent;*/
+        background: #1F2325;
+        border: none;
+        color: #FFF;
+        display: block;
+        height: 26px;
+        line-height: 26px;
+        margin: 0;
+        padding: 0 10px 0 30px;
+        width: 142px;
+        font-size: 135%;
+        border-radius: 10px;
+        border-bottom: 1px solid #6B7073;
+        border-top: 1px solid #181C1D;
+    }
+
+#ui-bizagi-wp-app-menu-bt-search.bz-cm-icon {
+    background-position: -373px -8px;
+}
+
+#ui-bizagi-wp-app-menu-bt-search {
+    height: 15px;
+    left: 10px;
+    margin-top: -7px;
+    position: absolute;
+    top: 50%;
+    width: 15px;
+}
+
+#menuQuery {
+    background: url('images/dots_columns.png'), #C7C7C7;
+}
+
+/* GENERAL LAYOUTS MEDIA-QUERY
+=========================================================
+
+
+@media only screen and (min-width: 1281px)
+{
+    .ui-bizagi-workportal-menu-content{ width: 100%; }
+    #menu-toggler{ left: 50%; }
+}
+
+/* iPAD LANDSCAPE MEDIA-QUERY
+=========================================================
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)
+{
+    .ui-bizagi-workportal-menu-content{ width: 100%; }
+    #menu-toggler{ left: 50%; }
+}
+
+/* iPad PORTRAIT MEDIA-QUERY
+=========================================================
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) and (orientation:portrait)
+{
+    .ui-bizagi-workportal-menu-content{ width: 100%; }
+    #menu-toggler{ left: 10%; }
+}
+
+*/
+
+/* ==========================================================================
+   Reports menu
+   ========================================================================== */
+
+.categoryTree {
+    color: #52595f;
+    list-style: none;
+}
+
+.bz-wp-menu-subtitle {
+    margin-top: .5em;
+    font-size: 12px;
+}
+
+.bz-wp-menu-item {
+    padding: 1em 4em 1em 1em;
+    border-top: 1px solid #1d4255;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 100;
+    color: #52595f;
+}
+
+.reportsListDisplay:first-child .bz-wp-menu-item {
+    border-top: none;
+}
+
+.reportsListDisplay:last-child .bz-wp-menu-item {
+    padding-bottom: .5em;
+}
+
+#arrow,
+.newCaseDescription {
+    display: none;
+}
+
+.modal.bz-wp-menu-reports {
+    overflow-y: auto;
+    max-width: 15em;
+    min-width: 15em;
+    max-height: 25em;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #f0f0f0), color-stop(100%, #cacaca));
+    border: 1px solid #adadad;
+}
+
+    .modal.bz-wp-menu-reports .content {
+        background: none;
+    }
+
+    .modal.bz-wp-menu-reports:before,
+    .modal.bz-wp-menu-reports:after {
+        bottom: 100%;
+        left: 59%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .modal.bz-wp-menu-reports:before {
+        border-color: rgba(194, 225, 245, 0);
+        border-bottom-color: #adadad;
+        border-width: 8px;
+        margin-left: -39px;
+    }
+
+    .modal.bz-wp-menu-reports:after {
+        border-color: rgba(136, 183, 213, 0);
+        border-bottom-color: #f0f0f0;
+        border-width: 6px;
+        margin-left: -37px;
+    }
+
+.bz-wp-widget-reportsmenu-list {
+    list-style: none;
+}
+
+.bz-wp-widget-reportsmenu-item {
+    position: relative;
+    min-height: 26px;
+    padding: 8px 0 8px 55px;
+    border-bottom: 1px solid #1D4255;
+}
+
+    .bz-wp-widget-reportsmenu-item:last-child {
+        border-bottom: none;
+    }
+
+.bz-wp-widget-reportsmenu-item-title {
+    float: left;
+    max-width: 7em;
+    padding: .2em 0;
+    margin: 0;
+    color: #52595F;
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 1.8;
+}
+
+.bz-wp-widget-reportsmenu-item-icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    margin-top: -12px;
+    background-image: url('images/bizagi-tablet-sprite-s.png');
+    background-position: -201px -274px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2 ), only screen and (min-device-pixel-ratio: 2) {
+    .bz-wp-widget-reportsmenu-item-icon {
+        background-image: url('images/bizagi-tablet-sprite.png');
+        background-size: 450px 300px;
+    }
+}
+
+.bz-wp-widget-reportsmenu-navtree {
+    overflow: hidden;
+    padding: 0 10px 5px !important;
+    border-bottom: 1px solid #1D4255;
+    margin-bottom: 0;
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, .2);
+}
+
+    .bz-wp-widget-reportsmenu-navtree li {
+        float: left;
+    }
+
+.bz-wp-widget-reportsmenu-form {
+    list-style: none;
+}
+
+.bz-wp-widget-reportsmenu-form-item {
+    margin-bottom: .5em;
+}
+
+    .bz-wp-widget-reportsmenu-form-item:last-child {
+        margin: 0;
+    }
+
+.bz-wp-widget-reportsmenu-edition {
+    padding: .8em 0;
+}
+
+.bz-wp-widget-reportsmenu-form-label {
+    display: block;
+    margin-bottom: .5em;
+    font-size: 10px;
+}
+
+.bz-rp-reports-menu .bz-rp-button-secondary {
+    -webkit-appearance: none;
+    display: inline-block;
+    max-height: 24px;
+    min-height: 24px;
+    padding: 0 .5em 0 0;
+    border: none;
+    margin: 0;
+    outline: none;
+    background-color: transparent;
+    color: #444;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    .bz-rp-reports-menu .bz-rp-button-secondary span {
+        display: none;
+    }
+
+.bz-wp-widget-reportsmenu-itemactions {
+    float: right;
+}
+
+.bz-wp-widget-reportsmenu-edition .bz-wp-widget-reportsmenu-itemactions {
+    float: none;
+}
+
+.bz-rp-reports-menu .bz-wp-widget-reportsmenu-edition span {
+    display: inline-block;
+}
+
+.bz-rp-icon {
+    display: inline-block;
+    background: url(../../../../reporting/common/css/images/biz-rp-icons-sprite.png) 0 0;
+    text-indent: -999em;
+    vertical-align: middle;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2 ), only screen and (min-device-pixel-ratio: 2) {
+    .bz-rp-icon {
+        background-image: url(../../../../reporting/common/css/images/biz-rp-icons-sprite-2x.png);
+        background-size: 120px 120px;
+    }
+}
+
+.bz-rp-icon-24 {
+    width: 24px;
+    height: 24px;
+}
+
+.bz-rp-icon-edit {
+    background-position: 0 -24px;
+}
+
+.bz-rp-icon-delete {
+    background-position: -24px -24px;
+}
+
+.bz-rp-icon-apply {
+    background-position: 0 -48px;
+}
+
+.bz-rp-icon-cancel {
+    background-position: -24px -48px;
+}
+
+.bz-wp-widget-reportsmenu-confirmation {
+    list-style: none;
+}
+
+.bz-wp-widget-reportsmenu-confirmation-message {
+    max-width: 16em;
+    margin: 0 0 .5em;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.bz-rp-form-label {
+    display: block;
+    margin-bottom: .5em;
+    font-size: 10px;
+}
+
+.bz-rp-form-control {
+    -webkit-appearance: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px 6px 0 rgba(50, 50, 50, .2);
+    display: inline-block;
+    width: 100%;
+    padding: .6em;
+    border: 1px solid #c6cacc;
+    border-bottom: 1px solid #e2e3df;
+    border-color: #ddd #ddd;
+    border-radius: 4px;
+    margin: 0;
+    background: #fff;
+    font: normal 12px/normal Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #444;
+}

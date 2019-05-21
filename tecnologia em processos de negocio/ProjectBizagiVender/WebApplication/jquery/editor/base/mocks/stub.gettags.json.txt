@@ -1,0 +1,1 @@
+﻿{"actiontype":"GetTags","result":{"success":true,"parameters":[{"key":"001","value":"Car1"},{"key":"002","value":"Repair2"},{"key":"003","value":"Car3"},{"key":"005","value":"Repair4"},{"key":"006","value":"Car5"},{"key":"007","value":"Repair6"}]}}

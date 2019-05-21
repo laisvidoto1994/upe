@@ -1,0 +1,47 @@
+{
+	"form": {
+		"properties" : {"id": 1, "xpathContext": "", "title": "Cycle 1", 
+		"buttons": [
+			{"action": "save", "text": "Save", "validate": "true", "submitData": "true", "refresh": "true"},
+			{"action": "next", "text": "Next", "validate": "true", "submitData": "true", "refresh": "true"}
+		]},
+		"elements": [
+			{"container": { "properties": {"id" : "tab", "type": "tab"},
+				"elements": [
+					{"container": { "properties": {"id" : "tabItem1", "type": "tabItem", "displayName": "Simple renders"}, "elements": [
+						{"render": {	"properties": {"id" : 10021, "displayName" : "Check", "xpath" : "simple.check", "type": "boolean", "display": "check"}}},
+						{"render": {	"properties": {"id" : 10022, "displayName" : "Check", "xpath" : "simple.check2", "type": "boolean", "display": "check", "value": "true"}}},
+						{"render": {	"properties": {"id" : 10031, "displayName" : "Check grid", "type": "grid", "xpath": "checks", 
+							   "data": {
+									"page": 1,
+									"total": 1,
+									"records": 3,
+									"rows": [["1", "True", "False", null],["2","True", "False", null], ["3","True", "False", null]] 
+									}
+							  },
+							  "elements": [
+									{"render": {	"properties": {"id" : 10030, "displayName" : "Check1", "xpath" : "check1", "type": "columnBoolean", "display": "check"}}},
+									{"render": {	"properties": {"id" : 10031, "displayName" : "Check2", "xpath" : "check2", "type": "columnBoolean", "display": "check"}}},
+									{"render": {	"properties": {"id" : 10032, "displayName" : "Check3", "xpath" : "check3", "type": "columnBoolean", "display": "check"}}}
+						]}}
+					]}}
+				]
+			}},
+			{"render": {	"properties": {"id" : 10023, "displayName" : "Check", "xpath" : "simple.check3", "type": "boolean", "display": "check"}}},						
+			{"render": {	"properties": {"id" : 10024, "displayName" : "Check", "xpath" : "simple.check4", "type": "boolean", "display": "check", "value": "true"}}},
+			{"render": {	"properties": {"id" : 10041, "displayName" : "Check grid", "type": "grid", "xpath": "checks", 
+				   "data": {
+						"page": 1,
+						"total": 1,
+						"records": 3,
+						"rows": [["1", "True", "False", null],["2","True", "False", null], ["3","True", "False", null]] 
+						}
+				  },
+				  "elements": [
+						{"render": {	"properties": {"id" : 10040, "displayName" : "Check1", "xpath" : "check1", "type": "columnBoolean", "display": "check"}}},
+						{"render": {	"properties": {"id" : 10041, "displayName" : "Check2", "xpath" : "check2", "type": "columnBoolean", "display": "check"}}},
+						{"render": {	"properties": {"id" : 10042, "displayName" : "Check3", "xpath" : "check3", "type": "columnBoolean", "display": "check"}}}
+			]}}
+		]
+	}
+}

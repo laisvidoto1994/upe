@@ -1,0 +1,9 @@
+﻿{
+  "inboxSummary": {
+    "Red": 4,
+    "Yellow": 0,
+    "Green": 0,
+    "Black": 0,
+    "All": 4
+  }
+}

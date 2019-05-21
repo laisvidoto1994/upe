@@ -1,0 +1,120 @@
+{
+    "entityapplication":{
+        "model":{
+            "groups": [{
+                "elements": [{
+                    "caption": "Edit Entity",
+                    "style": "editentity",
+                    "action": "editEntity"
+                }, {
+                    "caption": "View All",
+                    "style": "viewall",
+                    "action": "viewAll"
+                }]
+            },{
+                "elements": [{
+                    "caption": "Refresh",
+                    "style": "refresh",
+                    "action": "refresh"
+                }]
+            }]
+        }
+    },
+    "entitymaster":{
+        "model":{
+            "groups": [{
+                "elements": [{
+                    "caption": "Add Element",
+                    "style": "addelement",
+                    "action": "addElement"
+                }, {
+                    "caption": "Add child elements",
+                    "style": "addchildelements",
+                    "action": "addChildElements"
+                }]
+            }, {
+                "elements": [{
+                    "caption": "Edit Entity",
+                    "style": "editentity",
+                    "action": "editEntity"
+                }, {
+                    "caption": "Refresh",
+                    "style": "refresh",
+                    "action": "refresh"
+                }]
+            }]
+        }
+    },
+    "entity":{
+        "model":{
+            "groups": [{
+                "elements": [{
+                    "caption": "Add Element",
+                    "style": "addelement",
+                    "action": "addElement"
+                }, {
+                    "caption": "Add child elements",
+                    "style": "addchildelements",
+                    "action": "addChildElements"
+                }]
+            }, {
+                "elements": [{
+                    "caption": "Edit Entity",
+                    "style": "editentity",
+                    "action": "editEntity"
+                }, {
+                    "caption": "Refresh",
+                    "style": "refresh",
+                    "action": "refresh"
+                }, {
+                    "caption": "Edit Values",
+                    "style": "editvalues",
+                    "action": "editValues"
+                }]
+            }]
+        }
+    },
+    "attribute":{
+        "model":{
+            "groups": [{
+                "elements": [{
+                    "caption": "Add Element",
+                    "style": "addelement",
+                    "action": "addElement"
+                }]
+            }]
+        }
+    },
+    "form":{
+        "model":{
+            "groups": [{
+                "elements": [{
+                    "caption": "New Form",
+                    "style": "newform",
+                    "action": "newForm"
+                }]
+            }]
+        }
+    },
+    "collection":{
+        "model":{
+            "groups": [{
+                "elements": [{
+                    "caption": "Add Element",
+                    "style": "addelement",
+                    "action": "addElement"
+                }]
+            }, {
+                "elements": [{
+                    "caption": "Edit Entity",
+                    "style": "editentity",
+                    "action": "addEntity"
+                }, {
+                    "caption": "Refresh",
+                    "style": "refresh",
+                    "action": "refresh"
+                }]
+            }]
+        }
+    }
+} 
