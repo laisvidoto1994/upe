@@ -1,0 +1,52 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     pima_diabetes_principal components-weka.filters.unsupervised.attribute.PrincipalComponents-R0.95-A5-M-1
+Instances:    768
+Attributes:   9
+              -0.452mass-0.44skin-0.435insu-0.393plas-0.36pres...
+              -0.621age-0.594preg+0.332skin+0.251insu-0.184pres...
+              -0.535pres+0.468plas+0.433pedi-0.362mass+0.337insu...
+              -0.834pedi+0.404plas+0.35 insu-0.081preg-0.071age...
+              -0.488skin-0.476preg+0.466plas-0.347insu+0.328pres...
+              0.685mass-0.634pres-0.271insu+0.194preg+0.094plas...
+              0.712age-0.589preg+0.282skin-0.192pres-0.132insu...
+              0.566skin-0.549insu+0.45 plas-0.342mass-0.212age...
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 0.3 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         568               73.9583 %
+Incorrectly Classified Instances       200               26.0417 %
+Kappa statistic                          0.4084
+Mean absolute error                      0.325 
+Root mean squared error                  0.4086
+Relative absolute error                 71.4976 %
+Root relative squared error             85.7331 %
+Total Number of Instances              768     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,836    0,440    0,780      0,836    0,807      0,411    0,810     0,885     tested_negative
+                 0,560    0,164    0,647      0,560    0,600      0,411    0,810     0,668     tested_positive
+Weighted Avg.    0,740    0,344    0,733      0,740    0,735      0,411    0,810     0,809     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 418  82 |   a = tested_negative
+ 118 150 |   b = tested_positive
+

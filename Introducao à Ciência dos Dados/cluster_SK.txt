@@ -1,0 +1,502 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 5 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     supermarket
+Instances:    4627
+Attributes:   217
+              [list of attributes omitted]
+Test mode:    split 70% train, remainder test
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 2
+Within cluster sum of squared errors: 0.0
+
+Initial starting points (random):
+
+Cluster 0: t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,high
+Cluster 1: t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,low
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                  Cluster#
+Attribute             Full Data          0          1
+                       (4627.0)   (1679.0)   (2948.0)
+=====================================================
+department1                   t          t          t
+department2                   t          t          t
+department3                   t          t          t
+department4                   t          t          t
+department5                   t          t          t
+department6                   t          t          t
+department7                   t          t          t
+department8                   t          t          t
+department9                   t          t          t
+grocery misc                  t          t          t
+department11                  t          t          t
+baby needs                    t          t          t
+bread and cake                t          t          t
+baking needs                  t          t          t
+coupons                       t          t          t
+juice-sat-cord-ms             t          t          t
+tea                           t          t          t
+biscuits                      t          t          t
+canned fish-meat              t          t          t
+canned fruit                  t          t          t
+canned vegetables             t          t          t
+breakfast food                t          t          t
+cigs-tobacco pkts             t          t          t
+cigarette cartons             t          t          t
+cleaners-polishers            t          t          t
+coffee                        t          t          t
+sauces-gravy-pkle             t          t          t
+confectionary                 t          t          t
+puddings-deserts              t          t          t
+dishcloths-scour              t          t          t
+deod-disinfectant             t          t          t
+frozen foods                  t          t          t
+razor blades                  t          t          t
+fuels-garden aids             t          t          t
+spices                        t          t          t
+jams-spreads                  t          t          t
+insecticides                  t          t          t
+pet foods                     t          t          t
+laundry needs                 t          t          t
+party snack foods             t          t          t
+tissues-paper prd             t          t          t
+wrapping                      t          t          t
+dried vegetables              t          t          t
+pkt-canned soup               t          t          t
+soft drinks                   t          t          t
+health food other             t          t          t
+beverages hot                 t          t          t
+health&beauty misc            t          t          t
+deodorants-soap               t          t          t
+mens toiletries               t          t          t
+medicines                     t          t          t
+haircare                      t          t          t
+dental needs                  t          t          t
+lotions-creams                t          t          t
+sanitary pads                 t          t          t
+cough-cold-pain               t          t          t
+department57                  t          t          t
+meat misc                     t          t          t
+cheese                        t          t          t
+chickens                      t          t          t
+milk-cream                    t          t          t
+cold-meats                    t          t          t
+deli gourmet                  t          t          t
+margarine                     t          t          t
+salads                        t          t          t
+small goods                   t          t          t
+dairy foods                   t          t          t
+fruit drinks                  t          t          t
+delicatessen misc             t          t          t
+department70                  t          t          t
+beef                          t          t          t
+hogget                        t          t          t
+lamb                          t          t          t
+pet food                      t          t          t
+pork                          t          t          t
+poultry                       t          t          t
+veal                          t          t          t
+gourmet meat                  t          t          t
+department79                  t          t          t
+department80                  t          t          t
+department81                  t          t          t
+produce misc                  t          t          t
+fruit                         t          t          t
+plants                        t          t          t
+potatoes                      t          t          t
+vegetables                    t          t          t
+flowers                       t          t          t
+department88                  t          t          t
+department89                  t          t          t
+variety misc                  t          t          t
+brushware                     t          t          t
+electrical                    t          t          t
+haberdashery                  t          t          t
+kitchen                       t          t          t
+manchester                    t          t          t
+pantyhose                     t          t          t
+plasticware                   t          t          t
+department98                  t          t          t
+stationary                    t          t          t
+department100                 t          t          t
+department101                 t          t          t
+department102                 t          t          t
+prepared meals                t          t          t
+preserving needs              t          t          t
+condiments                    t          t          t
+cooking oils                  t          t          t
+department107                 t          t          t
+department108                 t          t          t
+department109                 t          t          t
+department110                 t          t          t
+department111                 t          t          t
+department112                 t          t          t
+department113                 t          t          t
+department114                 t          t          t
+health food bulk              t          t          t
+department116                 t          t          t
+department117                 t          t          t
+department118                 t          t          t
+department119                 t          t          t
+department120                 t          t          t
+bake off products             t          t          t
+department122                 t          t          t
+department123                 t          t          t
+department124                 t          t          t
+department125                 t          t          t
+department126                 t          t          t
+department127                 t          t          t
+department128                 t          t          t
+department129                 t          t          t
+department130                 t          t          t
+small goods2                  t          t          t
+offal                         t          t          t
+mutton                        t          t          t
+trim pork                     t          t          t
+trim lamb                     t          t          t
+imported cheese               t          t          t
+department137                 t          t          t
+department138                 t          t          t
+department139                 t          t          t
+department140                 t          t          t
+department141                 t          t          t
+department142                 t          t          t
+department143                 t          t          t
+department144                 t          t          t
+department145                 t          t          t
+department146                 t          t          t
+department147                 t          t          t
+department148                 t          t          t
+department149                 t          t          t
+department150                 t          t          t
+department151                 t          t          t
+department152                 t          t          t
+department153                 t          t          t
+department154                 t          t          t
+department155                 t          t          t
+department156                 t          t          t
+department157                 t          t          t
+department158                 t          t          t
+department159                 t          t          t
+department160                 t          t          t
+department161                 t          t          t
+department162                 t          t          t
+department163                 t          t          t
+department164                 t          t          t
+department165                 t          t          t
+department166                 t          t          t
+department167                 t          t          t
+department168                 t          t          t
+department169                 t          t          t
+department170                 t          t          t
+department171                 t          t          t
+department172                 t          t          t
+department173                 t          t          t
+department174                 t          t          t
+department175                 t          t          t
+department176                 t          t          t
+department177                 t          t          t
+department178                 t          t          t
+department179                 t          t          t
+casks white wine              t          t          t
+casks red wine                t          t          t
+750ml white nz                t          t          t
+750ml red nz                  t          t          t
+750ml white imp               t          t          t
+750ml red imp                 t          t          t
+sparkling nz                  t          t          t
+sparkling imp                 t          t          t
+brew kits/accesry             t          t          t
+department189                 t          t          t
+port and sherry               t          t          t
+ctrled label wine             t          t          t
+department192                 t          t          t
+department193                 t          t          t
+department194                 t          t          t
+department195                 t          t          t
+department196                 t          t          t
+department197                 t          t          t
+department198                 t          t          t
+department199                 t          t          t
+non host support              t          t          t
+department201                 t          t          t
+department202                 t          t          t
+department203                 t          t          t
+department204                 t          t          t
+department205                 t          t          t
+department206                 t          t          t
+department207                 t          t          t
+department208                 t          t          t
+department209                 t          t          t
+department210                 t          t          t
+department211                 t          t          t
+department212                 t          t          t
+department213                 t          t          t
+department214                 t          t          t
+department215                 t          t          t
+department216                 t          t          t
+total                       low       high        low
+
+
+
+
+Time taken to build model (full training data) : 0.17 seconds
+
+=== Model and evaluation on test split ===
+
+kMeans
+======
+
+Number of iterations: 2
+Within cluster sum of squared errors: 0.0
+
+Initial starting points (random):
+
+Cluster 0: t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,low
+Cluster 1: t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,t,high
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                  Cluster#
+Attribute             Full Data          0          1
+                       (3238.0)   (2078.0)   (1160.0)
+=====================================================
+department1                   t          t          t
+department2                   t          t          t
+department3                   t          t          t
+department4                   t          t          t
+department5                   t          t          t
+department6                   t          t          t
+department7                   t          t          t
+department8                   t          t          t
+department9                   t          t          t
+grocery misc                  t          t          t
+department11                  t          t          t
+baby needs                    t          t          t
+bread and cake                t          t          t
+baking needs                  t          t          t
+coupons                       t          t          t
+juice-sat-cord-ms             t          t          t
+tea                           t          t          t
+biscuits                      t          t          t
+canned fish-meat              t          t          t
+canned fruit                  t          t          t
+canned vegetables             t          t          t
+breakfast food                t          t          t
+cigs-tobacco pkts             t          t          t
+cigarette cartons             t          t          t
+cleaners-polishers            t          t          t
+coffee                        t          t          t
+sauces-gravy-pkle             t          t          t
+confectionary                 t          t          t
+puddings-deserts              t          t          t
+dishcloths-scour              t          t          t
+deod-disinfectant             t          t          t
+frozen foods                  t          t          t
+razor blades                  t          t          t
+fuels-garden aids             t          t          t
+spices                        t          t          t
+jams-spreads                  t          t          t
+insecticides                  t          t          t
+pet foods                     t          t          t
+laundry needs                 t          t          t
+party snack foods             t          t          t
+tissues-paper prd             t          t          t
+wrapping                      t          t          t
+dried vegetables              t          t          t
+pkt-canned soup               t          t          t
+soft drinks                   t          t          t
+health food other             t          t          t
+beverages hot                 t          t          t
+health&beauty misc            t          t          t
+deodorants-soap               t          t          t
+mens toiletries               t          t          t
+medicines                     t          t          t
+haircare                      t          t          t
+dental needs                  t          t          t
+lotions-creams                t          t          t
+sanitary pads                 t          t          t
+cough-cold-pain               t          t          t
+department57                  t          t          t
+meat misc                     t          t          t
+cheese                        t          t          t
+chickens                      t          t          t
+milk-cream                    t          t          t
+cold-meats                    t          t          t
+deli gourmet                  t          t          t
+margarine                     t          t          t
+salads                        t          t          t
+small goods                   t          t          t
+dairy foods                   t          t          t
+fruit drinks                  t          t          t
+delicatessen misc             t          t          t
+department70                  t          t          t
+beef                          t          t          t
+hogget                        t          t          t
+lamb                          t          t          t
+pet food                      t          t          t
+pork                          t          t          t
+poultry                       t          t          t
+veal                          t          t          t
+gourmet meat                  t          t          t
+department79                  t          t          t
+department80                  t          t          t
+department81                  t          t          t
+produce misc                  t          t          t
+fruit                         t          t          t
+plants                        t          t          t
+potatoes                      t          t          t
+vegetables                    t          t          t
+flowers                       t          t          t
+department88                  t          t          t
+department89                  t          t          t
+variety misc                  t          t          t
+brushware                     t          t          t
+electrical                    t          t          t
+haberdashery                  t          t          t
+kitchen                       t          t          t
+manchester                    t          t          t
+pantyhose                     t          t          t
+plasticware                   t          t          t
+department98                  t          t          t
+stationary                    t          t          t
+department100                 t          t          t
+department101                 t          t          t
+department102                 t          t          t
+prepared meals                t          t          t
+preserving needs              t          t          t
+condiments                    t          t          t
+cooking oils                  t          t          t
+department107                 t          t          t
+department108                 t          t          t
+department109                 t          t          t
+department110                 t          t          t
+department111                 t          t          t
+department112                 t          t          t
+department113                 t          t          t
+department114                 t          t          t
+health food bulk              t          t          t
+department116                 t          t          t
+department117                 t          t          t
+department118                 t          t          t
+department119                 t          t          t
+department120                 t          t          t
+bake off products             t          t          t
+department122                 t          t          t
+department123                 t          t          t
+department124                 t          t          t
+department125                 t          t          t
+department126                 t          t          t
+department127                 t          t          t
+department128                 t          t          t
+department129                 t          t          t
+department130                 t          t          t
+small goods2                  t          t          t
+offal                         t          t          t
+mutton                        t          t          t
+trim pork                     t          t          t
+trim lamb                     t          t          t
+imported cheese               t          t          t
+department137                 t          t          t
+department138                 t          t          t
+department139                 t          t          t
+department140                 t          t          t
+department141                 t          t          t
+department142                 t          t          t
+department143                 t          t          t
+department144                 t          t          t
+department145                 t          t          t
+department146                 t          t          t
+department147                 t          t          t
+department148                 t          t          t
+department149                 t          t          t
+department150                 t          t          t
+department151                 t          t          t
+department152                 t          t          t
+department153                 t          t          t
+department154                 t          t          t
+department155                 t          t          t
+department156                 t          t          t
+department157                 t          t          t
+department158                 t          t          t
+department159                 t          t          t
+department160                 t          t          t
+department161                 t          t          t
+department162                 t          t          t
+department163                 t          t          t
+department164                 t          t          t
+department165                 t          t          t
+department166                 t          t          t
+department167                 t          t          t
+department168                 t          t          t
+department169                 t          t          t
+department170                 t          t          t
+department171                 t          t          t
+department172                 t          t          t
+department173                 t          t          t
+department174                 t          t          t
+department175                 t          t          t
+department176                 t          t          t
+department177                 t          t          t
+department178                 t          t          t
+department179                 t          t          t
+casks white wine              t          t          t
+casks red wine                t          t          t
+750ml white nz                t          t          t
+750ml red nz                  t          t          t
+750ml white imp               t          t          t
+750ml red imp                 t          t          t
+sparkling nz                  t          t          t
+sparkling imp                 t          t          t
+brew kits/accesry             t          t          t
+department189                 t          t          t
+port and sherry               t          t          t
+ctrled label wine             t          t          t
+department192                 t          t          t
+department193                 t          t          t
+department194                 t          t          t
+department195                 t          t          t
+department196                 t          t          t
+department197                 t          t          t
+department198                 t          t          t
+department199                 t          t          t
+non host support              t          t          t
+department201                 t          t          t
+department202                 t          t          t
+department203                 t          t          t
+department204                 t          t          t
+department205                 t          t          t
+department206                 t          t          t
+department207                 t          t          t
+department208                 t          t          t
+department209                 t          t          t
+department210                 t          t          t
+department211                 t          t          t
+department212                 t          t          t
+department213                 t          t          t
+department214                 t          t          t
+department215                 t          t          t
+department216                 t          t          t
+total                       low        low       high
+
+
+
+
+Time taken to build model (percentage split) : 0.1 seconds
+
+Clustered Instances
+
+0       870 ( 63%)
+1       519 ( 37%)
+
