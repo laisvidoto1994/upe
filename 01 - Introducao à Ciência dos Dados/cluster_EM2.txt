@@ -1,0 +1,124 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.EM -I 100 -N -1 -X 10 -max -1 -ll-cv 1.0E-6 -ll-iter 1.0E-6 -M 1.0E-6 -K 10 -num-slots 1 -S 100
+Relation:     labor-neg-data-weka.filters.unsupervised.attribute.ReplaceMissingValues-weka.filters.unsupervised.attribute.Remove-R17
+Instances:    57
+Attributes:   16
+              duration
+              wage-increase-first-year
+              wage-increase-second-year
+              wage-increase-third-year
+              cost-of-living-adjustment
+              working-hours
+              pension
+              standby-pay
+              shift-differential
+              education-allowance
+              statutory-holidays
+              vacation
+              longterm-disability-assistance
+              contribution-to-dental-plan
+              bereavement-assistance
+              contribution-to-health-plan
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+EM
+==
+
+Number of clusters selected by cross validation: 4
+Number of iterations performed: 2
+
+
+                                 Cluster
+Attribute                              0       1       2       3
+                                  (0.24)  (0.16)  (0.46)  (0.14)
+=================================================================
+duration
+  mean                             2.0878  1.5294   2.387  2.2733
+  std. dev.                        0.7942  0.4993  0.4992  0.7853
+
+wage-increase-first-year
+  mean                             4.3435  3.5925   3.618  3.7289
+  std. dev.                         1.202  1.0389  1.3533  1.5981
+
+wage-increase-second-year
+  mean                             4.3792    4.14  3.5851  4.3416
+  std. dev.                        0.8483  0.3364  1.0179  1.3908
+
+wage-increase-third-year
+  mean                             4.1171  3.9133  3.9382  3.4855
+  std. dev.                        0.3776  0.6522  0.7219    0.88
+
+cost-of-living-adjustment
+  none                            11.1923  7.8914 20.8914  6.0249
+  tcf                              4.1951  1.8361  3.7787  2.1901
+  tc                               1.2877  2.4783  4.4215  2.8125
+  [total]                          16.675 12.2058 29.0916 11.0275
+working-hours
+  mean                            36.7534 39.3744 38.5353 37.0859
+  std. dev.                        1.8594  0.9192  1.6613  4.0874
+
+pension
+  none                             1.0029  5.0078  6.4344  2.5549
+  ret_allw                         1.1666  2.4838  2.5634  1.7862
+  empl_contr                      14.5055  4.7142 20.0938  6.6865
+  [total]                          16.675 12.2058 29.0916 11.0275
+standby-pay
+  mean                             8.0814  6.7435  7.4444  7.1633
+  std. dev.                        1.5425  1.6053  0.0007  4.1048
+
+shift-differential
+  mean                             5.0492    2.97  4.9053  6.6358
+  std. dev.                        2.7431  1.5385  0.3994   7.335
+
+education-allowance
+  yes                               2.214  3.8162  5.5605  2.4092
+  no                               13.461  7.3896 22.5311  7.6183
+  [total]                          15.675 11.2058 28.0916 10.0275
+statutory-holidays
+  mean                            11.9338 10.3555 11.0878 10.5328
+  std. dev.                        1.7508  0.5915  0.6799  1.0066
+
+vacation
+  below_average                    3.3904  6.3721  9.6148  8.6227
+  average                          1.3085  3.7367 14.9176  1.0372
+  generous                        11.9762   2.097  4.5592  1.3676
+  [total]                          16.675 12.2058 29.0916 11.0275
+longterm-disability-assistance
+  yes                             14.6726  3.2254 27.0916  8.0104
+  no                               1.0024  7.9804       1  2.0171
+  [total]                          15.675 11.2058 28.0916 10.0275
+contribution-to-dental-plan
+  none                             1.4642  6.8162  3.6951  1.0245
+  half                              9.728  4.3273 16.5526  8.3921
+  full                             5.4829  1.0623  8.8439  1.6109
+  [total]                          16.675 12.2058 29.0916 11.0275
+bereavement-assistance
+  yes                              14.675  7.2058 27.0916  9.0275
+  no                                    1       4       1       1
+  [total]                          15.675 11.2058 28.0916 10.0275
+contribution-to-health-plan
+  none                             1.0004  6.5526  1.9937  2.4532
+  half                             1.6733  3.8209   6.409  1.0968
+  full                            14.0013  1.8323 20.6889  7.4775
+  [total]                          16.675 12.2058 29.0916 11.0275
+
+
+Time taken to build model (full training data) : 0.42 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       8 ( 14%)
+1       9 ( 16%)
+2      34 ( 60%)
+3       6 ( 11%)
+
+
+Log likelihood: -12.3886
+

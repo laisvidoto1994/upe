@@ -1,0 +1,14 @@
+
+pentaho
+
+comunidade pentaho - https://community.hitachivantara.com/community/products-and-solutions/pentaho
+dowload - https://community.hitachivantara.com/docs/DOC-1009931-downloads
+
+Schema Workbench - O Schema Workbench é uma interface de design visual que permite criar e testar esquemas de cubo OLAP Mondrian.
+Data Integration - A Data Integration da Pentaho, também conhecida como Kettle, oferece poderosos recursos de extração, transformação e carregamento (ETL).
+
+tutorial Pentaho Data Integration - https://www.youtube.com/watch?v=uK1Ck_S3yx4
+tutorial Pentaho Schema Workbench - https://www.youtube.com/watch?v=H9cpETnrbUw
+
+arquivo que execulta o Data Integration(ETL)-> Spoon.bat
+arquivo que execulta o Schema Workbench(cubo)-> Workbench.bat
