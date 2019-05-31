@@ -1,0 +1,283 @@
+estatistica computacional
+
+1º)Uma empresa de Telemarketing conta com 480 funcionários, dos quais 288 são do sexo
+feminino e os 192 restantes do sexo masculino.
+Foi selecionada uma amostra de 50 funcionários, calcule a proporção de cada sexo
+contida na amostra.
+
+480 funciomnarios 
+288 sexo feminino
+192 masculino
+50 de amostra
+
+
+percentual total de mulheres= x->100%
+480 -> 100%
+288 -> x
+480*x = 288*100
+480*x = 28800
+x=28800/480
+x=60
+
+
+percentual total de homens=
+480 -> 100%
+192 -> x
+480*x = 192*100
+480*x = 19200
+x=19200/480
+x=40
+
+
+resposta final mantendo á proporção será, dos 50 são 30homens e 20 sao mulheres, porque se 
+dividir por dois cada um dar esses valores 60/2=30 para homens e 40/2=20 para mulheres.
+
+
+#############################################################
+
+2º)Com o objetivo de levantar o estilo de comunicação, realiza-se o levantamento por
+amostragem. A população é composta por 200 chefes de seção. 4.400 operários especializados e
+1.200 operários não especializados. Obtenha uma amostra com 5% dos operários da indústria,
+mantendo as mesmas relações de proporcionalidade em cada extrato.
+
+200 chefes de seção
+4.400 operários especializados
+1.200 operários Não especializados
+
+
+total de funcionarios 5800
+
+total de operarios 5600
+  
+quantos porcento é que vale cada (operários especializados) em relação ao todo 5600
+
+quantos porcento é que vale cada (operários Não especializados) em relação ao todo 5600
+
+---------
+amostra = 5% x 5600
+
+5600    -> 100
+amostra -> 5
+
+amostra*100 = 5600*5
+amostra*100 = 28000
+amostra = 28000/100
+amostra = 280 operarios
+
+
+percentual de operários especializados, do total de operarios 5600
+5600 -> 100%
+4400 -> x
+
+5600*x = 4400*100
+5600*x = 440000 
+x = 440000/5600
+x=78,57%
+
+percentual de operários especializados = 78,57%
+
+
+percentual de operários não especializados, do total de operarios 5600
+
+5600 -> 100%
+1200 -> y
+
+5600*y = 100*1200
+5600*y = 120000
+y = 120000/5600
+y = 21,43%
+
+percentual de operários não especializados = 21,43%
+
+
+280    -> 100%
+xValor -> 78,57%
+
+100*xValor = 78,57*280
+100*xValor = 21999,6
+xValor = 219,996/100
+xValor = 219,996
+xValor = 220
+ 
+ 
+280    -> 100%
+yValor -> 21,43%
+
+100*yValor = 21,43*280
+100*yValor = 6000,4
+yValor = 60,004/100
+yValor = 60,4
+yValor = 60 
+
+resposta dos 280 da amostra, 220 sao operários e 60 sao operários 
+ 
+ 
+ 
+#############################################################
+	Amostra sistemática
+#############################################################
+
+3º)Uma seguradora mantém uma carteira de 5.000 clientes, e pretende avaliar a satisfação de
+seus clientes mediante uma amostra sistemática de 200 segurados.
+• A)Determine os números dos 5 primeiros clientes selecionados, supondo que o primeiro segurado
+    (obtido por sorteio) seja o de número 14.
+• B) Qual o número do último cliente selecionado?
+
+--------------
+5.000 clientes,
+200 segurados
+
+------------------
+
+a) 
+m = 14 
+m1 = 14+25 = 39
+m2 = 14+50 = 64
+m3 = 14+64 = 89
+m4 = 14+89 = 114
+b) 
+
+formula->K = N/n
+
+N = 5000
+n = 200
+
+K = 5000/200 
+K = 25
+
+formula->m + (n-1)*K 
+m = 14
+n = 200
+K = 25
+14 + (200-1)*25 
+14 +(199)*25
+14 + 4975
+4989
+
+resposta final 14,39,64,114, ..., 4989
+
+
+#############################################################
+
+4º)Uma empresa prestadora de serviço mantém um cadastro de 2.185nclientes, e
+pretende verificar o interesse de seus clientes por um novo produto; para isso, seleciona uma
+amostra sistemática de 70 clientes.
+a) Supondo que o primeiro segurado (obtido por sorteio) seja o de número 21, determine os números dos próximos 5
+   clientes selecionados.
+b) Qual o número do último cliente selecionado ?
+
+ 
+2.185 clientes
+amostra sistemática de 70 clientes.
+primeiro sorteado = número 21
+
+a)
+
+N = 2.185
+n = 70
+K = 2.185/70 
+K = 31,21
+
+mn = m + K
+m = 21 
+K = 31,21
+m1 = 21 + 31,21 = 52,21
+m2 = 21 + 52,21 = 73,21
+m3 = 21 + 73,21 = 94,21
+m4 = 21 + 94,21 = 115,21
+
+resposta final 
+	1º posição = 21, 
+	2º posição = 52,21,
+	3º posição = 73,21,
+	4º posição = 94,21,
+	5º posição = 115,21
+
+b) 
+Posiçao Último elemento = primeiro + (n-1)*K
+ 
+N = 2.185
+n = 70
+K = 2.185/70 
+K = 31,21
+
+formula an = a1 + (n-1)*K
+an->posição do elemento sorteado aleatoriamente
+a1-> primeiro numero que eu queiro começar
+
+an = 70
+a1 = 21
+K = 31,21
+70 = 21 + (70-1)* 31,21
+70 = 21 + (69)* 31,21
+70 = 21 + 2153,49
+70 = 2174,49
+
+resposta final 70º posição = 2174,49 
+
+
+#############################################################
+
+exercicios
+1º)Para as situações descritas a seguir, identifique a população e a 
+amostra correspondente.
+a)Para avaliar a eficácia de uma campanha de vacinaçãonoestado de São Paulo, mães de recem-nascidos,
+durante o primeiro semestre de 2005,foram perguntadas a respeito da ultima vez que vacinaram seus filhos
+b)Para verificar a audiência de um programa de TV no Brazil,individuos foram entrevistados com relação ao canal em que estavam sintonizados
+c) A fim de avaliar a intensão de voto para presidente do Brasil, pessoas foram entrevistados em cidades brazileiras.
+
+2º) Classifique o tipo de variavel para os itens abaixo
+a)Marca de antitermico preferida
+b)Grau de satisfação com um produto alimenticio
+c)Peso de grãos exportados
+d)Renda familiar
+e)Grau de escolaridade
+f)numero de computadores em um laboratorio de informatica
+
+3º)Um questionario foi aplicado aos dez funcionarios dosetor de contabilidade de uma empresa,
+fornecendo os dados apresentados na tabela. Pode-se: Classifique cada uma das variaveis dada na tabela
+
+| Funcionario  | Curso(completo) | Idade(anos) | Salário(R$) | Anos de empresa |
+| Abelado      | Superior        | 34          | 1100,52     | 5               |
+| Alberto      | Superior        | 43          | 1452,12     | 8               |
+| Cristiano    | Médio           | 31          | 965,57      | 6               |
+| Danilo       | Médio           | 37          | 965,57      | 8               |
+| João         | Fundamental     | 22          | 458,73      | 2               |
+| Mauricio     | Fundamental     | 21          | 458,73      | 3               |
+
+4º)Classifique cada uma das variaveis abaixo em qualitativa(nominal/ordinal) ou quantitativa(dicreta/continua)
+a)Intensão de voto para presidente(possiveis respostas são os nomes dos candidatos, além de não sei)
+b)Grau de satisfação de clientes com relação ao serviço prestado por uma empresa de consultoria(valores de 0 á 5, com o 0 indicando totalmente satisfeito e 5 totalmente insatisfeito)
+c)Volume de petroleo extraido por horas de uma jazida
+
+=======
+1º)
+a)
+população-> Todas as mães de recem-nascidos, do estado de São Paulo,que tiveram no primeiro semestre de um dado ano
+amostra-> As mães de recem-nascidos entrevistados na pesquisa
+b)
+população->Todos os brazileiros que assistem TV
+amostra->Os telespectadores entrevistados na pesquisa
+c)
+população->Todos os eleitores votantes no Brazil
+amostra->os eleitores selecionados na pesquisa
+
+2º)
+a)Qualitativas nominal
+b)Qualitativas ordinal
+c) Quantitativas continua
+d)Quantitativas continua
+e)Qualitativas ordinal
+f)Quantitativas dicreta
+
+3º)
+funcionarios->qualitativa nominal
+curso->Qualitativas ordinal
+idade-> quantitativa discreta
+salario->quantitativa continua
+anos de empresa->Quantitativas discreta
+
+4º)
+a) qualitativa nominal
+b)qualitativa ordinal
+c)quantitativa continua 
