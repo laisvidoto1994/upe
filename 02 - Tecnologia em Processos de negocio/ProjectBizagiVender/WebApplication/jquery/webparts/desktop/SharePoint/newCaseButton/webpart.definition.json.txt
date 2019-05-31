@@ -1,0 +1,9 @@
+﻿{
+	"name": "newCaseButton",
+	"js": [ 	
+		{"src": "bizagi.webparts.newCaseButton.js"},	{"src": "../../../../overrides/js/desktop/sharePoint/newCaseButton/bizagi.webparts.newCaseBut.override.js"}],
+	"css": [{"src": "bizagi.webpart.newCaseButton.css"} ],
+	"tmpl": [ 
+		{alias: "newCaseButton",  "src": "newCaseButton.tmpl.html#ui-bizagi-webpart-newCaseButton"} 
+	]
+}

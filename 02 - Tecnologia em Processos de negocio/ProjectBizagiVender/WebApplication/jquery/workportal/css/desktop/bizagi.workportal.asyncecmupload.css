@@ -1,0 +1,90 @@
+#async-emc-list-wrapper {
+    margin: 1.5em auto;
+    max-height: 300px;
+}
+
+#async-emc-list-wrapper .button-set {
+    position: absolute;
+    right: 15px;
+    top: 21px;
+}
+
+#async-emc-list-content {
+    background: #E4E4E4;
+    border-radius: 6px;
+    box-shadow: inset 1px 1px 0 rgb(238, 238, 238), 1px 1px 0 #D3D3D3;
+    padding: 1.5em 1em;
+}
+
+#async-emc-list-content #table-content {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#async-emc-list-content td {
+    padding: 4px 8px 4px 4px;
+}
+
+#async-emc-list-content .async-emc-list-header {
+    background: #CCC;
+    color: #2F526C;
+}
+
+#async-emc-list-content .async-emc-item {
+    background-color: #e6e6e6;
+}
+
+#async-emc-list-content .async-emc-item.biz-ui-even {
+    background: #DCDCDC;
+}
+
+#async-emc-list-content .async-emc-item .job-state {
+    width: 14px;
+}
+
+#async-emc-list-content .async-emc-item .failure-message div {
+    width: 230px;
+}
+
+#async-emc-list-content .async-emc-item .failure-message .ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+}
+
+#async-emc-list-content .async-ecm-widget-button {
+    display: block;
+    margin: 0 auto;
+    height: 20px;
+    width: 20px;
+    padding: 0 2px;
+}
+
+#async-emc-list-content .async-ecm-retry span {
+    height: 20px;
+    width: 20px;
+    background-image: url(../../../../img/Admin/notanothergearicon-gray.png);
+}
+
+#async-emc-list-wrapper .async-ecm-refresh {
+    text-decoration: none;
+}
+
+#async-emc-list-wrapper .async-ecm-refresh span {
+    height: 16px;
+    width: 16px;
+    background-image: url(../../../../img/Admin/refresh.png);
+    display: inline-block;
+}
+
+#async-emc-list-content #error-container {
+    border-top: 1px solid #D3D3D3;
+    box-shadow: inset 0 1px 0 #EBEBEB;
+    padding: 5px 0;
+}
+
+#async-emc-list-content #error-container p {
+    font-size: 12px;
+}

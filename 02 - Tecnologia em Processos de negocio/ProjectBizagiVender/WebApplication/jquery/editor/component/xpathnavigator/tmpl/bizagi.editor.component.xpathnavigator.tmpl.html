@@ -1,0 +1,41 @@
+<script id="node" type="text/x-jquery-tmpl">  
+<ul class = "bizagi_editor_xpathnavigator_list">
+    <li id="${id}" data-id="${id}" class="bizagi_editor_xpathnavigator_node">
+        <div class="${dragabbleClass} bizagi_editor_xpathnavigator_data biz-btn-horizontal">
+            <div class="biz-btn">
+                {{if (canHaveChildren == "true") }} 
+                <i class="biz-ico xpathnavigator_expand_icon xpathnavigator_image_padding bz-studio bz-tree-show-more_16x16_standard" />
+                {{/if}}
+                <i class="biz-ico ${style} xpathnavigator_image_padding ${icon}"></i>
+                <label class="bizagi_editor_xpathnavigator_hover_cursor ui-ellipsis" {{if displayName && displayName.length > 20 }}title="${displayName}"{{/if}}>
+                  ${displayName}
+                </label>
+            </div>
+        </div>
+        <ul class = "bizagi_editor_xpathnavigator_list bizagi_editor_xpathnavigator_node-childs">
+        </ul>	     
+    </li>
+</ul>
+</script>
+
+<script id="xpathnavigator-close" type="text/x-jquery-tmpl">
+    <div class="xpathnavigator-close ui-properties-close biz-btn-close"><i class="biz-icon ui-close-btn bizagi_editor_xpathnavigator_container-close-image bz-studio bz-black bz-boolean-remove_16x16_black"></i></div>
+</script>
+
+<script id="xpathnavigator-helper" type="text/x-jquery-tmpl">
+      <div id="bizagi_editor_xpathnavigator-helper" class="bizagi_editor_xpathnavigator-helper">
+         <i class="biz-ico xpathnavigator-item-image ${style} ${icon}"></i>
+         {{if context != 'template'}}
+            <label>${displayName}</label>
+         {{/if}}          
+      </div>
+</script>
+
+<script id="xpathnavigator-node-container" type="text/x-jquery-tmpl">
+    <div class="xpathnavigator-node-container"></div>
+</script>
+
+
+<script id="xpathnavigator-node-version" type="text/x-jquery-tmpl">
+      <span class="bizagi_editor_xpathnavigator-form-version ui-badge ui-arrow-right biz-third-font">${version}</span>
+</script>

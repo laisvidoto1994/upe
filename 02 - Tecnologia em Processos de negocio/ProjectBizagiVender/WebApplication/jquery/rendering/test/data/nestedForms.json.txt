@@ -1,0 +1,29 @@
+﻿{
+	"form": {
+		"properties" : {"id": 1, "xpathContext": "", "title": "Cycle 1", 
+		"buttons": [
+			{"action": "save", "text": "Save", "validate": "true", "submitData": "true", "refresh": "true"},
+			{"action": "next", "text": "Next", "validate": "true", "submitData": "true", "refresh": "true"}
+		]},
+		"elements": [
+			{"container": { "properties": {"id" : "tab", "type": "tab"},
+				"elements": [
+					{"container": { "properties": {"id" : "tabItem1", "type": "tabItem", "displayName": "Simple renders"}, "elements": [
+						{"render": {	"properties": {"id" : 10000, "displayName" : "Forma anidada 1 abajo", "type": "label" }}},
+						{"container": { "properties": {"id" : "nestedForm1", "type": "nestedForm"}, "elements": [
+							{"render": {	"properties": {"id" : 50004, "displayName" : "Label Standard", "xpath" : "text5_4", "type": "text"}}},
+							{"render": {	"properties": {"id" : 50005, "displayName" : "Label Standard", "xpath" : "text5_5", "type": "text"}}},
+							{"render": {	"properties": {"id" : 50006, "displayName" : "Label Standard", "xpath" : "text5_6", "type": "text"}}}
+						]}},	
+						{"render": {	"properties": {"id" : 20000, "displayName" : "Forma anidada 2 abajo", "type": "label" }}},
+						{"container": { "properties": {"id" : "nestedForm2", "type": "nestedForm"}, "elements": [
+							{"render": {	"properties": {"id" : 60004, "displayName" : "Label Standard", "xpath" : "text5_4", "type": "text"}}},
+							{"render": {	"properties": {"id" : 60005, "displayName" : "Label Standard", "xpath" : "text5_5", "type": "text"}}},
+							{"render": {	"properties": {"id" : 60006, "displayName" : "Label Standard", "xpath" : "text5_6", "type": "text"}}}
+						]}}	
+					]}}
+				]
+			}}			
+		]
+	}
+}

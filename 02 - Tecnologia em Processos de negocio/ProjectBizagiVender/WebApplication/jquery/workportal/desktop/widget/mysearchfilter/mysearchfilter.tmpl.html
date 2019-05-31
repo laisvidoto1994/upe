@@ -1,0 +1,25 @@
+﻿<script id="mysearchfilter-wrapper" type="text/x-jsrender" >
+    <div class="clearfix bz-wp-my-search wgd-mysearchfilter-container">
+        <div class="bz-wp-wrapper">
+            <ul class="mysearchfilter-menu">
+                <li>
+                    <div class="mysearchfilter-list"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="filters-loading">
+            <div class="ui-bizagi-loading-icon"></div>
+        </div>
+    </div>
+</script>
+
+<script id="mysearchfilter-item" type="text/x-jsrender" >
+    <div class="wdg-my-search-wrapper-filter">
+        <li class="wgd-my-search-filter {{:filterApplied}}" data-type="{{:type}}" data-attribute="{{:attribute}}">
+            <div id="my-search-filter-{{:type}}-{{:tmplid}}" class="wgd-my-search-filter-pluggin btn btn-primary">
+                <span>{{:display}}</span>
+                <i class="fa fa-caret-down"></i>
+            </div>
+        </li>
+    </div>
+</script>

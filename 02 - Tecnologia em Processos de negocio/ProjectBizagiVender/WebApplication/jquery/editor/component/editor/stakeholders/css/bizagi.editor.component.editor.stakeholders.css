@@ -1,0 +1,61 @@
+﻿
+.bizagi_editor_component_editor_stakeholders .biz-ico[class*="stakeholder-"]{
+    opacity: 1;
+    position: absolute;
+    right: -22px;
+    top: 27px;
+    cursor: pointer;
+}
+
+.stakeholder-item-container {
+    list-style:none; 
+    padding: 0 10px;
+    border: 1px solid #D4D6D9;
+    max-height: 150px;
+    overflow-y:auto;
+}
+
+.stakeholder-item {
+	margin: 6px 0;
+}
+
+.stakeholder-item .item-image-delete-stakeholder{
+	background-position: -800px -32px;
+	cursor: pointer;
+}
+
+.stakeholder-item span 
+{
+    float: left;
+    width: 148px;
+    white-space: nowrap;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stakeholder-item i 
+{
+    float: left;
+}
+
+.stakeholder-item.stakeholder-value > span:hover
+{
+	cursor:pointer;
+}
+
+.stakeholder-item:before,
+.stakeholder-item:after {
+    content:"";
+    display:table;
+}
+.stakeholder-item:after {
+    clear:both;
+}
+
+
+.stakeholder-item-warning {
+    list-style: none;
+    padding: 10px 10px;
+    background: #FFFFEF;
+    font-size: 11px;
+}

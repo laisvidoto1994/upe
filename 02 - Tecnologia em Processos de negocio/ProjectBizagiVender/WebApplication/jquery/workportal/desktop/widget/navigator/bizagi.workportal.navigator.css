@@ -1,0 +1,97 @@
+/*
+    Document   : bizagi.workportal.navigator
+    Created on : Dec 11, 2014, 2:40:00 PM
+    Author     : Bizagi
+    Description:
+        Styles for navigator bar
+*/
+
+
+#navigation-panel #home-navbar{
+    position:fixed;
+    background:#f5f5f5;
+    padding: 17px 2px 17px 25px;
+    margin-top: -19px;
+    margin-left:-35px;
+    top: 78px;
+    width: 100%;
+    z-index:10;
+}
+
+#navigation-panel #home-navbar .navbar-date{
+    padding-right: 50px;
+}
+
+#navigation-panel #home-navbar .navbar-print{
+    padding-right: 50px;
+}
+
+#home-navbar .nav-items-ctn {
+    overflow: hidden;
+}
+
+#home-navbar .nav-items-ctn.toLeft {
+    float:left;
+}
+
+#home-navbar .nav-items-ctn.clearfix {
+    clear:both;
+    margin: 1em 0;
+}
+
+#home-navbar .nav-items-ctn > ul {
+    list-style: none;
+    white-space: nowrap;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+#home-navbar .nav-items-ctn > ul.list-overflow {
+    float: right;
+}
+
+#home-navbar .nav-items-ctn > ul > li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#home-navbar .navbar-back{
+    display: none;
+    float:left;
+    font-size: 1em;
+}
+
+#home-navbar .navbar-date {
+    display: none;
+    font-size: 1em;
+    text-align: right;
+    float:right;
+}
+
+#home-navbar .navbar-print {
+    display: none;
+    font-size: 1em;
+    text-align: right;
+    float:right;
+}
+
+/*
+* Dialog
+*/
+.ui-dialog #home-navbar
+{
+    background-color: #f5f5f5;
+    padding: 13px 5px;
+    position: fixed;
+    width: 1080px;
+    z-index: 3;
+}
+
+.ui-dialog #dialognavdata-frame > .container-fluid {
+    padding-top: 25px;
+}
+
+.ui-dialog #dialognavdata-frame #template-dataviewer{
+    margin-bottom: 0;
+}

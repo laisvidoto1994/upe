@@ -1,0 +1,45 @@
+<script id="ui-bizagi-workportal-widget-case-events-container" type="text/x-jquery-tmpl" >
+        <div class="ui-bizagi-container-events"> 
+             <span class="bz-cm-icon ui-bizagi-form-events-icon"></span>
+             <div class="ui-bizagi-container-event-label">
+                <label>  %{workportal-widget-render-events} </label>
+             </div>
+        </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-case-events" type="text/x-jquery-tmpl" >
+    {{if showEvents}}
+
+
+    <table id="ui-bizagi-wp-dialog-activity-table" cellspacing="0" border="0" cellpading="0">
+                <thead>
+                    <tr>
+                        <td>%{workportal-widget-inboxcommon-event-name}</td>     
+                    </tr>
+                </thead>
+                <tbody>                    
+                    {{each events}}
+                     {{each $value}}
+                        {{if hideItem  }}
+                            
+                        {{else}}
+                            <tr>                                                 
+                                <td class="eventLink"> 
+                                    <a>${displayName}</a>
+                                    <input type="hidden" id="idWorkflow" value="${idWorkflow}" />
+                                    <input type="hidden" id="idWorkItem" value="${idWorkitem}" />
+                                    <input type="hidden" id="idTask" value="${idTask}" />
+                                    <input type="hidden" id="idCase" value="${idCase}" />
+                                    <input type="hidden" id="eventAsTasks" value="true" />
+                               </td>
+                            </tr>   
+                        {{/if}}                  
+                    {{/each}}
+                    {{/each}}
+                </tbody>
+            </table>
+
+
+
+    {{/if}}
+</script>

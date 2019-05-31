@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="../../../../jquery/workportal/css/desktop/bizagi.workportal.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../jquery/workportal/css/desktop/bizagi.workportal.render.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../jquery/themes/bizagiDefault/devices/desktop/default.less.css" rel="stylesheet" type="text/css" />
+    <title>Multi checkbox</title>
+</head>
+<body>
+    <script type='text/javascript' src='../../../../jquery/steal.js'></script>
+    <script type='text/javascript' src='../../../../jquery/bizagi.loader.js'></script>
+    <script type="text/javascript" language="javascript">
+        // Redefine path to base
+        var BIZAGI_PATH_TO_BASE = "../../../../";
+        
+        // Gets the loader instance, and load the module
+        var loader = bizagi.loader;
+        loader.init(function () {
+            loader.start("workportal")
+            .loadFile( bizagi.loader.getResource("js", "common.base.dev.jquery.mockjax"))
+            .loadFile( bizagi.loader.getResource("js", "common.base.dev.jquery.mockjson"))
+            .then(function () {
+                // BEGIN OF SCRIPT
+
+                $.mockjax({
+                    url: 'App/Render/RenderHandler.ashx',
+                    proxy: 'jquery/rendering/test/data/arabic/multicheckbox.json.txt'
+                });
+
+                $.mockjax({
+                    url: 'Rest/Cases/9999/Summary',
+                    proxy: 'jquery/rendering/test/data/arabic/summary.json.txt'
+                });
+
+                $.mockjax({
+                    url: 'RestServices/UserHandler.ashx',
+                    proxy: 'jquery/rendering/test/data/arabic/user.json.txt'
+                });
+
+                $.mockjax({
+                    url: 'Rest/Authorization/MenuAuthorization',
+                    proxy: 'jquery/rendering/test/data/arabic/menu.json.txt'
+                });
+                
+                // END OF SCRIPT
+            })
+            .then(function () {
+                // BEGIN SCRIPT
+                var workportal = new bizagi.workportal.facade({
+                    idCase: 9999,
+                    idWorkitem: 9999,
+                    widget: "activityform"
+                });
+                workportal.execute();
+
+                // END OF SCRIPT
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/********
+* Filename: bizagi.editor.component.editor.filterexpression.css
+* Create Date: 2012-07-09
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__filterexpression
+*
+********/
+
+/* __filterexpression
+--------*/
+
+.bizagi_editor_component_editor_filterexpression .filterexpression-rule-value
+{
+}
+
+.bizagi_editor_component_editor_filterexpression .biz-action-btn{
+    line-height: 18px;
+    padding: 0px 0px 0px 8px;
+}
+
+.bizagi_editor_component_editor_filterexpression .filterexpression-button-value{
+    margin-left: 1px;
+    padding-left: 0px;
+}
+
+.bizagi_editor_component_editor_filterexpression .ui-control-input input[type="text"] {
+	width:100%;
+    padding-left: 4px;   
+    padding-right: 14px;   
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bizagi_editor_component_editor_filterexpression .ui-control-input input[type="text"]:focus {
+    background-color: #FFF;
+}
+
+.bizagi_editor_component_editor_filterexpression .biz-complex-btn.biz-complex-dropdown{
+	width:auto;
+}
+
+
+.bizagi_editor_component_editor_filterexpression .filterexpression-number-container{
+	padding-top: 1px;
+}
+
+.bizagi_editor_component_editor_filterexpression .biz-action-btn .biz-ico {
+	top:0;
+}
+
+
+.bizagi_editor_component_editor_filterexpression div.filterexpression-boolean-value.ui-control-input.active {
+    display: inline-block;
+}
+
+
+.bizagi_editor_component_editor_filterexpression .filterexpression-container .ui-control-input{
+    border: none;
+}
+
+
+.bizagi_editor_component_editor_filterexpression .biz-action-btn.biz-btn{
+    min-width: 40px;
+    height: 18px;
+}
+
+
+.bizagi_editor_component_editor_filterexpression .ui-control-input{
+    border-radius: 3px;
+}

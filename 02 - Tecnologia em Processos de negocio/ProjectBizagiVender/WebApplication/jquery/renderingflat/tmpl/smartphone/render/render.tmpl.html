@@ -1,0 +1,26 @@
+<div class="ui-bizagi-render #= data.displayOptionClass #" dir="#if (typeof data.orientation !== 'undefined'){ ##= data.orientation ##}else{#auto#}#"
+     #if (data.uniqueId){#
+     	data-unique-id="#=data.uniqueId#"
+     #}#
+     #if (data.id){#
+     	data-render-id="#=data.id#"
+     #}#
+     #if (data.xpath){#
+     	data-render-xpath="#=data.xpath#"
+     #}#
+     #if (data.tag){#
+     	data-render-tag="#=data.tag#"
+     #}#>
+    <div class="ui-bizagi-label #=data.labelAlignClass# #if (data.helpText){# ui-bizagi-render-help-text#}#">
+        <label>#=data.label#</label>
+    </div>
+    <div class="ui-bizagi-render-control #=data.valueAlignClass# #if (data.showFullRender){#full#}# #if (data.helpText){# ui-bizagi-render-help-text#}#">
+        {{control}}
+    </div>
+    #if (data.helpText){#
+    <div class="bz-container-rn-helptext">
+        <label class="bz-mo-icon bz-info"></label>
+    </div>
+    #}#
+    <div class="bz-cm-tbl-row bz-rn-messages"></div>
+</div>

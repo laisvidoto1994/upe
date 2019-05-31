@@ -1,0 +1,15 @@
+<div class="biz-render-searchlist">
+    <ul>
+        {{each value}}
+        <li data-id="${id}"><label>${value}</label>{{if editable}}<a class="closebutton"></a>{{/if}}</li>
+        {{/each}}
+        {{if editable}}
+        <li>
+            <input class="biz-render-input-search" type="text" placeholder="%{render-search-list-message}" />
+        </li>
+        {{else}}
+        <li></li>
+        {{/if}}
+    </ul>
+    <i class="ui-bizagi-render-icon-search"></i>
+</div>

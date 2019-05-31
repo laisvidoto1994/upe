@@ -1,0 +1,202 @@
+/********
+* Filename: bizagi.editor.component.layoutnavigator.css
+* Create Date: 2012-06-14
+* Author: Diego Parra Diego.Parra@bizagi.com
+*
+********/
+.bizagi_editor_component_layoutnavigator {
+	height: 100%;
+	width: 100%;
+	color:#46596A;
+	font-size: 11px;
+}
+#bz-fm-layout-navigator .bz-fm-layout-navigator-item label{
+	display:inline-block;
+	vertical-align: middle;
+	margin-left: 8px;
+	color:#354552;
+	cursor: move;
+}
+
+#bz-fm-layout-navigator {
+	height: 100%;
+	width: 100%;
+	padding-top: 10px;
+	text-align: center;
+}
+
+#bz-fm-layout-navigator .bz-fm-layout-navigator-item{
+	border: 1px solid rgba(179,179,179,0.3);
+	-webkit-border-radius: 4px;
+	margin: 1px;
+	width: 90%;
+	height: 35px;
+	display: inline-block;
+	position: relative;
+
+	text-align: left;
+	padding:1px;
+}
+
+.bz-fm-layout-navigator-helper{
+	border: 1px solid rgba(179,179,179,0.3);
+	-webkit-border-radius: 4px;
+	margin: 0px!important;
+	height: 22px!important;
+	display: inline-block;
+	position: absolute;
+
+	text-align: left;
+	padding: 2px 15px 2px 5px!important;
+
+	background-color: rgb(239,240,241);
+	z-index: 600;
+
+	-webkit-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, .2);
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, .2);
+}
+
+.bz-fm-layout-navigator-helper label{
+	margin-left: 8px;
+	font-size: 10px;
+}
+
+#bz-fm-layout-navigator .bz-fm-layout-navigator-item:hover{
+	border: 1px solid rgba(179,179,179,0.6);
+	background-color: rgb(239,240,241);
+	cursor:move;
+}
+
+#bz-fm-layout-navigator-helper .bz-fm-layout-image,
+#bz-fm-layout-navigator .bz-fm-layout-navigator-item .bz-fm-layout-image {
+	background-repeat: no-repeat;
+	background-color: transparent;
+	width: 32px;
+	height: 32px;
+	display:inline-block;
+	vertical-align: middle;
+}
+#bz-fm-layout-navigator-helper .bz-fm-layout-image{
+	width: 25px;
+	height: 22px;
+}
+
+.bz-fm-layout-width span{
+	border-right: 1px solid rgba(186,190,199,1);
+	padding-right: 2px;
+	padding-left: 3px;
+	font-size: 10px;
+}
+
+.bz-fm-layout-width span:last-child{
+	border-right: none;
+}
+#bz-fm-layout-navigator .bz-fm-layout-width{
+	opacity:0;
+	-webkit-transition:opacity 0.2s ease-in;
+}
+#bz-fm-layout-navigator .bz-fm-layout-navigator-item:hover .bz-fm-layout-width{
+	opacity:1;
+}
+#bz-fm-layout-navigator  .bz-fm-layout-width{
+	float: right;
+
+	padding: 0px 2px 0px 2px;
+	border-radius: 3px;
+	border: solid 1px #CBCED4;
+
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, .4);
+	background: #CBCED4;
+	color: #535362;
+	margin-top: 4px;
+	margin-right: 2px;
+}
+
+.bz-fm-layout-image.bz-fm-layout-image-full-layout {
+	background-position: 0px 0px;
+}
+
+.bz-fm-layout-image.bz-fm-layout-image-50-50 {
+	background-position: 0px -28px;
+}
+
+.bz-fm-layout-image.bz-fm-layout-image-30-70 {
+	background-position: 0px -55px;
+}
+
+.bz-fm-layout-image.bz-fm-layout-image-70-30 {
+	background-position: 0px -82px;
+}
+
+.bz-fm-layout-image.bz-fm-layout-image-33-33-33 {
+	background-position: 0px -109px;
+}
+
+
+.bz-fm-layout-navigator-item:hover .bz-fm-layout-image.bz-fm-layout-image-full-layout {
+	background-position: -36px 0px;
+}
+
+.bz-fm-layout-navigator-item:hover .bz-fm-layout-image.bz-fm-layout-image-50-50 {
+	background-position: -36px -28px;
+}
+
+.bz-fm-layout-navigator-item:hover .bz-fm-layout-image.bz-fm-layout-image-30-70 {
+	background-position: -36px -55px;
+}
+
+.bz-fm-layout-navigator-item:hover .bz-fm-layout-image.bz-fm-layout-image-70-30 {
+	background-position: -36px -82px;
+}
+
+.bz-fm-layout-navigator-item:hover .bz-fm-layout-image.bz-fm-layout-image-33-33-33 {
+	background-position: -36px -109px;
+}
+
+
+#bz-fm-layout-navigator-helper .bz-fm-layout-image.bz-fm-layout-image-full-layout {
+	background-position: -106px -1px;
+}
+
+#bz-fm-layout-navigator-helper .bz-fm-layout-image.bz-fm-layout-image-50-50 {
+	background-position: -106px -24px;
+}
+
+#bz-fm-layout-navigator-helper .bz-fm-layout-image.bz-fm-layout-image-30-70 {
+	background-position: -106px -46px;
+}
+
+#bz-fm-layout-navigator-helper .bz-fm-layout-image.bz-fm-layout-image-70-30 {
+	background-position: -106px -68px;
+}
+
+#bz-fm-layout-navigator-helper .bz-fm-layout-image.bz-fm-layout-image-33-33-33 {
+	background-position: -106px -89px;
+}
+
+#bz-fm-layout-navigator-helper .bz-fm-layout-image.bz-fm-layout-image-plus {
+	background-position: -80px -1px;
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	left: 18px;
+	top: 10px;
+}
+
+#bz-fm-layout-navigator-helper .bz-fm-layout-image-limit-left{
+	background-position: -82px -46px;
+	width: 6px;
+	height: 28px;
+	position: absolute;
+	left: -10px;
+	top: 0px;
+}
+
+#bz-fm-layout-navigator-helper .bz-fm-layout-image-limit-right{
+	background-position: -82px -80px;
+	width: 6px;
+	height: 28px;
+	position: absolute;
+	right: -10px;
+	top: 0px;
+}

@@ -1,0 +1,39 @@
+﻿<div class="ui-bizagi-container ui-bizagi-container-tab ${cssclass} {{if tabOrientation == "rtl"}}ui-bizagi-rtl{{/if}}" data-unique-id="${uniqueId}">
+    {{if mode == "design"  || mode == "layout"}}
+    <div class="ui-bizagi-container-tabItems">
+    {{/if}}
+        <ul>
+        {{each tabs}}
+          <li data-tab-guid="${guid}" {{if tabOrientation == "rtl"}}class="ui-bizagi-rtl"{{/if}}>
+            <a href="#ui-bizagi-tab-${id}" title="${displayName}">
+                {{if tabOrientation == "rtl"}}
+                    {{if mode == "design" || mode == "layout" }}
+                        <button class="bz-render-tab-delete" type="button" data-delete="true">x</button>
+                        <button class="bz-render-tab-edit" type="button" data-edit="true"></button>
+
+                    {{/if}}
+                     <label>${displayName}</label>
+                {{else}}
+                    <label>${displayName}</label>
+                    {{if mode == "design" || mode == "layout" }}
+                        <button class="bz-render-tab-edit" type="button" data-edit="true"></button>
+                        <button class="bz-render-tab-delete" type="button" data-delete="true">x</button>
+                    {{/if}}
+                {{/if}}
+                {{if mode == "design" && messageValidation}}
+                    <span class="bz-studio bz-warning-red_16x16_standard ui-icon-help ui-bizagi-render-icon-msg-validation ui-bizagi-render-icon-editor-msg-validation" title="${messageValidation}" style="display:inline-block"></span>
+                {{/if}}
+            </a>
+          </li>
+        {{/each}}
+        {{if mode == "design"  || mode == "layout"}}
+            <li class="bz-render-tab-add  {{if tabOrientation == "rtl"}}ui-bizagi-rtl{{/if}}" data-add="true">
+                <a title="%{formmodeller-control-tab-add-label}">+</a>
+            </li>
+        {{/if}}
+        </ul>
+        {{children}}
+    {{if mode == "design"  || mode == "layout"}}
+        </div>
+    {{/if}}
+</div>

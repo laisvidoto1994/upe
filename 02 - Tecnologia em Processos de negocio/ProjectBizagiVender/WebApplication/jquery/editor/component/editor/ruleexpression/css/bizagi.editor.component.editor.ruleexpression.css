@@ -1,0 +1,38 @@
+/********
+* Filename: bizagi.editor.component.editor.ruleexpression.css
+* Create Date: 2012-05-07
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__ruleexpression
+*
+********/
+
+/* __ruleexpression
+--------*/
+
+.bizagi_editor_component_editor_ruleexpression{
+    position: relative;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.ruleexpression-group-container{
+    position: relative;
+}
+
+.bizagi_editor_component_properties .bizagi_editor_component_editor_ruleexpression .bizagi-editor-ruleexpression-inline label{
+    display:inline-block;
+    width:55%;
+}
+
+.bizagi_editor_component_editor_ruleexpression .bizagi-editor-ruleexpression-inline .ui-control-editor{
+    float: right;	
+	right: 0px;
+	top: 0px;
+}
+
+
+
+.bizagi_editor_component_editor_ruleexpression .bizagi-editor-ruleexpression-inline .ruleexpression-group-container{
+    width:100% !important;
+}

@@ -1,0 +1,114 @@
+<script id="ui-bizagi-workportal-widget-reportsmenu-container" type="text/x-jquery-tmpl" >
+    <div class="bz-rp-reports-menu">
+        <div id="selectArrow"></div>
+        <div id="modalMenuBtList" class="clearfix">
+            <ul id="bz-wp-widget-reportsmenu-navtree" class="categoryTree bz-wp-widget-reportsmenu-navtree">
+                <li data-path="Reports">
+                    %{workportal-widget-reports-reports}
+                </li>
+            </ul>
+            <div id="bz-wp-widget-reportsmenu-container" {{loading}}>
+                <ul id="bz-wp-widget-reportsmenu-list" class="bz-wp-widget-reportsmenu-list">
+
+
+                </ul>
+            </div>
+        </div>    
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-reportsmenu-items" type="text/x-jquery-tmpl">
+    {{each(i, val) elements}}
+        {{if val.show}}
+            <li data-subitems="${subItems}" data-endpoint="${endPoint}" data-displayname="${displayName}" class="cf bz-wp-widget-reportsmenu-item bz-wp-widget-reportsmenu-readmode">
+
+                {{tmpl({element:val}) "#ui-bizagi-workportal-widget-reportsmenu-itemsdata"}}
+
+            </li>
+        {{/if}} 
+    {{/each}}
+</script>
+
+<script id="ui-bizagi-workportal-widget-reportsmenu-itemsdata" type="text/x-jquery-tmpl">
+    <div >
+        <span class="bz-wp-widget-reportsmenu-item-icon ${element.icon}"></span>
+        <h3 class="bz-wp-widget-reportsmenu-item-title">${element.displayName}</h3>
+    </div>
+    {{if element.activeEdit}}
+        <div class="bz-wp-widget-reportsmenu-itemactions" data-id="${element.id}">
+            <span class="bz-rp-button-secondary bz-wp-widget-reportsmenu-action bz-wp-widget-reportsmenu-edit">
+                <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-edit"></i>
+                <span>Edit</span>
+            </span>
+            <span class="bz-rp-button-secondary bz-wp-widget-reportsmenu-action bz-wp-widget-reportsmenu-delete">
+                <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-delete"></i>
+                <span>Delete</span>
+            </span>
+        </div>
+    {{/if}}
+</script>
+
+<script id="ui-bizagi-workportal-widget-reportsmenu-noitems" type="text/x-jquery-tmpl" > 
+    <div>%{workportal-widget-reports-no-queries}</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-reportsmenu-tree" type="text/x-jquery-tmpl" >   
+    <li  data-path="${path}">
+        &ensp;&gt;&ensp;${displayName}       
+    </li>
+</script>
+
+<script id="ui-bizagi-workportal-widget-reportsmenu-edition" type="text/x-jquery-tmpl" >
+    <form>
+        <ul data-id="${id}" class="bz-wp-widget-reportsmenu-form">
+            <li class="bz-wp-widget-reportsmenu-form-item">
+                <label class="bz-rp-form-label">%{workportal-widget-admin-dimensions-text-displayName}</label>
+                <input class="bz-rp-form-control" type="text" value="${displayName}" required="required">
+                <div class="bz-wp-widget-reportmenu-messagecnt"></div>
+            </li>
+            <li class="bz-wp-widget-reportsmenu-form-item">
+                <label class="bz-rp-form-label">%{workportal-widget-admin-dimensions-text-description}</label>
+                <textarea rows="2" class="bz-rp-form-control">${description}</textarea>
+                <div class="bz-wp-widget-reportmenu-messagecnt"></div>
+            </li>
+            <li class="bz-wp-widget-reportsmenu-form-item">
+                <div class="bz-wp-widget-reportsmenu-itemactions" data-id="${id}">
+                    <button class="bz-rp-button-secondary bz-wp-widget-reportsmenu-action bz-wp-widget-reportsmenu-applyedition">
+                        <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-apply"></i>
+                        <span>Apply</span>
+                    </button>
+                    <button class="bz-rp-button-secondary bz-wp-widget-reportsmenu-action bz-wp-widget-reportsmenu-cancel">
+                        <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-cancel"></i>
+                        <span>Cancel</span>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </form>
+</script>
+
+<script id="ui-bizagi-workportal-widget-reportsmenu-vldnmessage" type="text/x-jquery-tmpl" >
+    <span class="bz-wp-widget-reportmenu-errormsg" aria-live="polite">${message}</span>
+</script>
+
+<script id="ui-bizagi-workportal-widget-reportsmenu-delete" type="text/x-jquery-tmpl" >
+<form>
+    <ul class="bz-wp-widget-reportsmenu-confirmation">
+        <li>
+            <p class="bz-wp-widget-reportsmenu-confirmation-message">%{workportal-widget-reports-confirm}</p>
+        </li>
+        <li>
+            <div class="bz-wp-widget-reportsmenu-itemactions" data-id="${id}">
+                <button class="bz-rp-button-secondary bz-wp-widget-reportsmenu-action bz-wp-widget-reportsmenu-applydelete">
+                    <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-apply"></i>
+                    <span>Yes</span>
+                </button>
+                <button class="bz-rp-button-secondary bz-wp-widget-reportsmenu-action bz-wp-widget-reportsmenu-cancel">
+                    <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-cancel"></i>
+                    <span>No</span>
+                </button>
+            </div>
+        </li>
+    </ul>
+</form>
+</script>

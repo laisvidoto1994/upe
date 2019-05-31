@@ -1,0 +1,164 @@
+<script id="ui-bizagi-workportal-widget-admin-cases" type="text/x-jquery-tmpl" >
+    <div class="wrapper" >
+
+        <!-- Cases Form Wrapper -->
+        <div id="form-search-cases"  {{loading}}>
+
+        </div>
+
+        <!-- Users Form Wrapper -->
+        <div id="form-search-users" >
+
+        </div>
+
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-search-cases" type="text/x-jquery-tmpl" >
+
+    <form class="admin-form-search-cases">
+
+        <h3 class="sc-title">%{workportal-widget-admincase-legend}</h3>
+
+        {{if skill > 0}}
+          
+        <div class="biz-widget-searchlist">
+            <label for="skill" class="case-title">%{workportal-widget-admincase-skill}</label> 
+                <ul id="skill-wrapper">
+                    <li>
+                        <input class="biz-widget-input-search" type="text" placeholder="%{render-search-list-message}" />
+                    </li>
+                </ul>
+        </div>
+
+        {{/if}}
+
+        {{if role > 0}}
+
+        <div class="biz-widget-searchlist">
+            <label for="role" class="case-title">%{workportal-widget-admincase-role}</label>
+                <ul id="role-wrapper">
+                    <li>
+                        <input class="biz-widget-input-search" type="text" placeholder="%{render-search-list-message}" />
+                    </li>
+                </ul>
+        </div>
+
+        {{/if}}			
+
+
+        {{if location > 0}}
+
+        <div class="biz-widget-searchlist">
+            <label for="location" class="case-title">%{workportal-widget-admincase-location}</label>
+                <ul id="location-wrapper">
+                    <li>
+                        <input class="biz-widget-input-search" type="text" placeholder="%{render-search-list-message}" />
+                    </li>
+                </ul>
+        </div>
+
+        {{/if}}
+
+        <div class="ui-dialog-buttonset">
+            <button id="search-case" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{render-form-dialog-box-search}</span>
+            </button>
+        </div>
+
+        <div id="no-cases-found-message-wrapper" class="result-message-wrapper" style="display:none;">
+              
+            <span class="message">%{workportal-widget-admincase-notfound}</span>
+               
+        </div>
+
+    </form>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-search-users" type="text/x-jquery-tmpl" >
+    <div id="admin-form-search-users-wrapper" class="admin-form-search-cases">
+
+
+        <div id="cases-found-message-wrapper" class="result-message-wrapper">
+            <span class="message"></span>
+        </div>
+
+        <form class="admin-form-search-users">
+            <div class="admin-form-field">
+                <label for="txtSAMAccount">%{workportal-widget-admincase-users-results-user}</label>
+                <input name="txtSAMAccount" type="text" id="txtSAMAccount" class="ui-text ui-txtSAMAccount" tabindex="1">
+            </div>
+
+            <div class="admin-form-field">
+                <label for="txtFullName">%{workportal-widget-admincase-users-results-name}</label>
+                <input name="txtFullName" type="text" id="txtFullName" class="ui-text ui-txtFullName" tabindex="2">
+            </div>
+
+            <div class="admin-form-field">
+                <label for="txtDomain">%{workportal-widget-admincase-users-results-domain}</label>
+                <input name="txtDomain" type="text" id="txtDomain" class="ui-text ui-txtDomain" tabindex="3">                
+            </div>
+
+            <div class="ui-dialog-buttonset">
+                <button id="back-search-case-form" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                        <span class="ui-button-text">%{workportal-widget-render-backbutton}</span>
+                </button>
+                <button id="search-user" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                    <span class="ui-button-text">%{render-form-dialog-box-search}</span>
+                </button>
+
+            </div>
+
+            <div id="user-list-wrapper">
+            </div>
+        </form>
+
+        <div id="no-users-found-message-wrapper" class="result-message-wrapper" style="display:none;">
+            <span class="message">%{workportal-widget-admincase-users-notfound}</span>
+        </div>
+
+        <div id="assing-cases-confirm-form-wrappper" style="display:none;">
+            <form id="assing-cases-confirm-form">
+                <div class="result-message-wrapper">
+                    <span>%{workportal-widget-admincase-question}</span>
+                </div>
+
+                <div class="ui-dialog-buttonset">
+                    <button id="confirm-assign-cases" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                        <span class="ui-button-text">%{render-actions-reassign}</span>
+                    </button>
+                </div>
+            </form>
+
+            <div id="assign-cases-message-wrapper" class="result-message-wrapper" style="display:none;">
+                <span>%{workportal-widget-admincase-assigned}</span>
+            </div>
+        </div>
+    </div>
+</script>    
+
+<script id="ui-bizagi-workportal-widget-admin-table-users" type="text/x-jquery-tmpl">
+    <table id="user-list-content">
+        <tr class="user-list-header">
+            <td></td>
+            <td>%{workportal-widget-admincase-users-results-id}</td>
+            <td>%{workportal-widget-admincase-users-results-user}</td>
+            <td>%{workportal-widget-admincase-users-results-domain}</td>
+            <td>%{workportal-widget-admincase-users-results-name}</td>
+        </tr>
+        {{each users}}
+        <tr class="user-list-item">
+            <td>
+                <div class="ui-radio">
+                    <input class="ui-bizagi-render-boolean-radio" type="radio" value="${$value.idUser}"><label class=""></label>
+                </div>
+            </td>
+            <td>${$value.idUser}</td>
+            <td>${$value.user}</td>
+            <td>${$value.domain}</td>
+            <td>${$value.userName}</td>
+        </tr>
+        {{/each}}
+    </table>
+</script>

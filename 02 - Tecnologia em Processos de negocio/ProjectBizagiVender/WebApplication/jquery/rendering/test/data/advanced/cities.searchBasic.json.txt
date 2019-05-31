@@ -1,0 +1,10 @@
+﻿{
+	"form": {
+		"properties" : {"type": "searchForm", "id": 1, "columns": [ {"caption":"Name", "dataType": "15", "xpath": "name" }, {"caption":"Country", "dataType": "15", "xpath": "country"}]},
+		"elements": [
+			{"render": {	"properties": {"dataType": "15", "id" : 10001, "displayName" : "Name", "type": "searchText", "xpath": "name"}}},
+			{"render": {	"properties": {"dataType": "15", "id" : 10002, "displayName" : "Department", "type": "searchText", "xpath": "department"}}},
+			{"render": {	"properties": {"dataType": "15", "id" : 10003, "displayName" : "Country", "type": "searchText", "xpath": "country"}}}
+		]
+	}
+}

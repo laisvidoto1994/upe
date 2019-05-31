@@ -1,0 +1,449 @@
+/* GRID CONTROL
+=========================================================*/
+.ui-bizagi-render[dir=rtl] .bz-cn-grid .bz-rn-grid-cn-header {
+    padding: 0 5px 0 80px;
+}
+
+.bz-cn-grid .bz-rn-grid-cn-header {
+    background: rgb(245, 245, 245);
+    position: relative;
+    color: rgb(142, 142, 146);
+    font-weight: normal;
+    font-size: 13px;
+    margin: 0;
+    min-height: 35px;
+    line-height: 35px;
+    padding: 0 80px 0 5px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.bz-cn-grid .bz-rn-grid-cn-header .bz-rn-grid-header-title {
+    min-height: 35px;
+    line-height: 30px;
+    text-shadow: none;
+    width: 100%;
+}
+
+.ui-bizagi-grid-key {
+    display: none;
+}
+
+.ui-bizagi-column-hidden {
+    display: none;
+}
+
+.ui-bizagi-grid {
+    border: 1px solid rgba(62,81,90,0.1);
+    border-radius: 1px;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    margin: 0 5px;
+    position: relative;
+}
+
+.ui-bizagi-render[dir=rtl] .ui-bizagi-render-control.full.bz-rn-grid-contains-help-text .ui-bizagi-grid {
+    margin: 0 5px 0 15px;
+}
+
+.ui-bizagi-render-control.full.bz-rn-grid-contains-help-text .ui-bizagi-grid {
+    margin: 0 15px 0 5px;
+}
+
+.ui-bizagi-grid-smartphone {
+    background: none;
+}
+
+.ui-bizagi-grid .ui-bizagi-waiting {
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 100% !important;
+    min-height: 64px;
+}
+
+.ui-bizagi-grid > div:last-child {
+    border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    -webkit-border-radius: 0 0 6px 6px;
+}
+
+.ui-bizagi-grid h3 {
+    font-size: 110%;
+    margin: 0;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    color: #283238;
+}
+
+/* GRID ACTION-BUTTONS
+=========================================================*/
+.ui-bizagi-render[dir=rtl] .bz-cn-grid .ui-bizagi-grid-buttons {
+    left: 0;
+    right: auto;
+    top: 0;
+}
+
+.bz-cn-grid .ui-bizagi-grid-buttons {
+    height: 35px;
+    line-height: 35px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-width: 30px;
+}
+
+.ui-bizagi-grid-buttons ul {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+.ui-bizagi-grid-buttons ul {
+    position: relative;
+    display: inline-table;
+}
+    .ui-bizagi-render[dir=rtl] .ui-bizagi-grid-buttons ul li {
+        float: left;
+    }
+
+    .ui-bizagi-grid-buttons ul li {
+        float: right;
+        height: 35px;
+        line-height: 35px;
+        margin: 0;
+        padding: 0;
+        text-align:  center;
+        width: 30px;
+    }
+        .ui-bizagi-grid-buttons ul li.ui-bizagi-button-active {
+            background: #AAB1B9;
+        }
+
+li.ui-state-active.bz-mo-icon {
+    color: rgb(142, 142, 146);
+    font-size: 15px;
+    padding: 0;
+}
+    li.ui-state-active.bz-mo-icon.bz-totalizer-small {
+        font-size: 13px;
+    }
+
+.ui-bizagi-grid-row-buttons {
+    position: absolute;
+    display: none;
+}
+
+    .ui-bizagi-grid-row-buttons ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        border-radius: 7px;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        overflow: hidden;
+        box-shadow: 0 0 7px 0 rgba(0,0,0,0.3);
+    }
+
+        .ui-bizagi-grid-row-buttons ul li {
+            float: left;
+            padding: 1px;
+            border: 1px solid #AAA;
+            background: #DADADA !important;
+            margin: 0;
+            width: 36px;
+            height: 36px;
+            position: relative;
+        }
+
+            .ui-bizagi-grid-row-buttons ul li:first-child {
+                border-radius: 6px 0 0 6px;
+                -moz-border-radius: 6px 0 0 6px;
+                -webkit-border-radius: 6px 0 0 6px;
+            }
+
+                .ui-bizagi-grid-row-buttons ul li:first-child div {
+                    border-radius: 4px 0 0 4px;
+                    -moz-border-radius: 4px 0 0 4px;
+                    -webkit-border-radius: 4px 0 0 4px;
+                }
+
+            .ui-bizagi-grid-row-buttons ul li:last-child {
+                border-left: none;
+                border-radius: 0 6px 6px 0;
+                -moz-border-radius: 0 6px 6px 0;
+                -webkit-border-radius: 0 6px 6px 0;
+            }
+
+                .ui-bizagi-grid-row-buttons ul li:last-child div {
+                    border-radius: 0 4px 4px 0;
+                    -moz-border-radius: 0 4px 4px 0;
+                    -webkit-border-radius: 0 4px 4px 0;
+                }
+
+            .ui-bizagi-grid-row-buttons ul li div {
+                width: 24px;
+                height: 24px;
+                top: 7px;
+                left: 7px;
+                position: absolute;
+            }
+
+/* GRID PAGINATION
+=========================================================*/
+.bz-rn-grid-pager {
+    color: #31414C;
+    height: 35px;
+    line-height: 35px;
+    font-weight: normal;
+    position: relative;
+}
+
+.ui-bizagi-grid .ui-bizagi-grid-pager {
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-top: 1px solid rgba(62,81,90,0.1);
+    margin-top: 5px;
+}
+    .ui-bizagi-grid .ui-bizagi-grid-pager ul {
+        display: inline-block;
+        height: 35px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+
+    .bz-control-reversed .ui-bizagi-grid .ui-bizagi-grid-pager ul{
+    }
+
+    .ui-bizagi-grid .ui-bizagi-grid-pager ul li {
+    }
+
+            .ui-bizagi-grid .ui-bizagi-grid-pager ul li:first-child,
+            .ui-bizagi-grid .ui-bizagi-grid-pager ul li:last-child {
+                color: #3E515A;
+                height: 100%;
+                line-height: 35px;
+                padding: 0 10px;
+                position: absolute;
+                text-indent: 0;
+                width: 40px;
+            }
+
+            .ui-bizagi-grid .ui-bizagi-grid-pager ul li:first-child {
+                border-right: 1px solid rgba(62,81,90,0.1);
+                left: 0;
+                text-shadow: none;
+                top: 0;
+                width: 35px;
+            }
+
+            .bz-control-reversed .ui-bizagi-grid .ui-bizagi-grid-pager ul li:first-child {
+                transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+            }
+
+            .ui-bizagi-grid .ui-bizagi-grid-pager ul li:last-child {
+                border-left: 1px solid rgba(62,81,90,0.1);
+                float: right;
+                right: 0;
+                text-shadow: none;
+                top: 0;
+                width: 35px;
+            }
+
+            .bz-control-reversed .ui-bizagi-grid .ui-bizagi-grid-pager ul li:last-child {
+                transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+            }
+
+.ui-bizagi-grid .ui-bizagi-grid-pager .bz-rn-grid-pager{
+}
+
+.bz-control-reversed .ui-bizagi-grid .ui-bizagi-grid-pager .bz-rn-grid-pager{
+}
+
+.ui-bizagi-grid .ui-bizagi-grid-column-special {
+    width: 32px;
+}
+
+.ui-bizagi-grid .ui-bizagi-grid-column-sort {
+    display: none;
+}
+    .ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active {
+        cursor: pointer;
+        display: inline-block;
+        margin-left: 10px;
+    }
+        .ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:first-child {
+            border-top: 0 solid transparent;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 5px solid rgba(0,0,0,.1);
+        }
+
+        .ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:last-child {
+            border-top: 5px solid rgba(0,0,0,.1);
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 0 solid transparent;
+        }
+            .ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:last-child.ui-bizagi-active {
+                border-top-color: rgba(0,0,0,.4);
+            }
+
+        .ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:first-child.ui-bizagi-active {
+            border-bottom-color: rgba(0,0,0,.4);
+        }
+
+        .ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:first-child {
+            margin-bottom: 3px;
+        }
+
+.ui-bizagi-grid .ui-bizagi-grid-noRecords {
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    padding: 8px 0 10px 0;
+    height: 30px;
+    vertical-align: top;
+}
+
+.bz-ui-modal-white {
+    box-shadow: 0 2px 0 #666;
+}
+
+    .bz-ui-modal-white > div,
+    .bz-ui-modal-white .km-navbar,
+    .bz-ui-modal-white .km-content,
+    .bz-ui-modal-white .bz-wp-modal-content {
+        background: #fff;
+    }
+
+    .bz-ui-modal-white .km-content {
+        padding-bottom: 10px;
+    }
+
+    .bz-ui-modal-white .km-view-title {
+        text-align: left;
+        font-size: 1.2em;
+        margin: 22px 10px 0;
+        padding: 0 15px;
+    }
+
+    .bz-ui-modal-white > div {
+        padding: 0 20px;
+    }
+
+.bz-container-render-cell1 {
+    display: inline-block;
+    width: 100%;
+}
+
+    .bz-rn-grid-cell .bz-command-not-edit.ui-bz-rn-label-only .ui-bizagi-render-control {
+        background: rgba(62, 81, 90, 0.05);
+        min-height: 22px;
+        margin: 5px 12px;
+    }
+
+/* TOTALIZER CONTROL
+=========================================================*/
+
+.bz-rn-grid-totalize-container {
+    height: 100%;
+    max-height: 70%;
+    display: block;
+    position: absolute;
+    z-index: 99;
+    top: 50px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
+    overflow: auto;
+}
+
+
+.bz-rn-grid-totalize-container .km-header{
+    position: fixed;
+    z-index: 9999;
+   /*width: 90%;*/
+}
+
+.bz-rn-grid-totalize-container .km-content {
+    padding-top: 41px;
+    height: 100%;
+    background:rgb(241, 245, 248)!important;
+}
+
+.bz-rn-grid-totalize-container .km-navbar {
+    background-color: #fff !important;
+}
+
+.bz-rn-bizagi-grid-totalizer-header {
+    background-color: #fff;
+    border-bottom: 1px solid #F7F8FA;
+    color: #326A9D;
+    font-size: 17px;
+    font-weight: normal;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    width: 100%;
+    top: -5px;
+    position: relative;
+}
+
+.bz-rn-grid-totalize-box {
+    background-color: rgb(241, 245, 248);
+    padding-top: 15px;
+}
+
+.bz-rn-grid-totalize-list {
+    padding: 10px;
+}
+
+.bz-rn-grid-totalize-container ul {
+    margin-top: 3px;
+    background: rgb(241, 245, 248) !important;
+}
+
+.bz-rn-grid-totalize-container ul li {
+    border: 0 !important;
+    background-color: rgb(241, 245, 248) !important;
+}
+
+.bz-rn-grid-totalize-container span {
+    padding-left: 20px;
+}
+
+.bz-rn-grid-totalize-item-label {
+    height: 20px;
+    font-weight: bold;
+}
+
+.bz-rn-grid-totalize-item-value {
+    background-color: rgb(208, 232, 245);
+    min-height: 25px;
+    height: auto;
+    padding: 3px 0 0 10px;
+}
+
+.bz-rn-grid-totalize-icon {
+    float: left;
+    top: 14px;
+    position: relative;
+}
+
+.bz-rn-grid-totalize-close-btn {
+    float: right;
+    margin-right: 15px!important;
+    margin-top: 5%!important;
+}

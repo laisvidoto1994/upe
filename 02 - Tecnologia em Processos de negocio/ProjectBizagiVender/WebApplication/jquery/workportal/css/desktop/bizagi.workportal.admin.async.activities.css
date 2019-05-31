@@ -1,0 +1,98 @@
+.async-act-refreshPage {
+    padding: 30px 0px;
+}
+
+.async-act-refresh-label {
+    display: inline;
+    float: left;
+    cursor: pointer;
+}
+
+.async-act-refresh-icon
+{
+
+    float: left;
+    margin-left: 4px;
+}
+
+.async-act-tabs {
+    width: 100%;
+}
+
+.async-act-tabs-li
+{
+  border: 1px solid #9B9B9B;
+}
+
+.async-act-tabs-content {
+    border: 1px solid #9B9B9B;
+    padding: 10px 10px;
+}
+
+.async-act-icon {
+    vertical-align: middle;
+    text-align: center;
+    margin-left: auto;
+    align: center;
+
+    background: url("images/sprite.png") 0 0 no-repeat;
+
+
+    cursor: pointer;
+}
+
+.async-act-retry-icon,
+.async-act-log-icon {
+    background: none;
+}
+
+
+.async-act-processing {
+    text-align: center;
+}
+
+.async-case-click,
+.async-activity-click {
+    text-decoration: underline;
+}
+
+.async-act-childs {
+    display: none;
+}
+
+.async-act-childs-text {
+    color: grey;
+}
+
+.async-act-group-header {
+    padding-bottom: 6px;
+}
+
+.async-act-error-page {
+    padding-top: 30px;
+}
+
+
+/* Styles for Microsoft Edge browser */
+@supports (-ms-accelerator:true) {
+
+
+    .async-act-log-icon {
+        background-position: -270px -5px;
+        height: 52px;
+        width: 50px;
+        margin-right: 0px; /*Firefox*/
+        margin-right: 0px; /*IE*/
+        margin-right: auto;
+    }
+
+
+    .async-act-retry-icon {
+        background-position: -140px -5px;
+        height: 48px;
+        width: 50px;
+        margin-right: 0px; /*Firefox*/
+        margin-right: 0px; /*IE*/
+        margin-right: auto;
+    }
+}

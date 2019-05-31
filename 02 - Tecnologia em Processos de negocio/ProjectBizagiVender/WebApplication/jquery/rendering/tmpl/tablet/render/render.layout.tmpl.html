@@ -1,0 +1,16 @@
+<div class="ui-bizagi-render ${displayOptionClass}"
+     {{if uniqueId}}data-unique-id="${uniqueId}" {{/if}}
+{{if id}}data-render-id="${id}"{{/if}}
+{{if xpath}}data-render-xpath="${xpath}"{{/if}}
+{{if tag}}data-render-tag="${tag}"{{/if}} >
+
+<div class="ui-bizagi-label"><label>${label}</label></div>
+<div class="ui-bizagi-render-control">
+    {{control}}
+</div>
+{{if helpText}}
+<div class="ui-bizagi-helptext" data-helptext="${helpText}">
+    <span class="ui-icon ui-icon-info"></span>
+</div>
+{{/if}}
+</div>

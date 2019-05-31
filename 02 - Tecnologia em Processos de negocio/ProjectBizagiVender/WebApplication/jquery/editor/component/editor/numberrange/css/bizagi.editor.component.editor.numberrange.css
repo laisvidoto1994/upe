@@ -1,0 +1,63 @@
+/********
+* Filename: bizagi.editor.component.editor.numberrange.css
+* Create Date: 2012-07-09
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__numberrange
+*
+********/
+
+/* __numberrange
+--------*/
+
+.bizagi_editor_component_editor_numberrange .numberrange-rule-value-caption
+{
+    width:100%;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;  
+}
+
+.bizagi_editor_component_editor_numberrange .biz-action-btn{
+    line-height: 18px;
+    padding: 0px 0px 0px 8px;
+}
+
+.bizagi_editor_component_editor_numberrange .numberrange-button-value{
+    margin-left: 1px;
+    padding-left: 0px;
+}
+
+.bizagi_editor_component_editor_numberrange .ui-control-input input[type="text"] {
+    width:100%;
+    padding-left: 4px;
+}
+
+.bizagi_editor_component_editor_numberrange .ui-control-input input[type="text"]:focus{
+    background-color: #FFF;
+}
+
+.bizagi_editor_component_editor_numberrange .biz-complex-btn.biz-complex-dropdown{
+    width:auto;
+}
+
+
+.bizagi_editor_component_editor_numberrange .numberrange-number-container{
+    padding-top: 1px;
+}
+
+.bizagi_editor_component_editor_numberrange .biz-action-btn .biz-ico {
+    top:0;
+}
+
+.bizagi_editor_component_editor_numberrange .numberrange-number-container{
+    position: relative;
+}
+
+.bizagi_editor_component_editor_numberrange .numberrange-container .ui-control-input{
+    border: none;
+}
+
+.bizagi_editor_component_editor_numberrange .numberrange-name-title{
+    font-weight: bold;
+}

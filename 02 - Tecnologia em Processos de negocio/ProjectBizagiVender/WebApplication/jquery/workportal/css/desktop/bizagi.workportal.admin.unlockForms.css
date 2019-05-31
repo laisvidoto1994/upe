@@ -1,0 +1,32 @@
+.unlock-forms-border {
+    border: 1px solid #96989B;
+    border-radius: 6px;
+    height: auto;
+    width: 220px;
+}
+
+.unlock-forms-app-ul {
+    list-style-type:none;
+    padding-left: 20px;
+}
+
+.unlock-forms-action-wrapper {
+    background: snow;
+    border: 1px solid #C6CACC;
+    border-radius: 6px;
+    padding: 10px 110px;
+}
+
+.unlock-forms-textarea {
+    height: 10px;
+    width: 100%;
+}
+
+.unlock-forms-reasonLabel {
+    min-width: 50px;
+    padding-top: 7px;   
+}
+
+#btn-admin-unlock-forms:disabled{
+    opacity: .4;
+}

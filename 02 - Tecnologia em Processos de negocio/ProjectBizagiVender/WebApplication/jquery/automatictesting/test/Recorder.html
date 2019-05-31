@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Recorder</title>
+    <link href="../css/bizagi.recorder.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <script type='text/javascript' src='../../../jquery/bizagi.configuration.js'></script>
+    <script type='text/javascript' src='../../../jquery/steal.js'></script>
+    <script type='text/javascript' src='../../../jquery/bizagi.loader.js'></script>
+    <script type="text/javascript" language="javascript">
+        var session = window.sessionStorage.getItem("bizagiAuthentication") || "{}";
+        session = JSON.parse(session);
+        if (session === null || session === undefined) {
+            session = {};
+        }
+
+        var BIZAGI_PATH_TO_BASE = "../../../";
+        var BIZAGI_LANGUAGE = session.language || bizagiConfig.defaultLanguage || navigator.language || 'en';
+        var BIZAGI_ENVIRONMENT = bizagiConfig.environment || "release";
+        var BIZAGI_ENABLE_LOG = bizagiConfig.log || false;
+        var BIZAGI_DEFAULT_CURRENCY_INFO = {
+            "symbol": session.symbol || "$",
+            "decimalSeparator": session.decimalSeparator || ",",
+            "groupSeparator": session.groupSeparator || ".",
+            "decimalDigits": session.decimalDigits || "2"
+        };
+        var BIZAGI_DEFAULT_DATETIME_INFO = {
+            "shortDateFormat": session.shortDateFormat || "dd/MM/yyyy",
+            "timeFormat": session.timeFormat || "H:mm",
+            "longDateFormat": session.longDateFormat || "dddd, dd' de 'MMMM' de 'yyyy"
+        };
+        var BIZAGI_SETTINGS = {
+            "UploadMaxFileSize": bizagiConfig.uploadMaxFileSize || "1048576"
+        };
+        var BIZAGI_USER_PREFERENCES_PAGE = '';
+        var workportal;
+
+        // Gets the loader instance, and load the module
+        var loader = bizagi.loader;
+        loader.init(function () {
+            loader
+                .start("common")
+                .start("workportal")
+                .start("rendering")
+                .start("bizagicontrols")
+                .start("newcase")
+                .start("queries")
+                .loadFile("jquery/automatictesting/js/bizagi.automatictesting.state.js")
+                .loadFile("jquery/automatictesting/js/bizagi.automatictesting.ajax.js")
+                .loadFile("jquery/automatictesting/js/bizagi.automatictesting.host.js")
+                .loadFile("jquery/automatictesting/js/bizagi.automatictesting.widgetOverrides.js")
+                .loadFile("jquery/automatictesting/js/bizagi.automatictesting.recorder.js")
+                .loadFile("jquery/automatictesting/js/bizagi.automatictesting.js")
+                .then(function () {
+                    bizagi.automatictesting.host.resetRecording();
+                });
+            });
+    </script>
+    <div class="ui-widget-overlay ui-front" style="z-index: 10000; display: block;"></div>
+</body  >
+</html>

@@ -1,0 +1,56 @@
+
+<div class="ui-bizagi-workportal-inbox">
+    <div id="process-column" class="ui-bizagi-workportal-inbox-column">
+        <div class="scroll-content" {{loading}} >
+            <!-- Process list column template renders here -->
+        </div>		
+	    <div id="process-filters" class="column-footbar">					
+            <ul>
+                <li class="ui-bizagi-wp-app-inbox-tab active" id="all" data-task-state="all">
+                    <button class="filter-none"></button>
+                </li>
+                
+                <li class="ui-bizagi-wp-app-inbox-tab" id="red" data-task-state="Red">
+                    <button class="filter-red">
+                        <span class="toolTip">${Red}</span>
+                    </button>                     
+                </li>
+                
+                <li class="ui-bizagi-wp-app-inbox-tab" id="yellow" data-task-state="Yellow">
+                    <button class="filter-yellow">
+                        <span class="toolTip">${Yellow}</span>
+                    </button>                     
+                </li>
+                
+                <li class="ui-bizagi-wp-app-inbox-tab" id="green"  data-task-state="Green">
+                    <button class="filter-green">
+                        <span class="toolTip">${Green}</span>
+                    </button>                     
+                </li>
+                
+                 <li class="ui-bizagi-wp-app-inbox-tab" id="starred"  data-task-state="Favorites">
+                    <button class="filter-starred"></button>
+                </li>
+           </ul>
+	    </div>
+	</div>
+    <div id="case-column" class="ui-bizagi-workportal-inbox-column">
+        <div class="scroll-content" {{loading}}>
+		    <!-- Case list column template renders here -->
+		</div>
+	    <div id="case-actions" class="column-footbar">
+		    <!-- Case actions renders here -->
+		    <div class="pager-container"></div>
+	    </div>
+    </div>
+    <div id="summary-column" class="ui-bizagi-workportal-inbox-column">
+        <div class="scroll-content" {{loading}}>
+            <!-- Case summary template renders here -->
+        </div>
+		<div id="summary-actions" class="column-footbar">
+			<!-- Summary actions here -->
+			<button id="summary-column-slider" class="bz-cm-icon"></button>
+            <span class="bz-wp-status-notification online">%{workportal-offline-status-online}</span>
+		</div>
+    </div>
+</div>

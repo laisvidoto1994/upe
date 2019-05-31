@@ -1,0 +1,368 @@
+﻿<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css' />
+
+<div class="biz-theme-home-container" ng-app="homeModule" ng-controller="homeController">
+    <img class="biz-theme-booking-logo" src="http://q-ec.bstatic.com/static/img/b26logo/booking_logo_retina/22615963add19ac6b6d715a97c8d477e8b95b7ea.png" />
+    <img class="biz-theme-booking-bizagi-logo" src="https://upload.wikimedia.org/wikipedia/en/6/62/Bizagi_BPM_Suite_logo.png" />
+    <div class="biz-theme-booking-notifications" ng-click="getReviews(); currentMenu='reviews';notifications=true;currentView='home'">
+        <div class="biz-theme-menu-item-icon bicon bicon-reviewtimeline"></div>
+        <span ng-show="reviews.entities.length>0 && !notifications">{{reviews.entities.length}}</span>
+    </div>
+    <div class="biz-theme-home-dashboard biz-theme-home-container" ng-show="currentView==='home'">
+        <div class="biz-theme-home-left">
+            <div class="biz-theme-menu-item" ng-class="{'biz-theme-menu-item-selected':(currentMenu==='dashboard')}" ng-click="currentMenu='dashboard'">
+                <div class="biz-theme-menu-item-icon bicon bicon-profiledash"></div>
+                <span class="biz-theme-menu-item-title">Dashboard</span>
+            </div>
+            <div class="biz-theme-menu-item" ng-class="{'biz-theme-menu-item-selected':(currentMenu==='bookings')}" ng-click="getBookings(); currentMenu='bookings';">
+                <div class="biz-theme-menu-item-icon bicon bicon-suitcase"></div>
+                <span class="biz-theme-menu-item-title">Bookings</span>
+            </div>
+            <div class="biz-theme-menu-item" ng-class="{'biz-theme-menu-item-selected':(currentMenu==='reviews')}" ng-click="getReviews(); currentMenu='reviews';">
+                <div class="biz-theme-menu-item-icon bicon bicon-reviewtimeline"></div>
+                <span class="biz-theme-menu-item-title">Reviews</span>
+            </div>
+            <div class="biz-theme-menu-item" ng-click="getSettings()">
+                <div class="biz-theme-menu-item-icon bicon bicon-settings"></div>
+                <span class="biz-theme-menu-item-title">Settings</span>
+            </div>
+        </div>
+
+        <div class="biz-theme-home-right" ng-show="currentMenu==='dashboard'">
+            <div class="biz-theme-dashboard-landscape">
+                <div class="biz-theme-dashboard-landscape-layer"></div>
+                <div class="biz-theme-dashboard-user-picture">
+                    <img src="data:image/png;base64,{{user.userPicture}}" />
+                </div>
+                <div class="biz-theme-dashboard-user-name">{{user.userFullName}}</div>
+                <div class="biz-theme-dashboard-user-settings" ng-click="getSettings()">Change your settings</div>
+            </div>
+            <div class="biz-theme-dashboard-content">
+                <div class="biz-theme-dashboard-content-left">
+                    <div class="biz-theme-hello">
+                        <div class="biz-theme-hello-message">
+                            Hi {{user.userFullName.split(' ')[0]}}, it's nice to see you!
+                        </div>
+                        <div class="biz-theme-hello-picture">
+                        </div>
+                    </div>
+                    <div class="biz-theme-shortcuts">
+                        <div class="biz-theme-shortcut-item">
+                            <div class="biz-theme-shortcut-item-icon biz-theme-shortcut-item-icon-find">
+
+                            </div>
+                            <div class="biz-theme-shortcut-item-title">
+                                Find the Best Deals
+                            </div>
+                            <div class="biz-theme-shortcut-item-description">
+                                Unlock Secrect Deals by signing in before you search
+                            </div>
+                        </div>
+
+                        <div class="biz-theme-shortcut-item">
+                            <div class="biz-theme-shortcut-item-icon biz-theme-shortcut-item-icon-add">
+
+                            </div>
+                            <div class="biz-theme-shortcut-item-title">
+                                Add Your Details
+                            </div>
+                            <div class="biz-theme-shortcut-item-description">
+                                Book faster an get better recommendations by adding your details
+                            </div>
+                        </div>
+
+                        <a href="https://www.booking.com/apps.html" target="_blank" class="biz-theme-shortcut-item">
+                            <div class="biz-theme-shortcut-item-icon biz-theme-shortcut-item-icon-download">
+
+                            </div>
+                            <div class="biz-theme-shortcut-item-title">
+                                Download the App
+                            </div>
+                            <div class="biz-theme-shortcut-item-description">
+                                Your booking confirmation, maps and more - all available offline!
+                            </div>
+                        </a>
+                    </div>
+                    <div class="biz-theme-recent-searches">
+                        <span class="biz-theme-recent-searches-title">Your Recent Searches</span>
+                        <div class="biz-theme-recent-search-item" ng-repeat="recentSearch in recentSearches.entities" ng-click="setSearch(recentSearch)">
+                            <div class="biz-theme-recent-search-item-picture">
+                                <!--<img src="Api/Entities/{{recentSearch.guid}}/Picture/{{recentSearch.surrogateKey}}/Array?xpath=City.Picture&width=250&height=130" />-->
+                                <div class="biz-theme-recent-search-item-resume-search">Resume search</div>
+                            </div>
+                            <div class="biz-theme-recent-search-item-information">
+                                <div class="biz-theme-recent-search-item-title">
+                                    {{recentSearch.data['City.Name']}}
+                                </div>
+                                <div class="biz-theme-recent-search-item-location">
+                                    {{recentSearch.data['City']}}
+                                </div>
+                                <div class="biz-theme-recent-search-item-time">
+                                    {{(recentSearch.data.CheckoutDate - recentSearch.data.CheckinDate).getDate()}} night
+                                    ({{shortMonth[recentSearch.data.CheckinDate.getMonth()]}} {{recentSearch.data.CheckinDate.getDate()}}
+                                    - {{shortMonth[recentSearch.data.CheckoutDate]}} {{recentSearch.data.CheckoutDate.getDate()}})
+                                </div>
+                                <div class="biz-theme-recent-search-item-arrow">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="biz-theme-dashboard-content-right">
+                    <div class="biz-theme-dashboard-search">
+                        <div class="biz-theme-dashboard-search-title">
+                            Plan Your Next Adventure
+                        </div>
+                        <div class="biz-theme-dashboard-search-label-1">
+                            Destination/Hotel Name
+                        </div>
+                        <div class="biz-theme-dashboard-search-value">
+                            <input type="text" ng-model="searchForm.filters[0].value" placeholder="e.g. city, region, district or specific ..." />
+                        </div>
+                        <div class="biz-theme-dashboard-search-label">
+                            Check-in Date
+                        </div>
+                        <div class="biz-theme-dashboard-search-value">
+                            <div class="biz-theme-dashboard-search-calendar"></div>
+                            <select class="biz-theme-dashboard-search-day">
+                                <option>Day</option>
+                            </select>
+                            <select class="biz-theme-dashboard-search-month">
+                                <option>Month</option>
+                            </select>
+                        </div>
+                        <div class="biz-theme-dashboard-search-label">
+                            Check-out Date
+                        </div>
+                        <div class="biz-theme-dashboard-search-value">
+                            <div class="biz-theme-dashboard-search-calendar"></div>
+                            <select class="biz-theme-dashboard-search-day">
+                                <option>Day</option>
+                            </select>
+                            <select class="biz-theme-dashboard-search-month">
+                                <option>Month</option>
+                            </select>
+                        </div>
+                        <div class="biz-theme-dashboard-search-label">
+                            <label>
+                                <input type="checkbox" /><span>I'm not ready to enter dates</span>
+                            </label>
+                        </div>
+                        <div class="biz-theme-dashboard-search-label-travelling">
+                            <span>Travelling for:</span>
+                            <label><input type="radio" /> Work</label>
+                            <label><input type="radio" /> Leisure</label>
+                        </div>
+                        <div class="biz-theme-dashboard-search-label">
+                            <span>Guests</span>
+                            <select>
+                                <option>2 adults, 0 children</option>
+                            </select>
+                        </div>
+                        <div class="biz-theme-dashboard-search-button-content">
+                            <a class="biz-theme-dashboard-search-button" ng-click="gotoSearchResults()">Search</a>
+                        </div>
+                    </div>
+
+                    <div class="biz-theme-twitter">
+                        <span class="biz-theme-recent-searches-title"> Places Travelers Love </span>
+                        <a class="twitter-grid" href="https://twitter.com/_/timelines/539487832448843776">A Collection on Twitter</a>
+                        <script async src="https://platform.twitter.com/widgets.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="biz-theme-home-right biz-theme-bookings" ng-show="currentMenu==='bookings'">
+            <span class="biz-theme-bookings-title">Bookings</span>
+            <div class="biz-theme-bookings-filters">
+                <div class="biz-theme-bookings-filter">
+                    <span class="biz-theme-bookings-filter-label">SHOW</span>
+                    <select class="biz-theme-bookings-filter-select"><option>All bookings ({{bookings.totalRecords}})</option></select>
+                </div>
+            </div>
+            <div class="biz-theme-bookings-items">
+                <div ng-repeat="booking in bookings.entities" class="biz-theme-bookings-item">
+                    <div class="biz-theme-bookings-item-picture">
+                        <!--<img src="Api/Entities/{{booking.guid}}/Picture/{{booking.surrogateKey}}/Array?xpath=Hotel.Picture&width=250&height=131" />-->
+                    </div>
+                    <div class="biz-theme-bookings-item-information">
+                        <span class="biz-theme-bookings-item-hotel-name">{{booking.data['Hotel.Name']}}</span>
+                        <span class="biz-theme-bookings-item-hotel-location">{{booking.data['Hotel.Location']}}</span>
+                        <span class="biz-theme-bookings-item-booking-number">Booking Number</span>
+                        <span class="biz-theme-bookings-item-booking-number-value">{{booking.data.BookingNumber}}</span>
+                        <span class="biz-theme-bookings-item-booking-pin">PIN Code</span>
+                        <span class="biz-theme-bookings-item-booking-pin-value">{{booking.data.Code}}</span>
+                        <span class="biz-theme-bookings-item-cost">$ {{booking.data.Price}}</span>
+                        <div class="biz-theme-bookings-item-check-dates">
+                            <div class="biz-theme-bookings-item-check-in">
+                                <span class="biz-theme-bookings-item-check-label">CHECK-IN</span>
+                                <span class="biz-theme-bookings-item-check-day">{{booking.data.CheckinDate.getDate()}}</span>
+                                <span class="biz-theme-bookings-item-check-month">{{months[booking.data.CheckinDate.getMonth()]}}</span>
+                                <span class="biz-theme-bookings-item-check-day-name">{{days[booking.data.CheckinDate.getDay()]}}</span>
+                            </div>
+                            <div class="biz-theme-bookings-item-check-out">
+                                <span class="biz-theme-bookings-item-check-label">CHECK-OUT</span>
+                                <span class="biz-theme-bookings-item-check-day">{{booking.data.CheckoutDate.getDate()}}</span>
+                                <span class="biz-theme-bookings-item-check-month">{{months[booking.data.CheckoutDate.getMonth()]}}</span>
+                                <span class="biz-theme-bookings-item-check-day-name">{{days[booking.data.CheckoutDate.getDay()]}}</span>
+                            </div>
+                        </div>
+                        <div class="biz-theme-bookings-item-button-container">
+                            <div class="biz-theme-bookings-item-button">
+                                Review this stay
+                            </div>
+                            <div class="biz-theme-bookings-item-button">
+                                Book again
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="biz-theme-home-right biz-theme-home-right-review" ng-show="currentMenu==='reviews'">
+            <div class="biz-theme-dashboard-landscape">
+                <div class="biz-theme-dashboard-landscape-layer"></div>
+                <div class="biz-theme-dashboard-user-picture">
+                    <img src="data:image/png;base64,{{user.userPicture}}" />
+                </div>
+                <div class="biz-theme-dashboard-user-name">{{user.userFullName}}</div>
+                <div class="biz-theme-dashboard-user-settings" ng-click="getSettings()">Change your settings</div>
+            </div>
+            <div class="biz-theme-dashboard-content">
+
+                <div class="biz-theme-review-message-content">
+                    <div class="biz-theme-review-message-icon bicon-info"></div>
+                    <span class="biz-theme-review-message-text">You are viewing the private version of your reviews timeline. </span>
+                </div>
+
+                <div class="biz-theme-review-items">
+                    <div class="biz-theme-review-items-vertical-line"></div>
+                    <div class="biz-theme-review-items-left">
+                        <div class="biz-theme-review-item-left">
+                            <span class="biz-theme-review-item-left-message">You joined Booking.com.</span>
+                            <div class="biz-theme-review-item-left-icon"></div>
+                        </div>
+                    </div>
+                    <div class="biz-theme-review-items-right" ng-repeat="review in reviews.entities">
+                        <div class="biz-theme-review-item-right">
+                            <span class="biz-theme-review-item-right-message">
+                                {{review.data.Review}}
+                            </span>
+                            <div class="biz-theme-review-item-right-icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="biz-theme-home-search-results biz-theme-home-container" ng-show="currentView==='search'">
+        <div class="biz-theme-home-left">
+            <div class="biz-theme-dashboard-search">
+                <div class="biz-theme-dashboard-search-title">
+                    Search Here
+                </div>
+                <div class="biz-theme-dashboard-search-label-1">
+                    Destination/Hotel Name
+                </div>
+                <div class="biz-theme-dashboard-search-value">
+                    <input type="text" ng-model="searchForm.filters[0].value" placeholder="e.g. city, region, district or specific ..." />
+                </div>
+                <div class="biz-theme-dashboard-search-label">
+                    Check-in Date
+                </div>
+                <div class="biz-theme-dashboard-search-value">
+                    <div class="biz-theme-dashboard-search-calendar"></div>
+                    <select class="biz-theme-dashboard-search-day">
+                        <option>Day</option>
+                    </select>
+                    <select class="biz-theme-dashboard-search-month">
+                        <option>Month</option>
+                    </select>
+                </div>
+                <div class="biz-theme-dashboard-search-label">
+                    Check-out Date
+                </div>
+                <div class="biz-theme-dashboard-search-value">
+                    <div class="biz-theme-dashboard-search-calendar"></div>
+                    <select class="biz-theme-dashboard-search-day">
+                        <option>Day</option>
+                    </select>
+                    <select class="biz-theme-dashboard-search-month">
+                        <option>Month</option>
+                    </select>
+                </div>
+                <div class="biz-theme-dashboard-search-label">
+                    <label>
+                        <input type="checkbox" /><span>I'm not ready to enter dates</span>
+                    </label>
+                </div>
+                <div class="biz-theme-dashboard-search-label-travelling">
+                    <span>Travelling for:</span>
+                    <label><input type="radio" /> Work</label>
+                    <label><input type="radio" /> Leisure</label>
+                </div>
+                <div class="biz-theme-dashboard-search-label">
+                    <span>Guests</span>
+                    <select>
+                        <option>2 adults, 0 children</option>
+                    </select>
+                </div>
+                <div class="biz-theme-dashboard-search-button-content">
+                    <a class="biz-theme-dashboard-search-button" ng-click="gotoSearchResults()">Search</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="biz-theme-home-right">
+            <span class="biz-theme-bookings-title">{{searchResults.totalRecords}} {{searchResults.totalRecords==1?'property is available':'properties are available'}} </span>
+            <div class="biz-theme-search-results-facets" ng-show="searchResults.filters.length>0">
+                <span class="biz-theme-search-results-facets-message">Lock in a great price for your stay with</span>
+                <div class="biz-theme-search-results-facet" ng-repeat="filter in searchResults.filters"
+                     ng-show="filter.attribute=='AvailableStartDate'">
+                    Check-in Date : {{filter.data.min.split(' ')[0]}} - {{filter.data.max.split(' ')[0]}}
+                </div>
+                <div class="biz-theme-search-results-facet" ng-repeat="filter in searchResults.filters"
+                     ng-show="filter.attribute=='AvailableEndDate'">
+                    Check-out Date : {{filter.data.min.split(' ')[0]}} - {{filter.data.max.split(' ')[0]}}
+                </div>
+                <div class="biz-theme-search-results-facet" ng-repeat="filter in searchResults.filters"
+                     ng-show="filter.attribute=='Stars'">
+                    Stars : {{filter.data.min.split(' ')[0]}} - {{filter.data.max.split(' ')[0]}}
+                </div>
+            </div>
+            <div class="biz-theme-bookings-items">
+                <div ng-repeat="hotel in searchResults.entities" class="biz-theme-bookings-item">
+                    <div class="biz-theme-hotel-item-picture">
+                        <!--<img src="Api/Entities/{{hotel.guid}}/Picture/{{hotel.surrogateKey}}/Array?xpath=Picture&width=380&height=201" />-->
+                    </div>
+                    <div class="biz-theme-bookings-item-information">
+
+                        <span class="biz-theme-search-results-item-hotel-name">{{hotel.data.Name}}</span>
+                        <span class="biz-theme-search-results-item-stars" style="width: {{hotel.data.Stars*13}}px"></span>
+                        <span class="biz-theme-search-results-item-hotel-location">{{hotel.data.Location}}</span>
+                        <div class="biz-theme-search-results-item-hotel-deal" ng-show="hotel.data.Deal">
+                            deal<i class="bicon-smartdeals"></i>
+                        </div>
+                        <div class="biz-theme-search-results-item-favorites">
+                            <i class="bicon-olheart"></i>
+                            {{hotel.data.Favorites}}
+                        </div>
+                        <span class="biz-theme-search-results-item-description">{{hotel.data.Description}}</span>
+
+                        <div class="biz-theme-search-results-item-right">
+                            <span class="biz-theme-search-results-item-score">{{hotel.data.Score}}</span>
+                            <div class="biz-theme-search-results-item-cost">
+                                <i class="biz-theme-search-results-item-cost-icon" ng-class="{'biz-theme-search-results-item-cost-icon-false':(hotel.data.Price<1)}"></i>
+                                <i class="biz-theme-search-results-item-cost-icon" ng-class="{'biz-theme-search-results-item-cost-icon-false':(hotel.data.Price<2)}"></i>
+                                <i class="biz-theme-search-results-item-cost-icon" ng-class="{'biz-theme-search-results-item-cost-icon-false':(hotel.data.Price<3)}"></i>
+                                <i class="biz-theme-search-results-item-cost-icon" ng-class="{'biz-theme-search-results-item-cost-icon-false':(hotel.data.Price<4)}"></i>
+                                <i class="biz-theme-search-results-item-cost-icon" ng-class="{'biz-theme-search-results-item-cost-icon-false':(hotel.data.Price<5)}"></i>
+                            </div>
+                            <span class="biz-theme-search-results-item-reviews">{{hotel.data.Reviews}}  Reviews</span>
+                            <span class="biz-theme-search-results-item-prices biz-theme-bookings-item-button" ng-click="bookHere(hotel)">Book Here</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

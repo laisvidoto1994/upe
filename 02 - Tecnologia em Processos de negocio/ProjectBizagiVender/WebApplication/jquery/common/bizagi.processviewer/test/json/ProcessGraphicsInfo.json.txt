@@ -1,0 +1,2216 @@
+﻿{
+  "bpmnPlane": {
+    "diagramElements": [
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_1",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_SampleProcess"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "0bc49333-b89b-41ae-b16d-f4c473593aa3"
+          }
+        },
+        "backgroundColor": "White",
+        "borderColor": "Black",
+        "borderVisible": false,
+        "bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1381.0,
+          "height": 683.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_SampleProcess"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_2",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_6b45c81c-047e-4711-a1f3-168c07fa7d0d"
+        },
+        "bpmnElementRef": "6b45c81c-047e-4711-a1f3-168c07fa7d0d",
+        "backgroundColor": "White",
+        "borderColor": "80, 80, 80",
+        "borderVisible": true,
+        "bounds": {
+          "x": 50.0,
+          "y": 0.0,
+          "width": 1331.0,
+          "height": 683.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_6b45c81c-047e-4711-a1f3-168c07fa7d0d"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_2",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_376062fa-91ef-4f55-9745-1b2104241503"
+        },
+        "bpmnElementRef": "376062fa-91ef-4f55-9745-1b2104241503",
+        "backgroundColor": "White",
+        "borderColor": "80, 80, 80",
+        "borderVisible": true,
+        "bounds": {
+          "x": 50.0,
+          "y": 0.0,
+          "width": 1331.0,
+          "height": 683.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_376062fa-91ef-4f55-9745-1b2104241503"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_790ce5cb-09ea-4079-8428-a9d41fa71a55"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "790ce5cb-09ea-4079-8428-a9d41fa71a55"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 104.0,
+          "y": 113.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_790ce5cb-09ea-4079-8428-a9d41fa71a55"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_4feafed0-c1f5-4f32-a3f5-b6fbc8d3a6cc"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "4feafed0-c1f5-4f32-a3f5-b6fbc8d3a6cc"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 104.0,
+          "y": 28.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_4feafed0-c1f5-4f32-a3f5-b6fbc8d3a6cc"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_4291528d-437a-4646-ae20-5c84ebd025f8"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "4291528d-437a-4646-ae20-5c84ebd025f8"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 102.0,
+          "y": 199.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_4291528d-437a-4646-ae20-5c84ebd025f8"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_fe906691-ce4f-4e60-b31e-4866161df1a7"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "fe906691-ce4f-4e60-b31e-4866161df1a7"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 102.0,
+          "y": 282.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_fe906691-ce4f-4e60-b31e-4866161df1a7"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_4d1490f9-7221-49ed-9e14-97d34f0c30bb"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "4d1490f9-7221-49ed-9e14-97d34f0c30bb"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 101.0,
+          "y": 366.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_4d1490f9-7221-49ed-9e14-97d34f0c30bb"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_3e5a3538-f753-4900-a501-483ae3c77f84"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "3e5a3538-f753-4900-a501-483ae3c77f84"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 101.0,
+          "y": 459.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_3e5a3538-f753-4900-a501-483ae3c77f84"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_2883a7c4-953d-4abb-936a-62efdc023a19"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "2883a7c4-953d-4abb-936a-62efdc023a19"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 100.0,
+          "y": 544.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_2883a7c4-953d-4abb-936a-62efdc023a19"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_a260f145-f824-4333-99de-4843d57fbc97"
+        },
+        "isExpanded": false,
+        "bpmnElement": {
+          "baref": {
+            "ref": "a260f145-f824-4333-99de-4843d57fbc97"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 232.0,
+          "y": 28.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_a260f145-f824-4333-99de-4843d57fbc97"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_f13b4878-f2a3-4282-91f2-225d61289bbb"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "f13b4878-f2a3-4282-91f2-225d61289bbb"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 236.0,
+          "y": 468.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_f13b4878-f2a3-4282-91f2-225d61289bbb"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_22bdeb73-ed0b-4ed9-94b1-c800c9f4c442"
+        },
+        "isExpanded": false,
+        "bpmnElement": {
+          "baref": {
+            "ref": "22bdeb73-ed0b-4ed9-94b1-c800c9f4c442"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 235.0,
+          "y": 126.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_22bdeb73-ed0b-4ed9-94b1-c800c9f4c442"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_ed92b141-6846-470d-b748-337216b18546"
+        },
+        "isExpanded": false,
+        "bpmnElement": {
+          "baref": {
+            "ref": "ed92b141-6846-470d-b748-337216b18546"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 228.0,
+          "y": 231.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_ed92b141-6846-470d-b748-337216b18546"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_817e7a5e-5422-4b7c-9a77-a2c8f2289692"
+        },
+        "isExpanded": false,
+        "bpmnElement": {
+          "baref": {
+            "ref": "817e7a5e-5422-4b7c-9a77-a2c8f2289692"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 230.0,
+          "y": 351.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_817e7a5e-5422-4b7c-9a77-a2c8f2289692"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_5b456bde-c1bf-4603-a598-ec0dfcdde1f3"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "5b456bde-c1bf-4603-a598-ec0dfcdde1f3"
+          }
+        },
+        "backgroundColor": "230, 255, 151",
+        "borderColor": "98, 167, 22",
+        "borderVisible": true,
+        "bounds": {
+          "x": 376.0,
+          "y": 37.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_5b456bde-c1bf-4603-a598-ec0dfcdde1f3"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_6ea4e6b6-11a1-43b7-979d-27f50d3730fd"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "6ea4e6b6-11a1-43b7-979d-27f50d3730fd"
+          }
+        },
+        "backgroundColor": "230, 255, 151",
+        "borderColor": "98, 167, 22",
+        "borderVisible": true,
+        "bounds": {
+          "x": 379.0,
+          "y": 119.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_6ea4e6b6-11a1-43b7-979d-27f50d3730fd"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_8818bf44-0d13-4abb-a1e7-79d5bcfff223"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "8818bf44-0d13-4abb-a1e7-79d5bcfff223"
+          }
+        },
+        "backgroundColor": "230, 255, 151",
+        "borderColor": "98, 167, 22",
+        "borderVisible": true,
+        "bounds": {
+          "x": 374.0,
+          "y": 220.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_8818bf44-0d13-4abb-a1e7-79d5bcfff223"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_72bd6131-9d76-4264-b716-e9c01379ebb7"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "72bd6131-9d76-4264-b716-e9c01379ebb7"
+          }
+        },
+        "backgroundColor": "230, 255, 151",
+        "borderColor": "98, 167, 22",
+        "borderVisible": true,
+        "bounds": {
+          "x": 376.0,
+          "y": 315.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_72bd6131-9d76-4264-b716-e9c01379ebb7"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_cfeee0f9-7dc1-49d8-ba5a-2e5b3cd82aaa"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "cfeee0f9-7dc1-49d8-ba5a-2e5b3cd82aaa"
+          }
+        },
+        "backgroundColor": "254, 250, 239",
+        "borderColor": "150, 145, 73",
+        "borderVisible": true,
+        "bounds": {
+          "x": 578.0,
+          "y": 36.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_cfeee0f9-7dc1-49d8-ba5a-2e5b3cd82aaa"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_d4438147-19cf-4564-ab75-8628293ab769"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "d4438147-19cf-4564-ab75-8628293ab769"
+          }
+        },
+        "backgroundColor": "254, 250, 239",
+        "borderColor": "150, 145, 73",
+        "borderVisible": true,
+        "bounds": {
+          "x": 468.0,
+          "y": 36.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_d4438147-19cf-4564-ab75-8628293ab769"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_37265a4d-d7fb-4fda-9bab-7ef623a16181"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "37265a4d-d7fb-4fda-9bab-7ef623a16181"
+          }
+        },
+        "backgroundColor": "254, 250, 239",
+        "borderColor": "150, 145, 73",
+        "borderVisible": true,
+        "bounds": {
+          "x": 474.0,
+          "y": 141.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_37265a4d-d7fb-4fda-9bab-7ef623a16181"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_2ffe0b54-a530-4913-a810-fa7a25db17d3"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "2ffe0b54-a530-4913-a810-fa7a25db17d3"
+          }
+        },
+        "backgroundColor": "254, 250, 239",
+        "borderColor": "150, 145, 73",
+        "borderVisible": true,
+        "bounds": {
+          "x": 576.0,
+          "y": 142.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_2ffe0b54-a530-4913-a810-fa7a25db17d3"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_af0f7d94-7dee-4fa1-9aa8-37feda9f92b2"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "af0f7d94-7dee-4fa1-9aa8-37feda9f92b2"
+          }
+        },
+        "backgroundColor": "254, 250, 239",
+        "borderColor": "150, 145, 73",
+        "borderVisible": true,
+        "bounds": {
+          "x": 473.0,
+          "y": 231.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_af0f7d94-7dee-4fa1-9aa8-37feda9f92b2"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_dcf1b2bc-109d-44e7-9668-1b164d7039d7"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "dcf1b2bc-109d-44e7-9668-1b164d7039d7"
+          }
+        },
+        "backgroundColor": "254, 250, 239",
+        "borderColor": "150, 145, 73",
+        "borderVisible": true,
+        "bounds": {
+          "x": 577.0,
+          "y": 232.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_dcf1b2bc-109d-44e7-9668-1b164d7039d7"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_d8784115-0461-4fa1-9775-efb0bd8ce1ff"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "d8784115-0461-4fa1-9775-efb0bd8ce1ff"
+          }
+        },
+        "backgroundColor": "254, 250, 239",
+        "borderColor": "150, 145, 73",
+        "borderVisible": true,
+        "bounds": {
+          "x": 471.0,
+          "y": 328.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_d8784115-0461-4fa1-9775-efb0bd8ce1ff"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_d8b25145-a3d2-44eb-84bf-e6e65263da60"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "d8b25145-a3d2-44eb-84bf-e6e65263da60"
+          }
+        },
+        "backgroundColor": "254, 250, 239",
+        "borderColor": "150, 145, 73",
+        "borderVisible": true,
+        "bounds": {
+          "x": 580.0,
+          "y": 329.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_d8b25145-a3d2-44eb-84bf-e6e65263da60"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnElement": {
+          "baref": {
+            "ref": "e6e847de-d7fe-4f48-96fc-6689fdc6051d"
+          }
+        },
+        "backgroundColor": "254, 250, 239",
+        "borderColor": "150, 145, 73",
+        "borderVisible": false,
+        "bounds": {
+          "x": 372.0,
+          "y": 523.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_e6e847de-d7fe-4f48-96fc-6689fdc6051d"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNEdge, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_4",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_feb3e053-5563-483e-ac04-44fadb5ade0c"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "feb3e053-5563-483e-ac04-44fadb5ade0c"
+          }
+        },
+        "sourcePort": "5",
+        "waypoints": [
+          {
+            "x": 372.0,
+            "y": 523.0
+          },
+          {
+            "x": 372.0,
+            "y": 644.0
+          },
+          {
+            "x": 454.0,
+            "y": 644.0
+          }
+        ],
+        "extension": {
+          
+        },
+        "id": "DE_Id_feb3e053-5563-483e-ac04-44fadb5ade0c"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_a514905e-bfca-44d4-bde0-fb7a3acdb3c7"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "a514905e-bfca-44d4-bde0-fb7a3acdb3c7"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 362.0,
+          "y": 463.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_a514905e-bfca-44d4-bde0-fb7a3acdb3c7"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnElement": {
+          "baref": {
+            "ref": "e910bbe3-3abd-45e4-a1ca-6f871c8db82f"
+          }
+        },
+        "backgroundColor": "254, 250, 239",
+        "borderColor": "150, 145, 73",
+        "borderVisible": false,
+        "bounds": {
+          "x": 424.0,
+          "y": 523.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_e910bbe3-3abd-45e4-a1ca-6f871c8db82f"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNEdge, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_4",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_0729989c-d0e5-4897-9bd6-052172a37b3a"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "0729989c-d0e5-4897-9bd6-052172a37b3a"
+          }
+        },
+        "sourcePort": "7",
+        "waypoints": [
+          {
+            "x": 424.0,
+            "y": 523.0
+          },
+          {
+            "x": 424.0,
+            "y": 592.0
+          },
+          {
+            "x": 510.0,
+            "y": 592.0
+          }
+        ],
+        "extension": {
+          
+        },
+        "id": "DE_Id_0729989c-d0e5-4897-9bd6-052172a37b3a"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_8783df45-9050-4ba8-b2c5-5933779cf9b9"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "8783df45-9050-4ba8-b2c5-5933779cf9b9"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 528.0,
+          "y": 470.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_8783df45-9050-4ba8-b2c5-5933779cf9b9"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNEdge, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_4",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_a5232da8-3f47-48d7-9e4a-088cccaf996e"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "a5232da8-3f47-48d7-9e4a-088cccaf996e"
+          }
+        },
+        "sourcePort": "5",
+        "waypoints": [
+          {
+            "x": 538.0,
+            "y": 530.0
+          },
+          {
+            "x": 538.0,
+            "y": 663.0
+          },
+          {
+            "x": 627.0,
+            "y": 663.0
+          }
+        ],
+        "extension": {
+          
+        },
+        "id": "DE_Id_a5232da8-3f47-48d7-9e4a-088cccaf996e"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnElement": {
+          "baref": {
+            "ref": "3bd9716d-b893-4316-be6a-5c0fd7c7cfba"
+          }
+        },
+        "backgroundColor": "254, 250, 239",
+        "borderColor": "150, 145, 73",
+        "borderVisible": false,
+        "bounds": {
+          "x": 538.0,
+          "y": 530.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_3bd9716d-b893-4316-be6a-5c0fd7c7cfba"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_5",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_37af2fbc-43da-470a-b11b-358b8b292be9"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "37af2fbc-43da-470a-b11b-358b8b292be9"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": false,
+        "bounds": {
+          "x": 697.0,
+          "y": 542.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_37af2fbc-43da-470a-b11b-358b8b292be9"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnElement": {
+          "baref": {
+            "ref": "8747fdd8-039d-4efa-93cd-18f520fe8cbf"
+          }
+        },
+        "backgroundColor": "254, 250, 239",
+        "borderColor": "150, 145, 73",
+        "borderVisible": false,
+        "bounds": {
+          "x": 607.0,
+          "y": 530.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_8747fdd8-039d-4efa-93cd-18f520fe8cbf"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_fa8d5080-0ac8-4c41-9286-88115cc912c7"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "fa8d5080-0ac8-4c41-9286-88115cc912c7"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 809.0,
+          "y": 543.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_fa8d5080-0ac8-4c41-9286-88115cc912c7"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnElement": {
+          "baref": {
+            "ref": "f8fe563b-1979-4327-b7cf-b6127c41899f"
+          }
+        },
+        "backgroundColor": "254, 250, 239",
+        "borderColor": "150, 145, 73",
+        "borderVisible": false,
+        "bounds": {
+          "x": 819.0,
+          "y": 603.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_f8fe563b-1979-4327-b7cf-b6127c41899f"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNEdge, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_4",
+          "bound": {
+            "x": 819.5,
+            "y": 637.5,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_e8139964-4b2f-4666-a57a-2fa41168a494"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "e8139964-4b2f-4666-a57a-2fa41168a494"
+          }
+        },
+        "sourcePort": "5",
+        "waypoints": [
+          {
+            "x": 819.0,
+            "y": 603.0
+          },
+          {
+            "x": 819.0,
+            "y": 672.0
+          },
+          {
+            "x": 905.0,
+            "y": 672.0
+          }
+        ],
+        "extension": {
+          
+        },
+        "id": "DE_Id_e8139964-4b2f-4666-a57a-2fa41168a494"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_fd6b6ae5-094e-46d0-a96a-d84f8bfd7c50"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "fd6b6ae5-094e-46d0-a96a-d84f8bfd7c50"
+          }
+        },
+        "backgroundColor": "238, 170, 170",
+        "borderColor": "153, 0, 0",
+        "borderVisible": true,
+        "bounds": {
+          "x": 698.0,
+          "y": 37.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_fd6b6ae5-094e-46d0-a96a-d84f8bfd7c50"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_cea4b256-536e-4f9b-8539-c4aced475584"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "cea4b256-536e-4f9b-8539-c4aced475584"
+          }
+        },
+        "backgroundColor": "238, 170, 170",
+        "borderColor": "153, 0, 0",
+        "borderVisible": true,
+        "bounds": {
+          "x": 700.0,
+          "y": 115.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_cea4b256-536e-4f9b-8539-c4aced475584"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_e99dc6ce-f8fa-4fa4-b177-4f6bd3d9a8ae"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "e99dc6ce-f8fa-4fa4-b177-4f6bd3d9a8ae"
+          }
+        },
+        "backgroundColor": "238, 170, 170",
+        "borderColor": "153, 0, 0",
+        "borderVisible": true,
+        "bounds": {
+          "x": 699.0,
+          "y": 195.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_e99dc6ce-f8fa-4fa4-b177-4f6bd3d9a8ae"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_ee96fa92-b45d-4b99-9e23-72ba8c689f21"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "ee96fa92-b45d-4b99-9e23-72ba8c689f21"
+          }
+        },
+        "backgroundColor": "238, 170, 170",
+        "borderColor": "153, 0, 0",
+        "borderVisible": true,
+        "bounds": {
+          "x": 698.0,
+          "y": 283.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_ee96fa92-b45d-4b99-9e23-72ba8c689f21"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_48ffc223-ddf4-4fe8-b2e3-8c1e4f110a60"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "48ffc223-ddf4-4fe8-b2e3-8c1e4f110a60"
+          }
+        },
+        "backgroundColor": "238, 170, 170",
+        "borderColor": "153, 0, 0",
+        "borderVisible": true,
+        "bounds": {
+          "x": 698.0,
+          "y": 362.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_48ffc223-ddf4-4fe8-b2e3-8c1e4f110a60"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_b993e857-1589-4db5-b601-28b7480f7a23"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "b993e857-1589-4db5-b601-28b7480f7a23"
+          }
+        },
+        "backgroundColor": "238, 170, 170",
+        "borderColor": "153, 0, 0",
+        "borderVisible": true,
+        "bounds": {
+          "x": 699.0,
+          "y": 445.0,
+          "width": 30.0,
+          "height": 30.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_b993e857-1589-4db5-b601-28b7480f7a23"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_4854d6c6-2f1e-4360-8e44-93685b3fe8ee"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "4854d6c6-2f1e-4360-8e44-93685b3fe8ee"
+          }
+        },
+        "backgroundColor": "255, 255, 204",
+        "borderColor": "166, 166, 29",
+        "borderVisible": true,
+        "bounds": {
+          "x": 798.0,
+          "y": 29.0,
+          "width": 40.0,
+          "height": 40.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_4854d6c6-2f1e-4360-8e44-93685b3fe8ee"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_74b77112-49b7-4dd5-b7a2-3132875155c6"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "74b77112-49b7-4dd5-b7a2-3132875155c6"
+          }
+        },
+        "backgroundColor": "255, 255, 204",
+        "borderColor": "166, 166, 29",
+        "borderVisible": true,
+        "bounds": {
+          "x": 799.0,
+          "y": 128.0,
+          "width": 40.0,
+          "height": 40.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_74b77112-49b7-4dd5-b7a2-3132875155c6"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_3748e66d-0c8d-4048-8d23-81103f0230f0"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "3748e66d-0c8d-4048-8d23-81103f0230f0"
+          }
+        },
+        "backgroundColor": "255, 255, 204",
+        "borderColor": "166, 166, 29",
+        "borderVisible": true,
+        "bounds": {
+          "x": 798.0,
+          "y": 219.0,
+          "width": 40.0,
+          "height": 40.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_3748e66d-0c8d-4048-8d23-81103f0230f0"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_58e4b7f8-8b1b-4e8f-9f0c-74bfe4ace10b"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "58e4b7f8-8b1b-4e8f-9f0c-74bfe4ace10b"
+          }
+        },
+        "backgroundColor": "255, 255, 204",
+        "borderColor": "166, 166, 29",
+        "borderVisible": true,
+        "bounds": {
+          "x": 797.0,
+          "y": 310.0,
+          "width": 40.0,
+          "height": 40.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_58e4b7f8-8b1b-4e8f-9f0c-74bfe4ace10b"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_645d4470-38c9-443e-8aa7-ff53129cd145"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "645d4470-38c9-443e-8aa7-ff53129cd145"
+          }
+        },
+        "backgroundColor": "255, 255, 204",
+        "borderColor": "166, 166, 29",
+        "borderVisible": true,
+        "bounds": {
+          "x": 798.0,
+          "y": 400.0,
+          "width": 40.0,
+          "height": 40.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_645d4470-38c9-443e-8aa7-ff53129cd145"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnElement": {
+          "baref": {
+            "ref": "ed466707-12ee-4513-a96a-9869a5d41575"
+          }
+        },
+        "backgroundColor": "255, 255, 204",
+        "borderColor": "166, 166, 29",
+        "borderVisible": true,
+        "bounds": {
+          "x": 906.0,
+          "y": 63.0,
+          "width": 40.0,
+          "height": 40.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_ed466707-12ee-4513-a96a-9869a5d41575"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_332ee9b6-2fb2-4ffb-bdc9-0bd594513138"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "332ee9b6-2fb2-4ffb-bdc9-0bd594513138"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 1015.0,
+          "y": 53.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_332ee9b6-2fb2-4ffb-bdc9-0bd594513138"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNEdge, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnElement": {
+          "baref": {
+            "ref": "63871c50-3a00-45b0-8afd-40d726ad9925"
+          }
+        },
+        "waypoints": [
+          {
+            "x": 946.0,
+            "y": 83.0
+          },
+          {
+            "x": 1015.0,
+            "y": 83.0
+          }
+        ],
+        "extension": {
+          
+        },
+        "id": "DE_Id_63871c50-3a00-45b0-8afd-40d726ad9925"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_41311143-3609-410b-8814-cc43402154f1"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "41311143-3609-410b-8814-cc43402154f1"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 986.0,
+          "y": 155.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_41311143-3609-410b-8814-cc43402154f1"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNEdge, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnElement": {
+          "baref": {
+            "ref": "0877e3b6-3545-4dd3-9696-0877fa770116"
+          }
+        },
+        "waypoints": [
+          {
+            "x": 926.0,
+            "y": 103.0
+          },
+          {
+            "x": 926.0,
+            "y": 185.0
+          },
+          {
+            "x": 986.0,
+            "y": 185.0
+          }
+        ],
+        "extension": {
+          
+        },
+        "id": "DE_Id_0877e3b6-3545-4dd3-9696-0877fa770116"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_2628b706-ba4a-45b0-ae3d-98e16b3a3a88"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "2628b706-ba4a-45b0-ae3d-98e16b3a3a88"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 1179.0,
+          "y": 155.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_2628b706-ba4a-45b0-ae3d-98e16b3a3a88"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNEdge, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnElement": {
+          "baref": {
+            "ref": "84361099-4111-4e8c-b873-010668a74184"
+          }
+        },
+        "waypoints": [
+          {
+            "x": 1076.0,
+            "y": 185.0
+          },
+          {
+            "x": 1179.0,
+            "y": 185.0
+          }
+        ],
+        "extension": {
+          
+        },
+        "id": "DE_Id_84361099-4111-4e8c-b873-010668a74184"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_2631e1c5-2f2a-46b4-a0a5-8e9bf6c5f583"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "2631e1c5-2f2a-46b4-a0a5-8e9bf6c5f583"
+          }
+        },
+        "backgroundColor": "236, 239, 255",
+        "borderColor": "3, 104, 154",
+        "borderVisible": true,
+        "bounds": {
+          "x": 1092.0,
+          "y": 293.0,
+          "width": 90.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_2631e1c5-2f2a-46b4-a0a5-8e9bf6c5f583"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNEdge, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnElement": {
+          "baref": {
+            "ref": "720d1843-6d0c-4c8b-ac14-60be4e826bc5"
+          }
+        },
+        "waypoints": [
+          {
+            "x": 1031.0,
+            "y": 215.0
+          },
+          {
+            "x": 1031.0,
+            "y": 265.5
+          },
+          {
+            "x": 1137.0,
+            "y": 265.5
+          },
+          {
+            "x": 1137.0,
+            "y": 293.0
+          }
+        ],
+        "extension": {
+          
+        },
+        "id": "DE_Id_720d1843-6d0c-4c8b-ac14-60be4e826bc5"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_e36492f1-0b3e-4394-815a-559794fe7ef5"
+        },
+        "bpmnElement": {
+          "baref": {
+            "ref": "e36492f1-0b3e-4394-815a-559794fe7ef5"
+          }
+        },
+        "backgroundColor": "240, 240, 240",
+        "borderColor": "102, 102, 102",
+        "borderVisible": true,
+        "bounds": {
+          "x": 964.0,
+          "y": 391.0,
+          "width": 40.0,
+          "height": 50.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_e36492f1-0b3e-4394-815a-559794fe7ef5"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNEdge, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_4",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_f139130c-a280-4c65-9517-1b96bd66a8f8"
+        },
+        "bpmnElementRef": "f139130c-a280-4c65-9517-1b96bd66a8f8",
+        "sourcePort": "8",
+        "waypoints": [
+          {
+            "x": 607.0,
+            "y": 530.0
+          },
+          {
+            "x": 607.0,
+            "y": 572.0
+          },
+          {
+            "x": 697.0,
+            "y": 572.0
+          }
+        ],
+        "extension": {
+          
+        },
+        "id": "DE_Id_f139130c-a280-4c65-9517-1b96bd66a8f8"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNEdge, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_6",
+          "bound": {
+            "x": 1020.0,
+            "y": 360.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_3d331a3c-b49b-4373-a05b-1b1a7b88e210"
+        },
+        "bpmnElementRef": "3d331a3c-b49b-4373-a05b-1b1a7b88e210",
+        "waypoints": [
+          {
+            "x": 1004.0,
+            "y": 416.0
+          },
+          {
+            "x": 1018.0,
+            "y": 416.0
+          },
+          {
+            "x": 1018.0,
+            "y": 323.0
+          },
+          {
+            "x": 1092.0,
+            "y": 323.0
+          }
+        ],
+        "extension": {
+          
+        },
+        "id": "DE_Id_3d331a3c-b49b-4373-a05b-1b1a7b88e210"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNShape, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_3",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_ceb88e67-9d9f-4bb0-b945-5e425f460e74"
+        },
+        "bpmnElementRef": "ceb88e67-9d9f-4bb0-b945-5e425f460e74",
+        "backgroundColor": "213, 213, 213",
+        "borderColor": "213, 213, 213",
+        "borderVisible": true,
+        "bounds": {
+          "x": 1244.0,
+          "y": 30.0,
+          "width": 100.0,
+          "height": 60.0
+        },
+        "extension": {
+          
+        },
+        "id": "DE_Id_ceb88e67-9d9f-4bb0-b945-5e425f460e74"
+      },
+      {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMNDI.BPMNEdge, Bizagi.ProcessModeler.BusinessEntities",
+        "bpmnLabel": {
+          "labelStyle": "BpmnLabelStyle_6",
+          "bound": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "extension": {
+            
+          },
+          "id": "L_Id_d0e3e778-e193-4385-8f7e-4a2f6c348c45"
+        },
+        "bpmnElementRef": "d0e3e778-e193-4385-8f7e-4a2f6c348c45",
+        "waypoints": [
+          {
+            "x": 1294.0,
+            "y": 90.0
+          },
+          {
+            "x": 1294.0,
+            "y": 106.5
+          },
+          {
+            "x": 1224.0,
+            "y": 106.5
+          },
+          {
+            "x": 1224.0,
+            "y": 155.0
+          }
+        ],
+        "extension": {
+          
+        },
+        "id": "DE_Id_d0e3e778-e193-4385-8f7e-4a2f6c348c45"
+      }
+    ],
+    "extension": {
+      
+    },
+    "id": "P_Id_79d3048b-06ea-44dc-b4f8-876bb74faa2a"
+  },
+  "bpmnLabelStyles": [
+    {
+      "font": {
+        "name": "Segoe UI",
+        "size": 10.0,
+        "isBold": true,
+        "isItalic": false,
+        "isUnderline": false,
+        "isStrikeThrough": false,
+        "color": "Black"
+      },
+      "alignment": "Center",
+      "id": "BpmnLabelStyle_1"
+    },
+    {
+      "font": {
+        "name": "Segoe UI",
+        "size": 8.0,
+        "isBold": true,
+        "isItalic": false,
+        "isUnderline": false,
+        "isStrikeThrough": false,
+        "color": "Black"
+      },
+      "alignment": "Center",
+      "id": "BpmnLabelStyle_2"
+    },
+    {
+      "font": {
+        "name": "Segoe UI",
+        "size": 8.25,
+        "isBold": false,
+        "isItalic": false,
+        "isUnderline": false,
+        "isStrikeThrough": false,
+        "color": "Black"
+      },
+      "alignment": "Center",
+      "id": "BpmnLabelStyle_3"
+    },
+    {
+      "font": {
+        "name": "Segoe UI",
+        "size": 8.0,
+        "isBold": false,
+        "isItalic": false,
+        "isUnderline": false,
+        "isStrikeThrough": false,
+        "color": "Black"
+      },
+      "alignment": "Near",
+      "id": "BpmnLabelStyle_4"
+    },
+    {
+      "font": {
+        "name": "Segoe UI",
+        "size": 8.0,
+        "isBold": false,
+        "isItalic": false,
+        "isUnderline": false,
+        "isStrikeThrough": false,
+        "color": "Black"
+      },
+      "alignment": "Center",
+      "id": "BpmnLabelStyle_5"
+    },
+    {
+      "font": {
+        "name": "Segoe UI",
+        "size": 8.25,
+        "isBold": false,
+        "isItalic": false,
+        "isUnderline": false,
+        "isStrikeThrough": false,
+        "color": "Black"
+      },
+      "alignment": "Near",
+      "id": "BpmnLabelStyle_6"
+    }
+  ],
+  "name": "Id_79d3048b-06ea-44dc-b4f8-876bb74faa2a",
+  "id": "D_Id_79d3048b-06ea-44dc-b4f8-876bb74faa2a"
+}

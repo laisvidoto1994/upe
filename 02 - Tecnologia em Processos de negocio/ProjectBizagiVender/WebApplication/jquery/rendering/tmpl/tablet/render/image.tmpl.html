@@ -1,0 +1,40 @@
+<script id="ui-bizagi-render-image" type="text/x-jquery-tmpl" >
+	<div class="ui-bizagi-render-upload-wrapper image-wrapper">
+	
+		<div class='ui-bizagi-render-image-wrapper' >
+		{{tmpl "#ui-bizagi-render-image-item"}}	
+		</div>
+	</div>
+
+    <div class="ui-bizagi-resolution-container">        
+        <div class="ui-bizagi-resolutionUploadFrame">         
+            <span>%{workportal-size-title}</span>
+            <br/><br/>
+            <button type="button" data-bz-ordinal="1" class="ui-bizagi-form-button ui-bizagi-resolution-button" style="">%{workportal-size-small}</button>
+            <br/>
+            <button type="button" data-bz-ordinal="2" class="ui-bizagi-form-button ui-bizagi-resolution-button" style="">%{workportal-size-medium}</button>
+            <br/>
+            <button type="button" data-bz-ordinal="3" class="ui-bizagi-form-button ui-bizagi-resolution-button" style="">%{workportal-size-large}</button>
+            <br/>
+            <button type="button" data-bz-ordinal="4" class="ui-bizagi-form-button ui-bizagi-resolution-button" style="">%{workportal-size-original}</button>
+            <br/>
+            <br/>
+            <button type="button" data-bz-ordinal="5" class="ui-bizagi-form-button ui-bizagi-resolution-button-cancel" style="">%{confirmation-box-cancel}</button>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-render-image-item" type="text/x-jquery-tmpl" >
+	{{if url}}
+	<img src="${url}">
+	{{else}}
+	<div class="bz-cm-icon image-file"></div>
+	{{/if}}
+
+    <div class="bz_rn_upload_container_upload_items">
+     <ul class="bz-rn-upload-options">
+       <li>  <button type="button"  class="bz-cm-icon bz-upload-button image " ></button> </li>
+       <li>  <button type="button"  class="bz-cm-icon bz-upload-button cimage" ></button> </li>
+     </ul>
+    </div>
+</script>

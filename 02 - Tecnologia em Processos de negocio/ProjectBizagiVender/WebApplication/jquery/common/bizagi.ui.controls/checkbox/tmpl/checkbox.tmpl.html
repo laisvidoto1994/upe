@@ -1,0 +1,8 @@
+{{each(i, val) checkbox}}
+<div class="biz-wp-wrapper-checkbox">	
+	<label>
+		<span>${$item.itemText(val)}</span>
+	</label>
+	<input type="checkbox" name="${$data.checkboxGroup}" value="${$item.itemValue(val)}" class="biz-wp-option-checkbox" {{if isChecked == "true"}} checked="checked" {{/if}}>
+</div>
+{{/each}}

@@ -1,0 +1,74 @@
+﻿@import "base/variables";
+@import "base/mixins";
+
+.biz-theme-shortcuts {
+    width: 100%;
+    border: 1px solid @gray;
+    height: 225px;
+}
+
+.biz-theme-shortcut-item {
+    width: 33%;
+    height: 100%;
+    vertical-align: top;
+    transition:all linear 0.2s;
+}
+
+
+.biz-theme-shortcut-item:hover {
+    background: @light-blue;
+}
+
+.biz-theme-shortcut-item:hover .biz-theme-shortcut-item-title,
+.biz-theme-shortcut-item:hover .biz-theme-shortcut-item-description  {
+    color: @white;
+}
+
+.biz-theme-shortcut-item:hover .biz-theme-shortcut-item-icon-find {
+    background: url(http://r-ec.bstatic.com/static/img/profile/accounts/AP_for_newcomers_sprite/4be5efd7584cb0e35e8dc817fdd5e7c0ee56f88f.png) 0 0;
+}
+
+.biz-theme-shortcut-item:hover .biz-theme-shortcut-item-icon-add {
+    background: url(http://r-ec.bstatic.com/static/img/profile/accounts/AP_for_newcomers_sprite/4be5efd7584cb0e35e8dc817fdd5e7c0ee56f88f.png) 120px 0;
+}
+
+.biz-theme-shortcut-item:hover .biz-theme-shortcut-item-icon-download {
+    background: url(http://r-ec.bstatic.com/static/img/profile/accounts/AP_for_newcomers_sprite/4be5efd7584cb0e35e8dc817fdd5e7c0ee56f88f.png) 60px 0;
+}
+
+.biz-theme-shortcut-item-icon {
+    width: 60px;
+    height: 60px;
+    margin-left: 86px;
+    margin-top: 20px;
+}
+
+.biz-theme-shortcut-item-title {
+    color: @black-1;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+.biz-theme-shortcut-item-description {
+    color: @black;
+    width: 160px;
+    margin-left: 39px;
+    font-size: 11px;
+    margin-top: 15px;
+    line-height: 17px;
+}
+
+.biz-theme-shortcut-item-icon-find {
+    background: url(http://r-ec.bstatic.com/static/img/profile/accounts/AP_for_newcomers_sprite/4be5efd7584cb0e35e8dc817fdd5e7c0ee56f88f.png) 0 60px;
+}
+
+.biz-theme-shortcut-item-icon-add {
+    background: url(http://r-ec.bstatic.com/static/img/profile/accounts/AP_for_newcomers_sprite/4be5efd7584cb0e35e8dc817fdd5e7c0ee56f88f.png) 120px 60px;
+}
+
+.biz-theme-shortcut-item-icon-download {
+    background: url(http://r-ec.bstatic.com/static/img/profile/accounts/AP_for_newcomers_sprite/4be5efd7584cb0e35e8dc817fdd5e7c0ee56f88f.png) 60px 60px;
+}

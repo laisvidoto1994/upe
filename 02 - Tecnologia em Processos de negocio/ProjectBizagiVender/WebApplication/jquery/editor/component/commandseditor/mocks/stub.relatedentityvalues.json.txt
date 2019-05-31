@@ -1,0 +1,9 @@
+{
+	"1": "Bogota",
+	"2": "Medellin",
+	"3": "Cali",
+	"4": "Barranquilla",
+	"5": "Villavicencio",
+	"6": "Leticia",
+	"7": "Bucaramanga"
+}

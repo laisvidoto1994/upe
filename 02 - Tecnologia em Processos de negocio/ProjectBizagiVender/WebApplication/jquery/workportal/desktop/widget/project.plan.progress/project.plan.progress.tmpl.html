@@ -1,0 +1,18 @@
+<script id="project-plan-progress" type="text/x-jsrender" >
+   <div>
+      <div class="bz-wp-widget ui-bizagi-wp-project-plan-progress">
+          <h3 class="bz-wp-section">%{workportal-project-plan-progress-title}</h3>
+          <div class="plan-progress">
+            <div class="remaining-days">
+               <div class="time-remaining" style="padding-left: {{>paddingLeft}};">
+                  <div class="bz-wp-progress-bar-wrapper bar-fullTime">
+                     <div class="bz-wp-progress-bar bar-completed {{>colorBar}}" style="width:{{>progress}}%;"></div>
+                  </div>
+                  <p class="bz-wp-timestamp">{{>progress}} %{workportal-project-plan-progress-percent-completed}</p>
+               </div>
+            </div>
+          </div>
+
+       </div>
+    </div>
+</script>

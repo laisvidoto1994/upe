@@ -1,0 +1,33 @@
+﻿<div ng-controller="caseController" class="biz-theme-home-section-cases">
+    <h3 class="cases-title">Cases</h3>
+    <div class="row">
+        <div class="col-md-6 col-lg-4">
+            <div ng-click="gotoPendingCases()" class="cases-card">
+                <div class="card-icon">
+                    <i class="bz-icon bz-icon-watch-progress bz-icon-32"></i>
+                </div>
+                <div class="card-text">
+                    <h4 class="text-title">Pendings</h4>
+                    <p class="text-description">List of all pending cases</p>
+                </div>
+                <div class="card-next">
+                    <i class="bz-icon bz-icon-32 bz-icon-right-outline"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div ng-click="gotoFollowingCases()" class="cases-card">
+                <div class="card-icon">
+                    <i class="bz-icon bz-icon-watch-progress bz-icon-32"></i>
+                </div>
+                <div class="card-text">
+                    <h4 class="text-title">Following</h4>
+                    <p class="text-description">List of all following cases</p>
+                </div>
+                <div class="card-next">
+                    <i class="bz-icon bz-icon-32 bz-icon-right-outline"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

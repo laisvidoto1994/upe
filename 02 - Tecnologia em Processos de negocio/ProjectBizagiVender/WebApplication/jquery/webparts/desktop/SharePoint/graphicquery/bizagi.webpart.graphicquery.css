@@ -1,0 +1,266 @@
+﻿/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.bz-gq-header {
+    border-bottom: 1px solid #CCC;
+    /*margin-bottom: 1.5em;*/
+	display: table;
+}
+
+.processviewer-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 1000px;
+}
+
+/* Process Summary
+   ========================================================================== */
+
+#bz-gq-summary-container { float: right; }
+
+.bz-gq-process-summary {
+    float: left;
+    margin-right: .5em;
+}
+
+.bz-gq-process-summary .bz-table th,
+.bz-gq-process-summary .bz-table td {
+    padding: .5em 1em;
+}
+
+/* Action Bar
+   ========================================================================== */
+
+#bz-gq-actionbar-container { float: left; }
+
+.bz-gq-action-bar {
+    padding: 1em 0;
+    margin-bottom: 1em;
+    font-size: 12px;
+}
+
+.bz-gq-action-bar .bz-button { margin-left: .5em; }
+
+/* Process Viewer
+   ========================================================================== */
+
+#bz-gq-processviewer-canvas { position: relative; }
+
+.bz-gq-wrapper .wdg-processviewer {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;
+    width: 100% !important;
+    padding: 2% !important;
+}
+
+/* ==========================================================================
+   Module
+   ========================================================================== */
+
+/* Buttons
+   ========================================================================== */
+
+.bz-button {
+    -webkit-appearance: none;
+    box-shadow: 0 1px #CCC;
+    display: inline-block;
+    max-height: 32px;
+    min-height: 32px;
+    padding: 0 .5em;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    margin: 0;
+    background: #FFF;
+    font: 12px/normal normal Arial, "Helvetica Neue", Helvetica, sans-serif;    
+    color: #444;
+    cursor: pointer;
+}
+
+.bz-button:hover,
+.bz-button:focus,
+.bz-button:active {
+    outline: none;
+    box-shadow: 0 0 3px #4D90FE;
+}
+
+.bz-button-secondary {
+    background: none;
+    box-shadow: none;
+}
+
+.bz-button-secondary:hover,
+.bz-button-secondary:focus,
+.bz-button-secondary:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.bz-button-secondary:focus { outline: none; }
+
+.bz-button-secondary .bz-button-data { text-decoration: underline; }
+
+.bz-button-data { line-height: 32px; } 
+
+/* Icons
+   ========================================================================== */
+
+#bz-gq-button-path .bz-icon {
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    background: url(../../../../workportal/css/desktop/images/bz-gq-icons-sprite.png) 0 0;
+    text-indent: -999em;
+    vertical-align: middle;
+}
+
+.bz-icon-24 {
+    width: 24px;
+    height: 24px;
+}
+
+.bz-gq-icon-status { background-position: -24px 0; }
+
+.bz-gq-icon-path-stop { background-position: -48px 0; }
+
+.bz-gq-icon-parent { background-position: -96px 0; }
+
+.bz-gq-subcases-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 2em;
+    margin: auto;
+    background-color: #293F55;
+    color: #FFF;
+    font-size: .75em;
+    font-weight: bold;
+    line-height: 2.5em;
+    text-align: center;
+}
+
+/* Table
+   ========================================================================== */
+
+.bz-table {
+    width: 100%;
+    border: 1px solid #293F55;
+    margin-bottom: 1em;
+}
+
+.bz-table tr th,
+.bz-table tr td { background: #FFF; }
+
+.bz-table tbody tr:nth-child(even) th,
+.bz-table tbody tr:nth-child(even) td { background: #E5F0F5; }
+
+.bz-table th,
+.bz-table td {
+    padding: 1em 2em;
+    border-top: 1px solid #293F55;
+    color: #444;
+    font-size: 12px;
+    text-align: left;
+}
+
+.bz-table tr:first-child th,
+.bz-table tr:first-child td { border-top: none; }
+
+.bz-table-bordered {
+    border-color: #DDD;
+    border-collapse: separate;
+    border-radius: 6px;
+    caption-side: bottom;
+}
+
+.bz-table-bordered th,
+.bz-table-bordered td { border-top-color: #DDD; }
+
+.bz-table-bordered tr:first-child th:first-child,
+.bz-table-bordered tr:first-child td:first-child { border-radius: 6px 0 0 0; }
+
+.bz-table-bordered tr:first-child th:last-child,
+.bz-table-bordered tr:first-child td:last-child { border-radius: 0 6px 0 0; }
+
+.bz-table-bordered tr:last-child th:first-child,
+.bz-table-bordered tr:last-child td:first-child { border-radius: 0 0 0 6px; }
+
+.bz-table-bordered tr:last-child th:last-child,
+.bz-table-bordered tr:last-child td:last-child { border-radius: 0 0 6px 0; }
+
+.bz-table-bordered tr:only-child th:first-child,
+.bz-table-bordered tr:only-child td:first-child { border-radius: 6px 0 0 6px; }
+
+.bz-table-bordered tr:only-child th:last-child,
+.bz-table-bordered tr:only-child td:last-child { border-radius: 0 6px 6px 0; }
+
+/* Tooltip
+   ========================================================================== */
+
+.bz-gq-tooltip-content {
+    max-width: 200px;
+    min-width: 200px;    
+}
+
+.bz-gq-tooltip-title {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+.bz-gq-tooltip-subtitle {
+    margin: 0 0 5px;
+    font-size: 14px;
+}
+
+.bz-gq-tooltip-definition { margin: 0 0 5px; }
+
+.bz-gq-tooltip-definition dt,
+.bz-gq-tooltip-definition dd { margin: 0; }
+
+.bz-gq-tooltip-definition dt { font-weight: bold; } 
+
+.bz-gq-tooltip-list {
+    overflow-y: auto;
+    max-height: 100px;
+    padding: 0;
+    margin: 0 0 10px;
+    list-style: none; 
+}
+
+.bz-gq-tooltip-list li {
+    padding: 0.5em 1.5em;
+    cursor: pointer;
+}
+
+.bz-gq-tooltip-list li:nth-child(odd) { background-color: #DDD; }
+
+.bz-gq-tooltip-list li:hover,
+.bz-gq-tooltip-list li:focus,
+.bz-gq-tooltip-list li:active {
+    background-color: #293F55;
+    color: #FFF;
+}
+
+.bz-gq-tooltip-list-users li:hover,
+.bz-gq-tooltip-list-users li:focus,
+.bz-gq-tooltip-list-users li:active {
+    background-color: #CCC;
+    color: #444;
+    cursor: default;
+}
+
+/* Process Viewer
+   ========================================================================== */
+
+.processviewer-container {
+    padding: 1em;
+    background-color: #FFF;
+    font-size: 14px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}

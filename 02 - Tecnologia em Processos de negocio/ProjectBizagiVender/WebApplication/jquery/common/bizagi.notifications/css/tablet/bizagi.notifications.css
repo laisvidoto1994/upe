@@ -1,0 +1,243 @@
+.ui-bizagi-notifications-container
+{
+	right: 0px;    
+    position:fixed;   
+    display:none;
+    z-index: 9999;
+	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius:4px;
+	box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.5);
+	padding:1px;
+}
+.ui-bizagi-notifications-container-bottom
+{
+	bottom: 47px;
+}
+.ui-bizagi-notifications-content
+{
+	max-height: 290px;
+	-webkit-border-radius:0px 0px 4px 4px;
+	padding:0px 6px;
+	border-top:none;
+	background-color: #ececec;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling:touch;
+}
+.ui-bizagi-notifications-header
+{
+	height: 33px;
+	line-height: 37px;	
+	padding-left: 32px;
+	padding-right: 35px;
+	-webkit-border-radius:4px 4px 0px 0px;
+	font-family: 'Helvetica';    
+	font-size: 14px;
+}
+.ui-bizagi-notifications-container.ui-bizagi-state-collapsed {
+	width: auto;
+}
+.ui-bizagi-notifications-container.ui-bizagi-state-collapsed .ui-bizagi-notifications-header{
+	-webkit-border-radius: 4px;
+}
+.ui-bizagi-notifications-container.ui-bizagi-state-expanded 
+{
+	/* Used to be 640px */
+	width: 510px; /* 510 is good enough to vertical alignment with the left column enabled*/
+	opacity: 1;
+	overflow: hidden;
+}
+.ui-bizagi-notifications-box-button
+{
+    position:absolute;
+    left: 8px;
+    top: 14px;
+    cursor: pointer;
+}
+.ui-bizagi-notifications-clear-button
+{
+	position:absolute;
+	right: 16px;
+	top: 12px;
+	cursor: pointer;
+	width: 24px;
+	height: 24px;
+}
+
+.ui-bizagi-notifications-clear-button .ui-icon
+{
+	position:absolute;
+	top: 4px;
+	left: 4px;
+}
+.ui-bizagi-notification-item
+{
+	position: relative;
+	border:none;
+	padding-left: 25px;
+	padding-top: 5px; 
+	padding-right: 0px; 
+	padding-bottom: 5px;
+	min-height: 32px;
+	line-height: 32px;
+	border-bottom: solid #cccccc 1px;
+}
+.ui-bizagi-notification-item .ui-icon
+{
+	top:12px;
+	left:0px;
+	position: absolute;
+}
+.ui-bizagi-notification-item label
+{
+	display: inline-block;
+	cursor: pointer;
+}
+
+.ui-dialog.ui-widget.ui-widget-content {
+    z-index: 999;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 90% !important;
+}
+
+.ui-widget-overlay {
+    z-index: 999 !important;
+}
+
+
+/* the norm  css to notifier */
+#notifier-notice-wrapper {
+    position:fixed;
+    top:50px;
+    right: 0;
+    width:401px;
+    max-width: 100%;
+    z-index:9999;
+}
+#notifier-notice-wrapper.top-left {
+    left: 20px;
+    right: auto;
+}
+#notifier-notice-wrapper.bottom-right {
+    top: auto;
+    left: auto;
+    bottom: 20px;
+    right: 20px;
+}
+#notifier-notice-wrapper.bottom-left {
+    top: auto;
+    right: auto;
+    bottom: 20px;
+    left: 20px;
+}
+.notifier-item-wrapper {
+    position:relative;
+    margin:0 0 10px 0;
+    background-color: #37BAEC;
+    border-bottom: 1px solid #3087C5;
+    color: white;
+    /*background: rgba(0,0,0,0.4);*/
+}
+
+.notifier-item-wrapper.error {
+    background-color: rgb(189, 54, 47);
+    border-bottom: 1px solid #650a12;
+    color: white;
+}
+
+.notifier-item-wrapper.alert {
+    background-color: rgb(189, 178, 19);
+    border-bottom: 1px solid #948f43;
+    color: white;
+}
+
+.notifier-item-wrapper .notifier-top {
+  /*  background:url(../images/notifier.png) no-repeat left -30px;
+    height:10px;*/
+}
+.notifier-item-wrapper .hover .notifier-top {
+    /*background-position:right -30px;*/
+}
+.notifier-item-wrapper .notifier-bottom {
+   /* background:url(../images/notifier.png) no-repeat left bottom;
+    height:8px;
+    margin:0;*/
+}
+.notifier-item-wrapper .hover .notifier-bottom {
+    /*background-position: bottom right;*/
+}
+.notifier-item-wrapper .notifier-item {
+    color:#eee;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    justify-content: space-between;
+    font-family:verdana;
+    padding:2px 11px 8px 11px;
+}
+.notifier-item-wrapper .hover .notifier-item {
+    background-position:right -40px;
+}
+.notifier-item-wrapper .notifier-item p {
+    font-size: 13px;
+    padding:0;
+    margin:0;
+}
+.notifier-item-wrapper .notifier-close {
+    cursor: pointer;
+    align-self: center;
+    margin: 0;
+    color: #fff;
+}
+
+.notifier-item-wrapper .notifier-title {
+    font-size: 14px;
+    font-weight:bold;
+    padding:7px 0 7px 0;
+    display:block;
+}
+.notifier-item-wrapper .notifier-image {
+    width:48px;
+    height:48px;
+    float:left;
+}
+.notifier-item-wrapper .notifier-with-image,
+.notifier-item-wrapper .notifier-without-image {
+    padding:0 0 5px 0;
+}
+.notifier-item-wrapper .notifier-with-image {
+    width:220px;
+    float:right;
+}
+
+
+.notifier-item-wrapper .progress-bar {
+    background-color: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    left: 0;
+}
+
+
+/* GENERAL LAYOUTS MEDIA-QUERIES
+=========================================================*/
+@media only screen and (min-width: 1025px) {	
+	.ui-bizagi-notifications-container-bottom { bottom: 50px; right: 14px; /* Make the notification box appears on screen on iPad  */}
+}
+
+/* LANDSCAPE LAYOUTS ONLY MEDIA-QUERIES
+=========================================================*/
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+	.ui-bizagi-notifications-container-bottom { bottom:50px; right: 14px; /* Make the notification box appears on screen on iPad  */ }
+}
+
+/* PORTRAIT LAYOUTS ONLY MEDIA-QUERIES
+=========================================================*/
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) and (orientation:portrait) {
+	.ui-bizagi-notifications-container-bottom { bottom: 50px; right: 14px; /* Make the notification box appears on screen on iPad  */ }
+}

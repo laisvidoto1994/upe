@@ -1,0 +1,59 @@
+/********
+* Filename: bizagi.editor.component.editor.resizer.css
+* Create Date: 2013-07-26
+* Author: Christian Collazos
+*
+* $__resizer
+*
+********/
+
+/* __resizer
+--------*/
+
+
+.ratio-icon .aspect-ratio-icon {
+	background-position: -1104px -16px;
+	cursor: pointer;
+}
+
+.ratio-icon .aspect-ratio-icon:hover{
+	background-position: -1104px -32px;
+	cursor: pointer;
+}
+
+.ratio-icon .aspect-ratio-icon-selected {
+	background-position: -1104px -48px;
+	cursor: pointer;
+}
+
+.ratio-icon 
+{    
+    margin-top: 15px;   
+    padding-right:6px;
+}
+
+.labelSize
+{
+    float: left;
+}
+
+.tableResizer
+{
+    border: 1px solid #D4D6D9;
+}
+
+.size-option
+{
+    padding-left:10px;
+    padding-right: 2px;
+    padding-bottom:10px;
+    width : 60px;
+    
+}
+
+.pixel
+{   
+    padding-top:20px;
+    padding-right:5px;
+    color: rgba(93,115,137,.5);
+}

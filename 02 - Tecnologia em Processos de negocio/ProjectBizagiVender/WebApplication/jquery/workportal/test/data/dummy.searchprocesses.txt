@@ -1,0 +1,11 @@
+{
+    "category": "processes",
+	"processes|1-5": [
+		{
+			"id|0-99999": 0,
+			"name": "@BIZAGI_FOUND_PROCESSES",
+			"displayName": "@LOREM @LOREM @LOREM",
+			"description": "@LOREM_IPSUM"
+		}
+	]
+}

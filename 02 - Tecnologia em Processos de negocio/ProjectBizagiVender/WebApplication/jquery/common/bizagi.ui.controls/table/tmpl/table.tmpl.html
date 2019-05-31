@@ -1,0 +1,28 @@
+<div class="wp-ui-control-table">
+    <div class = "biz-ex-x-scroll">
+        <table class="biz-wp-table">
+            <thead class="biz-wp-table-head">
+                {{if headers}}
+                    {{each(i, th) headers}}
+                        <th>
+                            ${th.value}
+                        </th>
+    			    {{/each}}
+                {{/if}}
+            </thead>
+            <tbody class="biz-wp-table-body">
+                {{if rows}}
+    			    {{each(i, row) rows}}
+    				   <tr class="biz-wp-table-row">
+    					{{each(j, colrow) row}}
+    						<td>
+                             {{html $item.testValue(colrow)}}
+    						</td >
+                        {{/each}}
+    				   </tr >
+                    {{/each}}
+                {{/if}}
+            </tbody >
+        </table>
+    </div >
+</div>

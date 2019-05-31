@@ -1,0 +1,34 @@
+﻿<script id="actions-wrapper" type="text/x-jsrender-tmpl">
+    {{if actions.length > 0}}
+        <div class="template-actions-container" data-idcase="{{:idCase}}" data-idcaseevent="{{:idCaseEvent}}" data-entityguid="{{:guidEntity}}"  data-surrogatekey="{{:surrogateKey}}">
+            <ul class="actions-container">
+                {{for actions}}
+                    <li data-guid="{{if id}}{{:id}}{{else}}{{:reference}}{{/if}}" data-name="{{:displayName}}" title="{{:description}}">
+                        <div class="wdg-tple-button">
+                            <span>{{:displayName}}</span>
+                        </div>
+                    </li>
+                {{/for}}
+            </ul>
+            {{if showMore }}
+                <div class="bz-actions-showmore ellipsis-icon"> ... </div>
+            {{/if}}
+        </div>
+     {{/if}}
+</script>
+
+<script id="actions-tooltip" type="text/x-jsrender-tmpl">
+    <div class="template-box-tooltip" data-idcase="{{:idCase}}" data-entityguid="{{:guidEntity}}">
+        <ul class="actions-hidden-container">
+            {{for actions}}
+                <li data-guid="{{if id}}{{:id}}{{else}}{{:reference}}{{/if}}" title="{{:description}}" >
+                    <div class="wdg-tple-button">
+                        <div class="icon"></div>
+                        <span>{{:displayName}}</span>
+                    </div>
+                </li>
+            {{/for}}
+        </ul>
+    </div>
+
+</script>

@@ -1,0 +1,16 @@
+﻿{
+    "actiontype": "GetControlsDisabled",
+    "result": {
+        "success": true,
+        "parameters": [
+            {
+                "key": "uploadecm",
+                "value": "True"
+            },
+            {
+                "key": "columnuploadecm",
+                "value": "True"
+            }
+        ]
+    }
+}

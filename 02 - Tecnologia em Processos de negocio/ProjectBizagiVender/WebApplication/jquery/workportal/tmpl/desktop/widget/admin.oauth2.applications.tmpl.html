@@ -1,0 +1,367 @@
+﻿<script id="ui-bizagi-workportal-widget-admin-oauth2applications" type="text/x-jquery-tmpl">
+﻿
+    <div id="admin-oauth2-applications-wrapper">
+        <div id="admin-oauth2-applications-table"></div>
+    </div>
+
+    <div id="admin-oauth2-add-application" ></div>
+    <div id="admin-oauth2-edit-application" ></div>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-add-oauth2applications" type="text/x-jquery-tmpl">
+ <div class="biz-wp-form">
+                <div class="biz-wp-form-row clearfix">
+                    <h3 class="title biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-register-application}</h3>
+                </div>
+
+                <div id="formAddOAuthApp">
+                    <div class="biz-wp-form-column">
+
+                        <div class="biz-wp-form-row clearfix">
+                            <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-name}</div>
+                            <div class="biz-wp-form-cell ui-bizagi-render ui-bizagi-control-wrapper">
+                                <input id="biz-wp-oauth2-name-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="text" name="name" required />
+                                <div class="ui-bizagi-render-control-required"></div>
+                            </div>
+                        </div>
+                        <div class="biz-wp-form-row clearfix">
+                            <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-website}</div>
+                            <div class="biz-wp-form-cell ui-bizagi-render ui-bizagi-control-wrapper">
+                                <input id="biz-wp-oauth2-web-site-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="text" name="website"  />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="biz-wp-form-column">
+
+                        <div class="biz-wp-form-row clearfix">
+                            <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-grant-type}</div>
+                            <div class="biz-wp-form-cell ui-bizagi-control-wrapper" >
+                                <div id="biz-wp-oauth2-grant-type-input" class="biz-wp-oauth2-select-control"></div>
+                            </div>
+                        </div>
+                        <div class="biz-wp-form-row clearfix">
+                            <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-allowed-scope}</div>
+                            <div class="biz-wp-form-cell ui-bizagi-control-wrapper" >
+                               
+                                <span class="biz-wp-form-check">
+                                    <input id="biz-wp-oauth2-scope-api-input" type="checkbox" name="api" value="api" checked />
+                                    <label for="biz-wp-oauth2-scope-api-input">API</label>
+                                </span>
+                                <span class="biz-wp-form-check">
+                                    <input id="biz-wp-oauth2-scope-login-input" type="checkbox" name="login" value="login" />
+                                    <label for="biz-wp-oauth2-scope-login-input">LOGIN</label>
+                                </span>
+
+                                <span id="bz-oauth2-applications-error-scope-required" class="biz-wp-form-check biz-wp-form-required" >
+                                    %{workportal-general-pick-option}
+                                </span>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="biz-wp-form-column">
+
+                        <div class="biz-wp-form-row clearfix bz-oauth2-only-client-credentials">
+                            <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-default-user-name}</div>
+                            <div class="biz-wp-form-cell ui-bizagi-render ui-bizagi-control-wrapper">
+                                <input id="biz-wp-oauth2-default-user-name-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="text" name="default_username" required />
+                                <div class="ui-bizagi-render-control-required"></div>
+                            </div>
+                        </div>
+                        <div class="biz-wp-form-row clearfix bz-oauth2-only-authorization-code">
+                            <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-redirect-uri-strategy}</div>
+                            <div class="biz-wp-form-cell ui-bizagi-control-wrapper" >
+                                <div id="biz-wp-oauth2-redirect-uri-strategy-input" class="biz-wp-oauth2-select-control"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="biz-wp-form-column">
+
+                        <div class="biz-wp-form-row clearfix bz-oauth2-only-client-credentials">
+                            <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-default-user-domain}</div>
+                            <div class="biz-wp-form-cell ui-bizagi-render ui-bizagi-control-wrapper">
+                                <input id="biz-wp-oauth2-user-domain-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="text" name="default_userdomain" required  />
+                                <div class="ui-bizagi-render-control-required"></div>
+                            </div>
+                        </div>
+                        <div class="biz-wp-form-row clearfix bz-oauth2-only-authorization-code">
+                            <div id="bz-oauth2-only-WebApplication">
+                                <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-redirecturi}</div>
+                                <div class="ui-bizagi-render ui-bizagi-control-wrapper">
+                                    <input id="biz-wp-oauth2-redirect-uri-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="text" name="redirect_uri" required />
+                                    <div class="ui-bizagi-render-control-required"></div>
+                                 </div>
+                            </div>
+                            <div id="bz-oauth2-only-MobileLocalhostPort">
+                                <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-mobile-host-port}</div>
+                                <div class="ui-bizagi-render ui-bizagi-control-wrapper">
+                                    <input id="biz-wp-oauth2-mobile-host-port" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="number" min="1" name="redirect_uri_port" required />
+                                    <div class="ui-bizagi-render-control-required"></div>
+                                 </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                     <div class="biz-wp-form-column">
+
+                        <div class="biz-wp-form-row clearfix">
+                            <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-access-token-lifetime}</div>
+                            <div class="biz-wp-form-cell ui-bizagi-render ui-bizagi-control-wrapper">
+                                <input id="biz-wp-oauth2-access-token-input" type="number" min="1" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" name="accessTokenLifetimeInMinutes" required />
+                                <div class="ui-bizagi-render-control-required"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="biz-wp-form-column">
+                        <div class="biz-wp-form-row clearfix">
+                            <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-description} </div>
+                            <div class="biz-wp-form-cell ui-bizagi-render ui-bizagi-control-wrapper">
+                                <input id="biz-wp-oauth2-applications-description-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="text" name="description" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="biz-wp-oauth2-warnings">
+                        <p id="bz-oauth2-applications-error-name-duplicated" class="biz-wp-oauth2-warnings__alert">
+                            %{workportal-widget-admin-oauth2-error-name-duplicated}
+                        </p>
+                        <p id="bz-oauth2-applications-error-fields-required" class="biz-wp-oauth2-warnings__alert">
+                            %{workportal-widget-admin-users-request-emptyfields-message}
+                        </p>
+                        <p id="bz-oauth2-applications-error-url-invalid" class="biz-wp-oauth2-warnings__alert">
+                            %{workportal-widget-admin-users-request-url-invalid}
+                        </p>
+                        <p id="bz-oauth2-applications-error-time-invalid" class="biz-wp-oauth2-warnings__alert">
+                           %{workportal-widget-admin-oauth2-error-time-invalid}
+                        </p>
+                        <p id="bz-oauth2-applications-error-port-invalid" class="biz-wp-oauth2-warnings__alert">
+                           %{workportal-widget-admin-oauth2-error-port-invalid}
+                        </p>
+                    </div>
+
+                       <br>
+
+                    <div class="biz-wp-buttonset">
+                        <button id="btn-admin-oauth2-add" class="ui-button" >
+                            <span class="ui-button-text">%{text-save}</span>
+                        </button>
+                        <button id="btn-admin-oauth2-cancel" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false" type="reset">
+                            <span class="ui-button-text">%{text-cancel}</span>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-edit-oauth2applications" type="text/x-jquery-tmpl">
+    <div id="formEditOAuthApp" class="biz-wp-form">
+        <div class="biz-wp-form-row clearfix">
+            <h3 class="title biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-edit-application}</h3>
+        </div>
+
+            <div class="biz-wp-form-column">
+
+                <div class="biz-wp-form-row clearfix">
+                    <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-name}</div>
+                    <div class="biz-wp-form-cell ui-bizagi-render ui-bizagi-control-wrapper">
+                        {{if !data.IsNative}}
+                            <input id="biz-wp-oauth2-edit-name-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="text" name="name" value="${data.Name}" required />
+                            <div class="ui-bizagi-render-control-required"></div>
+                        {{else}}
+                            <span id="biz-wp-oauth2-edit-name-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" >${data.Name}<span />
+                        {{/if}}
+                        <input id="biz-wp-oauth2-edit-id-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="hidden" value="${data.Id}"/>
+                    </div>
+                </div>
+                <div class="biz-wp-form-row clearfix">
+                    <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-website}</div>
+                    <div class="biz-wp-form-cell ui-bizagi-render ui-bizagi-control-wrapper">
+                        {{if !data.IsNative}}
+                            <input id="biz-wp-oauth2-edit-web-site-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="text" name="website" value="${data.Website}"/>
+                        {{else}}
+                            <span id="biz-wp-oauth2-edit-web-site-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" >${data.Website}<span />
+                        {{/if}}
+                    </div>
+                </div>
+
+            </div>
+            <div class="biz-wp-form-column">
+
+                <div class="biz-wp-form-row clearfix">
+                    <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-grant-type}</div>
+                    <div class="biz-wp-form-cell ui-bizagi-control-wrapper" >
+                        <div id="biz-wp-oauth2-edit-grant-type-input" class="biz-wp-oauth2-select-control">
+                            {{if data.IsNative}}
+                                <span class="biz-wp-input-text ui-bizagi-render-text" >${$item.getGrantType(data.AuthorizationGrantType)}<span />
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+                <div class="biz-wp-form-row clearfix">
+                    <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-allowed-scope}</div>
+                    <div class="biz-wp-form-cell ui-bizagi-control-wrapper" >
+                        <span class="biz-wp-form-check">
+                            <input id="biz-wp-oauth2-edit-scope-api-input" type="checkbox" name="api" value="api" />
+                            <label for="biz-wp-oauth2-edit-scope-api-input">API</label>
+                        </span>
+                        <span class="biz-wp-form-check">
+                            <input id="biz-wp-oauth2-edit-scope-login-input" type="checkbox" name="login" value="login" />
+                            <label for="biz-wp-oauth2-edit-scope-login-input">LOGIN</label>
+                        </span>
+
+                        <span id="bz-oauth2-applications-edit-error-scope-required" class="biz-wp-form-check biz-wp-form-required">
+                            %{workportal-general-pick-option}
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="biz-wp-form-column">
+                {{if (!data.IsNative || !(data.AuthorizationGrantType == 'authorization_code'))}}
+                    <div class="biz-wp-form-row clearfix bz-oauth2-only-edit-client-credentials">
+                        <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-default-user-name}</div>
+                        <div class="biz-wp-form-cell ui-bizagi-render ui-bizagi-control-wrapper">
+                            {{if !data.IsNative}}
+                                <input id="biz-wp-oauth2-default-edit-user-name-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="text" name="default_username" value="${data.DefaultUserName}" required />
+                                <div class="ui-bizagi-render-control-required"></div>
+                            {{else}}
+                                <span id="biz-wp-oauth2-default-edit-user-name-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text">${data.DefaultUserName}</span>
+                            {{/if}}
+                        </div>
+                    </div>
+                {{/if}}
+                {{if (!data.IsNative || !(data.AuthorizationGrantType == 'client_credentials'))}}
+                    <div class="biz-wp-form-row clearfix bz-oauth2-only-edit-authorization-code">
+                        <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-redirect-uri-strategy}</div>
+                        <div class="biz-wp-form-cell ui-bizagi-control-wrapper" >
+                            <div id="biz-wp-oauth2-edit-redirect-uri-strategy-input" class="biz-wp-oauth2-select-control">
+                                {{if data.IsNative}}
+                                    <span class="biz-wp-input-text ui-bizagi-render-text" >${$item.getRedirectStrategy(data.RedirectUriStrategy)}<span />
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                {{/if}}
+
+            </div>
+            <div class="biz-wp-form-column">
+                {{if (!data.IsNative || !(data.AuthorizationGrantType == 'authorization_code'))}}
+                    <div class="biz-wp-form-row clearfix bz-oauth2-only-edit-client-credentials">
+                        <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-default-user-domain}</div>
+                        <div class="biz-wp-form-cell ui-bizagi-render ui-bizagi-control-wrapper">
+                            {{if !data.IsNative}}
+                                <input id="biz-wp-oauth2-edit-user-domain-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="text" name="default_userdomain" value="${data.DefaultUserDomain}" required  />
+                                <div class="ui-bizagi-render-control-required"></div>
+                            {{else}}
+                                <span id="biz-wp-oauth2-edit-user-domain-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text">${data.DefaultUserDomain}</span>
+                            {{/if}}
+                        </div>
+                    </div>
+                {{/if}}
+                {{if (!data.IsNative || !(data.AuthorizationGrantType === 'client_credentials'))}}
+                    <div class="biz-wp-form-row clearfix bz-oauth2-only-edit-authorization-code">
+                        {{if (!data.IsNative || (data.RedirectUriStrategy === 'WebApplication'))}}
+                            <div id="bz-oauth2-edit-only-WebApplication">
+                                <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-redirecturi}</div>
+                                <div class="ui-bizagi-render ui-bizagi-control-wrapper">
+                                    {{if !data.IsNative}}
+                                        <input id="biz-wp-oauth2-edit-redirect-uri-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="text" name="redirect_uri" value="${data.RedirectUri}" required />
+                                        <div class="ui-bizagi-render-control-required"></div>
+                                    {{else}}
+                                        <span id="biz-wp-oauth2-edit-redirect-uri-input" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" >${data.RedirectUri}<span />
+                                    {{/if}}
+                                </div>
+                            </div>
+                        {{/if}}
+                        {{if (!data.IsNative || (data.RedirectUriStrategy === 'MobileLocalhostPort'))}}
+                            <div id="bz-oauth2-edit-only-MobileLocalhostPort">
+                                <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-mobile-host-port}</div>
+                                <div class="ui-bizagi-render ui-bizagi-control-wrapper">
+                                    {{if !data.IsNative}}
+                                        <input id="biz-wp-oauth2-edit-mobile-host-port" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" type="number" min="1" name="redirect_uri_port" value="${$item.getMobileLocalhostPort(data.RedirectUri, data.RedirectUriStrategy)}" required />
+                                        <div class="ui-bizagi-render-control-required"></div>
+                                    {{else}}
+                                        <span id="biz-wp-oauth2-edit-mobile-host-port" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" >${$item.getMobileLocalhostPort(data.RedirectUri, data.RedirectUriStrategy)}</span>
+                                    {{/if}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    </div>
+                {{/if}}
+            </div>
+
+            <div class="biz-wp-form-column">
+
+                <div class="biz-wp-form-row clearfix">
+                    <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-access-token-lifetime}</div>
+                    <div class="biz-wp-form-cell ui-bizagi-render ui-bizagi-control-wrapper">
+                        <input id="biz-wp-oauth2-edit-access-token-input" type="number" min="1" class="bz-input-required biz-wp-input-text ui-bizagi-render-text" name="accessTokenLifetimeInMinutes" value="${data.AccessTokenLifetimeInMinutes}" required />
+                        <div class="ui-bizagi-render-control-required"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="biz-wp-form-column">
+                <div class="biz-wp-form-row clearfix">
+                    <div class="biz-wp-form-cell">%{workportal-widget-admin-oauth2-applications-description} </div>
+                    <div class="biz-wp-form-cell ui-bizagi-render ui-bizagi-control-wrapper">
+                        {{if !data.IsNative}}
+                            <input id="biz-wp-oauth2-applications-edit-description-input" class="biz-wp-input-text ui-bizagi-render-text" type="text" name="description" value="${data.Description}" />
+                        {{else}}
+                            <span id="biz-wp-oauth2-applications-edit-description-input" class="biz-wp-input-text ui-bizagi-render-text" >${data.Description}<span />
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="biz-wp-oauth2-warnings">
+                <p id="bz-oauth2-applications-error-name-duplicated" class="biz-wp-oauth2-warnings__alert">
+                    %{workportal-widget-admin-oauth2-error-name-duplicated}
+                </p>
+                <p id="bz-oauth2-applications-error-fields-required" class="biz-wp-oauth2-warnings__alert">
+                    %{workportal-widget-admin-users-request-emptyfields-message}
+                </p>
+                <p id="bz-oauth2-applications-error-url-invalid" class="biz-wp-oauth2-warnings__alert">
+                    %{workportal-widget-admin-users-request-url-invalid}
+                </p>
+                <p id="bz-oauth2-applications-error-time-invalid" class="biz-wp-oauth2-warnings__alert">
+                    %{workportal-widget-admin-oauth2-error-time-invalid}
+                </p>
+                <p id="bz-oauth2-applications-error-port-invalid" class="biz-wp-oauth2-warnings__alert">
+                    %{workportal-widget-admin-oauth2-error-port-invalid}
+                </p>
+            </div>
+
+            <br>
+
+            <div class="biz-wp-buttonset">
+                {{if !data.IsNative}}
+                    <button id="btn-admin-oauth2-update-keys" class="ui-button" >
+                        <span class="ui-button-text">%{workportal-widget-admin-oauth2-applications-update-keys}</span>
+                    </button>
+                {{/if}}
+                <button id="btn-admin-edit-oauth2-add" class="ui-button" >
+                    <span class="ui-button-text">%{text-save}</span>
+                </button>
+                <button id="btn-admin-edit-oauth2-cancel" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false" type="reset">
+                    <span class="ui-button-text">%{text-cancel}</span>
+                </button>
+            </div>
+        </div>
+</script>

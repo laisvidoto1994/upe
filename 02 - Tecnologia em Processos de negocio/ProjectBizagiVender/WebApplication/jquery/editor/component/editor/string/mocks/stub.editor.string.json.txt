@@ -1,0 +1,9 @@
+{
+    "caption": "Nombre de la Propiedad", 
+    "helpText": "Texto de Ayuda de la Propiedad", 
+    "name": "NombrePropiedad", 
+    "type": "string", 
+    "value": "Valor de la Propiedad", 
+    "showLocalization": true, 
+    "orientation": "horizontal"
+}

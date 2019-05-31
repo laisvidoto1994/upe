@@ -1,0 +1,205 @@
+{
+    "form": {
+        "properties": {
+            "id": "64059F0F-8768-426E-9384-0F1989E458E7",
+            "orientation": "ltr",
+            "xpathContext": ""
+        },
+        "elements": [
+            {
+                "render": {
+                    "properties": {
+                        "id": "be65f101-05cf-421b-97cf-64a104d5dfc1",
+                        "type": "text",
+                        "xpath": "Botones_Personalizados.LastName",
+                        "displayName": "Last Name",
+                        "maxLength": 50,
+                        "dataType": 15,
+                        "helpText": "buu",
+                        "value": "Hyundai"
+                    }
+                }
+            },
+            {
+                "render": {
+                    "properties": {
+                        "id": "2f126bcf-da94-451d-9dc8-04c63d65a330",
+                        "type": "geolocation",
+                        "xpath": "Botones_Personalizados.Location",
+                        "value": "14.5841,484.55",
+                        "displayName": "Localization",
+                        "dataType": 25,
+                        "helpText": "ubicacion",
+                        "allowUpdate": true
+                    }
+                }
+            }
+        ],
+        "actions": [
+            {
+                "conditions": {
+                    "expressions": [
+                        {
+                            "simple": {
+                                "xpath": "Botones_Personalizados.Cities",
+                                "operator": "equals",
+                                "argumentType": "entity",
+                                "argument": "1"
+                            }
+                        }
+                    ]
+                },
+                "commands": [
+                    {
+                        "xpath": "Botones_Personalizados.LastName",
+                        "command": "visible",
+                        "argument": "True",
+                        "argumentType": "const"
+                    }
+                ],
+                "dependencies": [
+                    "Botones_Personalizados.Cities"
+                ]
+            },
+            {
+                "conditions": {
+                    "expressions": [
+                        {
+                            "simple": {
+                                "xpath": "Botones_Personalizados.LastName",
+                                "operator": "is-not-empty",
+                                "argumentType": "const"
+                            }
+                        }
+                    ]
+                },
+                "commands": [
+                    {
+                        "xpath": "Botones_Personalizados.Cities",
+                        "command": "background-color",
+                        "argument": "#9be1c4",
+                        "argumentType": "const"
+                    }
+                ],
+                "dependencies": [
+                    "Botones_Personalizados.LastName"
+                ]
+            },
+            {
+                "conditions": {
+                    "expressions": [
+                        {
+                            "simple": {
+                                "xpath": "Botones_Personalizados.Name",
+                                "operator": "like",
+                                "argumentType": "const",
+                                "argument": "pepe"
+                            }
+                        }
+                    ]
+                },
+                "commands": [
+                    {
+                        "xpath": "Botones_Personalizados.LastName",
+                        "command": "set-value",
+                        "argument": "perez",
+                        "argumentType": "const"
+                    }
+                ],
+                "dependencies": [
+                    "Botones_Personalizados.Name"
+                ],
+                "elseCommands": []
+            },
+            {
+                "conditions": {
+                    "expressions": [
+                        {
+                            "simple": {
+                                "xpath": "Botones_Personalizados.Cities",
+                                "operator": "equals",
+                                "argumentType": "entity",
+                                "argument": "2"
+                            }
+                        }
+                    ]
+                },
+                "commands": [
+                    {
+                        "command": "submit-data",
+                        "argumentType": "const"
+                    },
+                    {
+                        "command": "execute-rule",
+                        "argument": "{\"guid\":\"f85f1c94-b821-4b2c-853a-8d214ca57240\",\"label\":\"Expr01\"}",
+                        "argumentType": "const"
+                    },
+                    {
+                        "xpath": "Botones_Personalizados.LastName",
+                        "command": "refresh",
+                        "argumentType": "const"
+                    }
+                ],
+                "dependencies": [
+                    "Botones_Personalizados.Cities"
+                ],
+                "elseCommands": []
+            },
+            {
+                "conditions": {
+                    "expressions": [
+                        {
+                            "simple": {
+                                "xpath": "Botones_Personalizados.Fecha",
+                                "operator": "changes",
+                                "argumentType": "const"
+                            }
+                        }
+                    ]
+                },
+                "commands": [
+                    {
+                        "xpath": "Botones_Personalizados.OperacionesMatematicass",
+                        "command": "refresh",
+                        "argumentType": "const"
+                    }
+                ],
+                "dependencies": [
+                    "Botones_Personalizados.Fecha"
+                ],
+                "elseCommands": []
+            }
+        ],
+        "buttons": [
+            {
+                "button": {
+                    "properties": {
+                        "id": "59fd3d24-b3d5-4c12-a6ed-508bcedd9a02",
+                        "caption": "render-form-button-save",
+                        "actions": [
+                            "submitData",
+                            "refresh"
+                        ]
+                    }
+                }
+            },
+            {
+                "button": {
+                    "properties": {
+                        "id": "7d60c972-f11e-418c-8fbf-9cb74e09f6ed",
+                        "caption": "render-form-button-next",
+                        "actions": [
+                            "validate",
+                            "submitData",
+                            "next",
+                            "routing"
+                        ]
+                    }
+                }
+            }
+        ],
+        "sessionId": "xhan424tdtmlnf4fxr0ozrm5",
+        "pageCacheId": 2122094879
+    },
+    "type": "form"
+}

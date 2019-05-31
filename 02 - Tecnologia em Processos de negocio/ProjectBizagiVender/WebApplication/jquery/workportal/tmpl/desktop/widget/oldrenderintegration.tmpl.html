@@ -1,0 +1,11 @@
+<script id="ui-bizagi-workportal-widget-oldrender" type="text/x-jquery-tmpl">
+    <div id="contentInbox">
+	<div id="innerContentInbox">
+	    {{tmpl "#ui-bizagi-workportal-widget-global-options"}}
+	    {{tmpl "#ui-bizagi-workportal-widget-render-navigation"}}
+	    <h2>%{workportal-widget-render-backbutton}</h2>
+	</div>
+    </div>
+    <!--<div class="biz-render-oldrenderintegration-loading" {{loading}} {{adjustable}}></div>-->
+    <iframe src="${url}" id="bz-wp-widget-oldrender" class="bz-wp-widget-oldrenderintegration" frameborder="0" style="width: 100%; border: 0px;" {{adjustable}}></iframe>
+</script>

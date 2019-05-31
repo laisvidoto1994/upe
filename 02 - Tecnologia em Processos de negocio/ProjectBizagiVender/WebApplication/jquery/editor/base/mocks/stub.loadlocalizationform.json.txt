@@ -1,0 +1,12 @@
+﻿{
+   "actiontype":"LoadLocalizationForm",
+   "result": {
+		"success":true,
+		"parameters":[
+			{
+				"key":"localization",
+				"value":"{   \"i18n\": {     \"uri\": \"3c7de315-f642-46cf-8d59-794fe53cd5e8:message\",     \"default\": \"\",     \"languages\": {       \"ar-SA\": \"dg\",\"ar-SY\": \"dg\",\"ar-TN\": \"t\"    }   } } "
+			}
+		]
+	}
+}

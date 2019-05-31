@@ -1,0 +1,77 @@
+<script id="project-caseState-wrapper" type="text/x-jsrender" >
+    <div class="bz-case-navigation">
+        <a href="#" class="bz-case-navigation__button case-summary-back"><i class="bz-icon bz-icon-left-outline"></i> %{workportal-previous-case}</a>
+        <a href="#" class="bz-case-navigation__button case-summary-next">%{workportal-next-case} <i class="bz-icon bz-icon-right-outline"></i></a>
+    </div>
+   <div id="ui-bizagi-wp-project-case-state-wrapper" class="bz-wp-widget">
+      <!--div class="navbar-back case-summary-back"></div-->
+      <h3 class="ui-bizagi-wp-project-case-state-number">
+         <i class="bz-icon bz-icon-16 case-summary-favorite {{>isFavoriteCase}}"></i>
+          {{if security.GraphicQuery}}
+            <i class="bz-icon bz-icon-16 bz-icon-diagram-outline show-diagram-case"></i>
+          {{/if}}
+          <span>%{workportal-project-casestate-title} {{>caseNumber}}</span>
+          <div class="wrapper-menu-rubik">
+              <ul style="display:none;" class="bz-wp-cd-menu-admin ui-bizagi-wp-project-plan-action-menu">
+                 <li>
+                     <a href="javascript:void(0);"><i class="bz-icon bz-icon-16 bz-icon-cog-outline"></i></a>
+                     <ul>
+                         <li id="bt-case-action-reassing" class="ui-menu-item" style="display:none;" data-item="reassing">
+                             <a href="javascript:void(0);">%{render-actions-reassign}</a>
+                         </li>
+                         <li id="bt-case-action-release" class="ui-menu-item" style="display:none;" data-item="release">
+                             <a href="javascript:void(0);">%{render-actions-release}</a>
+                         </li>
+                     </ul>
+                 </li>
+              </ul>
+          </div>
+      </h3>
+      <!--div class="navbar-next case-summary-next"><a href="#"><i class="bz-icon bz-icon-right-outline"></i></a></div-->
+      <div id="ui-bizagi-remaining"></div>
+       {{if isClosed}}
+       <div class="back">
+           <label>%{workportal-widget-inboxcommon-state}</label>
+           &nbsp;&nbsp;<i class="bz-icon bz-icon-lock-outline"></i>
+           %{workportal-widget-inboxcommon-state-closed}
+       </div>
+       {{/if}}
+   </div>
+</script>
+
+<script id="project-caseState-remaining" type="text/x-jsrender" >
+   <div id="ui-bizagi-wp-project-case-state-remaining">
+
+     <div class="ui-bizagi-wp-project-case-remaining-date">
+        <p class="bz-wp-date">
+           {{>creationDateFormat}}
+            {{if !isOpen}}
+                - {{>solutionDateFormat}}
+            {{/if}}
+        </p>
+        <div class="remaining-days">
+           <div class="time-remaining">
+              <div class="bz-wp-progress-bar-wrapper bar-fullTime">
+                 <div class="bz-wp-progress-bar bar-completed {{>colorStateCase}}" style="width: {{>percentCompleteBar}}%"></div>
+              </div>
+              <p class="bz-wp-timestamp" title="%{workportal-project-title-time-based-by-schedule}">{{>relativeTimeState}}</p>
+           </div>
+        </div>
+     </div>
+
+   </div>
+</script>
+
+<script id="project-caseState-popup-release" type="text/x-jsrender">
+    <div id="project-caseState-popup-release-wrapper" class="ui-rubik-popup-wrapper">
+        <div class="project-caseState-popup-release-info">
+              <span class="field-description required">%{workportal-widget-dialog-box-release}</span>
+        </div>
+        <div class="ui-bizagi-wp-project-popupform-actions">
+            <button id="button-cancel-release" class="ui-rubik-button ui-rubik-button-cancel">%{workportal-widget-dialog-box-release-cancel}
+            </button>
+            <button id="button-accept-release" class="ui-rubik-button ui-rubik-button-accept">%{workportal-widget-dialog-box-release-ok}
+            </button>
+        </div>
+    </div>
+</script>

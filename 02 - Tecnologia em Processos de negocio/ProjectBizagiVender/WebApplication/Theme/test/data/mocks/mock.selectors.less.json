@@ -1,0 +1,20 @@
+﻿{
+    "selectors":
+    [
+        {
+            "name" : "Variables"
+        },{
+            "items": [
+                {
+                    "key": "@mobile-login-background",
+                    "lessFunction": "@one-color-palette",
+                    "lessFunctionParam": {
+                    "type": "equals"
+                },
+                    "name": "Background",
+                    "value": "#dbe8e8"
+                }
+            ]
+        }
+    ]
+}

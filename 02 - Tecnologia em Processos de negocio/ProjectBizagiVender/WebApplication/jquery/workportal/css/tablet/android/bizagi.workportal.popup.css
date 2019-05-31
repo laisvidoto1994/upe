@@ -1,0 +1,91 @@
+.modal
+{
+	position: absolute;
+	z-index: 199;
+	margin: 0; 
+	border:1px solid #51616A;
+	background-color: #0F3558;
+}
+
+.modal .selectarrow
+{
+	width: 13px;
+	height: 9px; 
+	left: 60%;	
+	top: 0px;
+	z-index: 500; 
+	position: absolute; 
+	margin-left: -11px;
+	background: transparent;
+}
+
+.modal .selectarrow:after {
+    bottom: 100%;
+    left: 60%;
+    border: solid #185891;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(11, 92, 213, 0);
+    border-bottom-color: #185891;
+    border-width: 5px;
+    margin-left: -5px;
+}
+
+.modal .content
+{
+	padding: 5px;
+}
+
+.modal .content ul
+{
+	margin: 0;
+	padding: 0;
+}
+
+.modal #modalTitle
+{
+	color: #F5F5F5;
+	float: left;
+	margin-left: 10px;
+	line-height: 31px;
+	height: 31px;
+
+}
+
+.modal .rowScroll
+{
+    width: 68px;
+    height: 23px;
+    position: relative;
+    top: -6px;
+    float: right;
+    z-index: 50px;
+}
+
+.modal .rowScrollUp
+{
+
+    background-position: -6px -272px;
+    width: 15px;
+    height: 9px;
+    position: relative;
+    left: 15px;
+    top:5px;
+    cursor: pointer;
+}
+
+.modal .rowScrollUp:hover { background-position: -6px -289px; }
+
+.modal .rowScrollDown
+{
+    background-position: -24px -272px;
+    width: 15px;
+    height: 9px;
+    position: relative;
+    left:38px;
+    top: -3px;
+    cursor: pointer;   
+}

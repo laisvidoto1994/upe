@@ -1,0 +1,18 @@
+{
+	"minitoolbar" : {
+		"groups" : [{
+			"id" : "basic-renders",
+			"collapsed" : "false",
+			"name" : "Basic Renders",
+			"items" : [{
+				"id" : "label",
+				"name" : "Label",
+				"type" : "render"
+			}, {
+				"id" : "text",
+				"name" : "Text",
+				"type" : "render"
+			}]
+		}]
+	}
+}

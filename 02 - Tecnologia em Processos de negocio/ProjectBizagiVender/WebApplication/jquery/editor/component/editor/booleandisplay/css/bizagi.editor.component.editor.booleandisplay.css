@@ -1,0 +1,45 @@
+/********
+* Filename: bizagi.editor.component.editor.booleandisplay.css
+* Create Date: 2012-05-07
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__booleandisplay
+*
+********/
+
+/* __booleandisplay
+--------*/
+
+.bizagi_editor_component_editor_booleandisplay{
+    position: relative;
+}
+
+.bizagi_editor_component_editor_booleandisplay .ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-option
+{
+    float: left;
+}
+
+.bizagi_editor_component_editor_booleandisplay .ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-check
+{
+    float: left;
+}
+
+
+
+.booleandisplay-group-container{
+    position: relative;
+}
+
+.bizagi_editor_component_properties .bizagi_editor_component_editor_booleandisplay .bizagi-editor-booleandisplay-inline label{
+    display:inline-block;
+    width:55%;
+}
+
+.bizagi_editor_component_editor_booleandisplay .bizagi-editor-booleandisplay-inline .ui-control-editor{
+    display:inline-block;
+    width:30%;
+}
+
+.bizagi_editor_component_editor_booleandisplay .multiple-container .bizagi-editor-booleandisplay-inline .ui-control-editor{
+    width:58px;
+}

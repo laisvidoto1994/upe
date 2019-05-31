@@ -1,0 +1,24 @@
+﻿<div class="biz-theme-home-container" ng-app="homeModule"> 
+    <!--menu-->
+    <div ng-include src="'./views/menuView.html'"></div>
+    <!--container-->
+    <div class="biz-theme-home-container" ng-controller="homeController">
+        <!--left sidebar-->
+        <div id="left-sidebar-wrapper" class="biz-theme-home-left">
+            <div ng-include src="'./views/userView.html'"></div>
+            <div ng-include src="'./views/suggestionView.html'"></div>
+            <div class="bannerfootersidebar" style="bottom: 65px;">
+                <i class="bannerfootersidebar-logo"></i>
+            </div>
+        </div>
+        <!--content-->
+        <div id="content-wrapper" class="biz-theme-home-right">
+            <div ng-include src="'./views/breadcrumbView.html'"></div>
+            <div class="content-wrapper">
+                <div ng-include src="'./views/collectionView.html'"></div>
+                <div ng-include src="'./views/caseView.html'"></div>
+                <div ng-include src="'./views/planView.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>

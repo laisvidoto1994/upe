@@ -1,0 +1,63 @@
+/********
+* Filename: bizagi.editor.component.buttoneditor.css
+* Create Date: 2013-01-22
+* Author: Diego Parra diego.parra@bizagi.com
+*
+********/
+#bz-fm-buttoneditor-editor {
+    height: 100%;    
+}
+
+#bz-fm-buttoneditor-editor .ui-bizagi-button-container {
+    padding: 10px;
+    margin: 16px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border: 1px dotted #ccc !important;
+    background: #EDEDED;
+}
+
+#bz-fm-buttoneditor-editor .ui-bizagi-button-container span
+{
+    display: inline-block;
+}
+#bz-fm-buttoneditor-editor .ui-bizagi-button-container .ui-bizagi-button.bz-state-active
+{
+  background-color: rgba(139, 144, 151, 0.3);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(3%,rgba(139, 144, 151, 0.2)), color-stop(15%,rgba(139, 144, 151,0)), color-stop(84%,rgba(139, 144, 151,0)), color-stop(96%,rgba(139, 144, 151,0.2)))!important;
+  background-image: -moz-gradient(linear, left top, left bottom, color-stop(3%,rgba(139, 144, 151, 0.2)), color-stop(15%,rgba(139, 144, 151,0)), color-stop(84%,rgba(139, 144, 151,0)), color-stop(96%,rgba(139, 144, 151,0.2)))!important;
+  border: 1px solid rgba(139, 144, 151, 0.3)!important;
+  -webkit-box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5)!important;
+  -moz-box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5)!important;
+}
+.bz-fm-buttoneditor-add
+{
+    margin-right: 3px;
+    padding: 1px 8px 5px 8px;
+    display: inline-block !important;
+} 
+.bz-fm-buttoneditor-add-icon {
+    background: url(images/sprite-ico.png) -736px -48px !important;   
+    width: 16px;
+    height: 16px;
+    padding: 0 !important; 
+    top: 3px;
+    position: relative;
+}
+
+.ui-bizagi-button-placeholder
+{
+	border: 1px dashed #A8A8A8;
+	width: 100px;
+	height : 16px;
+	margin-left: 15px;
+	display: inline-block !important;
+}
+
+.ui-bizagi-button-placeholder:hover,
+.ui-bizagi-button-placeholder:focus,
+.ui-bizagi-button-placeholder:active
+{
+	border: 1px dashed #7C7C7C;
+	background-color: #DCDCDC;
+}

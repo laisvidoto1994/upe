@@ -1,0 +1,15 @@
+<script id="ui-bizagi-notifications-wrapper" type="text/x-jquery-tmpl">
+    <div class='notification-panel'><ul class='wrapper'></ul></div>
+</script>
+
+<script id="ui-bizagi-notifications-item" type="text/x-jquery-tmpl">
+   <li class='message'>
+    {{if icon}}
+        <img class='icon' src='${icon}'>
+
+    {{/if}}
+    <p class='title'>{{html title}}</p>
+    <p class='description'>${body}</p>
+    <i class='close fa fa-times'></i>
+</li>
+</script>

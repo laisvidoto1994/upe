@@ -1,0 +1,108 @@
+<script id="ui-bizagi-workportal-menu-content" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-workportal-menu-content">        
+        <div class="menu-left-container">
+            <button id="back-button" class="bz-cm-icon"/>
+            <button id="submenu-button">
+                <div class="inbox-field-view bz-cm-icon"></div>
+                <div class="arrow-down"></div>
+                <span class="page-title">                
+                        {{if typeof (isOnline) !== 'undefined' && !isOnline }}             
+                        %{workportal-menu-drafts}
+                        {{else}}
+                        %{workportal-menu-inbox}
+                        {{/if}}
+                    </span>
+            </button>
+        </div>                
+        {{if environment == "debug"}}
+        <div id="build">${build}</div>
+        {{/if}}
+        <div class="bz-wp-menu-logo" />
+        <div  id="menu-items" class="menu-right-container" >
+            {{component menuItems}}    
+            <div id="inbox-view-toggler"  class="bz-cm-icon"/>
+        </div>
+    </div>
+</script>
+<script id="ui-bizagi-workportal-widget-menu-items" type="text/x-jquery-tmpl">
+
+    <div class="bz-wp-menu-container-button-left">
+        {{if NewCase}}
+        <div class="bz-wp-menu-butom-left" id="new-case">
+            <span  />
+            <label>%{workportal-menu-new}</label>
+        </div>
+        {{/if}}
+         <!--<div class="bz-wp-menu-butom-left bz-wp-menu-butom-left-inbox" id="inbox-shortcut">
+            <span  />
+            <label>%{workportal-menu-inbox-msg}</label>             
+        </div>-->
+    </div>
+    <div class="bz-wp-menu-container-button-right" > 
+        <div>
+            <button id="search" />
+            <label>%{workportal-menu-search}</label>
+        </div> 
+        {{if $item.reportsSecurity()}}
+        <div id="menuListReports">
+            <button id="menu-reports"/>
+            <label>%{workportal-menu-reports}</label>
+        </div>
+        {{/if}}            
+        {{if Admin}}
+        <div>
+            <button />
+            <label>%{workportal-menu-admin}</label>
+        </div>
+        {{/if}}            
+        {{if authCurrentUserAdministration}}
+        <div>
+            <button id="preferences" />
+            <label>%{workportal-menu-preferences}</label>
+        </div>
+        {{/if}}
+        
+        {{if enableSettings}}
+            <div>
+                <button id="settings-shortcut" />
+                <label>%{workportal-menu-preferences}</label>
+            </div>
+         {{/if}}
+        <div>
+            <button id="logout"/>
+            <label>%{workportal-menu-logout}</label>
+        </div>
+    </div>
+</script>
+<script id="ui-bizagi-workportal-widget-menu-custom-button" type="x-jquery-tmpl">
+    <li>
+        <button id="${id}" />
+        <label>${text}</label>
+    </li>
+</script>
+<script id="ui-bizagi-workportal-widget-menu-items-modal" type="x-jquery-tmpl">
+    <div class="ui-bizagi-workportal-menu-items-modal">
+        <div class="ui-bizagi-workportal-menu-items-modal-field">
+            <span class="bz-cm-icon change-to-default-view"></span>       
+        </div>
+        <div class="ui-bizagi-workportal-menu-items-modal-field">
+            <span class="bz-cm-icon change-to-grid-view"></span>
+        </div>
+     </div> 
+</script>
+<script id="ui-bizagi-workportal-widget-menu-input-tray-modal" type="x-jquery-tmpl">
+    <div class="ui-bizagi-workportal-menu-input-tray-modal">
+        <button class="ui-bizagi-workportal-menu-input-tray-field {{if typeof (isOnline) !== 'undefined' && !isOnline }} ui-bizagi-workportal-menu-input-tray-opacity" data-tray="inbox {{/if}}" >
+            <div class="bz-cm-icon inbox-field-view"></div>       
+            <div class="ui-bizagi-workportal-menu-input-tray-label">%{workportal-menu-inbox}</div>       
+        </button>
+        <button class="ui-bizagi-workportal-menu-input-tray-field" data-tray="outbox">
+            <div class="bz-cm-icon outbox-field-view"></div>
+            <div class="ui-bizagi-workportal-menu-input-tray-label">%{workportal-menu-outbox}</div>       
+        </button>
+        <button class="ui-bizagi-workportal-menu-input-tray-field" data-tray="drafts">
+            <div class="bz-cm-icon draft-field-view"></div>
+            <div class="ui-bizagi-workportal-menu-input-tray-label">%{workportal-menu-drafts}</div>       
+        </button>
+     </div> 
+</script>

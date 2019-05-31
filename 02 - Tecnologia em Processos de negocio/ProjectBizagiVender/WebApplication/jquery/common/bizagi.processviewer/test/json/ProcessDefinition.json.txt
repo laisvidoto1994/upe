@@ -1,0 +1,1273 @@
+﻿{
+  "laneSets": [
+    {
+      "lanes": [
+        {
+          "displayName": "Lane 1",
+          "elementType": "Lane",
+          "documentation": [
+            
+          ],
+          "name": "Lane_6b45c81c-047e-4711-a1f3-168c07fa7d0d",
+          "id": "6b45c81c-047e-4711-a1f3-168c07fa7d0d"
+        }
+      ],
+      "documentation": [
+        
+      ],
+      "id": "b0284832-f299-4f51-989c-ad452dbd3580"
+    }
+  ],
+  "processType": "None",
+  "elementType": "Process",
+  "milestones": [
+    {
+      "elementType": "Milestone",
+      "documentation": [
+        
+      ],
+      "displayName": "Milestone 1",
+      "name": "Milestone_376062fa-91ef-4f55-9745-1b2104241503",
+      "id": "376062fa-91ef-4f55-9745-1b2104241503"
+    }
+  ],
+  "displayName": "Sample Process",
+  "documentation": [
+    
+  ],
+  "flowElements": [
+    {
+      "elementType": "SequenceFlow",
+      "conditionType": "Default",
+      "connectingObjectType": "SequenceFlow",
+      "sourceRef": {
+        "baref": {
+          "ref": "41311143-3609-410b-8814-cc43402154f1"
+        }
+      },
+      "targetRef": {
+        "baref": {
+          "ref": "2628b706-ba4a-45b0-ae3d-98e16b3a3a88"
+        }
+      },
+      "documentation": [
+        
+      ],
+      "name": "SequenceFlow_84361099-4111-4e8c-b873-010668a74184",
+      "id": "84361099-4111-4e8c-b873-010668a74184"
+    },
+    {
+      "elementType": "SequenceFlow",
+      "conditionType": "None",
+      "connectingObjectType": "SequenceFlow",
+      "sourceRef": {
+        "baref": {
+          "ref": "e910bbe3-3abd-45e4-a1ca-6f871c8db82f"
+        }
+      },
+      "displayName": "Attached Timer Event",
+      "documentation": [
+        
+      ],
+      "name": "SequenceFlow_0729989c-d0e5-4897-9bd6-052172a37b3a",
+      "id": "0729989c-d0e5-4897-9bd6-052172a37b3a"
+    },
+    {
+      "conditionExpression": {
+        "text": [
+          "Condition"
+        ],
+        "id": "Expression_4ff8c02c-1538-490d-8416-1393adea45ec"
+      },
+      "elementType": "SequenceFlow",
+      "conditionType": "Expression",
+      "connectingObjectType": "SequenceFlow",
+      "sourceRef": {
+        "baref": {
+          "ref": "ed466707-12ee-4513-a96a-9869a5d41575"
+        }
+      },
+      "targetRef": {
+        "baref": {
+          "ref": "41311143-3609-410b-8814-cc43402154f1"
+        }
+      },
+      "documentation": [
+        
+      ],
+      "name": "SequenceFlow_0877e3b6-3545-4dd3-9696-0877fa770116",
+      "id": "0877e3b6-3545-4dd3-9696-0877fa770116"
+    },
+    {
+      "elementType": "SequenceFlow",
+      "conditionType": "None",
+      "connectingObjectType": "SequenceFlow",
+      "sourceRef": {
+        "baref": {
+          "ref": "3bd9716d-b893-4316-be6a-5c0fd7c7cfba"
+        }
+      },
+      "displayName": "Attached Error Event",
+      "documentation": [
+        
+      ],
+      "name": "SequenceFlow_a5232da8-3f47-48d7-9e4a-088cccaf996e",
+      "id": "a5232da8-3f47-48d7-9e4a-088cccaf996e"
+    },
+    {
+      "activityType": "Task",
+      "taskType": "Abstract",
+      "elementType": "AbstractTask",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Task 4",
+      "documentation": [
+        
+      ],
+      "name": "AbstractTask_332ee9b6-2fb2-4ffb-bdc9-0bd594513138",
+      "id": "332ee9b6-2fb2-4ffb-bdc9-0bd594513138"
+    },
+    {
+      "cancelActivity": true,
+      "attachedToRef": {
+        "baref": {
+          "ref": "8783df45-9050-4ba8-b2c5-5933779cf9b9"
+        }
+      },
+      "elementType": "CompensationIntermediate",
+      "eventType": "Boundary",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.CompensateEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Compensation",
+          "documentation": [
+            
+          ],
+          "id": "9962a6bf-f4d4-4827-b060-a0fa8078350e"
+        }
+      ],
+      "parallelMultiple": false,
+      "isThrow": false,
+      "flowNodeType": "Event",
+      "documentation": [
+        
+      ],
+      "name": "CompensationIntermediate_8747fdd8-039d-4efa-93cd-18f520fe8cbf",
+      "id": "8747fdd8-039d-4efa-93cd-18f520fe8cbf"
+    },
+    {
+      "elementType": "LinkIntermediate",
+      "eventType": "IntermediateThrow",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.LinkEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "displayName": "",
+          "eventDefinitionType": "Link",
+          "documentation": [
+            
+          ],
+          "id": "5992deb2-0e2c-44b1-a0aa-1c05a365cf26"
+        }
+      ],
+      "isThrow": true,
+      "flowNodeType": "Event",
+      "displayName": "Throw Link Intermediate Event",
+      "documentation": [
+        
+      ],
+      "name": "LinkIntermediate_dcf1b2bc-109d-44e7-9668-1b164d7039d7",
+      "id": "dcf1b2bc-109d-44e7-9668-1b164d7039d7"
+    },
+    {
+      "elementType": "CallActivity",
+      "activityType": "CallActivity",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "CallActivity  (Resuable SubProcess)",
+      "documentation": [
+        
+      ],
+      "name": "CallActivity_f13b4878-f2a3-4282-91f2-225d61289bbb",
+      "id": "f13b4878-f2a3-4282-91f2-225d61289bbb"
+    },
+    {
+      "isInterrupting": true,
+      "elementType": "TimerStart",
+      "eventType": "Start",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.TimerEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "timerDefinitionType": "timeCycle",
+          "eventDefinitionType": "Timer",
+          "documentation": [
+            
+          ],
+          "id": "e9cc7834-9363-4499-9293-60deb3379f88"
+        }
+      ],
+      "isThrow": false,
+      "flowNodeType": "Event",
+      "displayName": "Timer Start Event",
+      "documentation": [
+        
+      ],
+      "name": "TimerStart_6ea4e6b6-11a1-43b7-979d-27f50d3730fd",
+      "id": "6ea4e6b6-11a1-43b7-979d-27f50d3730fd"
+    },
+    {
+      "elementType": "TerminateEnd",
+      "eventType": "End",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.TerminateEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Terminate",
+          "documentation": [
+            
+          ],
+          "id": "ebdf1ea5-6653-47b1-b2f8-a532f40b71ae"
+        }
+      ],
+      "isThrow": true,
+      "flowNodeType": "Event",
+      "displayName": "Terminate End Event",
+      "documentation": [
+        
+      ],
+      "name": "TerminateEnd_b993e857-1589-4db5-b601-28b7480f7a23",
+      "id": "b993e857-1589-4db5-b601-28b7480f7a23"
+    },
+    {
+      "elementType": "NoneIntermediate",
+      "eventType": "IntermediateThrow",
+      "eventDefinitions": [
+        
+      ],
+      "isThrow": true,
+      "flowNodeType": "Event",
+      "displayName": "None Intermediate Event",
+      "documentation": [
+        
+      ],
+      "name": "NoneIntermediate_cfeee0f9-7dc1-49d8-ba5a-2e5b3cd82aaa",
+      "id": "cfeee0f9-7dc1-49d8-ba5a-2e5b3cd82aaa"
+    },
+    {
+      "elementType": "SequenceFlow",
+      "conditionType": "None",
+      "connectingObjectType": "SequenceFlow",
+      "sourceRef": {
+        "baref": {
+          "ref": "f8fe563b-1979-4327-b7cf-b6127c41899f"
+        }
+      },
+      "displayName": "Attached Signal Event",
+      "documentation": [
+        
+      ],
+      "name": "SequenceFlow_e8139964-4b2f-4666-a57a-2fa41168a494",
+      "id": "e8139964-4b2f-4666-a57a-2fa41168a494"
+    },
+    {
+      "instantiate": false,
+      "eventGatewayType": "Exclusive",
+      "elementType": "EventBasedGateway",
+      "gatewayType": "EventBased",
+      "gatewayDirection": "Unspecified",
+      "flowNodeType": "Gateway",
+      "displayName": "Event-Based Gateway",
+      "documentation": [
+        
+      ],
+      "name": "EventBasedGateway_74b77112-49b7-4dd5-b7a2-3132875155c6",
+      "id": "74b77112-49b7-4dd5-b7a2-3132875155c6"
+    },
+    {
+      "triggeredByEvent": false,
+      "activityType": "SubProcess",
+      "subProcessType": "SubProcess",
+      "elementType": "SubProcess",
+      "isParallelTriggerEvent": false,
+      "loopCharacteristics": {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.MultiInstanceLoopCharacteristics, Bizagi.ProcessModeler.BusinessEntities",
+        "complexBehaviorDefinition": [
+          
+        ],
+        "isSequential": false,
+        "behavior": "All",
+        "loopCounter": 0,
+        "documentation": [
+          
+        ],
+        "id": "7ea0d56b-67c9-479d-941d-a81e108f538e"
+      },
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Multi-Instance Parallel SubProcess",
+      "documentation": [
+        {
+          "textFormat": "text/plain",
+          "text": ""
+        }
+      ],
+      "name": "SubProcess_ed92b141-6846-470d-b748-337216b18546",
+      "id": "ed92b141-6846-470d-b748-337216b18546"
+    },
+    {
+      "activityType": "Task",
+      "taskType": "Abstract",
+      "elementType": "AbstractTask",
+      "isForCompensation": true,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Compensation Task",
+      "documentation": [
+        
+      ],
+      "name": "AbstractTask_37af2fbc-43da-470a-b11b-358b8b292be9",
+      "id": "37af2fbc-43da-470a-b11b-358b8b292be9"
+    },
+    {
+      "elementType": "LinkIntermediate",
+      "eventType": "IntermediateCatch",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.LinkEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "displayName": "",
+          "eventDefinitionType": "Link",
+          "documentation": [
+            
+          ],
+          "id": "6a984574-9660-466f-b864-ff3dd92cc7d8"
+        }
+      ],
+      "parallelMultiple": false,
+      "isThrow": false,
+      "flowNodeType": "Event",
+      "displayName": "Catch Link Intermediate Event",
+      "documentation": [
+        
+      ],
+      "name": "LinkIntermediate_af0f7d94-7dee-4fa1-9aa8-37feda9f92b2",
+      "id": "af0f7d94-7dee-4fa1-9aa8-37feda9f92b2"
+    },
+    {
+      "elementType": "SequenceFlow",
+      "conditionType": "Default",
+      "connectingObjectType": "SequenceFlow",
+      "sourceRef": {
+        "baref": {
+          "ref": "ed466707-12ee-4513-a96a-9869a5d41575"
+        }
+      },
+      "targetRef": {
+        "baref": {
+          "ref": "332ee9b6-2fb2-4ffb-bdc9-0bd594513138"
+        }
+      },
+      "documentation": [
+        
+      ],
+      "name": "SequenceFlow_63871c50-3a00-45b0-8afd-40d726ad9925",
+      "id": "63871c50-3a00-45b0-8afd-40d726ad9925"
+    },
+    {
+      "elementType": "SequenceFlow",
+      "conditionType": "None",
+      "connectingObjectType": "SequenceFlow",
+      "sourceRef": {
+        "baref": {
+          "ref": "e6e847de-d7fe-4f48-96fc-6689fdc6051d"
+        }
+      },
+      "displayName": "Attached Message Event",
+      "documentation": [
+        
+      ],
+      "name": "SequenceFlow_feb3e053-5563-483e-ac04-44fadb5ade0c",
+      "id": "feb3e053-5563-483e-ac04-44fadb5ade0c"
+    },
+    {
+      "script": {
+        "text": ""
+      },
+      "elementType": "ScriptTask",
+      "taskType": "Script",
+      "activityType": "Task",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Script Task",
+      "documentation": [
+        
+      ],
+      "name": "ScriptTask_3e5a3538-f753-4900-a501-483ae3c77f84",
+      "id": "3e5a3538-f753-4900-a501-483ae3c77f84"
+    },
+    {
+      "triggeredByEvent": false,
+      "activityType": "SubProcess",
+      "subProcessType": "SubProcess",
+      "elementType": "SubProcess",
+      "triggerEventType": "Message",
+      "isParallelTriggerEvent": false,
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "SubProcess",
+      "documentation": [
+        
+      ],
+      "name": "SubProcess_a260f145-f824-4333-99de-4843d57fbc97",
+      "id": "a260f145-f824-4333-99de-4843d57fbc97"
+    },
+    {
+      "implementation": "##WebService",
+      "instantiate": false,
+      "elementType": "ReceiveTask",
+      "taskType": "Receive",
+      "activityType": "Task",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Receive Task",
+      "documentation": [
+        
+      ],
+      "name": "ReceiveTask_fe906691-ce4f-4e60-b31e-4866161df1a7",
+      "id": "fe906691-ce4f-4e60-b31e-4866161df1a7"
+    },
+    {
+      "elementType": "ErrorEnd",
+      "eventType": "End",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.ErrorEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Error",
+          "documentation": [
+            
+          ],
+          "id": "804e9d3c-5e3f-4330-bf8c-bbf570ccf0a7"
+        }
+      ],
+      "isThrow": true,
+      "flowNodeType": "Event",
+      "displayName": "Error End Event",
+      "documentation": [
+        
+      ],
+      "name": "ErrorEnd_e99dc6ce-f8fa-4fa4-b177-4f6bd3d9a8ae",
+      "id": "e99dc6ce-f8fa-4fa4-b177-4f6bd3d9a8ae"
+    },
+    {
+      "dataState": {
+        "displayName": "",
+        "documentation": [
+          
+        ],
+        "id": "e50ae1a4-ce35-4c59-847e-63bde47a724b"
+      },
+      "isCollection": false,
+      "elementType": "DataObject",
+      "displayName": "Data Object",
+      "documentation": [
+        
+      ],
+      "name": "DataObject_e36492f1-0b3e-4394-815a-559794fe7ef5",
+      "id": "e36492f1-0b3e-4394-815a-559794fe7ef5"
+    },
+    {
+      "activityType": "Task",
+      "taskType": "Abstract",
+      "elementType": "AbstractTask",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Task 2",
+      "documentation": [
+        
+      ],
+      "name": "AbstractTask_8783df45-9050-4ba8-b2c5-5933779cf9b9",
+      "id": "8783df45-9050-4ba8-b2c5-5933779cf9b9"
+    },
+    {
+      "cancelActivity": true,
+      "attachedToRef": {
+        "baref": {
+          "ref": "8783df45-9050-4ba8-b2c5-5933779cf9b9"
+        }
+      },
+      "elementType": "ErrorIntermediate",
+      "eventType": "Boundary",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.ErrorEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Error",
+          "documentation": [
+            
+          ],
+          "id": "847718e6-4184-40b0-a7f1-58ddc0a30e54"
+        }
+      ],
+      "parallelMultiple": false,
+      "isThrow": false,
+      "flowNodeType": "Event",
+      "documentation": [
+        
+      ],
+      "name": "ErrorIntermediate_3bd9716d-b893-4316-be6a-5c0fd7c7cfba",
+      "id": "3bd9716d-b893-4316-be6a-5c0fd7c7cfba"
+    },
+    {
+      "implementation": "##WebService",
+      "elementType": "ServiceTask",
+      "taskType": "Service",
+      "activityType": "Task",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Service Task",
+      "documentation": [
+        
+      ],
+      "name": "ServiceTask_4291528d-437a-4646-ae20-5c84ebd025f8",
+      "id": "4291528d-437a-4646-ae20-5c84ebd025f8"
+    },
+    {
+      "conditionExpression": {
+        "text": [
+          "Condition2"
+        ],
+        "id": "Expression_c3269644-c3a9-4a7a-be47-e3f76a5a5165"
+      },
+      "elementType": "SequenceFlow",
+      "conditionType": "Expression",
+      "connectingObjectType": "SequenceFlow",
+      "sourceRef": {
+        "baref": {
+          "ref": "41311143-3609-410b-8814-cc43402154f1"
+        }
+      },
+      "targetRef": {
+        "baref": {
+          "ref": "2631e1c5-2f2a-46b4-a0a5-8e9bf6c5f583"
+        }
+      },
+      "documentation": [
+        
+      ],
+      "name": "SequenceFlow_720d1843-6d0c-4c8b-ac14-60be4e826bc5",
+      "id": "720d1843-6d0c-4c8b-ac14-60be4e826bc5"
+    },
+    {
+      "elementType": "ManualTask",
+      "taskType": "Manual",
+      "activityType": "Task",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Manual Task",
+      "documentation": [
+        
+      ],
+      "name": "ManualTask_2883a7c4-953d-4abb-936a-62efdc023a19",
+      "id": "2883a7c4-953d-4abb-936a-62efdc023a19"
+    },
+    {
+      "cancelActivity": true,
+      "attachedToRef": {
+        "baref": {
+          "ref": "a514905e-bfca-44d4-bde0-fb7a3acdb3c7"
+        }
+      },
+      "elementType": "MessageIntermediate",
+      "eventType": "Boundary",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.MessageEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Message",
+          "documentation": [
+            
+          ],
+          "id": "6c0d044d-d453-4b38-b360-733788e2bcd0"
+        }
+      ],
+      "parallelMultiple": false,
+      "isThrow": false,
+      "properties": [
+        
+      ],
+      "flowNodeType": "Event",
+      "documentation": [
+        
+      ],
+      "name": "MessageIntermediate_e6e847de-d7fe-4f48-96fc-6689fdc6051d",
+      "id": "e6e847de-d7fe-4f48-96fc-6689fdc6051d"
+    },
+    {
+      "cancelActivity": true,
+      "attachedToRef": {
+        "baref": {
+          "ref": "a514905e-bfca-44d4-bde0-fb7a3acdb3c7"
+        }
+      },
+      "elementType": "TimerIntermediate",
+      "eventType": "Boundary",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.TimerEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "timerDefinitionType": "timeCycle",
+          "eventDefinitionType": "Timer",
+          "documentation": [
+            
+          ],
+          "id": "efeec0ff-990d-409f-870d-75d2949f0e77"
+        }
+      ],
+      "parallelMultiple": false,
+      "isThrow": false,
+      "properties": [
+        
+      ],
+      "flowNodeType": "Event",
+      "documentation": [
+        
+      ],
+      "name": "TimerIntermediate_e910bbe3-3abd-45e4-a1ca-6f871c8db82f",
+      "id": "e910bbe3-3abd-45e4-a1ca-6f871c8db82f"
+    },
+    {
+      "elementType": "CancelEnd",
+      "eventType": "End",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.CancelEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Cancel",
+          "documentation": [
+            
+          ],
+          "id": "1f33c101-1dad-46ff-8beb-884201a11015"
+        }
+      ],
+      "isThrow": true,
+      "flowNodeType": "Event",
+      "displayName": "Cancel End Event",
+      "documentation": [
+        
+      ],
+      "name": "CancelEnd_ee96fa92-b45d-4b99-9e23-72ba8c689f21",
+      "id": "ee96fa92-b45d-4b99-9e23-72ba8c689f21"
+    },
+    {
+      "elementType": "ComplexGateway",
+      "gatewayType": "Complex",
+      "gatewayDirection": "Unspecified",
+      "flowNodeType": "Gateway",
+      "displayName": "Complex Gateway",
+      "documentation": [
+        
+      ],
+      "name": "ComplexGateway_58e4b7f8-8b1b-4e8f-9f0c-74bfe4ace10b",
+      "id": "58e4b7f8-8b1b-4e8f-9f0c-74bfe4ace10b"
+    },
+    {
+      "isInterrupting": true,
+      "elementType": "MessageStart",
+      "eventType": "Start",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.MessageEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Message",
+          "documentation": [
+            
+          ],
+          "id": "241182fb-885d-425e-9dd9-b181ec08bf3b"
+        }
+      ],
+      "parallelMultiple": false,
+      "isThrow": false,
+      "flowNodeType": "Event",
+      "displayName": "Message Start Event",
+      "documentation": [
+        
+      ],
+      "name": "MessageStart_8818bf44-0d13-4abb-a1e7-79d5bcfff223",
+      "id": "8818bf44-0d13-4abb-a1e7-79d5bcfff223"
+    },
+    {
+      "elementType": "MessageIntermediate",
+      "eventType": "IntermediateCatch",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.MessageEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Message",
+          "documentation": [
+            
+          ],
+          "id": "3ed9ddc6-d82e-4794-9b37-4c694f33dabd"
+        }
+      ],
+      "parallelMultiple": false,
+      "isThrow": false,
+      "properties": [
+        
+      ],
+      "flowNodeType": "Event",
+      "displayName": "Catch Message Intermediate Event",
+      "documentation": [
+        
+      ],
+      "name": "MessageIntermediate_37265a4d-d7fb-4fda-9bab-7ef623a16181",
+      "id": "37265a4d-d7fb-4fda-9bab-7ef623a16181"
+    },
+    {
+      "elementType": "InclusiveGateway",
+      "gatewayType": "Inclusive",
+      "gatewayDirection": "Unspecified",
+      "flowNodeType": "Gateway",
+      "displayName": "Inclusive Gateway",
+      "documentation": [
+        
+      ],
+      "name": "InclusiveGateway_3748e66d-0c8d-4048-8d23-81103f0230f0",
+      "id": "3748e66d-0c8d-4048-8d23-81103f0230f0"
+    },
+    {
+      "elementType": "TimerIntermediate",
+      "eventType": "IntermediateCatch",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.TimerEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "timerDefinitionType": "timeCycle",
+          "eventDefinitionType": "Timer",
+          "baCost": 0,
+          "documentation": [
+            
+          ],
+          "id": "34836bf6-706f-48b6-8225-78d5a22fed47"
+        }
+      ],
+      "parallelMultiple": false,
+      "isThrow": false,
+      "properties": [
+        
+      ],
+      "flowNodeType": "Event",
+      "displayName": "Timer Intermediate Event",
+      "documentation": [
+        
+      ],
+      "name": "TimerIntermediate_d4438147-19cf-4564-ab75-8628293ab769",
+      "id": "d4438147-19cf-4564-ab75-8628293ab769"
+    },
+    {
+      "activityType": "Task",
+      "taskType": "Abstract",
+      "elementType": "AbstractTask",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Task 3",
+      "documentation": [
+        
+      ],
+      "name": "AbstractTask_fa8d5080-0ac8-4c41-9286-88115cc912c7",
+      "id": "fa8d5080-0ac8-4c41-9286-88115cc912c7"
+    },
+    {
+      "elementType": "SignalEnd",
+      "eventType": "End",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.SignalEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Signal",
+          "documentation": [
+            
+          ],
+          "id": "ca0aa36c-45b0-43f1-9f5e-08140d852295"
+        }
+      ],
+      "isThrow": true,
+      "flowNodeType": "Event",
+      "displayName": "Signal End Event",
+      "documentation": [
+        
+      ],
+      "name": "SignalEnd_48ffc223-ddf4-4fe8-b2e3-8c1e4f110a60",
+      "id": "48ffc223-ddf4-4fe8-b2e3-8c1e4f110a60"
+    },
+    {
+      "activityType": "Task",
+      "taskType": "Abstract",
+      "elementType": "AbstractTask",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Task 7",
+      "documentation": [
+        
+      ],
+      "name": "AbstractTask_2631e1c5-2f2a-46b4-a0a5-8e9bf6c5f583",
+      "id": "2631e1c5-2f2a-46b4-a0a5-8e9bf6c5f583"
+    },
+    {
+      "elementType": "ExclusiveGateway",
+      "gatewayType": "Exclusive",
+      "markerVisible": false,
+      "gatewayDirection": "Unspecified",
+      "flowNodeType": "Gateway",
+      "displayName": "Exclusive (Data-Based) Gateway",
+      "documentation": [
+        
+      ],
+      "name": "ExclusiveGateway_4854d6c6-2f1e-4360-8e44-93685b3fe8ee",
+      "id": "4854d6c6-2f1e-4360-8e44-93685b3fe8ee"
+    },
+    {
+      "implementation": "##WebService",
+      "elementType": "SendTask",
+      "taskType": "Send",
+      "activityType": "Task",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Send Task",
+      "documentation": [
+        
+      ],
+      "name": "SendTask_4d1490f9-7221-49ed-9e14-97d34f0c30bb",
+      "id": "4d1490f9-7221-49ed-9e14-97d34f0c30bb"
+    },
+    {
+      "default": {
+        "baref": {
+          "ref": "63871c50-3a00-45b0-8afd-40d726ad9925"
+        }
+      },
+      "elementType": "ExclusiveGateway",
+      "gatewayType": "Exclusive",
+      "markerVisible": false,
+      "gatewayDirection": "Unspecified",
+      "flowNodeType": "Gateway",
+      "displayName": "",
+      "documentation": [
+        
+      ],
+      "name": "ExclusiveGateway_ed466707-12ee-4513-a96a-9869a5d41575",
+      "id": "ed466707-12ee-4513-a96a-9869a5d41575"
+    },
+    {
+      "activityType": "Task",
+      "taskType": "Abstract",
+      "elementType": "AbstractTask",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Task 6",
+      "documentation": [
+        
+      ],
+      "name": "AbstractTask_2628b706-ba4a-45b0-ae3d-98e16b3a3a88",
+      "id": "2628b706-ba4a-45b0-ae3d-98e16b3a3a88"
+    },
+    {
+      "triggeredByEvent": false,
+      "activityType": "SubProcess",
+      "subProcessType": "SubProcess",
+      "elementType": "SubProcess",
+      "triggerEventType": "Message",
+      "isParallelTriggerEvent": false,
+      "loopCharacteristics": {
+        "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.MultiInstanceLoopCharacteristics, Bizagi.ProcessModeler.BusinessEntities",
+        "complexBehaviorDefinition": [
+          
+        ],
+        "isSequential": true,
+        "behavior": "All",
+        "loopCounter": 0,
+        "documentation": [
+          
+        ],
+        "id": "fe3da56c-3a4a-475a-812e-129ef8083bbe"
+      },
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Multi-Instance Sequential SubProcess",
+      "documentation": [
+        {
+          "textFormat": "text/plain",
+          "text": ""
+        }
+      ],
+      "name": "SubProcess_817e7a5e-5422-4b7c-9a77-a2c8f2289692",
+      "id": "817e7a5e-5422-4b7c-9a77-a2c8f2289692"
+    },
+    {
+      "implementation": "##unspecified",
+      "elementType": "UserTask",
+      "taskType": "User",
+      "activityType": "Task",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "User Task",
+      "documentation": [
+        
+      ],
+      "name": "UserTask_790ce5cb-09ea-4079-8428-a9d41fa71a55",
+      "id": "790ce5cb-09ea-4079-8428-a9d41fa71a55"
+    },
+    {
+      "cancelActivity": true,
+      "attachedToRef": {
+        "baref": {
+          "ref": "fa8d5080-0ac8-4c41-9286-88115cc912c7"
+        }
+      },
+      "elementType": "SignalIntermediate",
+      "eventType": "Boundary",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.SignalEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Signal",
+          "documentation": [
+            
+          ],
+          "id": "c86f7942-3443-4496-9dc6-d1fe9aea2806"
+        }
+      ],
+      "parallelMultiple": false,
+      "isThrow": false,
+      "flowNodeType": "Event",
+      "documentation": [
+        
+      ],
+      "name": "SignalIntermediate_f8fe563b-1979-4327-b7cf-b6127c41899f",
+      "id": "f8fe563b-1979-4327-b7cf-b6127c41899f"
+    },
+    {
+      "activityType": "Task",
+      "taskType": "Abstract",
+      "elementType": "AbstractTask",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "None Task",
+      "documentation": [
+        
+      ],
+      "name": "AbstractTask_4feafed0-c1f5-4f32-a3f5-b6fbc8d3a6cc",
+      "id": "4feafed0-c1f5-4f32-a3f5-b6fbc8d3a6cc"
+    },
+    {
+      "elementType": "MessageEnd",
+      "eventType": "End",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.MessageEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Message",
+          "documentation": [
+            
+          ],
+          "id": "5a808096-4c81-41c4-8260-f00f3ce9c941"
+        }
+      ],
+      "isThrow": true,
+      "properties": [
+        
+      ],
+      "flowNodeType": "Event",
+      "displayName": "Message End Event",
+      "documentation": [
+        
+      ],
+      "name": "MessageEnd_cea4b256-536e-4f9b-8539-c4aced475584",
+      "id": "cea4b256-536e-4f9b-8539-c4aced475584"
+    },
+    {
+      "method": "##Compensate",
+      "elementType": "SubProcess",
+      "subProcessType": "Transaction",
+      "triggeredByEvent": false,
+      "activityType": "SubProcess",
+      "triggerEventType": "Message",
+      "isParallelTriggerEvent": false,
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Transaction SubProcess",
+      "documentation": [
+        
+      ],
+      "name": "SubProcess_22bdeb73-ed0b-4ed9-94b1-c800c9f4c442",
+      "id": "22bdeb73-ed0b-4ed9-94b1-c800c9f4c442"
+    },
+    {
+      "activityType": "Task",
+      "taskType": "Abstract",
+      "elementType": "AbstractTask",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "defaultRef": {
+        "baref": {
+          "ref": "84361099-4111-4e8c-b873-010668a74184"
+        }
+      },
+      "flowNodeType": "Activity",
+      "displayName": "Task 5",
+      "documentation": [
+        
+      ],
+      "name": "AbstractTask_41311143-3609-410b-8814-cc43402154f1",
+      "id": "41311143-3609-410b-8814-cc43402154f1"
+    },
+    {
+      "elementType": "NoneEnd",
+      "eventType": "End",
+      "isThrow": true,
+      "flowNodeType": "Event",
+      "displayName": "None End Event",
+      "documentation": [
+        
+      ],
+      "name": "NoneEnd_fd6b6ae5-094e-46d0-a96a-d84f8bfd7c50",
+      "id": "fd6b6ae5-094e-46d0-a96a-d84f8bfd7c50"
+    },
+    {
+      "elementType": "SignalIntermediate",
+      "eventType": "IntermediateThrow",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.SignalEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Signal",
+          "documentation": [
+            
+          ],
+          "id": "3e4cc8c7-8ebb-4f79-b548-f7bb2b8f9c23"
+        }
+      ],
+      "isThrow": true,
+      "flowNodeType": "Event",
+      "displayName": "Throw Signal Intermediate Event",
+      "documentation": [
+        
+      ],
+      "name": "SignalIntermediate_d8b25145-a3d2-44eb-84bf-e6e65263da60",
+      "id": "d8b25145-a3d2-44eb-84bf-e6e65263da60"
+    },
+    {
+      "isInterrupting": true,
+      "elementType": "SignalStart",
+      "eventType": "Start",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.SignalEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Signal",
+          "documentation": [
+            
+          ],
+          "id": "ee10ce01-05d0-4f28-bae9-bf06218248f2"
+        }
+      ],
+      "parallelMultiple": false,
+      "isThrow": false,
+      "flowNodeType": "Event",
+      "displayName": "Signal Start Event",
+      "documentation": [
+        
+      ],
+      "name": "SignalStart_72bd6131-9d76-4264-b716-e9c01379ebb7",
+      "id": "72bd6131-9d76-4264-b716-e9c01379ebb7"
+    },
+    {
+      "isInterrupting": true,
+      "elementType": "NoneStart",
+      "eventType": "Start",
+      "parallelMultiple": false,
+      "isThrow": false,
+      "flowNodeType": "Event",
+      "displayName": "None Start Event",
+      "documentation": [
+        
+      ],
+      "name": "NoneStart_5b456bde-c1bf-4603-a598-ec0dfcdde1f3",
+      "id": "5b456bde-c1bf-4603-a598-ec0dfcdde1f3"
+    },
+    {
+      "elementType": "SignalIntermediate",
+      "eventType": "IntermediateCatch",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.SignalEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Signal",
+          "documentation": [
+            
+          ],
+          "id": "32d506c7-f9a5-4337-aef7-204f42a7669c"
+        }
+      ],
+      "parallelMultiple": false,
+      "isThrow": false,
+      "flowNodeType": "Event",
+      "displayName": "Catch Signal Intermediate Event",
+      "documentation": [
+        
+      ],
+      "name": "SignalIntermediate_d8784115-0461-4fa1-9775-efb0bd8ce1ff",
+      "id": "d8784115-0461-4fa1-9775-efb0bd8ce1ff"
+    },
+    {
+      "elementType": "MessageIntermediate",
+      "eventType": "IntermediateThrow",
+      "eventDefinitions": [
+        {
+          "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.MessageEventDefinition, Bizagi.ProcessModeler.BusinessEntities",
+          "eventDefinitionType": "Message",
+          "documentation": [
+            
+          ],
+          "id": "11016865-ff8c-476d-abbb-e2ac7bc670d0"
+        }
+      ],
+      "isThrow": true,
+      "flowNodeType": "Event",
+      "displayName": "Throw Message Intermediate Event",
+      "documentation": [
+        
+      ],
+      "name": "MessageIntermediate_2ffe0b54-a530-4913-a810-fa7a25db17d3",
+      "id": "2ffe0b54-a530-4913-a810-fa7a25db17d3"
+    },
+    {
+      "activityType": "Task",
+      "taskType": "Abstract",
+      "elementType": "AbstractTask",
+      "isForCompensation": false,
+      "startQuantity": 1,
+      "completionQuantity": 1,
+      "flowNodeType": "Activity",
+      "displayName": "Task 1",
+      "documentation": [
+        
+      ],
+      "name": "AbstractTask_a514905e-bfca-44d4-bde0-fb7a3acdb3c7",
+      "id": "a514905e-bfca-44d4-bde0-fb7a3acdb3c7"
+    },
+    {
+      "elementType": "ParallelGateway",
+      "gatewayType": "Parallel",
+      "gatewayDirection": "Unspecified",
+      "flowNodeType": "Gateway",
+      "displayName": "Parallel Gateway",
+      "documentation": [
+        
+      ],
+      "name": "ParallelGateway_645d4470-38c9-443e-8aa7-ff53129cd145",
+      "id": "645d4470-38c9-443e-8aa7-ff53129cd145"
+    }
+  ],
+  "artifacts": [
+    {
+      "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.Association, Bizagi.ProcessModeler.BusinessEntities",
+      "associationDirection": "None",
+      "artifactType": "Association",
+      "elementType": "Association",
+      "sourceRef": {
+        "baref": {
+          "ref": "8747fdd8-039d-4efa-93cd-18f520fe8cbf"
+        }
+      },
+      "targetRef": {
+        "baref": {
+          "ref": "37af2fbc-43da-470a-b11b-358b8b292be9"
+        }
+      },
+      "connectingObjectType": "Association",
+      "documentation": [
+        
+      ],
+      "displayName": "Attached Compensate Event",
+      "name": "Association_f139130c-a280-4c65-9517-1b96bd66a8f8",
+      "id": "f139130c-a280-4c65-9517-1b96bd66a8f8"
+    },
+    {
+      "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.Association, Bizagi.ProcessModeler.BusinessEntities",
+      "associationDirection": "None",
+      "artifactType": "Association",
+      "elementType": "Association",
+      "sourceRef": {
+        "baref": {
+          "ref": "e36492f1-0b3e-4394-815a-559794fe7ef5"
+        }
+      },
+      "targetRef": {
+        "baref": {
+          "ref": "2631e1c5-2f2a-46b4-a0a5-8e9bf6c5f583"
+        }
+      },
+      "connectingObjectType": "Association",
+      "documentation": [
+        
+      ],
+      "displayName": "Directed Association",
+      "name": "Association_3d331a3c-b49b-4373-a05b-1b1a7b88e210",
+      "id": "3d331a3c-b49b-4373-a05b-1b1a7b88e210"
+    },
+    {
+      "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.TextAnnotation, Bizagi.ProcessModeler.BusinessEntities",
+      "text": {
+        "content": "Text Annotation"
+      },
+      "textFormat": "text/plain",
+      "artifactType": "TextAnnotation",
+      "elementType": "TextAnnotation",
+      "documentation": [
+        
+      ],
+      "name": "TextAnnotation_ceb88e67-9d9f-4bb0-b945-5e425f460e74",
+      "id": "ceb88e67-9d9f-4bb0-b945-5e425f460e74"
+    },
+    {
+      "$type": "Bizagi.ProcessModeler.BusinessEntities.BPMN20.Association, Bizagi.ProcessModeler.BusinessEntities",
+      "associationDirection": "None",
+      "artifactType": "Association",
+      "elementType": "Association",
+      "sourceRefJson": "ceb88e67-9d9f-4bb0-b945-5e425f460e74",
+      "targetRef": {
+        "baref": {
+          "ref": "2628b706-ba4a-45b0-ae3d-98e16b3a3a88"
+        }
+      },
+      "connectingObjectType": "Association",
+      "documentation": [
+        
+      ],
+      "displayName": "Non-directed Association",
+      "name": "Association_d0e3e778-e193-4385-8f7e-4a2f6c348c45",
+      "id": "d0e3e778-e193-4385-8f7e-4a2f6c348c45"
+    }
+  ],
+  "id": "0bc49333-b89b-41ae-b16d-f4c473593aa3"
+}

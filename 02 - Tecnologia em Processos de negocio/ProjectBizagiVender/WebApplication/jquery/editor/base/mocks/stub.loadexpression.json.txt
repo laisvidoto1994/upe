@@ -1,0 +1,16 @@
+﻿{
+    "actiontype": "LoadExpression",
+    "result": {
+        "success": true,
+        "parameters": [
+            {
+                "key": "id",
+                "value": "db9ab3de-a9cc-4c79-b17f-4a5f22edfbf9"
+            },
+            {
+                "key": "displayname",
+                "value": "My Rule Display Name"
+            }
+        ]
+    }
+}

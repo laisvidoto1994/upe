@@ -1,0 +1,1 @@
+﻿{"actiontype":"GetMetadata","result":{"success":true,"parameters":[{"key":"data","value":"[{\"key\":\"hola1\",\"value\":\"App1\"},{\"key\":\"hola2\",\"value\":\"App2\"},{\"key\":\"hola3\",\"value\":\"App3\"}]"}]}}

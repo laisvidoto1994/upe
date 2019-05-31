@@ -1,0 +1,79 @@
+﻿#users-request-detail-wrapper .biz-wp-form .biz-wp-form-row {
+    overflow: hidden;
+}
+
+.users-requests-render {    
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-top: 10px;
+    width: 221px;
+}
+
+
+.user-request-alerta-icon {
+
+   background: url('images/BombilloRojot.gif') no-repeat;
+   display: inline-block;
+   width: 16px; 
+   height: 16px;
+ 
+}
+
+.biz-wp-form-cell-bold {
+    min-width: 200px;
+    float: left;
+    min-height: 8px;
+    font-weight: bold;
+}
+
+.biz-wp-buttonset {
+    text-align: center;
+    margin: 5px auto;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.biz-wp-buttonset ul {
+    padding: 0;
+    margin: 0;
+}
+
+.biz-wp-buttonset li {
+    display: inline-block;
+    list-style: none;
+}
+
+.user-request-mail-fields,
+.user-request-mail-fields > input {
+    width: 100%;
+}
+
+.user-request-mail-fields > textarea {
+     width: 100%;
+     height: 200px;
+     margin : 0px;
+}
+
+.biz-wp-window-user-request{
+    margin: 0 auto;
+    width: 431px;
+}
+
+#btn-cancelRequest{
+    margin-right: 20px;
+}
+
+.biz-wp-form-textArea{
+    padding-top: 15px;
+    min-height: 120px;
+}
+
+.biz-wp-check-title-user-request{
+    min-width: 50px;
+    display: inline-block;
+}
+
+.auth-textArea-user-request{
+    width: 100%;
+    min-height: 100px;
+}

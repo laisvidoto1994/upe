@@ -1,0 +1,39 @@
+/********
+* Filename: bizagi.editor.component.editor.selectprocess.css
+* Create Date: 2014-19-08
+* Author: Andrés Fernando Muñoz
+*
+*
+********/
+
+.bizagi_editor_component_editor_selectprocess  {
+    display: block;
+    width:auto;
+}
+
+.bizagi_editor_component_editor_selectprocess  .selectprocess-buttons{
+	margin-top: 4px;
+}
+
+.biz-disabled-btn{
+    display: inline-block;
+    border: solid 1px rgba(179,179,179,1);
+    -webkit-box-shadow: inset 0px 0px 1px 1px #fff;
+    box-shadow: inset 0px 0px 1px 1px #fff;
+    top: 5px;
+    margin: 0px 2px 0px 2px;
+    padding: 0px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(249,249,249,1)), color-stop(100%,rgba(229,233,238,1))); /* Chrome,Safari4+ */
+    color: #A8A8A8;
+    min-width: 85px;
+}
+
+.biz-disabled-btn,
+.biz-actions-bar .biz-disabled-btn{
+    padding: 0px 8px 0px 8px;
+    line-height: 22px;
+    border-radius: 3px;
+}

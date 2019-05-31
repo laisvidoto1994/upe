@@ -1,0 +1,9 @@
+﻿{
+	"actiontype":"InstallWidget",
+	"result": 
+		{
+			"success":true,
+			"parameters":
+				[]
+		}
+}

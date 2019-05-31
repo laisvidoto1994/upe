@@ -1,0 +1,33 @@
+﻿<script id="bz-document-generator" type="text/x-kendo-template">
+    <div class="ui-bizagi-render-documentgenerator">
+        #if (data.allowgenerate){#
+        <div class="bz-rn-document-button-container">
+            <button class="bz-rn-align-class ui-bizagi-button-documentgenerator" type="button" onclick="">#= data.caption #</button>
+            <span class="bz-mo-icon bz-stack"></span>
+        </div>
+        #}#
+        <div class="ui-bizagi-div-error-container"></div>
+        <div class="ui-bizagi-div-documentgenerator">
+            <ol class="ui-bizagi-container-documents">
+                {{files}}
+                #if (typeof data.noFiles !== 'undefined'){#
+                <li><span></span></li>
+                #}#
+            </ol>
+        </div>
+    </div>
+</script>
+
+<script id="bz-document-generator-item" type="text/x-kendo-template">
+    <li class="ui-bizagi-document-upload-item #if(!data.allowDelete){#dontAllowDelete#}#" data-filename="#= data.filename #"
+        #if (data.joined != undefined){# data-joined="#= data.joined #" #}#>
+        <span class="ui-bizagi-document-type bz-mo-icon"></span>
+        <span class="ui-bizagi-document-upload-element" data-url="#= data.url #" title="#= data.filename #">
+            <span>#= data.filename #</span>
+        </span>
+        #if(data.allowDelete){#
+        <span class="bz-rn-document-delete-icon bz-mo-icon bz-cross"></span>
+        #}#
+    </li>
+</script>
+

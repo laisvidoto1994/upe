@@ -1,0 +1,9 @@
+﻿{
+	"form": {
+		"properties" : {"id": 10, "xpathContext": "", "title": "Grid Add form"},
+		"elements": [
+			{"render": {	"properties": {"id" : 100091, "displayName" : "Name", "type": "text", "xpath": "name"}}},
+			{"render": {	"properties": {"id" : 100092, "displayName" : "Document", "type": "text", "xpath": "document"}}}
+		]
+	}
+}

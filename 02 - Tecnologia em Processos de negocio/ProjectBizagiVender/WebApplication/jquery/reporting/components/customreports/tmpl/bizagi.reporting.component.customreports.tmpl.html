@@ -1,0 +1,45 @@
+﻿<script id="bz-rp-components-customreports-form" type="text/x-jquery-tmpl">
+    <div class="bz-rp-components-custom-reports">
+        <div id="bz-rp-components-custom-reports-warpper">
+            <ul class="bz-rp-components-custom-reports-summary">
+                <li>
+                    <label class="bz-rp-form-label">%{bz-rp-components-customreports-report}</label>
+                    <h4 class="bz-rp-components-custom-reports-title">${name}</h4>
+                </li>
+            </ul>
+            <form id="bz-rp-components-customereports-form" class="bz-rp-components-custom-reports-form" novalidate>
+                <ul>
+                    <li>
+                        <label class="bz-rp-form-label">%{bz-rp-components-customreports-name}</label>
+                        <input type="text" required="required" class="bz-rp-form-control" tabindex="-1" maxlength="30" />
+                        <div class="bz-rp-messagecnt"></div>
+                    </li>
+                    <li>
+                        <label class="bz-rp-form-label">%{bz-rp-components-customreports-description}</label>
+                        <textarea rows="2" class="bz-rp-form-control" tabindex="-1"></textarea>
+                        <div class="bz-rp-messagecnt"></div>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div id="bz-rp-components-customreports-message" class="bz-rp-success-message"></div>
+    </div>
+</script>
+
+<script id="bz-rp-components-customreports-button" type="text/x-jquery-tmpl">
+<div>
+    <label class="bz-rp-form-label is-hidden">%{}</label>
+    <button id="bz-rp-custom-reports-button" class="bz-rp-button">
+        <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-save"></i>
+        <span>%{bz-rp-components-customreports-savequery}</span>
+    </button>
+</div>
+</script>
+
+<script id="bz-rp-components-customreports-container" type="text/x-jquery-tmpl">
+    <div id="bz-rp-components-customreports-container"></div>
+</script>
+
+<script id="bz-rp-components-customreports-message" type="text/x-jquery-tmpl">
+    <span class="bz-rp-errormsg" aria-live="polite">${message}</span>
+</script>

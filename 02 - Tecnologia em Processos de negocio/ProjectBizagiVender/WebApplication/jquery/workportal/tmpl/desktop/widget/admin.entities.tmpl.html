@@ -1,0 +1,37 @@
+﻿﻿﻿﻿<!-- WRAPPERS -->
+<script id="ui-bizagi-workportal-widget-admin-entity-wrapper" type="text/x-jquery-tmpl">
+    <div id="admin-entity-main-wrapper"></div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-entity-panel-wrapper" type="text/x-jquery-tmpl">
+    <div id="admin-entity-wrapper">
+        <div id="admin-entity-list-wrapper" class="admin-dialog-leftframe"></div>
+        <div id="admin-entity-instances-wrapper" {{loading}} class="admin-dialog-rightframe"></div>
+    </div>
+</script>
+
+<!-- CONTENT -->
+<script id="ui-bizagi-workportal-widget-admin-entity-list" type="text/x-jquery-tmpl">
+    <input type="hidden" autofocus="autofocus" /><!-- Problem with focus input in filters -->
+    <div class="ui-bizagi-control ui-bizagi-render-align-left  ac-is-visible">
+        <div class="ui-bizagi-control-wrapper">
+            <div class="ui-bizagi-render-control">
+                <input id="searchEntity" class="ui-bizagi-render-search ui-autocomplete-input" type="text" value="">
+                <i class="bz-icon bz-icon-16 bz-icon-search-outline"></i>
+            </div>
+        </div>
+    </div>
+
+    <select id="entitiesList" class="biz-wp-input-combo" size="25" style="-webkit-appearance: none;">
+        {{each entitiesList}}
+            <option data-allowAdd="${$value.allowAdd}" data-allowEdit="${$value.allowEdit}"  data-idDisplayForm="${$value.idDisplayForm}" value="${$value.guid}">${$value.displayName}</option>
+        {{/each}}
+    </select>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-entity-error" type="text/x-jquery-tmpl">
+    <div class="admin-entity-message">
+        <i class="bz-wp-empty__img"></i>
+        <p class="bz-wp-empty__info bz-wp-empty__info--first">${errorMessage}</p>
+    </div>
+</script>

@@ -1,0 +1,314 @@
+﻿<script id="bz-rp-sensors-main" type="text/x-jquery-tmpl">
+<div class="row">
+    <div class="medium-3 columns">
+            {{tmpl "#bz-rp-sensors-container"}}
+    </div>
+    <div class="medium-9 columns">
+            {{component sensors-processview}}
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-sensors-container" type="text/x-jquery-tmpl">
+<div class="bz-rp-reports-sensors-wrapper">
+    <div class="bz-rp-reports-sensors-header">
+        <button class="bz-rp-button-secondary bz-rp-sensors-button-edit">
+            <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-sensors-edit"></i> <span>%{bz-rp-sensorsedt-editsensors}</span>
+        </button>
+    </div>
+    <div id="bz-rp-reports-sensors-list">
+
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-sensors-processview" type="text/x-jquery-tmpl">
+<div id="bz-rp-sensors-processview">
+  <ul class="cf ui-bizagi-wp-widget-reports-menu ui-bizagi-wp-widget-sensors-menu">
+    <li data-sensor="stopwatch" class="ui-bizagi-wp-widget-reports-menu-active">%{bz-rp-sensors-stopwatches}</li>
+    <li data-sensor="counter">%{bz-rp-sensors-counters}</li>
+  </ul>
+  <div id="bz-rp-sensors-content">
+        {{component sensors-content}}
+  </div>
+</div>
+</script>
+
+<script id="bz-rp-sensors-counters" type="text/x-jquery-tmpl">
+   <div id="bz-rp-sensors-counters-cbcontainer">
+        <p class="bz-rp-time-range">%{bz-rp-sensors-counters-rdbtnstitle}</p>
+        <ul class="bz-rp-sensors-counters-cbcontainer-time-range">
+            <li><input type="radio" name="timerange" {{if caseBased}} checked="checked" {{/if}} data-timerange="crtdate" /> <label>%{bz-rp-sensors-counters-casecreation}</label>  <i title="%{bz-rp-sensors-counters-casecreation-tooltip}" class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-info bz-rp-summary-title-icon"></i></li>
+            <li><input type="radio" name="timerange" {{if !caseBased}} checked="checked" {{/if}} data-timerange="actdate" /> <label>%{bz-rp-sensors-counters-counteractivation}</label> <i  class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-info bz-rp-summary-title-icon" title="%{bz-rp-sensors-counters-counteractivation-tooltip}" class="bz-rp-sensors-tooltip"></i></li>
+        </ul>
+    </div>
+    <div {{loading}}>
+        {{component sensors-counter-data}}
+    </div>
+</script>
+
+<script id="bz-rp-sensors-counters-data" type="text/x-jquery-tmpl">
+<div id="bz-rp-sensors-counters-summary" class="bz-rp-sensors-summary">
+    {{component sensors-counters-summary}}
+</div>
+
+<div>
+    {{component sensors-countersgraph}}
+</div>
+</script>
+
+<script id="bz-rp-sensors-stopwatches" type="text/x-jquery-tmpl">
+<div id="bz-rp-sensors-stopwatches-panel">
+    <div id="bz-rp-sensors-stopwatches-cycletimesummary" class="bz-rp-sensors-summary">
+        {{component sensors-stopwatch-cycletimesummary}}
+    </div>
+
+    <div id="bz-rp-sensors-stopwatches-levelofservice" class="bz-rp-sensors-summary">
+        {{component sensors-stopwatch-lvservicesummary}}
+    </div>
+
+    <div>
+        {{component sensors-stopwatch-durationhistogram}}
+    </div>
+
+    <div>
+        {{component sensors-stopwatch-durationtrend}}
+    </div>
+
+    <div>
+        {{component sensors-stopwatch-actvscls}}
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-sensors-counters-countsgraph" type="text/x-jquery-tmpl">
+    <div class="bz-rp-report">
+        <div class="bz-rp-chart">
+            <div class="custom-overlay"><p class="message">%{bz-rp-nodata}</p></div>     
+        </div>
+        <div class="bz-rp-info">
+            <h6 class="bz-rp-info-breadcrumb">%{bz-rp-sensors-sensors} / %{bz-rp-sensors-counters} / %{bz-rp-sensors-counters-countsdiagram}</h6>
+            <h3 class="bz-rp-info-title">%{bz-rp-sensors-counters-countsdiagram}</h3>
+            <p class="bz-rp-info-description">%{bz-rp-sensors-counters-countsdiagram-description}</p>
+        </div>
+    </div>
+</script>
+
+<script id="bz-rp-sensors-counters-acttrend" type="text/x-jquery-tmpl">
+    <div class="bz-rp-report">
+        <div class="bz-rp-chart">
+            <div class="custom-overlay"><p class="message">%{bz-rp-nodata}</p></div>     
+        </div>
+        <div class="bz-rp-info">
+            <h6 class="bz-rp-info-breadcrumb">%{bz-rp-sensors-sensors} / %{bz-rp-sensors-counters} / %{bz-rp-sensors-counters-countertrend}</h6>
+            <h3 class="bz-rp-info-title">%{bz-rp-sensors-counters-countertrend}</h3>
+            <p class="bz-rp-info-description">%{bz-rp-sensors-counters-countertrend-description}</p>
+        </div>
+    </div>
+</script>
+
+<script id="bz-rp-sensors-stopwatches-durationhistogram" type="text/x-jquery-tmpl">
+    <div class="bz-rp-report">
+        <div class="bz-rp-chart">
+            <div class="custom-overlay"><p class="message">%{bz-rp-nodata}</p></div>     
+        </div>
+        <div class="bz-rp-info">
+            <h6 class="bz-rp-info-breadcrumb">%{bz-rp-sensors-sensors} / %{bz-rp-sensors-stopwatches} / %{bz-rp-sensors-stopwatches-drthistogram}</h6>
+            <h3 class="bz-rp-info-title">%{bz-rp-sensors-stopwatches-drthistogram}</h3>
+            <p class="bz-rp-info-description">%{bz-rp-sensors-stopwatches-drthistogram-description}</p>
+        </div>
+    </div>
+</script>
+
+<script id="bz-rp-sensors-stopwatches-durationtrend" type="text/x-jquery-tmpl">
+    <div class="bz-rp-report">
+        <div class="bz-rp-chart">
+            <div class="custom-overlay"><p class="message">%{bz-rp-nodata}</p></div>     
+        </div>
+        <div class="bz-rp-info">
+            <h6 class="bz-rp-info-breadcrumb">%{bz-rp-sensors-sensors} / %{bz-rp-sensors-stopwatches} / %{bz-rp-sensors-stopwatches-drttrend}</h6>
+            <h3 class="bz-rp-info-title">%{bz-rp-sensors-stopwatches-drttrend}</h3>
+            <p class="bz-rp-info-description">%{bz-rp-sensors-stopwatches-drttrend-description}</p>
+        </div>
+    </div>
+</script>
+
+<script id="bz-rp-sensors-stopwatches-actvsclose" type="text/x-jquery-tmpl">
+    <div class="bz-rp-report">
+        <div class="bz-rp-chart">
+            <div class="custom-overlay"><p class="message">%{bz-rp-nodata}</p></div>     
+        </div>
+        <div class="bz-rp-info">
+            <h6 class="bz-rp-info-breadcrumb">%{bz-rp-sensors-sensors} / %{bz-rp-sensors-stopwatches} / %{bz-rp-sensors-stopwatches-actvsclose}</h6>
+            <h3 class="bz-rp-info-title">%{bz-rp-sensors-stopwatches-actvsclose}</h3>
+            <p class="bz-rp-info-description">%{bz-rp-sensors-stopwatches-actvsclose-description}</p>
+        </div>
+    </div>
+</script>
+
+<script id="bz-rp-sensors-stopwatches-cycletimesummary" type="text/x-jquery-tmpl">
+<div>
+    <h3 class="bz-rp-summary-title" data-reportname="sensor.stopwatch.summary">
+        <span>%{bz-rp-sensors-stopwatches-cyclesummary}</span>
+        <i title="%{bz-rp-sensors-stopwatches-cyclesummary-tooltip}" class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-info bz-rp-summary-title-icon"></i>
+        <a href="${$item.getReportExcelUrl}"><i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-export-excel bz-rp-export-excel"></i></a>
+
+    </h3>
+    {{if stopwatches.length }}
+        <table class="responsive bz-rp-summary" data-type="stopwatch">
+            <thead>
+                <tr>
+                    <th>%{bz-rp-sensors-stopwatches-summary-stopwatch}</th>
+                    <th>%{bz-rp-sensors-stopwatches-summary-counts}</th>
+                    <th>Sla</th>
+                    <th>%{bz-rp-sensors-stopwatches-cyclesummary-mindur}</th>
+                    <th>%{bz-rp-sensors-stopwatches-cyclesummary-maxdur}</th>
+                    <th>%{bz-rp-sensors-stopwatches-cyclesummary-avgdur}</th>
+                    <th>%{bz-rp-sensors-stopwatches-cyclesummary-stdev}</th>
+                    <th>%{bz-rp-sensors-stopwatches-cyclesummary-ontime}</th>
+                    <th>%{bz-rp-sensors-stopwatches-cyclesummary-overdue}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{each stopwatches}}
+                    <tr data-id="${id}">
+                        <td>${name}</td>
+                        <td><label>${counts}</label><span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-sensors-detaillist"></span></td>
+                        <td>${sla.days}${$item.day} ${sla.hours}${$item.hour}:${sla.minutes}:${$item.minute} </td>
+                        <td>${minDuration.days}${$item.day} ${minDuration.hours}${$item.hour}:${minDuration.minutes}${$item.minute} </td>
+                        <td>${maxDuration.days}${$item.day} ${maxDuration.hours}${$item.hour}:${maxDuration.minutes}${$item.minute} </td>
+                        <td>${avgDuration.days}${$item.day} ${avgDuration.hours}${$item.hour}:${avgDuration.minutes}${$item.minute} </td>
+                        <td>${standardDeviation}</td>
+                        <td data-column="ontime"><label>${onTime}</label><span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-sensors-detaillist"></span></td>
+                        <td data-column="overdue"><label>${overdue}</label><span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-sensors-detaillist"></span></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <p class="bz-rp-nodata">%{bz-rp-nodata}</p>
+    {{/if}}
+</div>
+</script>
+
+<script id="bz-rp-sensors-stopwatches-lvservicesummary" type="text/x-jquery-tmpl">
+<div>
+    <h3 class="bz-rp-summary-title" data-reportname="sensor.stopwatch.levelofservice">
+        <span>%{bz-rp-sensors-stopwatches-lvservicesummary-title}</span>
+        <i title="%{bz-rp-sensors-stopwatches-lvservicesummary-tooltip}" class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-info bz-rp-summary-title-icon"></i>
+        <a href="${$item.getReportExcelUrl}"><i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-export-excel bz-rp-export-excel"></i></a>
+    </h3>               
+    {{if Items.length }}
+        <table class="responsive bz-rp-summary" data-type="stopwatch">
+            <thead>
+                <tr>
+                    <th>%{bz-rp-sensors-stopwatches-summary-stopwatch}</th>
+                    <th>&lt; 1 %{reports-general-day}</th>
+                    <th>1 %{reports-general-day}</th>
+                    <th>2 %{bz-rp-sensors-stopwatches-lvservicesummary-days}</th>
+                    <th>3 %{bz-rp-sensors-stopwatches-lvservicesummary-days}</th>
+                    <th>4 %{bz-rp-sensors-stopwatches-lvservicesummary-days}</th>
+                    <th>5 %{bz-rp-sensors-stopwatches-lvservicesummary-days}</th>
+                    <th>6 %{bz-rp-sensors-stopwatches-lvservicesummary-days}</th>
+                    <th>&gt; 6 %{bz-rp-sensors-stopwatches-lvservicesummary-days}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{each Items}}
+                    <tr data-id="${id}">
+                            <td>${name}</td>
+                        {{each(i, val) values}}
+                            <td data-daycount="${i}"><label>${val.percentage}%</label><span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-sensors-detaillist"></span></td>
+                        {{/each}}
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <p class="bz-rp-nodata">%{bz-rp-nodata}</p>
+    {{/if}}
+</div>
+</script>
+
+<script id="bz-rp-sensors-list" type="text/x-jquery-tmpl">
+<ul id="bz-rp-sensors-processlist">
+    {{each(i, val) processes}}
+        <li class="biz-rp-process-item" data-id="${val.id}">
+            <div class="bz-rp-sensors-processlist-row {{if val.id === $item.id}} bz-rp-sensors-sltitem {{/if}}">
+                <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-process biz-rp-process-icon"></i>
+                <label><a href="#">${val.name}</a></label>
+            </div>
+            <ul class="bz-rp-sensors-processlist-sublist">
+                {{each(i, val) sensors}}
+                    <li class="bz-rp-sensors-processlist-sublist-item ${val.type}" data-id="${val.id}" data-type="${val.type}">
+                        <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-sensors-item"></i>
+                        <label><a href="#">${val.name}</a></label>
+                    </li>
+                {{/each}}
+            </ul>
+        </li>
+    {{/each}}
+</ul>
+ </script>
+
+<script id="bz-rp-sensors-counters-crtdate" type="text/x-jquery-tmpl">
+<div>
+    <h3 class="bz-rp-summary-title" data-reportname="sensor.counters.summary">
+        <span>%{bz-rp-sensors-counters-summary-title}</span>
+        <i title="%{bz-rp-sensors-counters-summary-crtdate-tooltip}" class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-info bz-rp-summary-title-icon"></i>
+        <a href="${$item.getReportExcelUrl}"><i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-export-excel bz-rp-export-excel"></i></a>
+    </h3>
+    <p class="bz-rp-summary-total-cases">%{bz-rp-sensors-counters-summary-totalcases} <strong>${totalCases}</strong></p>
+</div>
+
+{{if counters.length }}
+    <table class="responsive bz-rp-summary" data-type="counter">
+        <thead>
+            <tr>
+                <th>%{bz-rp-sensors-counters-summary-counters}</th>
+                <th>%{bz-rp-sensors-counters-summary-counts}</th>
+                <th>%{bz-rp-sensors-counters-summary-cases}</th>
+                <th>% %{bz-rp-sensors-counters-summary-ftotal}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{each counters}}
+            <tr data-id="${id}">
+                <td>${name}</td><td>${instances}</td><td><label>${cases}</label><span class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-detail-list bz-rp-sensors-detaillist"></span></td><td>${percentage}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p class="bz-rp-nodata">%{bz-rp-nodata}</p>
+{{/if}}
+</script>
+
+<script id="bz-rp-sensors-counters-actdate" type="text/x-jquery-tmpl">
+    <div>
+        <h3 class="bz-rp-summary-title" data-reportname="sensor.counters.summary">
+            <span>%{bz-rp-sensors-counters-summary-title}</span>
+            <i title="%{bz-rp-sensors-counters-summary-actdate-tooltip}" class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-info bz-rp-summary-title-icon"></i>
+            <a href="${$item.getReportExcelUrl}"><i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-export-excel bz-rp-export-excel"></i></a>
+        </h3>
+    </div>
+    {{if counters.length }}
+        <table class="responsive bz-rp-summary" data-type="counter">
+            <thead>
+                <tr>
+                    <th>%{bz-rp-sensors-counters-summary-counters}</th>
+                    <th>%{bz-rp-sensors-counters-summary-counts}</th>
+                </tr>
+            </thead>
+            <tbody>
+            {{each counters}}
+                <tr data-id="${id}">
+                    <td>${name}</td><td>${instances}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <p class="bz-rp-nodata">%{bz-rp-nodata}</p>
+    {{/if}}
+</script>

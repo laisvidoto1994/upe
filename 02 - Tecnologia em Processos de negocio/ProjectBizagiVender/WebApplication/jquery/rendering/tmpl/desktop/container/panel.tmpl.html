@@ -1,0 +1,9 @@
+﻿<div class="ui-bizagi-container clearfix ui-bizagi-container-panel ${cssClass}" data-unique-id="${uniqueId}">
+    {{if displayName.length}}
+        <h3 {{if orientation == "rtl"}}class="ui-bizagi-rtl"{{/if}} >${displayName}</h3>
+    {{/if}}
+    {{if (loading === true) }}
+        <span>${message}</span>
+    {{/if}}
+    {{children}}
+</div>

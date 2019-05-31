@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://tempuri.org/getWorkflowClasses.xsd" xmlns="http://tempuri.org/getWorkflowClasses.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="workflowClasses">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="workflowClass">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="workflowClassId" type="xs:string" minOccurs="0" />
+							<xs:element name="workflowClassName" type="xs:string" minOccurs="0" />
+							<xs:element name="workflowClassDisplayName" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="workflowClassDescription" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="workflowClassHelpText" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="workflowClassDisplayOrder" type="xs:string" minOccurs="0" />
+							<xs:element name="workflowClassCreationDate" type="xs:string" minOccurs="0" />
+							<xs:element name="workflowClassGlobalForm" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="workflowClassAllocationPrinciple" type="xs:string" minOccurs="0" />
+							<xs:element name="workflowClassProcessType" type="xs:string" minOccurs="0" />
+							<xs:element name="workflowClassProcessForumType" type="xs:string" minOccurs="0" />
+							<xs:element name="workflowClassDisplay" type="xs:string" minOccurs="0" />
+							<xs:element name="workflowClassUseParentRadicationNumber" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

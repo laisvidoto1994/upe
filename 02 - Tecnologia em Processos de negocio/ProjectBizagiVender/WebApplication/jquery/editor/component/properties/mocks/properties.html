@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Mock Editor BooleanRule</title>
+      <meta charset="utf-8" />
+      <link rel="stylesheet" href="../../../../../jquery/common/jquery.ui/css/desktop/jquery.ui.css" />
+      <link rel="stylesheet" href="../../../../../jquery/rendering/css/desktop/bizagi.rendering.css" />
+      <link rel="stylesheet" href="../../../base/css/bizagi.editor.base.css" />
+      <script src="../../../../../jquery/common/base/js/lib/jquery.js"></script>
+      <script src="../../../../../jquery/common/jquery.ui/js/desktop/jquery.ui.js"></script>
+      <link rel="stylesheet" href="../../layout/css/bizagi.editor.component.layout.css" />
+      <link rel="stylesheet" href="../../ribbon/css/bizagi.editor.component.ribbon.css" />
+      <link rel="stylesheet" href="../../properties/css/bizagi.editor.component.properties.css" />
+      <style>
+         body .bizagi_editor_component_properties .ui-tabs-panel{
+            max-height:5000px;
+         }
+      </style>
+      <script>
+         $(document).ready(function() {
+            var context = $('.bizagi_editor_component_properties');
+            
+            context.tabs();
+            context.css({top: getRealPosition(), right:'34px', left:'auto'});
+
+            context.tabs({
+               show: function(event, ui) { 
+                  resizePanel(ui.panel);
+               }
+            });
+            //TODO:properties bind and unbind 
+            $(window).resize(function(){
+               resizePanel();
+            });
+
+            resizePanel();
+
+           
+         });
+
+         function resizePanel(obj){
+
+            var context = $('.bizagi_editor_component_properties');
+            var mainPanel = $('#main-panel');
+            
+            context.css({height : 'auto'});
+            $('.ui-tabs-panel',context).css({height : 'auto' });
+
+            var finallyHeight = (parseFloat(context.css('top')) - parseFloat(mainPanel.height()))*(-1);
+            var mainPanelHeight = mainPanel.height();
+
+            //console.log(finalHeightPosition);
+
+            if(obj){
+               console.log($(obj));
+            }
+
+            var heightULTabs = parseFloat($('> ul',context).height());
+            var setHeightUlTabs = (finallyHeight - heightULTabs - 30);
+            var maxHeight = parseFloat(context[0].scrollHeight)
+
+            if(maxHeight >= finallyHeight){
+               context.css({height : finallyHeight});
+               $('.ui-tabs-panel',context).css({height : setHeightUlTabs }).css({overflow:'auto'});
+            
+            }else{
+               context.css({height : 'auto'});
+               $('.ui-tabs-panel',context).css({height : 'auto' }).css({overflow:'none'});
+            }
+         }
+
+
+         function getRealPosition(){
+            
+            var mainPanelPosition = parseFloat($('#main-panel').position().top);
+            var bizagiContainerHeight = parseFloat($('#main-panel .ui-bizagi-container').height());
+
+
+             var optionsRealHeight = ['padding-top','margin-top'];
+             var realHeight = 0;
+
+             for(var i=0; i<optionsRealHeight.length; i++){
+
+               realHeight += parseFloat($('#main-panel .ui-bizagi-container').css(optionsRealHeight[i]));
+             }
+             var finallyHeight = realHeight + bizagiContainerHeight + mainPanelPosition;
+             return finallyHeight;
+         }
+      </script>
+   </head>
+   <body>
+      <div id="container-layout" class="bizagi_editor_component_layout">
+         <div id="main-section">
+            <div id="ribbon-panel">
+            </div>
+            <div id="main-panel">
+               <div class="ui-bizagi-container ui-bizagi-container-form ui-widget-content ui-bizagi-container-connectedSortable ui-bizagi-draggable-item ui-sortable" id="container-5D8105E7-AB82-4BE4-90AE-2258D4B0D3E9" guid="5D8105E7-AB82-4BE4-90AE-2258D4B0D3E9" style="">
+                  <div class="ui-bizagi-render ui-corner-all ui-widget-content ui-bizagi-render-display-label ui-bizagi-draggable-item" guid="A50FEA32-449E-4B79-9D57-C0E75630F73C" display="label" style="">
+                     <span class="ui-bizagi-label ui-bizagi-render-align-left ui-bizagi-render-label" style="width: 100%; ">          <label>label</label>      </span>      
+                     <div class="ui-bizagi-control ui-bizagi-render-align-left" style="width: 99.99%; ">
+                        <div class="ui-bizagi-control-wrapper">          <span class="ui-bizagi-render-control ">          </span>          <span class="ui-bizagi-render-icons ui-widget-content ui-corner-all">            <span class="ui-icon ui-icon-info ui-bizagi-render-icon-help" title=""></span>            <span class="ui-icon ui-icon-alert ui-bizagi-render-icon-error"></span>          </span>        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="bizagi_editor_component_properties" style="top: 105px; left: 12px; ">
+         <div class="prop-close"><span class="prop-close-image"></span></div>
+         <ul>
+            <li><a href="#properties-tab-basic">Basic</a></li>
+            <li><a href="#properties-tab-public">Public</a></li>
+         </ul>
+         <div id="properties-tab-basic">
+            <div class="bizagi_editor_component_editor_lstring"><label>Data Binding</label><input type="text" /></div>
+            <fieldset>
+               <legend>Texts</legend>
+               <div class="bizagi_editor_component_editor_lstring"><label>Display Name</label><input type="text" /></div>
+               <div class="bizagi_editor_component_editor_lstring"><label>Help text</label><input type="text" /></div>
+            </fieldset>
+            <div class="properties-category">
+               <span class="properties-category-name">Rules</span>         
+               <div class="properties-category-group">
+                  <div class="bizagi_editor_component_editor_lstring"><label>Visible</label><input type="text" /></div>
+                  <div class="bizagi_editor_component_editor_lstring"><label>Editable</label><input type="text" /></div>
+                  <div class="bizagi_editor_component_editor_lstring"><label>Required</label><input type="text" /></div>
+               </div>
+            </div>
+            <div class="bizagi_editor_component_editor_string"></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>ReType</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_boolean"></div>
+            <div class="bizagi_editor_component_editor_int"></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Label Horizontal Align</label><input type="text" /></div>
+            <!-- 
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            -->
+            <div class="bizagi_editor_component_editor_renderlayout"></div>
+         </div>
+         <div id="properties-tab-public">
+            <div class="bizagi_editor_component_editor_lstring"><label>Data Binding</label><input type="text" /></div>
+            <fieldset>
+               <legend>Texts</legend>
+               <div class="bizagi_editor_component_editor_lstring"><label>Display Name</label><input type="text" /></div>
+               <div class="bizagi_editor_component_editor_lstring"><label>Help text</label><input type="text" /></div>
+            </fieldset>
+            <div class="properties-category">
+               <span class="properties-category-name">Rules</span>         
+               <div class="properties-category-group">
+                  <div class="bizagi_editor_component_editor_lstring"><label>Visible</label><input type="text" /></div>
+                  <div class="bizagi_editor_component_editor_lstring"><label>Editable</label><input type="text" /></div>
+                  <div class="bizagi_editor_component_editor_lstring"><label>Required</label><input type="text" /></div>
+               </div>
+            </div>
+            <div class="bizagi_editor_component_editor_string"></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>ReType</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_boolean"></div>
+            <div class="bizagi_editor_component_editor_int"></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Label Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_lstring"><label>Value Horizontal Align</label><input type="text" /></div>
+            <div class="bizagi_editor_component_editor_renderlayout"></div>
+         </div>
+      </div>
+   </body>
+</html>

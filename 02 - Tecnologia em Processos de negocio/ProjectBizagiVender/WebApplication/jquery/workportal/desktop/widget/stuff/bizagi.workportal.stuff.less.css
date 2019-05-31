@@ -1,0 +1,213 @@
+/* ==========================================================================
+   My Stuff sidebar and main content CSS
+   ========================================================================== */
+.wdg-stf-panel
+{
+    margin-bottom: 1em;
+}
+
+.wdg-stf-card, .wdg-stf-card-vc
+{
+    cursor: pointer;
+    position: relative;
+}
+
+.wdg-stf-title-container
+{
+    font-size: 16px;
+    position: relative;
+}
+
+.wdg-stf-title-container.image
+{
+    display: inline-block;
+    padding: 0;
+    width:  100%;
+}
+
+.wdg-stf-title-container img.img-responsive
+{
+    height: auto;
+    max-width: 100%;
+    width:  100%;
+}
+
+.wdg-stf-title-container > i
+{
+    align-self: center;
+}
+
+.wdg-stf-title-container .wdg-stf-title
+{
+    margin: 0;
+    word-break: break-word;
+}
+
+.wdg-stf-title-container .wdg-stf-title.image
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    color: white;
+    margin: 0;
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+}
+
+/* ==========================================================================
+    Sidebar
+   ========================================================================== */
+.wdg-stf-card-cases
+{
+    min-height: 120px;
+}
+
+.sidebar-content .wdg-stf-header
+{
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    padding: 1em 20px 0.3em 20px;
+}
+
+#home-content .wdg-stf-header {
+    padding-bottom: .6em;
+    margin: 0 0 2em;
+}
+
+#home-content .wdg-stf-panel
+{
+    border-bottom: none;
+}
+
+.sidebar-content .wdg-stf-list
+{
+    padding: 0;
+}
+
+.sidebar-content .bz-card
+{
+    min-height: 52px;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+    list-style: none;
+    cursor: pointer;
+}
+
+.sidebar-content .bz-card__icon {
+    padding: 0;
+    background-color: transparent;
+}
+
+.sidebar-content .bz-card:hover .bz-card__icon {
+    color: #262D33;
+}
+
+.sidebar-content .wdg-stf-panel
+{
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+.wdg-srcts-panel > div.wdg-stf-selected
+{
+    background-color: #acbc35;
+    color: #384656;
+}
+
+.sidebar-content .wdg-stf-content
+{
+    overflow: auto;
+    margin: 0;
+}
+
+.sidebar-content .wdg-stf-title-container
+{
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    line-height: 19px;
+    padding: 16px 20px;
+}
+
+.sidebar-content .wdg-stf-title-container > div
+{
+    float: left;
+}
+
+.sidebar-content .wdg-stf-title-container > .wdg-stf-title
+{
+    font-weight: normal;
+    margin-top: 0px;
+}
+
+.sidebar-content .wdg-stf-title-container .wdg-stf-title.image
+{
+    width: calc(~"100% - 40px");
+    bottom: 20px;
+}
+
+.sidebar-content .wdg-stf-title-container img.img-responsive
+{
+    height: 140px;
+    max-width: 100%;
+    width:  100%;
+    object-fit: none;
+}
+
+.sidebar-content .wdg-stf-title-container .wdg-stf-icon
+{
+    float: left;
+    margin-right: 25px;
+    margin-top: 0;
+    position: relative;
+}
+
+.sidebar-content .wdg-stf-icon.stuff-ico svg
+{
+    fill: #6e7077;
+}
+
+.sidebar-content .wdg-stf-list[class*='col-']
+{
+    width: 100%;
+}
+
+.sidebar-content .wdg-stf-selected .wdg-stf-title-container .wdg-stf-container-symbol
+{
+    color: #262D33;
+}
+
+.sidebar-content .wdg-stf-title-container .wdg-stf-container-symbol i
+{
+    font-size: 16px;
+    line-height: inherit;
+}
+
+@media (min-width: 1600px) {
+
+    .wdg-stuff .wdg-stf-middle-content + p.col-xl-8
+    {
+        font-size: 16px;
+        font-weight: normal;
+        width: 60%;
+    }
+
+    .wdg-stf-middle-content,
+    .wdg-stuff p
+    {
+        display: inline-block;
+        vertical-align: middle;
+        float: none;
+    }
+
+}

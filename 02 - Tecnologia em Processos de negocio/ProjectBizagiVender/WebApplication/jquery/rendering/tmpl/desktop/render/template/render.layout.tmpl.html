@@ -1,0 +1,11 @@
+﻿<div data-unique-id="${uniqueId}" class="ui-bizagi-render-layout" {{if hide}} style="display:none" noShow="true" {{/if}}>
+    {{control}}
+     {{if isDesign}}
+        <div class="biz-template-editor-render-hide-control">
+            <span class="biz-ico biz-template-layout-eye bz-studio bz-hide_16x16_standard"></span>
+        </div>
+        <div class="ui-bizagi-render-icons ui-widget-content ui-corner-all {{if !messageValidation}}ui-hidden{{/if}}" {{if messageValidation && messageValidation.toString().length > 0}}style="display:inline-block"{{/if}}>
+            <span class="ui-bizagi-container-icon-editor-msg-validation-templates bz-studio bz-warning-yellow_16x16_standard" title="${messageValidation}"></span>
+        </div>    
+     {{/if}}                        
+</div>

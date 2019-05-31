@@ -1,0 +1,25 @@
+<script id="project-plan-activity-time" type="text/x-jsrender" >
+   <div>
+      <div class="ui-bizagi-wp-project-plan-activity-time">
+
+         <div class="bz-wp-widget plan-time">
+
+              <h3 class="bz-wp-section">%{workportal-project-plan-time-title}</h3>
+              <p class="bz-wp-date">{{>fromDate}}</p>
+
+              <div class="remaining-days">
+
+                 <div class="time-remaining" style="padding-left: 79px;">
+                    <div class="bz-wp-progress-bar-wrapper bar-fullTime">
+                       <div class="bz-wp-progress-bar bar-completed {{>colorBar}}" style="width: {{>percentBar}}%;"></div>
+                    </div>
+                    <p class="bz-wp-timestamp" title="%{workportal-project-title-time-based-by-schedule}">{{>messageTime}}</p>
+                 </div>
+              </div>
+
+         </div>
+
+
+       </div>
+    </div>
+</script>

@@ -1,0 +1,17 @@
+/********
+* Filename: bizagi.editor.theme.css
+* Create Date: 19-07-2012
+* Author: Ramiro Gomez Ramiro.Gomez@bizagi.com
+* Author: Jair Cardenas Jair.Tellez@bizagi.com
+*
+* $__theme
+*
+********/
+
+
+@import url('bizagi.editor.common.css');
+@import url('bizagi.layout.tabs.css');
+@import url('bizagi.editor.component.css');
+@import url('bizagi.editor.component.editor.css');
+@import url('bizagi.editor.overrides.css');
+@import url('bizagi.plugins.will.pickdate.css');

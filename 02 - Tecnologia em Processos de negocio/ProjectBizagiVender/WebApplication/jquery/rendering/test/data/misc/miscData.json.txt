@@ -1,0 +1,145 @@
+
+{
+	"form": {
+		"properties" : {"id": 1, "xpathContext": "", "title": "Cycle 3", "buttons": [
+			{"action": "save", "text": "Save", "validate": "true", "submitData": "true", "refresh": "true"},
+			{"action": "next", "text": "Next", "validate": "true", "submitData": "true", "refresh": "true"}
+		]},
+		"elements": [
+			{
+				"container": {
+					"properties": {
+						"id" : 1,
+						"displayName" : "Letters",
+						"type": "group"
+					},
+					"elements": [
+						{
+							"render": {	
+								"properties": {
+									"id" : 10000,
+									"displayName" : "Text",
+									"xpath" : "my.text",
+									"type": "text"
+								}
+							}
+						},
+						{
+							"render": {	
+								"properties": {
+									"id" : 10001,
+									"displayName" : "Not Editable Letter",
+									"xpath" : "my.letter",
+									"type": "letter",
+									"editable": "false"
+								}
+							}							
+						},
+						{
+							"render": {	
+								"properties": {
+									"id" : 10002,
+									"displayName" : "Editable Letter",
+									"xpath" : "my.letter.editable",
+									"type": "letter",
+									"saveUrl": "ajax/SaveLetter.ashx"
+								}
+							}
+						}
+					]
+				}				
+			},
+			
+			{
+				"container": {
+					"properties": {
+						"id" : 2,
+						"displayName" : "Buttons",
+						"type": "group"
+					},
+					"elements": [
+						{
+							"render": {	
+								"properties": {
+									"id" : 20001,
+									"displayName" : "Not Editable Button",
+									"xpath" : "my.button",
+									"type": "button",
+									"editable": "false",
+									"caption": "No Editable"
+								}
+							}							
+						},
+						{
+							"render": {	
+								"properties": {
+									"id" : 20002,
+									"displayName" : "Editable Button",
+									"xpath" : "my.button.editable",
+									"type": "button",
+									"caption": "Editable"
+								}
+							}
+						}
+					]
+				}				
+			},			
+			{
+				"container": {
+					"properties": {
+						"id" : 3,
+						"displayName" : "Links",
+						"type": "group"
+					},
+					"elements": [
+						{
+							"render": {	
+								"properties": {
+									"id" : 30001,
+									"displayName" : "Not Editable Form Link",
+									"xpath" : "my.link",
+									"type": "formLink",
+									"editable": "false"
+								}
+							}							
+						},
+						{
+							"render": {	
+								"properties": {
+									"id" : 30002,
+									"displayName" : "Editable Form Link",
+									"xpath" : "my.link.editable",
+									"type": "formLink"
+								}
+							}
+						},
+						{
+							"render": {	
+								"properties": {
+									"id" : 30003,
+									"displayName" : "Not Editable Link",
+									"xpath" : "my.simple.link",
+									"type": "link",
+									"value": "http://www.google.com",
+									"editable": "false"
+								}
+							}							
+						},
+						{
+							"render": {	
+								"properties": {
+									"id" : 30004,
+									"displayName" : "Editable Link",
+									"xpath" : "my.simple.link",
+									"type": "link",
+									"value": "http://www.google.com"
+								}
+							}
+						}
+					]
+				}				
+			}
+			
+		]
+	}
+}

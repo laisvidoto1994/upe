@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Render</title>
+</head>
+<body>
+
+    <script src='../../../../jquery/steal.js' type='text/javascript'></script>
+    <script src='../../../../jquery/bizagi.loader.js' type='text/javascript'></script>
+    <script language="javascript" type="text/javascript">
+        // Redefine path to base
+        var BIZAGI_PATH_TO_BASE = "../../../../";
+        var BIZAGI_DEFAULT_WIDGET = "activityform";
+        var BIZAGI_RENDER_JSON = "jquery/workportal/test/data/render.checkboxes.json.txt";
+        
+    	// Gets the loader instance, and load the module
+        var loader = bizagi.loader;
+    	loader.init(function() {
+    		loader.start("workportal").loadFile("jquery/workportal/test/js/workportal.dummies.test.js");
+    	});
+    </script>
+</body>
+</html>

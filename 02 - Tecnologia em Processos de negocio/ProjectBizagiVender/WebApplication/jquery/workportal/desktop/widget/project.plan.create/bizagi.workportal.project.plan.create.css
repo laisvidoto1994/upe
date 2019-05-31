@@ -1,0 +1,30 @@
+#project-plan-popup-wrapper .ui-rubik-input {
+    margin: 4px 0px 4px 0px;
+}
+
+#project-plan-popup-wrapper .ui-bizagi-input-required {
+    background-color: red;
+    line-height: normal;
+    -webkit-border-radius: 2px 0px 0px 2px;
+    border-radius: 2px 0px 0px 2px;
+    z-index: 1;
+    display: inline-block;
+    height: 28px;
+    vertical-align: top;
+    width: 3px;
+    position: relative;
+    left: 1px;
+    top: 34px;
+}
+
+#project-plan-popup-wrapper .field-template {
+    display: none;
+}
+
+#project-plan-popup-wrapper .position-message-validate {
+    position: absolute;
+}
+
+#project-plan-popup-wrapper table tr {
+    height: 55px;
+}

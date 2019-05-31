@@ -1,0 +1,45 @@
+/********
+* Filename: bizagi.editor.component.editor.userstoinclude.css
+* Create Date: 2014-05-06
+* Author: Cristian Olaya Cristian.Olaya@bizagi.com
+*
+* $__userstoinclude
+*
+********/
+
+/* __userstoinclude
+--------*/
+.bizagi_editor_component_editor_userstoinclude
+{
+    position: relative;
+}
+.bizagi_editor_component_editor_userstoinclude .ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-option
+{
+    background-position: top left;
+}
+.bizagi_editor_component_editor_userstoinclude .ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-check
+{
+     background-position:0 -25px;
+}
+
+.userstoinclude-group-container
+{
+    position: relative;
+}
+
+.bizagi_editor_component_properties .bizagi_editor_component_editor_userstoinclude .bizagi-editor-booleandisplay-inline label
+{
+    display:inline-block;
+    width:55%;
+}
+
+.bizagi_editor_component_editor_userstoinclude .bizagi-editor-userstoinclude-inline .ui-control-editor
+{
+    display:inline-block;
+    width:30%;
+}
+
+.bizagi_editor_component_editor_userstoinclude .multiple-container .bizagi-editor-userstoinclude-inline .ui-control-editor
+{
+    width:58px;
+}

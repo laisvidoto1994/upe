@@ -1,0 +1,58 @@
+<script id="renderlayout-frame" type="text/x-jquery-tmpl">
+    <div class="rendelayout-container ui-control-container">
+        <div class="renderlayout-data">
+            <label class="renderlayout-open">${caption}</label>
+            <span class="renderlayout-value biz-bg-color biz-dark-border-color biz-border-all">${calculatedValues}</span>
+            <i class="biz-ico renderlayout-image-small-popup ui-control-modal bz-studio bz-form-buttons_16x16_standard" title="%{formmodeler-component-editor-renderlayout-edit-layout}"></i>
+        </div>
+        <div class="renderlayout-group"></div>
+    </div>
+</script>
+
+<script id="renderlayout-frame-property" type="text/x-jquery-tmpl">
+    <div></div>
+</script>
+
+
+<script id="renderlayout-frame-popup" type="text/x-jquery-tmpl">
+
+            <div class="renderLayout-modal-item renderLayout-enabled renderLayout-default-format">
+                <span class="renderLayout-modal-name">%{formmodeler-component-editor-renderLayout-use-default-format}</span>
+                <div class="ui-control-editor renderLayout-check-container renderLayout-modal-default-format"></div>
+            </div>
+
+            <div class="renderlayout-splitter">
+                <div class="renderlayout-names" data-id="percentageData">
+                    <div>
+                        <span>${caption1}</span>
+                        <span class="renderlayout-box1"></span>
+                    </div>
+                    <div>
+                        <span>${caption2}</span>
+                        <span class="renderlayout-box2"></span>
+                    </div>
+                </div>
+
+
+                <div class="renderlayout-names" data-id="pixelData">
+                    <div>
+                        <div><span>${caption1}</span></div>
+                        <div class="renderlayout-box-px"><input type="text" maxlength="3" id="renderlayout-px-label" class="renderlayout-box1"/></div>
+                        <div class="renderlayout-box-px"><span>px</span></div>
+                    </div>
+                </div>
+
+                <div class="renderlayout-separator">
+                        <input type="range" min="0" max="100" class="renderlayout-split" style="width:100%" value="1" step="1">
+                </div>
+            </div>
+</script>
+
+<script id="renderlayout-frame-popup-actions" type="text/x-jquery-tmpl">       
+    <div class="dateformat-popup-buttons biz-actions-bar">
+        <span class="editor-ui-button-actions biz-action-btn  biz-btn">%{formmodeler-component-editor-renderlayout-button-apply}</span>
+        <span class="editor-ui-button-separator">&nbsp;</span>
+        <span class="editor-ui-button-actions biz-action-btn  biz-btn">%{formmodeler-component-editor-renderlayout-button-ok}</span>
+        <span class="editor-ui-button-actions biz-action-btn  biz-btn">%{formmodeler-component-editor-renderlayout-button-cancel}</span>
+    </div>
+</script>

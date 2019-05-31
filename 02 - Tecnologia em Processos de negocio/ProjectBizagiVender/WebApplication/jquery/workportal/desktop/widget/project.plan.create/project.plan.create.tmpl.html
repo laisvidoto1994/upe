@@ -1,0 +1,36 @@
+<script id="plan-create" type="text/x-jsrender" >
+    <div id="project-plan-popup-wrapper">
+        <form>
+            <div class="ui-form-scroll">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td class="first-column">
+                                <span class="field-description">%{workportal-project-plan-popup-field-name}:</span>
+                            </td>
+                            <td>
+                                <input id="input-name-plan" name="name-plan" class="bz-wp-rub-input required" value=""
+                                       type="text" maxlength="100" required validationMessage="%{workportal-project-plan-popup-field-name-required}" />
+                                <div class="position-message-validate">
+                                    <span  data-for="name-plan"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="field-template">
+                            <td class="first-column">
+                                <span class="field-description">%{workportal-project-plan-popup-field-template}:</span>
+                            </td>
+                            <td>
+                                <div id="templates-plan"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><br/>
+            <div class="ui-bizagi-wp-project-popupform-actions">
+                <button id="button-cancel-create-plan" type="reset" class="ui-rubik-button ui-rubik-button-cancel" type="reset">%{workportal-widget-reports-confirm-cancel}</button>
+                <button id="button-accept-create-plan" type="submit" class="ui-rubik-button ui-rubik-button-accept" type="submit">%{workportal-project-plan-popup-button-create}</button>
+            </div>
+        </form>
+    </div>
+</script>

@@ -1,0 +1,19 @@
+{
+    "comments|3-3": [{
+        "Id": 0,
+        "Text": "@LOREM",
+        "Time": "@DATE_MM/@DATE_DD/@DATE_YYYY @TIME_HH/@TIME_MM",
+        "UserId": 1,
+        "Replies": []
+    }],
+    "users": [{
+        "Id": 1,
+        "Name": "@LOREM",
+        "DisplayName": "@LOREM @LOREM",
+        "Picture": ""
+    }],
+    "totalRecords": 3,
+    "actualPage": 1,
+    "totalPages": 1,
+    "maxIdComment": 3
+}

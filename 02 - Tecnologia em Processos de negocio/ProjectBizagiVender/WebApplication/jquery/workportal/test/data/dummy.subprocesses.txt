@@ -1,0 +1,21 @@
+{
+    "idCase": "@NUMBER@NUMBER@NUMBER@NUMBER@NUMBER",
+    "parentProcess": {
+        "idCase|0-9999": 0,
+        "radNumber": "@LOREM-@LOREM-@LOREM",
+        "displayName": "@LOREM @LOREM @LOREM @LOREM",
+        "isOpen": "false"
+    },
+    "subProcesses|1-5": [{
+        "idCase|0-9999": 0,
+        "radNumber": "@LOREM-@LOREM-@LOREM",
+        "displayName": "@LOREM @LOREM @LOREM @LOREM",
+        "isOpen": "false",
+		"idCustData": 0,
+		"subProcPersonalized": [
+			"@LOREM"
+		],
+		"CustFields": [ "@LOREM"]
+    }],
+	"CustFields": [ "@LOREM"]
+}

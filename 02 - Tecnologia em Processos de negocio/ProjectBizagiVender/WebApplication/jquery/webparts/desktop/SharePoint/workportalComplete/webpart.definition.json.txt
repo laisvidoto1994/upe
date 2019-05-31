@@ -1,0 +1,32 @@
+﻿{
+	"name": "workportalComplete",
+	"defaultDevice":"desktop",
+	"devices":{
+	    "desktop":{
+	    	"js": [ {"src": "desktop/workportalComplete.js"}],
+        	"css": [ {"src": "desktop/workportalComplete.css"} ],
+        	"tmpl": [
+        		{alias: "workportalComplete",  "src": "desktop/workportalComplete.tmpl.html#ui-bizagi-webparts-workportal"}
+        	]
+	    },
+	    "responsive":{
+            "js": [ {"src": "responsive/workportalComplete.js"}],
+            "css": [ {"src": "responsive/workportalComplete.css"} ],
+            "tmpl": [
+                	{alias: "workportalComplete",  "src": "responsive/workportalComplete.tmpl.html#ui-bizagi-webparts-workportal"}
+            ]
+	    },
+	    "tablet":{
+	       "reuseResourceFrom":"responsive",
+	    },
+	    "tablet_android":{
+	    	"reuseResourceFrom":"responsive",
+	    },
+	    "smartphone_ios":{
+	    	"reuseResourceFrom":"responsive"
+	    },
+	    "smartphone_android":{
+	    	"reuseResourceFrom":"responsive"
+	    }
+	}
+}

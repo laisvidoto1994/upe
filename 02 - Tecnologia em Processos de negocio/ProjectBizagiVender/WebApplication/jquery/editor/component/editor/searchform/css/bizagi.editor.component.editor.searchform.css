@@ -1,0 +1,192 @@
+/********
+* Filename: bizagi.editor.component.editor.searchform.css
+* Create Date: 2012-08-02
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__searchform
+*
+********/
+
+/* __searchform
+--------*/
+
+.bizagi_editor_component_editor_searchform{
+}
+
+.searchform-container {
+    display: inline-block;
+    position: relative;
+}
+
+.bizagi_editor_component_editor_searchform .searchform-button-container
+{
+    position: relative;
+    margin: 0;
+}
+
+.bizagi_editor_component_editor_searchform .searchform-button-container .searchform-button-caption
+{
+    text-align: left;
+    cursor: pointer;
+    border-radius: 3px 0px 0px 3px;
+    display: inline-block;
+    margin: 0px;
+    float: left;
+}
+.bizagi_editor_component_editor_searchform .searchform-button-container .searchform-button-caption:hover
+{
+    color: #333;
+    text-decoration: none;
+    background-color: #E6E6E6;
+    background-position: 0 -15px;
+}
+
+.bizagi_editor_component_editor_searchform .searchform-button-container .searchform-button-dropdown .biz-btn-caret{
+    position: relative;
+    top: 2px;
+}
+
+.bizagi_editor_component_editor_searchform .searchform-button-container .searchform-button-dropdown
+{
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0px 3px 3px 0px;
+    border-left: none;
+    margin-left: 0px;
+}
+.bizagi_editor_component_editor_searchform .searchform-button-container .searchform-button-dropdown:hover
+{
+    color: #333;
+    text-decoration: none;
+    background-color: #E6E6E6;
+    background-position: 0 -15px;
+}
+.bizagi_editor_component_editor_searchform .searchform-button-container .searchform-button-dropdown.searchform-open
+{
+    color: #333;
+    text-decoration: none;
+    background-color: #E6E6E6;
+    background-position: 0 -15px;
+}
+
+
+.bizagi_editor_component_editor_searchform .searchform-button-container .searchform-menu-section{
+    padding: 2px 4px;
+    line-height: 14px;
+}
+
+.bizagi_editor_component_editor_searchform .ui-ellipsis.searchform-button-caption{
+    max-width: 165px;
+    min-width: 130px;
+}
+
+.bizagi_editor_component_editor_searchform .searchform-button-container .searchform-menu
+{
+    position: absolute;
+    padding: 5px;
+    width: 220px;
+    list-style: none;
+    display: none;
+    top: 24px;
+    left: 0px;
+    z-index: 900;
+    background-color: white;
+}
+
+.bizagi_editor_component_editor_searchform .searchform-button-container .searchform-menu.searchform-open
+{
+    display: block;
+    z-index: 900;
+}
+
+.bizagi_editor_component_editor_searchform .searchform-menu .searchform-submenu
+{
+    list-style: none;
+    padding: 0px;
+    max-height: 120px;
+    overflow-y: scroll;
+}
+
+.bizagi_editor_component_editor_searchform .searchform-menu .searchform-submenu li
+{
+    text-align: left;   
+    position: relative;
+}
+
+.bizagi_editor_component_editor_searchform .searchform-button-dropdown,
+.bizagi_editor_component_editor_searchform .searchform-captions{
+    display: inline-block;
+    float: left;
+}
+
+.bizagi_editor_component_editor_searchform .searchform-menu .searchform-submenu li .biz-ico,
+.bizagi_editor_component_editor_searchform .searchform-menu .searchform-submenu li span
+{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.bizagi_editor_component_editor_searchform .searchform-menu .searchform-submenu li span{
+    
+}
+
+.bizagi_editor_component_editor_searchform .searchform-image-plus
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: transparent url("images/plus.png") no-repeat center center;
+}
+.bizagi_editor_component_editor_searchform .searchform-image-minus
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: transparent url("images/minus.png") no-repeat center center;
+}
+.bizagi_editor_component_editor_searchform .searchform-image-corner
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: transparent url("images/corner.png") no-repeat center center;
+    position: absolute;
+    left: 0px;
+    top: 2px;
+}
+
+.bizagi_editor_component_editor_searchform .searchform-item-expandable .searchform-image-plus,
+.bizagi_editor_component_editor_searchform .searchform-item-expandable .searchform-image-minus
+{
+    position: absolute;
+    top: 3px;
+    left: 0px;
+}
+.bizagi_editor_component_editor_searchform [class*="searchform-image-searchform"]
+{
+    position: absolute;
+    left: 21px;
+    top: 2px;
+    
+}
+
+.bizagi_editor_component_editor_searchform .searchform-submenu-text
+{
+    padding: 3px 0px 0px 40px;
+}
+.bizagi_editor_component_editor_searchform .searchform-item-selectable .searchform-submenu-text
+{
+    font-weight: bold;
+    white-space: nowrap;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bizagi_editor_component_editor_searchform [class*="searchform-image-form"]
+{
+    position: absolute;
+    left: 21px;
+    top: 2px;
+}

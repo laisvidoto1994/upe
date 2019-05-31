@@ -1,0 +1,30 @@
+/*
+    Document   : bizagi.filterMultiple
+    Created on : May 25, 2015, 8:24:00 AM
+    Author     : Andres Felipe Arenas Vargas
+    Description: Styles for the plugin of filter Multiple, the base styles are located in filterMoney.css
+                 jquery/common/bizagi.filterMoney/css/bizagi.filterMoney.css
+*/
+
+.context-menu-item .menu-container li{
+    margin: 3px;
+    position: relative;
+}
+
+.context-menu-item .menu-container li input{
+    position: absolute;               /* 2 */
+    top: 50%;                         /* 3 */
+    transform: translate(0, -50%);   /* 4 */
+}
+
+.context-menu-item .menu-container li .context-menu-item-label-check{
+    padding-left: 20px;
+}
+
+.context-menu-item .btn.btn-primary:disabled, .context-menu-item .btn.btn-primary[disabled]{
+    opacity: 1;
+    border-color: #CCC;
+    background: #CCC;
+    color: #EEE;
+    cursor: auto;
+}

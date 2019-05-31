@@ -1,0 +1,196 @@
+/********
+* Filename: bizagi.editor.component.editor.horizontalalign.css
+* Create Date: 2012-05-07
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com / Ramiro Gomez Ramiro.Gomez@bizagi.com
+*
+* $__horizontalalign
+*
+********/
+
+/* __horizontalalign
+--------*/
+
+.bizagi_editor_component_editor_horizontalalign {
+    position: relative;
+}
+
+.bizagi_editor_component_editor_horizontalalign [class^="horizontalalign-image-normal-"]
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.bizagi_editor_component_editor_horizontalalign .horizontalalign-image-normal-expand
+{
+    position: absolute;
+    right:6px;
+    top:9px;
+    width: 0;
+    height: 0;
+    padding: 0;
+    vertical-align: top;
+    border-top: 4px solid 
+    black;
+    border-right: 4px solid 
+    transparent;
+    border-left: 4px solid 
+    transparent;
+    content: "";
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+
+.bizagi_editor_component_editor_horizontalalign .horizontalalign-group{
+    display:block;
+}
+
+
+
+.bizagi_editor_component_editor_horizontalalign > .horizontalalign-container .horizontalalign-group > .horizontalalign-value
+{
+    text-transform: capitalize;
+    text-align:left;
+    padding-left: 2px;
+    color:#5D7389;
+}
+
+
+.bizagi_editor_component_editor_horizontalalign > .horizontalalign-container > .horizontalalign-values {
+    width:80.5%;
+    background: -webkit-linear-gradient(top,  rgba(249,249,250,1) 0%,rgba(222,224,226,1) 100%); /* Chrome10+,Safari5.1+ */
+
+}
+
+.bizagi_editor_component_editor_horizontalalign > .horizontalalign-container .horizontalalign-group {
+    vertical-align: middle;
+    border: solid 1px transparent;
+}
+.bizagi_editor_component_editor_horizontalalign > .horizontalalign-container > .horizontalalign-name {
+    vertical-align: middle;
+    border: solid 1px transparent;
+}
+.bizagi_editor_component_editor_horizontalalign .horizontalalign-group > span {
+    vertical-align: middle;
+    padding: 0;
+}
+.bizagi_editor_component_editor_horizontalalign .horizontalalign-group .horizontalalign-value {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+}
+.bizagi_editor_component_editor_horizontalalign {
+    position: relative;
+}
+.bizagi_editor_component_editor_horizontalalign > .horizontalalign-container > .horizontalalign-values {
+    position: absolute;
+    top: 53px;
+    left: 10px;
+    border: solid 1px #CCCCCC;
+    background-color: #E6E6E6;
+    padding-bottom: 8px;
+    border-radius: 0px 0px 4px 4px;
+    z-index:600;
+}
+
+.properties-category .bizagi_editor_component_editor_horizontalalign > .horizontalalign-container > .horizontalalign-values {
+    left:0;
+}
+
+.bizagi_editor_component_editor_horizontalalign > .horizontalalign-container > .horizontalalign-values.horizontalalign-close {
+    display: none;
+}
+.bizagi_editor_component_editor_horizontalalign > .horizontalalign-container > .horizontalalign-values.horizontalalign-open {
+    display: block;
+}
+.bizagi_editor_component_editor_horizontalalign > .horizontalalign-container > .horizontalalign-values > .horizontalalign-group:hover {
+    background-color: rgba(222,224,226,1);
+    cursor: pointer;
+}
+.bizagi_editor_component_editor_horizontalalign > .horizontalalign-container > .horizontalalign-collapsed > [class^="horizontalalign-image-large-"] {
+    visibility: hidden;
+}
+.bizagi_editor_component_editor_horizontalalign > .horizontalalign-container > .horizontalalign-collapsed > .horizontalalign-image-icon-check {
+    visibility: hidden;
+}
+
+
+.bizagi_editor_component_editor_horizontalalign > .horizontalalign-container > .horizontalalign-hidden {
+    visibility: hidden;
+}
+.bizagi_editor_component_editor_horizontalalign > .horizontalalign-container > .horizontalalign-show {
+    visibility: visible;
+    border: solid 1px blue;
+}
+
+
+.bizagi_editor_component_editor_horizontalalign .horizontalalign-values .horizontalalign-group{
+    border-bottom: 1px solid rgba(193,194,194,.6);
+    border-top: 1px solid rgba(255,255,255,.6);
+}
+
+.bizagi_editor_component_editor_horizontalalign .horizontalalign-values .horizontalalign-group:first-child{
+    border-top: 1px solid transparent;
+}
+
+.bizagi_editor_component_editor_horizontalalign .horizontalalign-values .horizontalalign-group:last-child{
+    border-bottom: 1px solid transparent;
+}
+
+.bizagi_editor_component_editor_horizontalalign .horizontalalign-values{
+    -webkit-box-shadow: 0 8px 6px -6px rgb(72,90,106);
+    -moz-box-shadow: 0 8px 6px -6px rgb(72,90,106);
+    box-shadow: 0 8px 6px -6px rgb(72,90,106);
+}
+
+
+.bizagi_editor_component_editor_horizontalalign.without-dropdown .horizontalalign-group{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.bizagi_editor_component_editor_horizontalalign.without-dropdown .horizontalalign-value{
+    display:none;
+}
+
+
+
+.bizagi_editor_component_editor_horizontalalign.without-dropdown .horizontalalign-group:hover .horizontalalign-image-icon-uncheck,
+.bizagi_editor_component_editor_horizontalalign.without-dropdown .horizontalalign-values .horizontalalign-group:hover .horizontalalign-image-icon-uncheck,
+.bizagi_editor_component_editor_horizontalalign.without-dropdown .horizontalalign-image-icon-check{
+    background-color: transparent;
+}
+
+.bizagi_editor_component_editor_horizontalalign.without-dropdown [class^="horizontalalign-image-small-"]{
+    opacity:0.8;
+    -moz-opacity: 0.8;
+    filter:alpha(opacity=80);
+}
+
+.bizagi_editor_component_editor_horizontalalign.without-dropdown .horizontalalign-group:hover [class^="horizontalalign-image-small-"]{
+    opacity: 1;
+    -moz-opacity: 1;
+    filter:alpha(opacity=100);
+}
+.ui-tooltip.ui-propertybox-tooltip.ui-horizontalalign-tooltip{
+    max-width: 180px;
+}
+.ui-tooltip.ui-propertybox-tooltip.ui-horizontalalign-tooltip:before{
+    top: -8px;
+    left: 5px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 7px solid  hsl(0, 0%, 98%);
+    border-left: 8px solid transparent;
+}
+
+.ui-tooltip.ui-propertybox-tooltip.ui-horizontalalign-tooltip:after{
+    top: -9px;
+    left: 5px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 7px solid hsla(0, 0%, 80%, .5);
+    border-left: 8px solid transparent;
+}

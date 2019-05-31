@@ -1,0 +1,66 @@
+/********
+* Filename: bizagi.editor.component.editor.rendertype.css
+* Create Date: 2012-05-10
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__rendertype
+*
+********/
+
+/* __rendertype
+--------*/
+.bizagi_editor_component_editor_rendertype > .editor-horizontal
+{
+    border: solid 1px gainsboro;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 1px 1px 1px 1px;
+}
+
+
+.bizagi_editor_component_editor_rendertype > .editor-horizontal > label
+{
+    display: inline-block;
+    width: 90px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.bizagi_editor_component_editor_rendertype span.editor-text-rendertype-enabled
+{
+    display: inline-block;
+    border: solid 1px #bebeb7;
+    border-radius: 4px;
+    width: 160px;
+    padding-left: 6px;
+    background-color: #ffffff;
+    height: 17px;
+    padding-top: 3px;
+    font-family: Arial;
+    font-size: 13px;
+}
+.bizagi_editor_component_editor_rendertype span.editor-text-rendertype-disabled
+{
+    display: none;
+}
+
+
+.bizagi_editor_component_editor_rendertype select.editor-options-enabled
+{
+    display: inline-block;
+    border-radius: 4px;
+    width: 166px;
+    height: 22px;
+}
+.bizagi_editor_component_editor_rendertype select.editor-options-disabled
+{
+    display: none;
+}
+
+.bizagi_editor_component_editor_rendertype span,
+.bizagi_editor_component_editor_rendertype select
+{
+    text-transform: capitalize;
+}

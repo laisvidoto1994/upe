@@ -1,0 +1,209 @@
+<script id="ui-bizagi-grid" type="text/x-kendo-template">
+    <div class="ui-bizagi-grid">
+        <div data-bizagi-component="header" class="bz-rn-grid-cn-header">
+            <span class="bz-rn-grid-header-title">#= data.label #</span>
+            <div data-bizagi-component="buttons" data-bizagi-position="replace">
+                {{element buttons}}
+            </div>
+
+        </div>
+        <div data-bizagi-component="table" data-bizagi-position="replace">
+            {{element table}}
+        </div>
+        <div data-bizagi-component="pager" data-bizagi-position="replace">
+            <div class="ui-bizagi-grid-pagerArrowLeftFast" style="display:none">
+                <span class="ui-bizagi-grid-arrowLeftFast bz-mo-icon bz-back"></span>                
+            </div>
+            <div class="ui-bizagi-grid-pagerArrowLeft" style="display:none">
+                <span class="ui-bizagi-grid-arrowLeft bz-mo-icon bz-rewind"></span>
+            </div>
+            {{element pager}}
+            <div class="ui-bizagi-grid-pagerArrowRight" style="display:none">
+                <span class="ui-bizagi-grid-arrowRight bz-mo-icon bz-fast-forward"></span>
+            </div>
+            <div class="ui-bizagi-grid-pagerArrowRightFast" style="display:none">
+                <span class="ui-bizagi-grid-arrowRightFast bz-mo-icon bz-next"></span>                
+            </div>
+        </div>
+        <div data-bizagi-component="dynamicPager" data-bizagi-position="replace">
+            {{element dynamicPager}}
+        </div>
+        <div data-bizagi-component="emptyTable" data-bizagi-position="replace">
+            {{element emptyTable}}
+        </div>
+    </div>
+
+    <div data-bizagi-component="rowButtons" data-bizagi-position="float">
+        {{element rowButtons}}
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-waiting" type="text/x-kendo-template">
+    <div class="ui-bizagi-waiting"></div>
+</script>
+
+<script id="ui-bizagi-grid-table" type="text/x-kendo-template">
+    <table class="ui-bizagi-grid-table">
+        <thead class="ui-bizagi-grid-header">
+            <tr data-bizagi-component="columns">
+                {{element columns}}
+            </tr>
+        </thead>
+        <tbody class="ui-bizagi-grid-body" data-bizagi-component="rows">
+            {{element rows}}
+        </tbody>
+
+    </table>
+</script>
+
+<script id="ui-bizagi-grid-table-empty" type="text/x-kendo-template">
+    <div class="ui-bizagi-grid-noRecords">%{render-grid-no-records}</div>
+</script>
+
+<script id="ui-bizagi-grid-column" type="text/x-kendo-template">
+    <th class="# if (data.key) {#ui-bizagi-grid-key #}# # if (data.hidden){# ui-bizagi-grid-column-hidden #}#">
+        <h3 class="ui-bizagi-grid-column" data-column-index="#= data.index #">
+            <label>#= data.label #</label>
+            <div class="ui-bizagi-grid-column-sort #if (data.sortActive){# ui-bizagi-active #}#">
+                <div class="#if (data.sortType == 'asc'){#ui-bizagi-active #}#"></div>
+                <div class="#if (data.sortType == 'desc'){#ui-bizagi-active #}#"></div>
+            </div>
+        </h3>
+    </th>
+</script>
+
+<script id="ui-bizagi-grid-column-special" type="text/x-kendo-template">
+    <th class="ui-bizagi-grid-column-special"></th>
+</script>
+
+<script id="ui-bizagi-grid-row" type="text/x-jquery-tmpl">
+    <tr data-bizagi-component="cells" data-key="#= data.key#" data-business-key="#= data.businessKey #" data-new-row=#if(data.isNewRow){#"true"#}else{#"false"#}#>
+        {{element cells}}
+    </tr>
+</script>
+
+<script id="ui-bizagi-grid-cell" type="text/x-kendo-template">
+    <td class="# if (data.isKey){# ui-bizagi-grid-key #}#  # if (data.hidden){# ui-bizagi-column-hidden #}#">
+        <div class="ui-bizagi-grid-cell" data-bizagi-component="cellContent">
+            {{element cellContent}}
+        </div>
+    </td>
+</script>
+
+<script id="ui-bizagi-grid-cell-special" type="text/x-kendo-template">
+    <td class="ui-bizagi-grid-cell-special">
+        <div class="ui-bizagi-grid-cell" data-action="more">
+            <span class="ui-bizagi-cell-more bz-mo-icon bz-next"></span>
+        </div>
+    </td>
+</script>
+
+<script id="ui-bizagi-grid-pager" type="text/x-kendo-template">
+    <div class="ui-bizagi-grid-pager">
+        <ul>
+            #if (data.pages.length > 1){#
+                # for (var i=0, len = data.pages.length ; i < len; i++){ #
+                    <li data-page-number="#= data.pages[i].number #" class="#if (data.pages[i].active){# ui-bizagi-active #}#">
+                        <span class="bz-rn-grid-pager-item">#= data.pages[i].number #</span>
+                    </li>
+                #}#
+            #}#
+        </ul>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-buttons" type="text/x-kendo-template">
+    <div class="ui-bizagi-grid-buttons">
+        <ul>
+            #if (data.add){#
+                <li data-action="add" class="ui-state-active bz-rn-icon-plus bz-mo-icon bz-plus"></li>
+            #}#
+            #if (data.hasTotalizer){#
+            	<li data-action="totalizer" class="ui-state-active bz-rn-icon-total bz-mo-icon bz-totalizer-small"></li> 
+            #}#
+        </ul>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-totalizer" type="text/x-kendo-template">
+    <div data-role="modalview" id="modalview-grid-totalizer" style="width: 90%; height: 90%" class="km-listview-wrapper bz-rn-grid-totalize-container #if (data.orientation === 'rtl'){ # bz-render-reversed #}#">
+        <div data-role="header">
+            <div id="" data-role="navbar">
+                <div class="bz-rn-bizagi-grid-totalizer-header">
+                    <span class="bz-rn-grid-totalize-icon bz-mo-icon bz-totalizer-small" data-action="totalizer"></span>
+                    <span class="bz-rn-grid-totalizer-title"> %{render-grid-totalizer}</span>
+                    <span class="bz-rn-grid-totalize-close-btn bz-mo-icon bz-cancel"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bz-rn-grid-totalize-box">
+            <div class="bz-rn-grid-totalize-list">
+                <ul class="km-widget km-listview km-list">
+                    # for (var i = 0, len = data.length ; i < len; i++){ #
+	                    <li>
+	                        <div class="bz-rn-grid-totalize-item-label"> #= data[i].label # </div>
+	                        <div class="bz-rn-grid-totalize-item-value"> #= data[i].total # </div>
+	                    </li>
+                    #}#
+                </ul>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-buttons-offline" type="text/x-kendo-template">
+    <div class="ui-bizagi-grid-buttons">
+        <ul>
+            # if (data.remove){ #
+            <li class="ui-grid-buttons-hidden bz-rn-icon-trash bz-mo-icon bz-trash-icon" data-action="remove"></li>
+            #}#
+            #if (data.add || data.inlineAdd){ #
+                <li class="bz-rn-icon-plus bz-mo-icon bz-plus" data-action="add"></li>
+            #}#
+            #if (data.inlineAdd){#
+                <li class="ui-grid-buttons-hidden bz-rn-icon-save bz-mo-icon bz-disk" data-action="save"></li>
+                <li class="ui-grid-buttons-hidden bz-rn-icon-cancel bz-mo-icon bz-cancel" data-action="cancel"></li>
+            #}#
+        </ul>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-row-buttons" type="text/x-kendo-template">
+    <div class="ui-bizagi-grid-row-buttons">
+        <ul>
+            #if (data.edit){#
+                <li data-action="edit">
+					<div class="bz-rn-row-icon ui-icon-pencil bz-mo-icon bz-edit"></div>
+				</li>
+            #}#
+            #if (data.remove){#
+                <li data-action="remove">
+                    <div class="bz-rn-row-icon ui-icon-trash bz-mo-icon bz-trash-icon"></div>
+				</li>
+            #}#
+        </ul>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-row-buttons-offline" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-grid-row-buttons">
+        <ul>
+            #if (data.edit){#
+	            <li data-action="edit">
+                    <div class="bz-rn-row-icon ui-icon-pencil bz-mo-icon bz-edit"></div>
+				</li>
+            #}#
+            #if (data.remove){#
+            	<li data-action="remove">
+                    <div class="bz-rn-row-icon ui-icon-trash bz-mo-icon bz-trash-icon"></div>
+				</li>
+            #}#
+        </ul>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-dynamic-pager" type="text/x-kendo-template">
+    <input type="button" class="ui-bizagi-button ui-button-text ui-button ui-widget ui-state-default ui-corner-all ui-bizagi-grid-dynamic-pager" value="%{render-grid-dynamic-pager}" role="button" aria-disabled="false" />
+</script>
+

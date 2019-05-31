@@ -1,0 +1,195 @@
+.ui-bizagi-wp-app-inbox-description-container h3{
+    font-size: 12px;
+    color: #666666;
+}
+
+.ui-bizagi-wp-app-inbox-description-container .separator{
+    color: #cccccc;
+    height: 1px;
+}
+
+.ui-bizagi-wp-app-inbox-description-container .box-description{
+    /*background-color: #666666;*/
+    padding-right: 10px;
+    border-spacing: 5px;
+    width: 100%;
+    font-size: 13px;
+}
+
+.ui-bizagi-wp-app-inbox-description-container .box-description table{
+    -moz-box-shadow: 0px;
+    -webkit-box-shadow: 0px;
+    box-shadow: 0px;
+
+
+}
+
+
+
+
+.ui-bizagi-wp-app-inbox-description-container .key{
+    text-align: right;
+}
+
+.ui-bizagi-wp-app-inbox-description-container .value{
+    text-align: center;
+    background-color: #C8CBD2;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+#ui-bizagi-wp-app-inbox-activities-routing .text-description-title{
+    font-size: 16px;
+
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ui-bizagi-wp-app-inbox-description-container .text-description-title{
+    font-size: 16px;
+    color: #8A95A7;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ui-bizagi-wp-app-inbox-description-container .text-description{
+    font-size: 12px;
+    text-align: justify;
+
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+
+
+#descriptionPadding{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+#descriptionPadding table{
+    cellspacing:10;
+    border-collapse:separate;
+
+}
+
+
+
+/*BUTTONS ACTIONS*/
+/*****************/
+#ui-bizagi-wp-app-inbox-bg-action-container{
+    position: relative;
+    top:0px;
+    right: 0px;
+    width: 125px;
+    height: 25px;
+}
+
+#ui-bizagi-wp-app-inbox-bt-comments{
+    background-image: url(images/sprite.png);
+    background-position: -473px -48px;
+    width: 20px;
+    height: 18px;
+}
+
+.ui-bizagi-wp-app-inbox-bt-comments{
+    position: relative;
+    top:3px;
+    left:0px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+
+#ui-bizagi-wp-app-inbox-bt-undo{
+    background-image: url(images/sprite.png);
+    background-position: -503px -48px;
+    width: 19px;
+    height: 18px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+.ui-bizagi-wp-app-inbox-bt-undo{
+    position: relative;
+    top:3px;
+
+    left:10px;
+}
+
+
+#ui-bizagi-wp-app-inbox-bt-folder{
+    background-image: url(images/sprite.png);
+    background-position: -534px -48px;
+    width: 19px;
+    height: 18px;
+
+}
+
+.ui-bizagi-wp-app-inbox-bt-folder{
+    position: relative;
+    top:3px;
+    left:20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+#ui-bizagi-wp-app-inbox-bt-trash{
+    background-image: url(images/sprite.png);
+    background-position: -569px -48px;
+    width: 13px;
+    height: 18px;
+}
+
+.ui-bizagi-wp-app-inbox-bt-trash{
+    position: relative;
+    top:3px;
+    left:34px;
+    padding-left: 20px;
+}
+
+#ui-bizagi-wp-app-inbox-bt-row-back{
+    background-image: url(images/sprite.png);
+    background-position: -599px -48px;
+    width: 11px;
+    height: 18px;
+}
+
+.ui-bizagi-wp-app-inbox-bt-row-back{
+    position: relative;
+    top:12px;
+    left:70px;
+    padding-left: 15px;
+}
+
+#ui-bizagi-wp-app-inbox-bt-row-forward{
+    background-image: url(images/sprite.png);
+    background-position: -623px -48px;
+    width: 11px;
+    height: 18px;
+}
+
+.ui-bizagi-wp-app-inbox-bt-row-forward{
+    position: relative;
+    top:12px;
+    left:75px;
+    padding-left: 15px;
+}
+
+#ui-bizagi-wp-app-inbox-actions-separator{
+    width: 1px;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: #aaaaaa;
+}
+
+.ui-bizagi-wp-app-inbox-actions-separator{
+    position: relative;
+    top:1px;
+    left: 50px;
+    padding-bottom: 23px;
+}

@@ -1,0 +1,40 @@
+.ui-bizagi-wp-app-search-results
+{
+	padding: 60px 20px 0 20px;
+	min-height: 1024px;
+	background: url('images/dots_columns.png') repeat #CFCFCF;
+}
+
+.ui-bizagi-wp-app-search-results > table
+{
+	width: 100%;
+	text-align: center;
+	-webkit-border-radius: 4px;
+}
+
+.ui-bizagi-wp-app-search-results > table > thead > tr > td { padding: 12px 4px; }
+
+.ui-bizagi-wp-app-search-results > table > tbody > tr > td { padding: 22px 4px; }
+
+.ui-bizagi-wp-app-search-results > table input[type="button"]
+{
+	border: 0;
+	padding: 8px 10px;
+	border-radius: 6px;	
+	letter-spacing: 1px;
+}
+
+.ui-bizagi-wp-app-search-results .workonitRow {
+padding: 4px;
+border-radius: 6px;
+background: -webkit-gradient(linear, left top, left bottom, from(#3DA8F5), to(#085891));
+color: white;
+text-shadow: 1px 1px 1px #333;
+font-size: 11px;
+border: 1px solid #0967AA;
+-webkit-box-shadow: 0px 0px 10px #595959;
+}
+
+
+
+.nodisplay { display: none; }

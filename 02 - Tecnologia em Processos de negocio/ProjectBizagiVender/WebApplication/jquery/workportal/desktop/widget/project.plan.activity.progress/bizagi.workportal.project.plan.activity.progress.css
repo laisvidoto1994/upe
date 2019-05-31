@@ -1,0 +1,188 @@
+.ui-bizagi-wp-project-plan-activity-progress .action-open-popup-edit-progress {
+    cursor: pointer;
+    float: right;
+    height: 20px;
+    width: 20px;
+}
+
+/*Begin Remaining Date */
+.ui-bizagi-wp-project-plan-activity-progress .plan-progress {
+
+}
+
+.ui-bizagi-wp-project-plan-activity-progress .plan-progress .remaining-days {
+    overflow: hidden;
+    width: 100%;
+}
+
+.ui-bizagi-wp-project-plan-activity-progress .plan-progress .remaining-days .days {
+    display: inline;
+    float: left;
+    font-size: 2.7em;
+    font-weight: bold;
+}
+
+.ui-bizagi-wp-project-plan-activity-progress .plan-progress .remaining-days .time-remaining {
+
+    padding-left: 0 !important;
+}
+
+.ui-bizagi-wp-project-plan-activity-progress .plan-progress .remaining-days .bar-fullTime {
+
+    border-radius: 4px;
+    background: rgba(55,76,88,0.2);
+}
+
+.ui-bizagi-wp-project-plan-activity-progress .plan-progress .remaining-days .bar-completed {
+    transition: Width 0.4s;
+    background: #374C58;
+}
+
+.ui-bizagi-wp-project-plan-activity-progress .plan-progress .remaining-days .bar-completed.Red {
+    background: #F5645A;
+}
+
+.ui-bizagi-wp-project-plan-activity-progress .plan-progress .remaining-days .bar-completed.Yellow {
+    background: #F4AA34;
+}
+
+.ui-bizagi-wp-project-plan-activity-progress .plan-progress .remaining-days .bar-completed.Green {
+    background: #37B464;
+}
+
+/*End Remaining Date */
+
+/*Popup edit progress*/
+
+#project-plan-activity-edit-progress-template-wrapper .ui-rubik-input {
+    background: #FAFAFA !important;
+    border-color: #DDD !important;
+    border-radius: 4px !important;
+    box-sizing: border-box;
+    color: #374C58;
+    font-size: 12px;
+    min-height: 32px !important;
+    width: 100%;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-rubik-h4 {
+    font-size: 1.5em;
+    margin: 1em 1.5em .5em;
+    color: #374C58;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-rubik-button {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: .5em;
+    padding: 0.6em 1.2em;
+    text-shadow: none;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-rubik-button-cancel {
+    background: #F2F2F2;
+    border-color: #374C58;
+    color: #374C58;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-rubik-button-cancel:hover {
+    background: #FAFAFA;
+    border-color: #31444E;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-rubik-button-accept:hover {
+    background: #4F6C7D;
+    border-color: #4F6C7D;
+    color: #FAFAFA;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-rubik-button-accept:hover:disabled {
+    background: #76A4BE;
+    cursor: wait;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-bizagi-wp-project-footer-buttons {
+    text-align: right;
+    margin: 23px 39px 13px 0px;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-wrapper-inputs {
+    height: 70px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-wrapper-inputs .text-right .percent-symbol {
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-wrapper-inputs .text-right input{
+    text-align:center;
+}
+
+#project-plan-activity-edit-progress-template-wrapper li.k-tick {
+    background: white;
+}
+
+ #sliderProgress {
+    float: left;
+    clear: left;
+    width: 300px;
+    margin: 15px;
+    height: 7px;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-slider-range {
+    background: #1984c8;
+}
+
+#project-plan-activity-edit-progress-template-wrapper  .ui-slider-handle {
+    border-color: #1984c8;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-slider-horizontal .ui-slider-handle {
+    background: gray;
+    border-radius: 9px;
+    height: 15px;
+    margin-left: -2px;
+    top: -4px;
+    width: 15px;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all {
+    border: 1px solid #aaaaaa;
+    background: #ffffff;
+    color: #222222;
+    top: -12px;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-spinner{
+    border: 1px solid #DEDEDE;
+    border-radius: 5px;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-spinner .ui-spinner-button{
+    height: 50%;
+    margin: 0;
+    position: absolute;
+    padding: 0;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-spinner .ui-spinner-button.ui-spinner-down{
+    bottom: -2px;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .ui-spinner .ui-spinner-input{
+    font-size: 18px;
+    width: 70px;
+}
+
+#project-plan-activity-edit-progress-template-wrapper .step {
+    position: absolute;
+    margin-left: -2px;
+    text-align: center;
+    margin-top: 20px;
+}

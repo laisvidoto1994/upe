@@ -1,0 +1,85 @@
+<script id="project-plan-activity-action" type="text/x-jsrender">
+   <div>
+      <div id="ui-bizagi-wp-project-plan-activity-action">
+          <div class="ui-bizagi-wp-project-plan-header clearfix">
+
+              <h3 class="bz-wp-section">
+                  <!--<i class="bz-icon bz-icon-16 case-summary-favorite {{>isFavoriteCase}}"></i> -->
+                  <span>{{>currentActivityName}}</span></h3>
+              {{if showEditAction}}
+              <div class="wrapper-menu-rubik">
+                  <ul class="menu">
+                      <li>
+                          <a href="javascript:void(0);"><i class="bz-icon bz-icon-16 bz-icon-cog-outline"></i></a>
+                          <ul>
+                              <li class="ui-menu-item" data-item="edit"><a href="javascript:void(0);">%{bz-rp-components-dimension-edit}</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+              {{/if}}
+          </div>
+       </div>
+
+       <span id="popupNotification"></span>
+    </div>
+</script>
+
+<script id="project-plan-activity-action-editionpopup" type="text/x-jsrender">
+    <div id="project-popupform-edit-activity-wrapper" class="bz-wp-modal-content">
+        <form class="ui-bizagi-wp-project-popupform-form">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="first-column">
+                            <span class="ui-bizagi-wp-project-popupform-field-name field-description">%{workportal-project-plan-assignee}:</span>
+                        </td>
+                        <td class="second-column-with-message">
+                            <input type="text" id="activity-form-assignee" name="name-user" class="bz-wp-rub-input required" />
+                            <div class="position-message-validate">
+                                <span  data-for="name-user"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="first-column">
+                            <span class="ui-bizagi-wp-project-popupform-field-name field-description">%{workportal-project-plan-estimatedend}:</span>
+                        </td>
+                        <td>
+                            <div class="ui-bizagi-wp-project-container-validator-relative text-right bz-calendar-container">
+                                <input class="ui-rubik-input" id="activity-form-date" maxlength="0">
+                                <i class="bz-icon bz-icon-16 bz-icon-calendar-outline"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="first-column">
+                            <span class="ui-bizagi-wp-project-popupform-field-name field-description">%{workportal-project-plan-activity-duration}:</span>
+                        </td>
+                        <td>
+                            <div class="ui-bizagi-wp-project-container-validator-relative text-right">
+                                <input id="activity-form-duration" class="ui-rubik-input" />
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+
+
+      <div class="ui-bizagi-wp-project-popupform-actions">
+         <button id="ui-bizagi-wp-project-popupform-action-cancel" class="ui-bizagi-wp-project-popupform-button ui-bizagi-wp-project-popupform-button-cancel">%{workportal-widget-reports-confirm-cancel}</button>
+         <button id="ui-bizagi-wp-project-popupform-action-update" class="ui-bizagi-wp-project-popupform-button ui-bizagi-wp-project-popupform-button-action">%{workportal-widget-query-form-update}</button>
+      </div>
+        <div style="display:none">
+            <a id="go-to-case" href="#">
+                <input type="hidden" id="idCase" value="{{>idCase}}">
+                <input type="hidden" id="idWorkflow" value="{{>idWorkflow}}">
+                <input type="hidden" id="idWorkItem" value="{{>idWorkItem}}">
+                <input type="hidden" id="idTask" value="{{>idTask}}">
+            </a>
+        </div>
+
+   </div>
+</script>

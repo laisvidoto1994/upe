@@ -1,0 +1,22 @@
+{
+    "context" : "main",
+    "supportedTypes": [
+        {"type" : "attributeString", "style" : "ui-bizagi-type-attribute-string" },
+        {"type" : "attributeDate", "style" : "ui-bizagi-type-attribute-date" },
+        {"type" : "attributeNumber", "style" : "ui-bizagi-type-attribute-number" },
+        {"type" : "attributeBoolean", "style" : "ui-bizagi-type-attribute-boolean" },
+        {"type" : "attributeFloat", "style" : "ui-bizagi-type-attribute-float" },
+        {"type" : "attributeLetter", "style" : "ui-bizagi-type-attribute-letter" },
+        {"type" : "attributeAttachment", "style" : "ui-bizagi-type-attribute-attachment" },
+        {"type" : "attributeCurrrency", "style" : "ui-bizagi-type-attribute-currency" },
+        {"type" : "collection", "style" : "ui-bizagi-type-collection" },
+        {"type" : "entityApplication", "style" : "ui-bizagi-type-entity-application" },
+        {"type" : "entityMaster", "style" : "ui-bizagi-type-entity-master" },
+        {"type" : "entityParametric", "style" : "ui-bizagi-type-entity-parametric" },
+        {"type" : "entitySystem", "style" : "ui-bizagi-type-entity-system" },
+        {"type" : "scopeAttribute", "style" : "ui-bizagi-type-scope-attribute" },
+        {"type" : "scopeEntity", "style" : "ui-bizagi-type-scope-entity" },
+        {"type" : "forms", "style" : "ui-bizagi-node-forms" },
+        {"type" : "form", "style" : "ui-bizagi-type-form" }
+    ]
+}

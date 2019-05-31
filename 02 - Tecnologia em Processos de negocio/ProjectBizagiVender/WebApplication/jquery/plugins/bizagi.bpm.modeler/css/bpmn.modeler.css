@@ -1,0 +1,477 @@
+/* LAYOUT */
+html bpm-modeler *{
+    box-sizing: content-box;
+}
+#bpm-toolbar{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+#bpm-drawing{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/* DRAWING MOVE HELPER*/
+bpm-modeler move-helper > *{
+    position: absolute;
+    display: inline-block;
+}
+bpm-modeler move-helper .bpm-move:hover{
+    background: rgba(216, 213, 213, 0.25);
+    cursor: pointer;
+}
+bpm-modeler move-helper .bpm-move:after{
+    content: ' ';
+    width: 0;
+    height: 0;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+    border-top: 24px solid transparent;
+    border-bottom: 24px solid transparent;
+    position: absolute;
+    visibility: hidden;
+}
+bpm-modeler move-helper .bpm-move:hover:after{
+    visibility: visible;
+}
+bpm-modeler move-helper move-top{
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 32px;
+}
+bpm-modeler move-helper move-top.bpm-move:after{
+    border-top: none;
+    border-bottom: 24px solid rgba(38, 93, 149, 0.5);
+    left: calc(50% - 24px);
+}
+bpm-modeler move-helper move-left{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 32px;
+}
+bpm-modeler move-helper move-left.bpm-move:after{
+    border-left: none;
+    border-right: 24px solid rgba(38, 93, 149, 0.5);
+    top: calc(50% - 24px);
+}
+bpm-modeler move-helper move-right{
+    top: 0;
+    bottom: 0;
+    right: 0px;
+    width: 32px;
+}
+bpm-modeler move-helper move-right.bpm-move:after{
+    border-right: none;
+    border-left: 24px solid rgba(38, 93, 149, 0.5);
+    top: calc(50% - 24px);
+}
+bpm-modeler move-helper move-bottom{
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    height: 32px;
+}
+bpm-modeler move-helper move-bottom.bpm-move:after{
+    border-bottom: none;
+    border-top: 24px solid rgba(38, 93, 149, 0.5);
+    left: calc(50% - 24px);
+}
+/* TASK TYPES*/
+.bpm-StartEvent{
+    color: #69af19;
+}
+.bpm-IntermediateEvent{
+    color: #9ca613;
+}
+.bpm-EndEvent, .bpm-TerminateEvent{
+    color: #8d0204;
+}
+.bpm-ExclusiveGateway, .bpm-InclusiveGateway , .bpm-ParallelGateway , .bpm-ComplexGateway{
+    color: #9ca411;
+}
+.bpm-UserTask{
+    color: #265d95;
+}
+/* TOOLBAR*/
+toolbar{
+    background: #fafafa;
+    border: solid 1px #ccc;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+    width: 48px;
+    display: inline-block;
+    padding: 10px 5px 10px 2px;
+}
+toolbar item{
+    margin: 10px 0;
+    font-size: 36px;
+    display: inline-block;
+    border: solid 1px transparent;
+    cursor: move;
+    cursor: -webkit-grab;
+}
+toolbar item:hover{
+    border: solid 1px #ccc;
+    border-radius: 2px;
+}
+/* DRAWING */
+drawing{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: "Open Sans","Helvetica Neue",Arial,Helvetica,sans-serif;
+}
+/* DRAWING ITEMS*/
+drawing item {
+    position: absolute;
+    font-size: 40px;
+    border: 1px dashed transparent;
+    width: 32px;
+    height: 32px;
+    cursor: move;
+}
+drawing item:before {
+    border: 1px dashed transparent !important;
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+    top: -6px;
+    left: -6px;
+}
+drawing item.active:before {
+    border: 1px dashed #265d95 !important;
+}
+drawing item:hover:before {
+    border: 1px dashed rgb(255, 186, 186) !important;
+}
+drawing item.dragging-arrow{
+    box-shadow: green 0px 0px 15px -1px;
+}
+drawing item label{
+    color: #333333;
+    position: relative;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+    cursor: move;
+}
+/* NORMAL TASKS*/
+drawing item.bpm-UserTask{
+    color: #265d95;
+    border: 2px solid #265d95;
+    border-radius: 9px;
+    width: 120px;
+    max-width: 200px;
+    height: 70px;
+    background-color: #F0F0FF;
+}
+drawing item.bpm-UserTask label{
+    position: absolute;
+    top: calc(30% - 8px);
+    text-align: center;
+    width: calc(100% - 20px);
+    margin: 0px 10px;
+    cursor: pointer;
+    line-height: 1.2;
+    word-wrap: break-word;
+}
+drawing item.bpm-UserTask duration{
+    color: #265d95;
+    position: absolute;
+    display: block;
+    font-size: 12px;
+    cursor: move;
+    top: calc(80% - 8px);
+    text-align: center;
+    width: calc(100% - 20px);
+    margin: 0px 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+drawing item.bpm-UserTask duration:after{
+    content: 'h';
+}
+drawing item.bpm-UserTask input{
+    position: absolute;
+    text-align: center;
+    width: calc(100% - 20px);
+    margin: 0px 10px;
+    font-size: 13.3333px;
+    line-height: normal;
+    min-height: 15px;
+    padding: 0;
+}
+drawing item.bpm-UserTask input[type=text]{
+    top: calc(30% - 8px);
+}
+drawing item.bpm-UserTask input[type=number]{
+    top: calc(80% - 8px);
+}
+
+/* EVENTS */
+drawing item.bpm-StartEvent, drawing item.bpm-IntermediateEvent,  drawing item.bpm-EndEvent,  drawing item.bpm-TerminateEvent{
+    border-radius: 50px;
+}
+drawing item.bpm-StartEvent{
+    border: 2px solid #61AA0E;
+    background-color: rgb(240, 255, 210);
+    border-radius: 50px;
+}
+drawing item.bpm-IntermediateEvent{
+    border: 2px solid #9ca613;
+    background-color: #FDFFE6;
+}
+drawing item.bpm-IntermediateEvent:after{
+    content: ' ';
+    border: 2px solid #9ca613;
+    background-color: #FDFFE6;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    border-radius: 50px;
+    top: 1px;
+    left: 1px;
+}
+drawing item.bpm-EndEvent, drawing item.bpm-TerminateEvent{
+    border: 3px solid #8D0204;
+    background-color: #F9EAEA;
+}
+drawing item.bpm-TerminateEvent:after{
+    content: ' ';
+    border-radius: 50px;
+    width: 24px;
+    height: 24px;
+    top: 4px;
+    left: 4px;
+    position: absolute;
+    background-color: #8D0204;
+}
+
+/* GATEWAYS*/
+drawing item.bpm-ExclusiveGateway, drawing item.bpm-InclusiveGateway, drawing item.bpm-ParallelGateway,  drawing item.bpm-ComplexGateway{
+    /*border: 2px solid #A2AC20;
+    background-color: #FDFFE6;
+    border-radius: 0;
+    transform: rotate(45deg) scale(0.8);*/
+    border-radius: 0;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    border: 2px solid transparent;
+}
+drawing item gateway-helper  { /* This only applies to gateways*/
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    font-size: 58px;
+    transform: rotate(45deg) scale(0.74);
+    background-color: #FDFFE6 !important;
+    border: 2px solid #A2AC20 !important;
+    width: 32px;
+    height: 32px;
+    line-height: 29px;
+}
+drawing item gateway-helper:after{
+    position: absolute;
+}
+drawing item.bpm-ExclusiveGateway gateway-helper:after{
+    content: '+';
+}
+drawing item.bpm-ParallelGateway gateway-helper:after{
+    content: '+';
+    transform: rotate(-45deg) translateX(-1px);
+}
+drawing item.bpm-InclusiveGateway gateway-helper:after{
+    content: ' ';
+    border-radius: 50px;
+    border: 2px solid #A2AC20;
+    width: 22px;
+    height: 22px;
+    top: 3px;
+    left: 3px;
+}
+
+drawing item.bpm-ComplexGateway gateway-helper:after{
+    content: '*';
+    top: 10px;
+    font-family: monospace;
+    transform: rotate(-15deg);
+    left: 3px;
+}
+
+/* ARROWS */
+path{
+    cursor: pointer;
+    z-index: 0;
+    stroke: #808080;
+    stroke-width: 1.2px;
+}
+path:hover{
+    /*stroke: rgb(255, 50, 50);*/
+    stroke-dasharray: 5;
+        /*stroke-width: 1px;*/
+}
+drawing connector.bpm-boolean svg path{
+    /*stroke: #265d95;*/
+    stroke-width: 2px;
+}
+drawing connector.bpm-else svg path{
+    /*stroke: #265d95;*/
+    stroke-width: 2px;
+}
+drawing connector.bpm-missing svg path{
+    stroke: #f44336;
+    stroke-width: 1px;
+}
+drawing connector connector-label{
+    background-color: white;
+    font-family: monospace;
+    font-size: 12px;
+    color: #265d95;
+    border: 1px solid gray;
+    padding: 1px 4px;
+    margin-left: -8px;
+    cursor: pointer;
+}
+drawing connector:hover connector-label{
+    border-style: dashed;
+}
+/* AURA */
+drawing aura{
+    position: absolute;
+    display: block;
+    max-width: 30px;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px dotted gray;
+}
+drawing aura.bpm-aura-for-arrow special-options.bpm-show-rule-option{
+    width: 90px;
+}
+drawing aura aura-option{
+    display: inline-block;
+    font-size: 24px;
+    padding: 0;
+    cursor: move;
+    cursor: -webkit-grab;
+    margin: 2px 0 2px -1px;
+}
+drawing aura aura-option.bpm-option-arrow{
+    margin-left: -3px;
+    color: #444444;
+    cursor: move;
+    cursor: -webkit-grab;
+}
+drawing aura aura-option.bpm-option-arrow.ui-draggable-dragging:before{
+    content: ' ';
+}
+drawing aura aura-change-label{
+    color: #333333;
+    font-size: 14px;
+    display: block;
+    text-align: left;
+    cursor: pointer;
+    margin-top: 10px;
+}
+drawing aura aura-change{
+    display: none;
+}
+drawing aura aura-change.visible{
+    display: block;
+    position: absolute !important;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px dotted gray;
+    padding: 4px;
+    width: 56px;
+}
+drawing aura aura-change aura-change-to{
+    font-size: 24px;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 4px;
+    margin-right: 4px;
+}
+drawing aura aura-change aura-change-to:before{
+    margin: 0 !important;
+}
+drawing aura special-options {
+    position: absolute;
+    border-radius: 5px;
+    border: 1px dotted gray;
+    background-color: white;
+    padding: 2px 0px;
+}
+drawing aura special-options special-option {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    cursor: pointer;
+    display: inline-block;
+}
+drawing aura special-options special-option:before {
+    margin: 0 !important;
+}
+drawing aura special-option.bpm-option-delete{
+    color: gray;
+}
+drawing aura special-options special-option {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    cursor: pointer;
+    display: inline-block;
+}
+drawing aura special-option.bpm-option-delete:hover{
+    color: black;
+}
+drawing aura special-option.bpm-option-change{
+    font-size: 16px;
+    line-height: 20px;
+}
+drawing aura special-option.bpm-option-rule
+{
+    color: #A2AC20;
+    margin-top: -4px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+drawing aura .bpm-option-else
+{
+    color: gray;
+}
+drawing aura .bpm-option-expression
+{
+    color: #265d95;
+}
+drawing aura external-options{
+    position: absolute;
+    border-radius: 5px;
+    border: 1px dotted gray;
+    background-color: white;
+    padding: 4px;
+}
+drawing aura external-options external-option {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+drawing aura external-options external-option.bpm-form{
+    color: #3C9C16;
+}
+drawing aura external-options external-option.bpm-assignee{
+    color: #9CA512;
+}

@@ -1,0 +1,15 @@
+﻿<div ng-controller="collectionController">
+    <div ng-repeat="collection in collections" class="biz-theme-home-collection">
+        <h3 class="biz-theme-home-collection-title">{{collection.displayName}}</h3>
+        <div class="biz-theme-home-collection-items">
+            <div ng-repeat="item in collection.entities" ng-bind-html="item.html.list" ng-click="gotoSuggestion(item)" class="biz-theme-home-collection-item">
+            </div>
+            <div class="biz-theme-collection-empty" ng-if="collection.entities.length===0  && collection.state === 'loaded'">
+                <span class="biz-theme-collection-empty-message">you have no items</span>
+            </div>
+            <div class="biz-theme-collection-empty" ng-if="collection.entities.length===0 && collection.state === 'loading'">
+                <span class="biz-theme-collection-empty-message">loading . . .</span>
+            </div>
+        </div>
+    </div>
+</div>

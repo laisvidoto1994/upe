@@ -1,0 +1,516 @@
+﻿#bz-wp-widget-admin-adhoc-process-renderform .bz-wp-table-head-wrapper
+{
+    position: relative;
+    cursor: pointer;
+}
+
+#bz-wp-widget-admin-adhoc-process-renderform
+{
+    display: none;
+    height: 92%;
+}
+
+#bz-wp-widget-admin-adhoc-process-renderform .ui-bizagi-container-form
+{
+    padding: 0 20px;
+}
+
+#bz-wp-widget-admin-adhocprocess-createbutton-wrapper
+{
+    text-align: center;
+    margin: 2px 0;
+}
+
+#biz-wp-admin-adhoc-processes-wrapperform {
+    width: 765px;
+    margin: 0 auto;
+}
+
+#biz-wp-admin-adhoc-processes-wrapperform,
+#biz-wp-admin-adhoc-processes-wrapperform .biz-wp-form {
+    padding: 0;
+}
+
+div.biz-wp-form-row:first-child h3 {
+    margin-top: 0;
+}
+
+#biz-wp-admin-adhoc-processes-wrapperform .biz-wp-form-column {
+    width: 330px;
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: top;
+}
+
+#biz-wp-admin-adhoc-processes-wrapperform .biz-wp-form-column .biz-wp-form-row {
+    margin-bottom: 4px;
+}
+
+#biz-wp-admin-adhoc-processes-wrapperform .biz-wp-form-column .biz-wp-form-row > .biz-wp-form-cell:first-child {
+    width: 70px;
+    min-width: 0;
+}
+
+#biz-wp-admin-adhoc-processes-wrapperform #admin-adhoc-processes-table-buttonset {
+    margin-bottom: 20px;
+}
+
+.bizagi-wp-admin-adhoc-processes-link {
+    color: #262D33;
+}
+
+/*********** Create Adhoc Process Popup **************/
+#adhoc-process-popup-wrapper .ui-rubik-input {
+    margin: 4px 0px 4px 0px;
+}
+
+#adhoc-process-popup-wrapper .ui-bizagi-input-required {
+    background-color: red;
+    line-height: normal;
+    -webkit-border-radius: 2px 0px 0px 2px;
+    border-radius: 2px 0px 0px 2px;
+    z-index: 1;
+    display: inline-block;
+    height: 28px;
+    vertical-align: top;
+    width: 3px;
+    position: relative;
+    left: 1px;
+    top: 34px;
+}
+
+#adhoc-process-popup-wrapper .position-message-validate {
+    position: absolute;
+}
+
+#adhoc-process-popup-wrapper table tr {
+    height: 55px;
+}
+
+#adhoc-process-authorization-item-popup-wrapper .ui-bizagi-wp-project-popupform-actions,
+#adhoc-process-assignations-popup-wrapper .ui-bizagi-wp-project-popupform-actions,
+#adhoc-process-boolean-expression-wrapper .ui-bizagi-wp-project-popupform-actions,
+#adhoc-process-popup-wrapper .ui-bizagi-wp-project-popupform-actions {
+    text-align: right;
+    padding-top: 1em;
+}
+
+#adhoc-process-authorization-item-popup-wrapper form .first-column,
+#adhoc-process-assignations-popup-wrapper form .first-column,
+#adhoc-process-popup-wrapper form .first-column {
+    padding-right: 8px;
+    text-align: right;
+    width: 89px;
+}
+
+#adhoc-process-authorization-item-popup-wrapper table,
+#adhoc-process-assignations-popup-wrapper table,
+#adhoc-process-popup-wrapper table {
+    width: 100%;
+}
+
+#adhoc-process-popup-wrapper .position-message-validate>span {
+	color: #F50E0E;
+    font-weight: bold;
+}
+
+#adhoc-process-popup-wrapper textarea.ui-rubik-input {
+    resize: none;
+}
+
+#adhoc-process-popup-wrapper .ui-rubik-input {
+    background: #FAFAFA !important;
+    border-color: #DDD !important;
+    border-radius: 4px !important;
+    box-sizing: border-box;
+    color: #374C58;
+    font-size: 12px;
+    min-height: 32px !important;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 4px;
+}
+
+/***************** Adhoc Process Tasks ******************/
+
+.adhoc-process-content-wrapper {
+	width: 100%;
+    height: 100%;
+}
+
+#adhoc-process-tasks-wrapper {
+
+    position: relative;
+    height: 100%;
+}
+
+.ui-bizagi-wp-adhoc-process-tasks-header {
+    padding: 0 0 20px;
+    position: relative;
+    /*min-height: 80px;*/
+}
+
+.ui-bizagi-wp-adhoc-process-subtitle-container {
+    position: relative;
+}
+
+.ui-bizagi-wp-adhoc-process-subtitle-container>div {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    text-align: center;
+    cursor: pointer;
+} 
+
+.ui-bizagi-wp-adhoc-process-subtitle-container>div>i {
+    display:block;    
+} 
+
+.ui-bizagi-wp-adhoc-process-subtitle-container>div>span {    
+    font-weight: bold;
+}   
+
+#adhoc-process-tasks-wrapper h2,
+.ui-bizagi-wp-adhoc-process-tasks-header h2 {
+    margin: 0;
+}
+
+.ui-bizagi-wp-adhoc-process-tasks-header p {
+    line-height: 2.5em;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.ui-bizagi-wp-adhoc-process-tasks-header h3 {
+    padding: 0;
+    margin: 0 0 15px;
+}
+
+.ui-bizagi-wp-adhoc-process-tasks-header .adhoc-process-tasks-action-button {
+    position: absolute;
+    top: 2px;
+    right: 0;
+}
+
+
+.ui-bizagi-wp-adhoc-process-tasks-header .adhoc-process-tasks-action-button>a>span {
+    vertical-align: middle;
+}
+
+/*.adhoc-process-tasks-action-button>a {
+	display: none;
+}*/
+
+.adhoc-process-task-list {
+    position: relative;
+    padding: 0;
+    margin: 15px 0;
+    list-style-position: inside;
+    height: calc(100% - 150px);
+    height: ~"calc(100% - 150px)";
+    border: 1px solid #DDD;
+    background-color: white;
+}
+
+.adhoc-process-task-list li {
+    padding: 2em;
+    border-bottom: 1px solid #DDD;
+	position: relative;
+    margin-left: 25px;
+    margin-right: 15px;
+}
+
+.adhoc-process-task-list li:not(.disabled) {
+    cursor: move;
+}
+
+.adhoc-process-task-list li:only-child,
+.adhoc-process-task-list li:last-child {
+    border-bottom: none;
+
+}
+
+.adhoc-process-task-list .enabled {
+    cursor: pointer;
+}
+
+.adhoc-process-task-list > li.selected {
+    background-color: rgb(223, 227, 229);
+}
+
+.adhoc-process-task-list > li:hover {
+    background-color: rgb(223, 227, 229);
+	cursor: default;
+}
+
+/*.adhoc-process-task-list .item-edit-button {
+    display: none;
+	position: absolute;    
+    top: 12px;
+    left: calc(50% - 66px);
+    background-color: #F5F5F5;
+    cursor:pointer;
+    padding: 5px 3px 0 3px;
+    border: 1px solid #C6CACC;
+}*/
+
+.adhoc-process-task-list .item-workonit-button {
+    top: 39px;
+    background-color: #006c5f;
+    border: 1px solid #006c5f;
+    color: #fff;
+}
+
+.adhoc-process-task-list .item-workonit-button:hover{
+    cursor: pointer;
+}
+
+.adhoc-process-task-list .item-edit-button>i {
+	display: inline;
+    padding: 0 4px;
+    cursor:pointer;
+}
+
+.adhoc-process-task-list .item-edit-button>i:hover {
+	cursor: pointer;
+    color: #0B8BCB;
+}
+.adhoc-process-task-list .item-workonit-button>i:hover {
+    color: #eee;
+}
+
+.adhoc-process-task-list > li.selected .item-edit-button {
+    display: inline-block;
+}
+
+.adhoc-process-task-list > li:hover .item-edit-button {
+    display: inline-block;
+}
+
+.adhoc-process-task-list li p {
+    margin: 0;
+	display: inline-block;
+}
+
+.adhoc-process-task-list li p span {
+    vertical-align: middle;
+}
+
+.biz-wp-position-relative{
+    position: relative;
+}
+
+#adhoc-process-tasks-wrapper .ui-bizagi-wrapper-parallel-icon{
+    float: left;
+    height: 22px;
+    left: -24px;
+    position: absolute;
+    top: 22px;
+    width: 25px;
+}
+
+.adhoc-process-modeler-actions {
+    position:absolute;
+    left: 20px;
+    bottom: 30px;
+}
+
+
+/* MODELER CONTAINER**/
+
+#bz-wp-widget-admin-adhoc-process-form-modeler {
+    display: none;
+    overflow: auto;
+    height: calc(100% - 50px);
+    height: ~"calc(100% - 50px)";    
+}
+
+
+/* Boolean Expression Editor Popup */
+
+#adhoc-process-boolean-expression-wrapper .title-container {
+    margin-bottom: 10px;
+}
+
+#adhoc-process-boolean-expression-wrapper .title-container .title {
+    display: inline-block;
+    color: #558c17;
+    font-size: 2rem;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+#adhoc-process-boolean-expression-wrapper .title-container select{
+    display: inline-block;
+    vertical-align: middle;
+    height: 22px;
+    margin: 0 10px 0 10px;
+}
+
+#adhoc-process-boolean-expression-wrapper .title-container span {
+    display: inline-block;
+    color: gray;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+#adhoc-process-assignations-popup-wrapper .biz-wp-form-column,
+#adhoc-process-boolean-expression-wrapper .biz-wp-form-column {    
+    min-width: 215px;
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: top;
+}
+
+#adhoc-process-boolean-expression-wrapper .biz-wp-form-column.dynamic {
+    min-width: 80px !important;
+}
+
+/*#adhoc-process-assignations-popup-wrapper .biz-wp-form-column .biz-wp-form-row > .biz-wp-form-cell:first-child,
+#adhoc-process-boolean-expression-wrapper .biz-wp-form-column .biz-wp-form-row > .biz-wp-form-cell:first-child {
+    width: 50px;
+    min-width: 0;
+}*/
+
+#adhoc-process-boolean-expression-wrapper .biz-wp-form-column .biz-wp-form-row > .biz-wp-form-cell.combo {
+    width: 100px;
+    min-width: 0;
+}
+
+#adhoc-process-boolean-expression-wrapper .biz-wp-form {
+    padding: 0;
+}
+#adhoc-process-boolean-expression-wrapper .fields-container {
+    margin-bottom: 20px;
+}
+
+#adhoc-process-boolean-expression-wrapper .fields-container .ui-select-dropdown{
+    position: fixed;
+    top: auto;
+    left: auto;
+}
+
+#adhoc-process-assignations-popup-wrapper .biz-wp-form-column {
+    width: 100%;
+}
+
+.ui-autocomplete {
+    z-index: 9999999999999999999999999;
+}
+
+/*****************************************************************/
+
+/**********PROCESS MODELER STYLES OVERWRITE*/
+.adhoc-process-task-list .djs-palette-entries div[data-group="data-object"],
+.adhoc-process-task-list .djs-palette-entries div[data-group="data-store"],
+.adhoc-process-task-list .djs-palette-entries div[data-group="collaboration"],
+.adhoc-process-task-list .djs-palette-entries div[data-group="activity"]>div[data-action="create.subprocess-expanded"]
+{
+    display: none;
+}
+
+/***************SPINNER PLUGIN OVERWRITE*************************/
+
+.adhoc-process-task-list .duration-control {
+    width: 50px;
+}
+.adhoc-process-task-list .duration-control>span {
+    font-weight: bold;
+}
+.adhoc-process-task-list .duration-control input {
+    width: 100%;
+}
+
+.adhoc-process-task-list .ui-spinner-button {
+    width: 16px;
+    height: 50%;
+    font-size: .5em;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    position: absolute;
+    cursor: default;
+    display: block;
+    overflow: hidden;
+    right: 0;
+}
+
+#adhoc-process-authorization-popup-wrapper .auth-panel {
+    border: 1px solid #C3C3C3;
+    background: #FFF;
+    padding: 10px;
+    max-height: 285px;
+    overflow: auto;
+}
+
+#adhoc-process-authorization-popup-wrapper .bz-icon-stakeholders-outline {
+    color: #687785 !important;
+}
+
+#adhoc-process-authorization-item-popup-wrapper form .separator-column h2 {
+    width:100%; 
+    text-align:center; 
+    border-bottom: 1px solid #006c5f; 
+    line-height:0.1em; 
+    font-size: 2em;
+    margin: 30px 0;
+}
+
+#adhoc-process-authorization-item-popup-wrapper form .separator-column h2 span {
+    background:#f5f5f5; 
+    padding:0 10px;
+}
+
+#adhoc-process-authorization-item-popup-wrapper form #userGroupName {
+    font-size: 14px;
+    background-color: #006c5f;
+    color: white;
+    border-radius: 25px;
+    padding: 0 10px;
+    display: none;
+}
+
+#adhoc-process-authorization-item-popup-wrapper form #groupEditorLink {
+    margin-left: 10px;
+    text-decoration: underline;
+}
+
+#adhoc-process-authorization-popup-wrapper .assigment-type-panel {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1d0px;
+}
+
+#adhoc-process-authorization-popup-wrapper #byload {    
+    margin-left: 20px;
+}
+
+#adhoc-process-popup-wrapper .case-number-panel {
+    border: 1px solid #cdcdcd;
+    padding: 10px;
+}
+
+#adhoc-process-popup-wrapper .case-number-panel .column {
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+}
+
+#adhoc-process-popup-wrapper .case-number-panel .column label {
+    padding-right: 10px;
+    color: #687785;
+}
+
+#adhoc-process-popup-wrapper .case-number-panel .column input {
+    display: inline;
+    width: 150px;
+}
+
+#adhoc-process-popup-wrapper .case-number-panel .column.separator {
+    padding: 0 20px;
+    font-size: 20px;
+}   
+
+#adhoc-process-popup-wrapper .case-number-panel .position-message-validate {
+    position: relative;
+}

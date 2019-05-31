@@ -1,0 +1,65 @@
+    <script id="ribbon-layout" type="text/x-jquery-tmpl">
+        <div class="ribbon-layout"></div>
+    </script>
+
+    <script id="ribbon-tab" type="text/x-jquery-tmpl">
+        <div class="ribbon-tab">
+            <div id="tabs"></div>
+        </div>
+    </script>
+
+    <script id="ribbon-group" type="text/x-jquery-tmpl">
+        <ul class="ribbon-group biz-border-group"></ul>
+    </script>
+
+    <script id="ribbon-group-caption" type="text/x-jquery-tmpl">
+        <li class="ribbon-group-caption biz-text-color-group">${caption}</li>
+    </script>
+
+    <script id="ribbon-button" type="text/x-jquery-tmpl">
+        <li class="ribbon-group-col"></li>
+    </script>
+
+    <script id="ribbon-button-horizontal" type="text/x-jquery-tmpl">
+        <div class="{{if disabled}}biz-btn-disabled {{/if}}biz-btn-horizontal {{if checked}}biz-btn-checked{{/if}} {{if isButton}}biz-btn-button{{/if}}" title="${tooltip}">
+            <div class="biz-btn" data-guid="${guid}">
+                <i class="biz-ico ribbon-ico-${style} ${css}"></i> ${caption}
+            </div>
+        </div>
+    </script>
+
+    <script id="contextmenu-button-horizontal-item" type="text/x-jquery-tmpl">
+        <div class="biz-btn-horizontal " title="${tooltip}">
+            <div class="biz-btn" data-guid="${guid}">
+                <i class="biz-ico ribbon-ico-${style} ${css}"></i>
+                <span class="biz-btn-caption">${caption}</span>
+                {{if selected}}
+                <i class="biz-ico ui-comboBox-image-small-check bz-studio bz-point_16x16_standard"></i>
+                {{else}}
+                <i class="biz-ico ui-comboBox-image-small-uncheck bz-studio bz-black bz-point_16x16_black"></i>
+                {{/if}}
+            </div>
+        </div>
+    </script>
+
+    <script id="ribbon-button-vertical" type="text/x-jquery-tmpl">
+        <div class="{{if disabled}}biz-btn-disabled{{/if}} biz-btn-vertical {{if checked}} biz-btn-checked {{/if}}" title="${tooltip}">
+            <div class="biz-btn" data-guid="${guid}">
+                <i class="biz-ico-32 ${css}"></i>
+                <h3 class="biz-btn-label">${caption}</h3>
+            </div>
+        </div>
+    </script>
+
+    <script id="ribbon-button-with-items" type="text/x-jquery-tmpl">
+        <div class="{{if disabled}}biz-btn-disabled{{/if}} biz-btn-horizontal is-active">
+            <div class="biz-btn" data-guid="${guid}">
+                <i class="biz-ico ribbon-ico-${style} ${css}"></i> ${caption} <i class="biz-btn-caret"></i>
+            </div>
+            <ul class="biz-dropdown fade-in ${style}"></ul>
+        </div>
+    </script>
+
+    <script id="ribbon-button-subitem" type="text/x-jquery-tmpl">
+        <li class="biz-dropdown-section">${caption}</li>
+    </script>

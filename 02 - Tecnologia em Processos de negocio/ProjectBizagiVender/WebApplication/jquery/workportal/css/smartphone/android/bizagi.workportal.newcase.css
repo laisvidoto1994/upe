@@ -1,0 +1,232 @@
+/**********************************
+*  Filename: bizagi.workportal.newcase.css
+*  Create Date: 2012-06-27
+*  Author: oscar.osorio@bizagi.com
+* 
+*  ==STRUCTURE=====================
+*
+*  $__xxx 
+***********************************/
+
+.bz-wp-nc-container
+{
+	border-radius: 6px;
+
+}
+
+
+.bz-wp-nc-categories li .processIco.wait{
+    background-position: center center;
+    background-repeat: no-repeat;
+} 
+
+.arrow-nc
+{
+	background-position:-190px -55px;
+    text-indent:-9999px;
+    position:absolute;
+    right:5px;
+    top:50%;
+    margin-top:-10px;
+    font-weight: bold;
+}
+.processIco,.categoryIco{
+    position: absolute;
+    left: 15px;
+	width: 31px;
+	height: 31px;
+	top: 10px;
+}
+.categoryIco
+{background-position: -204px -54px;}
+.processIco
+{background-position: -150px -51px;
+ width:40px;}
+
+.bz-nc-item-arrow
+{
+	float: right;
+	top: 8px;
+	position: relative;
+}
+
+.bz-nc-item-arrow >span.bz-cm-icon
+{
+	background-position: -332px -95px;
+}
+
+
+.bz-wp-nc-list-items >li
+{
+	border-bottom: 1px solid #C0C6CB;
+    padding: 5px 5px 5px 45px;
+    position: relative;
+    min-height: 40px;
+
+}
+
+.bz-wp-nc-list-items >li:nth-child(even){
+	
+}
+.bz-wp-nc-list-items >li .newCaseDescription
+{
+	font-weight: normal;
+	
+	color: #535b61;
+	font-size: 14px;
+	margin-left: 15px;
+}
+
+.bz-wp-nc-list-items >li:last-child
+{
+	border-bottom: 0;
+	border-radius: 0;
+}
+
+.bz-wp-nc-list-items
+{
+	list-style: none;
+}
+
+.bz-wp-nc-list-items >li  >h3
+{
+	font-size: 90%;
+	color: #6b7e87;
+	margin: 11px 0px;
+	font-weight: normal;
+
+	color: #535b61;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.bz-wp-nc-list-items >li:last-child{border-bottom:1px solid #cccccc;}
+
+
+
+#searchNewCase
+{
+	display:none;
+}
+
+.bz-wp-nc-content
+{
+margin: 0 -7px 0 -7px;	
+}
+
+.bz-wp-categoryTree
+{
+	vertical-align: middle;
+	list-style: none;
+	border-bottom: 1px solid #185891;
+    	padding-bottom: 10px;
+}
+
+.bz-wp-categoryTree >li
+{
+	list-style: none;
+	display: inline-block;
+	color: #185891;
+	font-size: 10px;
+	/*height: 100%;*/
+	vertical-align: bottom;
+	position: relative;
+    text-transform:uppercase;
+	font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.bz-wp-categoryTree >li:after
+{
+	
+	
+}
+
+.bz-wp-categoryTree >li:after, 
+.bz-wp-categoryTree >li:before {
+	left: 100%;
+border: solid transparent;
+content: " ";
+height: 0;
+width: 0;
+position: absolute;
+pointer-events: none;
+}
+
+.bz-wp-categoryTree >li:after {
+	border-left-color: #f2f2f2;
+	border-width: 4px;
+	top: 50%;
+	margin-top: 4px;
+	margin-left: 8px;
+}
+.bz-wp-categoryTree >li:before {
+	border-left-color: #185891;
+	border-width: 5px;
+	top: 50%;
+	margin-top: 3px;
+	margin-left: 8px;
+}
+
+.bz-wp-categoryTree > li > span {
+position: relative;
+margin-left: 26px;
+top: 9px;
+}
+.bz-wp-categoryTree > li:first-child > span,
+.bz-wp-categoryTree > li:nth-child(2) > span
+{margin-left: 0;
+ }
+
+ .bz-wp-categoryTree >li:first-child:before,
+.bz-wp-categoryTree >li:first-child:after,
+ .bz-wp-categoryTree >li:last-child:before,
+.bz-wp-categoryTree >li:last-child:after
+{
+	border-width:0;
+	}
+
+.bz-wp-categoryTree >li:first-child
+{
+	/*width: 40px;
+	margin-right: 5px;
+	width: 10px;
+	margin-right: 0;
+	visibility: hidden;
+	*/
+	
+}
+.bz-wp-categoryTree >li:first-child >.bz-cm-icon
+{
+	background-position: -100px -49px;
+	position: relative;
+	display: block;
+	vertical-align: bottom;
+	left: 6px;
+}
+
+#modalNewCaseMessage{
+    display: none;    
+}
+#modalNewCaseMessage.show{        
+    display: inline;
+    position: fixed;
+    z-index: 1001;
+    width: 400px;
+    height: 150px;
+   
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+#modalNewCaseMessage #case{
+    color: #2F526C;
+    font-size: 22.5px;
+    font-weight: normal;
+    text-align: center;
+}
+#modalNewCaseMessage #loading
+{
+	position:relative;
+	top:5px;
+    height: 50px;
+}

@@ -1,0 +1,9 @@
+﻿<div ng-controller="userController">
+    <h1 class="biz-theme-home-user-name">{{user.userFullName}}</h1>
+
+    <h2 class="biz-theme-home-user-stakeholder">{{user.associatedStakeholderNames}}</h2>
+    <div class="biz-theme-home-user-picture">
+        <span ng-show="user.userPicture.length===0" class="biz-theme-home-user-initials">{{user.initials}}</span>
+        <img ng-hide="user.userPicture.length===0" class="biz-theme-home-user-picture-img" src="data:image/png;base64,{{user.userPicture}}" />
+    </div> 
+</div>

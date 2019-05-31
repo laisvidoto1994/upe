@@ -1,0 +1,223 @@
+{{css "jquery/workportal/css/desktop/bizagi.workportal.inbox.css"}}
+<script id="ui-bizagi-workportal-widget-inbox" type="text/x-jquery-tmpl">
+
+    <div id="contentFramework" >
+
+    <div id="contentInbox">
+        <div id="innerContentInbox">
+			{{if enableSmartFolders}}<span class="ui-bizagi-wp-mini-arrow smartfolders"></span>{{/if}}
+			{{tmpl "#ui-bizagi-workportal-widget-view-options"}}
+        </div>
+    </div>
+
+        <ul  class="container-fluid">
+            <li id="contentProc" class="bz-wp-sidebar-inbox proc" {{loading}} {{adjustable}}></li>
+            <li >
+                <ul class="bz-wp-content-detail-cases">
+                    <li id="contentCases" class="cases" {{loading}} {{adjustable}}></li>
+                    <li id="contentDesc" class="description" {{loading}} {{adjustable}}></li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+    <div id="footer">
+		{{tmpl "#ui-bizagi-workportal-widget-inbox-common-header"}}
+        {{tmpl "#ui-bizagi-workportal-widget-inbox-common-pagination-inbox"}}
+    </div>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-inbox-cases" type="text/x-jquery-tmpl">
+    <div id="ui-bizagi-wp-app-inbox-cases-container" class="bz-wp-wrapper">
+		{{if processName}}
+        <div class="ui-bizagi-wp-app-inbox-processes-title">
+            <div>${processName}</div>
+            {{if loadMore}}
+                <span id="caseLoadMore" class="loadMore"><span>%{workportal-widget-inbox-load-more}</span></span>
+            {{/if}}
+        </div>
+        {{/if}}
+        {{tmpl "#ui-bizagi-workportal-widget-inbox-cases-personalized-list"}}
+    </div>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-inbox-cases-list" type="text/x-jquery-tmpl">
+
+    {{each cases}}
+    <ul>
+        <li>
+            <div id="caseId">
+                {{if isActivityPlan }}
+                    <!--If(s) nested have problems... with negation-->
+                {{else}}
+                    {{if $value["IsFavorite"] == "true"}}
+                        <div id="ui-bizagi-wp-wg-bt-start-on" class="bz-icon bz-icon-star bz-icon-16 ui-bizagi-wp-app-inbox-cases-start on"></div>
+                    {{else}}
+                        <div id="ui-bizagi-wp-wg-bt-start-off" class="bz-icon bz-icon-star-outline bz-icon-16 ui-bizagi-wp-app-inbox-cases-start off"></div>
+                    {{/if}}
+                {{/if}}
+                <input type="hidden" id="isFavorite" value="${$value['IsFavorite']}" />
+                <input type="hidden" id="guidFavorite" value="${$value['guidFavorite']}" />
+                <h3 class="ui-bizagi-wp-app-inbox-cases-case">${$value["RadNumber"]}</h3>
+
+            </div>
+            <div id="caseActivity">
+                {{each CaseState}}
+                <span id="ui-bizagi-wp-app-inbox-cases-ico-state-${stateColor}" class="ui-bizagi-wp-app-inbox-cases-ico-state"></span>
+                <span id="ui-bizagi-wp-app-inbox-activity-name">${state}</span>
+                {{/each}}
+            </div>
+            <dl>
+                <dt>%{workportal-widget-inbox-creation-date}</dt>
+                <dd><span id="ui-bizagi-wp-app-inbox-cases-date" class="formatDate">${CreationDate}</span></dd>
+                <dt>%{workportal-widget-inbox-state-expires-on}</dt>
+                <dd><span id="ui-bizagi-wp-app-inbox-cases-date" class="formatDate">${$value["StateExpiresOn"]}</span></dd>
+            </dl>
+            <input type="hidden" id="idWorkflow" value="${$value['idWorkflow']}" />
+            <input type="hidden" id="idCase" value="${$value['CaseNumber']}" />
+            <input type="hidden" id="taskState" value="${$value['StateColor']}" />
+        </li>
+     </ul>
+    {{/each}}
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-inbox-cases-personalized-list" type="text/x-jquery-tmpl">
+    <ul>
+    {{each rows}}
+        <li>
+            <div id="caseId">
+                {{if isActivityPlan }}
+                <!--If(s) nested have problems... with negation-->
+                {{else}}
+                    {{if isFavorite == "true"}}
+                        <div id="ui-bizagi-wp-wg-bt-start-on" class="bz-icon bz-icon-star bz-icon-16 ui-bizagi-wp-app-inbox-cases-start on"></div>
+                    {{else}}
+                        <div id="ui-bizagi-wp-wg-bt-start-off" class="bz-icon bz-icon-star-outline bz-icon-16 ui-bizagi-wp-app-inbox-cases-start off"></div>
+                    {{/if}}
+                {{/if}}
+                {{if enableFolders}}
+                    <span class="ui-bizagi-inbox-folder inboxdetails" data-idcase="${id}"></span>
+                {{/if}}
+                <input type="hidden" id="isFavorite" value="${isFavorite}" />
+                <input type="hidden" id="guidFavorite" value="${guidFavorite}" />
+                {{if radnumber}}
+                    <h3 class="ui-bizagi-wp-app-inbox-cases-case">${radnumber}</h3>
+                {{/if}}
+            </div>
+               {{if workitems}}
+               {{if workitems && workitems.length==1}}
+
+                    {{each(h, pItem) workitems}}
+                        <i id="ui-bizagi-wp-app-inbox-cases-ico-state-${State}" {{if State}} class="bz-icon bz-icon-12 bz-icon-point" {{/if}}></i>
+                        <span id="ui-bizagi-wp-app-inbox-activity-name">${TaskName}</span>
+                    {{/each}}
+
+                {{/if}}{{/if}}
+            <dl>
+                {{each(i, item) fields}}
+
+                    {{if Value !== "" && (typeof (Value)!="object" || Value.length==1) }}
+                        <dt>${DisplayName}</dt>
+                        {{if DataType == "NText" || DataType == "VarChar"}}
+                            <dd{{if Value.length > 30}} class="longContent"{{/if}}>
+                                <div>
+                                    {{html bizagi.util.replaceLineBreak(Value)}}
+                                </div>
+                            </dd>
+                        {{else DataType == "Boolean"}}
+                            <dd>${$item.parent.formatBoolean(Value)}</dd>
+                        {{else (DataType == "Int" || DataType == "BigInt" || DataType == "SmallInt" || DataType == "TinyInt")}}
+                            <dd>${Value}</dd>
+                        {{else DataType == "Money"}}
+                            <dd>{{html bizagi.util.formatMonetaryCell(Value)}}</dd>
+                        {{else (DataType == "Float" || DataType == "Real")}}
+                            <dd>{{html bizagi.util.formatDecimalCell(Value)}}</dd>
+                        {{else DataType == "DateTime"}}
+                            <dd class="formatDate">${Value}</dd>
+                        {{else}}
+                            <dd>${Value}</dd>
+                        {{/if}}
+                    {{/if}}
+
+                {{/each}}
+            </dl>
+
+           {{if workitems}}
+           {{if workitems.length>1}}
+            <div id="caseActivity">
+
+                {{each(h, pItem) workitems}}
+                <div class="ui-bizagi-wp-app-inbox-activity-item">
+                    <span>
+                        <i id="ui-bizagi-wp-app-inbox-cases-ico-state-${State}" {{if State}} class="bz-icon bz-icon-12 bz-icon-point" {{/if}}></i>
+                    </span>
+                    <span id="ui-bizagi-wp-app-inbox-activity-name">${TaskName}</span>
+                    <dl>
+                        {{each(i, item) fields}}
+                            {{if typeof item == 'object'}}
+                                {{each(j, subItem) item}}
+                                    {{if length > 1}}
+                                         {{if j == 'Value'}}
+                                                {{if typeof subItem != 'object'}}
+
+                                                {{else}}
+                                                    {{each(k, subSubItem) subItem}}
+                                                        {{if k == h }}
+                                                            {{if subSubItem.length > 0}} <dt> {{html bizagi.util.replaceLineBreak(DisplayName)}}</dt>
+                                                                <dd{{if subSubItem.length > 30}} class="longContent"{{/if}}>
+                                                                    <div>
+                                          	                        {{if DataType == "DateTime" && subSubItem.length>0}}
+    	        				                                        <span id="ui-bizagi-wp-app-inbox-cases-date" {{if subSubItem}} class="formatDate"{{/if}}>${subSubItem || '&nbsp;'}</span>
+    		        			                                    {{else}}
+                                                                        {{if typeof item == 'Money'}}
+                                                                            {{html bizagi.util.formatMonetaryCell(subSubItem)}}
+                                                                            {{else}}
+    		    			                                                    {{if typeof subItem  == "Float" || typeof item  == "Real"}}
+                                                                                    {{html bizagi.util.formatDecimalCell(subSubItem)}}
+                                                                                {{else}}
+                                                                                    {{html bizagi.util.replaceLineBreak(subSubItem) }}
+                                                                                 {{/if}}
+                                                                          {{/if}}
+                                                                    {{/if}}
+                                                                    </div>
+                                                                </dd>
+                                                           {{/if}}
+                                                        {{/if}}
+                                                     {{/each}}
+                                                {{/if}}
+                                             {{/if}}
+                                        {{/if}}
+                                    {{/each}}
+                               {{/if}}
+                         {{/each}}
+                    </dl>
+                </div>
+                {{if workitems.length>1 && h<(workitems.length-1)}}<hr/>{{/if}}
+                {{/each}}
+
+            </div>
+            {{/if}}{{/if}}
+            <!-- this idworkflow is the real idworflow for the case and used for graphic query -->
+            <input type="hidden" id="idWorkflowGQ" value="${idWorkFlow}" />
+            <!-- this idworkflow is a WfClass not a idworkflow -->
+            <input type="hidden" id="idWorkflow" value="${idWorkflow}" />
+            <input type="hidden" id="idCase" value="${id}" />
+            <input type="hidden" id="taskState" value="${taskState}" />
+        </li>
+
+    {{/each}}
+</ul>
+</script>
+
+<script id="ui-bizagi-workportal-widget-view-options" type="text/x-jquery-tmpl">
+    <ul id="ui-bizagi-workportal-widget-view-options">
+        <li>
+           <i id="ui-bizagi-wp-app-inbox-bt-eye" class="bz-icon bz-icon-16 bz-icon-eye"></i>
+        </li>
+        <!--<li><span id="ui-bizagi-wp-app-inbox-bt-settings" class="ui-bizagi-wp-app-inbox-bt-settings"></span></li>-->
+    </ul>
+
+</script>

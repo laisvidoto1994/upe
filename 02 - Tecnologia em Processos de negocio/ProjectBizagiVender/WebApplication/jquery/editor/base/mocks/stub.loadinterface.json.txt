@@ -1,0 +1,16 @@
+﻿{
+    "actiontype": "LoadInterface",
+    "result": {
+        "success": true,
+        "parameters": [
+            {
+                "key": "id",
+                "value": "511ea8ae-2679-43f7-9e32-36338554bac0"
+            },
+            {
+                "key": "displayname",
+                "value": "cleanUpRuleCache()"
+            }
+        ]
+    }
+}

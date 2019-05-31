@@ -1,0 +1,11 @@
+﻿{{if showTime && rtl}}
+<input type="text" class="ui-bizagi-render-time" placeholder="${timeFormat}" />
+{{/if}}
+<span class="ui-bizagi-render-date-input">
+    <input type="text" class="ui-bizagi-render-date ui-bizagi-render-date-only" placeholder="${dateFormat}" />
+    <span class="ui-bizagi-wp-app-icon-date">
+    </span>
+</span>
+{{if showTime && !rtl}}
+<input type="text" class="ui-bizagi-render-time" placeholder="${timeFormat}" />
+{{/if}}

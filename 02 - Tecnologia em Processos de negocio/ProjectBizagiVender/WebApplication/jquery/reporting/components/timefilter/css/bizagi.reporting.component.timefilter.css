@@ -1,0 +1,105 @@
+﻿/* ==========================================================================
+   Time filter
+   ========================================================================== */
+
+.bizagi_reporting_component_timefilter {
+    float: left;
+    margin-right: 1em;
+}
+
+.bz-rp-filters-time-pickers {
+    padding: 0;
+    margin: 0;
+    color: #444;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 1em;
+}
+
+.bz-rp-filters-wrapper-time-date,
+.bz-rp-filters-wrapper-time-slider,
+.bz-rp-filters-time-buttons-container {
+    float: left;
+}
+
+.bz-rp-filters-wrapper-time-slider {
+    min-width: 18em;
+    margin-right: 1em;
+}
+
+.bz-rp-filters-wrapper-time-slider > label,
+.bz-rp-filters-time-buttons-container > label { visibility: hidden; }
+
+.bz-rp-filters-wrapper-time-slider,
+.bz-rp-filters-time-buttons-container { display: none; }
+
+@media only screen and (min-width: 1024px) {
+    .bz-rp-filters-wrapper-time-slider { display: block; }
+}
+
+@media only screen and (min-width: 1128px) {
+    .bz-rp-filters-time-buttons-container { display: block; }
+}
+
+.bz-rp-filters-time-date {
+    float: left;
+    margin-right: 1em;
+}
+
+input.bz-rp-filters-time-input {
+    -webkit-appearance: none;
+    box-shadow: inset 0 1px 6px 0 rgba(50, 50, 50, .2);
+    display: inline-block;
+    max-width: 7em;
+    max-height: 30px;
+    min-height: 30px;    
+    padding: .6em;
+    border: 1px solid #c6cacc;
+    border-bottom: 1px solid #e2e3df;    
+    border-color: #ddd #ddd;
+    border-radius: 4px;
+    margin: 0;
+    background: #fff;
+    font: 12px/normal normal Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #444;
+}
+
+.bz-rp-filters-time-buttons-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.bz-rp-filters-time-buttons-list-item {
+    float: left;
+    box-shadow: 0 1px #ddd;
+    max-height: 30px;
+    min-height: 30px;    
+    padding: .6em 1em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd #ddd #ddd transparent;
+    background: #fff;
+    font: 12px/normal normal Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #444;
+    cursor: pointer;
+}
+
+.bz-rp-filters-time-buttons-list-item:hover,
+.bz-rp-filters-time-buttons-list-item:active,
+.bz-rp-filters-time-buttons-list-item:focus {
+    border-color: transparent;
+    background: #293f55;
+    color: #fff;
+}
+
+.bz-rp-filters-time-buttons-list-item:first-child {
+    border-left-color: #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.bz-rp-filters-time-buttons-list-item:last-child { border-radius: 0 4px 4px 0; }
+
+#ui-datepicker-div
+{
+    z-index: 10 !important;    
+}

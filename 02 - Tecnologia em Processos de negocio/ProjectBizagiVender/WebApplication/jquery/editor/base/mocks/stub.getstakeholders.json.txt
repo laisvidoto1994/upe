@@ -1,0 +1,12 @@
+﻿{
+    "actiontype": "GetStakeHolders",
+    "result": {
+        "success": true,
+        "parameters": [
+            {
+                "key": "stakeholders",
+                "value": "[{\"displayName\":\"Doctor\",\"guid\":\"ed457995-5027-4b40-acc6-d7e523926165\"},{\"displayName\":\"Patient\",\"guid\":\"74487805-3b6b-4277-9f98-8f0f7f690afe\"}]"
+            }
+        ]
+    }
+}

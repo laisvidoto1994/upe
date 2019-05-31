@@ -1,0 +1,171 @@
+﻿<script id="bz-rp-component-detaillist-main" type="text/x-jquery-tmpl">
+<div>
+    <div id="bz-rp-detaillist-mainframe">
+        <div id="bz-rp-detaillist-container" {{loading}}>
+
+        </div>      
+    </div>
+    <div id="bz-rp-detaillist-auxframe">
+        <div id="bz-rp-detaillist-backcontainer">
+            <button class="bz-rp-detaillist-return bz-rp-button">              
+                <span>%{render-form-button-back}</span>
+            </button>
+        </div>     
+        <div id="bz-rp-detaillist-casesearch">
+        </div>
+    </div>
+</div>
+</script>
+<script id="bz-rp-component-detaillist-content" type="text/x-jquery-tmpl">
+<div class="bz-rp-detaillist-content-wrapper">    
+    {{if summary.rows.length}}
+        <div id="bz-rp-detaillist-summarycnt">
+            {{tmpl(summary, {device: $item.device}) "#bz-rp-component-detaillist-summary"}}
+        </div>
+        <div id="bz-rp-detaillist-pagercnt">
+            {{tmpl(pager) "#bz-rp-component-detaillist-pager"}}
+        </div>
+        <div id="bz-rp-detaillist-excel">
+            <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-export-excel bz-rp-exportdtl-excel"></i> 
+        </div>
+    {{else}}
+        <div>
+            %{bz-rp-nodata}
+        </div>
+    {{/if}}
+</div>
+</script>
+<script id="bz-rp-component-detaillist-summary" type="text/x-jquery-tmpl">
+    <table class="bz-rp-summary">
+        <thead>
+            <tr>
+                {{each(i, val) headers}}
+                {{if val.name === "GRAPHICQUERY"}}
+                ${$item.graph = i, ""}
+                {{if $item.device === "desktop"}}
+                <th>%{workportal-widget-admincasesearch-table-view}</th>
+                {{/if}}
+                {{else val.name === "IDCASE"}}
+                ${$item.idcase = i, ""}
+                {{else val.name === "ADMINCASE"}}
+                ${$item.admin = i, ""}
+                {{if $item.device === "desktop"}}
+                <th>%{workportal-menu-admin}</th>
+                {{/if}}
+                {{else}}
+                {{if val.name === "RADNUMBER"}}
+                ${$item.radnumber = i, ""}
+                {{else val.name === "CurrentTask"}}
+                ${$item.workitem = i, ""}
+                {{/if}}
+                <th>${val.caption}</th>
+                {{/if}} 
+                {{/each}}
+            </tr>
+        </thead>
+        <tbody>
+            {{each rows}}
+            <tr {{if $item.idcase !== "undefined"}} data-case="${cells[$item.idcase][0]}" {{/if}}>
+                {{each(i, val) cells}}
+                                                   
+                {{if $item.radnumber === i}}
+                <td>
+                    <span class="bz-rp-detaillist-summary-opencase">${val[0]}</span>
+                </td>
+                {{else $item.graph === i }}
+                {{if $item.device === "desktop"}}
+                <td>
+                    <span class="bz-rp-detaillist-summary-viewcell" data-action="${val[0]}"> 
+                        <i class="bz-rp-icon bz-rp-icon-24 bz-rp-process-viewer"></i>
+                    </span>                    
+                </td>
+                {{/if}}
+                {{else $item.admin === i }}
+                {{if $item.device === "desktop"}}
+                <td>                    
+                    <span class="bz-rp-detaillist-summary-admincell" data-action="${val}" data-radnumber="${cells[$item.radnumber][0]}">
+                        <i class="bz-rp-icon bz-rp-icon-24 bz-rp-administration"></i>
+                    </span>                    
+                </td>
+                {{/if}}
+                {{else $item.workitem === i }}
+                <td>
+                    {{each(x, subval) val}}
+                    <div data-workitem="${subval.idWorkitem}" >
+                        {{if subval.value === "" }}
+
+                        {{else $item.workitem === i}} 
+                        <span class="bz-rp-detaillist-summary-opencase">${subval.value}</span>
+                        {{else}}
+                        ${subval.value}
+                        {{/if}}
+                    </div>
+                    {{/each}}
+                </td>
+                {{else $item.idcase !== i}}
+                <td>
+                    <ul>
+                        {{each(x,subval) val}}
+                        <li>
+                            {{if subval.constructor === Object}}
+                            <div data-workitem="${subval.idWorkitem}" >
+                                {{if subval.value === "" }}
+
+                                {{else $item.workitem === i}} 
+                                <span class="bz-rp-detaillist-summary-opencase">${subval.value}</span>
+                                {{else}}
+                                ${subval.value}
+                                {{/if}}
+                            </div>
+                            {{else}}
+                            <span>
+                                <!--This template load from different scopes (load first time, change page)-->
+                                {{if $item.formatValue === undefined }}
+                                    ${$item.parent.formatValue(val[x], $item.data.headers[i])}
+                                {{else}}
+                                    ${$item.formatValue(val[x], $item.data.headers[i])}
+                                {{/if}}
+                            </span>
+                            {{/if}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                </td>
+                {{/if}}
+
+                {{/each}}
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+</script>
+<script id="bz-rp-component-detaillist-pager" type="text/x-jquery-tmpl">
+<ul class="cf bz-rp-detaillist-pagination">
+    {{if  total > 10 && page > 10}}
+        <li class="bz-rp-detaillist-pagination-firstpage">
+            <span>&lt;&lt;</span>
+        </li>
+        <li class="bz-rp-detaillist-pagination-prevpage">
+            <span>&lt</span>
+        </li>
+    {{/if}}
+    {{each(i, val) pages}}
+        <li class="bz-rp-detaillist-pagintation-page {{if page === val}} bz-rp-detaillist-pagination-active {{/if}}" data-page="${val}">
+            <span>
+                ${val}
+            </span>
+        </li>
+    {{/each}}
+    {{if total > 10 && (total - 10) >= page }}
+        <li class="bz-rp-detaillist-pagination-nextpage">
+            <span>&gt</span>
+        </li>
+        <li class="bz-rp-detaillist-pagination-lastpage">
+            <span>&gt;&gt;</span>
+        </li>
+    {{/if}}
+</ul>
+</script>
+<script id="bz-rp-components-detaillist-container" type="text/x-jquery-tmpl">
+    <div id="bz-rp-components-detaillist-container"></div>
+</script>

@@ -1,0 +1,15 @@
+/********
+* Filename: bizagi.editor.component.editor.lstring.css
+* Create Date: 2012-03-26
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__lstring-editor
+*
+********/
+
+/* __lstring-editor
+--------*/
+
+.bizagi_editor_component_editor_lstring .prop-property { margin: 15px 0px 15px 0px; }
+
+.bizagi_editor_component_editor_lstring .prop-property-label { display: block; }

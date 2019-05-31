@@ -1,0 +1,14 @@
+<div class="ui-bizagi-form-group #if(!data.editable){# bz-bizagi-container-no-editable #}# #if (data.collapse){# collapsed #}#"
+     dir="#if (typeof data.orientation !== 'undefined'){ ##= data.orientation ##}else{#auto#}#" data-unique-id="#= data.uniqueId #">
+    <div class="headertitle">
+        <div class="container-left">
+            <span class="bz-rn-hd-title">#= data.displayName #</span>
+        </div>
+        <div class="container-right">
+            <span class="bz-rn-expand bz-mo-icon bz-arrow-down"></span>
+        </div>
+    </div>
+    <div class="children-container">
+        {{children}}
+    </div>
+</div>

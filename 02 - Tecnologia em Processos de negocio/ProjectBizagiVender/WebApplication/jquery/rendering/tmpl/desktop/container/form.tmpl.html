@@ -1,0 +1,104 @@
+﻿﻿﻿<script id="ui-bizagi-render-form" type="text/x-jquery-tmpl">
+<div class="ui-bizagi-container ui-bizagi-container-form ui-widget-content {{if queryForm == true}}ui-bizagi-container-queryform{{/if}}" data-unique-id="${uniqueId}">
+    {{if queryForm == true && mode == "execution"}}
+    <div class="ui-bizagi-render-control-included-all-container">
+        <span>%{workportal-widget-query-form-check-all}</span>
+        <input type="checkbox" class="ui-bizagi-render-control-included-all" />
+    </div>
+    {{/if}}
+    {{children}}
+    {{if transitions}}
+        {{tmpl "#ui-bizagi-render-complexGateway"}}
+    {{/if}}
+	{{if (queryForm == false && buttons && buttons.length > 0) || (queryForm == false && mode != "execution")}}
+    <div class="ui-bizagi-button-container" align="center">
+        <div class="ui-bizagi-buttons-group">
+            {{each buttons}}
+            <input ordinal="${ordinal}" id="formButton${ordinal}" type="button" class="ui-bizagi-button ui-button-text {{if style }} ui-default-button {{/if}}" value="${caption}" data-guid="${guid}" data-id="${id}" style="${style}" />
+            {{/each}}
+            {{if mode == "design" || mode == "layout"}}
+            <span class="bz-fm-avoid-sort">
+                <button class="bz-fm-buttoneditor-add"/>
+            </span>
+            {{/if}}
+        </div>
+    </div>
+	{{/if}}
+</div>
+</script>
+
+﻿<script id="ui-bizagi-render-form-process-path" type="text/x-jquery-tmpl">
+     <div class="ui-bizagi-form-process-path box-description">
+        <p>${processPath}</p>
+     </div>
+</script>
+
+<script id="ui-bizagi-render-complexGateway" type="text/x-jquery-tmpl">
+    {{if orientation == 'rtl'}}
+    <div class="ui-bizagi-container-complexgateway ui-bizagi-container clearfix ui-bizagi-container-group ui-drop-shadow ui-lifted cssClassContainer">
+        <h3 class="ui-bizagi-container-group-header ui-helper-reset ui-state-active ui-corner-top  clearfix">
+            <span style="float: right; margin-top: 3px; left: -8px; position: relative" class="ui-icon ui-icon-circle-check"></span><a style="float: right; padding: 0em 1.2em .2em 2.2em" href="#">%{render-widget-complexgateway-title}</a>
+        </h3>
+        <div class="ui-bizagi-container-group-wrapper ui-widget-content" style="display: block;">
+            {{each transitions}}
+            <div style="float: right" class="ui-bizagi-render ui-corner-all ui-widget-content ui-bizagi-render-display-normal ">
+                <span style="width:50%; float: right" class="ui-bizagi-label ui-bizagi-render-align-left">
+                    <label style="text-align: right" class="ui-bizagi-render-align-left label">${displayName}</label>
+                </span>
+
+                <div style="width:50%; float: right" class="ui-bizagi-control ui-bizagi-render-align-left">
+                    <div style="text-align: right" class="ui-bizagi-render-align-leftui-bizagi-control-wrapper">
+                        <div class="ui-bizagi-render-control ui-bizagi-render-display-block ui-bizagi-render-boolean-yesno">
+                            <div class="ui-checkbox">
+                                {{if isDefault=="true"}}
+                                <label style="text-align: right" class="ui-checkbox-state-checked" for="check_complexgateway_${id}" data-checked="true" data-value="${id}"></label>
+                                {{else}}
+                                <label for="check_complexgateway_${id}" data-checked="false" data-value="${id}"></label>
+                                {{/if}}
+                            </div>
+                        </div>
+                        <div class="ui-bizagi-render-icons ui-widget-content ui-corner-all ui-hidden">
+                            <span title="" class="ui-icon ui-icon-help ui-bizagi-render-icon-help"></span>
+                            <span title="" class="ui-icon ui-icon-alert ui-bizagi-render-icon-error"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    {{else}}
+    <div class="ui-bizagi-container-complexgateway ui-bizagi-container clearfix ui-bizagi-container-group ui-drop-shadow ui-lifted cssClassContainer">
+        <h3 class="ui-bizagi-container-group-header ui-helper-reset ui-state-active ui-corner-top  clearfix">
+            <span class="ui-icon ui-icon-circle-check"></span><a href="#">%{render-widget-complexgateway-title}</a>
+        </h3>
+        <div class="ui-bizagi-container-group-wrapper ui-widget-content" style="display: block;">
+            {{each transitions}}
+            <div class="ui-bizagi-render ui-corner-all ui-widget-content ui-bizagi-render-display-normal ">
+                <span style="width:50%" class="ui-bizagi-label ui-bizagi-render-align-left">
+                    <label>${displayName}</label>
+                </span>
+
+                <div style="width:50%" class="ui-bizagi-control ui-bizagi-render-align-left">
+                    <div class="ui-bizagi-control-wrapper">
+                        <div class="ui-bizagi-render-control ui-bizagi-render-display-block ui-bizagi-render-boolean-yesno">
+                            <div class="ui-checkbox">
+                                {{if isDefault=="true"}}
+                                <label class="ui-checkbox-state-checked" for="check_complexgateway_${id}" data-checked="true" data-value="${id}"></label>
+                                {{else}}
+                                <label for="check_complexgateway_${id}" data-checked="false" data-value="${id}"></label>
+                                {{/if}}
+                            </div>
+                        </div>
+                        <div class="ui-bizagi-render-icons ui-widget-content ui-corner-all ui-hidden">
+                            <span title="" class="ui-icon ui-icon-help ui-bizagi-render-icon-help"></span>
+                            <span title="" class="ui-icon ui-icon-alert ui-bizagi-render-icon-error"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    {{/if}}
+</script>

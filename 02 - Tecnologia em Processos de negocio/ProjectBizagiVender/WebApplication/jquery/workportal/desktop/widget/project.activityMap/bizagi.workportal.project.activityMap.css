@@ -1,0 +1,15 @@
+/*
+    Document   : bizagi.workportal.project.activityMap
+    Created on : Mar 05, 2015
+    Author     : Elkin Fernando Siabato Cruz
+*/
+
+#ui-bizagi-wp-project-activity-map-wrapper {
+    margin-bottom: 1.6em;
+}
+
+#ui-bizagi-wp-project-activity-map-wrapper .actual-state {
+
+    color: #5E7D8D;
+    font-size: 1em;
+}

@@ -1,0 +1,31 @@
+/*
+    Document   : bizagi.workportal.project.activityMap
+    Created on : Mar 05, 2015
+    Author     : Elkin Fernando Siabato Cruz
+*/
+
+/*ICONS*/
+
+.sprite-discussion-sidebar {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAACeElEQVQ4T62VXW/SUBjHz5m4QiwhkJH0wml8iboLkY07vV3lLdQJNoXC+BTG72DipyAUbWqqKbIW2LV3zjLNjIkz0YyEZChZIIGi4ywHKamLJlB9rnpO+vye87yc/4EAAMDz/EWlrLzqdXsreG3XPB7PXjweT5RKpS8wn89f21LVZ+3DwyCAEAKE7HEhBAAh5PP5Ggxz9z4knM59YzC4DBcWABqN7EEnXibjHEm+hwAABCbRaJpO+f3+hmEYi/NEIAhi2G63A7VaTTazhgBCNE4fQpTf3FwuFArNeaDmv9ls9rxQKn0FCGEm+A2cyz5YKRalj9FolDAdSJJEkiQNU6lUwOEYQVF80WBZdrHX6+Fsx6aqqpHLsdeLwvMPM4OxE8uyQUmS3mIIy7KrkiTp1uC2weHwOl+tbgsYHA6vZ6vV7ZJtMD6FmSrDxCKKsqXidSKRiJXL5fE3Nhxg5hNjB47jbh0dfbtyZpH42Txo3tF39Ed4PxQKPaYo6vXxseHweNz7uOZ4f6YaY6goirp1OvCMYjs96xzHBUVRbMwEtjbLhP8NbDZzJjCGJZPJtU6nc5UgiB+tVuu2rusP8X4wGHyCS2EYxlmv1/tJluWdmUthNuRPzWMYJqooimareadHyTpuNE3z9Xr9qe1xs96qJJdck0X5zaREIZz+P4MtV3oVIQQxdO4rneX5C4IgHPwfEbLIZiQS2aAoarff788lmy6Xa9hqtQKapr2cyqbT5fo86PcvTYUey6gdQwiaDJIk92Amk7mhVTWx870TsMOb+vx6LIBvaWk3Ho1ujDU1nU4vVyqVSrfbvTl+TewYQsDtJt8xzL0Y7tMJOsD2keQ6QqYAAAAASUVORK5CYII=') no-repeat top left;
+}
+
+.sprite-discussion-sidebar.adddiscussion {
+    background-position: 0 0;
+    float: left;
+    height: 22px;
+    margin-top: -2px;
+    width: 22px;
+}
+
+.ui-bizagi-wp-project-discussions-sidebar-h3 {
+    margin: 10px 0;
+
+    font-size: 1.5em;
+}
+
+.ui-bizagi-wp-project-discussions-sidebar-actions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

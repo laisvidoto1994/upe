@@ -1,0 +1,21 @@
+.ui-tooltip {
+    position: absolute;
+    z-index: 1000000002;
+    padding: 1em;
+    border: 1px solid #EEE;
+    border-radius: 4px;
+    background: #fff;
+    color: #374C58;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+* HTML .ui-tooltip {
+    background-image: none;
+}
+
+BODY .ui-tooltip {
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+}

@@ -1,0 +1,53 @@
+﻿ [
+    {
+        "guid": "GUID-FORM-1",
+        "displayname": "Group Form 1",
+        "version": "1.0",
+        "children": [
+            {
+                "guid": "GUID-FORM-1-1",
+                "displayname": "Form 1, G1",
+                "version": "1.0"
+            },
+            {
+                "guid": "GUID-FORM-1-2",
+                "displayname": "Form 2, G1",
+                "version": "1.5",
+                "selected": "true"
+            }
+        ]
+    },
+    {
+        "displayname": "Group Form A",
+        "children": []
+    },
+    {
+        "guid": "GUID-FORM-2",
+        "displayname": "Group Form 2",
+        "version": "1.0",
+        "children": [
+            {
+                "guid": "GUID-FORM-2-1",
+                "displayname": "Form 1, G2",
+                "version": "1.0"
+            }
+        ]
+    },
+    {
+        "guid!: "GUID-FORM-3",
+        "displayname!: "Group Form 3",
+        "version": "1.0",
+        "children": [
+            {
+                "guid": "GUID-FORM-3-1",
+                "displayname": "Form 1, G3",
+                "version": "2.0"
+            },
+            {
+                "guid": "GUID-FORM-3-2",
+                "displayname": "Form 2, G3",
+                "version": "1.0"
+            }
+        ]
+    }
+]

@@ -1,0 +1,48 @@
+﻿<script id="ui-bizagi-render-form" type="text/x-jquery-tmpl">
+<div class="ui-bizagi-form"  data-unique-id="${uniqueId}">
+    {{children}}
+    
+    {{if transitions}}
+        {{tmpl "#ui-bizagi-render-complexGateway"}}
+    {{/if}}
+
+    <div class="ui-bizagi-button-container">
+        {{each buttons}}
+            <button type="button" ordinal="${ordinal}" id="formButton${ordinal}" class="ui-bizagi-form-button" style="${style}">${caption}</button>
+        {{/each}}
+    </div>
+</div>
+</script>
+
+
+<script id="ui-bizagi-render-complexGateway" type="text/x-jquery-tmpl">
+<div class="ui-bizagi-container-complexgateway ui-bizagi-container clearfix ui-bizagi-container-group ui-drop-shadow ui-lifted cssClassContainer">
+    <h3 class="ui-bizagi-container-group-header ui-helper-reset ui-state-active ui-corner-top  clearfix">        
+        <span class="ui-bizagi-fix-title" >%{render-widget-complexgateway-title} </span>
+    </h3>
+
+    <div class="ui-bizagi-container-group-wrapper" style="display: block;">
+        {{each transitions}}
+        <div class="ui-bizagi-render-block ui-widget-content ui-bizagi-render-display-normal ">
+            <span style="width:50%; float:left" class="ui-bizagi-label ui-bizagi-render-align-left">
+                <label>${displayName}</label>
+            </span>
+
+            <div style="width:50%; padding-left: 85%;" class="ui-bizagi-control ">
+                <div class="ui-bizagi-control-wrapper">
+                    <div class="ui-bizagi-render-control ">
+                        <div class="ui-checkbox">
+                            {{if isDefault=="true"}}
+                            <label class="ui-checkbox-state-checked" for="check_complexgateway_${id}" data-checked="true" data-value="${id}"></label>
+                            {{else}}
+                            <label  for="check_complexgateway_${id}" data-checked="false"  data-value="${id}"></label>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+</script>

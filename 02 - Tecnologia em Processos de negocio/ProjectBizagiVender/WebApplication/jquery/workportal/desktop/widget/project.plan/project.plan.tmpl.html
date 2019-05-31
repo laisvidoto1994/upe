@@ -1,0 +1,63 @@
+<script id="project-plan-wrapper" type="text/x-jsrender">
+<div>
+
+        <h2 class="bz-wp-cd-title"><i class="bz-icon bz-icon-24 bz-icon-plan-add-outline"></i> <span>%{workportal-project-plan-title}</span></h2>
+        <p class="bz-wp-cd-text">%{workportal-project-plan-information-section-create-description}</p>
+        <div class="row bz-wp-pp-content">
+            <div class="col-sm-4 bz-wp-pp-card">
+                <i class="bz-wp-pp-img bz-wp-pp-img-basic-info"></i>
+                <h3 class="bz-wp-section">%{workportal-project-plan-information-section-define-basic-title}</h3>
+                <p class="bz-wp-cd-text">%{workportal-project-plan-information-section-define-basic-description}</p>
+            </div>
+            <div class="col-sm-4 bz-wp-pp-card">
+                <i class="bz-wp-pp-img bz-wp-pp-img-basic-activities"></i>
+                <h3 class="bz-wp-section">%{workportal-project-plan-information-section-define-activities-title}</h3>
+                <p class="bz-wp-cd-text"> %{workportal-project-plan-information-section-define-activities-description}</p>
+            </div>
+            <div class="col-sm-4 bz-wp-pp-card">
+                <i class="bz-wp-pp-img bz-wp-pp-img-basic-invite"></i>
+                <h3 class="bz-wp-section">%{workportal-project-plan-information-section-invite-title}</h3>
+                <p class="bz-wp-cd-text"> %{workportal-project-plan-information-section-invite-description}</p>
+            </div>
+        </div>
+        <div class="bz-wp-pp-action">
+            <button id="buttonShowPopupCreatePlan" class="bz-wp-btn bz-wp-btn-primary"><i class="bz-icon bz-icon-16 bz-icon-plan-add-outline"></i> <span>%{workportal-project-plan-button-add-plan}</span></button>
+        </div>
+
+
+    <span id="popupNotification"></span>
+
+</div>
+
+</script>
+
+<script id="project-plan-popup-template" type="text/x-jsrender">
+
+
+      <div id="project-plan-popup-wrapper" class="bz-wp-modal-content">
+         <form>
+            <div class="bz-wp-form-group">
+                <label class="bz-wp-form-label" for="input-name-plan">%{workportal-project-plan-popup-field-name}:</label>
+                <div class="position-message-validate">
+                    <input id="input-name-plan" name="name-plan" class="bz-wp-form-control" value="" type="text" maxlength="100" required validationMessage="%{workportal-project-plan-popup-field-name-required}">
+                    <span class="k-invalid-msg" data-for="name-plan"></span>
+                </div>
+            </div>
+
+            <div class="bz-wp-form-group">
+                <label class="bz-wp-form-label" for="templates-plan">%{workportal-project-plan-popup-field-template}:</label>
+                <div class="container-autosuggest">
+                    <div id="templates-plan"  class="ui-rubik-input" />
+                </div>
+            </div>
+
+
+            <div class="bz-wp-modal-actions">
+               <button id="button-cancel-create-plan" type="reset" class="bz-wp-btn bz-wp-btn-default">%{workportal-widget-reports-confirm-cancel}</button>
+               <button id="button-accept-create-plan" type="submit" class="bz-wp-btn bz-wp-btn-primary">%{workportal-project-plan-popup-button-create}</button>
+            </div>
+         </form>
+      </div>
+
+
+</script>

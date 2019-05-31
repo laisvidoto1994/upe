@@ -1,0 +1,43 @@
+﻿.wdg-srcts-title > i {
+    margin-right: 8px;
+}
+
+.wdg-srcts-title > span {
+    vertical-align: middle;
+}
+
+.sidebar-content .wdg-process-header {
+  font-weight: 400;
+  font-size: 14px;
+  color: #374C58;
+  text-indent: 0;
+  padding: 9px 15px;
+  padding-bottom: 20px;
+  margin-bottom: 0;
+  line-height: 10px;
+}
+
+.sidebar-content .wdg-process-card {
+    padding: 1.2em 1em;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.sidebar-content .wdg-process-card > i,
+.sidebar-content .wdg-process-card > span {
+    vertical-align: middle;
+}
+
+.sidebar-content .wdg-process-title {
+  font-size: 14px;
+  font-weight: 400;
+  height: 100%;
+  line-height: 35px;
+  padding: 9px 15px;
+}
+
+.wgd-user-process-title {
+  margin-left: 10px;
+}

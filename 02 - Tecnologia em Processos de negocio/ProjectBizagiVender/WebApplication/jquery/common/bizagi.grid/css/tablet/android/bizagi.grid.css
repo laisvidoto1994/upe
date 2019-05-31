@@ -1,0 +1,368 @@
+.ui-bizagi-grid{
+    position: relative;
+    background-color: #e6e6e6; 
+}
+.ui-bizagi-grid .ui-bizagi-waiting {
+	background-image: url('images/waiting.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 100% !important;
+	min-height: 64px;
+}
+
+.ui-bizagi-grid > div:last-child{
+}
+.ui-bizagi-grid h3{
+	font-size:12px;
+	color:#283238;
+}
+.ui-bizagi-grid .ui-bizagi-grid-pager{
+    border-top:1px solid rgba(255,255,255,0.3);
+    background: -webkit-gradient(linear, left top, left bottom, from(#F4F4F4), to(#CCCCCC), color-stop(.4, #DCDCDC));
+    padding:2px 0px;
+}
+.ui-bizagi-grid .ui-bizagi-grid-pager ul,.ui-bizagi-grid-buttons ul{
+	list-style-type:none;
+	position:relative;	
+}
+.ui-bizagi-grid .ui-bizagi-grid-pager ul{
+    position:relative;
+	overflow-x: scroll;
+	white-space: nowrap;
+	-webkit-overflow-scrolling: touch;
+	list-style-type: none;
+}
+.ui-bizagi-grid .ui-bizagi-grid-pager ul li{
+    color: hsl(0, 0%, 53%);
+    background-color: transparent;
+    font-size: 14.5px;
+	display:inline-block;
+	padding: 6px 15px 6px 15px;
+	border-left:1px solid #f4f4f4;
+	border-right:1px solid #dcdcdc;
+}
+.ui-bizagi-grid .ui-bizagi-grid-pager ul li.ui-bizagi-active {
+	color: hsl(0, 0%, 35%);
+}
+
+.ui-bizagi-grid [data-bizagi-component="table"] {
+    overflow: scroll;
+}
+
+.ui-bizagi-grid .ui-bizagi-grid-header [data-bizagi-component="columns"] {
+    word-break: break-word;
+}
+
+.ui-bizagi-grid-buttons
+{
+     margin: -36px 0;
+     float:right;   
+}
+
+.ui-bizagi-grid-buttons ul{
+	text-align:right;
+	margin-top: 9px;
+}
+.ui-bizagi-grid-buttons ul li{
+	display:inline-block;
+	width: 30px;
+	height: 36px;
+	border-left: 1px solid transparent;
+	background: #8E9094;
+}
+.ui-bizagi-grid-buttons ul li div{
+	width:24px;
+	height:24px;
+	position:relative;
+	top: 6px;
+}
+.ui-bizagi-grid-buttons ul li div.ui-icon-plus{
+	background-position:-337px -241px;
+}
+.ui-bizagi-grid-row-buttons {
+	position: absolute;
+	display: none;	
+	z-index: 2;
+}
+.ui-bizagi-grid-row-buttons ul{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+	position:relative;
+	overflow:hidden;
+}
+.ui-bizagi-grid-row-buttons ul li{
+	margin:0px;
+	float:left;
+	padding:1px;
+	border: 2px solid #2e4161;
+	background:-webkit-linear-gradient(top, #cacaca 0%,#f0f0f0 100%);
+	margin:0px;
+	width:36px;
+	height:36px;
+	position: relative;
+}
+.ui-bizagi-grid-row-buttons ul li:first-child{
+
+}
+.ui-bizagi-grid-row-buttons ul li:first-child div{
+}
+.ui-bizagi-grid-row-buttons ul li:last-child{
+	border-left:none;
+}
+.ui-bizagi-grid-row-buttons ul li:last-child div{
+}
+.ui-bizagi-grid-row-buttons ul li div{
+	width:24px;
+	height:24px;
+	top: 7px;
+	left: 7px;
+	position: absolute;
+}
+.ui-bizagi-grid-row-buttons ul li div.ui-icon-pencil{
+	background-position: -398px -171px !important;
+}
+.ui-bizagi-grid-row-buttons ul li div.ui-icon-trash{
+	background-position: -298px -242px !important;
+}
+.ui-bizagi-grid table{
+	width:100%;
+	border-spacing: 0;
+}
+.ui-bizagi-grid table thead tr th{
+	background:#DADADA;
+	border-bottom:1px solid #ccc;
+	position:relative;
+}
+.ui-bizagi-grid table thead tr th:last-child{
+}
+.ui-bizagi-grid table thead tr th:first-child+th{
+}
+.ui-bizagi-grid table thead tr th.ui-bizagi-grid-column-hidden{
+	display:none;
+}
+.ui-bizagi-grid table td, .ui-bizagi-grid table th{
+	padding:10px 8px;
+	text-align:center;
+}
+.ui-bizagi-grid table tbody tr:nth-child(odd){
+	background:#ECECEC;
+}
+.ui-bizagi-grid table tbody tr.ui-bizagi-state-selected{
+		background-image: -webkit-linear-gradient(top, #859aa9 0%, #77858f 100%);
+		color:#f5f5f5;
+}
+.ui-bizagi-grid table tbody tr td{
+	border-top:1px solid #f5f5f5;
+}
+.ui-bizagi-grid table tr td:first-child, .ui-bizagi-grid table tr th:first-child{
+	display:none;
+	padding:0px;
+	margin:0px;
+}
+.ui-bizagi-grid table .ui-bizagi-grid-cell-special {
+	padding: 0px;
+}
+.ui-bizagi-grid table .ui-bizagi-grid-cell-special .ui-bizagi-grid-cell{
+	height: 35px;
+	width: 40px;
+	position: relative;
+	display: inline-block;	
+}
+.ui-bizagi-grid table .ui-bizagi-cell-more{
+	height:22px;
+	width:22px;
+	background:url('images/sprite_inbox.png') 0 0 no-repeat transparent;
+	text-indent:-9999px;
+	background-position:-280px -55px;
+	position: absolute;
+	top: 6px;
+	left: 0px;
+}
+.ui-bizagi-grid  .ui-bizagi-grid-column-special {
+	width: 32px;
+}
+.ui-bizagi-grid .ui-bizagi-grid-column-sort{
+	display:none;
+}
+.ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active{
+	cursor: pointer;
+	display:inline-block;
+	margin-left:10px;
+}
+.ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:first-child{
+	border-top:0px solid transparent;  
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+ 	border-bottom:5px solid rgba(0,0,0,.1); 
+}
+.ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:last-child{
+    border-top:5px solid rgba(0,0,0,.1);   
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+    border-bottom:0px solid transparent;
+}
+.ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:last-child.ui-bizagi-active{
+	border-top-color:rgba(0,0,0,.4); 
+}
+.ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:first-child.ui-bizagi-active{
+	border-bottom-color:rgba(0,0,0,.4); 
+}
+.ui-bizagi-grid .ui-bizagi-grid-column-sort.ui-bizagi-active > div:first-child{
+    margin-bottom:3px;
+}
+
+.ui-bizagi-grid .ui-bizagi-grid-noRecords {
+	padding: 15px 0px;
+	text-align: center;
+	width: 100%;
+}
+
+.ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-body .ui-bizagi-grid-cell {
+    text-align: center;
+}
+
+.ui-bizagi-cell-readonly {
+	text-align: center;
+	width: 100%;	
+    word-break:break-word;
+}
+
+.ui-bizagi-grid-dynamic-pager
+{
+	margin: 0 auto;
+	left: 50%;
+	margin-left: -60px;
+}
+
+
+/* JULIAN CHANGES (which are not really "changes" per se, more like... proper usage of blank classes) */
+
+.bz-rn-grid-cn-header
+{
+    color: #31414C;
+    font-weight: normal;
+    padding: 10px 0 25px 15px;
+    margin-bottom: 0;
+    background-color: #BFC2C7;
+    border-bottom: 1px solid #B8B9BB;
+    height:0;
+}
+
+.ui-bizagi-grid-header
+
+{
+    background:-webkit-gradient(linear, left top, left bottom, from(#D6D8DC), to(#C3C6CB));
+}
+
+.ui-bizagi-grid-key {display:none;}
+.ui-bizagi-column-hidden
+{
+	display: none;
+}
+
+
+.ui-bizagi-grid-alternativePaginator {
+    overflow: hidden;
+    margin-right: 60px;
+    margin-left: 32px;
+}
+.ui-bizagi-grid-pagerArrowLeftFast {
+    width: 30px;
+    height: 64px;
+    position: absolute;
+    left: 0px;
+    z-index: 1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#BFC2C7), to(#D2D2D2), color-stop(.4, #BFC2C7));
+}
+.ui-bizagi-grid-arrowLeftFast1{
+	width: 15px; 
+	height: 20px; 
+	background: url('../../../../../workportal/css/tablet/android/images/biz-wp-icons-sprite.png') 0 0 no-repeat rgba(152, 151, 151, 0);
+	background-position: -35px -144px;
+	margin-top: 22px;
+}
+.ui-bizagi-grid-arrowLeftFast2{
+	width: 22px; 
+	height: 20px; 
+	background: url('../../../../../workportal/css/tablet/android/images/biz-wp-icons-sprite.png') 0 0 no-repeat rgba(152, 151, 151, 0);
+	background-position: -28px -144px;
+	margin-top: -20px;
+}
+.ui-bizagi-grid-pagerArrowLeft{
+    left: 31px;
+    width: 30px;
+    height: 64px;
+    position: absolute;
+    z-index: 1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#BFC2C7), to(#D2D2D2), color-stop(.4, #BFC2C7));
+}
+.ui-bizagi-grid-arrowLeft{
+	width:25px; 
+	height: 20px; 
+	background: url('../../../../../workportal/css/tablet/android/images/biz-wp-icons-sprite.png') 0 0 no-repeat rgba(152, 151, 151, 0);
+	background-position: -34px -144px;
+	margin-top: 22px;
+}
+.ui-bizagi-grid-pagerArrowRight{
+    width: 30px;
+    height: 63px;
+    position: absolute;
+    margin-top: -64px;
+    right: 31px;
+    z-index: 1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#BFC2C7), to(#D2D2D2), color-stop(.4, #BFC2C7));
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+.ui-bizagi-grid-arrowRight{
+    width: 25px;
+    height: 20px;
+    background: url('../../../../../workportal/css/tablet/android/images/biz-wp-icons-sprite.png') 0 0 no-repeat rgba(152, 151, 151, 0);
+    background-position: -80px -144px;
+    margin-top: 21px;
+}
+.ui-bizagi-grid-pagerArrowRightFast{
+	width: 30px;
+    height: 63px;
+    position: absolute;
+    margin-top: -64px;
+    right: 0;
+    z-index: 1;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    background: -webkit-gradient(linear, left top, left bottom, from(#BFC2C7), to(#D2D2D2), color-stop(.4, #BFC2C7));
+}
+.ui-bizagi-grid-arrowRightFast1{
+	width: 15px;
+    height: 20px;
+    background: url('../../../../../workportal/css/tablet/android/images/biz-wp-icons-sprite.png') 0 0 no-repeat rgba(152, 151, 151, 0);
+    background-position: -84px -144px;
+    margin-top: 21px;
+}
+.ui-bizagi-grid-arrowRightFast2{
+	width: 22px;
+    height: 20px;
+    background: url('../../../../../workportal/css/tablet/android/images/biz-wp-icons-sprite.png') 0 0 no-repeat rgba(152, 151, 151, 0);
+    background-position: -77px -144px;
+    margin-top: -20px;
+}
+
+/* Begin Grid Offline */
+
+.ui-bizagi-grid-buttons ul li div.ui-icon-save{
+	background-position: -428px -241px;  	  
+}
+
+.ui-bizagi-grid-buttons ul li div.ui-icon-cancel{
+	background-position: -372px -4px;
+}
+
+.ui-bizagi-grid-buttons ul li div.ui-icon-trash{
+	background-position: -298px -242px;
+}
+.ui-grid-buttons-hidden {
+    display: none !important;
+}
+
+
+/* End Grid Offline */

@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Bizagi GO</title>
+        <link type="text/css" href="css/login.css" rel="stylesheet"></link>
+        <script type="text/javascript" src="../../jquery/common/base/js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../jquery/common/base/js/lib/jquery.rest.js"></script>
+        <script type="text/javascript" src="../../jquery/common/bizagi/js/bizagi.util.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+
+        <script type="text/javascript">
+
+            /**
+             * Rest mock definition
+             */
+            var loginService = (function() {
+                var self = loginService.prototype;
+                var restPrefixUrl = "../../";
+                var config = {
+                    "endPoints": {
+                        "CurrentUser": restPrefixUrl+"Rest/Users/CurrentUser"
+                    }
+                };
+                function loginService(args) {
+                    args = args || {};
+                    config = $.merge(config, args);
+                }
+
+
+                function getEndPoint(point) {
+                    return (config.endPoints[point] != undefined) ? config.endPoints[point] : "";
+                }
+
+                /**
+                 * Check if user is already logged
+                 * @return {boolean}
+                 */
+                self.isAuthenticated = function() {
+                    var endPoint = getEndPoint("CurrentUser");
+                    var def = new $.Deferred();
+                    $.read(endPoint).pipe(function(response) {
+                        if (response.hasOwnProperty("status") && response.status == "error") {
+                            // User is not authenticated yet
+                            def.resolve(false);
+                        } else if (response.hasOwnProperty("idUser")) {
+                            // User has been authenticated
+                            def.resolve(true);
+                        }
+                    });
+                    return def.promise();
+                };
+                self.BizagiConfig = function() {
+                    return {
+                        "isQuickLogin": true,
+                        "isBizagiAuthentication": true,
+                        "isRemoteUser": false,
+                        "isSecrectQuestionEnabled": false,
+                        "isAdminLoginRequired": false,
+                        "isDomainRequired": true
+                    };
+                };
+                self.User = function() {
+                    return {
+                        "groupSeparator": ".",
+                        "uploadMaxFileSize": "1048576",
+                        "isAuthenticate": "true",
+                        "symbol": "€",
+                        "decimalDigits": 2,
+                        "shortDateFormat": "d/MM/yyyy",
+                        "timeFormat": "H:mm",
+                        "longDateFormat": "d' de 'MMMM' de 'yyyy",
+                        "language": "es-ES",
+                        "decimalSeparator": ","
+                    };
+                };
+                self.UserError = function() {
+                    return {
+                        "message": "No se puede autenticar el usuario <b>domain\\usuario</b>",
+                        "isAuthenticate": "false"
+                    };
+                };
+                /**
+                 * list of users for quick login
+                 */
+                self.Users = function() {
+                    return {
+                        "users": [
+                            {
+                                "name": "admon"
+                            },
+                            {
+                                "name": "office manager"
+                            }
+                        ]
+                    };
+                };
+                self.Domains = function() {
+                    return {
+                        "domains": [
+                            {
+                                "name": "domain1"
+                            },
+                            {
+                                "name": "domain2"
+                            }
+                        ]
+                    };
+                };
+                self.Logout = function() {
+                    return {
+                        "logout": true
+                    };
+                };
+                /**
+                 * change password
+                 * /Authentication/Domain/{domain}/User/{user}/Password/{password}/NewPassword/{newPassword}/{passwordConfirmation}
+                 * @param  params object with user information
+                 * 
+                 */
+                self.CahngePassword = function(params) {
+                    return {
+                        "message": "Se cambio la clave exitosamente",
+                        "passwordChanged": true
+                    };
+                };
+                self.ForgottenPassword = function(params) {
+                    return {
+                        "message": "La clave fue enviada al correo support@bizagi.com.",
+                        "passwordRequested": true
+                    };
+                };
+                self.SecretQuestion = function(params) {
+                    return {
+                        "secretQuestion": "Nombre de la ultima mascota",
+                        "hasSecretQuestion": true
+                    };
+                };
+                self.UnlockUser = function(params) {
+                    return   {
+                        "message": "Se ha enviado la solicitud de Desbloqueo",
+                        "unlocked": true
+                    };
+                };
+                return loginService;
+            })();
+        
+            var loginFacade = (function() {
+                var self = loginFacade.prototype;
+                var loginTmplUrl = "tmpl/login.html";
+                function loginFacade() {
+                }
+                return loginFacade;
+            })();
+        
+            var loginController = (function() {
+            })();
+
+            var workportalUrl = "../../index.html";
+            var loginService = new loginService;
+            /**
+             * Verify user authentication
+             */
+            $.when(loginService.isAuthenticated()).done(function(response) {
+                if (response) {
+                    // User authenticated, redirect to workportal
+                    window.location = workportalUrl;
+                } else {
+                    // Show login page
+                    console.log("login page");
+                }
+            });
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

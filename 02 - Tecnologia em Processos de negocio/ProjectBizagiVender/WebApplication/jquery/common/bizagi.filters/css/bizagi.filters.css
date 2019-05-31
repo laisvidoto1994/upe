@@ -1,0 +1,59 @@
+﻿#biz-column-filter
+{
+	position:absolute;
+	z-index: 110000;	
+	list-style: none;
+	margin-top: 6px;
+	max-height: 250px;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    border: 1px solid #DFDFDF;
+}
+
+.biz-column-filter-operators
+{
+    padding: .6em 0;
+}
+
+.ui-bizagi-filter-buttons
+{
+    padding-top: 10px;
+    text-align: center;
+}
+
+.ui-bizagi-filter-buttons button
+{
+    width:calc(50% - 10px);
+}
+
+#biz-column-filter-control > .bz-column-filter-control-string,
+#biz-column-filter-control > .bz-column-filter-control-date,
+#biz-column-filter-control > .bz-column-filter-control-number
+{
+    position: relative;
+    box-sizing: border-box;
+}
+
+#biz-column-filter-control > .bz-column-filter-control-string > input,
+#biz-column-filter-control > .bz-column-filter-control-date > input,
+#biz-column-filter-control > .bz-column-filter-control-number > input
+{
+    line-height: 1.8em;
+    padding-left: 4px;
+    padding-top: 4px;
+    box-sizing: inherit;
+    padding-right: 42px;
+	width: 100%;
+}
+
+#biz-column-filter-control
+{
+	min-height: 24px;
+}
+
+.context-menu-list .select-value
+{
+    color: #006c5f;
+    cursor:pointer;
+}

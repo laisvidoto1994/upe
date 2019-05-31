@@ -1,0 +1,205 @@
+/********
+* Filename: bizagi.editor.component.editor.textformat.css
+* Create Date: 2012-07-13
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__textformat
+*
+********/
+
+/* __textformat
+--------*/
+.bizagi_editor_component_editor_textformat .textformat-preview
+{
+    width: 144px;
+    height: 30px;
+    border: solid 1px gainsboro;
+    font-size: 1.4em;
+    line-height: 30px;
+    text-align: center;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.bizagi_editor_component_editor_textformat .textformat-size-value
+{
+    border: solid 1px gainsboro;
+    font-size: 1.4em;
+    line-height: 30px;
+    text-align: center;
+    overflow: hidden;
+    display: inline-block;
+    width: 32px;
+    height: 30px;
+}
+
+.bizagi_editor_component_editor_textformat .textformat-actions [class^="textformat-image-normal-"]
+{
+    display: inline-block;
+    border-left: none;
+    width: 11px;
+    height: 25px;
+}
+
+
+.bizagi_editor_component_editor_textformat .textformat-actions [class*="textformat-image-"].textformat-primary-control:hover,
+.bizagi_editor_component_editor_textformat .textformat-actions [class*="textformat-image-"].textformat-secondary-control:hover
+{
+	border-radius: 4px;
+    background-color: hsla(100, 75%, 50%, .2);
+    cursor: pointer;
+}
+
+.bizagi_editor_component_editor_textformat .textformat-actions [class*="textformat-image-"].textformat-primary-control.selected
+{
+	border-radius: 4px;
+	background-color: hsla(100, 75%, 50%, .5);
+}
+
+/* Align of the icons and each of their background positions */
+
+.biz-ico.textformat-primary-control
+{
+	margin-right: 2px;
+    vertical-align: middle;
+}
+
+.bizagi_editor_component_editor_textformat .textformat-actions {
+    margin-bottom: 5px;
+}
+
+.sp-container {
+    box-shadow: 0 1px 4px 0 gray;
+    border: none;
+    background: white;
+}
+
+.sp-palette-container {
+    border: none;
+}
+
+.bizagi_editor_component_editor_textformat .textformat-actions .textformat-image-bold
+{
+    
+}
+
+.bizagi_editor_component_editor_textformat .textformat-actions .textformat-image-bold:hover,
+.bizagi_editor_component_editor_textformat .textformat-actions .textformat-image-bold.selected
+{
+    
+}
+
+.bizagi_editor_component_editor_textformat .textformat-actions .textformat-image-italic
+{
+   
+}
+
+.bizagi_editor_component_editor_textformat .textformat-actions .textformat-image-italic:hover,
+.bizagi_editor_component_editor_textformat .textformat-actions .textformat-image-italic.selected
+{
+    
+}
+
+.bizagi_editor_component_editor_textformat .textformat-actions .textformat-image-underline
+{
+    
+}
+
+.bizagi_editor_component_editor_textformat .textformat-actions .textformat-image-underline:hover,
+.bizagi_editor_component_editor_textformat .textformat-actions .textformat-image-underline.selected
+{
+    
+}
+
+.bizagi_editor_component_editor_textformat .textformat-actions .textformat-image-strikeout
+{
+    
+}
+
+.bizagi_editor_component_editor_textformat .textformat-actions .textformat-image-strikeout:hover,
+.bizagi_editor_component_editor_textformat .textformat-actions .textformat-image-strikeout.selected
+{
+    
+}
+
+.bizagi_editor_component_editor_textformat .textformat-image-font + .sp-replacer .sp-preview {
+    
+}
+
+.bizagi_editor_component_editor_textformat .textformat-image-background + .sp-replacer .sp-preview {
+    
+}
+
+.bizagi_editor_component_editor_textformat .textformat-image-font + .sp-replacer {
+    padding-left: 10px;
+    margin: 0 4px;
+    border-left: 1px solid gray;   
+}
+
+.bizagi_editor_component_editor_textformat .textformat-preview.bold
+{
+    font-weight: bold;
+}
+.bizagi_editor_component_editor_textformat .textformat-preview.italic
+{
+    font-style: italic;
+}
+.bizagi_editor_component_editor_textformat .textformat-preview.underline
+{
+    text-decoration: underline;
+}
+.bizagi_editor_component_editor_textformat .textformat-preview.strikeout
+{
+    text-decoration: line-through;
+}
+.bizagi_editor_component_editor_textformat .textformat-preview.strikeout.underline
+{
+    text-decoration: line-through underline;
+}
+
+.bizagi_editor_component_editor_textformat .sp-replacer  {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #333;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.bizagi_editor_component_editor_textformat .sp-preview {
+    width: 16px;
+    height: 16px;
+    border: none;
+    margin-right: 0;
+    float: none;
+}
+
+
+.bizagi_editor_component_editor_textformat .textformat-image-size-plus
+{
+    background-position: -880px -16px;
+    cursor: pointer;
+}
+.bizagi_editor_component_editor_textformat .textformat-image-size-minus
+{
+	background-position: -880px -32px;	
+    cursor: pointer;
+}
+.bizagi_editor_component_editor_textformat .textformat-image-reset
+{
+    background-position: -656px -16px;
+    vertical-align: text-bottom;
+    cursor: pointer;
+}
+.bizagi_editor_component_editor_textformat .textformat-size-container
+{
+    display: inline-block;
+}
+.bizagi_editor_component_editor_textformat .textformat-size-value
+{
+    display: inline-block;
+}

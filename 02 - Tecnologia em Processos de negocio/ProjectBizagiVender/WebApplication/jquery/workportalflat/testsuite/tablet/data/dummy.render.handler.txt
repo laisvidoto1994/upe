@@ -1,0 +1,363 @@
+{
+  "form": {
+    "properties": {
+      "id": "EDE9049A-663E-4CBD-833C-2EF7D11A1B11",
+      "needsUserConfirmation": false,
+      "userConfirmationMessage": "",
+      "orientation": "ltr",
+      "xpathContext": ""
+    },
+    "elements": [
+      {
+        "container": {
+          "properties": {
+            "id": "093caa22-9dbc-4ab9-9036-e9ab16098f97",
+            "type": "group",
+            "displayName": "Information of the Request"
+          },
+          "elements": [
+            {
+              "render": {
+                "properties": {
+                  "id": "8a3f83e6-ea46-4a56-8744-b128e2aefe3e",
+                  "type": "combo",
+                  "xpath": "AccessRequest.Reasons",
+                  "value": [
+                    {
+                      "id": 3,
+                      "value": "Job Requirements"
+                    }
+                  ],
+                  "displayName": "Reasons",
+                  "required": true,
+                  "dataType": 2,
+                  "submitOnChange": false,
+                  "data": [
+                    {
+                      "id": 3,
+                      "value": "Job Requirements"
+                    },
+                    {
+                      "id": 2,
+                      "value": "Resignation/Dismissal"
+                    },
+                    {
+                      "id": 1,
+                      "value": "New Hire"
+                    },
+                    {
+                      "id": 4,
+                      "value": "Report Forbidden Access"
+                    }
+                  ],
+                  "labelWidth": 25,
+                  "valueWidth": 75,
+                  "helpText": ""
+                }
+              }
+            },
+            {
+              "render": {
+                "properties": {
+                  "id": "3d05acc6-46a7-4269-8c92-22b3799f8ca2",
+                  "type": "text",
+                  "xpath": "AccessRequest.Description",
+                  "displayName": "Description",
+                  "required": true,
+                  "isExtended": true,
+                  "maxLength": 800,
+                  "dataType": 15,
+                  "labelWidth": 25,
+                  "valueWidth": 75,
+                  "helpText": "",
+                  "autoExtend": false
+                }
+              }
+            },
+            {
+              "render": {
+                "properties": {
+                  "id": "ba663eb7-ecbd-4dee-935e-241260c17c29",
+                  "type": "upload",
+                  "xpath": "AccessRequest.Attachments",
+                  "value": [],
+                  "displayName": "Attachments",
+                  "dataType": 4,
+                  "allowDelete": true,
+                  "labelWidth": 25,
+                  "valueWidth": 75,
+                  "helpText": ""
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "container": {
+          "properties": {
+            "id": "18b62c0c-dd44-42e7-9941-00d662561497",
+            "type": "group",
+            "displayName": "Employee´s Information"
+          },
+          "elements": [
+            {
+              "container": {
+                "properties": {
+                  "id": "769efa03-8dc5-488c-9a57-10f39762e3ac",
+                  "type": "horizontal"
+                },
+                "elements": [
+                  {
+                    "container": {
+                      "properties": {
+                        "id": "9288653d-9edd-4565-bcf0-8097a202806d",
+                        "type": "panel",
+                        "width": "50%"
+                      },
+                      "elements": [
+                        {
+                          "render": {
+                            "properties": {
+                              "id": "4bdb3588-29c8-4b1f-b3c8-5ac1fa4287e0",
+                              "type": "search",
+                              "xpath": "AccessRequest.Employee",
+                              "value": {},
+                              "advancedSearch": true,
+                              "dataType": 2,
+                              "allowNew": true,
+                              "allowSuggest": false,
+                              "required": true,
+                              "displayName": "Employee",
+                              "helpText": "",
+                              "searchForms": [
+                                {
+                                  "id": "97b34a58-ddc8-49e2-b7f0-4ca71b8f8b97",
+                                  "default": true,
+                                  "type": "searchForm",
+                                  "displayName": "AddEmployee"
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "container": {
+                "properties": {
+                  "id": "ee22da99-47dc-4202-9ec5-c854439ca6a4",
+                  "type": "contentPanel",
+                  "displayName": "Employee Info"
+                },
+                "elements": [
+                  {
+                    "container": {
+                      "properties": {
+                        "id": "f2ed7d19-1a60-4930-b49f-f07471f66871",
+                        "type": "horizontal"
+                      },
+                      "elements": [
+                        {
+                          "container": {
+                            "properties": {
+                              "id": "f927d1a6-5128-43f8-bbc4-613483e506ac",
+                              "type": "panel",
+                              "width": "50%"
+                            },
+                            "elements": [
+                              {
+                                "render": {
+                                  "properties": {
+                                    "id": "43746388-4450-494c-97e6-6768ff26a5b6",
+                                    "type": "text",
+                                    "xpath": "AccessRequest.Employee.Name.contactCell",
+                                    "displayName": "contactCell",
+                                    "editable": false,
+                                    "maxLength": 20,
+                                    "dataType": 15,
+                                    "helpText": "",
+                                    "autoExtend": false
+                                  }
+                                }
+                              },
+                              {
+                                "render": {
+                                  "properties": {
+                                    "id": "92095dac-45d7-4edc-ad8a-ca002f41e3a9",
+                                    "type": "combo",
+                                    "xpath": "AccessRequest.Employee.Name.idArea",
+                                    "value": [],
+                                    "displayName": "Area",
+                                    "editable": false,
+                                    "dataType": 2,
+                                    "helpText": ""
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "container": {
+                            "properties": {
+                              "id": "ec4e90f3-ef60-4dea-940a-89b797996cd7",
+                              "type": "panel",
+                              "width": "50%"
+                            },
+                            "elements": [
+                              {
+                                "render": {
+                                  "properties": {
+                                    "id": "42e33c60-b07c-4033-8925-9927cdd257de",
+                                    "type": "text",
+                                    "xpath": "AccessRequest.Employee.Name.IdentificationNumber",
+                                    "displayName": "Identification Number",
+                                    "editable": false,
+                                    "maxLength": 20,
+                                    "dataType": 15,
+                                    "helpText": "",
+                                    "autoExtend": false
+                                  }
+                                }
+                              },
+                              {
+                                "render": {
+                                  "properties": {
+                                    "id": "160d29e3-c8b6-4983-83ba-ab77d8816d66",
+                                    "type": "text",
+                                    "xpath": "AccessRequest.Employee.Name.contactEmail",
+                                    "displayName": "contactEmail",
+                                    "editable": false,
+                                    "maxLength": 100,
+                                    "dataType": 15,
+                                    "helpText": "",
+                                    "autoExtend": false
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "actions": [
+      {
+        "conditions": {
+          "expressions": [
+            {
+              "simple": {
+                "xpath": "AccessRequest.Reasons",
+                "operator": "is-not-empty",
+                "argumentType": "const"
+              }
+            }
+          ]
+        },
+        "commands": [
+          {
+            "container": "18b62c0c-dd44-42e7-9941-00d662561497",
+            "command": "visible",
+            "argument": "True",
+            "argumentType": "const"
+          }
+        ],
+        "dependencies": [
+          "AccessRequest.Reasons"
+        ],
+        "elseCommands": [
+          {
+            "container": "18b62c0c-dd44-42e7-9941-00d662561497",
+            "command": "visible",
+            "argument": "False",
+            "argumentType": "const"
+          }
+        ]
+      },
+      {
+        "conditions": {
+          "operator": "and",
+          "expressions": [
+            {
+              "simple": {
+                "xpath": "AccessRequest.Employee",
+                "operator": "is-not-empty",
+                "argumentType": "const"
+              }
+            },
+            {
+              "simple": {
+                "xpath": "AccessRequest.Reasons",
+                "operator": "is-not-empty",
+                "argumentType": "const"
+              }
+            }
+          ]
+        },
+        "commands": [
+          {
+            "container": "ee22da99-47dc-4202-9ec5-c854439ca6a4",
+            "command": "visible",
+            "argument": "True",
+            "argumentType": "const"
+          }
+        ],
+        "dependencies": [
+          "AccessRequest.Employee",
+          "AccessRequest.Reasons"
+        ],
+        "elseCommands": [
+          {
+            "container": "ee22da99-47dc-4202-9ec5-c854439ca6a4",
+            "command": "visible",
+            "argument": "False",
+            "argumentType": "const"
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "button": {
+          "properties": {
+            "id": "ec0a5a02-0f81-44a7-8d64-ac090a01d61b",
+            "caption": "render-form-button-save",
+            "actions": [
+              "submitData",
+              "refresh"
+            ]
+          }
+        }
+      },
+      {
+        "button": {
+          "properties": {
+            "id": "ba81c7af-0d83-4139-879d-b040f0f81bd7",
+            "caption": "render-form-button-next",
+            "actions": [
+              "validate",
+              "submitData",
+              "next",
+              "routing"
+            ]
+          }
+        }
+      }
+    ],
+    "sessionId": "424qv4rdjfayhvqcresc4g4c",
+    "pageCacheId": 1527139263
+  },
+  "type": "form"
+}

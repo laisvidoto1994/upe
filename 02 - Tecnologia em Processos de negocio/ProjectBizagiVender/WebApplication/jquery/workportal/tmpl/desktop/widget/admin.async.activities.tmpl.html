@@ -1,0 +1,268 @@
+<script id="ui-bizagi-workportal-widget-admin-async-activities" type="text/x-jquery-tmpl" >
+
+    <div class="biz-wp-window">
+        <div>
+            <strong>
+                <span id="generalTitle" class="biz-wp-window-title">
+                    %{workportal-widget-admin-asyncactivities-subtitle}
+                </span>
+            </strong>
+        </div>
+
+        <div id="main-screen">
+            <div class="async-act-refreshPage">
+                <a id="async-act-refresh-link">
+                    <label class="async-act-refresh-label" >%{workportal-widget-admin-asyncactivities-refresh} </label>
+                    <i class="bz-icon bz-icon-16 bz-icon-update async-act-refresh-icon"></i>
+                </a>
+            </div>
+            <div class="async-act-main-content">
+
+            </div>
+        </div>
+        <div id="dinamic-screen"/>
+    </div>
+
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-admin-async-activities-tabs" type="text/x-jquery-tmpl" >
+
+        <div id="tabs-wrapper" class="async-act-tabs">
+            <div id="async-tabs">
+                <ul >
+                    <li class="async-act-tabs-li"><a href="#async-tabs-1">%{workportal-widget-admin-asyncactivities-async-tab}</a></li>
+                    <li class="async-act-tabs-li"><a href="#async-tabs-2">%{workportal-widget-admin-asyncactivities-group-tab}</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-admin-async-activities-tab1" type="text/x-jquery-tmpl" >
+
+        <div id="async-tabs-1" class="async-act-tabs-content">
+
+            <table id="async-act-table" class="biz-wp-table" cellspacing="2" cellpadding="2" width="100%" border="0">
+                <thead class="biz-wp-table-head">
+                     <th> %{workportal-widget-admin-asyncactivities-enable}</th>
+                     <th> %{workportal-widget-admin-asyncactivities-log} </th>
+                     <th> %{workportal-widget-admin-asyncactivities-retry} </th>
+                     <th> %{workportal-widget-admin-asyncactivities-casenumber} </th>
+                     <th> %{workportal-widget-admin-asyncactivities-process} </th>
+                     <th> %{workportal-widget-admin-asyncactivities-activity} </th>
+                     <th> %{workportal-widget-admin-asyncactivities-retries} </th>
+                     <th> %{workportal-widget-admin-asyncactivities-startdate} </th>
+                     <th> %{workportal-widget-admin-asyncactivities-lastretrydate} </th>
+                </thead>
+                <tbody class="biz-wp-table-body">
+
+                        {{each(i, item) rows }}
+                            <tr>
+                               <td> <span> <input type="checkbox" name="enableChecks" value="${item.idCase}" data-idWorkItem="${item.idWorkItem}" data-idAsynchWorkitem="${item.idAsynchWorkitem}"/> </span> </td>
+                               <td>
+                                    <a href="#" class="async-act-log-link" data-idCase="${item.idCase}" data-idAsynchWorkitem="${item.idAsynchWorkitem}" data-radNumber="${item.radNumber}" data-idWorkItem="${item.idWorkItem}" data-taskName="${item.tskDisplayName}" data-processName="${item.wfClsDisplayName}">
+                                      <i class="bz-icon bz-icon-16 bz-icon-search-outline async-act-icon async-act-log-icon"></i>
+                                    </a>
+                               </td>
+                               <td>
+                                    <a href="#" class="async-act-retry-link" data-idCase="${item.idCase}" data-idAsynchWorkitem="${item.idAsynchWorkitem}" data-idWorkItem="${item.idWorkItem}" data-taskName="${item.tskDisplayName}" data-processName="${item.wfClsDisplayName}">
+                                        <i class="bz-icon bz-icon-16 bz-icon-cog-outline async-act-icon async-act-retry-icon"></i>
+                                    </a>
+                               </td>
+                               {{if item.idCase == -1}}
+                               <td> <a  href="#" class="async-activity-click" data-idCase="${item.idCase}"></a></td>
+                               {{else}}
+                               <td> <a  href="#" class="async-activity-click" data-idCase="${item.idCase}">${item.radNumber} </a></td>
+                               {{/if}}
+                               <td> ${item.wfClsDisplayName}</td>
+                               <td> ${item.tskDisplayName} </td>
+                               <td> ${item.awCurrentRetries}</td>
+                               <td><span class="formatDate">${item.creationDate}</span></td>
+                               <td><span class="formatDate">${item.lastProcessDate}</span></td>
+                           </tr>
+                       {{/each}}
+
+                </tbody>
+            </table>
+
+            <div id="async-table-summary-wrapper" class="biz-wp-table-summary-wrapper">
+                  <ul id="async-table-pager-wrapper" class="biz-wp-table-pager-wrapper">
+                  </ul>
+            </div>
+
+            <div id="async-act-data-buttonset" class="biz-wp-buttonset">
+                <button id="async-act-enable-checks" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                    <span class="ui-button-text">%{workportal-widget-admin-asyncactivities-enableactivities}</span>
+                </button>
+            </div>
+        </div>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-async-activities-pagination" type="text/x-jquery-tmpl">
+
+   <div>
+        <ul class="pager-wrapper">
+
+            {{if additionalparameters}}
+            <li>
+                    %{bz-rp-components-detaillist-pagination-page}   ${page} %{bz-rp-components-detaillist-pagination-of} ${totalPages}
+                </li>
+                <li>
+                    %{bz-rp-components-detaillist-pagination-totalrecords}  ${totalRecords}
+                </li>
+        {{/if}}
+
+            <li class="pager-content">
+                <ul>
+            {{each pages}}
+                <li {{if page==pageNumber}} class="bz-page active" {{else}} class="bz-page" {{/if}} data-page="${pageNumber}">
+                  <span class="number">${pageNumber}</span>
+                </li>
+            {{/each}}
+          </ul>
+            </li>
+        </ul>
+    </div>
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-admin-async-activities-error-page" type="text/x-jquery-tmpl">
+
+   <div class="async-act-error-page">
+        <label id="errorLabel">${errorMessage}</label>
+        <br/><br/>
+        <a id="go-to-pending">%{workportal-widget-admin-asyncactivities-gotopending}</a>
+   </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-async-activities-processing" type="text/x-jquery-tmpl">
+
+   <div>
+        <strong>
+            <span id="generalTitle" class="biz-wp-window-title">
+                %{workportal-widget-admin-asyncactivities-processing}&nbsp; ${params.taskName}
+            </span>
+        </strong>
+        <div class="biz-wp-form clearfix">
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell"><strong>%{workportal-widget-admin-asyncactivities-process}:</strong></div>
+                <div class="biz-wp-form-cell"> ${params.processName} </div>
+            </div>
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell"><strong>%{workportal-widget-admin-asyncactivities-casenumber}:</strong></div>
+                <div class="biz-wp-form-cell"> ${params.idCase} </div>
+            </div>
+        </div>
+        <div class="async-act-processing">
+            <div class="processing-gif"/>
+            <div>
+                <span id="generalTitle" class="biz-wp-window-title">
+                    %{workportal-widget-admin-asyncactivities-processing}&nbsp;${params.taskName}
+                </span>
+            </div>
+        </div>
+   </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-async-activities-tab2" type="text/x-jquery-tmpl">
+
+    <div id="async-tabs-2" style="display:none" class="async-act-tabs-content">
+
+            <table id="async-act-table-group"  class="biz-wp-table" cellspacing="2" cellpadding="2" width="100%" border="0">
+                <thead class="biz-wp-table-head">
+                     <th>%{workportal-widget-admin-asyncactivities-delegatescheduler}</th>
+                     <th>%{workportal-widget-admin-asyncactivities-processactivity}</th>
+                     <th>%{workportal-widget-admin-asyncactivities-numberinstances}</th>
+                </thead>
+                <tbody class="biz-wp-table-body">
+
+                        {{each(i, item) rows }}
+                            <tr>
+                               <td> <div class="async-act-group-header"><a  href="#" class="async-act-enable-link " data-idWfClass="${item.idWfClass}"> %{workportal-widget-admin-asyncactivities-enable} </a></div>
+
+                                   {{each(j,child) item.childs}}
+                                        <div class="async-act-childs "> <a  href="#" class="async-act-enable-link" data-idWfClass="${item.idWfClass}" data-idTask="${child.idTask}"> <span class="async-act-childs-text" >%{workportal-widget-admin-asyncactivities-enable} </span> </a> </div>
+                                   {{/each}}
+
+                               </td>
+                               <td>
+                                   <div class="clearfix  biz-wp-margin-left-20">
+                                        <a  href="#" class="async-act-process-tree-link">
+                                            <div class="biz-wp-float-left biz-wp-tree-icon biz-wp-tree-expand-icon"></div>
+                                            <span class="biz-wp-float-left"> ${item.wfClsDisplayName}  </span>
+                                        </a>
+                                   </div>
+
+                                   {{each(j,child) item.childs}}
+                                       <div class="biz-wp-margin-left-20 async-act-childs">
+
+                                           <span class="biz-wp-margin-left-20 biz-wp-float-left async-act-childs-text" data-idTask="${child.idTask}"> ${child.tskDisplayName}  </span>
+                                       </div>
+                                   {{/each}}
+                               </td>
+                               <td>
+                                    <div class="async-act-group-header" >${item.count}</div>
+                                    {{each(j,child) item.childs}}
+                                        <div class="async-act-childs async-act-childs-text"> ${child.count} </div>
+                                    {{/each}}
+                               </td>
+                           </tr>
+                       {{/each}}
+
+                </tbody>
+            </table>
+
+        </div>
+
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-admin-async-activities-log" type="text/x-jquery-tmpl" >
+    <div class="biz-wp-form clearfix">
+            <div id="log-caseNumber" class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell"><strong>%{workportal-widget-admin-asyncactivities-casenumber}</strong></div>
+                <div class="biz-wp-form-cell"> ${data.radNumber} </div>
+            </div>
+            <div id="log-process" class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell"><strong>%{workportal-widget-admin-asyncactivities-process}</strong></div>
+                <div class="biz-wp-form-cell"> ${data.processName} </div>
+            </div>
+            <div id="log-activity" class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell"><strong>%{workportal-widget-admin-asyncactivities-activity}</strong></div>
+                <div class="biz-wp-form-cell">${data.taskName}</div>
+            </div>
+
+
+            <table id="log-table" class="biz-wp-table" cellspacing="2" cellpadding="2" width="100%" border="0">
+                <thead class="biz-wp-table-head">
+                     <th>%{workportal-widget-admin-asyncactivities-retrydate}</th>
+                     <th>%{workportal-widget-admin-asyncactivities-message}</th>
+                </thead>
+                <tbody class="biz-wp-table-body">
+
+                  {{each(i, item) rows }}
+                          <tr>
+                               <td style="padding: 7px;"><span class="formatDate">${item.awrRetryDate}</span></td>
+                               <td>${item.awrMessage}</td>
+                         </tr>
+                   {{/each}}
+
+                </tbody>
+            </table>
+
+            <div id="log-table-summary-wrapper" class="biz-wp-table-summary-wrapper">
+                  <ul id="log-table-pager-wrapper" class="biz-wp-table-pager-wrapper">
+                  </ul>
+            </div>
+
+            <div id="async-act-data-buttonset" class="biz-wp-buttonset">
+                <button id="async-act-button-back" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                    <span class="ui-button-text">%{workportal-widget-admincasesearch-button-back}</span>
+                </button>
+            </div>
+    </div>
+</script>

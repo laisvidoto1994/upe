@@ -1,0 +1,33 @@
+<script id="project-plan-action" type="text/x-jsrender">
+   <div>
+       <div>
+        {{if showActionsPlan }}
+        <div>
+         <div class="clearfix bz-wp-widget ui-bizagi-wp-project-plan-action ui-bizagi-wp-project-plan-header">
+
+                 <h3 class="bz-wp-section">{{>plan}}</h3>
+
+                 <div class="wrapper-menu-rubik">
+                     <ul class="ui-bizagi-wp-project-plan-action-menu">
+                         <li>
+                             <a href="javascript:void(0);"><i class="bz-icon bz-icon-16 bz-icon-cog-outline"></i></a>
+                             <ul>
+                                 {{if currentStatePlan != stateClosedPlan }}
+                                    <li class="ui-menu-item" data-item="edit"><a href="javascript:void(0);">%{bz-rp-components-dimension-edit}</a></li>
+                                 {{/if}}
+                                 <li class="ui-menu-item" data-item="delete"><a href="javascript:void(0);">%{bz-rp-components-dimension-delete}</a></li>
+                                 <li class="ui-menu-item" data-item="saveastmpl"><a href="javascript:void(0);">%{workportal-project-plan-createtmpl}</a></li>
+                             </ul>
+                         </li>
+                     </ul>
+                 </div>
+
+
+
+          </div>
+          <span id="popupNotification"></span>
+       </div>
+       {{/if}}
+       </div>
+    </div>
+</script>

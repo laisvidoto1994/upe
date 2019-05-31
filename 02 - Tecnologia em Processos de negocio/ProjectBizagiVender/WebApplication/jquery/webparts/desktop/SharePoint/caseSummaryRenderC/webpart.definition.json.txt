@@ -1,0 +1,9 @@
+﻿{
+	"name": "caseSummaryAndRenderComplete",
+	"js": [ {"src": "bizagi.webparts.caseSummaryAndRenderComplete.js"}],
+	"css": [ {"src": "bizagi.webpart.caseSummaryAndRenderComplete.css"} ],
+	"tmpl": [ 
+		{alias: "caseSummaryAndRenderComplete",  "src": "caseSummaryAndRenderComplete.tmpl.html#ui-bizagi-webpart-case-summary-render-complete"}
+		
+	]
+}

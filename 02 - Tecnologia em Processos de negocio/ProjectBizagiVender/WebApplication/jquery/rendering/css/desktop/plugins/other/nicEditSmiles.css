@@ -1,0 +1,139 @@
+/* Smiles*/
+.ui-smile 	
+{
+	display:inline-block;
+	background-color: transparent; 	
+	background-image: url(images/smiles.png);	
+	background-repeat: no-repeat; 
+}
+.ui-smile-3 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -0px -0px;
+ }
+
+.ui-smile-4 {
+	height               : 17px;
+	width                : 17px;
+	background-position  : -15px -0px;
+ }
+
+ .ui-smile-5 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -32px -0px;
+ }
+
+ .ui-smile-6 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -47px -0px;
+ }
+
+ .ui-smile-7 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -62px -0px;
+ }
+
+ .ui-smile-8 {
+	height               : 19px;
+	width                : 15px;
+	background-position  : -77px -0px;
+ }
+
+ .ui-smile-9 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -92px -0px;
+ }
+
+ .ui-smile-10 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -107px -0px;
+ }
+
+ .ui-smile-11 {
+	height               : 18px;
+	width                : 19px;
+	background-position  : -122px -0px;
+ }
+
+ .ui-smile-12 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -141px -0px;
+ }
+
+ .ui-smile-13 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -156px -0px;
+ }
+
+ .ui-smile-14 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -171px -0px;
+ }
+
+ .ui-smile-15 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -186px -0px;
+ }
+
+ .ui-smile-16 {
+	height               : 17px;
+	width                : 15px;
+	background-position  : -201px -0px;
+ }
+
+ .ui-smile-17 {
+	height               : 17px;
+	width                : 15px;
+	background-position  : -216px -0px;
+ }
+
+ .ui-smile-18 {
+	height               : 17px;
+	width                : 15px;
+	background-position  : -231px -0px;
+ }
+
+ .ui-smile-19 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -246px -0px;
+ }
+
+ .ui-smile-20 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -261px -0px;
+ }
+
+ .ui-smile-21 {
+	height               : 17px;
+	width                : 15px;
+	background-position  : -276px -0px;
+ }
+
+ .ui-smile-22 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -291px -0px;
+ }
+
+ .ui-smile-23 {
+	height               : 15px;
+	width                : 15px;
+	background-position  : -306px -0px;
+ }
+
+ .ui-smile-24 {
+	height               : 17px;
+	width                : 15px;
+	background-position  : -321px -0px;
+ }

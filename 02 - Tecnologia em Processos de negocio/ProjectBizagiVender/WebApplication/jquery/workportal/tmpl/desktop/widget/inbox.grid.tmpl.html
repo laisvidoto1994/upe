@@ -1,0 +1,179 @@
+{{css "jquery/workportal/css/desktop/bizagi.workportal.inbox.css"}}
+<script id="ui-bizagi-workportal-widget-inbox-grid" type="text/x-jquery-tmpl">
+
+
+    <div id="contentFramework">
+
+    <div id="contentInbox">
+        <div id="innerContentInbox">
+            {{if enableSmartFolders}}<span class="ui-bizagi-wp-mini-arrow smartfolders"></span>{{/if}}
+            {{tmpl "#ui-bizagi-workportal-widget-view-options"}}
+        </div>
+    </div>
+
+        <ul class="container-fluid">
+            <li id="contentProc" class="bz-wp-sidebar-inbox proc" {{loading}} {{adjustable}}></li>
+            <li id="contentCases" class="casesGrid" {{loading}} {{adjustable}}></li>
+        </ul>
+        <div id="contentDesc" class="hidden nodisplay" >
+            {{tmpl "#ui-bizagi-workportal-widget-inbox-common-case-description"}}
+        </div>
+    </div>
+    <div id="footer">
+        {{tmpl "#ui-bizagi-workportal-widget-inbox-common-header"}}
+        {{tmpl "#ui-bizagi-workportal-widget-inbox-common-pagination-grid"}}
+    </div>
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-grid-rubik" type="text/x-jquery-tmpl">
+    <div id="contentFramework" >
+        <ul>
+            <li id="contentCases" class="adjustCanvas" {{loading}} {{adjustable}}></li>
+        </ul>
+         <div id="contentDesc" class="hidden nodisplay" >
+            {{tmpl "#ui-bizagi-workportal-widget-inbox-common-case-description"}}
+        </div>
+    </div>
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-grid-description" type="text/x-jquery-tmpl">
+    {{tmpl "#ui-bizagi-wp-app-inbox-description-tmpl"}}
+</script>
+<script id="ui-bizagi-workportal-widget-inbox-grid-cases" type="text/x-jquery-tmpl">
+    <div id="ui-bizagi-wp-app-inbox-grid-cases-container"  class="bz-wp-wrapper ui-bizagi-wp-app-inbox-grid-cases-container">
+        <div id="ui-bizagi-wp-app-inbox-grid-cases-container"  class="ui-bizagi-wp-app-inbox-grid-cases-container heightToAdjust scrollCasesGrid">
+
+            <table id="ui-bizagi-wp-app-inbox-grid-cases" cellspacing="0" border="0" cellpading="0">
+                <thead>
+                    <tr>
+                        <td>&nbsp;<!-- empty cell for actions--></td>
+                        {{each(m,column) columnTitle}}
+                        <td {{if !groupByCaseNumber}}class="sortColumnsData"{{/if}} ${$item.showColumn(m)}>
+                            <div>
+                                <span class="displayNameLabel">${displayName}</span>
+                                {{if !groupByCaseNumber}}
+                                {{if isOrdered=="true"}}
+                                {{if orderType==0}}
+                                <span class="sortColumnsDataUpIcon"><span class="arrowUpIcon"></span><span class="arrowDownIcon"></span></span>
+                                {{else}}
+                                <span class="sortColumnsDataDownIcon"><span class="arrowUpIcon"></span><span class="arrowDownIcon"></span></span>
+                                {{/if}}
+                                {{else}}
+                                <span class="sortColumnsDataIcon"><span class="arrowUpIcon"></span><span class="arrowDownIcon"></span></span>
+                                {{/if}}
+                                 {{/if}}
+                                <input type="hidden" id="isOrdered" value="${isOrdered}" />
+                                <input type="hidden" id="orderFieldName" value="${orderFieldName}" />
+                                <input type="hidden" id="orderType" value="${orderType}" />
+                                <input type="hidden" id="order" value="${order}" />
+                            </div>
+                        </td>
+                        {{/each}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{each(k,row) rows}}
+                    {{if $item.createGroupedHeader(k)}}
+                        <tr>
+                            <th colspan="${row.fields.length}">
+                            %{workportal-widget-inboxcommon-case-number}
+                            <span class="ui-bizagi-wp-app-inbox-grouped" data-radnumber="${$item.getRadNumber(row)}">
+                                ${$item.getRadNumber(row)}
+                                <input type="hidden" id="idCase" value="${id}">
+                                </span>
+                              </th>
+                        </tr>
+                    {{/if}}
+                    <tr data-idworkflow="${idWorkFlow}">
+                        <td class="bz-inbox-actions">
+                            {{if isActivityPlan === false }}
+                                {{if isFavorite=="true"}}
+                                    <i id="ui-bizagi-wp-wg-bt-start-on" class="bz-icon bz-icon-star bz-icon-16 ui-bizagi-wp-app-inbox-cases-start on"></i>
+                                {{else}}
+                                    <i id="ui-bizagi-wp-wg-bt-start-off" class="bz-icon bz-icon-star-outline bz-icon-16 ui-bizagi-wp-app-inbox-cases-start off"></i>
+                                {{/if}}
+                                {{if graphicQuery }}
+                                    <i class="ui-bizagi-wp-app-inbox-cases-ico-view bz-icon bz-icon-16 bz-icon-diagram-outline"></i>
+                                {{/if}}
+                            {{/if}}
+                            {{if enableFolders}}
+                            <div class="ui-bizagi-inbox-folder inboxGridFolder" data-idcase="${id}"></div>
+                            {{/if}}
+                            <input type="hidden" id="idCase" value="${id}">
+                            <input type="hidden" id="taskState" value="${taskState}">
+                            <input type="hidden" id="isFavorite" value="${isFavorite}">
+                            <input type="hidden" id="guidFavorite" value="${guidFavorite}">
+
+
+                                <button type="button" class="inbox-grid-tooltip-button workonitRow showDesc" title="%{workportal-widget-inboxgrid-show-summary}">
+                                    <i class="bz-icon bz-icon-16 bz-icon-search-outline"></i>
+                                </button>
+
+                            <input type="hidden" id="idCase" value="${id}">
+                        </td>
+
+                        {{each(i, item) fields}}
+                        <td class="${columnTitle[i].fieldName}" ${$item.showColumn(i)}>
+                            {{if columnTitle[i] != 'null' }}
+                            {{if columnTitle[i].fieldName == 'I_RadNumber' }}
+                            <a class="ui-bizagi-wp-app-inbox-activity-name">{{html item}}<input type="hidden" id="idCase" value="${id}"></a>
+                            {{else typeof item == 'object'}}
+                            <div style="text-align:center;">
+                                <ul class="gridListWorkItems">
+                                    {{each(j, subItem) item}}
+                                    {{each(k, subSubItem) subItem}}
+                                    {{if bizagi.util.isDate(subSubItem.toString())}}
+                                    <li><span class="formatDate" style="text-align:center;width: 100%">${subSubItem}</span></li>
+                                    {{else}}
+                                    {{if typeof subSubItem == 'object'}}
+                                    {{each(l, workItem) subSubItem}}
+                                    {{if l == 'TaskName'}}
+                                    <li>
+                                        <span class="ui-bizagi-wp-app-inbox-activity-name">
+                                            <i id="ui-bizagi-wp-app-inbox-cases-ico-state-${State}" {{if State}} class="bz-icon bz-icon-8 bz-icon-point" {{/if}}></i>
+                                            ${workItem}
+                                            <input type="hidden" id="idTask" value="${idTask}">
+                                            <input type="hidden" id="idWorkItem" value="{{if idWorkItem != 0}}${idWorkItem}{{/if}}">
+                                            <input type="hidden" id="idCase" value="${id}">
+                                        </span>
+                                    </li>
+                                    {{/if}}
+                                    {{/each}}
+                                    {{else}}
+                                    {{if subSubItem}}<li>${subSubItem}</li>{{/if}}
+
+                                    {{/if}}
+                                    {{/if}}
+                                    {{/each}}
+                                    {{/each}}
+                                </ul>
+                            </div>
+
+                            {{else}}
+                            {{if columnTitle[i].type == "DateTime" && bizagi.util.isDate(item.toString())}}
+                            <span class="formatDate">${item}</span>
+                            {{else columnTitle[i].type == "Boolean"}}
+                            {{html bizagi.util.formatBoolean(item)}}
+                            {{else}}
+                            {{if item != "null"}}
+                            {{html bizagi.util.replaceLineBreak(item)}}
+                            {{else}}
+                            &nbsp;
+                            {{/if}}
+                            {{/if}}
+                            {{/if}}
+                            {{/if}}
+                        </td>
+                        {{/each}}
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</script>
+<script id="ui-bizagi-workportal-widget-view-options" type="text/x-jquery-tmpl">
+    <ul id="ui-bizagi-workportal-widget-view-options">
+        <li>
+            <i id="ui-bizagi-wp-app-inbox-bt-eye" class="bz-icon bz-icon-16 bz-icon-eye"></i>
+        </li>
+    </ul>
+</script>

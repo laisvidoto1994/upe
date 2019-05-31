@@ -1,0 +1,10 @@
+﻿<div class="ui-bizagi-container ui-bizagi-container-tab {{if tabOrientation == "rtl"}}bz-container-rtl{{/if}}" data-unique-id="${uniqueId}">
+    <ul class="render-tabs">
+    {{each tabs}}
+      <li>
+        <a href="#ui-bizagi-tab-${id}" title="${displayName}">${displayName}</a>
+      </li>
+    {{/each}}
+    </ul>
+   {{children}}
+</div>

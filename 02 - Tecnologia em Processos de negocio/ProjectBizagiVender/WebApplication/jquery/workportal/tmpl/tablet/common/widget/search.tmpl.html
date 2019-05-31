@@ -1,0 +1,130 @@
+
+<script id="ui-bizagi-workportal-widget-search" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-wp-app-search-results">
+        <table>
+            <thead>
+                <tr>
+                        <td>&nbsp; </td>
+			            {{each columnTitle}}
+                        <td class="sortColumnsData">
+                            <div>
+                                <span>${displayName}</span>
+                                {{if isOrdered=="true"}}
+                                {{if orderType==0}}
+                                <span class="sortColumnsDataUpIcon"><span class="arrowUpIcon"></span><span class="arrowDownIcon"></span></span>
+                                {{else}}
+                                <span class="sortColumnsDataDownIcon"><span class="arrowUpIcon"></span><span class="arrowDownIcon"></span></span>
+                                {{/if}}
+                                {{else}}
+                                <span class="sortColumnsDataIcon"><span class="arrowUpIcon"></span><span class="arrowDownIcon"></span></span>
+                                {{/if}}
+                                <input type="hidden" id="isOrdered" value="${isOrdered}" />
+                                <input type="hidden" id="orderFieldName" value="${orderFieldName}" />
+                                <input type="hidden" id="orderType" value="${orderType}" />
+                                <input type="hidden" id="order" value="${order}" />
+                            </div>
+                        </td>
+			            {{/each}}
+                        <td>&nbsp;<!-- empty cell for work on it--></td>
+                </tr>
+            </thead>
+            <tbody id="searchDetails">
+            {{each rows}}
+                    <tr data-idworkflow="${idWorkFlow}">
+                             <td>
+				                {{if isFavorite=="true"}}
+                            <div id="ui-bizagi-wp-wg-bt-start-on" class="ui-bizagi-wp-app-inbox-cases-start on"></div>
+				                {{else}}
+                            <div id="ui-bizagi-wp-wg-bt-start-off" class="ui-bizagi-wp-app-inbox-cases-start off"></div>
+				                {{/if}}
+                            <!--<div class="ui-bizagi-wp-app-inbox-cases-ico-view">
+                                <span></span>
+                            </div>-->
+                            <input type="hidden" id="idCase" value="${id}" />
+                            <input type="hidden" id="taskState" value="${taskState}" />
+                            <input type="hidden" id="isFavorite" value="${isFavorite}" />
+                            <input type="hidden" id="guidFavorite" value="${guidFavorite}" />
+                        </td>
+			                {{each(i, item) fields}}
+                                <td>
+                                     {{if columnTitle[i] != 'null' }}
+                                         {{if columnTitle[i].fieldName == 'I_RadNumber' }}
+                                            <span class="ui-bizagi-wp-app-inbox-activity-name">
+                                                {{html item}}&nbsp;
+                                                <input type="hidden" id="idCase" value="${id}" />
+                                            </span>
+                                         {{else typeof item == 'object'}}
+                                           {{if item["workitems"]}}
+                                                <div style="text-align:center;">
+                                                    <ul class="gridListWorkItems">
+                                                        {{each(i, workitem) item["workitems"]}}
+                                                            <li>
+                                                                <span class="ui-bizagi-wp-app-inbox-activity-name">
+                                                                    <span id="ui-bizagi-wp-app-inbox-cases-ico-state-${workitem['State']}" {{if workitem['State']}}  class="ui-bizagi-wp-app-inbox-cases-grid-ico-state" {{/if}}></span>
+                                                                    ${workitem["TaskName"]}
+                                                                    <input type="hidden" id="idTask" value="${workitem['idTask']}" />
+                                                                    <input type="hidden" id="idWorkItem" value="${workitem['idWorkItem']}" />
+                                                                    <input type="hidden" id="idCase" value="${id}" />
+                                                                </span>
+                                                            </li>
+                                                        {{/each}}
+                                                    </ul>
+                                                </div>
+                                           {{else}}
+                                                    <div style="text-align:center;"> 
+                                                        <ul class="gridListWorkItems">
+                                                            {{each(j, subItem) item}}                
+                                                                {{each(k, subSubItem) subItem}}
+                                                                    <li>
+                                                                          {{if bizagi.util.isDate(subSubItem)}} 
+                                                                                <span class="formatDate" style="text-align:center;width: 100%">${subSubItem}</span>
+                                                                          {{else}}
+                                                                                ${subSubItem || '&nbsp;'}
+                                                                          {{/if}}
+                                                                    </li>
+                                                                {{/each}}
+                                                            {{/each}}
+                                                         </ul>
+                                                     </div>
+                                           {{/if}}
+                                      {{else}}
+                                            {{if bizagi.util.isDate(item.toString())}} 
+                                                <span class="formatDate">${item}</span>
+                                             {{else columnTitle[i].type == "Boolean"}}
+                                                <dd>{{html bizagi.util.formatBoolean(item)}}</dd>
+                                            {{else}}
+                                                  {{if item != "null"}}
+                                                    {{html bizagi.util.replaceLineBreak(item)}}
+                                                  {{else}}
+                                                    &nbsp;                                                    
+                                                  {{/if}}
+                                            {{/if}}
+                                      {{/if}}
+                                    {{/if}}
+                                </td>
+                             {{/each}}
+                        <td>
+                            <button type="button" class="workonitRow showDesc">
+				                    %{workportal-widget-inboxcommon-work-on-it}
+                            </button>                            
+                            <input type="hidden" id="idCase" value="${id}" />
+                        </td>
+        </tr>
+	{{/each}}
+            </tbody>
+        </table>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-search-inputfield" type="text/x-jquery-tmpl">
+    <div id='inputSearchParent' class='modal search-widget'>
+        <div class='selectarrow'></div>
+        <div id='inputSearchContainer' class='content clearfix'>
+    <div id="ui-bizagi-wp-app-menu-search" class="ui-bizagi-wp-app-menu-search-off">
+        <div id="ui-bizagi-wp-app-menu-bt-search" class="ui-bizagi-wp-app-menu-bt-search-off bz-cm-icon"></div>
+        <input type="text" name="menuQuery"  id="menuQuery" />
+        <div id="searchNotFound" class="nodisplay">%{workportal-menu-search-found-no-cases}</div>
+    </div>
+     </div>
+        </div>
+</script>

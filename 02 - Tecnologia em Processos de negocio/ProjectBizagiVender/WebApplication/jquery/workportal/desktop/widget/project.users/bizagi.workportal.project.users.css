@@ -1,0 +1,22 @@
+.ui-bizagi-wp-group-users h4 {
+    margin: 1em 0;
+}
+
+.ui-bizagi-wp-tasklist {
+    margin: 0;
+}
+
+.ui-bizagi-wp-tasklist-item {
+    margin-bottom: 1em;
+    font-size: 10px
+}
+
+.ui-bizagi-wp-tasklist-item-type {
+    float: left;
+    margin: 0 5px 0 0;
+    text-align: right;
+}
+
+.ui-bizagi-wp-tasklist-item-name {
+    margin: 0 0 0 48px;
+}

@@ -1,0 +1,15 @@
+﻿{
+	"name": "render",
+	"js": [ {"src": "bizagi.webparts.render.js"},	{"src": "../../../../overrides/js/desktop/sharePoint/render/bizagi.webparts.render.override.js"}],
+	"css": [ {"src": "bizagi.webpart.render.css"} ],
+	"tmpl": [ 
+		{alias: "loading-render",  "src": "render.tmpl.html#ui-bizagi-webpart-render-loading"},
+		{alias: "render",  "src": "render.tmpl.html#ui-bizagi-webpart-render"},
+		{alias: "info-render",  "src": "render.tmpl.html#ui-bizagi-webpart-info-render"},
+		{alias: "workitems-render",  "src": "render.tmpl.html#ui-bizagi-webpart-workitems-render"},
+		{alias: "render-async",  "src": "render.tmpl.html#ui-bizagi-webpart-render-async"},
+		{alias: "title-render",  "src": "render.tmpl.html#ui-bizagi-webpart-title-render"},
+		{alias: "render-mobile",  "src": "render.tmpl.html#ui-bizagi-webpart-render-mobile"}
+
+	]
+}

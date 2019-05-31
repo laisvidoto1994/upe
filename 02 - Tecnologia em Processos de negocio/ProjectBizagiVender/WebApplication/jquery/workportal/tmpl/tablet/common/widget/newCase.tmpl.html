@@ -1,0 +1,97 @@
+<script id="ui-bizagi-workportal-widget-newcase" type="x-jquery-tmpl" >
+<div id='newCaseParent' class='modal new-case'>
+    <div class='selectarrow'></div>
+    <div id='newCaseContainer' class='content clearfix'>
+<div class="ui-bizagi-workportal-newcase">
+    <div class="modalMenuBtNewcase">
+        <div id="modalNewCaseOverlay" class="ui-widget-overlay modalNewCaseOverlay"></div>
+        <div id="modalNewCaseMessage" class="ui-widget-content ui-corner-all">
+            <div id="loading" {{loading}}></div>
+            <div id="case"></div>            
+        </div>
+        <div id="selectArrow"></div>   
+        <div id="modalMenuBtNewcaseHeader" class="clearfix">
+            <div id="ui-bizagi-wp-app-search" class="searchNewCase">
+            	<div id="ui-bizagi-wp-app-bt-search"></div>                
+                <input type="search" results="1" id="searchNewCase" class="clearfix" placeholder="%{workportal-menu-search}">                
+            </div>
+            <!-- Task #1900 redmine, please don't delete
+            <div id="bt-back" class="nodisplay">
+                <span></span>
+            </div>
+            <div id="modalTitle">%{workportal-widget-newcase-create}</div>                        
+            <ul id="newcase-view-options">
+                <li id="frecuentCases"><span></span></li>
+                <li id="casesList" class="casesListOn"><span></span></li>
+            </ul> 
+            -->
+        </div>         
+        <div id="modalMenuBtNewcaseList" class="clearfix">
+                <ul id="categoryTree" class="categoryTree">
+                    <li>
+                        Bizagi
+                        <input type="hidden" id="idParentCategory" value=""/>
+                    </li>
+                </ul>
+            <div id="categoriesContainer">
+                <div id="categories" {{loading}} class="unfixed">                
+            </div>
+        </div>
+    </div>    
+</div>  
+ </div>    
+</div> 
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-newcase-categories" type="text/x-jquery-tmpl" >
+    {{each category}}
+     {{if  ((typeof(renderVersion)!="undefined" && ( renderVersion==2 || renderVersion==0 ) ) || typeof(renderVersion)==="undefined" ) }}
+    <ul data-appid="${appId}">
+        {{if isProcess=="true"}}
+        <li class="process">
+            <div class="processIco  bz-cm-icon"></div>
+            <h3>${categoryName}</h3>
+            <p class="newCaseDescription">${description}</p>
+        </li>
+        {{else}}
+        <li class="category">
+            <div class="bz-cm-icon categoryIco"></div>
+            <h3>${categoryName}</h3>
+            <span id="arrow">&GT;</span>
+        </li>
+        {{/if}}
+
+        <input type="hidden" id="hasOfflineForm" value="{{if typeof hasOfflineForm != 'undefined' && (hasOfflineForm == true || hasOfflineForm == 'true') }}true{{else}}false{{/if}}" />
+        <input type="hidden" id="idCategory" value="${idCategory}" />
+        <input type="hidden" id="isProcess" value="${isProcess}" />
+        <input type="hidden" id="categoryName" value="${categoryName}" />
+ 
+</ul>
+ {{/if}}
+{{/each}}
+{{if truncate}}
+ <div class="loadMoreElements"><span id="loadMoreElementsIcon" class="plus_load_icon"></span><span>%{workportal-widget-newcase-loadmore}</span></div>
+{{/if}}
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-newcase-categories-tree" type="text/x-jquery-tmpl" >
+    <li  data-appid="${appId}">
+        &GT; ${categoryName}
+        <input type="hidden" id="idParentCategory" value="${idParentCategory}" />        
+    </li>
+</script>
+
+<script id="ui-bizagi-workportal-widget-recent-process" type="text/x-jquery-tmpl" >
+    {{each processes}}
+    <ul>
+        <li class="process">
+            <div class="processIco  bz-cm-icon"></div>
+            <h3>${displayName}</h3>                
+        </li>           
+        <input type="hidden" id="idWFClass" value="${idWFClass}" />                
+    </li>
+</ul>
+{{/each}}
+</script>

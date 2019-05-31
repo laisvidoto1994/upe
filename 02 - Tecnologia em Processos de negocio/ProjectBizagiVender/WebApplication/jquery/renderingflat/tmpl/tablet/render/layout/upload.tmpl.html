@@ -1,0 +1,11 @@
+<ul class="ui-bizagi-render-upload-container">
+    #if (data.files.length == 0){#
+       <span class="ui-bizagi-render-upload-no-files">%{render-upload-no-files}</span>
+    #}else{#
+        # for (var i=0, len= data.files.length ; i < len; i++){ #
+            <li class="ui-bizagi-render-layout-upload-item ui-state-default"  data-id="#= data.files[i].id #">
+                <a href="#= data.files[i].url #" title="#= data.files[i].filename #" target="_blank">#= data.files[i].filename #</a>
+            </li>
+        #}#
+    #}#
+</ul>

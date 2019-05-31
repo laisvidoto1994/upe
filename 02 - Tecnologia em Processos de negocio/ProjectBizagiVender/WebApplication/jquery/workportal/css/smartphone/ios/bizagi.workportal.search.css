@@ -1,0 +1,257 @@
+/**********************************
+*  Filename: bizagi.workportal.search.css
+*  Create Date: 2012-06-27
+*  Author: oscar.osorio@bizagi.com
+* 
+*  ==STRUCTURE=====================
+*
+*  $__header
+*  $__activityList 
+***********************************/
+
+.bz-wp-wg-search
+{
+	margin: 48px 15px 130px 15px;
+	min-width: 280px;
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, .15);
+	border-radius: 6px;
+	background-color: #F2F2F2;
+}
+
+#searchDetails
+{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+/*
+__header
+*******/
+
+.bz-wp-wg-search > ul > li span.favorite-false {
+	background-position: -332px -47px;
+	height: 35px;
+	width: 35px;
+	left: 10px;
+}
+
+.bz-wp-wg-search > ul > li span.favorite-true {
+	background-position: -246px -49px;
+	height: 35px;
+	width: 35px;
+	position: relative;
+	left: 0;
+}
+
+
+.bz-wp-wg-search > ul > li  .rad-number {
+	display: table-cell;
+	vertical-align: middle;
+	color: #222C32;
+	font-weight: bold;
+	position: absolute;
+	top: 10px;
+	left: 35px;
+}
+
+.bz-wd-search-container:after,
+.bz-wd-search-rows:after,
+.bz-wd-search-fields:after
+{
+    clear: both;
+    content: "";
+    display: table;
+}
+
+
+.bz-wd-search-rows >div:visible:first
+{
+    border-radius: 6px 6px 0 0 ;
+}
+
+.bz-wd-search-rows >div:visible:last
+{
+    border-radius: 0 0 6px 6px ;
+}
+
+.bz-wd-search-container
+{
+    display: block;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.bz-wd-search-rows
+{
+    display:block;
+    width:100%;
+}
+
+.bz-wd-search-fields
+{
+    display: block;
+    position: relative;
+    font-size: 13px;
+    padding: 0px 20px;
+}
+.bz-wd-search-fields:last-child{
+	margin-bottom: 20px;
+}
+
+.bz-wd-search-fields-fix{
+    margin-top: 20px;
+    border-top: 1px solid silver;
+    padding: 10px 0px 20px 0px;
+}
+.bz-wd-search-column-title
+{
+    float: left;
+    display: inline-block;
+    width: 33%;
+    text-align: left;
+    color: #555D63;
+    padding-top: 5px;
+}
+.bz-wd-search-column-title span{
+	padding-right: 10px;
+}
+
+.bz-wd-search-column-value{
+    float: right;
+    width: 67%;
+    display: inline-block;
+    background-color: #E6E6E6;
+	color: #265A80;
+	border-radius: 3px;
+	vertical-align: middle;
+	word-break: break-all;
+	font-weight: bold;
+	margin-bottom: 5px;
+	padding: 5px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.bz-wd-search-column-value:last-child
+{
+}
+
+.bz-wd-search-column-value:nth-child(even)
+{
+
+}
+
+/*
+__activityList
+************/
+.bz-wp-wg-search  .activity-list-search
+{
+	list-style: none;
+	position: relative;
+	height: auto;	
+}
+
+activity-list-search  span.activity-name 
+{color: #5A6267;}
+
+
+.activity-list-search span.state-light {
+	display: inline-block;
+	min-height: 10px;
+	min-width: 10px;
+	border-radius: 5px;
+	vertical-align: top;
+	margin: 3px;
+	position:relative;
+	/*background-image:url('images/bizagi-mobile-sprite-s.png');*/
+}
+
+/*
+@media only screen and (-webkit-min-device-pixel-ratio: 2), 
+only screen and (min-device-pixel-ratio: 2) {
+    .activity-list-search span.state-light
+	{
+		background-image:url('images/bizagi-mobile-sprite.png');
+         background-size: 450px 300px;
+	}
+	
+}*/
+
+
+.activity-list-search  span.state-color-Green
+{ background-position: -373px -102px; }
+.activity-list-search li span.state-color-Yellow
+{ background-position: -434px -102px;  }
+.activity-list-search  span.state-color-Red
+{ background-position: -403px -102px; }
+
+
+.bz-wd-search-header-content
+{
+	background-color: #c2ced8;
+	border-bottom: 1px solid #b8b9bb;
+	height: 35px;
+	border-radius:6px 6px 0 0;
+	display: inline-table;
+	min-height: 40px;
+	width: 100%;
+	box-shadow:inset 0 1px 0px 0px rgba(255,255,255,.25);
+	margin-bottom: 20px;
+}
+
+.bz-wd-search-header-content .container-left
+{
+	display: table-cell;
+	width: 40px;
+	vertical-align: middle;
+	border-right: 1px solid #ABB2B8;
+}
+
+.bz-wd-search-header-content .container-right
+{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.bz-wd-search-rows .bz-wd-search-header-content .container-left span.favorite-false
+{
+	background-position: -777px -50px;
+	left: 2px;
+	top: 0;
+	padding-left: 10px;
+}
+
+.bz-wd-search-rows .bz-wd-search-header-content .container-left span.favorite-true
+{
+	background-position: -808px -49px;
+	left: 2px;
+	top: 0;
+}
+
+.bz-wd-search-rows .bz-wd-search-header-content .container-right .rad-number
+{
+	position: relative;
+	font-size: 13px;
+	color: #31414c;
+	text-shadow: 0 1px 0 #e0e3e6;
+	font-weight:bold;
+	padding-left: 10px;
+	
+}
+
+
+/* no results*/
+
+.bz-wd-search-container-noresults
+{
+	padding: 20px 10px 30px 10px;
+	text-align: center;
+}
+.bz-wd-search-text-noresults
+{
+	top: 8px;
+	position: relative;
+	color: #535B61;
+}
+

@@ -1,0 +1,16 @@
+{
+    "idUser|0-9999": 0,
+    "user": "@LOREM\\@LOREM",
+    "userName": "@LOREM",
+    "domain": "@LOREM",
+    "delegateUserName": "",
+    "idDelegateUser": -1,
+    "groupSeparator": ",",
+    "language": "en-US",
+    "decimalSeparator": ".",
+    "decimalDigits": "0",
+    "symbol": "$",
+    "ShortDateFormat": "dd/MM/yyyy",
+    "TimeFormat": "hh:mm tt",
+    "LongDateFormat": "dd MMMM yyyy"
+}

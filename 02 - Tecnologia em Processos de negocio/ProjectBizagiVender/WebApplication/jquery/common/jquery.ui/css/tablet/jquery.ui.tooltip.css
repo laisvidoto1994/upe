@@ -1,0 +1,23 @@
+.ui-tooltip {
+    z-index: 9999;
+    position: absolute;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    box-shadow: 0 0 5px #aaa;
+    -webkit-box-shadow: 0 0 5px #aaa;
+    -moz-box-shadow: 0 0 5px #aaa;
+    -o-box-shadow: 0 0 5px #aaa;
+}
+
+* HTML .ui-tooltip {
+    background-image: none;
+}
+
+BODY .ui-tooltip {
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+}

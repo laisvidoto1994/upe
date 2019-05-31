@@ -1,0 +1,14 @@
+<div class=biz-render-searchlist>
+    <ul>
+        {{each value}}
+			<li data-id=${id}>
+				<label>${value}</label>
+				<a class=removeItem></a>
+			</li>
+        {{/each}}
+        <li>
+            <input class=biz-render-input-search type=text placeholder="Type to search..." />
+        </li>
+    </ul>
+    <input type=button class=button-search />
+</div>

@@ -1,0 +1,21 @@
+
+#authentication-log-search select.biz-wp-input-combo {
+    height: 27px;
+    border-radius: 4px;
+    color: #565656;
+    background: #FFF;
+    border: 1px solid #C6CACC;
+    min-width: 100%;
+}
+
+#authentication-log-search .biz-wp-form-cell {
+    min-width: 230px;
+}
+
+#authentication-log-search .biz-wp-form-cell.lbl {
+    min-width: 150px;
+}
+
+#authentication-log-search .biz-wp-form-row {
+    margin: 10px 0px;
+}

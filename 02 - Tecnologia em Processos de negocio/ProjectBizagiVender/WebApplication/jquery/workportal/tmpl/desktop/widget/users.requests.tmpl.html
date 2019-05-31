@@ -1,0 +1,200 @@
+﻿<script id="ui-bizagi-workportal-widget-admin-users-requests" type="text/x-jquery-tmpl">
+
+    <div class= "biz-wp-window">
+        <span class="biz-wp-window-title"></span>
+
+        <div id="users-request-list-wrapper">
+        </div>
+
+        <div id="users-request-detail-wrapper">
+        </div>
+        
+    </div>
+    
+</script>
+ 
+<script id="ui-bizagi-workportal-widget-admin-users-requests-list" type="text/x-jquery-tmpl" >
+    <div id="biz-wp-userrequest-norequest">
+         <span class="biz-wp-window-title">
+                <strong>%{workportal-widget-authentication-log-none}</strong>
+         </span>
+    </div>          
+    <div class="biz-wp-window" > 
+
+        <div class= "general-window">
+            <span class="biz-wp-window-title">
+                <strong>%{workportal-widget-admin-users-request-subtitle}</strong>
+            </span>
+        </div>
+    </div>
+
+    <table class="biz-wp-table" cellspacing="2" cellpadding="2" width="100%" border="0">
+        <thead class="biz-wp-table-head">          
+            <span >
+                <th>%{workportal-widget-admin-users-requests-table-titles-select}</th>
+            </span>
+            <span >
+                <th></th>
+            </span>
+            <span >
+                <th>%{workportal-widget-admin-users-requests-table-titles-date}</th>
+            </span>
+            <span >
+                <th>%{workportal-widget-admin-users-requests-table-titles-domain}</th>
+            </span>                     
+            <span >
+                <th>%{workportal-widget-admin-users-requests-table-titles-username}</th>
+            </span>
+            <span >
+                <th>%{workportal-widget-admin-users-requests-table-titles-observation}</th>
+            </span>       
+        </thead>
+        <tbody class="biz-wp-table-body">  
+            {{each userData}}                 
+            <tr>
+                <td class="row-item BorderCell BAMainFontColor"> 
+                    <span>
+                        <a id="${$value[0]}" class="selectLink active">%{workportal-widget-admin-users-requests-table-select}</a>
+                    </span>
+                </td>
+                <td class="row-item BorderCell BAMainFontColor">
+                    <i class="user-request-alerta-icon"></i>
+                </td>                        
+                <td class="row-item BorderCell BAMainFontColor"> 
+                    <span class="formatDate"> ${$value[5]}</span> 
+                </td>
+                <td class="row-item BorderCell BAMainFontColor">
+                    <span> ${$value[3]}</span> 
+                </td>
+                <td class="row-item BorderCell BAMainFontColor">
+                    <span> ${$value[1]}</span> 
+                </td>
+                <td class="row-item BorderCell BAMainFontColor">
+                    <span> ${$value[6]}</span> 
+                </td>
+            </tr>           
+            {{/each}}
+            
+        </tbody>      
+         
+    </table>
+
+    <div id="users-requests-summary-wrapper" class="biz-wp-table-summary-wrapper">
+       
+        <ul id="users-requests-pager-wrapper" class="biz-wp-table-pager-wrapper">
+        </ul>            
+    </div>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-users-requests-detail" type="text/x-jquery-tmpl" >
+    <div class="biz-wp-window-user-request" >
+        <div class= "general-window">
+            <span class="biz-wp-window-title">
+                <strong>%{workportal-widget-admin-users-request-subtitle}</strong>
+            </span>
+        </div>
+        <div class="biz-wp-form">
+            <div class="biz-wp-form-row">
+                <div class="biz-wp-form-cell">%{workportal-widget-admin-users-requests-titles-user-text}</div>      
+                <div class="biz-wp-form-cell"><input id="txtTextUserRequest" class="auth-text" type="text" value="${resultAuthentication.UserName}" readonly="readonly"/> </div>
+            </div>
+            <div class="biz-wp-form-row">
+                <div class="biz-wp-form-cell">%{workportal-widget-admin-users-requests-titles-domain-text}</div>
+                <div class="biz-wp-form-cell"><input id="txtDomainRequest" class="auth-text" type="text" value="${resultAuthentication.Domain}" readonly="readonly"/></div>
+            </div>
+            <div class="biz-wp-form-row">
+                <div class="biz-wp-form-cell">%{workportal-widget-admin-users-requests-titles-email-text}</div>
+                <div class="biz-wp-form-cell"><input id="txtEmailRequest" class="auth-text" type="text" value="${resultAuthentication.ContactEmail}" readonly="readonly"/></div>
+            </div>
+            <div class="biz-wp-form-row">
+                <div class="biz-wp-form-cell">%{workportal-widget-admin-users-requests-titles-password-text}</div>
+                <div class="biz-wp-form-cell">
+                    <input id="txtPasswordRequest" class="auth-text" type="password"/>
+                    <div class="biz-wp-buttonset"  style=" margin: 0; padding: 6px;">
+                        <ul>
+                            <li>
+                                <button id="btn-passwordRandom" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                                     <span class="ui-button-text">%{workportal-widget-admin-users-requests-button-label-password-random}</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="biz-wp-checks-wrapper">
+            <div class="biz-wp-check-title-user-request">%{workportal-widget-admin-users-requests-titles-blocked-text}:</div>
+            <div class="biz-wp-check-title-user-request"><input id="chkBlocked" class="biz-wp-check-element" type="checkbox" {{if resultAuthentication.locked === true}} checked="checked" {{/if}}/></div>
+            <div class="biz-wp-check-title-user-request">%{workportal-widget-admin-users-requests-titles-active-text}:</div>
+            <div class="biz-wp-check-title-user-request"><input id="chkActive" class="biz-wp-check-element" type="checkbox" {{if resultAuthentication.Enabled === true}} checked="checked" {{/if}}/></div>
+            <div class="biz-wp-check-title-user-request">%{workportal-widget-admin-users-requests-titles-expired-text}:</div>            
+            {{if !resultAuthentication.enableExpireAccount}}
+            <label data-expired='${resultAuthentication.expired}'>
+                {{if resultAuthentication.expired}} %{render-boolean-yes} {{else}} %{render-boolean-no} {{/if}}
+            </label>
+            {{else}}
+                <div class="biz-wp-check-title-user-request"><input id="chkExpired" class="biz-wp-check-element" type="checkbox" {{if resultAuthentication.expired === true}} checked="checked" {{/if}} /></div>
+            {{/if}}
+        </div>
+
+        <div class="biz-wp-form-textArea">
+            <div class="biz-wp-form-row">
+                <div class="biz-wp-form-cell">%{workportal-widget-admin-users-requests-titles-observation-text}</div>
+                <div class="biz-wp-form-cell"><textarea id="txtObservationText" class="auth-textArea-user-request"  disabled="disabled" readonly="readonly">${resultAuthentication.observation}</textarea></div>
+            </div>
+        </div>
+
+        <div class="biz-wp-buttonset">
+            <ul>
+                <li>
+                    <button id="btn-cancelRequest" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                    <span class="ui-button-text">%{workportal-widget-admin-users-requests-button-label-cancel-Request}</span>
+                    </button>
+                </li>
+                    <button id="btn-updateRequest" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                    <span class="ui-button-text">%{workportal-widget-admin-users-requests-button-label-update-request}</span>
+                    </button>
+                <li>
+                </li>
+            </ul>
+        </div> 
+    </div>
+         
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-users-requests-pagination" type="text/x-jquery-tmpl">
+    <div>
+        {{each pages}}
+        <li {{if page==pageNumber}} class="bz-page active" {{else}} class="bz-page" {{/if}} data-page="${pageNumber}">
+            <span class="number">${pageNumber}</span>
+        </li>
+        {{/each}}  
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-users-requests-email" type="text/x-jquery-tmpl" >
+    <div class="mail">
+        <div class="user-request-mail-fields">
+           <div class="biz-wp-form-cell-bold">%{workportal-widget-admin-users-requests-titles-To-text}</div>      
+            <div class="biz-wp-form-cell  user-request-mail-fields"> 
+                 <input id="txtTextTo" class="biz-wp-text" type="text" value="${messageResponse.eMailTo}"/>
+            </div>
+        </div>
+
+        <div class="user-request-mail-fields">
+            <div class="biz-wp-form-cell-bold">%{workportal-widget-admin-users-requests-titles-subject-text}</div>
+            <div class="biz-wp-form-cell user-request-mail-fields ">
+                <input id="txtSubject" class="biz-wp-text" type="text" value="${messageResponse.subject}"/>
+            </div>
+        </div>
+
+        <div class="user-request-mail-fields">
+            <div class="biz-wp-form-cell-bold">%{workportal-widget-admin-users-requests-titles-body-text} </div>
+            <div class="biz-wp-form-cell user-request-mail-fields">
+                <textarea id="txtBody" class="biz-wp-textarea" type="text" >${messageResponse.body}</textarea>
+            </div>
+        </div> 
+    </div>    
+</script>

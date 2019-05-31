@@ -1,0 +1,22 @@
+<script id="project-process-state" type="text/x-jsrender" >
+   <div>
+      {{if showParentProcess}}
+
+         <div id="ui-bizagi-wp-project-process-state-wrapper" class="bz-wp-widget">
+            <h3 class="bz-wp-section">%{workportal-project-processstate-title}</h3>
+            <a href="#" id="go-to-parent-case" class="bz-wp-btn bz-wp-btn-primary">
+
+                  <i class="bz-icon bz-icon-16 bz-icon-case-outline"></i>
+                  <span href="#" >{{:parentProcess.displayName /}} {{:radNumberParentCase /}}</span>
+
+                  <input type="hidden" id="idCase" value="{{:parentProcess.idCase /}}" />
+                  <input type="hidden" id="idWorkflow" value="{{:parentProcess.idWorkflow /}}" />
+                  <input type="hidden" id="idWorkItem" value="{{:parentProcess.idWorkItem /}}" />
+                  <input type="hidden" id="idTask" value="{{:parentProcess.idTask /}}" />
+
+            </a>
+         </div>
+
+      {{/if}}
+   </div>
+</script>

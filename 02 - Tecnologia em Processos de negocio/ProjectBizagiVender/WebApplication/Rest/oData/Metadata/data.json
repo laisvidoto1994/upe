@@ -1,0 +1,106 @@
+﻿{
+	"root" : {
+	  "stuff" : {	"type" : "collection",	"ref" : "entityItem"	},
+	  "searches" : {	"type" : "collection",	"ref" : "search"	},
+	  "relevants" : {	"type" : "collection",	"ref" : "processItem"	},
+	  "stakeholders" : {	"type" : "collection",	"ref" : "stakeholder"	},
+    "userProfile" : {	"type" : "entity",	"ref" : "userProfile"	},
+    "processes" : {	"type" : "collection",	"ref" : "processItem"	}
+  },
+  "stakeholder" : {
+		"id" : {	"type" : "property",	"ref" : "guid", "key": true},
+		"name" : {	"type" : "property",	"ref" : "string"},
+		"displayName" : {	"type" : "property",	"ref" : "string"},
+    "iconName" : {	"type" : "property",	"ref" : "string"}
+  },
+  "entityItem": {
+		"id" : {	"type" : "property",	"ref" : "guid", "key": true},
+		"name" : {	"type" : "property",	"ref" : "string"},
+		"displayName" : {	"type" : "property",	"ref" : "string"},
+    "type": { "type" : "property", "ref" : "string" },
+    "template" : {	"type" : "collection",	"ref" : "parameter"},  
+    "values": { "type": "collection","ref": "entityData", "navigate":  true},
+    "actions" : {	"type" : "collection",	"ref" : "action", "navigate":  true}    
+  },
+  "search": {
+		"id" : {	"type" : "property",	"ref" : "guid", "key": true},
+		"name" : {	"type" : "property",	"ref" : "string"},
+		"displayName" : {	"type" : "property",	"ref" : "string"},
+		"parameters" : {	"type" : "collection",	"ref" : "searchParameter"	},
+    "template" : {	"type" : "collection",	"ref" : "parameter"	},
+    "actions" : {	"type" : "collection",	"ref" : "action", "navigate": true	},
+    "results" : {	"type" : "collection",	"ref" : "entityData", "navigate":  true},    
+    "performSearch": {
+      "type": "function",
+      "parameters": { "parameters": { "type": "collection", "ref": "searchParameter"} },
+      "returnType":  "collection",
+      "ref":  "entityData",
+      "resultEntityPath": "./results"
+    }
+  },
+  "processItem": {
+		"id" : {	"type" : "property",	"ref" : "guid", "key": true},
+		"name" : {	"type" : "property",	"ref" : "string"},
+		"displayName" : {	"type" : "property",	"ref" : "string"},
+		"parameters" : {	"type" : "collection",	"ref" : "parameter"	},
+		"template" : {	"type" : "collection",	"ref" : "parameter"	},
+    "processId" : {	"type" : "property",	"ref" : "int"},
+    "actions" : {	"type" : "collection",	"ref" : "action", "navigate": true	},
+    "cases": { "type" :  "collection", "ref" :  "caseItem", "navigate": true},        
+    "start": {
+      "type": "function",
+      "parameters": { "parameters": { "type": "collection", "ref": "parameter"} },
+      "returnType":  "simple",
+      "ref":  "string"
+    }
+  },
+  "caseItem": {
+		"idCase" : {	"type" : "property",	"ref" : "int", "key": true},
+    "caseNumber" : {	"type" : "property",	"ref" : "string"},
+    "solutionDate" : {	"type" : "property",	"ref" : "string"},
+    "parameters" : {	"type" : "collection",	"ref" : "parameter"	},
+    "actions" : {	"type" : "collection",	"ref" : "action", "navigate": true},
+    "navigations" : {	"type" : "collection",	"ref" : "entityItem", "navigate": true}
+  },
+  "parameter": {
+		"id" : {	"type" : "property",	"ref" : "guid", "key": true},
+		"name" : {	"type" : "property",	"ref" : "string"},
+		"displayName" : {	"type" : "property",	"ref" : "string"},
+		"xpath" : {	"type" : "property",	"ref" : "string"},
+    "value" : {	"type" : "property",	"ref" : "string"	},
+    "type" : {	"type" : "property",	"ref" : "string"	}
+	},
+	"searchParameter": {
+		"id" : {	"type" : "property",	"ref" : "guid", "key": true},
+		"xpath" : {	"type" : "property",	"ref" : "string"},
+    "value" : {	"type" : "property",	"ref" : "string"	},
+    "searchType" : {	"type" : "property",	"ref" : "string"	}
+	},
+  "action": {
+		"id" : {	"type" : "property",	"ref" : "guid", "key": true },
+		"name" : {	"type" : "property",	"ref" : "string"},
+		"displayName" : {	"type" : "property",	"ref" : "string"},
+		"parameters" : {	"type" : "collection",	"ref" : "parameter"	},
+    "processId" : {	"type" : "property",	"ref" : "int"},
+    "execute": {
+      "type": "function",
+      "parameters": { "parameters": { "type": "collection", "ref": "parameter"} },
+      "returnType":  "simple",
+      "ref":  "string"
+    }
+  },
+	"entityData": {
+		"id" : {	"type" : "property",	"ref" : "int", "key": true},
+		"parameters" : {	"type" : "collection",	"ref" : "parameter"	},
+	  "actions" : {	"type" : "collection",	"ref" : "action", "navigate":  true},
+	  "navigations" : {	"type" : "collection",	"ref" : "entityItem", "navigate": true}
+  },
+  "userProfile": {
+    "userName" : {	"type" : "property",	"ref" : "string", "key":  true	},
+    "domain" : {	"type" : "property",	"ref" : "string"	},
+    "fullName" : {	"type" : "property",	"ref" : "string"	},
+    "email" : {	"type" : "property",	"ref" : "string"	},
+    "picture" : {	"type" : "property",	"ref" : "string"	},
+    "userInits" : {	"type" : "property",	"ref" : "string"	}
+  }
+ }

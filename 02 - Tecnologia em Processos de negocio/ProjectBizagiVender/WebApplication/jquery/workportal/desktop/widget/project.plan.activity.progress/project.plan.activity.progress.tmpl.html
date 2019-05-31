@@ -1,0 +1,49 @@
+<script id="project-plan-activity-progress" type="text/x-jsrender" >
+   <div>
+      <div class="bz-wp-widget ui-bizagi-wp-project-plan-activity-progress">
+
+             <h3 class="bz-wp-section">
+               %{workportal-project-plan-progress-title}
+               {{if progress.canEdit}}
+                  <div class="bz-icon bz-icon-16 bz-icon-cog-outline action-open-popup-edit-progress">
+                  </div>
+               {{/if}}
+             </h3>
+
+             <div class="plan-progress">
+               <div class="remaining-days">
+
+                  <div class="time-remaining" style="padding-left: 79px;">
+                     <div class="bz-wp-progress-bar-wrapper bar-fullTime">
+                        <div class="bz-wp-progress-bar bar-completed Green" style="width: 0%;"></div>
+                     </div>
+                     <p class="bz-wp-timestamp"><span>{{>progress.progress}}</span> %{workportal-project-plan-progress-percent-completed}</p>
+                  </div>
+               </div>
+             </div>
+
+       </div>
+    </div>
+</script>
+
+<script id="project-plan-activity-edit-progress" type="text/x-jsrender" >
+  <div id="project-plan-activity-edit-progress-template-wrapper"  class="bz-wp-modal-content">
+        <p></p>
+        <form>
+            <div class="ui-wrapper-inputs">
+                <div class="pull-left">
+                    <div id="sliderProgress"  />
+                </div>
+                <div class="text-right">
+                    <input id="inputProgressNumericTextBox" /> <span class="percent-symbol">%</span>
+                </div>
+            </div>
+
+        </form>
+        <div class="ui-bizagi-wp-project-popupform-actions">
+            <button id="button-cancel-change-progress" class="ui-rubik-button ui-rubik-button-cancel">%{workportal-widget-reports-confirm-cancel}</button>
+            <button id="button-accept-change-progress" class="ui-rubik-button ui-rubik-button-accept">%{text-save}</button>
+        </div>
+  </div>
+
+</script>

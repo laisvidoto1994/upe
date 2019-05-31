@@ -1,0 +1,73 @@
+/*
+    Document   : bizagi.workportal.usersummary
+    Created on : Feb 17, 2015
+    Author     : Bizagi
+    Description:
+        Styles for home user summary
+*/
+.wdg-usmry-panel {
+    padding: 20px;
+}
+
+.wdg-usmry-photo-wrapper {
+    float: left;
+}
+
+.wdg-usmry-box {
+
+}
+
+.bz-wp-ls-list-category {
+    padding: 14px 20px;
+    border-bottom: 1px solid transparent;
+    font-size: 14px;
+}
+
+.wdg-usmry-user-info {
+    padding-left: 0;
+}
+
+.wdg-usmry-user-info h2 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 4px;
+    text-shadow: 0 1px 0 #FFF;
+}
+
+.wdg-usmry-user-info .wdg-usmry-stk-overlay {
+    position: absolute;
+    right: 70px;
+    top: 53px;
+    background: #FFF;
+    display: none;
+    width: 182px;
+    max-height: 80px;
+    border: 1px solid #c0c7cc;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    overflow-y: auto;
+    min-height: 40px;
+    z-index: 999;
+    color: black;
+}
+
+.wdg-usmry-user-info .wdg-usmry-stk-overlay ul {
+    list-style: none;
+    padding: 0 10px;
+}
+
+.wdg-usmry-user-info .wdg-usmry-stk-overlay ul li {
+    width: 100%;
+    margin: 4px 0;
+    text-transform: capitalize;
+}
+
+.home-usersummary .wdg-stf-header {
+    font-size: 14px;
+    font-weight: 400;
+    height: 100%;
+    line-height: 35px;
+    padding: 9px 15px;
+    margin-top: 0;
+}

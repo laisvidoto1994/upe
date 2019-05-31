@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<script>
+
+CDidEnt		        = window.parent.CDidEnt;
+CDidEntSK	        = window.parent.CDidEntSK;
+CDsFilter	        = window.parent.CDsFilter;
+CDsDisplayAttrib	= window.parent.CDsDisplayAttrib;
+CDsScope            = window.parent.CDsScope;
+
+if (CDidEnt != 0)
+	ChangeCD();
+
+function LoadCD()
+{
+	try{
+		if (CDidEntSK != 0)
+			window.parent.FillCD(CDD);
+	}
+	catch(e){
+	}
+}	
+
+function ChangeCD()
+{
+	if (CDidEntSK != 0)
+		document.write('<script charset="utf-8" src="'+"CDJSData.aspx?idEntity="+CDidEnt+"&idParentSurrogateKey="+CDidEntSK+"&sFilter="+CDsFilter+'&sDisplayAttrib=' + CDsDisplayAttrib + '&idScope=' +CDsScope + '"><\/script>');
+}
+</script>
+	</head>
+	<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onload="LoadCD()">
+	</body>
+</html>

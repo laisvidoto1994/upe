@@ -1,0 +1,273 @@
+<script id="project-discussions-wrapper" type="text/x-jsrender" >
+   <div><!--Div is necessary, fix-->
+      <div id="home-project-discussions-wrapper">
+          <div class="ui-bizagi-wp-filter-tags">
+              <div class="multiselect">
+                  <select id="ui-bizagi-wp-project-discussions-options-tags-filter" multiple="multiple" data-placeholder="%{workportal-project-discussion-filter-by-tag}...">
+                  </select>
+              </div>
+          </div>
+
+          <div class="ui-bizagi-wp-action-new">
+              <a href="javascript:void(0)" class="bz-wp-btn bz-wp-btn-primary">
+                  <i class="bz-icon bz-icon-16 bz-icon-comment-add-outline"></i>
+                  <span>%{workportal-project-discussion-adddiscussion}</span>
+              </a>
+          </div>
+
+         <div class="ui-bizagi-wp-project-discussions-panels">
+            <div id="ui-bizagi-wp-project-discussions-list-wrapper">
+
+            </div>
+            <div class="ui-bizagi-wp-project-discussions-sidebar-right">
+
+            </div>
+         </div>
+      </div>
+      <div class="ui-bizagi-wp-project-discussions-attachments">
+      </div>
+      <span id="popupNotification"></span>
+   </div>
+</script>
+
+<script id="project-discussions-list-wrapper" type="text/x-jsrender" >
+    <div id="list-project-discussions-wrapper">
+
+        {{for listDataDiscussions}}
+            {{include tmpl="#project-discussions-list"/}}
+        {{/for}}
+
+
+    </div>
+</script>
+
+<script id="project-discussions-list" type="text/x-jsrender">
+    <div class="ui-bizagi-wp-project-discussions-item" data-guid="{{:guid}}">
+        <div class="ui-bizagi-wp-project-discussions-item-summary">
+            <h2 class="bz-wp-cd-title">
+               {{if #parent.index == 0}}
+                    <i class="bz-icon bz-icon-24 bz-icon-comment-outline"></i>
+               {{else}}
+                    <i class="bz-icon bz-icon-24 bz-icon-comment-outline"></i>
+               {{/if}}
+               {{if #parent.index == 0}}
+                   <span>%{workportal-project-discussion-generaldiscussion}</span>
+               {{else}}
+                  {{>name}}
+                  <div class="ui-bizagi-wp-project-discussions-item-actions" data-iduser="{{>user}}">
+                        <div class="bz-wp-avatar bz-wp-avatar-24">
+                            <img class="bz-wp-avatar-img ui-bizagi-wp-project-discussions-created-by-user-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAA+0lEQVR42uzaSxLCMAwE0c79L82SFMXHJpKHhJ59at4utmS2cBAgQMCBT3dZDuBJ1gF4mSUA3qYfALUCauvnCZT3Twqo758T0NA/JaCjf0ZwIgC0COjpHxecBgBNAgF09Y8KBAgQIECAAAFnAXgiEiDAq5mA8wEuOCERIMBBpYAfAMTH9QLygPjOSEB+b5gHxFe3I4Lt4oD0+v4HAPEXFAIECBDw70+58oDw7zh7JMteTrPTcr5MDYBDOQqgIAcAFOU7AKWZBlCeKQAtGQXQmAEAzfkAYEHeAWC5gOX1DwQS/XsBkf6dgEz/XSBAgAABAgQIECBAQBxwE2AAjnkjnL/SDJsAAAAASUVORK5CYII=">
+                        </div>
+
+                       {{if #ctx.root.user.id === user}}
+                           <a href="javascript:void(0)" class="biz-wp-user-icon-admin biz-wp-action-edit-discussion">
+                               <i class="bz-icon bz-icon-16 bz-icon-cog-outline"></i>
+                           </a>
+                       {{/if}}
+                   </div>
+               {{/if}}
+            </h2>
+
+            <div class="ui-bizagi-wp-project-discussions-hr-gradient"></div>
+            <div class="ui-bizagi-wp-project-discussions-container-description-and-comments" data-guid="{{:guid}}">
+                <div class="ui-bizagi-wp-project-discussions-container-description">
+                    {{if description.length > 460}}
+                        <div class="ui-bizagi-wp-project-discussions-comment-shortcomment ui-bizagi-wp-project-discussions-comment-truncatewrapper">
+                            <span class="ui-bizagi-wp-project-discussions-comment-truncate ui-bizagi-wp-project-discussions-description">{{>description.slice(0, 460)}}... <a class="ui-bizagi-wp-project-discussions-comment-view">%{workportal-project-discussion-comment-viewmore}</a>
+                           </span>
+                           <span class="ui-bizagi-wp-project-discussions-comment-complete ui-bizagi-wp-project-discussions-description">{{>description}} <a class="ui-bizagi-wp-project-discussions-comment-view">%{workportal-project-discussion-comment-viewless}</a>
+                           </span>
+                       </div>
+                    {{else}}
+                        <span class="ui-bizagi-wp-project-discussions-truncate ui-bizagi-wp-project-discussions-description">{{>description}}</span>
+                    {{/if}}
+                    <div class="ui-bizagi-wp-project-discussions-attachments-discwrapper">
+                        <ul class="ui-bizagi-wp-project-attachments-list" data-type="DISCUSSION">
+                            {{include tmpl="#project-discussions-attachments-list" /}}
+                        </ul>
+                    </div>
+                </div>
+                <div class="ui-bizagi-wp-project-discussions-container-comments">
+
+                        <div class="ui-bizagi-wp-project-discussions-item-comment">
+                            <div class="ui-bizagi-wp-project-discussions-create-comment">
+
+                                <div class="bz-wp-avatar bz-wp-avatar-48 ui-bizagi-wp-project-discussions-item-user">
+                                      <img class="bz-wp-avatar-img" src="">
+                                      <label class="bz-wp-avatar-label"></label>
+                                </div>
+
+                                <div class="ui-bizagi-wp-project-discussions-add-comment ui-bizagi-wp-project-discussion-textwrapper" data-guid="{{:guid}}">
+                                    <p class="bz-wp-discussion-user"><strong class="bz-wp-discussion-username"></strong></p>
+                                    <div class="ui-bizagi-wp-project-container-validator-relative" >
+                                        <textarea required="required" ></textarea>
+                                        {{include tmpl="#project-discussions-attachments" /}}
+                                    </div>
+                                    <div class="position-message-validate">
+                                        <span></span>
+                                    </div>
+
+                                    <div class="ui-bizagi-wp-project-discussions-comment-buttons-wrapper">
+                                        <button class="ui-bizagi-wp-project-discussions-comment-buttons-cancel">
+                                            %{workportal-widget-reports-confirm-cancel}
+                                        </button>
+                                        <button class="ui-bizagi-wp-project-discussions-comment-buttons-share">
+                                            %{workportal-project-discussion-share}
+                                        </button>
+                                    </div>
+                                    <div class="ui-bizagi-wp-project-discussions-attachments-cmnwrapper">
+                                        <ul class="ui-bizagi-wp-project-attachments-list" data-type="COMMENT">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="ui-bizagi-wp-project-discussion-comment-list">
+                        {{for #ctx.root.returnServedCommentByParentId(guid) tmpl='#project-discussions-comments-list' /}}
+                    </div>
+
+
+                    <div class="ui-bizagi-wp-project-discussion-showmore-comments">
+                        <button class="bz-wp-btn bz-wp-btn-link ui-bizagi-wp-project-discussion-showmore-comments-button">%{workportal-project-discussion-comment-showmore}</button>
+                        <div class="ui-bizagi-wp-project-discussion-showmore-no-more-comments">%{workportal-project-discussion-comment-nomorecomments}</div>
+                        <div class="ui-bizagi-wp-project-discussion-showmore-loading-comments">%{webpart-render-loading}</div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="project-discussions-comments-list" type="text/x-jsrender">
+    {{for comments}}
+        <div data-iduser="{{:user}}" class="ui-bizagi-wp-project-discussions-item-comment" data-cmmtguid="{{:guid}}">
+            <div class="bz-wp-avatar bz-wp-avatar-48 ui-bizagi-wp-project-discussions-item-comment-user">
+                <img class="bz-wp-avatar-img" src="">
+                <label class="bz-wp-avatar-label"></label>
+
+            </div>
+            <div class="ui-bizagi-wp-project-discussions-item-comment-summary-wrapper">
+                <p class="bz-wp-discussion-user">
+                    <strong class="bz-wp-discussion-username"></strong>
+                    <span class="bz-wp-timestamp bz-wp-timestamp-small">{{relativeTime date /}}</span>
+                </p>
+                {{if text.length > 460}}
+                    <div class="ui-bizagi-wp-project-discussions-comment-shortcomment ui-bizagi-wp-project-discussions-comment-truncatewrapper">
+                        <p class="ui-bizagi-wp-project-discussions-comment-truncate">{{>text.slice(0, 460)}}...<a class="ui-bizagi-wp-project-discussions-comment-view">
+                                %{workportal-project-discussion-comment-viewmore}
+                            </a>
+                        </p>
+                        <p class="ui-bizagi-wp-project-discussions-comment-complete">{{>text}}<a class="ui-bizagi-wp-project-discussions-comment-view">
+                                %{workportal-project-discussion-comment-viewless}
+                            </a>
+                        </p>
+                    </div>
+                {{else}}
+                    <span class="ui-bizagi-wp-project-discussions-comment-complete">{{>text}}</span>
+                {{/if}}
+            </div>
+
+            {{if user === #ctx.root.user.id && #ctx.root.isOpen }}
+                <div class="ui-bizagi-wp-project-discussion-delete">
+                    <i class="bz-icon bz-icon-16 bz-icon-trash-outline"></i>
+                </div>
+            {{/if}}
+            <div class="ui-bizagi-wp-project-discussions-attachments-cmmtwrapper">
+                <ul class="ui-bizagi-wp-project-attachments-list" data-type="COMMENT">
+                    {{include tmpl="#project-discussions-attachments-list"/}}
+                </ul>
+            </div>
+        </div>
+    {{/for}}
+</script>
+
+<script id="project-discussions-attachments-list" type="text/x-jsrender">
+    {{for attachments}}
+        <li class = "bz-bizagi-wp-project-discussions-attachment-itemwrapper" data-fileguid="{{:guid}}">
+            <i class="bz-icon bz-icon-16 bz-icon-clip-outline"></i>
+            <span class="bz-bizagi-wp-project-discussions-attachment-filename">{{:name}}</span>
+            <i class="bz-bizagi-wp-project-discussions-attachment-delete bz-icon bz-icon-16 bz-icon-trash-outline"></i>
+        </li>
+    {{/for}}
+</script>
+
+<script id="project-discussions-attachments" type="text/x-jsrender">
+
+    <div class="ui-bizagi-wp-project-discussions-add-attachments">
+        <form>
+            <input type="file" name="file[]" class="ui-bizagi-wp-project-discussions-attachment-upload" multiple="false" />
+        </form>
+    </div>
+
+</script>
+
+<script id="project-discussions-popup-wrapper" type="text/x-jsrender" >
+   <div id="project-popupform-wrapper-discussion">
+      <div class="ui-bizagi-wp-project-popupform-scroll">
+         <form class="ui-bizagi-wp-project-popupform-form">
+            <table border="0" cellpadding="0" cellspacing="0">
+               <tbody>
+                  <tr>
+                      <td class="first-column ui-bizagi-wp-project-popupform-user">
+                          <span class="ui-bizagi-wp-project-popupform-field-name field-description">*%{workportal-project-discussion-title}:</span>
+                      </td>
+                     <td>
+                        <div class="ui-bizagi-wp-project-container-validator-relative">
+                           <input id="ui-bizagi-wp-project-discussions-popup-subject-input" class="ui-bizagi-wp-project-discussions-popupform-input" name="subject-discussion" value=""
+                              type="text" maxlength="50" />
+                            <div class="position-message-validate">
+                                <span data-for="subject-discussion"></span>
+                                <p></p>
+                            </div>
+                        </div>                         
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="first-column">
+                        <span class="ui-bizagi-wp-project-popupform-field-name field-description">*%{workportal-project-discussion-description}:</span>
+                     </td>
+                     <td class="ui-bizagi-wp-project-discussion-textwrapper">
+                        <div class="ui-bizagi-wp-project-container-validator-relative">
+                           <textarea id="ui-bizagi-wp-project-discussions-popup-description-textarea"
+                              class="ui-bizagi-wp-project-discussions-popupform-textarea" name="description-discussion" ></textarea>
+                            {{include tmpl="#project-discussions-attachments" /}}
+                        </div>
+                         <div class="position-message-validate">
+                             <span></span>
+                         </div>
+
+
+                        <div class="ui-bizagi-wp-project-discussions-attachments-cmnwrapper">
+                           <ul class="ui-bizagi-wp-project-attachments-list" type="DISCUSSION">
+                             {{include tmpl="#project-discussions-attachments-list"/}}
+                           </ul>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td class="first-column">
+                        <span class="ui-bizagi-wp-project-popupform-field-name field-description">*%{workportal-project-discussion-tags}:</span>
+                    </td>
+                    <td>
+                        <div>
+                            <select id="ui-bizagi-wp-project-discussions-options-multiselect-tags" multiple="multiple" data-placeholder="%{workportal-project-discussion-select-tag}..."
+                                    class="ui-bizagi-wp-project-discussions-popupform-input"></select>
+                        </div>
+                    </td>
+                   </tr>
+               </tbody>
+            </table>
+         </form>
+      </div>
+      <div class="ui-bizagi-wp-project-discussions-attachments">
+
+      </div>
+      <div class="ui-bizagi-wp-project-popupform-actions">
+         <button id="ui-bizagi-wp-project-popupform-action-cancel" class="ui-bizagi-wp-project-popupform-button ui-bizagi-wp-project-popupform-button-cancel">%{workportal-widget-reports-confirm-cancel}</button>
+         <button id="ui-bizagi-wp-project-discussions-popup-action-add-discussion" class="ui-bizagi-wp-project-popupform-button ui-bizagi-wp-project-popupform-button-action">%{workportal-widget-reports-confirm-save}</button>
+      </div>
+   </div>
+</script>

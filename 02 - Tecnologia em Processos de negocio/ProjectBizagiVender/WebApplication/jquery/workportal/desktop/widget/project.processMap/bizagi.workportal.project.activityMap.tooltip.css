@@ -1,0 +1,74 @@
+.ui-bizagi-wp-project-processmap-tooltip-content .ui-bizagi-wp-project-processmap-list dt, .ui-bizagi-wp-project-processmap-tooltip-content .ui-bizagi-wp-project-processmap-list dd { float: left ; width: 50%; margin: 2px 0; font-size: 11px;}
+.ui-bizagi-wp-project-processmap-tooltip-content .ui-bizagi-wp-project-processmap-list dt {
+    clear: both;
+    width: 50%;
+}
+
+.ui-bizagi-wp-project-processmap-tooltip-content .ui-bizagi-wp-project-processmap-list dt {
+    padding: 8px 0;
+    box-sizing:border-box;
+}
+
+.ui-bizagi-wp-project-processmap-tooltip-content .ui-bizagi-wp-project-processmap-list dd {
+    background-color:#F5F7F7;
+    padding: 8px;
+    box-sizing:border-box;
+    border-radius: 4px;
+    min-height: 29px;
+}
+
+.ui-bizagi-wp-project-processmap-tooltip-content .ui-bizagi-wp-project-processmap-list dd a {
+    color: #1f74b2;
+    text-decoration: none;
+}
+
+.ui-bizagi-wp-project-processmap-tooltip-content .ui-bizagi-wp-project-processmap-list dd a:hover {
+    text-decoration: none;
+}
+
+.ui-bizagi-wp-project-processmap-tooltip-content .ui-bizagi-wp-project-processmap-list .ui-bizagi-wp-project-processmap-tooltip-assignee-name {
+    
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+}
+
+.ui-bizagi-wp-project-processmap-tooltip-content .ui-bizagi-wp-project-processmap-list .ui-bizagi-wp-project-processmap-tooltip-assignee {
+    display: block;
+}
+
+.ui-bizagi-wp-project-processmap-tooltip {
+    min-width: 302px;
+}
+.ui-bizagi-wp-project-processmap-tooltip-title
+{
+    margin-top: 7px;
+    padding-top:0;
+    font-weight:normal;
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+.ui-bizagi-wp-project-processmap-list
+{
+    display: inline-block;
+
+    margin-top: 5px;
+    width: 100%;
+    margin-bottom: 0;
+}
+.ui-bizagi-wp-project-processmap-tooltip
+{
+    margin: 5px 5px 0 5px;
+}
+.ui-bizagi-wp-project-processmap-tooltip-assignee span:first-child
+{
+    
+    display: inline-block;
+    margin-right: 7px;
+
+}
+
+.ui-bizagi-wp-project-processmap-tooltip-assignee span img
+{
+    width:16px;
+}

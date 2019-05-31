@@ -1,0 +1,35 @@
+{
+    "category": "cases",
+	"filter": {
+		"processes|1-3": [{
+			"name": "@LOREM @LOREM",
+			"count|0-9999": 0
+		}],
+		"values|1-3": [{
+			"name": "@LOREM @LOREM",
+			"xpath": "@LOREM.@LOREM",
+			"instances|1-10": [ { 
+					"value": "@LOREM @LOREM",
+					"count|0-9999": 0
+				}
+			]
+		}]
+	},
+	"processes|1-3": [
+		{
+			"name": "@LOREM @LOREM",
+			"cases|1-5": [
+				{
+					"idCase": "@NUMBER@NUMBER@NUMBER@NUMBER",
+					"caseNumber": "@NUMBER@NUMBER@NUMBER@NUMBER",
+					"favorite": "@BIZAGI_BOOLEAN",
+					"creationDate": "@DATE_MM/@DATE_DD/@DATE_YYYY @TIME_HH:@TIME_MM",
+					"summary": "@LOREM_IPSUM",
+					"values|2-8": {
+						"@LOREM": "@LOREM"
+					}
+				}
+			]
+		}
+	]
+}

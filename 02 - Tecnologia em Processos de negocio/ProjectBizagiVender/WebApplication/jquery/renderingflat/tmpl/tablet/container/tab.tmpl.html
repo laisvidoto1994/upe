@@ -1,0 +1,10 @@
+﻿<div class="ui-bizagi-container ui-bizagi-container-tab #= data.cssclass # #if(!data.editable){# bz-bizagi-container-no-editable #}#" dir="#if (typeof data.tabOrientation !== 'undefined'){ ##= data.tabOrientation ##}else{#auto#}#" data-unique-id="#= data.uniqueId #">
+	<div class="bz-bizagi-container-tap-popup">
+         # $.each (data.tabs, function (i, tab) { #
+        <div class="cell bz-container-items-tabs " data-reference-tab="\\#ui-bizagi-tab-#= tab.id #" data-index="${i}">
+            <span class="bz-tabs-display-name">#= tab.displayName #</span>
+        </div>
+        # }) #
+    </div>
+    {{children}}
+</div>

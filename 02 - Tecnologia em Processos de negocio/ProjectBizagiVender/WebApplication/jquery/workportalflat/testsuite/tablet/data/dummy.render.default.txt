@@ -1,0 +1,92 @@
+﻿{
+  "form": {
+    "properties": {
+      "id": "F31A9439-5F51-43DF-8A38-C8F858F8E84F",
+      "orientation": "ltr",
+      "xpathContext": ""
+    },
+    "elements": [
+      {
+        "render": {
+          "properties": {
+            "id": "bcc0fd57-9cbf-4ae3-a2e3-2d4f414ca644",
+            "type": "label",
+            "displayName": "DATOS",
+            "labelAlign": "center",
+            "helpText": ""
+          }
+        }     
+      },
+      {
+        "render": {
+          "properties": {
+            "id": "83b2f7b5-99ce-4ce6-a11c-51999a92e89c",
+            "type": "number",
+            "xpath": "OxyProcess.MaximunFrecuency",
+            "displayName": "Maximun Frecuency",
+            "allowDecimals": true,
+            "dataType": 10,
+            "helpText": ""
+          }
+        }
+      },
+      {
+        "render": {
+          "properties": {
+            "id": "ad18e4c6-8426-479a-b217-4ab4f32fa1e0",
+            "type": "number",
+            "xpath": "OxyProcess.TransformerRetapVoltage",
+            "displayName": "Transformer Retap Voltage",
+            "allowDecimals": true,
+            "dataType": 10,
+            "helpText": ""
+          }
+        }
+      },
+      {
+        "render": {
+          "properties": {
+            "id": "32139ca2-26e3-4fa0-bd4d-8616e50ae026",
+            "type": "number",
+            "xpath": "OxyProcess.DropVoltage",
+            "displayName": "Drop Voltage",
+            "allowDecimals": true,
+            "dataType": 10,
+            "helpText": ""
+          }
+        }
+      }
+    ],
+    "buttons": [
+      {
+        "button": {
+          "properties": {
+            "id": "ec0a5a02-0f81-44a7-8d64-ac090a01d61b",
+            "caption": "render-form-button-save",
+            "actions": [
+              "submitData",
+              "refresh"
+            ]
+          }
+        }
+      },
+      {
+        "button": {
+          "properties": {
+            "id": "ba81c7af-0d83-4139-879d-b040f0f81bd7",
+            "caption": "render-form-button-next",
+            "actions": [
+              "validate",
+              "submitData",
+              "next",
+              "routing"
+            ]
+          }
+        }
+      }
+    ],
+    "sessionId": "xtarpzoqmwaoecyefdnex3by",
+    "pageCacheId": 49205858
+  },
+  "type": "form"
+}

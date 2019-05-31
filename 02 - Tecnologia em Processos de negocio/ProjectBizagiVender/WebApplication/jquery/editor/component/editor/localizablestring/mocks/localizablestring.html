@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+        <title>Mock Editor DisplayName</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../../../../jquery/common/jquery.ui/css/desktop/jquery.ui.css" />
+	    <link rel="stylesheet" href="../../../../../../jquery/rendering/css/desktop/bizagi.rendering.css" />
+	    <link rel="stylesheet" href="../../../../base/css/bizagi.editor.base.css" />
+	    <script src="../../../../../../jquery/common/base/js/lib/jquery.js"></script>
+	    <script src="../../../../../../jquery/common/jquery.ui/js/desktop/jquery.ui.js"></script>
+	    <style>
+	        #main-container
+            {
+                border: solid 1px gainsboro;
+                width: 400px;                
+                border-radius: 4px;
+            }
+            
+            .editor
+            {
+                margin: 20px 0 20px 0;
+            }
+            
+            .editor > .editor editor-displayname
+            {
+                border:  solid 1px blue;
+                border-radius: 4px;
+                padding: 4px;
+            }
+            
+            .editor .editor-displayname-value
+            {
+                border: solid 1px springgreen;
+            }
+            
+            .editor-displayname-text
+            {
+                width: 90%
+            }
+            
+            .editor .editor-image-small
+            {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+            }
+            
+            .editor .editor-displayname-image
+            {
+                background: url("world.png") center center no-repeat;
+            }
+            
+            .editor .editor-displayname-value > .editor-displayname-image-disabled
+            {
+                display: none;
+            }
+            
+	    </style> 
+	    
+	     <script>
+            $(document).ready(function() {
+                
+                // Foco del control
+                $(".editor .editor-displayname-value").focusin(function() {                    
+                    $("span", $(this)).removeClass("editor-displayname-image-disabled");
+                    $("input", $(this)).focus();
+                                       
+                });
+                
+                $(".editor .editor-displayname-value").focusout(function() {                    
+                    $("span", $(this)).addClass("editor-displayname-image-disabled");                                                           
+                });
+                
+                $(".editor .editor-displayname-value > .editor-displayname-image").click(function(){
+                    console.log("click event trigger");
+                });
+                                
+            })
+         </script>
+    </head>
+    <body>
+        <div id="main-container">
+            <div class="editor editor-displayname">                
+                <label title="DisplayName">DisplayName</label>
+                <div class="editor-displayname-value" tabindex="0" >
+                    <input type="text" class="editor-displayname-text"/>
+                    <span class="editor-image-small editor-displayname-image editor-displayname-image-disabled" ></span>
+                </div>                
+            </div>    
+        </div>
+    </body>
+</html>

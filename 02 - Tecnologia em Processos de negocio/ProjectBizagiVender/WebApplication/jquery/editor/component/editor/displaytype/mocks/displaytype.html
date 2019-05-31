@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Editor displaytype</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../../../common/jquery.ui/css/desktop/jquery.ui.css" />
+        <style>
+            .displaytype [class^="displaytype-image-large-"]
+            {
+                display: inline-block;
+                width: 50px;
+                height: 30px;
+            }
+            .displaytype .displaytype-image-large-both
+            {
+                background: transparent url("both.png") no-repeat center center;
+            }
+            .displaytype .displaytype-image-large-label
+            {
+                background: transparent url("label.png") no-repeat center center;
+            }
+            .displaytype .displaytype-image-large-value
+            {
+                background: transparent url("value.png") no-repeat center center;
+            }
+            .displaytype .displaytype-image-large-reversed
+            {
+                background: transparent url("reversed.png") no-repeat center center;
+            }
+            .displaytype .displaytype-image-large-vertical
+            {
+                background: transparent url("vertical.png") no-repeat center center;
+            }
+            
+            .displaytype [class^="displaytype-image-small-"]
+            {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+            }
+            .displaytype .displaytype-image-small-check
+            {
+                background: transparent url("check.png") no-repeat center center;
+            }
+            .displaytype .displaytype-image-small-uncheck
+            {
+                background: transparent url("uncheck.png") no-repeat center center;
+            }
+            
+            .displaytype [class^="displaytype-image-normal-"]
+            {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+            }
+            .displaytype .displaytype-image-normal-expand
+            {
+                background: transparent url("arrow-down.png") no-repeat center center;
+                vertical-align: middle;
+            }
+            
+
+            
+            
+.displaytype > .displaytype-group {
+    display: inline-block;
+    vertical-align: middle;
+    border: solid 1px transparent;
+}
+.displaytype > .displaytype-name {
+    vertical-align: middle;
+    border: solid 1px transparent;
+}
+.displaytype .displaytype-group > span {
+    vertical-align: middle;
+}
+.displaytype .displaytype-group .displaytype-value {
+    display: inline-block;
+    width: 70px;
+    text-align: center;
+}
+.displaytype {
+    position: relative;
+}
+.displaytype > .displaytype-values {
+    position: absolute;
+    top: 31px;
+    left: 86px;
+    border: solid 1px blue;
+}
+.displaytype > .displaytype-values.displaytype-close {
+    display: none;
+}
+.displaytype > .displaytype-values.displaytype-open {
+    display: block;
+}
+.displaytype > .displaytype-values > .displaytype-group:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+}
+.displaytype > .displaytype-collapsed > [class^="displaytype-image-large-"] {
+    visibility: hidden;
+}
+.displaytype > .displaytype-collapsed > .displaytype-image-small-check {
+    visibility: hidden;
+}
+.displaytype > .displaytype-group.displaytype-expanded {
+    border: solid 1px blue;
+}
+
+
+
+.displaytype > .displaytype-hidden {
+    visibility: hidden;
+}
+.displaytype > .displaytype-show {
+    visibility: visible;
+    border: solid 1px blue;
+}
+
+
+
+
+        </style>
+        <script src="../../../../../common/base/js/lib/jquery.js"></script>
+        <script src="../../../../../common/jquery.ui/js/desktop/jquery.ui.js"></script>
+        <script>
+            $(document).ready(function() {
+                
+                $(".displaytype > .displaytype-group").hover(function() {
+                    $(".displaytype > .displaytype-image-normal-expand").removeClass("displaytype-hidden").addClass("displaytype-show");
+                    $(this).removeClass("displaytype-collapsed").addClass("displaytype-expanded");
+                }, function() {
+                    $(".displaytype > .displaytype-image-normal-expand").removeClass("displaytype-show").addClass("displaytype-hidden");
+                    $(this).removeClass("displaytype-expanded").addClass("displaytype-collapsed");
+                });
+                
+                $(".displaytype > .displaytype-group").click(function() {
+                    $(".displaytype > .displaytype-values").removeClass("displaytype-close").addClass("displaytype-open");
+                });
+                
+                $(".displaytype > .displaytype-values > .displaytype-group").click(function() {
+                    $(this).parent().find(".displaytype-group > span[class^=displaytype-image-small-]").removeClass("displaytype-image-small-check").addClass("displaytype-image-small-uncheck");
+                    $("span:eq(2)", $(this)).removeClass("displaytype-image-small-uncheck").addClass("displaytype-image-small-check");
+                    
+                    var value = $(this).find("span:eq(1)").text();
+                    
+                    $(".displaytype > .displaytype-group > span:eq(0)").removeClass().addClass("displaytype-image-large-" + value.toLowerCase());
+                    $(".displaytype > .displaytype-group > span:eq(1)").text(value);
+                    
+                    $(".displaytype > .displaytype-values").removeClass("displaytype-open").addClass("displaytype-close");
+                });
+                
+                $(".displaytype > .displaytype-values").hover(function() {
+                    $(".displaytype > .displaytype-image-normal-expand").removeClass("displaytype-hidden").addClass("displaytype-show");
+                    $(".displaytype > .displaytype-group").removeClass("displaytype-collapsed").addClass("displaytype-expanded");
+                }, function() {
+                    $(".displaytype > .displaytype-image-normal-expand").removeClass("displaytype-show").addClass("displaytype-hidden");
+                    $(".displaytype > .displaytype-group").removeClass("displaytype-expanded").addClass("displaytype-collapsed");
+                    $(this).removeClass("displaytype-open").addClass("displaytype-close");
+                });
+                
+                
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main-container">
+            
+            <div class="editor displaytype">
+                <label class="displaytype-name">Display Type</label>
+                <div class="displaytype-group displaytype-collapsed">
+                    <span class="displaytype-image-large-both"></span>
+                    <span class="displaytype-value">Both</span>
+                    <span class="displaytype-image-small-check"></span>
+                </div>
+                <span class="displaytype-image-normal-expand displaytype-hidden"></span>
+                <div class="displaytype-values displaytype-close">
+                    <div class="displaytype-group">
+                        <span class="displaytype-image-large-both"></span>
+                        <span class="displaytype-value">Both</span>
+                        <span class="displaytype-image-small-check"></span>
+                    </div>
+                    <div class="displaytype-group">
+                        <span class="displaytype-image-large-label"></span>
+                        <span class="displaytype-value">Label</span>
+                        <span class="displaytype-image-small-uncheck"></span>
+                    </div>
+                    <div class="displaytype-group">
+                        <span class="displaytype-image-large-value"></span>
+                        <span class="displaytype-value">Value</span>
+                        <span class="displaytype-image-small-uncheck"></span>
+                    </div>
+                    <div class="displaytype-group">
+                        <span class="displaytype-image-large-reversed"></span>
+                        <span class="displaytype-value">Reversed</span>
+                        <span class="displaytype-image-small-uncheck"></span>
+                    </div>
+                    <div class="displaytype-group">
+                        <span class="displaytype-image-large-vertical"></span>
+                        <span class="displaytype-value">Vertical</span>
+                        <span class="displaytype-image-small-uncheck"></span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

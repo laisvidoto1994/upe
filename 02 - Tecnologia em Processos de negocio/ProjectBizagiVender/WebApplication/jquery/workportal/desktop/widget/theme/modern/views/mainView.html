@@ -1,0 +1,24 @@
+﻿<div class="biz-theme-home-container" ng-app="homeModule"  ng-controller="homeController">
+
+    <div class="biz-theme-home-left">
+        <div ng-include src="'./views/userView.html'"></div>
+        
+        <div class="biz-theme-home-menu-left">
+            <a class="biz-theme-home-menu-item" ng-click="setMenu('suggestions')" ng-class="{'biz-theme-home-menu-item-selected':currentMenuItem === 'suggestions'}">Suggested</a>
+            <a class="biz-theme-home-menu-item" ng-click="setMenu('mine')" ng-class="{'biz-theme-home-menu-item-selected':currentMenuItem === 'mine'}">Mine</a>
+            <a class="biz-theme-home-menu-item" ng-click="setMenu('activity')" ng-class="{'biz-theme-home-menu-item-selected':currentMenuItem === 'activity'}">My Activity</a>
+        </div>
+    </div>
+
+    <div class="biz-theme-home-right" ng-show="currentMenuItem === 'suggestions'">
+        <div ng-include src="'./views/suggestionView.html'"></div>
+    </div>
+
+    <div class="biz-theme-home-right" ng-show="currentMenuItem === 'mine'">
+        <div ng-include src="'./views/collectionView.html'"></div>
+    </div> 
+
+    <div class="biz-theme-home-right" ng-show="currentMenuItem === 'activity'">
+        <div ng-include src="'./views/caseView.html'"></div>        
+    </div>
+</div>

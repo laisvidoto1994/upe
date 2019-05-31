@@ -1,0 +1,248 @@
+/********
+* Filename: bizagi.editor.component.editor.thumbnail.css
+* Create Date: 2012-05-07
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com / Ramiro Gomez Ramiro.Gomez@bizagi.com
+*
+* $__thumbnail
+*
+********/
+
+/* __thumbnail
+--------*/
+
+.bizagi_editor_component_editor_thumbnail {
+    position: relative;
+}
+
+.thumbnail-group-container.ui-control-input{
+    height: auto!important;
+}
+
+.bizagi_editor_component_editor_thumbnail .biz-ico[class*="thumbnail-image-small"]{
+    background: url('images/sprite-thumbnail-editor.png') no-repeat 0 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bizagi_editor_component_editor_thumbnail .thumbnail-group i{
+    display: block;
+}
+
+.bizagi_editor_component_editor_thumbnail .biz-ico.thumbnail-image-small-Large{
+    width: 61px;
+    height: 57px;
+    background-position: 0 0;
+}
+.bizagi_editor_component_editor_thumbnail .biz-ico.thumbnail-image-small-Medium{
+    width: 45px;
+    height: 45px;
+    background-position: -61px 0px;
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+.bizagi_editor_component_editor_thumbnail .biz-ico.thumbnail-image-small-Small{
+    width:31px;
+    height: 31px;
+    background-position: -106px 0px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+.bizagi_editor_component_editor_thumbnail .biz-ico.thumbnail-image-small-Auto{
+    width: 61px;
+    height: 40px;
+    background-position: 0 0;
+    background-size: contain;
+    margin-top: 13px;
+}
+
+.bizagi_editor_component_editor_thumbnail [class^="thumbnail-image-normal-"]
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.bizagi_editor_component_editor_thumbnail .thumbnail-image-normal-expand
+{
+    position: absolute;
+    right:6px;
+    top:9px;
+    width: 0;
+    height: 0;
+    padding: 0;
+    vertical-align: top;
+    border-top: 4px solid 
+    black;
+    border-right: 4px solid 
+    transparent;
+    border-left: 4px solid 
+    transparent;
+    content: "";
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+
+.bizagi_editor_component_editor_thumbnail .thumbnail-group{
+    display:block;
+    min-width:33%;
+}
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container .thumbnail-group > .thumbnail-dimension,
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container .thumbnail-group > .thumbnail-value
+{
+    text-transform: capitalize;
+    text-align:center;
+    color:#5D7389;
+    display: block;
+}
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container .thumbnail-group > .thumbnail-dimension{
+    font-size: 0.8em;
+}
+
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container > .thumbnail-values {
+    width:80.5%;
+    background: -webkit-linear-gradient(top,  rgba(249,249,250,1) 0%,rgba(222,224,226,1) 100%); /* Chrome10+,Safari5.1+ */
+
+}
+
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container .thumbnail-group {
+    vertical-align: middle;
+    border: solid 1px transparent;
+}
+
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container > .thumbnail-name {
+    vertical-align: middle;
+    border: solid 1px transparent;
+}
+
+.bizagi_editor_component_editor_thumbnail .thumbnail-group > span {
+    vertical-align: middle;
+    padding: 0;
+}
+
+.bizagi_editor_component_editor_thumbnail .thumbnail-group .thumbnail-value {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+}
+
+.bizagi_editor_component_editor_thumbnail {
+    position: relative;
+}
+
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container > .thumbnail-values {
+    position: absolute;
+    top: 53px;
+    left: 10px;
+    border: solid 1px #CCCCCC;
+    background-color: #E6E6E6;
+    padding-bottom: 8px;
+    border-radius: 0px 0px 4px 4px;
+    z-index:600;
+}
+
+.properties-category .bizagi_editor_component_editor_thumbnail > .thumbnail-container > .thumbnail-values {
+    left:0;
+}
+
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container > .thumbnail-values.thumbnail-close {
+    display: none;
+}
+
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container > .thumbnail-values.thumbnail-open {
+    display: block;
+}
+
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container > .thumbnail-values > .thumbnail-group:hover {
+    background-color: rgba(222,224,226,1);
+    cursor: pointer;
+}
+
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container > .thumbnail-collapsed > [class^="thumbnail-image-large-"] {
+    visibility: hidden;
+}
+
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container > .thumbnail-collapsed > .thumbnail-image-icon-check {
+    visibility: hidden;
+}
+
+
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container > .thumbnail-hidden {
+    visibility: hidden;
+}
+.bizagi_editor_component_editor_thumbnail > .thumbnail-container > .thumbnail-show {
+    visibility: visible;
+    border: solid 1px blue;
+}
+
+
+.bizagi_editor_component_editor_thumbnail .thumbnail-values .thumbnail-group{
+    border-bottom: 1px solid rgba(193,194,194,.6);
+    border-top: 1px solid rgba(255,255,255,.6);
+}
+
+.bizagi_editor_component_editor_thumbnail .thumbnail-values .thumbnail-group:first-child{
+    border-top: 1px solid transparent;
+}
+
+.bizagi_editor_component_editor_thumbnail .thumbnail-values .thumbnail-group:last-child{
+    border-bottom: 1px solid transparent;
+}
+
+.bizagi_editor_component_editor_thumbnail .thumbnail-values{
+    -webkit-box-shadow: 0 8px 6px -6px rgb(72,90,106);
+    -moz-box-shadow: 0 8px 6px -6px rgb(72,90,106);
+    box-shadow: 0 8px 6px -6px rgb(72,90,106);
+}
+
+
+.bizagi_editor_component_editor_thumbnail.without-dropdown .thumbnail-group{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border: solid 1px #CCC;
+    border-radius: 3px;
+    margin-right: .25%;
+    min-height: 92px;
+    -webkit-transition: background-color 0.2s ease-in;
+   /* background-color: rgba(102,102,102,0);*/
+}
+
+.bizagi_editor_component_editor_thumbnail.without-dropdown .thumbnail-group .biz-btn{
+    min-height: 90px;
+    width: 78px;
+    padding: 2px;
+}
+
+.bizagi_editor_component_editor_thumbnail.without-dropdown .thumbnail-group.checked{
+    /*background-color: rgba(102,102,102,0.1);*/
+}
+.bizagi_editor_component_editor_thumbnail.without-dropdown .thumbnail-group:hover{
+    /*background-color: rgba(102,102,102,0.2);*/
+}
+
+.thumbnail-group-container.ui-control-input{
+    border:none;
+    text-align: center;
+}
+
+.bizagi_editor_component_editor_thumbnail.without-dropdown .thumbnail-value{
+    /*display:block;*/
+}
+
+.bizagi_editor_component_editor_thumbnail.without-dropdown .thumbnail-group:hover .thumbnail-image-icon-uncheck,
+.bizagi_editor_component_editor_thumbnail.without-dropdown .thumbnail-values .thumbnail-group:hover .thumbnail-image-icon-uncheck,
+.bizagi_editor_component_editor_thumbnail.without-dropdown .thumbnail-image-icon-check{
+    background-color: transparent;
+}
+
+.bizagi_editor_component_editor_thumbnail.without-dropdown [class*="thumbnail-image-small-"]{
+    opacity:0.8;
+    -moz-opacity: 0.8;
+    filter:alpha(opacity=80);
+}
+
+.bizagi_editor_component_editor_thumbnail.without-dropdown .thumbnail-group:hover [class*="thumbnail-image-small-"]{
+    opacity: 1;
+    -moz-opacity: 1;
+    filter:alpha(opacity=100);
+}

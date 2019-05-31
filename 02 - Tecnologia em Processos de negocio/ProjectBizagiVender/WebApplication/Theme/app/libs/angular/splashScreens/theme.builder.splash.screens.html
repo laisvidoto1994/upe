@@ -1,0 +1,118 @@
+﻿<div class="splash-screen-container function-output exposeArea" style="display:none;">
+    <div class="close-panel-container">
+        <span> Splash Screen Settings</span>
+        <div ng-click="closeSplashScreen('cancel')" class="close-panel fa fa-times "></div>
+    </div>
+    <div class="title-container">  
+        <br />      
+        <span>Upload your personalized Splash Screens</span>    
+        <br />
+        <span>Supported Formats:{{imageExtensionsToShow}}</span>        
+        <br />
+        <span>Note that images need to be strictly on the required size</span>
+        <br />
+    </div>
+    <div class="container splash-inputs-container">
+        <ul class="nav nav-pills">
+            <li class="active"><a><div data-toggle="pill" href="#iosTab">IOs</div></a></li>
+            <li><a><div data-toggle="pill" href="#androidTab">Android</div></a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="iosTab" class="tab-pane fade in active">
+                <div class="splash-tab-header">
+                    <div class="col-md-3">
+                        <span> SIZE</span>
+                    </div>
+                    <div class="col-md-1 ">
+                        <span> PREVIEW</span>
+                    </div>
+                    <div class="col-md-4">
+                        <span> FILE NAME</span>
+                    </div>
+                    <div class="col-md-3 imageStatus">
+                        <span> </span>
+                    </div>
+                    <div class="col-md-1 ">
+                        <span> STATUS</span>
+                    </div>
+                    
+                </div>
+                <div ng-repeat="item in iosSplash">
+
+                    <div id="splashImage{{$index}}" class="row">
+                        <div class="col-md-3">
+                            <span> {{item.size}}</span>
+                        </div>
+                        <div class="col-md-1 ">
+                             <div class="splash-icon splash-image fa fa-file-image-o fa-2x"></div>
+                             <div class="splash-icon splash-preview fa fa-search fa-2x" ng-mouseover="showPreview(item.name,this)" ng-mouseleave="hidePreview()"></div>
+                        </div>                        
+                        <div class="col-md-4 imageStatus">
+                            <span class="splash-file-name">No Image</span>
+                            <br />
+                            <span style="display:none;">({{item.fileName}})</span>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="file" data-file-name="{{item.fileName}} " name="{{item.name}}" onchange="angular.element(this).scope().uploadSplashImage(this)" style="display:none;" />
+                            <button ng-click="SplashButtonClicked(item.name)" type="button" name="{{item.name}}" class="btn btn-upload btn-md">Select Image</button>
+                        </div>
+                        <div class="col-md-1 ">
+                            <div class="splash-icon splash-check fa fa-check fa-2x"></div>
+                            <div class="splash-icon splash-warning fa fa-exclamation-triangle fa-2x"></div>                            
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="androidTab" class="tab-pane fade ">
+                <div ng-repeat="item in androidSplash">
+
+                    <div id="splashImage{{$index}}" class="row">
+                        <div class="col-md-3">
+                            <span> {{item.size}}</span>
+                        </div>
+                        <div class="col-md-1 ">
+                            <div class="splash-icon splash-image fa fa-file-image-o fa-2x"></div>
+                            <div class="splash-icon splash-preview fa fa-search fa-2x" ng-mouseover="showPreview(item.name,this)" ng-mouseleave="hidePreview()"></div>
+                        </div>                        
+                        <div class="col-md-4 imageStatus">
+                            <span class="splash-file-name">No Image</span>
+                            <br />
+                            <span style="display:none;">({{item.fileName}})</span>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="file" data-file-name="{{item.fileName}} " name="{{item.name}}" onchange="angular.element(this).scope().uploadSplashImage(this)" style="display:none;" />
+                            <button ng-click="SplashButtonClicked(item.name)" type="button" name="{{item.name}}" class="btn btn-upload btn-md">Select Image</button>
+                        </div>
+                        <div class="col-md-1 ">
+                            <div class="splash-icon splash-check fa fa-check fa-2x"></div>
+                            <div class="splash-icon splash-warning fa fa-exclamation-triangle fa-2x"></div>                            
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <button ng-click="closeSplashScreen('save')" type="button" class="btn btn-save btn-md">Save</button>
+
+    <div class="alert-message">
+        <div class="alert-title-container">
+            <span class="alert-title">Validation Error</span>
+        </div>
+        <br /><br />
+        <span class="text-message"></span>
+        <br />
+        <button ng-click="closeAlertMessage('ok')" type="button" class="btn btn-save btn-md">Ok</button>
+        <button ng-click="closeAlertMessage('cancel')" type="button" class="btn btn-save btn-md btn-cancel-message" style="display:none;">No, take me back</button>
+    </div>
+
+    <div class="image-preview-container">
+        <img src="" class="image-preview"/>
+    </div>
+</div>

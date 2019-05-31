@@ -1,0 +1,65 @@
+<script id="plans-manager-popup-edit-plan" type="text/x-jsrender" >
+    <div id="project-plan-popup-wrapper">
+
+        <form>
+            <div class="ui-form-scroll">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td class="first-column">
+                                <span class="field-description">%{workportal-project-plan-popup-field-name}:</span>
+                            </td>
+                            <td>
+                                <input id="input-name-plan" name="name-template" class="bz-wp-rub-input required" value=""
+                                       type="text" maxlength="100"/>
+                                <div class="position-message-validate">
+                                    <span  data-for="name-template"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="first-column">
+                                <span class="field-description">%{workportal-project-plan-popup-field-description}:</span>
+                            </td>
+                            <td>
+                                <textarea id="input-desc-plan" name="description-plan"  class="ui-rubik-input"/>
+                                <div class="position-message-validate">
+                                    <span  data-for="name-template"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="first-column">
+                                <span class="field-description">%{workportal-general-properties-due-date}:</span>
+                            </td>
+                            <td class="bz-calendar-container">
+                                <input id="input-dueDate-plan"  class="ui-rubik-input">
+                                <i class="bz-icon bz-icon-16 bz-icon-calendar-outline"></i>
+
+                                <div class="position-message-validate">
+                                    <span  data-for="name-template"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        {{if contextualized }}
+                        <tr>
+                            <td class="first-column">
+                                <span class="field-description">
+                                    %{workportal-project-plan-popup-field-waitforcompletion}:
+                                </span>
+                            </td>
+                            <td>
+                                <input id="input-waitForCompletion" name="waitForCompletion" class="ui-rubik-input" type="checkbox" />
+                            </td>
+                        </tr>
+                        {{/if}}
+                    </tbody>
+                </table>
+            </div><br/>
+            <div class="ui-bizagi-wp-project-popupform-actions">
+                <button id="button-cancel-edit-plan" type="reset" class="ui-rubik-button ui-rubik-button-cancel">%{text-cancel}</button>
+                <button id="button-accept-edit-plan" type="submit" class="ui-rubik-button ui-rubik-button-accept">%{text-save}</button>
+            </div>
+        </form>
+    </div>
+</script>

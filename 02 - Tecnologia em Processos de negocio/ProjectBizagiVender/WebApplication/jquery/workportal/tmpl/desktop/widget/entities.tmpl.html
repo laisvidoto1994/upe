@@ -1,0 +1,16 @@
+<script id="ui-bizagi-workportal-widget-entities" type="x-jquery-tmpl" >
+<!--
+<div style='width:100%;height:100%;border:0'>
+<iframe id='entitiesIFrame' src='${entitiesURL}' style='width:100%;height:98%;border:0;' frameborder='0'></iframe>
+</div>
+-->
+    <div class="bz-wp-widget-entities">
+        <div class="bz-wp-widget-entities" {{loading}}>
+            <ul>
+            {{each entities}}
+               <li data-entity-id="${idEnt}" data-entity-form="${idaddform}">${entDisplayName}</li>
+            {{/each}}
+            </ul>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,90 @@
+<script id="project-filespreview-wrapper" type="text/x-jsrender" >
+<div>
+   <div id="ui-bizagi-wp-project-filespreview-wrapper">
+
+   </div>
+   <div id="ui-bizagi-wp-project-filespreview-notifier">
+   </div>
+</div>
+</script>
+
+<script id="project-filespreview-popup" type="text/x-jsrender">
+<div id="project-popupform-wrapper-filepreview">
+      <div class="ui-bizagi-wp-project-popupform-scroll">
+         <form class="ui-bizagi-wp-project-popupform-form">
+            <table border="0" cellpadding="0" cellspacing="0">
+               <tbody>
+                  <tr>
+                     <td class="first-column">
+                        <img class="ui-bizagi-wp-project-popupform-user-image ui-bizagi-wp-project-popupform-image-current-user" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAA+0lEQVR42uzaSxLCMAwE0c79L82SFMXHJpKHhJ59at4utmS2cBAgQMCBT3dZDuBJ1gF4mSUA3qYfALUCauvnCZT3Twqo758T0NA/JaCjf0ZwIgC0COjpHxecBgBNAgF09Y8KBAgQIECAAAFnAXgiEiDAq5mA8wEuOCERIMBBpYAfAMTH9QLygPjOSEB+b5gHxFe3I4Lt4oD0+v4HAPEXFAIECBDw70+58oDw7zh7JMteTrPTcr5MDYBDOQqgIAcAFOU7AKWZBlCeKQAtGQXQmAEAzfkAYEHeAWC5gOX1DwQS/XsBkf6dgEz/XSBAgAABAgQIECBAQBxwE2AAjnkjnL/SDJsAAAAASUVORK5CYII=" height="32" />
+                     </td>
+                     <td>
+                         <div class="ui-bizagi-wp-project-container-validator-relative">
+                             <textarea id="ui-bizagi-wp-project-filespreview-popup-description" placeholder="%{workportal-widget-search-description}" class="ui-bizagi-wp-project-discussions-popupform-textarea" name="subject-discussion" required></textarea>
+                         </div>
+                         <div class="position-message-validate">
+                             <span></span>
+                         </div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </form>
+      </div>
+      <div class="ui-bizagi-wp-project-popupform-actions">
+         <button id="ui-bizagi-wp-project-popupform-action-cancel" class="ui-bizagi-wp-project-popupform-button ui-bizagi-wp-project-popupform-button-cancel">%{workportal-widget-reports-confirm-cancel}</button>
+         <button id="ui-bizagi-wp-project-popupform-action-editfile" class="ui-bizagi-wp-project-popupform-button ui-bizagi-wp-project-popupform-button-action">%{workportal-widget-reports-confirm-save}</button>
+      </div>
+   </div>
+</script>
+
+<script id="project-filespreview-thenumber" type="text/x-jsrender">
+    <div id="project-filespreview-filesnumber">
+        {{if filesNumber === 1}}
+            <span>{{>filesNumber}}&nbsp%{workportal-project-file}</span>
+        {{else}}
+            <span>{{>filesNumber}}&nbsp%{workportal-project-files}</span>
+        {{/if}}
+
+        <hr class="ui-bizagi-wp-hr-separator">
+    </div>
+</script>
+
+<script id="project-filespreview-preview" type="text/x-jsrender">
+    <div>
+        <div class="ui-bizagi-wp-project-filespreview-title">
+            <h3 class="bz-wp-section">{{>fileData.name}}</h3>
+
+            <div class="wrapper-menu-rubik">
+                <ul class="ui-bizagi-wp-project-filespreview-edit">
+                    <li>
+                        <a href="javascript:void(0);"><i class="bz-icon bz-icon-16 bz-icon-cog-outline"></i></a>
+                        <ul>
+                            {{if isOpen}}
+                            <li class="ui-menu-item" data-item="edit"><a href="javascript:void(0);">%{workportal-widget-query-form-edit}</a></li>
+                                {{if fileData.user === idCurrentUser}}
+                                <li class="ui-menu-item" data-item="delete"><a href="javascript:void(0);">%{workportal-widget-admin-dimensions-button-label-delete}</a></li>
+                                {{/if}}
+                            {{/if}}
+                            <li class="ui-menu-item" data-item="download"><a href="javascript:void(0);">%{workportal-widget-admin-language-widget-download}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div style="clear:both;"></div>
+
+        </div>
+        <div class="ui-bizagi-wp-project-filespreview-imgwrapper" data-guid="{{:fileData.guid}}" data-fileName="{{>fileData.name}}">
+            {{if img !== ""}}
+                <img class="ui-bizagi-wp-project-filespreview-img ui-bizagi-wp-project-filespreview-thumbnail" src="{{:img}}" />
+            {{else}}
+                <div class="ui-bizagi-wp-project-filespreview-img ui-bizagi-wp-project-filespreview-icon {{fileClass fileData.name /}}"></div>
+            {{/if}}
+        </div>
+        <p class="ui-bizagi-wp-project-filespreview-created">%{workportal-widget-render-created-by} <strong>{{>userData.name}}</strong>, {{relativeTime fileData.date /}}</p>
+        <div id="ui-bizagi-wp-project-filespreview-description">
+            {{>fileData.description}}
+        </div>
+        <hr class="ui-bizagi-wp-hr-separator">
+    </div>
+</script>

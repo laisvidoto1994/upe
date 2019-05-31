@@ -1,0 +1,614 @@
+/**********************************
+*  Filename: bizagi.workportal.inbox.css
+*  Create Date: 2012-06-27
+*  Author: oscar.osorio@bizagi.com
+* 
+*  ==STRUCTURE=====================
+*
+*  $__filters 
+*  $__containers
+*  $__Processes is the first screen in inbox
+*  $__Cases is the second screen in the workportal
+*  $__SummaryCase  the third screen related about the summary of the cases 
+*  $__Common_Cases__SummaryCase  this represent the commons css in the two screen (tipical relate the headers and contianers)
+***********************************/
+
+
+/* __containers
+************************************/
+
+#bz-list-categories-process, 
+.bz-wp-cases-container,
+#ui-bz-wp-case-summary,
+.bz-wp-nc-container,
+#ui-bz-wp-no-results
+{
+	margin: 55px 10px 50px 10px;
+	min-width: 280px;
+}
+
+#bz-list-categories-process ul,
+.bz-wp-cases-container ul,
+#ui-bz-wp-case-summary ul
+{list-style: none;position:relative;height: auto; display: block;}
+
+/* __Processes
+**********************************/
+#bz-list-categories-process >ul
+{}
+
+#bz-list-categories-process >ul >li[root]
+{
+   	 margin: 1px 0 10px 0;
+	 box-shadow:  0px 1px 2px 0px rgba(0, 0, 0, .15);
+	 border-radius: 6px;
+}
+
+#bz-list-categories-process >ul >li[root] >div >.container-left
+{
+	height: 35px;
+	position:relative;
+	background-color: #c2ced8;
+	border-radius: 6px 6px 0 0;
+	border-bottom: 1px solid #B8B9BB;
+	box-shadow: inset 0 1px 0px 0px rgba(255,255,255,.25);
+}
+
+
+#bz-list-categories-process >ul >li[root] >div >.container-left >span{
+	position: relative;
+	left: 10px;
+	line-height: 35px;
+    font-size: 13px;
+    color: #31414c;
+    text-shadow: 0 1px 0 #e0e3e6;
+    font-weight: bold;
+}
+
+#bz-list-categories-process ul[data-category]
+{
+display: inline;
+}
+
+#bz-list-categories-process ul[data-category] li[data-id-workflow]
+{
+	border-bottom: 1px solid #C0C6CB;
+	min-height:40px;
+	padding:5px;
+	background-color: #f2f2f2;	
+}
+#bz-list-categories-process ul[data-category] li[data-id-workflow]:nth-child(even){
+	background-color: #e6e6e6;	
+}
+
+#bz-list-categories-process ul[data-category] li[data-id-workflow]:last-child
+{
+    border-radius: 0 0 6px 6px;
+}
+
+#bz-list-categories-process ul[data-category] li[data-id-workflow] span.favorite-false,
+#bz-list-categories-process ul[data-category] li[data-id-workflow] span.favorite-true
+{
+	background-position: -202px -51px;
+	height: 35px;
+	width: 35px;
+	position: relative;
+	left: 0px;
+	
+}
+
+#bz-list-categories-process ul[data-category] li[data-id-workflow]:last-child
+{
+	border-bottom: none;
+}
+
+#bz-list-categories-process ul[data-category] li[data-id-workflow] >div
+{
+	display:table;
+	width: 100%;
+	position:relative;
+	padding:0px 5px 0px 5px;
+}
+#bz-list-categories-process ul[data-category] li[data-id-workflow] >div .container-left
+{
+	display: table-cell;
+	width: 45px;
+	vertical-align: middle;
+}
+#bz-list-categories-process ul[data-category] li[data-id-workflow] >div .container-middle
+{
+	display: table-cell;
+	position: relative;
+	vertical-align: middle;
+}
+
+#bz-list-categories-process ul[data-category] li[data-id-workflow] >div .container-middle .workflow-name
+{
+	top: 0;
+	color:#535b61;
+	font-size:14px;
+	display:block;
+}
+
+#bz-list-categories-process ul[data-category] li[data-id-workflow] >div .container-right
+{
+	display: table-cell;
+	width: 50px;
+	vertical-align: middle;
+	right: 5px;
+	position: relative;
+}
+
+span.workflow-count
+{
+	font-size: 80%;
+	font-weight:bold;
+	color: #333;
+	border-radius: 10px;
+	background: rgba(208,212,215,.8);
+	-webkit-box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,.2);
+	margin: 3px 0 3px 0;
+	text-align: center;
+	padding: 3px 5px;
+	min-width: 30px;
+	float: right;
+	position: relative;
+	border-bottom:1px solid white;
+}
+
+/* __Common_Cases__SummaryCase
+**********************************/
+
+
+#ui-bz-wp-cases-list .bz-wp-cases-header,
+#ui-bz-wp-case-summary .bz-wp-summary-header
+{
+	
+	min-height: 35px;
+	height: 35px;
+	position: relative;
+	border-bottom: 1px solid #b8b9bb;
+	width: 100%;
+	background-color: #c2ced8;
+	border-radius:6px 6px 0 0;
+	box-shadow: inset 0 1px 0 0 rgba(255,255,255,.25);
+	top:0;
+}
+
+#ui-bz-wp-cases-list .bz-wp-cases-header > .container-left,
+#ui-bz-wp-case-summary .bz-wp-summary-header > .container-left
+{
+	display: table-cell;
+	width: 40px;
+	vertical-align: middle;
+	border-right: 1px solid #ABB2B8;
+	height: 35px;
+	margin-right: 5px;
+	
+}
+
+#ui-bz-wp-cases-list .bz-wp-cases-header > .container-right,
+#ui-bz-wp-case-summary .bz-wp-summary-header > .container-right
+{
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 10px;
+}
+
+#ui-bz-wp-cases-list .bz-wp-cases-header > .container-right >span,
+#ui-bz-wp-case-summary .bz-wp-summary-header > .container-right >span
+{
+	position:relative;
+    font-size: 13px;
+    color: #31414c;
+    text-shadow: 0 1px 0 #e0e3e6;
+    font-weight: bold;
+}
+
+
+#ui-bz-wp-cases-list .bz-wp-cases-header > .container-left > .bz-cm-icon,
+#ui-bz-wp-case-summary .bz-wp-summary-header > .container-left > .bz-cm-icon
+{
+	background-position: -101px -54px;
+	position: relative;
+	left: 8px;
+	top: 2px;
+	
+}
+
+#ui-bz-wp-cases-list ul li[data-id-case] ul.activity-list  span.state-light,
+#ui-bz-wp-case-summary .bz-wp-summary-activity-box span.state-light
+{
+	display: inline-block;
+	height: 10px;
+	width: 10px;	
+	border-radius: 5px;
+	vertical-align: top;	
+	margin:0 4px 0 -4px;
+}
+
+#ui-bz-wp-cases-list ul li[data-id-case] ul.activity-list  span.state-light
+{
+    margin:4px -2px 0 -1px;
+}
+
+
+#ui-bz-wp-cases-list ul li[data-id-case] ul.activity-list  span.state-color-green,
+#ui-bz-wp-case-summary .bz-wp-summary-activity-box span.state-color-green
+  { background-position: -365px -101px; }
+#ui-bz-wp-cases-list ul li[data-id-case] ul.activity-list  span.state-color-yellow,
+#ui-bz-wp-case-summary .bz-wp-summary-activity-box span.state-color-yellow
+  { background-position: -422px -101px; }
+#ui-bz-wp-cases-list ul li[data-id-case] ul.activity-list  span.state-color-red,
+#ui-bz-wp-case-summary .bz-wp-summary-activity-box span.state-color-red     
+  { background-position: -395px -101px; }
+
+
+
+
+/* __Cases
+**********************************/
+.bz-wp-cases-container
+{
+box-shadow:  0px 1px 2px 0px rgba(0, 0, 0, .15);
+border-radius: 6px;
+}
+#ui-bz-wp-cases-list,
+.bz-wp-summary-menu-bar-bottom,
+#ui-bz-wp-no-results
+{
+	display:none;
+}
+
+#ui-bz-wp-cases-list ul.bz-wp-list-cases li[data-id-case]
+{
+	background-color: #f2f2f2;
+	border-top: 1px solid #C0C6CB;
+	min-height: 50px;
+	position: relative;
+	display: table;
+	width: 100%;
+	padding: 5px 0 5px 0;
+}
+#ui-bz-wp-cases-list ul.bz-wp-list-cases li[data-id-case]:nth-last-of-type(2){
+	border-radius: 0px 0px 6px 6px;
+}
+#ui-bz-wp-cases-list ul.bz-wp-list-cases li[data-id-case]:first-child{
+	border:none;
+}
+
+#ui-bz-wp-cases-list ul.bz-wp-list-cases li[data-id-case]:nth-child(even){
+	background-color: #e6e6e6;	
+}
+
+#ui-bz-wp-cases-list .bz-wp-cases-header > .container-left
+{
+	display: table-cell;
+	width: 40px;
+	vertical-align: middle;
+	border-right: 1px solid #ABB2B8;
+	height:35px;
+}
+
+#ui-bz-wp-cases-list .bz-wp-cases-header > .container-right
+{
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 10px;
+}
+
+#ui-bz-wp-cases-list .bz-wp-cases-header > .container-right >span
+{
+	position:relative;
+	font-size:13px;
+	color:#31414c;
+	text-shadow:0 1px 0 #e0e3e6;
+	font-weight:bold;
+}
+
+
+#ui-bz-wp-cases-list .bz-wp-cases-header > .container-left > .bz-cm-icon
+{
+	background-position: -102px -54px;
+	position: relative;
+	left: 8px;
+	top:2px;
+	
+}
+
+
+#ui-bz-wp-cases-list ul li[data-id-case]  span.favorite-false
+{
+	background-position: -340px -54px;
+	height: 24px;
+	width: 26px;
+	left: 10px;
+	
+}
+#ui-bz-wp-cases-list ul li[data-id-case] span.favorite-true
+{
+	background-position: -370px -54px;
+	height: 24px;
+	width: 26px;
+	position: relative;
+	left: 0;
+}
+#ui-bz-wp-cases-list ul li[data-id-case] .bz-wp-cases-container-header
+{
+	
+	width: 100%;
+	position: relative;
+	vertical-align: middle;
+	overflow: hidden;
+	padding:4px 0 0 7px;
+}
+
+#ui-bz-wp-cases-list ul li[data-id-case] .bz-wp-cases-container-header >.bz-cm-icon
+{
+	display:table-cell;
+}
+#ui-bz-wp-cases-list ul li[data-id-case] .bz-wp-cases-container-header >.rad-number
+{
+   display:table-cell;
+   vertical-align: middle;
+   color:#535b61;
+   font-weight: bold;
+   position: absolute;
+   top: 6px;
+   left: 35px;
+   font-size:16px;
+   
+}
+#ui-bz-wp-cases-list ul li[data-id-case] ul.activity-list 
+{left:5px;}
+
+#ui-bz-wp-cases-list ul li[data-id-case] ul.activity-list  span.activity-name
+{color:#535b61;
+ font-size:12px;
+}
+
+
+
+
+#ui-bz-wp-cases-list ul li[data-id-case] .bz-wp-cases-container-rigth
+{
+	display: table-cell;
+	width: 30px;
+	height: 100%;
+	vertical-align: middle;
+	right: 0;
+	position: relative;
+}
+
+#ui-bz-wp-cases-list ul li[data-id-case] .bz-wp-cases-container-rigth >span.bz-cm-icon
+{
+	background-position: -332px -95px;
+}
+
+/* __SummaryCase
+**********************************/
+/*bz-wp-summary-header*/
+
+#ui-bz-wp-case-summary .bz-wp-summary-activity-box
+{
+	background-color: #f2f2f2;
+	min-height: 100px;
+	position: relative;
+	display: table;
+	width: 100%;
+	border-bottom: 1px solid #C0C6CB;
+	border-radius:0 0 6px 6px;
+}
+/* __important*/
+#ui-bz-wp-case-summary div div.bz-wp-summary-activity-box:nth-last-of-type(2){
+	border-radius:0 0 6px 6px;
+	border: none;
+}
+
+#ui-bz-wp-case-summary div[data-case-id]
+{
+	box-shadow:  0px 1px 2px 0px rgba(0, 0, 0, .15);
+	border-radius: 6px;
+}
+#ui-bz-wp-case-summary div[data-case-id] .bz-wp-summary-header
+{
+	border-radius: 6px 6px 0 0;
+}
+
+#ui-bz-wp-case-summary div[data-case-id] .bz-cm-tbl .bz-wp-cases-summary-fields-tbl-right
+{
+	text-align: right;
+	padding-right: 10px;
+	width:33%;
+	padding-top: 5px;
+}
+#ui-bz-wp-case-summary div[data-case-id] .bz-cm-tbl .bz-wp-cases-summary-value
+{
+	background-color:#e6e6e6;
+	color:#265a80;
+	border-radius:3px;
+	padding: 5px;
+	margin-bottom:5px;
+	vertical-align: middle;
+	word-break: break-all;
+	font-weight:bold;
+}
+
+#ui-bz-wp-case-summary .bz-wp-summary-acbox-summary
+{
+	display:table;
+	width: 100%;
+	padding: 15px 20px;
+	color:#555d63;
+	font-size:13px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#ui-bz-wp-case-summary .bz-wp-summary-acbox-summary .bz-cm-tbl
+{
+	margin-bottom: 5px;
+	position: relative;
+}
+#ui-bz-wp-case-summary .bz-wp-summary-acbox-title
+{
+	position: relative;
+	padding: 15px 10px 5px 0;
+	margin:0px 0px 0px 15px;
+	color:#242d33;
+	font-size: 14px;
+	font-weight: bold;
+
+}
+
+ .bz-wp-summary-menu-bar-bottom .bz-cancel_case
+{
+	display:none;
+	border-radius: 6px;
+	background: #B32921;
+	margin: 4px 0px 0px 3px;
+	border: 1px solid #7F100A;
+	box-shadow: inset 0 1px 0px 0px #C03F38;
+    background:-webkit-gradient(linear, left top, left bottom, from(#BB2C25), to(#9B201A));
+    font-size: 14px;
+    text-shadow:0px -1px 0 #1D252C;
+}
+ .bz-wp-summary-menu-bar-bottom .bz-reassign_case 
+{
+	display:none;
+	background: #155073;
+	float: right;
+	position: relative;
+	margin: 4px 0 10px 0;
+	border-radius:6px ;
+	border:1px solid #2B323B;
+	box-shadow: inset 0px 1px 0px 0px #2B6181;
+    background-image:-webkit-gradient(linear, left top, left bottom, from(#155376), to(#103D56));
+    font-size: 14px;
+    text-shadow:0px -1px 0 #1D252C;
+}
+ .bz-wp-summary-menu-bar-bottom .bz-work_case{
+	background: #175B82;
+	position: relative;
+	float: right;
+	border-radius: 6px;
+	margin: 4px 5px 10px 0;
+	border:1px solid #2B323B;
+	box-shadow: inset 0 1px 0px 0px #2E6B90;
+    background-image:-webkit-gradient(linear, left top, left bottom, from(#185D87), to(#124564));
+    font-size: 13px;
+    text-shadow:0px -1px 0 #1D252C;
+}
+ .bz-wp-summary-menu-bar-bottom BUTTON
+{
+    padding: 7px 10px;
+    font-size: 14.5px;
+    color: #FFF;
+    border: 0;
+
+}
+
+
+
+/* __filters
+**********************************/
+.bz-wp-no-results
+{
+	width: 108px;
+	height: 108px;
+	background-position: -6px -189px;
+}
+
+.bz-wp-container-fts,  .bz-wp-summary-menu-bar-bottom
+{
+	width: 100%;
+	height: 43px;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#e5e9f0), to(#DADEE9));
+	border: 1px solid #B1B1B1;
+	box-shadow: 0 0 5px 0px rgba(0, 0, 0, .12),inset 0 1px 0px 0px rgba(255, 255, 255, .7);
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.bz-wp-container-fts{
+	display:none;
+}
+
+
+	
+.bz-wp-foother-static
+{
+	position:fixed;
+	bottom: 0;
+	z-index: 1;
+	left:0;
+}
+
+.bz-wp-container-fts >ul
+{
+	width: 100%;
+	margin: 0 auto;
+	-webkit-padding-start: 0;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	list-style: none;
+}
+
+.bz-wp-container-fts >ul >li
+{
+	line-height: 40px;
+	float: left;
+	text-align: center;
+	width: 19.5%;
+	margin-right: 0.5%;
+	
+}
+
+.bz-wp-container-fts  >ul  >li >span
+
+{
+	display:block;
+	height: 40px;
+	width: 35px;
+}
+
+li.active {
+	position: relative;
+
+}
+li.active:after, li.active:before {
+	bottom: 98%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+li.active:after {
+	border-color: rgba(229, 233, 240, 0);
+	border-bottom-color: #E5E9F0;
+	border-width: 5px;
+	left: 50%;
+	margin-left: -6px;
+}
+li.active:before {
+	border-color: rgba(177, 177, 177, 0);
+	border-bottom-color:#b1b1b1;
+	border-width: 6px;
+	left: 50%;
+	margin-left: -7px;
+}
+
+
+
+.bz-wp-container-fts >ul >li:nth-child(1) >span.bz-cm-icon
+{background-position: -421px -171px;}
+.bz-wp-container-fts >ul >li:nth-child(2) >span.bz-cm-icon
+{background-position:-296px -175px;}
+.bz-wp-container-fts >ul >li:nth-child(3) >span.bz-cm-icon
+{background-position: -335px -175px;}
+.bz-wp-container-fts >ul >li:nth-child(4) >span.bz-cm-icon
+{background-position: -365px -175px;}
+.bz-wp-container-fts >ul >li:nth-child(5) >span.bz-cm-icon
+{background-position: -395px -172px;}
+

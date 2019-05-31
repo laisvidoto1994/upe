@@ -1,0 +1,28 @@
+<script id="ui-bz-mobile-search-control" type="text/x-kendo-template">
+    <div class="bz-rn-container-control-search">
+        <div class="bz-rn-container-search">
+            <input class="bz-rn-align-class bz-rn-input-search-text #if(data.allowSuggest){#ui-autocomplete-input#}#" #if(!data.allowTyping){#readonly="readonly"#}# />
+            #if(data.allowSuggest){#
+                <div class="bz-rn-autocomplete-wrapper">
+                    <ul class='bz-rn-autocomplete'></ul>
+                </div>
+            #}#
+
+            #if(data.allowClear){#
+                <div class="bz-rn-search-control-icons-clear #if(!data.hasValue){# hidden #}#">
+                    <span class="bz-mo-icon bz-circle-cross-full bz-wp-search-control-clear-icon"></span>
+                </div>
+            #}#
+
+            <div class="bz-rn-search-control-icons-search">
+                <span class="bz-wp-search-control-search-icon bz-mo-icon bz-search"></span>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bz-mobile-readonly-search-control" type="text/x-kendo-template">
+    <div class="bz-rn-container-control-icon">
+        <span class="bz-rn-align-class bz-rn-text bz-rn-non-editable" readonly="readonly">#if(data.value !== ""){# #:data.value# #}#</span>
+    </div>
+</script>

@@ -1,0 +1,68 @@
+<script id="form-frame" type="text/x-jquery-tmpl">
+    <div class="form-container">
+        <label>${caption}</label>
+        <div class="form-button-container">
+            <span class="form-button-caption biz-action-btn ui-corner-left ui-ellipsis" title="${caption}">{{tmpl "#form-item-version"}}${captionForm}</span><div class="form-button-dropdown biz-action-btn ui-corner-right"><i class="biz-btn-caret"></i></div>
+            <ul class="form-menu biz-border-all biz-light-border-color ui-corner-all biz-shadow-down">
+                <li class="form-menu-section">%{formmodeler-component-editor-form-selection}
+                    <div class="form-submenu-container">
+                        <ul class="form-submenu biz-border-all biz-light-border-color ui-corner-all"></ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</script>
+
+<script id="form-newform" type="text/x-jquery-tmpl">
+    <li class="form-menu-event form-newform biz-btn-horizontal"><div class="biz-btn">%{formmodeler-component-editor-form-newform}</div></li>
+</script>
+
+<script id="form-none" type="text/x-jquery-tmpl">
+    <li class="form-menu-event form-none biz-btn-horizontal"><div class="biz-btn">%{formmodeler-component-editor-form-none}</div></li>
+</script>
+
+<script id="form-item-unchecked" type="text/x-jquery-tmpl">
+    <li data-guid="${guid}" class="biz-btn-horizontal"><div class="biz-btn"><i class="biz-ico form-image-form-${icon} bz-studio bz-forms_16x16_standard"></i>
+    <span class="form-submenu-text  ui-ellipsis" title="${nameform}">{{tmpl "#form-item-version"}}${nameform}</span><i class="biz-ico ui-comboBox-image-small-uncheck bz-studio bz-black bz-check_16x16_black"></i></div></li>
+</script>
+
+<script id="form-item-checked" type="text/x-jquery-tmpl">
+    <li data-guid="${guid}" class="biz-btn-horizontal"><div class="biz-btn"><i class="biz-ico form-image-form-${icon} bz-studio bz-forms_16x16_standard"></i>
+    <span class="form-submenu-text  ui-ellipsis" title="${nameform}">{{tmpl "#form-item-version"}}${nameform}</span><i class="biz-ico ui-comboBox-image-small-check bz-studio bz-checked_16x16_standard"></i></div></li>
+</script>
+
+
+<script id="form-item-parent-no-children-checked" type="text/x-jquery-tmpl">
+    <li class="biz-btn-horizontal form-item-selectable"><div class="biz-btn" title="${displayname}"><i class="biz-ico form-image-form-${icon} bz-studio bz-forms_16x16_standard"></i>
+    <span class="form-submenu-text form-no-children  ui-ellipsis" title="${displayname}">{{tmpl "#form-item-version"}}${displayname}</span><i class="biz-ico ui-comboBox-image-small-check bz-studio bz-checked_16x16_standard"></i></div></li>
+</script>
+
+<script id="form-item-parent-no-children-unchecked" type="text/x-jquery-tmpl">
+    <li class="biz-btn-horizontal form-item-selectable"><div class="biz-btn" title="${displayname}"><i class="biz-ico form-image-form-${icon} bz-studio bz-forms_16x16_standard"></i>
+    <span class="form-submenu-text form-no-children ui-ellipsis" title="${displayname}">{{tmpl "#form-item-version"}}${displayname}</span><i class="biz-ico ui-comboBox-image-small-uncheck bz-studio bz-black bz-check_16x16_black"></i></div></li>
+</script>
+
+<script id="form-item-parent-children-checked" type="text/x-jquery-tmpl">
+    <li class="form-item-expandable form-item-selectable"><div class="biz-btn" title="${displayname}"><span class="form-image-minus"></span><i class="biz-ico form-image-form-${icon} bz-studio bz-forms_16x16_standard"></i>
+    <span class="form-submenu-text  ui-ellipsis" title="${displayname}">{{tmpl "#form-item-version"}}${displayname}</span><i class="biz-ico ui-comboBox-image-small-check bz-studio bz-checked_16x16_standard"></i></div><ul></ul></li>
+</script>
+
+<script id="form-item-parent-children-unchecked" type="text/x-jquery-tmpl">
+    <li class="form-item-expandable form-item-selectable"><div class="biz-btn" title="${displayname}"><span class="form-image-minus"></span><i class="biz-ico form-image-form-${icon} bz-studio bz-forms_16x16_standard"></i>
+    <span class="form-submenu-text ui-ellipsis" title="${displayname}">{{tmpl "#form-item-version"}}${displayname}</span><i class="biz-ico ui-comboBox-image-small-uncheck bz-studio bz-black bz-check_16x16_black"></i></div><ul></ul></li>
+</script>
+
+<script id="form-item-child-unchecked" type="text/x-jquery-tmpl">
+    <li class="biz-btn-horizontal form-item-selectable"><div class="biz-btn" title="${displayname}"><span class="form-image-corner"></span><i class="biz-ico form-image-form bz-studio bz-forms_16x16_standard"></i>
+    <span class="form-submenu-text  ui-ellipsis" title="${displayname}">{{tmpl "#form-item-version"}}${displayname}</span><i class="biz-ico ui-comboBox-image-small-uncheck bz-studio bz-black bz-check_16x16_black"></i></div></li>
+</script>
+
+<script id="form-item-child-checked" type="text/x-jquery-tmpl">
+    <li class="biz-btn-horizontal form-item-selectable"><div class="biz-btn" title="${displayname}"><span class="form-image-corner"></span><i class="biz-ico form-image-form bz-studio bz-forms_16x16_standard"></i>
+    <span class="form-submenu-text  ui-ellipsis" title="${displayname}">{{tmpl "#form-item-version"}}${displayname}</span><i class="biz-ico ui-comboBox-image-small-check bz-studio bz-checked_16x16_standard"></i></div></li>
+</script>
+
+<script id="form-item-version" type="text/x-jquery-tmpl">
+    {{if version}}<span class="bizagi_editor_form-version ui-badge ui-arrow-right biz-third-font">${version}</span>{{else}} &nbsp; {{/if}}
+</script>

@@ -1,0 +1,14 @@
+﻿<div class="ui-bizagi-container ui-bizagi-container-tab ${cssclass} {{if tabOrientation == "rtl"}}bz-container-rtl{{/if}}" data-unique-id="${uniqueId}"  >
+     <div class="isTab">
+          {{each tabs}}
+              <div class="cell bz-container-items-tabs " data-reference-tab="#ui-bizagi-tab-${id}" >
+                <span class="bz-tabs-display-name">${displayName}</span>
+                <!--span class="bz-tabs-narrow" > > </span-->        
+              </div>
+           {{/each}}
+     </div>
+    {{children}}
+</div>
+
+
+

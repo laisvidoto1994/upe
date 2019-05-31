@@ -1,0 +1,478 @@
+﻿{
+	"form": {
+		"properties" : {"id": 1, "xpathContext": "", "title": "Validations", "needsUserConfirmation": "true",
+		"buttons": [
+			{"action": "save", "text": "Save", "validate": "true", "submitData": "true", "refresh": "true"},
+			{"action": "next", "text": "Next", "validate": "false", "submitData": "true", "refresh": "true", "routing": "true"}
+			]},
+		"elements": [
+			{"container": { "properties": {"id" : "tab", "type": "tab"},
+				"elements": [
+					{"container": { "properties": {"id" : "tabItem1", "type": "tabItem", "displayName": "Basic Test"}, "elements": [
+						{"render": {	"properties": {"id" : 10000, "displayName" : "Client", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10001, "dataType": "15", "displayName" : "Name", "xpath" : "client.name", "type": "text" }}},
+						{"render": {	"properties": {"id" : 30001, "dataType": "15", "displayName" : "Name", "xpath" : "client.name", "type": "text", "editable": "false" }}},
+						{"render": {	"properties": {"id" : 10002, "dataType": "15", "displayName" : "Last Name", "xpath" : "client.lastName", "type": "text" }}},
+						{"render": {	"properties": {"id" : 10003, "dataType": "15", "displayName" : "Phone", "xpath" : "client.phone", "type": "text" }}},
+						{"render": {	"properties": {"id" : 10004, "dataType": "15", "displayName" : "Address", "xpath" : "client.address", "type": "text" }}},
+						{"render": {	"properties": {"id" : 10005, "dataType": "5", "displayName" : "Apply VIP discount", "xpath" : "client.vipDiscount", "type": "boolean", "visible": "false", "display": "option" }}},
+						{"render": {	"properties": {"id" : 10000, "displayName" : "Actions", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10006, "dataType": "5", "displayName" : "If true set client name red", "xpath" : "test.boolean1", "type": "boolean", "display": "option" }}},
+						{"render": {	"properties": {"id" : 10007, "dataType": "5", "displayName" : "If true set client last name background in blue", "xpath" : "test.boolean2", "type": "boolean", "display": "option" }}},
+						{"render": {	"properties": {"id" : 10000, "displayName" : "If name is 'diego' then show VIP discount option, and shows it in red", "type": "label", "labelAlign": "center" }}},
+						{"render": {	"properties": {"id" : 10000, "displayName" : "If name is 'diego' and lastname is 'parra' then sets readonly address and phone and set default values", "type": "label", "labelAlign": "center" }}},
+						{"render": {	"properties": {"id" : 10000, "displayName" : "If vip discount is false set name and last name required", "type": "label", "labelAlign": "center" }}},
+						{"render": {	"properties": {"id" : 10000, "displayName" : "If name and last name are equal, set address and phone background in light red", "type": "label", "labelAlign": "center" }}},
+						{"render": {	"properties": {"id" : 10000, "displayName" : "Validations", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10000, "displayName" : "If name is 'nada' a validation is shown", "type": "label", "labelAlign": "center" }}},
+						{"render": {	"properties": {"id" : 10000, "displayName" : "If last name is empty a validation is shown", "type": "label", "labelAlign": "center" }}},
+						{"render": {	"properties": {"id" : 10000, "displayName" : "If address contains 'vision' a validation is shown", "type": "label", "labelAlign": "center" }}},
+						{"render": {	"properties": {"id" : 10000, "displayName" : "If phone is empty a validation is shown and focuses con a render in the group container", "type": "label", "labelAlign": "center" }}}
+
+					]}},
+					{"container": { "properties": {"id" : "tabItem2", "type": "tabItem", "displayName": "Containers"}, "elements": [
+						{"render": {	"properties": {"id" : 20000, "displayName" : "Actions", "type": "label" }}},
+						{"container": { "properties": {"id" : "h2", "type": "horizontal"},
+							"elements": [
+								{"render": {	"properties": {"id" : 30001, "dataType": "5", "displayName" : "If true set Panel container in light green", "xpath" : "test.boolean3", "type": "boolean", "display": "option" }}},
+								{"render": {	"properties": {"id" : 30002, "dataType": "5", "displayName" : "If true hides Panel container", "xpath" : "test.boolean4", "type": "boolean", "display": "option" }}}
+							]}},
+						{"container": { "properties": {"id" : "h3", "type": "horizontal"},
+							"elements": [
+								{"render": {	"properties": {"id" : 30003, "dataType": "5", "displayName" : "If true collapses group container", "xpath" : "test.boolean5", "type": "boolean", "display": "option" }}},
+								{"render": {	"properties": {"id" : 30004, "dataType": "5", "displayName" : "If true set Group Container as read only", "xpath" : "test.boolean6", "type": "boolean", "display": "option" }}}
+							]}},
+						{"container": { "properties": {"id" : "h4", "type": "horizontal"},
+							"elements": [
+								{"render": {	"properties": {"id" : 30005, "dataType": "5", "displayName" : "If true select second tab container", "xpath" : "test.boolean7", "type": "boolean", "display": "option" }}},
+								{"render": {	"properties": {"id" : 30006, "dataType": "5", "displayName" : "If true select second accordion container", "xpath" : "test.boolean8", "type": "boolean", "display": "option" }}}
+						]}},
+						{"render": {	"properties": {"id" : 20000, "displayName" : "Containers", "type": "label" }}},
+						{"container": { "properties": {"id" : "20001", "type": "panel"},
+							"elements": [
+								{"render": {	"properties": {"id" : 300071, "displayName" : "Label Standard", "xpath" : "text5_7", "type": "text"}}},
+								{"render": {	"properties": {"id" : 300072, "displayName" : "Label Standard", "xpath" : "text5_8", "type": "text"}}},
+								{"render": {	"properties": {"id" : 300073, "displayName" : "Label Standard", "xpath" : "text5_9", "type": "text"}}}								
+						]}},
+						{"container": { "properties": {"id" : 8, "displayName" : "Tab Container", "type": "panel"},
+							"elements": [	
+								{"container": { "properties": {"id" : "miniTab", "type": "tab"}, "elements": [	
+									{"container": { "properties": {"id" : "20011", "displayName" : "Tab 1", "type": "tabItem"}, "elements": [	
+										{"render": {	"properties": {"id" : 80001, "displayName" : "Element from tab 1", "xpath" : "text8_1", "type": "text"}}}
+									]}},
+									{"container": { "properties": {"id" : "20012", "displayName" : "Tab 2", "type": "tabItem"}, "elements": [	
+										{"render": {	"properties": {"id" : 80002, "displayName" : "Element from tab 2", "xpath" : "text8_2", "type": "text"}}}
+									]}},
+									{"container": { "properties": {"id" : "20013", "displayName" : "Tab 3", "type": "tabItem"}, "elements": [	
+										{"render": {	"properties": {"id" : 80003, "displayName" : "Element from tab 3", "xpath" : "text8_3", "type": "text"}}}
+									]}}
+								]}}
+							]
+						}},
+						{"container": { "properties": {"id" : 9, "displayName" : "Accordion", "type": "panel"},
+							"elements": [	
+								{"container": { "properties": {"id" : "miniAccordion", "type": "accordion"}, "elements": [	
+									{"container": { "properties": {"id" : "20021", "displayName" : "Accordion 1", "type": "accordionItem"}, "elements": [	
+										{"render": {	"properties": {"id" : 90001, "displayName" : "Element from accordion 1", "xpath" : "text9_1", "type": "text"}}}
+									]}},
+									{"container": { "properties": {"id" : "20022", "displayName" : "Accordion 2", "type": "accordionItem"}, "elements": [	
+										{"render": {	"properties": {"id" : 90002, "displayName" : "Element from accordion 2", "xpath" : "text9_2", "type": "text"}}}
+									]}},
+									{"container": { "properties": {"id" : "20023", "displayName" : "Accordion 3", "type": "accordionItem"}, "elements": [	
+										{"render": {	"properties": {"id" : 90003, "displayName" : "Element from accordion 3", "xpath" : "text9_3", "type": "text"}}}
+									]}}
+								]}}
+							]
+						}},
+						{"container": { "properties": {"id" : 10, "displayName" : "Group", "type": "panel"},
+							"elements": [	
+								{"container": { "properties": {"id" : "99CE824B-9576-4CAC-A6FF-3344181B5611", "type": "group", "displayName" : "Classic Group"}, "elements": [	
+									{"render": {	"properties": {"id" : 10048, "displayName" : "Label Standard", "xpath" : "datos.texto48", "type": "text"}}},
+									{"render": {	"properties": {"id" : 10049, "displayName" : "Label Standard", "xpath" : "datos.texto49", "type": "text"}}},
+									{"render": {	"properties": {"id" : 10050, "displayName" : "Label Standard", "xpath" : "datos.texto50", "type": "text"}}}												
+								]}}
+							]
+						}}
+					]}},
+					{"container": { "properties": {"id" : "tabItem3", "type": "tabItem", "displayName": "Xtra"}, "elements": [
+						{"render": {	"properties": {"id" : 40001, "dataType": "12",  "displayName" : "Start Date (cannot be more than start date)", "type": "date", "xpath":"datos.date1" }}},
+						{"render": {	"properties": {"id" : 40002, "dataType": "12",  "displayName" : "End Date (cannot be less than start date)", "type": "date", "xpath":"datos.date2" }}},
+						{"render": {	"properties": {"id" : 40003, "dataType": "15",  "displayName" : "Required Value", "type": "text", "xpath":"datos.texto51", "required": "true" }}},
+						{"render": {	"properties": {"id" : 40004, "dataType": "1",  "displayName" : "Restricted number, max: 500, min: 100", "type": "number", "xpath":"datos.number1", "required": "true", "minValue": "100", "maxValue": "500" }}},
+						{"render": {	"properties": {"id" : 40005, "dataType": "15",  "displayName" : "Email", "type": "text", "xpath":"datos.texto52", "required": "true", "regularExpression": { "expression": "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$", "message": "No es un mail valido"} }}},
+						{"render": {	"properties": {"id" : 40006, "dataType": "15",  "displayName" : "Code", "type": "text", "xpath":"datos.texto53", "required": "true", "retype":"duplicate" }}},
+						{"render": {	"properties": {"id" : 40007, "dataType": "15",  "displayName" : "Code (Classic retype)", "type": "text", "xpath":"datos.texto54", "required": "true", "retype":"double" }}},
+						{"render": {	"properties": {"id" : 40008, "dataType": "15",  "displayName" : "Masked phone", "type": "text", "xpath":"datos.texto55", "required": "true", "mask": "###-####" }}},
+						{"render": {	"properties": {"id" : 40009, "dataType": "15",  "displayName" : "Render with hint", "type": "text", "xpath":"datos.texto56", "hint": "Type here whatever"}}}
+					]}},
+					{"container": { "properties": {"id" : "tabItem4", "type": "tabItem", "displayName": "Else actions"}, "elements": [
+						{"render": {	"properties": {"id" : 20000, "displayName" : "WITHOUT ELSE ACTIONS", "type": "label" }}},
+						{"render": {	"properties": {"id" : 20000, "displayName" : "If Score between 0 and 200 then red", "type": "label" }}},
+						{"render": {	"properties": {"id" : 20000, "displayName" : "If Score between 200 and 500 then yellow", "type": "label" }}},
+						{"render": {	"properties": {"id" : 20000, "displayName" : "If Score greater than 500 then green", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10101, "dataType": "1",  "displayName" : "Score", "type": "number", "xpath":"datos.score"}}},
+						{"render": {	"properties": {"id" : 20000, "displayName" : "WITH CUSTOM ELSE ACTIONS", "type": "label" }}},
+						{"render": {	"properties": {"id" : 10101, "dataType": "1",  "displayName" : "Entero", "type": "number", "xpath":"datos.entero"}}}
+					]}},
+					{"container": { "properties": {"id" : "tabItemN", "type": "tabItem", "displayName": "Submit on change"}, "elements": [
+						{"render": {	"properties": {"id" : 98746, "displayName" : "This is a submit on change render", "type": "text", "submitOnChange": "true", "xpath": "submitOnChangetext" }}}
+					]}},
+					{"container": { "properties": {"id" : "tabItem5", "type": "tabItem", "displayName": "Grids"}, "elements": [
+						{"render": {	"properties": {"id" : 50001, "displayName" : "Grid", "type": "grid", "xpath": "grid", 
+							   "data": {
+									"page": 1,
+									"total": 1,
+									"records": 2,
+									"rows": [["1", "50", "Texto", "Aja"],["2","150", "Otro texto", "y tu que"]] 
+									}
+							  },
+							  "elements": [
+									{"render": {	"properties": {"id" : 500011, "displayName" : "Entero", "xpath" : "number", "type": "columnNumber", "dataType": "1"}}},
+									{"render": {	"properties": {"id" : 500012, "displayName" : "Texto", "xpath" : "text", "type": "columnText", "dataType": "15"}}},
+									{"render": {	"properties": {"id" : 500013, "displayName" : "Otra columna", "xpath" : "other", "type": "columnText", "dataType": "15"}}},
+									{"render": {	"properties": {"id" : 500014, "displayName" : "Fruta", "xpath" : "fruit", "type": "columnCombo", "data": [{"id":"1", "value":"Pera"}, {"id":"2", "value":"Manzana"}, {"id":"3", "value":"Durazno"}] }}}
+						]}}
+					]}}
+				]
+			}}
+		],
+		"validations": [
+			{ 
+				"conditions":{
+					"operator": "and",
+					"expressions": [
+						{"simple": {"operator": "equals", "xpath": "client.name", "argument": "nada", "argumentType": "const"}}
+					]
+				},
+				"validationCommand": {"message": "No se puede colocar \\\"nada\\\" como nombre", "focus": "client.name"}
+			},
+			 {
+				"conditions":{
+					"operator": "and",
+					"expressions": [
+						{"simple": {"operator": "is-empty", "xpath": "client.lastName"}}
+					]
+				}, 
+				"validationCommand": {"message": "El apellido debe ser diferente de vacio", "focus": "client.lastName"}
+			},
+			{
+				"conditions":{
+					"operator": "and",
+					"expressions": [
+						{"simple": {"operator": "like", "xpath": "client.address", "argument": "vision", "argumentType": "const"}}
+					]
+				}, 
+				"validationCommand": {"message": "La direccion <client.address> no es valida", "tokens": ["client.address"], "focus": "client.address"}
+			},
+			{
+				"conditions":{
+					"operator": "and",
+					"expressions": [
+						{"simple": {"operator": "is-empty", "xpath": "client.phone"}},
+						{"simple": {"operator": "is-empty", "xpath": "datos.texto49"}}
+					]
+				}, 
+				"validationCommand": {"message": "Si no llena el telefono debe llenar un campo del grupo del otro tab",  "focus": "datos.texto49"}
+			},
+			{ 
+				"conditions":{
+					"operator": "and",
+					"expressions": [
+						{"simple": {"operator": "equals", "xpath": "client.name", "argument": "randy's", "argumentType": "const"}}
+					]
+				},
+				"validationCommand": {"message": "No se puede colocar randy's como nombre", "focus": "client.name"}
+			}
+		],
+		"actions":[
+        {
+            "conditions":{
+                "operator": "true"
+            },
+            "commands": [
+                {"xpath": "client.lastName", "command": "set-value", "argument": "parra", "argumentType": "const" }
+	        ]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple":  {"operator": "equals", "xpath": "test.boolean1", "argument": true, "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"xpath": "client.name", "command": "forecolor", "argument": "red", "argumentType": "const"}
+            ],
+            "dependencies": ["test.boolean1"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "equals", "xpath": "test.boolean2", "argument": true, "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"xpath": "client.lastName", "command": "background-color", "argument": "blue", "argumentType": "const"}
+	    ],
+            "dependencies": ["test.boolean2"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "equals", "xpath": "client.name", "argument": "diego", "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"xpath": "client.vipDiscount", "command": "visible", "argument": true, "argumentType": "const"},
+                {"xpath": "client.vipDiscount", "command": "forecolor", "argument": "red", "argumentType": "const"}
+	    ],
+            "dependencies": ["client.name"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "equals", "xpath": "client.name", "argument": "diego", "argumentType": "const"}},
+                    {"simple": {"operator": "equals", "xpath": "client.lastName", "argument": "parra", "argumentType": "const"}}
+                ]
+            },
+            "commands": [
+                {"xpath": "client.address", "command": "readonly", "argument": true, "argumentType": "const"},
+                {"xpath": "client.phone", "command": "readonly", "argument": true, "argumentType": "const"},
+                {"xpath": "client.address", "command": "set-value", "argument": "Cra 7. No. 71-52", "argumentType": "const"},
+                {"xpath": "client.phone", "command": "set-value", "argument": "3170049 ext. 303", "argumentType": "const"}
+	        ],
+            "dependencies": ["client.name", "client.lastName"]  
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "is-false", "xpath": "client.vipDiscount", "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"xpath": "client.name", "command": "required", "argument": true, "argumentType": "const"},
+                {"xpath": "client.lastName", "command": "required", "argument": true, "argumentType": "const"}
+	        ],
+            "dependencies": ["client.vipDiscount"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "equals", "xpath": "client.name", "argument":"client.lastName", "argumentType": "xpath"} }
+                ]
+            },
+            "commands": [
+                {"xpath": "client.address", "command": "background-color", "argument": "#ffcccc", "argumentType": "const" },
+                {"xpath": "client.phone", "command": "background-color", "argument": "#ffcccc", "argumentType": "const" }
+	        ],
+            "dependencies": ["client.name", "client.lastName"]  
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "is-true", "xpath": "test.boolean3", "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"container": 20001, "command": "background-color", "argument": "#ddffdd", "argumentType": "const"}
+	        ],
+            "dependencies": ["test.boolean3"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "is-true", "xpath": "test.boolean4", "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"container": 20001, "command": "visible", "argument": false, "argumentType": "const"}
+	        ],
+            "dependencies": ["test.boolean4"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "is-true", "xpath": "test.boolean5", "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"container": "99CE824B-9576-4CAC-A6FF-3344181B5611", "command": "collapse", "argument": false, "argumentType": "const"}
+	        ],
+            "dependencies": ["test.boolean5"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "is-true", "xpath": "test.boolean6", "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"container": "99CE824B-9576-4CAC-A6FF-3344181B5611", "command": "readonly", "argument": true, "argumentType": "const"}
+	        ],
+            "dependencies": ["test.boolean6"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "is-true", "xpath": "test.boolean7", "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"container": 20012, "command": "set-active"}
+	        ],
+            "dependencies": ["test.boolean7"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "is-true", "xpath": "test.boolean8", "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"container": 20022, "command": "set-active"}
+	        ],
+            "dependencies": ["test.boolean8"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "is-not-empty", "xpath": "datos.date1"} }
+                ]
+            },
+            "commands": [
+                {"xpath": "datos.date2", "command": "set-min", "argument": "datos.date1", "argumentType": "xpath" }
+	        ],
+            "dependencies": ["datos.date1"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "is-not-empty", "xpath": "datos.date2"} }
+                ]
+            },
+            "commands": [
+                {"xpath": "datos.date1", "command": "set-max", "argument": "datos.date2", "argumentType": "xpath" }
+	        ],
+            "dependencies": ["datos.date2"]  
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "greater-than", "xpath": "datos.score", "argument": 0, "argumentType": "const"} },
+                    {"simple": {"operator": "less-equals-than", "xpath": "datos.score", "argument": 200, "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"xpath": "datos.score", "command": "background-color", "argument": "red", "argumentType": "const" }
+	        ],
+            "elseCommands": [],
+            "dependencies": ["datos.score"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "greater-than", "xpath": "datos.score", "argument": 200, "argumentType": "const"} },
+                    {"simple": {"operator": "less-equals-than", "xpath": "datos.score", "argument": 500, "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"xpath": "datos.score", "command": "background-color", "argument": "yellow", "argumentType": "const" }
+	        ],
+            "elseCommands": [],
+            "dependencies": ["datos.score"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "greater-than", "xpath": "datos.score", "argument": 500, "argumentType": "const"} }
+                ]
+            },
+            "commands": [
+                {"xpath": "datos.score", "command": "background-color", "argument": "green", "argumentType": "const" }
+	        ],
+            "elseCommands": [],
+            "dependencies": ["datos.score"]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "greater-than", "xpath": "datos.entero", "argument": 0, "argumentType": "const"}  }
+                ]
+            },
+            "commands": [
+                {"xpath": "datos.entero", "command": "background-color", "argument": "green", "argumentType": "const" }
+	        ],
+            "elseCommands": [
+                {"xpath": "datos.entero", "command": "background-color", "argument": "red", "argumentType": "const" }
+	        ],
+            "dependencies": ["datos.entero" ]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "is-empty", "xpath": "client.lastName"}  }
+                ]
+            },
+            "commands": [
+                {"xpath": "client.lastName", "command": "background-color", "argument": "yellow", "argumentType": "const" }
+	        ],
+            "dependencies": ["client.lastName" ]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "greater-than", "xpath": "grid[].number", "argumentType": "const", "argument": "100"}  }
+                ]
+            },
+            "commands": [
+                {"xpath": "grid[].text", "command": "background-color", "argument": "yellow", "argumentType": "const" }
+	        ],
+            "dependencies": ["grid" ]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "less-equals-than", "xpath": "grid[].number", "argumentType": "const", "argument": "100"}  }
+                ]
+            },
+            "commands": [
+                {"xpath": "grid[].text", "command": "forecolor", "argument": "darkblue", "argumentType": "const" }
+	        ],
+            "dependencies": ["grid" ]
+        },
+        {
+            "conditions":{
+                "operator": "and",
+                "expressions":[
+                    {"simple": {"operator": "less-equals-than", "xpath": "grid[].number", "argumentType": "const", "argument": "100"}  }
+                ]
+            },
+            "commands": [
+                {"xpath": "grid[].other", "command": "visible", "argument": "false", "argumentType": "const" },
+                {"xpath": "grid[].fruit", "command": "visible", "argument": "false", "argumentType": "const" }
+	        ],
+            "dependencies": ["grid" ]
+        }
+    ]    
+	}
+}

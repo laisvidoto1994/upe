@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Upload Test</title>
+    <link href="../../../../jquery/rendering/css/desktop/plugins/other/jquery.uploadify.css" rel="stylesheet" type="text/css" />
+
+    <script type='text/javascript' src='../../../../jquery/common/base/js/lib/jquery.js'></script>
+    <script type='text/javascript' src='../../../../jquery/rendering/js/plugins/desktop/swfobject.js'></script>
+    <script type='text/javascript' src='../../../../jquery/rendering/js/plugins/desktop/jquery.uploadify.js'></script>
+</head>
+<script>
+    $(document).ready(function(){
+        $("#myFile").uploadify({
+                /*hideButton: true,
+                wmode: 'transparent',*/
+                uploader: "../../../../jquery/rendering/js/plugins/desktop/uploadify.swf",
+                script: "../../../../jquery/rendering/test/ajax/UploadAddFile.ashx",
+                scriptData: {},
+                scriptAccess: 'always',
+                auto: true,
+                cancelImg: "../../../../jquery/rendering/css/desktop/plugins/other/images/upload-cancel.png",
+                width: 150,
+                height: 32,
+                multi: true,
+                queueID: "my-file-queue",
+                onComplete: function (event, queueID, fileObj, response, data) {
+                    
+                }
+            });
+    });
+</script>
+<body>
+    <input type="file" id="myFile" />
+    <div id="my-file-queue"></div>
+</body>
+</html>

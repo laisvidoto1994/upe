@@ -1,0 +1,116 @@
+/*
+    Document   : bizagi.simpleGrid
+    Created on : Sep 10, 2015
+    Author     : Andres Felipe Arenas Vargas, Ricardo Alirio Perez Diaz
+    Description: Styles for the simpleGrid pluggin
+*/
+
+.ui-bizagi-simple-grid-wrapper #detailEntity{
+    margin: 20px 0;
+    width:100%;
+}
+.ui-bizagi-simple-grid-wrapper #detailEntity th a {
+    color: rgb(85, 85, 85);
+    padding-right: 35px;
+    display: block;
+    padding-left: 20px;
+}
+.ui-bizagi-simple-grid-wrapper #detailEntity th a:hover {
+    text-decoration: none;
+}
+.ui-bizagi-simple-grid-wrapper #biz-wp-table-summary-wrapper {
+    margin: 10px 0;
+}
+.ui-bizagi-simple-grid-wrapper .ui-dialog-buttonset-add {
+    float:right;
+    margin: 0 10px 10px 0;
+}
+.ui-bizagi-simple-grid-wrapper .ui-bizagi-button-container,
+.ui-bizagi-simple-grid-wrapper .ui-bizagi-button-container-back {
+    width: 102%;
+    margin-left: -6px;
+}
+.ui-bizagi-simple-grid-wrapper .sortColumnsDataDownIcon,
+.ui-bizagi-simple-grid-wrapper .sortColumnsDataUpIcon,
+.ui-bizagi-simple-grid-wrapper .sortColumnsDataIcon {
+    cursor: pointer;
+    height: 14px;
+    position: absolute;
+    right: 5px;
+    top: 6px;
+    width: 8px;
+}
+.ui-bizagi-simple-grid-wrapper a .arrowUpIcon,
+.ui-bizagi-component-grid-entity a .arrowUpIcon {
+    border-top: 0 solid transparent;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 5px solid rgba(85, 85, 85,.2);
+    display: block;
+    margin: 2px 0px 0px 0px;
+}
+.ui-bizagi-simple-grid-wrapper a .arrowDownIcon,
+.ui-bizagi-component-grid-entity a .arrowDownIcon {
+    border-top: 5px solid rgba(85, 85, 85,.2);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 0 solid transparent;
+    display: block;
+    margin: 3px 0px 0px 0px;
+}
+.ui-bizagi-simple-grid-wrapper a:hover .arrowUpIcon,
+.ui-bizagi-simple-grid-wrapper a .active,
+.ui-bizagi-component-grid-entity a:hover .arrowUpIcon,
+.ui-bizagi-component-grid-entity a .active {
+    border-bottom-color: rgb(85, 85, 85);
+}
+.ui-bizagi-simple-grid-wrapper a:hover .arrowDownIcon,
+.ui-bizagi-simple-grid-wrapper a .active,
+.ui-bizagi-component-grid-entity a:hover .arrowDownIcon,
+.ui-bizagi-component-grid-entity a .active {
+    border-top-color: rgb(85, 85, 85);
+}
+.ui-bizagi-simple-grid-wrapper .ui-bizagi-grid .ui-bizagi-grid-pager ul{
+    padding:0;
+}
+.ui-bizagi-simple-grid-wrapper .ui-bizagi-grid .ui-bizagi-grid-pager ul li{
+    padding:5px 4px;
+}
+.ui-bizagi-component-grid-entity .ui-icon{
+    margin: 5px auto;
+    cursor: pointer;
+}
+.ui-bizagi-component-grid-entity .sortColumnsDataDownIcon{
+    right: 10px;
+}
+.ui-bizagi-simple-grid-wrapper #entityFormIFrame{
+    min-height:440px;
+}
+.ui-bizagi-grid-column .ui-bizagi-render-icon-filter {
+    background: url(images/sprite.png) -3px -481px no-repeat;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    top: 3px;
+    right: 16px;
+}
+.ui-bizagi-grid-column .ui-bizagi-render-icon-filter:hover,
+.ui-bizagi-grid-column .ui-bizagi-render-icon-filter.ui-bizagi-column-filter-applied {
+    background: url(images/sprite.png) -20px -481px no-repeat;
+}
+.ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-body tr.ui-bizagi-state-selected{
+    background-color:  rgb(220, 220, 220);
+}
+.ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-body tr.ui-bizagi-state-selected:hover,
+.ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-body tr:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    color:#686868;
+}
+.ui-bizagi-simple-grid-wrapper .bz-rn-grid-cn-header {
+    text-shadow: none;
+}
+
+.ui-bizagi-simple-grid-wrapper table span {
+    white-space: pre-line;
+}

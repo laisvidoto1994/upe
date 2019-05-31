@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Editor daterange</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../../../common/jquery.ui/css/desktop/jquery.ui.css" />
+        <link rel="stylesheet" href="../../../../base/css/jquery-ui-timepicker-addon.css" />
+        <style>
+            .bizagi_editor_component_editor_daterange .daterange-image-down
+            {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background: transparent url("images/down.png") no-repeat center center;
+            }
+            .bizagi_editor_component_editor_daterange .daterange-image-arrow
+            {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background: transparent url("images/arrow.png") no-repeat center center;
+            }
+            .bizagi_editor_component_editor_daterange .daterange-image-delete
+            {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background: transparent url("images/delete.png") no-repeat center center;
+                position: absolute;
+                top: 6px;
+                right: 4px;
+                cursor: pointer;
+            }
+            
+            
+            
+            .bizagi_editor_component_editor_daterange .daterange-min,
+            .bizagi_editor_component_editor_daterange .daterange-max
+            {
+                display: inline-block;
+                position: relative;
+            }
+            .bizagi_editor_component_editor_daterange .daterange-button
+            {
+                border: solid 1px #ccc;
+                display: inline-block;
+                border-radius: 4px;
+                width: 155px;
+                line-height: 30px;
+                position: relative;
+            }
+            .bizagi_editor_component_editor_daterange .daterange-caption
+            {
+                display: block;
+            }
+            .bizagi_editor_component_editor_daterange .daterange-dropdown
+            {
+                display: inline-block;
+                border: solid 1px #ccc;
+                border-radius: 4px;
+                line-height: 30px;
+                width: 16px;
+            }
+            .bizagi_editor_component_editor_daterange .daterange-menu
+            {
+                border: solid 1px #ccc;
+                list-style: none;
+                margin: 0px;
+                padding: 0px;
+                border-radius: 4px;
+                position: absolute;
+                top: 55px;
+                left: 0px;
+                display: none;
+            }
+            .bizagi_editor_component_editor_daterange .daterange-menu.daterange-open
+            {
+                display: block;
+            }
+            .bizagi_editor_component_editor_daterange .daterange-button-value {
+                border: solid 1px #ccc;
+                border-radius: 4px;
+                margin-left: 10px;
+                width: 120px;
+                display: inline-block;
+                text-align: center;
+                line-height: 20px;
+                background-color: gainsboro;
+            }
+            .daterange-menu li {
+                width: 160px;
+                line-height: 30px;
+                text-align: center;
+            }
+            .daterange-menu li:hover {
+                background-color: gainsboro;
+                cursor: pointer;
+            }
+        </style>
+        <script src="../../../../../common/base/js/lib/jquery.js"></script>
+        <script src="../../../../../common/jquery.ui/js/desktop/jquery.ui.js"></script>
+        <script src="../../../../plugins/desktop/jquery-ui-timepicker-addon.js"></script>
+        <script>
+            $(document).ready(function() {
+                
+                $(".daterange-dropdown").click(function() {
+                    $(this).next().toggleClass("daterange-open");
+                });
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main-container">
+            
+            <div class="editor bizagi_editor_component_editor_daterange">
+                <div class="daterange-container">
+                    <div class="daterange-min">
+                        <label class="daterange-caption">Minimum</label>
+                        <div class="daterange-button">
+                            <span class="daterange-button-value">06/25/2012 16:50</span>
+                        </div>
+                        <div class="daterange-dropdown">
+                            <span class="daterange-image-down"></span>
+                        </div>
+                        <ul class="daterange-menu">
+                            <li class="daterange-menu-fixed">Fixed Value</li>
+                            <li class="daterange-menu-rule">Rule</li>
+                        </ul>
+                    </div>
+                    <span class="daterange-image-arrow"></span>
+                    <div class="daterange-max">
+                        <label class="daterange-caption">Maximum</label>
+                        <div class="daterange-button">
+                            <span class="daterange-button-value">Rule</span>
+                            <span class="daterange-image-delete"></span>
+                        </div>
+                        <div class="daterange-dropdown">
+                            <span class="daterange-image-down"></span>
+                        </div>
+                        <ul class="daterange-menu">
+                            <li class="daterange-menu-fixed">Fixed Value</li>
+                            <li class="daterange-menu-rule">Rule</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

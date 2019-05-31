@@ -1,0 +1,169 @@
+.ui-bizagi-wp-project-panel-collapseicon {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 24px;
+    height: 24px;
+    background: #EEE;
+    border-top: none;
+    color: #999;
+    font: normal 14px "bizagi-font";
+    cursor: pointer;
+}
+
+.ui-bizagi-wp-project-panel-collapseicon::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -7px;
+    margin-left: -7px;
+}
+
+
+/*BEGIN COLLAPSE PANELS*/
+
+#project-collapse-leftpanel {
+    right: 0;
+}
+
+#project-collapse-leftpanel .ui-bizagi-wp-project-panel-collapseicon {
+    right: -24px;
+    border-left: none;
+    border-radius: 0 0 4px 0;
+}
+
+#left-sidebar-wrapper {
+    position: relative;
+    z-index: 100;
+}
+
+
+/*
+* Media Query
+* The orden is:
+* 1. First: validations collapsed or open sidebars (left)
+* 2. Second: values default when access by width screen
+*/
+
+
+/*Collapse left sidebar*/
+
+#project-collapse-leftpanel .ui-bizagi-wp-project-panel-collapseicon::before,
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-collapse-leftpanel .ui-bizagi-wp-project-panel-rowicon-left::before {
+    content: "\e1091";
+}
+
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-collapse-leftpanel #left-sidebar-wrapper {
+    width: 60px;
+}
+
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-collapse-leftpanel #dashboard-panel {
+    margin-left: 60px;
+}
+
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-collapse-leftpanel a.ui-bizagi-wp-project-menuitem-collapsed {
+    display: block;
+}
+
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-collapse-leftpanel a.ui-bizagi-wp-project-menuitem-expanded {
+    display: none;
+}
+
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-collapse-leftpanel .ui-bizagi-wp-project-menuitem-collapsed span {
+    display: none;
+}
+
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-collapse-leftpanel .ui-bizagi-wp-project-tab-links .bz-icon {
+    font-size: 24px;
+}
+
+
+/*Open left sidebar*/
+
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-open-leftpanel .ui-bizagi-wp-project-panel-rowicon-left::before {
+    content: "\e1090";
+}
+
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-open-leftpanel #left-sidebar-wrapper {
+    width: 260px;
+}
+
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-open-leftpanel #dashboard-panel {
+    margin-left: 190px;
+}
+
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-open-leftpanel a.ui-bizagi-wp-project-menuitem-collapsed {
+    display: none;
+}
+
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-open-leftpanel a.ui-bizagi-wp-project-menuitem-expanded {
+    display: block;
+}
+
+a[href="#ui-bizagi-wp-project-dashboard-comments"]:not(.ui-bizagi-wp-project-menuitem-collapsed),
+a[href="#ui-bizagi-wp-project-dashboard-files"]:not(.ui-bizagi-wp-project-menuitem-collapsed),
+a[href="#ui-bizagi-wp-project-dashboard-log"]:not(.ui-bizagi-wp-project-menuitem-collapsed) {
+    margin-left: 24px;
+}
+
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-open-leftpanel .ui-bizagi-wp-project-menuitem-expanded span {
+    display: inline;
+    vertical-align: middle;
+}
+
+#ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar.ui-bizagi-wp-project-open-leftpanel .ui-bizagi-wp-project-tab-links .bz-icon {
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1366px) {
+    /*Default values*/
+    #ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar .ui-bizagi-wp-project-panel-rowicon-left::before {
+        content: \E656;
+    }
+    #ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar #left-sidebar-wrapper {
+        width: 64px;
+    }
+    #ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar #dashboard-panel {
+        margin-left: 60px;
+    }
+    #ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar a.ui-bizagi-wp-project-menuitem-collapsed {
+        display: block;
+    }
+    #ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar a.ui-bizagi-wp-project-menuitem-expanded {
+        display: none;
+    }
+    #ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar .ui-bizagi-wp-project-menuitem-collapsed span {
+        display: none;
+    }
+    #ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar .ui-bizagi-wp-project-tab-links .bz-icon {
+        font-size: 24px;
+    }
+    /*End Default values*/
+}
+
+@media screen and (min-width: 1367px) {
+    /*Default values*/
+    #ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar .ui-bizagi-wp-project-panel-rowicon-left::before {
+        content: "\e1090";
+    }
+    #ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar #dashboard-panel {
+        margin-left: 190px;
+    }
+    #ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar a.ui-bizagi-wp-project-menuitem-collapsed {
+        display: none;
+    }
+    #ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar a.ui-bizagi-wp-project-menuitem-expanded {
+        display: block;
+    }
+    #ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar .ui-bizagi-wp-project-menuitem-expanded span {
+        display: inline;
+        vertical-align: middle;
+    }
+    #ui-bizagi-wp-project-homeportal-main.enabledLeftSidebar .ui-bizagi-wp-project-tab-links .bz-icon {
+        font-size: 16px;
+    }
+    /*End Default values*/
+}
+
+
+/*END COLLAPSE PANELS*/

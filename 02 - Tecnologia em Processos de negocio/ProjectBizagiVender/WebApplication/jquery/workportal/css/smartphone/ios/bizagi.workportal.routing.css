@@ -1,0 +1,160 @@
+.ui-bizagi-workportal-routing {
+	
+}
+
+#ui-bizagi-wp-app-inbox-activities-routing-wrapper
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 9999;
+	width: 100%;
+	height: 100%;
+	background-color: hsla(0, 0%, 0%, .4);
+}
+
+#ui-bizagi-wp-app-routing-activity-container
+{
+	margin-bottom: 15px;
+	
+}
+
+#ui-bizagi-wp-app-inbox-activities-routing
+{
+	z-index: 10000;
+	text-align: center;
+	width: auto;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#F0F0F0), to(#CACACA));
+	border: 2px solid #2e4161;
+	border-radius: 6px;
+	vertical-align: middle;
+	position: relative;
+	margin: 50px 10px 10px 10px;
+	
+}
+#ui-bizagi-wp-app-inbox-activities-routing .text-description-title
+{
+    margin: 15px 0 10px 5%;
+    font-size: 15px;
+    float: left;
+    font-weight: bold;
+    text-shadow: 0 1px 0 white;
+    color: #31414c;
+    border-bottom: 1px solid gray;
+    width: 90%;
+    height: 25px;
+    float: left;
+    text-align: left;
+    margin-bottom: 10px;
+}
+#ui-bizagi-wp-app-inbox-activities-routing td
+{
+	padding: 10px 5px;
+	border-top: 1px solid #adadad;
+	border-right: 1px solid #adadad;
+	font-size:13px;
+	color:#535b61;
+}
+
+#ui-bizagi-wp-app-inbox-activities-routing td:first-child
+{
+}
+#ui-bizagi-wp-app-inbox-activities-routing td:last-child
+{
+	border-right:none;
+}
+
+#ui-bizagi-wp-app-inbox-activities-routing td button ,
+.wp-routing-container-fother button
+{
+	-webkit-appearance: none;
+	font-size: 100%;
+	border-radius: 6px;
+	background: #155073;
+	padding: 4px 10px;
+	margin: 4px 10px 0px 0px;
+	color: hsl(0, 0%, 87%);
+	float: right;
+	position: relative;
+	border: 1px solid #2b323b;
+	box-shadow: inset 0 1px 0 0 #2b6181;
+	background:-webkit-gradient(linear, left top, left bottom, from(#155376), to(#103D56));
+	text-shadow: 0px -1px 0 #1D252C;
+}
+
+.wp-routing-container-fother button
+{
+	float: none;
+	margin-bottom: 10px;
+}
+
+
+#ui-bizagi-wp-app-routing-activity-wf,
+#ui-bizagi-wp-app-routing-process-wf
+{
+	width: 90%;
+	position: relative;
+	border: 1px solid #adadad;
+	border-radius: 6px;
+	left: 5%;
+
+}
+
+#ui-bizagi-wp-app-routing-process-wf thead tr
+{
+    background-image:-webkit-gradient(linear, left top, left bottom, from(#D6D8DC), to(#C3C6CB));
+    }
+    
+ #ui-bizagi-wp-app-routing-process-wf tbody tr
+{
+    background-color:#f2f2f2;
+    
+    }
+    
+ #ui-bizagi-wp-app-routing-process-wf tbody td:first-child
+{
+    border-radius:0 0 0 6px;
+    
+    }
+    
+    #ui-bizagi-wp-app-routing-process-wf tbody td:last-child
+{
+    border-radius:0 0 6px 0;
+    
+    }
+    
+#ui-bizagi-wp-app-routing-activity-container thead tr
+{
+    background-image:-webkit-gradient(linear, left top, left bottom, from(#D6D8DC), to(#C3C6CB));
+    }
+ 
+#ui-bizagi-wp-app-routing-activity-container thead td:first-child
+{
+    border-radius:6px 0 0 0;
+    }
+    
+#ui-bizagi-wp-app-routing-activity-container thead td:last-child
+{
+    border-radius:0 6px 0 0;
+    }
+    
+#ui-bizagi-wp-app-routing-activity-container tbody tr
+{
+    background-color:#f2f2f2;
+    }
+    
+#ui-bizagi-wp-app-routing-activity-container tbody tr:last-child td:first-child
+{
+    border-radius:0 0 0 6px;
+    }
+    
+#ui-bizagi-wp-app-routing-activity-container tbody tr:last-child td:last-child
+{
+    border-radius:0 0 6px 0;
+    }
+    
+    
+    
+/*#ui-bizagi-wp-app-routing-activity-container tbody td:nth-child(even) {
+background-color: #e6e6e6;
+} */    

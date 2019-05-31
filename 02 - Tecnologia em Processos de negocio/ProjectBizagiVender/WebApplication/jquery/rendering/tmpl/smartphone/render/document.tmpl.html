@@ -1,0 +1,31 @@
+﻿<script id="bz-document-generator" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-render-documentgenerator">
+        <div class="ui-bizagi-div-button-documentgenerator">
+            {{if allowgenerate}}
+            <button class="ui-bizagi-render-button ui-widget ui-corner-all ui-bizagi-button-documentgenerator" type="button" onclick="">${caption}</button>
+            {{/if}} 
+            <div class="ui-bizagi-div-error-container"></div>
+            <div class="ui-bizagi-div-documentgenerator">
+                <ol class="ui-bizagi-container-documents">
+                    {{files}}
+                    {{if noFiles}}
+                        <li><span></span></li>
+                    {{/if}}
+                </ol>
+            </div>
+        </div>        
+    </div>
+</script>
+<script id="bz-document-generator-item" type="text/x-jquery-tmpl">
+    <li class="ui-bizagi-document-upload-item" data-filename="${filename}" {{if joined}} data-joined="${joined}" {{/if}} >
+        <span class="ui-bizagi-document-type "></span>
+        <a href="${url}" {{if mode == "execution"}} target="_blank" {{/if}} title="${filename}" href="javascript:void(0)"><span>${filename}</span></a>
+    </li>
+</script>
+
+<script id="bz-document-generator-item-preview" type="text/x-jquery-tmpl">
+   <object width="100%" height="99%" type="application/pdf" data="${url}" id="ui-bizagi-document-pdf-preview">
+    <p>The pdf cannot be displayed, please click <a href="${url}">here></a> to open the file</p>
+  </object>
+</script>
+

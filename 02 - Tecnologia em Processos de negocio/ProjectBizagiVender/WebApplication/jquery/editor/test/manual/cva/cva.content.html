@@ -1,0 +1,108 @@
+<div id="cva-rules-editor" class="ui-widget"> 
+    <div class="ui-widget-header">
+        <label>Actions</label>
+        <button>+</button>
+    </div>
+    <div class="ui-widget-content">
+        <ul class="cva-rules">
+            <li class="cva-rule cva-selected">
+                <span class="cva-icons">
+                    <button class="cva-icons-edit"></button>
+                    <button class="cva-icons-delete"></button>                    
+                </span>
+                <label class="cva-conditions-label">When</label>
+                <ul class="cva-conditions">
+                    <li class="cva-condition">
+                        <span class="cva-condition-xpath">City name</span>
+                        <span class="cva-condition-operator">is equals to</span>
+                        <span class="cva-condition-argument">Bogota</span>
+                    </li>
+                </ul>
+                <label class="cva-actions-label">Then</label>
+                <ul class="cva-actions">
+                    <li class="cva-action">
+                        <span class="cva-action-command">Set background color for</span>
+                        <span class="cva-action-xpath">Client name</span>
+                        <span class="cva-action-connector">with</span>
+                        <span class="cva-action-argument">red</span>
+                    </li>
+                </ul>
+                <label class="cva-actions-label">Else</label>
+                <ul class="cva-actions">
+                    <li class="cva-action">
+                        <span class="cva-action-command">Set background color for</span>
+                        <span class="cva-action-xpath">Client name</span>
+                        <span class="cva-action-connector">with</span>
+                        <span class="cva-action-argument">yellow</span>
+                    </li>
+                </ul>
+            </li>
+            <li class="cva-rule">
+                <label class="cva-conditions-label">When</label>
+                <ul class="cva-conditions">
+                    <li class="cva-condition">
+                        <span class="cva-condition-xpath">Is VIP Client</span>
+                        <span class="cva-condition-operator">is true</span>
+                    </li>
+                </ul>
+                <label class="cva-actions-label">Then</label>
+                <ul class="cva-actions">
+                    <li class="cva-action">
+                        <span class="cva-action-command">Set required for</span>
+                        <span class="cva-action-xpath">Discount</span>
+                        <span class="cva-action-connector">with</span>
+                        <span class="cva-action-argument">true</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="cva-validations-editor" class="ui-widget"> 
+    <div class="ui-widget-header">
+        <label>Validations</label>
+        <button>+</button>
+    </div>
+    <div class="ui-widget-content">
+        <ul class="cva-validations">
+            <li class="cva-validation cva-selected">
+                <span class="cva-icons">
+                    <button class="cva-icons-edit"></button>
+                    <button class="cva-icons-delete"></button>                    
+                </span>
+                <label class="cva-conditions-label">If</label>
+                <ul class="cva-conditions">
+                    <li class="cva-condition">
+                        <span class="cva-condition-xpath">City name</span>
+                        <span class="cva-condition-operator">is empty</span>
+                    </li>
+                </ul>
+                <label class="cva-messages-label">Then</label>
+                <ul class="cva-messages">
+                    <li class="cva-message">
+                        <span class="cva-message-label">Show message</span>
+                        <span class="cva-message-argument">The client name is required</span>
+                    </li>
+                </ul>
+            </li>
+            <li class="cva-validation">
+                <label class="cva-conditions-label">If</label>
+                <ul class="cva-conditions">
+                    <li class="cva-condition">
+                        <span class="cva-condition-xpath">Client name</span>
+                        <span class="cva-condition-operator">starts with</span>
+                        <span class="cva-condition-argument">NIT</span>
+                        
+                    </li>
+                </ul>
+                <label class="cva-messages-label">Then</label>
+                <ul class="cva-messages">
+                    <li class="cva-message">
+                        <span class="cva-message-label">Show message</span>
+                        <span class="cva-message-argument">The client name can't start with NIT </span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,149 @@
+<script id="bz-rn-grid-control" type="text/x-kendo-template">
+    <div id="grid_#= data.id #" class="bz-rn-grid-container">
+        <div class="bz-rn-grid-cn-header">
+            <span class="bz-rn-icon bz-mo-icon bz-grid-control-icon"></span>
+            <span class="bz-rn-grid-cn-header-title">#= data.displayName #</span>
+            <span class="bz-rn-icon bz-mo-icon bz-arrow-right"></span>
+        </div>
+    </div>
+</script>
+
+<script id="bz-rn-grid" type="text/x-kendo-template">
+    <div class="bz-rn-grid">
+        <div class="bz-rn-grid-container-table" data-bizagi-component="table" data-bizagi-position="replace">
+            {{element table}}
+        </div>
+
+        <div class="bz-rn-grid-container-pager" data-bizagi-component="pager" data-bizagi-position="replace">
+            {{element pager}}
+        </div>
+
+        <div class="bz-rn-grid-container-table-empty" data-bizagi-component="emptyTable" data-bizagi-position="replace">
+            {{element emptyTable}}
+        </div>
+    </div>
+
+</script>
+
+<script id="bz-rn-grid-cell" type="text/x-kendo-template">
+    <div class="bz-rn-grid-display-cell">
+        <div class="bz-rn-grid-control">{{control}}</div>
+    </div>
+</script>
+
+<script id="bz-rn-grid-cell-readonly" type="text/x-kendo-template">
+    <div class="bz-rn-grid-display-cell">
+        <div class="bz-rn-grid-cell-readonly">{{control}}</div>
+    </div>
+</script>
+
+<script id="bz-rn-grid-cell-upload" type="text/x-kendo-template">
+    <div class="bz-rn-grid-cell-content">
+        <span class="bz-rn-grid-control"></span>
+    </div>
+</script>
+
+<script id="bz-rn-grid-table" type="text/x-kendo-template">
+    <table class="bz-rn-grid-table">
+        <thead class="bz-rn-grid-header">
+            <tr data-bizagi-component="columns">
+                {{element columns}}
+            </tr>
+        </thead>
+        <tbody class="bz-rn-grid-body" data-bizagi-component="rows">
+            {{element rows}}
+        </tbody>
+    </table>
+</script>
+
+<script id="bz-rn-grid-table-empty" type="text/x-kendo-template">
+    <div class="bz-rn-grid-no-records">%{render-grid-no-records}</div>
+</script>
+
+<script id="bz-rn-grid-table-column" type="text/x-kendo-template">
+    <th class="#=data.columnCssClass#">
+        <div class="bz-rn-grid-column" data-column-index="#= data.index #">
+            <span class="bz-rn-grid-column-title">#= data.label #</span>
+            <span class="bz-rn-grid-column-sort #if (data.sortActive){# bz-rn-grid-active #}#">
+                <span class="bz-mo-icon #if (data.sortType == 'asc'){# bz-ordered-up #} else {# bz-ordered-down #}#"></span>
+            </span>
+        </div>
+    </th>
+</script>
+
+<script id="bz-rn-grid-table-column-special" type="text/x-kendo-template">
+    <th class="bz-rn-grid-column-special"></th>
+</script>
+
+<script id="bz-rn-grid-table-row" type="text/x-kendo-template">
+    <tr class="bz-rn-grid-table-row" data-bizagi-component="cells"
+        data-key="#= data.key#"
+        data-business-key="#= data.businessKey #">
+        {{element cells}}
+    </tr>
+</script>
+
+<script id="bz-rn-grid-table-cell" type="text/x-kendo-template">
+    <td class="#=data.columnCssClass#">
+        <div class="bz-rn-grid-cell-content"
+             data-bizagi-component="cellContent">
+            {{element cellContent}}
+        </div>
+    </td>
+
+</script>
+
+<script id="bz-rn-grid-table-cell-special" type="text/x-kendo-template">
+    <td class="bz-rn-grid-cell-special">
+        <div class="bz-rn-grid-cell-content" data-action="more">
+            <span class="bz-rn-grid-cell-more bz-mo-icon bz-next"></span>
+        </div>
+    </td>
+</script>
+
+<script id="bz-rn-grid-table-pager" type="text/x-kendo-template">
+    <div class="bz-rn-grid-pager">
+        <ul class="bz-rn-grid-pager-content">
+            # if(data.hasPagination) {#
+                <li data-page="#= data.page #" class="bz-page active">
+                    <div class="bz-rn-grid-pager-index-container bz-page-index">
+                        <span class="bz-rn-grid-pager-index-number number">#= data.page # / #= data.totalPages #</span>
+                        <span class="bz-rn-grid-pager-index-icon bz-mo-icon bz-grid-upwards"></span>
+                    </div>
+                </li>
+            # } else { #
+            <li class="bz-rn-grid-pager-index"> #= data.page # / #= data.totalPages #</li>
+            # } #
+        </ul>
+    </div>
+</script>
+
+<script id="bz-rn-grid-filter" type="text/x-kendo-template">
+    <div data-role="modalview" class="bz-rn-modal-filter" style="width: 100%; height: 100%;">
+        <div data-role="header" class="bz-rn-modal-filter-header">
+            <div class="bz-rn-modal-filter-header-navigation" data-role="navbar">
+                <div class="bz-rn-modal-filter-header-title">
+                    <span class="bz-rn-modal-filter-header-title-text">#=data.title#</span>
+                    <span class="bz-rn-modal-filter-header-title-cancel bz-mo-icon bz-cancel"></span>
+                </div>                
+            </div>
+        </div>
+        <div class="bz-rn-modal-filter-content">
+            <ul class="bz-rn-modal-filter-content-list">
+                # $.each (data.list, function (i, item) { #
+                    <li class="bz-rn-modal-filter-content-list-item" data-index="#= item.index #">
+                        <div class="bz-rn-modal-filter-check">
+                            <input class="bz-rn-modal-filter-check-item bz-mo-icon #if(item.active) {# bz-check #} else {# bz-full-ball #}#" type="checkbox" data-index="#= item.index #" # if(item.active) { # checked #}# />
+                            <span class="bz-rn-modal-filter-check-label">#= item.label #</span>
+                        </div>                        
+                    </li>
+                # }) #
+            </ul>
+        </div>
+        <div data-role="footer" class="bz-rn-modal-filter-footer">
+            <div class="bz-rn-modal-filter-footer-navigation" data-role="navbar">
+                <a class="bz-rn-modal-filter-footer-action" data-align="right" data-role="button">#=data.action#</a>
+            </div>
+        </div>
+    </div>
+</script>

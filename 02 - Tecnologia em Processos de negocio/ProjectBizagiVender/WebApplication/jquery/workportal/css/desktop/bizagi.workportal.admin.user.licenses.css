@@ -1,0 +1,54 @@
+﻿.user.licenses {    
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-top: 10px;
+    width: 221px;
+}
+
+.user-licenses-icons{
+    display: inline-block;
+    width: 32px; 
+    height: 32px;
+}
+
+.user-licenses-licenses-icon {
+  background: url('images/Certificate.png') no-repeat;
+
+}
+
+.user-licenses-users-icon {
+  background: url('images/Users.png') no-repeat;  
+}
+
+.user-licenses-date-icon {
+  background: url('images/LicenseDate.png') no-repeat;  
+}
+
+.user-licenses-licenseType-icon {
+  background: url('images/LicenseType.png') no-repeat;  
+}
+
+.biz-wp-window-Subtitle-icon { 
+    display: inline-block;
+    padding: 3px 0px; 
+    font-size:medium;
+    padding-left: 4px;
+}
+
+
+.biz-wp-buttonset {
+    text-align: center;
+    margin: 5px auto;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.biz-wp-buttonset ul {
+    padding: 0;
+    margin: 0;
+}
+
+.biz-wp-buttonset li {
+    display: inline-block;
+    list-style: none;
+}

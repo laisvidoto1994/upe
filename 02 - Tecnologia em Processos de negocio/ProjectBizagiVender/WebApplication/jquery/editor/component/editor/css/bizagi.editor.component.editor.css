@@ -1,0 +1,269 @@
+/********
+* Filename: bizagi.editor.component.editor.css
+* Create Date: 2012-04-25
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__editor
+*
+********/
+
+/* __editor
+--------*/
+.bizagi_editor_component_editor.editor-selected
+{
+    background: -webkit-linear-gradient(top, hsla(359,0%,96%,1) 0%, hsla(240,0%,82%,1) 100%);
+}
+
+#blockerProperties{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    border-radius:8px;
+}
+
+/***
+    UIControl : ComboBox
+    .ui-bizagi-editor-uiControls-comboBox
+****/
+
+.ui-bizagi-editor-uiControls-comboBox
+{
+    position: relative;
+    background-image: none;
+    
+}
+
+.ui-bizagi-editor-uiControls-comboBox .ui-bizagi-editor-comboBox-dropDown
+{
+    position: absolute;
+    top: 22px;
+    right: 0px;
+    border: solid 1px #CCCCCC;
+    padding-bottom: 2px;
+    z-index: 600;
+    display: none;
+    width:100%;
+
+    -webkit-box-shadow: inset 0px 1px 2px 0 rgba(194, 197, 200, .32);
+    box-shadow: inset 0px 1px 2px 0 rgba(194, 197, 200, .32);
+}
+
+
+.ui-comboBox-selector-btn,
+.ui-bizagi-editor-uiControls-comboBox .ui-comboBox-selector-btn{
+    position:absolute;
+    min-width: 14px;
+    display: inline-block;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+}
+
+
+.ui-bizagi-editor-uiControls-comboBox .ui-comboBox-selector-text{
+    width: 100%;
+    display: block;
+    height: 22px;
+    overflow: hidden;
+    text-align: left;
+}
+
+
+.ui-bizagi-editor-uiControls-comboBox .biz-btn-caret{
+    position: absolute;
+    right: 3px;
+    top:8px;
+}
+
+.ui-bizagi-editor-uiControls-comboBox [class*="ui-comboBox-image-large-"]
+{
+    
+    display: inline-block;
+    height: 16px;
+    margin-left: 2px;
+    margin-top: 2px;
+    vertical-align:middle;
+}
+
+.ui-bizagi-editor-uiControls-comboBox .ui-comboBox-value
+{
+    text-align: left;
+    padding-left: 2px;
+    color: #5D7389;
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    max-width: 135px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ui-bizagi-editor-uiControls-comboBox [class^="ui-comboBox-image-large-"],
+.ui-bizagi-editor-uiControls-comboBox .ui-comboBox-value,
+.ui-bizagi-editor-uiControls-comboBox [class^="ui-comboBox-image-small-"],
+{
+    vertical-align: middle;
+    padding: 0px;
+}
+
+.ui-comboBox-arrow-close
+{
+    border-top: 4px solid black;
+}
+
+.ui-comboBox-arrow-open
+{
+    border-bottom: 4px solid black;
+}
+.ui-bizagi-editor-comboBox-option
+{
+    border: 1px solid transparent;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    text-align: left;
+}
+
+.ui-bizagi-editor-comboBox-option:last-child{
+    border-bottom: none;
+}
+
+
+.ui-bizagi-editor-comboBox-option:hover{
+    background-color: rgba(222,224,226,1);
+    cursor: pointer;
+}
+
+.ui-bizagi-editor-comboBox-option-unselectable
+{
+    border: 1px solid lightgray;
+    border-width: 1px 0 1px 0;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    text-align: center;
+    background-color: #E9EDF1;
+}
+
+.ui-bizagi-editor-comboBox-option-unselectable:first-child
+{
+    border-top: none;
+
+}
+
+.ui-bizagi-editor-comboBox-option-unselectable .ui-comboBox-value
+{
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-select{
+    display: none!important;
+}
+
+.ui-bizagi-editor-uiControls-comboBox span.ui-comboBox-image-large-select + span.ui-comboBox-value{
+    font-weight: bold;
+    padding-left:8px;
+    min-height: 22px;
+    line-height: 22px;
+    text-transform: none!important;
+}
+
+
+/***
+    UIControl : booleanSwitch
+    .ui-bizagi-editor-uiControls-booleanSwitch
+****/
+.ui-bizagi-editor-uiControls-booleanSwitch{
+    position: relative;
+}
+.ui-bizagi-editor-uiControls-booleanSwitch .ui-bizagi-editor-booleanSwitch-selector{
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0px;
+
+    width:20px;
+    height:20px;
+}
+
+.ui-bizagi-editor-booleanSwitch-container{
+    position: relative;
+    width:100%;
+    height:100%;
+    display: block;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.ui-bizagi-editor-uiControls-booleanSwitch .ui-booleanSwitch-value{
+    display: inline-block;
+    width:100%;
+    height: 100%;
+    text-align: center;
+    position:absolute;
+    line-height: 100%;
+    left:100%;
+    /*border-radius: 0px 4px 4px 0px;*/
+}
+
+.ui-bizagi-editor-uiControls-booleanSwitch .ui-booleanSwitch-value:first-child{
+    left:0%;
+    /*border-radius: 4px 0px 0px 4px*/
+}
+
+.ui-bizagi-editor-uiControls-booleanSwitch .ui-bizagi-editor-booleanSwitch-content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.ui-bizagi-editor-uiControls-booleanSwitch .ui-booleanSwitch-value span{
+    padding: 0 5px 0 0;
+    text-transform:capitalize;
+    line-height: 20px;
+}
+.ui-bizagi-editor-uiControls-booleanSwitch .ui-booleanSwitch-true
+{
+    text-align: left;
+    background: #A0C84D;
+    color: #565656;
+ }
+.ui-bizagi-editor-uiControls-booleanSwitch .ui-booleanSwitch-true span
+{   
+    width: 100%;
+    display: block;
+    text-indent: 17%;
+}
+
+.ui-bizagi-editor-uiControls-booleanSwitch .ui-booleanSwitch-false
+{
+    text-align: right;
+    background: rgb(238,238,238);
+    color:#535362;
+}
+.ui-bizagi-editor-uiControls-booleanSwitch .ui-booleanSwitch-false span
+{
+    padding-right: 8px;
+}
+
+.ui-bizagi-editor-uiControls-booleanSwitch .ui-bizagi-editor-booleanSwitch-selector .biz-ico{
+    display: block;
+}
+
+.ui-comboBox-image-small-uncheck { /*background-position: -176px -32px;*/ }
+.ui-comboBox-image-small-check { /*background-position: -176px -32px;*/ }
+.ui-comboBox-image-small-uncheck,
+.ui-comboBox-image-small-check {
+    float: right;
+    margin-right: 2px;
+    margin-top: 2px;
+}
+.editor-ico-edit { background-position: -176px -32px; }
+
+.currencysymbol-group-container .ui-bizagi-editor-comboBox-dropDown{
+    overflow: auto;
+    height: 270px;
+}

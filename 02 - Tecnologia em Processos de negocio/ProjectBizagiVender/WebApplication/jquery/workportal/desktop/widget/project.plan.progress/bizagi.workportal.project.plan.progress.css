@@ -1,0 +1,49 @@
+/*Begin Remaining Date */
+
+
+
+.ui-bizagi-wp-project-plan-progress .plan-progress .remaining-days
+{
+    overflow: hidden;
+    width: 100%;
+}
+
+.ui-bizagi-wp-project-plan-progress .plan-progress .remaining-days .days
+{
+    display: inline;
+    float: left;
+    font-size: 2.7em;
+    font-weight: bold;
+}
+
+.ui-bizagi-wp-project-plan-progress .plan-progress .remaining-days .time-remaining {
+    padding: 0 !important;
+}
+
+.ui-bizagi-wp-project-plan-progress .plan-progress .remaining-days .bar-fullTime {
+    border-radius: 4px;
+    background: rgba(55,76,88,0.2);
+}
+
+.ui-bizagi-wp-project-plan-progress .plan-progress .remaining-days .bar-completed
+{
+
+}
+
+.ui-bizagi-wp-project-plan-progress .plan-progress .remaining-days .bar-completed.Red
+{
+    background: #F5645A;
+}
+
+.ui-bizagi-wp-project-plan-progress .plan-progress .remaining-days .bar-completed.Yellow
+{
+    background: #F4AA34;
+}
+
+.ui-bizagi-wp-project-plan-progress .plan-progress .remaining-days .bar-completed.Green
+{
+    background: #37B464;
+}
+
+
+/*End Remaining Date */

@@ -1,0 +1,96 @@
+<script id="project-timeline-markup" type="text/x-jsrender">
+    <div id="bz-project-timeline-wrapper">
+        <div id="bz-project-timeline-content" class="cssanimations">
+            <div class="bz-project-timeline-search">
+                <input type="text" id="bz-timeline-search" placeholder="%{workportal-project-casedashboard-timeline-search}" />
+                <i class="bz-icon bz-icon-24 bz-icon-search-outline"></i>
+            </div>
+            <div id="bz-project-timeline-activities">
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="project-timeline-empty-process" type="text/x-jsrender">
+    <section id="bz-project-timeline-empty">
+        <i class="bz-wp-empty__img"></i>
+        <p class="bz-wp-empty__info bz-wp-empty__info--first">%{workportal-general-first-line-not-find-a-historical-record}</p>
+        <p class="bz-wp-empty__info">%{workportal-general-second-line-not-find-a-historical-record}</p>
+    </section>
+</script>
+
+<script id="project-timeline-single-process" type="text/x-jsrender">
+    <section id="bz-project-timeline">
+        <div class="bz-project-timeline-block bz-project-timeline-start">
+            <div class="bz-project-timeline-img bz-project-timeline-picture"></div>
+        </div>
+        {{for ~getPastEvents(events) tmpl='#project-timeline-block-for-activity' /}}
+        <div class="bz-project-timeline-block bz-project-timeline-now">
+            <div class="bz-project-timeline-img bz-project-timeline-picture">%{workportal-project-casedashboard-timeline-now}</div>
+        </div>
+        {{for ~getCurrentEvents(events) tmpl='#project-timeline-block-for-activity' /}}
+    </section>
+
+</script>
+
+<script id="project-timeline-block-for-activity" type="text/x-jsrender">
+    {{if ~canShowActivity(#data)}}
+    <div class="bz-project-timeline-block cs-status-{{:status}} bz-project-timeline-type-{{:type}}">
+        <div class="bz-project-timeline-img bz-project-timeline-picture">
+            {{if type == "activity" || type == "planactivity" }} <i class="bz-icon bz-icon-32 bz-icon-activity-outline"></i> {{/if}}
+            {{if type == "event" }} <i class="bz-icon bz-icon-32 bz-icon-event-outline" /> {{/if}}
+        </div> <!-- bz-project-timeline-img -->
+
+        <div class="bz-project-timeline-content" data-workflow="{{:idWorkflow}}" data-case="{{:idCase}}" data-workitem="{{:idWorkitem}}">
+            {{if !containsMoreAssignees }}
+            <div class="bz-assignee" data-assignee="{{:assignee}}"></div>
+            {{else}}
+            <div class="bz-more-assignees">
+                <i class=" bz-icon bz-icon-users" />
+            </div>
+            {{/if}}
+            <h2>{{:displayName}}</h2>
+            <!-- HOVER ICONS-->
+            {{if type == "activity" || type == "event"}}
+            <div class="bz-hover-icons">
+                {{if ~canShowGraphicQuery()}}
+                    <i class="bz-icon bz-icon-24 bz-icon-diagram-outline bz-show-diagrams" />
+                {{/if}}
+                {{if ~canShowStateLog()}}
+                    <i class="bz-icon bz-icon-24 bz-icon-log-outline bz-show-log" />
+                {{/if}}
+            </div>
+            {{/if}}
+            {{if date}}
+                <span class="bz-project-timeline-date">
+                    <div>
+                        {{:~getFormattedDate(date)}}
+                    </div>
+                    <label>
+                        {{:~getFormattedTime(date)}}
+                    </label>
+                </span>
+            {{/if}}
+        </div> <!-- bz-project-timeline-content -->
+    </div> <!-- bz-project-timeline-block -->
+    {{/if}}
+</script>
+
+<script id="project-timeline-activity-assignee" type="text/x-jsrender">
+    {{if picture}}
+    <img class="bz-assignee-picture" src="data:image/png;base64,{{:picture}}" />
+    {{else}}
+    <label class="bz-assignee-initials">{{:~getInitials(name)}}</label>
+    {{/if}}
+</script>
+
+<script id="project-timeline-activity-assignees-popup" type="text/x-jsrender">
+    <div class="bz-project-timeline-tooltip bz-project-timeline-tooltip-animation">
+        <div class="bz-assignees">
+            {{for assignees}}
+            <div class="bz-assignee" data-assignee="{{:#data}}"></div>
+            {{/for}}
+        </div>
+        <div class="bz-project-timeline-arrow"></div>
+    </div>
+</script>

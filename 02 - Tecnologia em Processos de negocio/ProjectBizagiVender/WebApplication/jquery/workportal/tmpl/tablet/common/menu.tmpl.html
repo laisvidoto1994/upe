@@ -1,0 +1,63 @@
+
+<script id="ui-bizagi-workportal-menu-content" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-workportal-menu-content hide-menu">
+        <ul id="menu-items">
+            {{component menuItems}}    
+        </ul>
+        <div id="menu-visible-bar">
+	        <button id="back-button" />
+	        <span class="page-title">%{workportal-menu-inbox}</span>
+	        {{if environment == "debug"}}
+                <div id="build">${build}</div>
+            {{/if}}
+            <button id="menu-toggler" />
+            <button id="inbox-view-toggler" />
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-menu-items" type="text/x-jquery-tmpl">
+    {{if NewCase}}
+        <li>
+            <button id="new-case" />
+            <label>%{workportal-menu-new}</label>
+        </li>
+    {{/if}}            
+        <li>
+            <button id="inbox-shortcut" />
+            <label>%{workportal-menu-inbox-msg}</label>
+        </li>
+    {{if $item.reportsSecurity()}}
+        <li>
+            <button id="menu-reports" />
+            <label>%{workportal-menu-reports}</label>
+        </li>
+    {{/if}}            
+        <li>
+            <button id="search" />
+            <label>%{workportal-menu-search}</label>
+        </li>
+    {{if Admin}}
+        <li>
+            <button />
+            <label>%{workportal-menu-admin}</label>
+        </li>
+    {{/if}}            
+    {{if CurrentUserAdministration}}
+        <li>
+            <button id="preferences" />
+            <label>%{workportal-menu-preferences}</label>
+        </li>
+    {{/if}}
+    <li>
+        <button id="logout" />
+        <label>%{workportal-menu-logout}</label>
+    </li>
+</script>
+
+<script id="ui-bizagi-workportal-widget-menu-custom-button" type="x-jquery-tmpl" >
+    <li>
+        <button id="${id}" />
+        <label>${text}</label>
+    </li>
+</script>

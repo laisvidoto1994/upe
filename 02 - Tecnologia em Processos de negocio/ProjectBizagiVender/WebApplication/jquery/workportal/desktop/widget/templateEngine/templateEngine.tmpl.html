@@ -1,0 +1,64 @@
+<script id="templateengine-wrapper" type="text/x-jsrender-tmpl">
+    <div class="template-sticky-header-tools">
+        <!--sortbar-->
+        <div id="template-sortbar" {{layout "sortbar" /}}>
+        </div>
+        <!--filters-->
+        <div id="template-mysearchfilter" {{layout "mysearchfilter" /}}>
+        </div>
+    </div>
+    <!--data-->
+    <div id="template-dataviewer" class="bz-wp-wrapper">
+        <ul id="template-dataviewer-list" {{loading /}}>
+            <!-- reserved space to add rendered template -->
+        </ul>
+    </div>
+    <!--paginator-->
+    <div id="template-navigator" {{layout "paginator" /}}>
+    </div>
+</script>
+
+<script id="templateengine-wrapper-element" type="text/x-jsrender-tmpl">
+    <li id="template-box-wrapper-{{:surrogateKey}}">
+        <div class="template-box-element">
+            <!--template header-->
+            {{if !fromActionLauncher}}
+                <div class="template-box-header">
+                    <!--checkbox-->
+                    <input type="checkbox" {{if isChecked}} checked {{/if}} data-surrogatekey="{{:surrogateKey}}" data-guidentity="{{:guidEntity}}" data-caseId=""/>
+                    <!--case tool bar-->
+                    <div class="casetoolbar">
+                    </div>
+                </div>
+            {{/if}}
+            <!--template body-->
+            <div id="template">
+            </div>
+            <!--template footer-->
+            <div class= "template-box-footer">
+            </div>
+        </div>
+    </li>
+</script>
+
+<script id="templateengine-empty-message" type="text/x-jsrender-tmpl">
+    <li class="bz-wp-empty">
+        <i class="bz-wp-empty__img"></i>
+        <p class="bz-wp-empty__info bz-wp-empty__info--first">%{workportal-general-first-line-no-records-found}</p>
+    </li>
+</script>
+
+<script id="templateengine-wrapper-tooltip" type="text/x-jsrender-tmpl">
+    <div class="template-box-tooltip">
+        <ul class="actions-hidden-container">
+            {{for actionsData ~key=key}}
+                <li data-guid="{{:guid}}" data-key="{{:~key}}">
+                    <div class="wdg-tple-button">
+                        <div class="icon"></div>
+                        <span>{{:displayName}}</span>
+                    </div>
+                </li>
+            {{/for}}
+        </ul>
+    </div>
+</script>

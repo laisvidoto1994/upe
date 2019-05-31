@@ -1,0 +1,81 @@
+﻿/*
+    Document   : bizagi.workportal.mysearchcriteria
+    Created on : Jul 15, 2015
+    Author     : Andrés Felipe Arenas Vargas
+    Description: Styles for my search criteria
+*/
+.sidebar-content .wdg-mysearchcriteria-header {
+    padding: 0 20px;
+    margin: 0;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.sidebar-content .wdg-mysearchcriteria-content {
+    height: calc(~"100% - 59px");/*Less minified. Work only release*/
+    margin: 0;
+    overflow: auto !important;
+}
+
+.sidebar-content .wdg-mysearchcriteria-list {
+    padding: 0;
+}
+
+.sidebar-content .wdg-mysearchcriteria-card {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    position: relative;
+    min-height: 40px;
+    list-style: none;
+    margin-bottom: 1px;
+    width: 100%;
+}
+
+.sidebar-content .wdg-mysearchcriteria-panel {
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-content .wdg-mysearchcriteria-card:hover {
+    background-color: #acbc35;
+    color: #262D33;
+    box-shadow: none;
+}
+
+
+.sidebar-content .wdg-mysearchcriteria-title {
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.sidebar-content .wdg-mysearchcriteria-title span {
+    float: left;
+    padding: 16px 20px;
+    cursor: pointer;
+    width:200px;
+}
+
+.sidebar-content .wdg-mysearchcriteria-title .bz-icon {
+    float: right;
+    padding: 16px 16px;
+    cursor: pointer;
+}
+
+.sidebar-content .wdg-mysearchcriteria-icon.stuff-ico svg {
+    fill: #6e7077;
+}
+
+.sidebar-content .wdg-mysearchcriteria-list[class*='col-'] {
+    width: 100%;
+}
+
+.sidebar-content .wdg-mysearchcriteria-title pre {
+    float: left;
+    padding: 0px 20px;
+    cursor: pointer;
+    width:200px;
+    font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}

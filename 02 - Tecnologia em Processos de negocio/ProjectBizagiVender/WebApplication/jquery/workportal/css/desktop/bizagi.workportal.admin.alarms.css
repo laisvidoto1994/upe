@@ -1,0 +1,99 @@
+#admin-alarms-wrapper {
+    width: 636px;
+    margin: 0 auto;
+}
+
+#alarm-task-list-content {
+    width: 100%;
+}
+
+
+#alarm-task-list-content select {
+    line-height: 24px;
+    height: 276px;
+    margin: 0;
+    max-height: 276px;
+    padding: 0;
+    width: 100%;
+
+    -webkit-appearance: listbox;
+}
+
+#alarm-list-table-content td {
+    font-size: 12px;
+    padding: 6px;
+}
+
+#alarm-list-table-content tr.selected {
+    background-color: #999;
+}
+
+#form-alarm-task-detail .breadcrump-wrapper {
+    margin: 3px 0;
+}
+
+#form-alarm-task-detail .breadcrump-element {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#form-alarm-task-detail .options-container {
+    clear:both;
+    margin:  6px 0;
+}
+
+#form-alarm-task-detail .options-container.column {
+    clear: none;
+    float: left;
+    width: 50%;
+}
+
+#form-alarm-task-detail .options-container .title-container {
+    border-color: #ccc;
+    background: #ccc url("../jquery/themes/bizagiDefault/images/tabs_bg.png") repeat-x !important;
+    margin-bottom: 3px;
+    overflow: hidden;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+
+#form-alarm-task-detail .options-container .option-field {
+
+}
+
+#form-alarm-task-detail .options-container .option-field.float {
+    float: left;
+}
+
+#form-alarm-task-detail .options-container .option-field.vertical-align {
+    display: table;
+
+}
+
+#form-alarm-task-detail .options-container .option-field.vertical-align input[type="checkbox"] {
+    vertical-align: middle;
+}
+
+#form-alarm-task-detail .options-container .option-field select {
+    width: auto;
+}
+
+#form-alarm-task-detail .options-container label {
+
+}
+
+#form-alarm-task-detail .options-container input[type=radio] {
+    
+}
+
+#alarm-list-table-content {
+    width: 100%;
+}
+
+#alarm-recipients-table-content {
+    width: 100%;
+}
+
+
+
+

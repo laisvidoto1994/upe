@@ -1,0 +1,29 @@
+<script id="project-plan-activity-parent" type="text/x-jsrender">
+   <div>
+      <div class="bz-wp-widget ui-bizagi-wp-project-plan-activity-parent">
+
+         {{if parent.idCase}}
+
+            <h3 class="bz-wp-section">
+               %{workportal-project-plan-parent-title}
+             </h3>
+
+             <div class="plan-parent">
+               <a href="#" id="go-to-parent-case" class="bz-wp-btn bz-wp-btn-primary">
+                     <i class="bz-icon bz-icon-16 bz-icon-case-outline"></i>
+                     <span href="#">{{>parent.nameParent}} - {{>parent.idParent}}</span>
+                     <input type="hidden" id="idCase" value="{{>parent.idCase}}">
+                     <input type="hidden" id="idWorkflow" value="{{>parent.idWorkflow}}">
+                     <input type="hidden" id="idWorkItem" value="{{>parent.idWorkItem}}">
+                     <input type="hidden" id="idTask" value="{{>parent.idTask}}">
+               </a>
+             </div>
+
+          {{/if}}
+
+       </div>
+    </div>
+
+
+
+</script>

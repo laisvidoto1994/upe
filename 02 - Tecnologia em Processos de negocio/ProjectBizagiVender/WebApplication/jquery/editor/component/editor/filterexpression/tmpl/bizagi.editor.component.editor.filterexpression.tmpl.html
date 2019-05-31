@@ -1,0 +1,22 @@
+<script id="filterexpression-frame" type="text/x-jquery-tmpl">
+  <div class="filterexpression-container ui-control-container">    
+	<label class="filterexpression-name">${caption}</label>     
+	<div class="ui-control-input">                
+		<div class="biz-complex-btn biz-action-btn ui-corner-left defaultvalue-button-value" >             
+			<i title=${currentType}>
+                <input type="text" class="filterexpression-string-value ui-control-input" value=${currentType}  readonly>         
+            </i>
+		</div>         	
+		<div class="biz-complex-btn biz-complex-dropdown ui-corner-right">             
+			<div class="biz-action-btn"><i class="biz-ico filterexpression-image-delete filterexpression-delete-filter bz-studio bz-delete_16x16_standard" title="%{formmodeler-component-editor-all-delete-value}"></i></div>             
+			{{if filter}}
+            <div class="biz-action-btn"><i class="biz-ico filterexpression-image-filter filterexpression-filter-external bz-studio bz-filter_16x16_standard" title="%{formmodeler-component-editor-all-create-filter}"></i></div>             
+            {{/if}}
+            {{if rule}}
+            <div class="biz-action-btn"><i class="biz-ico biz-ico-default-value filterexpression-rule-external filterexpression-rule-external bz-studio bz-expresion-ex_16x16_standard" title="%{formmodeler-component-editor-all-create-rule}"></i></div>        
+            {{/if}}
+		</div>     
+	</div>
+</div>
+</script>
+

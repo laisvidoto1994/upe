@@ -1,0 +1,96 @@
+﻿<script id="wizard-container-searchlist" type="text/x-jquery-tmpl">  
+    <div class="bz-fm-wizard-searchlist clearfix">
+        <div class="bz-fm-wizard-searchlist-left">
+            <div class="bz-fm-wizard-searchlist-panel">
+                {{tmpl "#wizard-searchlist-left-entity"}}
+            </div>      
+        </div>
+        <div class="bz-fm-wizard-searchlist-right">
+            <div class="bz-fm-wizard-searchlist-panel">
+                {{tmpl "#wizard-searchlist-right-entity"}}
+            </div>           
+        </div>
+    </div>
+</script>
+
+<script id="wizard-searchlist-left-entity" type="text/x-jquery-tmpl">
+    <h2>%{bizagi-editor-wizard-searchlist-editor-left-title}</h2>
+    {{each leftProperties}}
+        {{tmpl(this) "#wizard-searchlist-render-editor"}}                                                                                         
+    {{/each}}       
+</script>
+
+<script id="wizard-searchlist-right-entity" type="text/x-jquery-tmpl">
+    <h2>%{bizagi-editor-wizard-searchlist-editor-right-title}</h2>
+    {{each rightProperties}}
+        {{tmpl(this) "#wizard-searchlist-render-editor"}}                                                                                         
+    {{/each}}     
+</script>
+
+<script id="wizard-searchlist-render-editor" type="text/x-jquery-tmpl">
+    {{if editor == "xpatheditor"}}
+        {{tmpl "#wizard-searchlist-xpath-editor"}} 
+    {{/if}}
+    {{if editor == "filter"}}
+        {{tmpl "#wizard-searchlist-filter-editor"}} 
+    {{/if}} 
+    {{if editor == "localizable"}}
+        {{tmpl "#wizard-searchlist-localizablestring-editor"}} 
+    {{/if}} 
+    
+</script>
+
+<script id="wizard-searchlist-xpath-editor" type="text/x-jquery-tmpl">    
+    <div class="bizagi_editor_component_editor_xpath ui-editor">
+        <div class="xpath-container ui-control-container">
+            <label class="xpath-name" title="${title}">${title}</label>
+            {{if required}}
+            <span class="biz-ico ui-bizagi-render-required bz-studio bz-required_16x16_standard"></span>
+            {{/if}}
+            <input type="text" class="xpath-value ui-control-input" readonly="readonly" value="${displayValue}" />
+            {{if !readonly}}
+            <i class="biz-ico xpath-image-world bz-wizard-searchlist-editor-xpath bz-studio bz-modeldata_16x16_standard" data-property="${property}" title="%{formmodeler-component-editor-xpath-show-data}"></i>
+            <i class="biz-ico biz-ico-default bz-studio bz-undo_16x16_standard" data-property="${property}" title="%{formmodeler-component-editor-all-set-default}"></i>
+            {{/if}}                   
+        </div>
+    </div>       
+</script>
+
+
+<script id="wizard-searchlist-filter-editor" type="text/x-jquery-tmpl">    
+    <div class="bizagi_editor_component_editor_filter ui-editor">
+        <div class="ui-control-container filter-container">
+            <label class="filter-name" title="${title}">${title}</label>
+            {{if required}}
+            <span class="biz-ico ui-bizagi-render-required bz-studio bz-required_16x16_standard"></span>
+            {{/if}}
+            <input type="text" readonly="readonly" class="ui-control-input filter-searchList-value" value="${displayValue}" />
+            {{if !readonly}}
+                <div class="biz-ico-filter-searchList-mainDiv filter-searchList-mainDiv-delete" data-property="${property}">
+                    <i class="biz-ico-filter biz-ico biz-ico-filter-searchList-delete bz-studio bz-delete_16x16_standard bz-wizard-searchlist-editor-filter"></i>
+                </div>
+                <div class="biz-ico-filter-searchList-mainDiv filter-searchList-mainDiv-value" data-property="${property}">
+                    <i class="biz-ico-filter biz-ico biz-ico-filter-searchList-value bz-studio bz-filter_16x16_standard bz-wizard-searchlist-editor-filter"></i>
+                </div>
+                <div class="biz-ico-filter-searchList-mainDiv filter-searchList-mainDiv-rule" data-property="${property}">
+                    <i class="biz-ico-filter biz-ico biz-ico-filter-searchList-rule bz-studio bz-expresion-ex_16x16_standard bz-wizard-searchlist-editor-filter"></i>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</script>
+
+<script id="wizard-searchlist-localizablestring-editor" type="text/x-jquery-tmpl">
+    <div class="bizagi_editor_component_editor_localizablestring ui-editor">
+        <div class="ui-control-container">
+            <label title="${title}">${title}</label>
+            {{if required}}
+            <span class="biz-ico ui-bizagi-render-required bz-studio bz-required_16x16_standard"></span>
+            {{/if}}
+            <div class="editor-localizablestring-input ui-control-input">
+                <input type="text" data-property="${property}" value="${displayValue}"/>                
+                <i class="biz-ico editor-localizablestring-localization"></i>                
+            </div>
+        </div>
+    </div>
+</script>

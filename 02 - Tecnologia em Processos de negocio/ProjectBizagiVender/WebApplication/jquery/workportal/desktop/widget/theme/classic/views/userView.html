@@ -1,0 +1,18 @@
+﻿<div ng-controller="userController">
+    <div id="home-usersummary" class="wdg-usmry-panel home-usersummary">
+        <div class="wdg-usmry-box cf">
+            <div class="bz-wp-avatar bz-wp-avatar-48 wdg-usmry-photo-wrapper">
+                <span class="bz-wp-avatar-label">{{user.initials}}</span>
+            </div>
+            <div class="wdg-usmry-user-info">
+                <p class="wdg-usmry-username">
+                    <strong>{{user.userFullName}}</strong>
+                </p>
+                <div class="wdg-usmry-stk-container">
+                    <p>{{user.associatedStakeholderNames}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,39 @@
+﻿<script id="stakeholders-stakeholdersframe" type="text/x-jquery-tmpl">
+    <div class="stakeholders-container ui-control-container">
+        <label class="xpath-name">${caption}</label>
+        
+         {{if !hasValue}}
+            <ul id="stakeholdersEmpty" class="stakeholder-item-container" >
+                <li class="stakeholder-item default-text">
+                    %{formmodeler-component-editor-stakeholders-select}
+                <li>
+            </ul>
+        <ul><li class="stakeholder-item-warning"><i class="biz-ico bz-studio bz-warning-yellow_16x16_standard"></i> %{formmodeler-component-editor-stakeholders-select-warning}</li></ul>
+         {{else}}
+            <ul class="stakeholder-item-container">
+                {{each(i, item) stakeholdersSelected}}   
+                    
+                    <li class="stakeholder-item biz-btn" data-guid="${item.guid}">
+                        <i><span>${item.displayName}</span></i>
+                        <i class="biz-ico decorator-image item-image-delete-stakeholder  bz-studio bz-delete_16x16_standard" data-id="${i}" title="%{bizagi-editor-decorator-model-allowdelete}"></i>                      
+                    </li>    
+                {{/each}}        
+            </ul>   
+         {{/if}}
+        
+        <i class="biz-ico stakeholder-select bz-studio bz-stakeholders_16x16_standard" title="%{formmodeler-component-editor-xpath-show-data}"></i>
+
+        <div id='stakeholder-values' style="display:none">
+            <ul class="stakeholder-item-container">
+                {{each(i, item) stakeholders}}                       
+                    <li class="stakeholder-item stakeholder-value biz-btn-horizontal" data-guid="${item.guid}">
+                        <div class="biz-btn">
+                            <span>${item.displayName}</span>                   
+                        </div>
+                    </li>                        
+                {{/each}}
+             </ul>           
+        </div>
+        
+    </div>  
+</script>

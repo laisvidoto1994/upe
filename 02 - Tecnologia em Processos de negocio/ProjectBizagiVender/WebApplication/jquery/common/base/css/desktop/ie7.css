@@ -1,0 +1,86 @@
+@charset "UTF-8";
+.jqgrow {
+    position: relative;
+}
+
+.ui-bizagi-render {
+    /*display:block;*/
+}
+
+.ui-bizagi-render-display-normal > .ui-bizagi-label {
+    /*
+	float:left !important;
+	display: inline !important; 
+	vertical-align: middle !important;
+	*/
+}
+
+.ui-bizagi-render-display-normal > .ui-bizagi-control {
+    /*
+    float: right !important;
+    display: inline !important;
+    vertical-align: middle !important;
+    /**/
+}
+
+.ui-bizagi-render-display-reversed > .ui-bizagi-label {
+    float: right !important;
+    display: inline !important;
+    vertical-align: middle !important;
+}
+
+.ui-bizagi-render-display-reversed > .ui-bizagi-control {
+    float: left !important;
+    display: inline !important;
+    vertical-align: middle !important;
+}
+
+.ui-bizagi-button-container input {
+    width: auto !important;
+}
+
+.ui-bizagi-container-form .ui-bizagi-container-group-wrapper {
+    background-color: transparent;
+    background: transparent;
+    position: relative;
+    /*filter: alpha(opacity=0) !important;*/
+}
+/* DISABLE ALL CSS3 STUFF FOR IE */
+/***** Don't remove any CSS3 property because if it is not supported by the browser is ignored. Progressive enhancement works using a standards-based browser of choice as the baseline, along maybe with IE7, and then adding CSS3 for browsers that support it. *****/
+
+* {
+    /*
+    background-size: auto !important;
+    border-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    transition: all 0 ease 0 !important;
+    */
+}
+/* DISABLE REQUIRED FEATURE FOR IE*/
+/*.ui-bizagi-render-control-required {
+    display: none !important;
+    visibility: hidden !important;
+}*/
+/* DISABLE ROW HOVERING FEATURE FOR GRIDS */
+/*.ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-body tr:hover {
+	background-color: inherit !important;
+	color: inherit  !important;
+}
+.ui-bizagi-grid .ui-bizagi-grid-table .ui-bizagi-grid-body tr.ui-bizagi-state-selected:hover{
+	background-color: inherit !important;
+	color: inherit  !important;
+}
+.ui-bizagi-grid-table thead th:hover{
+    background: inherit !important;
+}*/
+/* DISABLE MAGNIFYING GLASS*/
+/*.ui-bizagi-render-icon-search {
+    display: none !important;
+    visibility: hidden !important;
+    background: none !important;
+}*/

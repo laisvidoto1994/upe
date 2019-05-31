@@ -1,0 +1,28 @@
+<script id="buttonactions-control" type="text/x-jquery-tmpl">
+    <div class="buttonactions-container ui-control-container">
+        <label class="buttonactions-name">Actions</label>
+        <div class="buttonactions-group-container ui-control-editor">
+        </div>
+    </div>
+</script>
+
+<script id="buttonactions-frame" type="text/x-jquery-tmpl">
+
+    <div class="buttonactions-container ui-control-container">
+        <label title="${caption}">${caption}</label>
+        <ul class="buttonaction-list">
+        {{each(name, action) actions}}
+            {{if action.show}}
+            <li>    
+                 <div id="buttonActionCheckFor_${name}" class="{{if disabled}}biz-btn-disabled{{/if}} biz-btn-horizontal {{if action.value}} biz-btn-checked {{/if}}"  data-name="${name}">
+                    <div class="biz-btn"  data-guid="buttonActionCheckFor_${name}">
+                        <i class="biz-ico ribbon-ico-validate bz-studio bz-actions-and-validations_16x16_standard" data-guid="buttonActionCheckFor_${name}"></i>  {{resource action.label}}
+                    </div>
+                </div>
+                
+            </li>    
+            {{/if}}
+        {{/each}}
+        </ul>
+    </div>
+</script>

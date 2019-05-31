@@ -1,0 +1,65 @@
+﻿#bz-rp-detaillist-auxframe
+{
+    display: none;
+    height: 100%;  
+}
+
+#bz-rp-detaillist-auxframe-nav
+{
+    height: 10%;    
+}
+
+#bz-rp-detaillist-auxframe iframe
+{
+    height: auto;
+    width: 100%; 
+}
+
+@media only screen and (min-width: 1067px) {
+    #bz-rp-detaillist-summarycnt
+    {
+        max-height: 21.5rem;
+        font-size: inherit;
+        -webkit-overflow-scrolling: touch !important; 
+        overflow-y: auto;  
+    }
+}
+
+@media only screen and (max-width: 1067px) {
+    #bz-rp-detaillist-summarycnt {
+        max-height: 15.5rem;
+        font-size: inherit;
+        -webkit-overflow-scrolling: touch !important; 
+        overflow-y: auto;
+    }
+    
+}
+
+#bz-rp-detaillist-mainframe
+{
+    min-height: 100px;    
+}
+
+#bz-rp-detaillist-mainframe .ui-bizagi-loading-message
+{
+    position: relative !important;
+    margin: 0 auto;
+    left: 0;
+    padding: 0;
+}
+
+.bz-rp-detaillist-summary-opencase
+{
+    cursor: pointer;
+    display: inline-block;
+}
+
+.bz-rp-detaillist-return
+{
+    min-width: 110px;
+}
+
+#bz-rp-detaillist-backcontainer
+{
+    padding: 3px 0px;
+}

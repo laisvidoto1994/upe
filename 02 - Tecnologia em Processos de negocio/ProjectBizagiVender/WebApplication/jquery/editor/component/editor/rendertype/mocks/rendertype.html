@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Editor Rendertype</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../../../common/jquery.ui/css/desktop/jquery.ui.css" />
+        <style>
+            #main-container
+            {
+                border: solid 1px gainsboro;
+                width: 300px;
+                border-radius: 4px;
+            }
+            
+            
+            .editor
+            {
+                margin: 70px 0 70px 0;
+            }
+            .editor.editor-selected
+            {
+                background-color:  skyblue;
+            }
+            
+            
+            .editor > .editor-horizontal
+            {
+                border: solid 1px peru;
+                border-radius: 4px;
+                padding: 4px;
+            }
+            
+            
+            .editor > .editor-horizontal > label
+            {
+                display: inline-block;
+                width: 90px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            
+            .editor span.editor-text-rendertype-enabled
+            {
+                display: inline-block;
+                border: solid 1px lime;
+                border-radius: 4px;
+                width: 160px;
+                padding-left: 4px;
+            }
+            .editor span.editor-text-rendertype-disabled
+            {
+                display: none;
+            }
+            
+            
+            .editor select.editor-options-enabled
+            {
+                display: inline-block;
+                border-radius: 4px;
+                width: 166px;
+                height: 22px;
+            }
+            .editor select.editor-options-disabled
+            {
+                display: none;
+            }
+        </style>
+        <script src="../../../../../common/base/js/lib/jquery.js"></script>
+        <script src="../../../../../common/jquery.ui/js/desktop/jquery.ui.js"></script>
+        <script>
+            $(document).ready(function() {
+                
+                var clicks = 0;
+                $(".editor-rendertype").disableSelection();
+                
+                // Seleccion
+                $(".editor").click(function() {
+                    $(".editor").removeClass("editor-selected");
+                    $(this).addClass("editor-selected");
+                });
+                
+                // Foco del control
+                $(".editor-rendertype span").focus(function() {
+                    $(this).removeClass("editor-text-rendertype-enabled").addClass("editor-text-rendertype-disabled");
+                    $(this).next().removeClass("editor-options-disabled").addClass("editor-options-enabled").focus();
+                });
+                $(".editor-rendertype select").blur(function() {
+                    $(this).removeClass("editor-options-enabled").addClass("editor-options-disabled");
+                    $(this).prev().removeClass("editor-text-rendertype-disabled").addClass("editor-text-rendertype-enabled");
+                });
+                
+                // Habilitacion de la forma de edicion
+                $(".editor-rendertype label").click(function() {
+                    var self = this;
+                    clicks++;
+                    if(clicks == 1) {
+                        setTimeout(function() {
+                            if(clicks == 1) {
+                                $(self).next().focus();
+                            }
+                            clicks = 0;
+                        }, 200);
+                    }
+                });
+                
+                // Interaccion del nombre y cambio de valor de la propiedad
+                $(".editor-rendertype label").dblclick(function() {
+                    var select = $(this).closest(".editor-rendertype").find("select"),
+                    numOptions = select.children().length,
+                    option = select.find("option:selected");
+                    if((numOptions-1) == select.find("option").index(option)) {
+                        select.find("option:first").attr("selected", "selected");
+                        $(this).next().text(select.find("option:first").text());
+                    } else {
+                        option.next().attr("selected", "selected");
+                        $(this).next().text(option.next().text());
+                    }
+                });
+                
+                // Actualizacion del modo de no edicion
+                $(".editor-rendertype select").change(function() {
+                    $(this).prev().text($(this).find("option:selected").text());
+                });
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main-container">
+            
+            <div class="editor editor-rendertype">
+                <div class="editor-horizontal">
+                    <label title="Render Type">Render Type</label>
+                    <span class="editor-text-rendertype-enabled" tabindex="0">Letter</span>
+                    <select class="editor-options-disabled">
+                        <option>Button</option>
+                        <option>Hidden</option>
+                        <option>Label</option>
+                        <option selected="selected">Letter</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="editor editor-rendertype">
+                <div class="editor-horizontal">
+                    <label title="Render Type Large">Render Type Large</label>
+                    <span class="editor-text-rendertype-enabled" tabindex="0">Numeric</span>
+                    <select class="editor-options-disabled">
+                        <option>Button</option>
+                        <option>Hidden</option>
+                        <option>Label</option>
+                        <option selected="selected">Numeric</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="editor editor-rendertype">
+                <div class="editor-horizontal">
+                    <label title="Render Type Large">Render Type Large 3</label>
+                    <span class="editor-text-rendertype-enabled" tabindex="0">Numeric</span>
+                    <select class="editor-options-disabled">
+                        <option>Button</option>
+                        <option>Label</option>
+                        <option selected="selected">Numeric</option>
+                    </select>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

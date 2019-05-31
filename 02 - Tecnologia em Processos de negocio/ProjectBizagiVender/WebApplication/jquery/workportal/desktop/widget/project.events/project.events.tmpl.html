@@ -1,0 +1,29 @@
+<script id="project-events-wrapper" type="text/x-jsrender" >
+   <div>
+      {{if showEvents}}
+          <div id="ui-bizagi-wp-project-events-wrapper" class="clearfix bz-wp-widget">
+
+                <h3 class="bz-wp-section">%{workportal-project-events-title}</h3>
+                <ul class="list-events">
+                   {{for events}}
+                      {{include tmpl="#project-event-wrapper"/}}
+                   {{/for}}
+                </ul>
+
+          </div>
+      {{/if}}
+   </div>
+</script>
+<script id="project-event-wrapper" type="text/x-jsrender">
+   <li class="event">
+      <a href="#">
+         <i class="bz-icon bz-icon-16 bz-icon-event-outline"></i>
+         <span class="name">{{>displayName}}</span>
+         <input type="hidden" id="idWorkflow" value="{{>idWorkFlow /}}" />
+         <input type="hidden" id="idWorkItem" value="{{>idWorkitem /}}" />
+         <input type="hidden" id="idTask" value="{{>idTask /}}" />
+         <input type="hidden" id="idCase" value="{{>idCase /}}" />
+         <input type="hidden" id="eventAsTasks" value="true" />
+      </a>
+   </li>
+</script>

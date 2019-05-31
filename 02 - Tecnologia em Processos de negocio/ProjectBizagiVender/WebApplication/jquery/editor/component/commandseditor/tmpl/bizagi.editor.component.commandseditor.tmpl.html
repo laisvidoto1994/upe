@@ -1,0 +1,513 @@
+<!-- READONLY EDITOR --> 
+<script id="commands-editor-container" type="text/x-jquery-tmpl">
+<div id='bz-fm-commandseditor-tabs' class="ui-action-tabs">
+    <ul>
+        <li><a href='#bz-fm-commandseditor-actions-editor'>%{formmodeler-component-commandseditor-actions}</a></li>
+        <li><a href='#bz-fm-commandseditor-validations-editor'>%{formmodeler-component-commandseditor-validations}</a></li>
+    </ul>
+    <div id="bz-fm-commandseditor-actions-editor" class="ui-widget biz-gradient-v"> 
+        {{if !isReadOnly}}
+            <div class="ui-widget-actions biz-actions-bar">
+                <button type="button" class="biz-btn biz-action-btn">
+                    <i class="biz-ico commandseditor-add bz-studio bz-add_16x16_standard"></i>
+                    <div class="biz-action-txt">%{formmodeler-component-commandseditor-add}</div>
+                </button>
+            </div>
+        {{/if}}
+        <div class="ui-widget-content">
+            {{if actions && actions.length}}
+            <div class="bz-fm-commandseditor-search-options">
+                <div class="bz-fm-commandseditor-search" style="font-weight: bold;">
+                    <input class="ui-autocomplete-input"  id="bz-fm-commandseditor-actions-text-to-search" placeholder="%{formmodeler-component-search}" type="text">
+                    <i class="ui-bizagi-render-icon-search"></i>
+                </div>
+                <div class="bz-fm-commandseditor-search-flags">
+                     <div class="bz-fm-commandseditor-search-flag-item">
+                      <input type="checkbox" class="bz-fm-commandseditor-condition-checkbox" id="bz-fm-commandseditor-condition" checked>
+                      <label class="">%{formmodeler-component-commandseditor-when}</label>
+                     </div>
+                     <div class="bz-fm-commandseditor-search-flag-item">
+                      <input type="checkbox" class="bz-fm-commandseditor-statement-checkbox" id="bz-fm-commandseditor-statement" checked>
+                      <label class="">%{formmodeler-component-commandseditor-then}</label>
+                     </div>
+                     <div class="bz-fm-commandseditor-search-flag-item">
+                      <input type="checkbox" class="bz-fm-commandseditor-elsestatement-checkbox" id="bz-fm-commandseditor-elsestatement" checked>
+                      <label class="">%{formmodeler-component-commandseditor-else}</label>
+                     </div>
+                </div>
+            </div>
+                    <div class="bz-fm-commandseditor-onoffswitch">
+                        <input type="checkbox" class="bz-fm-commandseditor-onoffswitch-checkbox" id="bz-fm-commandseditor-actions-enable-all" checked>
+                        <label class="bz-fm-commandseditor-onoffswitch-label" for="bz-fm-commandseditor-actions-enable-all">
+                            <span class="bz-fm-commandseditor-onoffswitch-inner"></span>
+                            <span class="bz-fm-commandseditor-onoffswitch-switch"></span>
+                        </label>
+                    </div>
+
+                    <label class="bz-fm-commandseditor-actions-enable-text">%{formmodeler-component-allow}</label>
+            {{/if}}
+            <ul class="bz-fm-commandseditor-actions">
+                {{each actions}}
+                    {{tmpl(this) "#commands-editor-preview-action"}}   
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div id="bz-fm-commandseditor-validations-editor" class="ui-widget biz-gradient-v"> 
+        {{if !isReadOnly}}
+            <div class="ui-widget-actions biz-actions-bar">
+                <button type="button" class="biz-btn biz-action-btn">
+                    <i class="biz-ico commandseditor-add bz-studio bz-add_16x16_standard"></i>
+                    <div class="biz-action-txt">%{formmodeler-component-commandseditor-add}</div>
+                </button>
+            </div>
+        {{/if}}
+        <div class="ui-widget-content">
+            {{if validations && validations.length}}
+            <div class="bz-fm-commandseditor-search-options">
+                <div class="bz-fm-commandseditor-search" style="font-weight: bold;">
+                    <input class="ui-autocomplete-input"  id="bz-fm-commandseditor-validations-text-to-search" type="text">
+                    <i class="ui-bizagi-render-icon-search"></i>
+                </div>
+            </div>
+                    <div class="bz-fm-commandseditor-onoffswitch">
+                        <input type="checkbox" class="bz-fm-commandseditor-onoffswitch-checkbox" id="bz-fm-commandseditor-validations-enable-all" checked>
+                        <label class="bz-fm-commandseditor-onoffswitch-label" for="bz-fm-commandseditor-validations-enable-all">
+                            <span class="bz-fm-commandseditor-onoffswitch-inner"></span>
+                            <span class="bz-fm-commandseditor-onoffswitch-switch"></span>
+                        </label>
+                    </div>
+
+                    <label class="bz-fm-commandseditor-actions-enable-text">%{formmodeler-component-allow}</label>
+            {{/if}}
+            <ul class="bz-fm-commandseditor-validations">
+                {{each validations}}
+                    {{tmpl(this) "#commands-editor-preview-validation"}}   
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="commands-editor-preview-action" type="text/x-jquery-tmpl">
+    <li class="bz-fm-commandseditor-action ui-corner-all ui-light-bevel-border biz-second-font" data-guid="${guid}" >
+        {{if !isReadOnly}}
+            <span class="bz-fm-commandseditor-icons bz-fm-commandseditor-edit-bar ui-corner-all">
+                <i class="biz-ico bz-fm-commandseditor-icons-edit bz-fm-commandseditor bz-studio bz-editable_16x16_standard" title="%{formmodeler-component-edit-icon}"></i>            
+                <i class="biz-ico bz-fm-commandseditor-icons-delete bz-fm-commandseditor bz-fm-commandseditor-icons-adjust-area bz-studio bz-delete_16x16_standard" title="%{formmodeler-component-delete-icon}"></i>
+                <i class="biz-ico bz-fm-commandseditor-icons-toogle bz-fm-commandseditor ui-comboBox-image-small-check bz-fm-commandseditor-icons-adjust-area bz-studio bz-point_16x16_standard" title="%{formmodeler-component-disable}"></i>
+                <i class="biz-ico bz-fm-commandseditor-icons-action-move-up bz-fm-commandseditor bz-studio bz-arrow-up_16x16_standard" title="%{formmodeler-component-move-up}"></i>
+                <i class="biz-ico bz-fm-commandseditor-icons-action-move-down bz-fm-commandseditor bz-studio bz-arrow-down_16x16_standard" title="%{formmodeler-component-move-down}"></i>
+            </span>
+        {{/if}}
+        
+        <label class="bz-fm-commandseditor-conditions-label biz-highlight-head-color  ui-big-font">%{formmodeler-component-commandseditor-when}</label>
+        <ul class="bz-fm-commandseditor-conditions">
+            {{each conditions.expressions}}
+                {{tmpl(this) "#commands-editor-preview-condition"}}
+            {{/each}}
+        </ul>
+        <label class="bz-fm-commandseditor-statements-label biz-highlight-head-color  ui-big-font">%{formmodeler-component-commandseditor-then}</label>
+        <ul class="bz-fm-commandseditor-statements" data-section="then">
+            {{each commands}}
+                {{if !this.hidden}}
+                    {{tmpl(this) "#commands-editor-preview-statement"}}   
+                {{/if}}
+            {{/each}}
+        </ul>
+        <label class="bz-fm-commandseditor-statements-label biz-highlight-head-color  ui-big-font">%{formmodeler-component-commandseditor-else}</label>
+        <span class="bz-fm-commandseditor-statements-else-action biz-highlight-color">${elseAction.label}</span>
+        {{if elseCommands && elseCommands.length}}
+            <ul class="bz-fm-commandseditor-statements" data-section="else">
+                {{each elseCommands}}
+                    {{if !this.hidden}}
+                        {{tmpl(this) "#commands-editor-preview-statement"}}   
+                    {{/if}}
+                {{/each}}
+            </ul>            
+        {{/if}}
+    </li>
+</script>
+
+<script id="commands-editor-preview-validation" type="text/x-jquery-tmpl">
+    <li {{if inherent }}class="bz-fm-commandseditor-validation bz-fm-commandseditor-validation-inherent  ui-corner-all ui-light-bevel-border biz-second-font" {{else}} class="bz-fm-commandseditor-validation  ui-corner-all ui-light-bevel-border biz-second-font" {{/if}}  data-guid="${guid}">
+        {{if !inherent && !isReadOnly }}
+        <span class="bz-fm-commandseditor-icons bz-fm-commandseditor-edit-bar ui-corner-all">
+            <i class="biz-ico bz-fm-commandseditor-icons-edit bz-studio bz-editable_16x16_standard" title="%{formmodeler-component-edit-icon}"></i>
+            <i class="biz-ico bz-fm-commandseditor-icons-delete bz-fm-commandseditor-icons-adjust-area bz-studio bz-delete_16x16_standard" title="%{formmodeler-component-delete-icon}"></i>
+            <i class="biz-ico bz-fm-commandseditor-icons-toogle ui-comboBox-image-small-check bz-fm-commandseditor-icons-adjust-area bz-studio bz-point_16x16_standard" title="%{formmodeler-component-disable}"></i>
+            <i class="biz-ico bz-fm-commandseditor-icons-validation-move-up bz-studio bz-arrow-up_16x16_standard" title="%{formmodeler-component-move-up}"></i>
+            <i class="biz-ico bz-fm-commandseditor-icons-validation-move-down bz-studio bz-arrow-down_16x16_standard" title="%{formmodeler-component-move-down}"></i>
+        </span>
+        {{/if}}
+        <label class="bz-fm-commandseditor-conditions-label biz-highlight-head-color  ui-big-font">%{formmodeler-component-commandseditor-if}</label>
+        <label>${conditions.operator}</label>
+        <ul class="bz-fm-commandseditor-conditions">
+            {{each conditions.expressions}}
+                {{tmpl(this) "#commands-editor-preview-condition"}}   
+            {{/each}}
+        </ul>
+        <label class="bz-fm-commandseditor-messages-label biz-highlight-head-color  ui-big-font">%{formmodeler-component-commandseditor-then}</label>
+        <ul class="bz-fm-commandseditor-messages">
+             {{tmpl "#commands-editor-preview-message"}}   
+        </ul>
+    </li>
+</script>
+
+<script id="commands-editor-preview-condition" type="text/x-jquery-tmpl">
+    <li class="bz-fm-commandseditor-condition">
+        {{if simple}}
+            <span class="bz-fm-commandseditor-condition-logicOperator biz-highlight-2-color {{if logicOperator === null}} ui-hidden {{/if}}">${logicOperator}</span>
+            <span class="bz-fm-commandseditor-condition-xpath biz-highlight-1-color">${simple.xpath}</span>
+            <span class="bz-fm-commandseditor-condition-operator biz-highlight-2-color">${simple.operator}</span>
+            <span class="bz-fm-commandseditor-condition-argument biz-highlight-3-color">${simple.argument}</span>            
+        {{/if}}
+        {{if complex}}
+            <span class="bz-fm-commandseditor-condition-logicOperator bz-fm-commandseditor-condition-logicOperator-complex biz-highlight-2-color">${logicOperator}</span>
+            <ul class="bz-fm-commandseditor-conditions bz-fm-commandseditor-complex">
+                {{each complex.conditions.expressions}}
+                    {{tmpl(this) "#commands-editor-preview-condition"}}   
+                {{/each}}
+            </ul>
+        {{/if}}
+    </li>
+</script>
+
+<script id="commands-editor-preview-statement" type="text/x-jquery-tmpl">
+    <li class="bz-fm-commandseditor-statement">
+        <span class="bz-fm-commandseditor-statement-command biz-highlight-0-color">${command}</span>
+        {{if !isOnlyCommand}}
+            <span class="bz-fm-commandseditor-statement-xpath biz-highlight-1-color">${xpath}</span>
+            {{if !isOnlyArgument && !isUnary }}    
+                <span class="bz-fm-commandseditor-statement-connector biz-highlight-2-color">%{formmodeler-component-commandseditor-to}</span>
+            {{/if}}
+            {{if !isUnary }}                
+                <span class="bz-fm-commandseditor-statement-argument biz-highlight-3-color">${argument}</span>
+                
+            {{/if}}
+        {{/if}}
+    </li>
+</script>
+
+<script id="commands-editor-preview-message" type="text/x-jquery-tmpl">
+    <li class="bz-fm-commandseditor-message">
+        <span class="bz-fm-commandseditor-message-label biz-highlight-1-color">%{formmodeler-component-commandseditor-show-message}</span>
+        <span class="bz-fm-commandseditor-message-argument biz-highlight-2-color">${validationCommand.message}</span>
+    </li>
+</script>
+
+<!-- ACTION/VALIDATION EDITOR --> 
+<script id="commands-editor-action" type="text/x-jquery-tmpl">
+    <div class="bz-fm-actionvalidationeditor-header biz-bg-color">
+        <label>%{formmodeler-component-commandseditor-action-editor}</label>
+    </div>
+    <div class="bz-fm-actionvalidationeditor ui-light-bevel-border biz-second-font {{if hasErrors}}bz-fm-hasErrors{{/if}}">
+        <label class="bz-fm-commandseditor-conditions-label biz-highlight-head-color ">%{formmodeler-component-commandseditor-apply}</label>
+        <ul class="bz-fm-commandseditor-context">
+             <span class="bz-fm-commandseditor-context-control biz-highlight-2-color">
+                {{if context.label.length}} 
+                    <span class="biz-btn biz-action-btn biz-action-command"> ${context.label} <i class="biz-btn-caret"></i></span>                
+                {{/if}}
+            </span> 
+        </ul>
+        
+        <div>
+            <label class="bz-fm-commandseditor-conditions-label biz-highlight-head-color  ui-big-font">%{formmodeler-component-commandseditor-when}</label>
+        </div>        
+                
+        <ul class="bz-fm-commandseditor-conditions ui-bevel-border  biz-actions-bar">
+            {{each conditions.expressions}}
+                {{tmpl(this) "#commands-editor-condition"}}   
+            {{/each}}
+            <li class="bz-fm-commandseditor-button-bar">
+                <div {{if conditions.expressions.length == 0 && hasErrors}} class="bz-fm-commandseditor-condition-new bz-fm-hasErrors biz-btn biz-action-btn" {{else}} class="bz-fm-commandseditor-condition-new  biz-btn biz-action-btn" {{/if}} title="%{formmodeler-component-commandseditor-click-here-condition}">
+                    <i class="biz-ico bz-fm-commandseditor-icons-simple bz-studio bz-add-tree-condition_16x16_standard"></i><label>%{formmodeler-component-commandseditor-click-here-condition}</label>
+                </div>
+                <span class="bz-fm-commandseditor-icons bz-fm-commandseditor-btn-complex biz-btn biz-action-btn">
+                    <i class="biz-ico bz-fm-commandseditor-icons-complex bz-studio bz-add-tree-condition-group_16x16_standard"></i><label>%{formmodeler-component-commandseditor-click-here-condition-group}</label>
+                </span>
+            </li>
+        </ul>
+        <label class="bz-fm-commandseditor-statements-label biz-highlight-head-color ui-big-font">%{formmodeler-component-commandseditor-then}</label>
+        <ul class="bz-fm-commandseditor-statements ui-bevel-border biz-actions-bar" data-section="then">
+            {{each commands}}              
+                {{tmpl(this) "#commands-editor-statement"}}                   
+            {{/each}}
+            {{if commands.length == 0 && hasErrors}}
+                <li class="bz-fm-commandseditor-button-bar">
+                    <div class="bz-fm-commandseditor-statement-new bz-fm-hasErrors biz-btn biz-action-btn"  title="%{formmodeler-component-commandseditor-click-here-action}"><i class="biz-ico bz-fm-commandseditor-icons-simple bz-studio bz-add-tree-condition_16x16_standard"></i><label>%{formmodeler-component-commandseditor-click-here-action}</label>
+                    </div>
+                </li>
+            {{else}}
+                <li class="bz-fm-commandseditor-button-bar">
+                    <div class="bz-fm-commandseditor-statement-new biz-btn biz-action-btn" title="%{formmodeler-component-commandseditor-click-here-action}">
+                        <i class="biz-ico bz-fm-commandseditor-icons-simple bz-studio bz-add-tree-condition_16x16_standard"></i><label>%{formmodeler-component-commandseditor-click-here-action}</label>
+                    </div>
+                </li>
+            {{/if}}            
+        </ul>
+        <label class="bz-fm-commandseditor-statements-label biz-highlight-head-color ui-big-font">%{formmodeler-component-commandseditor-else}</label>
+        <span class="bz-fm-commandseditor-statements-else-action biz-btn biz-action-btn biz-action-command">${elseAction.label}<i class="biz-btn-caret"></i></span>
+        {{if elseAction.value == "actions"}}
+            <ul class="bz-fm-commandseditor-statements ui-bevel-border biz-actions-bar" data-section="else">
+                {{each elseCommands}}                   
+                    {{tmpl(this) "#commands-editor-statement"}}                     
+                {{/each}}
+                {{if elseCommands.length == 0 && hasErrors}}
+                    <li class="bz-fm-commandseditor-button-bar">
+                        <div class="bz-fm-commandseditor-statement-new bz-fm-hasErrors biz-btn biz-action-btn"  title="%{formmodeler-component-commandseditor-click-here-action}">
+                            <i class="biz-ico bz-fm-commandseditor-icons-simple bz-studio bz-add-tree-condition_16x16_standard"></i><label>%{formmodeler-component-commandseditor-click-here-action}</label>
+                        </div>
+                    </li>
+                {{else}}
+                    <li class="bz-fm-commandseditor-button-bar">
+                        <div class="bz-fm-commandseditor-statement-new biz-btn biz-action-btn"  title="%{formmodeler-component-commandseditor-click-here-action}">
+                            <i class="biz-ico bz-fm-commandseditor-icons-simple bz-studio bz-add-tree-condition_16x16_standard"></i><label>%{formmodeler-component-commandseditor-click-here-action}</label>
+                        </div>
+                    </li>
+                {{/if}}
+            </ul>
+        {{/if}}
+    </div>
+    <div class="bz-fm-commandseditor-buttons biz-actions-bar">
+        <button class="bz-fm-commandseditor-button-ok biz-btn biz-action-btn" type="button" data-action="ok">Ok</button>
+        <button class="bz-fm-commandseditor-button-cancel biz-btn biz-action-btn" type="button" data-action="cancel">%{formmodeler-component-commandseditor-cancel-button}</button>
+    </div>
+</script>
+
+<script id="commands-editor-validation" type="text/x-jquery-tmpl">
+    <div class="bz-fm-actionvalidationeditor-header  biz-bg-color">
+        <label>%{formmodeler-component-commandseditor-validation-editor}</label>
+    </div>
+    <div class="bz-fm-actionvalidationeditor ui-light-bevel-border  biz-second-font {{if hasErrors}}bz-fm-hasErrors{{/if}}">
+        <label class="bz-fm-commandseditor-conditions-label biz-highlight-head-color  ui-big-font">%{formmodeler-component-commandseditor-if}</label>
+        <ul class="bz-fm-commandseditor-conditions ui-bevel-border  biz-actions-bar">
+            {{each conditions.expressions}}
+                {{tmpl(this) "#commands-editor-condition"}}   
+            {{/each}}
+            <li class="bz-fm-commandseditor-button-bar">
+                <div {{if conditions.expressions.length == 0 && hasErrors}} class="bz-fm-commandseditor-condition-new bz-fm-hasErrors biz-btn biz-action-btn" {{else}} class="bz-fm-commandseditor-condition-new biz-btn biz-action-btn" {{/if}} title="%{formmodeler-component-commandseditor-click-here-condition}">
+                    <i class="biz-ico bz-fm-commandseditor-icons-simple bz-studio bz-add-tree-condition_16x16_standard"></i><label>%{formmodeler-component-commandseditor-click-here-condition}</label>
+                </div>
+                <div class="bz-fm-commandseditor-icons bz-fm-commandseditor-btn-complex biz-btn biz-action-btn">
+                    <i class="biz-ico bz-fm-commandseditor-icons-complex bz-studio bz-add-tree-condition-group_16x16_standard"></i><label>%{formmodeler-component-commandseditor-click-here-condition-group}</label>
+                </div>
+            </li>
+        </ul>
+        <label class="bz-fm-commandseditor-messages-label biz-highlight-head-color  ui-big-font">%{formmodeler-component-commandseditor-then}</label>
+        <ul class="bz-fm-commandseditor-messages  ui-bevel-border  biz-actions-bar">
+             <li class="bz-fm-commandseditor-message">
+                <span class="bz-fm-commandseditor-message-label  biz-highlight-1-color">%{formmodeler-component-commandseditor-show-message}</span>
+                <span class="bz-fm-commandseditor-message-argument biz-highlight-2-color">
+                    {{if message.length}} 
+                        ${message}
+                    {{else}} 
+                        <label class="bz-fm-state-empty">%{formmodeler-component-commandseditor-message}</label>
+                    {{/if}}
+                </span>
+            </li>
+        </ul>        
+    </div>
+    <div class="bz-fm-commandseditor-buttons biz-actions-bar">
+        <button class="bz-fm-commandseditor-button-ok biz-btn biz-action-btn" type="button" data-action="ok">Ok</button>
+        <button class="bz-fm-commandseditor-button-cancel biz-btn biz-action-btn" type="button" data-action="cancel">%{formmodeler-component-commandseditor-cancel-button}</button>
+    </div>
+</script>
+
+<script id="commands-editor-condition" type="text/x-jquery-tmpl">
+    <li class="bz-fm-commandseditor-condition bz-fm-commandseditor-item" data-guid="${guid}">
+        {{if simple}}
+            <span class="bz-fm-commandseditor-condition-logicOperator biz-highlight-2-color {{if logicOperator === null}} ui-hidden {{/if}}" data-logicOperator="${logicOperator}" data-parent-expression="${parentGuid}">${logicOperator}</span>
+            <span class="bz-fm-commandseditor-condition-xpath biz-highlight-1-color">
+                {{if simple.xpath.label.length}} 
+                    <span class="biz-btn biz-action-btn biz-action-command"> ${simple.xpath.label} <i class="biz-btn-caret"></i></span>
+                {{else}} 
+                    <label class="bz-fm-state-empty biz-btn biz-action-btn">%{formmodeler-component-commandseditor-control} <i class="biz-btn-caret"></i></label>
+                {{/if}}
+            </span>
+            <span class="bz-fm-commandseditor-condition-operator biz-highlight-2-color">
+                {{if simple.operator.label.length}} 
+                    <span class="biz-btn biz-action-btn biz-action-command"> ${simple.operator.label} <i class="biz-btn-caret"></i></span>
+                {{else}} 
+                    <label class="bz-fm-state-empty biz-btn biz-action-btn">%{formmodeler-component-commandseditor-operator} <i class="biz-btn-caret"></i></label>
+                {{/if}}            
+            </span>
+            {{if !simple.operator.isUnary }}
+                <span class="bz-fm-commandseditor-condition-argument biz-highlight-3-color">
+                    {{if !bizagi.util.isEmpty(simple.argument.label)}} 
+                        <span class="biz-btn biz-action-btn biz-action-command"> ${simple.argument.label} <i class="biz-btn-caret"></i></span>
+                    {{else}} 
+                         <label class="bz-fm-state-empty biz-btn biz-action-btn">%{formmodeler-component-commandseditor-argument} <i class="biz-btn-caret"></i></label>
+                    {{/if}}            
+                </span>
+            {{/if}}       
+        {{/if}}
+        {{if complex}}
+            <span class="bz-fm-commandseditor-condition-logicOperator bz-fm-commandseditor-condition-logicOperator-complex biz-highlight-2-color" data-logicOperator="${logicOperator}">${logicOperator}</span>
+            <ul class="bz-fm-commandseditor-conditions bz-fm-commandseditor-complex">
+                {{each complex.conditions.expressions}}
+                    {{tmpl(this) "#commands-editor-condition"}}   
+                {{/each}}
+                <li class="bz-fm-commandseditor-button-bar" data-complex-guid="${guid}" data-parent-expression="${parentGuid}" >
+                    <div class="bz-fm-commandseditor-condition-new biz-btn biz-action-btn" title="%{formmodeler-component-commandseditor-click-here-condition}">
+                        <i class="biz-ico bz-fm-commandseditor-icons-simple bz-studio bz-add-tree-condition_16x16_standard"></i><label>%{formmodeler-component-commandseditor-click-here-condition}</label>
+                    </div>
+                    <span class="bz-fm-commandseditor-icons bz-fm-commandseditor-btn-complex biz-btn biz-action-btn">
+                        <i class="biz-ico bz-fm-commandseditor-icons-complex bz-studio bz-add-tree-condition-group_16x16_standard"></i><label>%{formmodeler-component-commandseditor-click-here-condition-group}</label>
+                    </span>
+                </li>
+            </ul>
+        {{/if}}
+        <i class="biz-ico bz-fm-commandseditor-icons-delete bz-studio bz-delete_16x16_standard"></i>
+    </li>
+</script>
+
+<script id="commands-editor-statement" type="text/x-jquery-tmpl">
+    
+    <li class="bz-fm-commandseditor-statement bz-fm-commandseditor-item  {{if command.hidden}} bz-fm-commandseditor-item-hidden {{/if}}"  data-guid="${guid}">
+        <span class="bz-fm-commandseditor-statement-command biz-highlight-0-color">
+            {{if command.label.length}} 
+                <span class="biz-btn biz-action-btn biz-action-command">${command.label} <i class="biz-btn-caret"></i></span>
+            {{else}} 
+                <label class="bz-fm-state-empty biz-btn biz-action-btn">%{formmodeler-component-commandseditor-command} <i class="biz-btn-caret"></i></label>
+            {{/if}}
+        </span>
+        {{if !command.isOnlyCommand}}
+            {{if !command.isOnlyArgument}}
+                <span class="bz-fm-commandseditor-statement-xpath biz-highlight-1-color">
+                    {{if xpath.label.length}} 
+                        <span class="biz-btn biz-action-btn biz-action-command">${xpath.label} <i class="biz-btn-caret"></i></span>
+                    {{else}} 
+                        <label class="bz-fm-state-empty biz-btn biz-action-btn">%{formmodeler-component-commandseditor-control} <i class="biz-btn-caret"></i></label>
+                    {{/if}}
+                </span>
+            {{/if}}
+            {{if !command.isOnlyArgument && !command.isUnary}}
+                <span class="bz-fm-commandseditor-statement-connector  biz-highlight-2-color">to</span>
+            {{/if}}
+            {{if !command.isUnary}}
+                <span class="bz-fm-commandseditor-statement-argument biz-highlight-3-color">
+                    {{if !bizagi.util.isEmpty(argument.label)}}
+                        <span class="biz-btn biz-action-btn biz-action-command">${argument.label}</span>                   
+                    {{else}} 
+                            <label class="bz-fm-state-empty biz-btn biz-action-btn">%{formmodeler-component-commandseditor-argument} <i class="biz-btn-caret"></i></label>
+                    {{/if}}            
+                </span>
+            {{/if}}
+        {{/if}}
+        <i class="biz-ico bz-fm-commandseditor-icons-delete bz-studio bz-delete_16x16_standard"></i>
+        
+    </li>
+    
+
+</script>
+
+<script id="commands-editor-list" type="text/x-jquery-tmpl">
+    <ul class="bz-fm-commandseditor-list ui-dropDown">
+        {{each list}}
+            {{if currentValue == $index}}
+                <li data-value="${$index}" class="biz-btn-horizontal bz-state-selected ui-option-selected"><span class="biz-btn"> ${$value} </span></li>
+            {{else}}
+                <li data-value="${$index}" class="biz-btn-horizontal"><span class="biz-btn"> ${$value} </span></li>
+            {{/if}}
+            
+        {{/each}}
+    </ul>
+</script>
+
+<script id="commands-editor-controls-list" type="text/x-jquery-tmpl">
+    <ul class="bz-fm-commandseditor-list ui-dropDown">
+        {{each list}}
+            {{if currentValue == $index}}
+                <li data-value = "${$index}" class="biz-btn-horizontal bz-state-selected ui-option-selected">
+                    <div class = "biz-btn">
+                        <i class="biz-ico editor-ico-${$value.type} ${$value.style}"></i>
+                        <span class="bz-editor-control">${$value.label}</span>
+                    </div>
+                </li>                
+            {{else}}
+                <li data-value = "${$index}" class="biz-btn-horizontal">
+                    <div class = "biz-btn">
+                        <i class="biz-ico editor-ico-${$value.type}  ${$value.style}"></i>
+                        <span class="bz-editor-control">${$value.label}</span>
+                    </div>
+                </li>                
+            {{/if}}
+            
+        {{/each}}
+    </ul>
+</script>
+
+
+<script id="commands-editor-argument" type="text/x-jquery-tmpl">
+    <span class="bz-fm-commandseditor-argument">
+        <div class="bz-fm-commandseditor-argument-container">
+            <span class="bz-fm-commandseditor-argument-xpath-name">%{formmodeler-component-commandseditor-argument-xpath-name}</span>
+            <i class="bz-fm-commandseditor-argument-xpath biz-ico xpath-databinding bz-studio bz-modeldata_16x16_standard" title="Select data binding"></i>
+        </div>
+        <div class="bz-fm-commandseditor-argument-container">
+            <div class="bz-fm-commandseditor-argument-editor-name">%{formmodeler-component-commandseditor-argument-editor-name}</div>
+            <span class="bz-fm-commandseditor-argument-editor"></span>
+        </div>
+    </span>
+</script>
+
+<script id="commands-editor-argument-boolean" type="text/x-jquery-tmpl">
+    <span class="bz-fm-commandseditor-argument-boolean">
+        <span {{if value == true}}class="bz-state-selected ui-option-selected"{{/if}} data-value="true">&nbsp;<label>True</label></span>
+        <span {{if value == false}}class="bz-state-selected ui-option-selected"{{/if}} data-value="false">&nbsp;<label>False</label></span>
+    </span>
+</script>
+
+<script id="commands-editor-argument-string" type="text/x-jquery-tmpl">
+    <span class="bz-fm-commandseditor-argument-string">
+        <input type="text" value="${value}" />
+    </span>
+</script>
+
+<script id="commands-editor-argument-textarea" type="text/x-jquery-tmpl">
+    <span class="bz-fm-commandseditor-argument-textarea">
+        <textarea>${value['i18n']['default']}</textarea>
+        <i class="biz-ico bz-fm-commandseditor-argument-localizable bz-studio bz-world_16x16_standard"></i>
+    </span>
+</script>
+
+<script id="commands-editor-argument-date" type="text/x-jquery-tmpl">
+    <span class="bz-fm-commandseditor-argument bz-fm-commandseditor-argument-date">
+        <div></div>
+    </span>
+</script>
+
+<script id="commands-editor-argument-number" type="text/x-jquery-tmpl">
+    <span class="bz-fm-commandseditor-argument-number">
+        <input type="text" value="${value}" />
+    </span>
+</script>
+
+<script id="commands-editor-argument-color" type="text/x-jquery-tmpl">
+    <span class="bz-fm-commandseditor-argument-color">
+        <input type='text' value="${value}" />
+        <span></span>
+    </span>
+</script>
+
+<script id="commands-editor-argument-rule" type="text/x-jquery-tmpl">
+    <span class="bz-fm-commandseditor-argument-rule">
+        {{if value}}
+            <span>Value</span>
+        {{else}}
+            <span>NoValue</span>
+        {{/if}}
+    </span>
+</script>
+
+<script id="commands-editor-argument-interface" type="text/x-jquery-tmpl">
+    <span class="bz-fm-commandseditor-argument-interface">
+        {{if value}}
+            <span>Value</span>
+        {{else}}
+            <span>NoValue</span>
+        {{/if}}
+    </span>
+</script>

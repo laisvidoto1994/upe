@@ -1,0 +1,745 @@
+/*
+    Document   : bizagi.workportal.project.discussions
+    Created on : Ene 27, 2015
+    Author     : Elkin Fernando Siabato Cruz
+    Description:
+        Styles for the "discussions" widget in the project
+*/
+
+
+
+/*Generic*/
+#ui-bizagi-wp-project-dashboard-main {
+    overflow-y: auto;
+}
+
+.ui-bizagi-wp-project-popupform-button {
+    padding: 0.6em 1.2em;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-left: .5em;
+    text-shadow: none;
+    cursor: pointer;
+}
+
+
+
+.ui-bizagi-wp-project-popupform-button-action:disabled {
+    background-color: #7d7d7d;
+    cursor: wait;
+}
+
+
+
+.ui-bizagi-wp-project-discussions-item-comment-summary-wrapper {
+    position: relative;
+    padding: 1em;
+    margin: 0.4em 0 1em 6em;
+}
+
+.ui-bizagi-wp-project-discussions-item-comment-summary-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    border-bottom: 24px solid transparent;
+}
+
+
+.ui-bizagi-wp-project-discussions-item-reply-summary {
+    display: block;
+    height: 78px;
+    overflow-y: hidden;
+}
+
+.ui-bizagi-wp-project-discussions-item-user, .ui-bizagi-wp-project-discussions-item-comment-user {
+    float: left;
+    text-align: center;
+}
+
+.ui-bizagi-wp-project-discussions-item-user > img, .ui-bizagi-wp-project-discussions-item-comment-user > img {
+
+}
+
+
+
+.ui-bizagi-wp-project-container-validator-relative {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+/*End generic*/
+
+/*Home*/
+
+#home-project-discussions-wrapper{
+    position: relative;
+}
+
+#home-project-discussions-wrapper .ui-bizagi-wp-action-new{
+    float: left;
+}
+
+#home-project-discussions-wrapper .ui-bizagi-wp-action-new a{
+    cursor: pointer;
+    margin-right: 0px;
+}
+
+#home-project-discussions-wrapper .ui-bizagi-wp-action-new a:hover{
+    text-decoration: none;
+}
+
+#home-project-discussions-wrapper .ui-bizagi-wp-filter-tags{
+    float: right;
+    overflow: hidden;
+}
+
+#home-project-discussions-wrapper .ui-bizagi-wp-filter-tags .multiselect{
+    margin: 0 auto;
+    width: 270px;
+}
+
+
+#home-project-discussions-wrapper .ui-bizagi-wp-filter-tags .multiselect .k-widget.k-multiselect.k-header{
+    width: 100%;
+    color: #565656;
+    border: 1px solid gainsboro;
+}
+
+#home-project-discussions-wrapper .ui-bizagi-wp-filter-tags .multiselect input{
+    color: #565656;
+    height: 30px;
+    padding-left: 12px;
+}
+
+#home-project-discussions-wrapper .ui-bizagi-wp-filter-tags .multiselect li{
+    line-height: 29px;
+}
+.ui-bizagi-wp-project-discussions-header {
+    overflow: hidden;
+}
+
+.ui-bizagi-wp-project-discussions-h3 {
+    float: left;
+    font-size: 24px;
+    margin: 0;
+}
+
+.ui-bizagi-wp-project-popupform-h4 {
+    font-size: 1.5em;
+    margin: 1em 1.5em .5em;
+    color: #374C58;
+}
+
+.ui-bizagi-wp-project-popupform-user-image {
+    height: 48px;
+    width: 48px;
+    border: 1px solid #DDD;
+    border-radius: 100%;
+}
+
+.ui-bizagi-wp-project-popupform-field-name {
+    font-size: 1.4em;
+}
+
+.ui-bizagi-wp-project-popupform-field-name.field-title{
+    margin-bottom: 30px;
+}
+
+.ui-bizagi-wp-project-discussions-list {
+    width: 86%;
+    margin: 0 auto;
+}
+
+.ui-bizagi-wp-project-discussions-sidebar-right {
+    width: 150px;
+}
+
+
+/*End Home*/
+
+/*Popup discussion*/
+.ui-bizagi-wp-project-popupform-form .bz-bizagi-wp-project-discussions-attachment-filename {
+    width: auto !important;
+}
+
+.ui-bizagi-wp-project-popupform-form > table {
+    width: 100%;
+}
+
+.ui-bizagi-wp-project-popupform-form > table tr {
+    border: 10px solid transparent;
+}
+
+.ui-bizagi-wp-project-popupform-form .first-column {
+    width: 89px;
+    text-align: right;
+    padding-right: 8px;
+}
+
+#project-popupform-wrapper-discussion tr:first-child .ui-bizagi-wp-project-container-validator-relative {
+    margin-bottom: 0;
+}
+
+.ui-bizagi-wp-project-popupform-field-name.field-description {
+    display: block;
+    font-size: 12px;
+    color: #999;
+}
+
+.ui-bizagi-wp-project-discussions-popupform-textarea {
+    box-sizing: border-box;
+    overflow: auto;
+    width: 100%;
+    height: 70px;
+    resize: none;
+    border-radius: 4px;
+    border-color: #DDD;
+    padding: .8em 6em .8em .8em;
+    background: #FAFAFA;
+    color: #374C58;
+    line-height: 1.4;
+}
+
+.ui-bizagi-wp-project-popupform-actions {
+
+    text-align: right;
+    padding-top: 1em;
+}
+
+#project-popupform-wrapper-discussion .ui-bizagi-wp-project-popupform-actions {
+    padding-right: 19px;
+}
+
+/*En Popup discussion*/
+
+/*List discussions*/
+
+.ui-bizagi-wp-project-discussions-item {
+    margin-bottom: 21px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.ui-bizagi-wp-project-discussions-item-summary {
+}
+
+.ui-bizagi-wp-project-discussions-item-summary > h1 {
+    padding: .5em 0;
+    border-bottom: 1px solid #DDD;
+    margin: 10px 0 0;
+    font-size: 1.5em;
+    color: #374C58;
+}
+
+.ui-bizagi-wp-project-discussions-item-summary > h1 > img {
+    height: 30px;
+    vertical-align: middle;
+    width: 30px;
+}
+
+.ui-bizagi-wp-project-discussions-item-summary > h1 > span {
+    vertical-align: middle;
+}
+
+.ui-bizagi-wp-project-discussions-item-actions {
+    float: right;
+}
+
+.ui-bizagi-wp-project-discussions-item-actions .bz-wp-avatar {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ui-bizagi-wp-project-discussions-created-by-user-image {
+    vertical-align: middle;
+}
+
+.ui-bizagi-wp-project-discussions-container-description .ui-bizagi-wp-project-discussions-description {
+    color: #999; /*Necessary for ellipsis*/
+    display: block;
+    line-height: 1.5;
+    margin-bottom: 1em;
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+/*End List Comments*/
+
+/*Create Comments*/
+.ui-bizagi-wp-project-discussions-add-comment {
+    padding-left: 72px;
+    position: relative;
+}
+
+.ui-bizagi-wp-project-discussions-add-comment textarea {
+    overflow: auto;
+    width: 100%;
+    min-height: 48px;
+    border-radius: 4px;
+    border-color: #DDD;
+    resize: none;
+    padding: .8em 6em .8em .8em;
+    background: #FAFAFA;
+    color: #262d33;
+    line-height: 1.5em;
+}
+
+/*End create reply*/
+
+/*Attach Files*/
+.ui-bizagi-wp-project-discussions-attachments-cmmtwrapper {
+    margin: 0 0 0.4em 6em;
+}
+
+.ui-bizagi-wp-project-discussions-attachments-discwrapper {
+}
+
+.ui-bizagi-wp-project-discussion-textwrapper {
+    position: relative;
+    padding-top: 0.4em;
+}
+
+.ui-bizagi-wp-project-discussions-attachments-cmnwrapper {
+
+    margin: 0;
+}
+
+.ui-bizagi-wp-project-discussions-attachments-cmnwrapper .bz-bizagi-wp-project-discussions-attachment-delete,
+.bz-bizagi-wp-project-discussions-attachment-itemwrapper,
+.ui-bizagi-wp-project-attachments-list span,
+.ui-bizagi-wp-project-comments-item-reply > div {
+    display: inline-block;
+}
+
+.ui-bizagi-wp-project-discussions-add-attachments {
+    position: absolute;
+    top: 2px;
+    right: 6px;
+}
+
+.ui-bizagi-wp-project-discussions-add-attachments .k-dropzone {
+    padding: 0;
+}
+
+.ui-bizagi-wp-project-discussions-add-attachments .k-upload-button {
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    min-width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    background: none;
+    color: #999;
+    font: normal 32px/1 "bizagi-font";
+    vertical-align: middle;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    box-shadow: none;
+}
+
+.ui-bizagi-wp-project-discussions-add-attachments .k-upload-button:hover {
+    color: #374C58;
+}
+
+
+
+.ui-bizagi-wp-project-discussions-add-attachments .k-upload-button::before {
+    content: "\e1088";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -16px;
+    margin-left: -16px;
+}
+
+.ui-bizagi-wp-project-discussions-add-attachments .k-dropzone em {
+    display: none;
+}
+
+.ui-bizagi-wp-project-discussions-add-attachments .k-state-disabled .k-upload-button:hover {
+    background: transparent url("https://cdn0.iconfinder.com/data/icons/iconsweets2/40/paper_clip_attachment.png") no-repeat 0px -4px;
+}
+
+.ui-bizagi-wp-project-discussions-add-attachments .k-widget {
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+}
+
+.ui-bizagi-wp-project-discussions-add-attachments .k-upload-button:active {
+    background-color: transparent;
+}
+
+.ui-bizagi-wp-project-discussions-add-attachments .k-upload-button span,
+.ui-bizagi-wp-project-discussions-add-attachments button.k-upload-selected,
+.ui-bizagi-wp-project-discussions-add-attachments .k-upload-status-total {
+    display: none;
+}
+
+.ui-bizagi-wp-project-attachments-list {
+    overflow: auto;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.ui-bizagi-wp-project-attachments-list > li {
+    cursor: pointer;
+}
+
+.ui-bizagi-wp-project-attachments-list > li i {
+    vertical-align: middle;
+}
+
+.ui-bizagi-wp-project-attachments-list .bz-icon-plan {
+    margin-right: 0.1em;
+}
+
+.ui-bizagi-wp-project-attachments-list .bz-bizagi-wp-project-discussions-attachment-filename {
+    margin-right: 0.25em;
+}
+
+.bz-bizagi-wp-project-icon-16x16 {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+}
+
+.bz-bizagi-wp-project-discussions-attachment-delete {
+
+    cursor: pointer;
+    display: none;
+
+}
+
+
+
+
+.ui-bizagi-wp-project-attachments-list .bz-bizagi-wp-project-discussions-attachment-filename {
+
+}
+
+.ui-bizagi-wp-project-attachments-list li {
+    float: left;
+    padding: 0.4em;
+    border-radius: 4px;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+
+
+}
+
+.ui-bizagi-wp-project-attachments-list li:hover,
+.ui-bizagi-wp-project-attachments-list li:active {
+
+}
+
+.ui-bizagi-wp-project-attachments-list li > .fa-file,
+.ui-bizagi-wp-project-attachments-list li > span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.k-notification-attcherror.k-group, .k-notification-bannedfiles.k-group {
+    background: rgb(100%, 0%, 0%);
+    color: #ffffff;
+}
+
+.k-notification-attcherror, .k-notification-bannedfiles {
+    min-width: 350px;
+    max-width: 400px;
+    min-height: 100px;
+}
+
+.k-notification-attcherror img, .k-notification-bannedfiles img {
+    float: left;
+    margin: 30px 15px 30px 30px;
+}
+
+.k-notification-attcherror h3, .k-notification-bannedfiles h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+    padding: 20px 0px 0px 0px;
+    max-width: 265px;
+    overflow: hidden;
+    white-space: pre-line;
+}
+
+.k-notification-attcherror ul > li, .k-notification-bannedfiles ul > li {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.k-notification-attcherror ul, .k-notification-bannedfiles ul {
+    padding: 0;
+    margin: 5px;
+    list-style: none;
+    max-height: 80px;
+    overflow: auto;
+}
+
+/*End Attach Files*/
+
+/*Popup*/
+#project-popupform-wrapper-discussion {
+    display: none;
+    padding: 0;
+    background: transparent;
+}
+
+#project-popupform-wrapper-discussion form {
+    margin: 5px 10px 10px;
+}
+
+#project-popupform-wrapper-discussion .ui-bizagi-wp-project-container-validator-relative
+{
+    position: relative;
+}
+
+#project-popupform-wrapper-discussion .ui-bizagi-wp-project-container-validator-relative span
+{
+    bottom: -19px;
+    left: 0px;
+    position: absolute;
+}
+
+#project-popupform-wrapper-discussion .ui-bizagi-wp-project-discussion-textwrapper .position-message-validate > span
+{
+    display: block;
+    margin-top: -8px;
+}
+
+.ui-bizagi-wp-project-discussions-popupform-input {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 32px !important;
+    padding: 0.8em !important;
+    border-color: #DDD !important;
+    border-radius: 4px !important;
+    background: #FAFAFA !important;
+    font-size: 12px;
+    color: #374C58;
+}
+
+    .ui-bizagi-wp-project-discussions-popupform-input.k-multiselect {
+        border:1px solid #C6CACC;
+        padding:8px 5px 5px !important;
+    }
+
+.ui-bizagi-wp-project-discussions-popupform-input.k-multiselect .k-multiselect-wrap {
+    background:transparent;
+}
+
+.ui-bizagi-wp-project-discussions-options {
+    border-bottom: 1px dashed #CCC;
+    margin-top: 10px;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.ui-bizagi-wp-project-discussions-options .option {
+    float: left;
+    margin-right: 10px;
+}
+
+.ui-bizagi-wp-project-discussions-options .option label {
+    color: #606060 !important;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 22px !important;
+    margin-bottom: 5px;
+}
+
+.ui-bizagi-wp-project-discussions-options .option.notify-email {
+    width: 101px;
+}
+
+.ui-bizagi-wp-project-discussions-options .option.notify-email > div {
+    margin-top: 6px;
+}
+
+.ui-bizagi-wp-project-discussions-options .option.category {
+    width: 220px;
+}
+
+.ui-bizagi-wp-project-discussions-options .option.privacy {
+    width: 150px;
+}
+
+.ui-bizagi-wp-project-discussions-options .option.privacy > div {
+    margin-top: 6px;
+}
+
+.ui-bizagi-wp-project-discussions-options .option.files {
+    width: 108px;
+    margin-right: 0px;
+}
+
+.ui-bizagi-wp-project-discussions-options .option.files > div {
+    margin-top: 6px;
+}
+
+.ui-bizagi-wp-project-discussions-actions {
+    margin-top: 20px;
+}
+
+/*End Popup*/
+
+/*Plugin Multiselect*/
+.k-multiselect-wrap.k-floatwrap {
+    font-size: 1.2em;
+}
+/*End plugin Multiselect*/
+
+.ui-bizagi-wp-project-comments-item-reply {
+    padding: 22px 0px;
+    clear: both;
+}
+
+.ui-bizagi-wp-project-comments-item-reply-text {
+    float: left;
+    width: 80%;
+    padding: 5px;
+}
+
+.ui-bizagi-wp-project-comments-item-reply-date {
+    position: absolute;
+    right: 50px;
+}
+
+.ui-bizagi-wp-project-discussions-comment-buttons-wrapper {
+    display: none;
+    float: right;
+
+}
+
+.ui-bizagi-wp-project-discussions-comment-buttons-share {
+    padding: 0.6em 1.2em;
+    border: none;
+    border-radius: 4px;
+    margin-left: .5em;
+
+    text-shadow: none;
+    cursor: pointer;
+}
+
+.ui-bizagi-wp-project-discussions-comment-buttons-share:hover,
+.ui-bizagi-wp-project-discussions-comment-buttons-share:active {
+    border-color: #4F6C7D;
+    background: #4F6C7D;
+}
+
+.ui-bizagi-wp-project-discussions-comment-buttons-cancel {
+    padding: 0.6em 1.2em;
+    border-radius: 4px;
+    text-shadow: none;
+    cursor: pointer;
+}
+
+.ui-bizagi-wp-project-discussions-item-comment {
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    padding: 1em 0;
+}
+
+.ui-bizagi-wp-project-discussion-comment-list .ui-bizagi-wp-project-discussions-item-comment {
+    border-bottom: 1px solid #EEE;
+}
+
+.ui-bizagi-wp-project-discussion-comment-list .ui-bizagi-wp-project-discussions-item-comment:last-child {
+    border-bottom: none;
+}
+
+
+
+.ui-bizagi-wp-project-discussion-delete {
+    position: absolute;
+    top: 24px;
+    right: 12px;
+    cursor: pointer;
+}
+
+
+
+.ui-bizagi-wp-project-discussion-showmore-comments {
+    text-align: center;
+    padding: 1.5em 0;
+    border-top: 1px solid #DDD;
+    margin: 1.5em 0;
+}
+
+
+
+/*End Plugin Validator Kendo*/
+
+/* New Comments */
+
+.ui-bizagi-wp-project-discussions-comment-complete, .ui-bizagi-wp-project-discussions-comment-truncate {
+    word-wrap: break-word;
+    white-space: pre-line;
+}
+
+.ui-bizagi-wp-project-discussions-comment-shortcomment .ui-bizagi-wp-project-discussions-comment-complete {
+    display: none;
+    white-space: pre-line;
+}
+
+.ui-bizagi-wp-project-discussions-comment-longcomment .ui-bizagi-wp-project-discussions-comment-truncate {
+    display: none;
+}
+
+.ui-bizagi-wp-project-discussions-comment-view {
+    padding: 0 0 0 5px;
+    word-break: normal;
+    text-decoration: underline;
+}
+
+.ui-bizagi-wp-project-discussion-showmore-comments div {
+    color: #999;
+}
+
+.ui-bizagi-wp-project-discussion-showmore-no-more-comments, .ui-bizagi-wp-project-discussion-showmore-loading-comments {
+    display: none;
+}
+
+.bz-wp-discussion-user {
+    margin-bottom: 0.4em;
+}
+
+.bz-wp-discussion-username {
+    margin-right: 0.4em;
+}
+
+
+
+/*Responsive design*/
+@media screen and (min-width: 1500px) {
+    .ui-bizagi-wp-project-discussions-container-description-and-comments {
+        overflow: hidden;
+    }
+
+    .ui-bizagi-wp-project-discussions-container-comments {
+    }
+}
+
+.ui-bizagi-wp-project-popupform-scroll {
+    max-height: 345px;
+    overflow: auto;
+}
+
+.ui-bizagi-wp-project-popupform-user .bz-wp-avatar{
+    float:right;
+    margin-top:-10px;
+}
+.ui-bizagi-wp-project-popupform-user label.bz-wp-avatar-label{
+    top:13px;
+}
+.ui-bizagi-wp-project-discussions-item-user{
+    margin-top:30px;
+}

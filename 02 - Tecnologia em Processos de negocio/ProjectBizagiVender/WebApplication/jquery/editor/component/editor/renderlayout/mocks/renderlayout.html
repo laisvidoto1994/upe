@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Editor renderlayout (Layout)</title>
+        <meta charset="uft-8" />
+        <link rel="stylesheet" href="../../../../../common/jquery.ui/css/desktop/jquery.ui.css" />
+        <style>
+            .editor-renderlayout .editor-renderlayout-open
+            {
+                background: transparent url("arrow-down.png") no-repeat center left;
+                padding-left: 14px;
+                width: 86px;
+            }
+            .editor-renderlayout .editor-renderlayout-close
+            {
+                background: transparent url("arrow-right.png") no-repeat center left;
+                padding-left: 14px;
+                width: 86px;
+            }
+            .editor-renderlayout label
+            {
+                width: 100px;
+                display: inline-block;
+            }
+            .editor-renderlayout
+            {
+                border: solid 1px black;
+                width: 300px;
+                border-radius: 4px;
+                background-color: gainsboro;
+            }
+            .editor-renderlayout > .editor-renderlayout-group
+            {
+                background-color: cornsilk;
+            }
+            .editor-renderlayout > label, .editor-renderlayout > span
+            {
+                vertical-align: middle;
+            }
+            .editor-renderlayout [class^="editor-image-small-"]
+            {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+            }
+            .editor-renderlayout .editor-image-small-renderlayout-popup
+            {
+                background: transparent url("popup.png") no-repeat center center;
+            }
+            
+            
+            
+            .editor-renderlayout-popup [class^="editor-image-small-"]
+            {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+            }
+            .editor-renderlayout-popup .editor-image-small-renderlayout-close
+            {
+                background: transparent url("close.png") no-repeat center center;
+            }
+            .editor-renderlayout-popup {
+                border: solid 1px black;
+                border-radius: 4px;
+                width: 350px;
+                text-align: center;
+                background-color: gainsboro;
+                position: relative;
+                padding: 20px 16px 8px 16px;
+            }
+            .editor-renderlayout-popup > span {
+                position: absolute;
+                top: 4px;
+                right: 4px;
+            }
+            .editor-renderlayout-popup > .editor-renderlayout-group {
+                border: solid 1px blue;
+                border-radius: 4px;
+                text-align: left;
+                padding: 4px;
+                background-color: aliceblue;
+            }
+            .editor-renderlayout-popup > .editor-renderlayout-group label {
+                display: inline-block;
+                width: 150px;
+            }
+            .editor-renderlayout-popup > .editor-renderlayout-buttons > span {
+                display: inline-block;
+                width: 100px;
+                border: solid 1px blue;
+                border-radius: 4px;
+                margin-top: 4px;
+                background-color: aliceblue;
+            }
+            .editor-renderlayout-popup.editor-renderlayout-close {
+                display: none;
+            }
+            .editor-renderlayout-popup.editor-renderlayout-open {
+                display: block;
+            }
+            
+            .editor-renderlayout > span.editor-image-small-renderlayout-popup:hover,
+            .editor-renderlayout-popup > span.editor-image-small-renderlayout-close,
+            .editor-renderlayout-popup > .editor-renderlayout-buttons > span
+            {
+                cursor: pointer;
+            }
+            
+            
+            
+            
+#container-splitter {
+width: 400px;
+border: solid 1px black;
+line-height: 30px;
+margin: 20px;
+text-align: center;
+}
+#container-splitter > div {
+display: inline-block;
+border: solid 1px transparent;
+/*height: 80px;*/
+vertical-align: middle;
+width: 130px;
+position: relative;
+}
+#container-splitter > .container-box1 {
+    left: 60px;
+}
+#container-splitter > .container-box2 {
+    right: 60px;
+}
+#container-splitter > div > div {
+display: inline-block;
+border: solid 1px black;
+height: 30px;
+vertical-align: middle;
+width: 60px;
+max-width: 120px;
+overflow: hidden;
+}
+#container-splitter > .separator {
+width: 110px;
+height: 60px;
+max-width: none;
+/*border: solid 1px black;*/
+}
+#container-splitter > .separator > span {
+display: inline-block;
+/*border: solid 1px transparent;*/
+width: 3px;
+height: 60px;
+background-color: black;
+z-index: 10;
+}
+#container-splitter > .separator > span:hover {
+    cursor: col-resize;
+}
+            
+        </style>
+        <script src="../../../../../common/base/js/lib/jquery.js"></script>
+        <script src="../../../../../common/jquery.ui/js/desktop/jquery.ui.js"></script>
+        <script>
+            $(document).ready(function() {
+                
+                $(".editor-renderlayout > label").click(function() {
+                    $(this).toggleClass("editor-renderlayout-open").toggleClass("editor-renderlayout-close");
+                    $(".editor-renderlayout > .editor-renderlayout-group").slideToggle();
+                });
+                
+                $(".editor-renderlayout > span:eq(1)").click(function() {
+                    $(".editor-renderlayout-popup").removeClass("editor-renderlayout-close").addClass("editor-renderlayout-open");
+                });
+                
+                $(".editor-renderlayout-popup > span:eq(0)").click(function() {
+                    $(".editor-renderlayout-popup").removeClass("editor-renderlayout-open").addClass("editor-renderlayout-close");
+                });
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main-container">
+            
+            <div class="editor editor-renderlayout">
+                <label class="editor-renderlayout-open">Layout</label>
+                <span class="editor-renderlayout-value">[ 30, 70 ]</span>
+                <span class="editor-image-small-renderlayout-popup"></span>
+                <div class="editor-renderlayout-group">
+                    <div>
+                        <label>Label Width</label>
+                        <input type="text" value="30" />
+                    </div>
+                    <div>
+                        <label>Control Width</label>
+                        <input type="text" value="70" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="editor-renderlayout-popup editor-renderlayout-close">
+                <span class="editor-image-small-renderlayout-close"></span>
+                <div class="editor-renderlayout-group">
+                    <div>
+                        <label>Label Width</label>
+                        <input type="text" value="30" />
+                    </div>
+                    <div>
+                        <label>Control Width</label>
+                        <input type="text" value="70" />
+                    </div>
+                </div>
+                <div class="editor-renderlayout-buttons">
+                    <span>OK</span>
+                    <span>Cancel</span>
+                </div>
+            </div>
+            
+            <script>
+                $(document).ready(function() {
+                    $("#container-splitter .separator span").draggable({
+                        axis : "x",
+                        containment : "parent",
+                        cursor : "col-resize",
+                        drag : function(event, ui) {
+                            var pWidth = $(this).parent().width(); // parent width
+                            var minus = ui.offset.left - $(this).parent().offset().left;
+                            var sWidth = $(this).width() - 1; // separator width
+                            var realWidth = pWidth - sWidth; // real width container
+                            
+                            var porcentaje1 = parseInt((minus / realWidth) * 100);
+                            var porcentaje2 = 100 - porcentaje1;
+                            var maxWidthBoxes = 120;
+                            
+                            var widthBox1 = parseInt((maxWidthBoxes * porcentaje1)/100);
+                            var widthBox2 = parseInt((maxWidthBoxes * porcentaje2)/100);
+                            $(".box1").text(porcentaje1 + "%").width(widthBox1);
+                            $(".box2").text(porcentaje2 + "%").width(widthBox2);
+                            
+                            //console.info("PuntoReal: " + minus + ", AnchoSep: " + sWidth + ", AnchoReal: " + realWidth + ", Porc1: " + porcentaje1 + ", Porc2: " + porcentaje2);
+                        }
+                    });
+                });
+            </script>            
+            <div id="container-splitter">
+                <div class="container-box1">
+                    <div class="box1">50%</div>
+                </div>
+                <div class="separator">
+                    <span></span>
+                </div>
+                <div class="container-box2">
+                    <div class="box2">50%</div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

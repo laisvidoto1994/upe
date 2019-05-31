@@ -1,0 +1,26 @@
+#modal-about-wrapper {
+	height: 170px !important;
+    margin: 1em auto;
+    overflow: hidden;
+}
+
+#modal-about-wrapper #modal-about-content {
+	height: 100%;
+    overflow: hidden;
+}
+
+#modal-about-wrapper .logo {
+    background: url(../desktop/images/logobizagi.png) no-repeat transparent;
+	height: 82px;
+	width: 206px;
+}
+
+#modal-about-wrapper .content {
+	position: relative;
+	width: 100%;
+	text-align: right;
+}
+
+#modal-about-wrapper .content span {
+	display: block;
+}

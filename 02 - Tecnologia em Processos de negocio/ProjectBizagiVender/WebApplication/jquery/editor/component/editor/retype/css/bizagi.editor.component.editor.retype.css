@@ -1,0 +1,35 @@
+/********
+* Filename: bizagi.editor.component.editor.retype.css
+* Create Date: 2012-06-26
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__retype
+*
+********/
+
+/* __retype
+--------*/
+
+.bizagi_editor_component_editor_retype .retype-group-container{
+	width:85%;
+}
+
+.bizagi_editor_component_editor_retype .ui-bizagi-editor-uiControls-comboBox [class^="ui-comboBox-image-large-"]{
+	
+}
+
+
+.bizagi_editor_component_editor_retype .ui-bizagi-editor-uiControls-comboBox  .ui-comboBox-image-large-duplicate
+{
+   
+}
+
+.bizagi_editor_component_editor_retype .ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-double
+{
+     
+}
+
+.bizagi_editor_component_editor_retype .ui-bizagi-editor-uiControls-comboBox  .ui-comboBox-image-large-none
+{
+     
+}

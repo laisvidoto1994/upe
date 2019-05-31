@@ -1,0 +1,104 @@
+<script id="ui-bz-mobile-searchlist-control" type="text/x-kendo-template">
+    <div class="bz-rn-align-class bz-rn-container-searchlist">
+        <ul>
+            # $.each (data.value, function (i, item) { #
+            <li class="bz-rn-regular-element" data-id=#= item.id #>
+                <label>#= item.value #</label>
+                <div class="bz-rn-remove-tag-on-search-list bz-rn-searchlist-control-remove-section"><a class="removeItem bz-mo-icon bz-cancel bz-rn-searchlist-control-remove-section"></a></div>
+            </li>
+            #});#
+            <li class="bz-rn-click-to-add-span #if(data.value.length > 0){#hidden#}#">%{render-ecm-tooltip-edit}</li>
+        </ul>
+        <div class="bz-rn-searchlist-search-icon bz-rn-last-child">
+            <span class="bz-wp-searchlist-search-icon-list-2 bz-mo-icon bz-search"></span>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bz-wp-popup-searchlist-control" type="text/x-kendo-template">
+    <div data-role="modalview" class="bz-wp-modalview-container" dir="#if (typeof data.orientation !== 'undefined'){ ##= data.orientation ##}else{#auto#}#" style="width: 50%; height: 100%">
+        <div data-role="header">
+            <div id="filter-header" class="bz-rn-new-modalview-header-styles" data-role="navbar">
+                <div class="bz-wp-modalview-header-top-item">
+                    <span class="bz-wp-modalview-title">#if(data.displayName != ""){#
+                            #= data.displayName #
+                        #}else{#
+                            Combo
+                        #}#
+                    </span>
+                    <span class="bz-wp-modalview-close bz-mo-icon bz-cancel"></span>
+                </div>
+                <div class="bz-wp-modalview-header-bottom-item">
+                    <input class="bz-wp-modalview-header-input-search" type="text" placeholder="%{render-search-list-message}" />
+                    <span class="bz-wp-modalview-header-search-icon bz-mo-icon bz-search"></span>
+                    <span class="bz-mo-icon bz-circle-cross-full bz-wp-modalview-header-cancel-search"></span>
+                </div>
+                <div class="filter-searchlist-modal-view-tags">
+                    # if(data.items.length > 0){ #
+                    <ul>
+                        # $.each (data.items, function (i, item) { #
+                        <li data-id="#= item.id #">
+                            <label>#= item.value #</label>
+                            <div class="bz-rn-remove-tag-on-search-list bz-rn-searchlist-control-remove-section"><a class="removeItem bz-mo-icon bz-cancel bz-rn-searchlist-control-remove-section"></a></div>
+                        </li>
+                        #}); #
+                    </ul>
+                    #}else{#
+                    <ul>
+                        <li class="bz-rn-any-element">--</li>
+                    </ul>
+                    #}#
+                </div>
+            </div>
+        </div>
+
+        <div id="ui-bizagi-wp-filter-results-searchlist-wrapper" class="bz-rn-new-modalview-content-styles">
+            <ul class="ui-bizagi-render-list-elements">
+                <li class="bz-rn-default-item-searchlist">
+                    <div class="bz-rn-no-results-yet-div">%{workportal-widget-inboxcommon-no-results-found}</div>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="footer">
+            <div id="filter-footer" data-role="navbar">
+                <button class="ui-bizagi-apply-button-searchlist right-button" type="button">%{workportal-general-button-label-apply}</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bz-wp-searchlist-control-modalview-auxiliary-templates" type="text/x-kendo-template">
+    <div id="bz-rn-auxiliary-templates">
+        #if(data.template == "modalViewDefaultValue"){#
+            <li class="bz-rn-any-element">--</li>
+        #}else if(data.template == "fullElement"){#
+            <li class="bz-rn-regular-element" data-id=#= data.id #>
+                <label>#= data.value #</label>
+                <div class="bz-rn-remove-tag-on-search-list bz-rn-searchlist-control-remove-section"><a class="removeItem bz-mo-icon bz-cancel bz-rn-searchlist-control-remove-section"></a></div>
+            </li>
+        #}else if(data.template == "sugestions"){#
+            # $.each (data.items, function (i, item) { #
+                <li data-id="#= item.id #">
+                    <label>#= item.label #</label>
+                </li>
+            #});#
+        #}else if(data.template == "modalViewDefaultMessage"){#
+            <li class="bz-rn-default-item-searchlist"><div class="bz-rn-no-results-yet-div">#=data.message#</div></li>
+        #}#
+    </div>
+</script>
+
+<script id="ui-bz-wp-searchlist-control-input-auxiliary-templates" type="text/x-kendo-template">
+    <div id="bz-rn-auxiliary-templates">
+        #if(data.template == "inputContainer"){#
+            # $.each (data.value, function (i, item) { #
+                <li class="bz-rn-regular-element" data-id=#= item.id #>
+                    <label>#= item.value #</label>
+                    <div class="bz-rn-remove-tag-on-search-list bz-rn-searchlist-control-remove-section"><a class="removeItem bz-mo-icon bz-cancel bz-rn-searchlist-control-remove-section"></a></div>
+                </li>
+            #}); #
+            <li class="bz-rn-click-to-add-span #if(data.value.length > 0){#hidden#}#">%{render-ecm-tooltip-edit}</li>
+        #}#
+    </div>
+</script>

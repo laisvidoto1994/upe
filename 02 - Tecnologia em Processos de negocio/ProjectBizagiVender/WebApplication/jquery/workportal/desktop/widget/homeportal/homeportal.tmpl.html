@@ -1,0 +1,37 @@
+﻿﻿﻿<script id="homeportal-frame" type="text/x-jsrender" >
+    <div>
+        <div id="ui-bizagi-wp-project-homeportal-main" class="bz-wp-main-wrapper">
+
+            <!-- bz-wp-left-sidebar -->
+            <div id="left-sidebar-wrapper" class="bz-wp-left-sidebar">
+                <div id="contentLinks" class="proc" {{loading /}} {{adjustable /}} >
+                    <div id="home-links" {{loading /}} {{layout "leftsidebar" /}}></div>
+                </div>
+            </div>
+
+            <!-- bz-wp-right-sidebar -->
+            <div id="right-sidebar-wrapper" class="bz-wp-right-sidebar">
+                <div {{loading /}} {{layout "contentrightsidebar" /}}></div>
+            </div>
+
+            <!-- bz-wp-content -->
+            <div id="content-wrapper" class="bz-wp-content content-scroll" {{adjustable /}}>
+                <div class="content-portal">
+
+                    <!-- bz-wp-breadcrumb -->
+                    <div class="bz-wp-breadcrumb">
+                        <div id="navigation-panel" {{layout "navigator" /}}></div>
+                    </div>
+
+                    <!-- content -->
+                    <div id="home-content" {{layout "content" /}} {{loading /}} ></div>
+                </div>
+            </div>
+
+            <div style="clear:both;"></div>
+        </div>
+
+        <iframe id="project-dashboard-download" width="0" height="0">
+        </iframe>
+    </div>
+</script>

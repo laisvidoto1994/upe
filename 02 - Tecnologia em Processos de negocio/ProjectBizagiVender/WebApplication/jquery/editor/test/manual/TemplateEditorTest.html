@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html debug="true">
+<head>
+    <title>Template Editor</title>
+    <style type="text/css">
+        #floating-buttons
+            {
+                position: absolute;
+                background-color: white;
+                z-index: 9999;
+                right: 0px;
+                top: 0px;
+                width: auto;
+                padding: 5px 10px;
+                border: 1px solid lightgray;
+                opacity: 0.1;
+            }        
+            #floating-buttons button
+            {
+                position: relative;
+                border: 1px solid lightgray;
+                border-radius: 6px;
+                padding: 2px 8px;
+                background-color: lightYellow;
+                cursor:pointer;
+            }
+            #json-code-editor{
+                display: none;
+            }
+            #json-code-editor textarea {
+                height: 99%;
+                width: 100%;
+            }
+    </style>
+    <script type='text/javascript' src='../../../../jquery/steal.js'></script>
+    <script type='text/javascript' src='../../../../jquery/bizagi.loader.js'></script>
+    <script type="text/javascript">
+        //Redefine path base. To the default site
+        var BIZAGI_PATH_TO_BASE = "../../../../";
+        var BIZAGI_SERVICE_ACTIVATION = false;
+        var BIZAGI_LOCAL_RESOURCES = true;
+        var BIZAGI_ENVIRONMENT = 'debug';
+        var BIZAGI_ACTION_VALIDATIONS_IMPR = false;
+        var BIZAGI_EDITOR_TEST = true;
+        var BIZAGI_IDENTIFIER_MODEL = '';
+        var BIZAGI_USER = '';
+        var BIZAGI_URL_REST_SERVICES = '';
+
+        //Gets the loader instance, and load the module(formmodeller)
+        var loader = bizagi.loader;
+        loader.init(function () {
+            loader.start('formModeler')
+                .loadFile('jquery/editor/test/manual/js/templateeditor.test.js');
+        });
+
+    </script>
+</head>
+<body>
+        <div id="floating-buttons">
+        <button type="button" id="btnLoad"> Load</button>
+        <button type="button" id="btnSave"> Save</button>
+    </div>
+    <div id="json-code-editor">
+        <textarea rows="0" cols="0" id="json-text-code" >
+        </textarea>
+    </div>
+</body>
+</html>

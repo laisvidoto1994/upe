@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <link href="../../../../../jquery/common/bizagi.grid/test/css/gridConcept.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../../jquery/common/base/css/tablet/bizagi.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../../jquery/common/jquery.ui/css/desktop/jquery.ui.css" rel="stylesheet" type="text/css" />
+    <title>Grid Concept</title>
+</head>
+<body>
+    <div id="pcPanel" class="panel">
+        <div><h3> Desktop look</h3></div>
+        <br>
+        <div><h2> Normal grid</h2></div>
+        
+        <div class="ui-bizagi-grid ui-widget-content ui-corner-all">
+            <table class="ui-bizagi-grid-table">
+                <thead class="ui-bizagi-grid-header ui-state-default">
+                     <tr>
+                        <th>
+                            <div class="ui-bizagi-grid-column ui-bizagi-grid-key">
+                                <label>Id</label>
+                                <div class="ui-bizagi-grid-column-sort">
+                                    <div class="ui-icon ui-icon-triangle-1-n"></div>
+                                    <div class="ui-icon ui-icon-triangle-1-s"></div>
+                                </div>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="ui-bizagi-grid-column">
+                                <label>Name</label>
+                                <div class="ui-bizagi-grid-column-sort  ui-bizagi-active">
+                                    <div class="ui-icon ui-icon-triangle-1-n  ui-bizagi-active"></div>
+                                    <div class="ui-icon ui-icon-triangle-1-s"></div>
+                                </div>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="ui-bizagi-grid-column">
+                                <label>State</label>
+                                <div class="ui-bizagi-grid-column-sort">
+                                    <div class="ui-icon ui-icon-triangle-1-n"></div>
+                                    <div class="ui-icon ui-icon-triangle-1-s"></div>
+                                </div>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="ui-bizagi-grid-column">
+                                <label>Country</label>
+                                <div class="ui-bizagi-grid-column-sort">
+                                    <div class="ui-icon ui-icon-triangle-1-n"></div>
+                                    <div class="ui-icon ui-icon-triangle-1-s"></div>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="ui-bizagi-grid-body">
+                    <tr>
+                        <td><div class="ui-bizagi-grid-cell ui-bizagi-grid-key">1</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Bogota</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Cundinamarca</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Colombia</div></td>
+                    </tr>
+                    <tr class="ui-bizagi-grid-row-selected ui-bizagi-state-selected ui-state-focus">
+                        <td><div class="ui-bizagi-grid-cell ui-bizagi-grid-key">2</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Medellin</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Antioquia</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Colombia</div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="ui-bizagi-grid-cell ui-bizagi-grid-key">3</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Cali</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Valle</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Colombia</div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="ui-bizagi-grid-cell ui-bizagi-grid-key">4</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Barranquilla</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Atlantico</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Colombia</div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="ui-bizagi-grid-cell ui-bizagi-grid-key">5</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Pasto</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Nariño</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Colombia</div></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="ui-bizagi-grid-pager ui-state-default">
+                <ul>
+                    <li><<</li>
+                    <li class="ui-state-active">1</li><li>2</li><li>3</li>
+                    <li>>></li>
+                </ul>
+            </div>
+            <div class="ui-bizagi-grid-buttons ui-state-default">
+                <ul>
+                    <li class="ui-state-active"><div class="ui-icon ui-icon-refresh"></div></li>
+                    <li class="ui-state-active"><div class="ui-icon ui-icon-plus"></div></li>
+                    <li class="ui-state-disabled"><div class="ui-icon ui-icon-pencil"></div></li>
+                    <li class="ui-state-disabled"><div class="ui-icon ui-icon-trash"></div></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    <div id="ipadPanel"  class="panel">
+        <div><h3> iPad look</h3></div>
+        <br>
+        <div><h2> Normal grid</h2></div>
+        
+        <div class="ui-bizagi-grid">
+            <table class="ui-bizagi-grid-table">
+                <thead class="ui-bizagi-grid-header">
+                     <tr>
+                        <th>
+                            <h3 class="ui-bizagi-grid-column ui-bizagi-grid-key">
+                                <label>Id</label>
+                                <div class="ui-bizagi-grid-column-sort">
+                                    <div class=""></div>
+                                    <div class=""></div>
+                                </div>
+                            </h3>
+                        </th>
+                        <th>
+                            <h3 class="ui-bizagi-grid-column">
+                                <label>Name</label>
+                                <div class="ui-bizagi-grid-column-sort  ui-bizagi-active">
+                                    <div class="ui-bizagi-active"></div>
+                                    <div class=""></div>
+                                </div>
+                            </h3>
+                        </th>
+                        <th>
+                            <h3 class="ui-bizagi-grid-column">
+                                <label>State</label>
+                                <div class="ui-bizagi-grid-column-sort">
+                                    <div class=""></div>
+                                    <div class=""></div>
+                                </div>
+                            </h3>
+                        </th>
+                        <th>
+                            <h3 class="ui-bizagi-grid-column">
+                                <label>Country</label>
+                                <div class="ui-bizagi-grid-column-sort">
+                                    <div class=""></div>
+                                    <div class=""></div>
+                                </div>
+                            </h3>
+                        </th>
+                        <th>
+                            
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="ui-bizagi-grid-body">
+                    <tr>
+                        <td><div class="ui-bizagi-grid-cell ui-bizagi-grid-key">1</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Bogota</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Cundinamarca</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Colombia</div></td>
+                        <td><div class="ui-bizagi-grid-cell"><span class="editable">edit</span></div></td>
+                    </tr>
+                    <tr class="ui-bizagi-grid-row-selected ui-bizagi-state-selected">
+                        <td><div class="ui-bizagi-grid-cell ui-bizagi-grid-key">2</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Medellin</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Antioquia</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Colombia</div></td>
+                        <td><div class="ui-bizagi-grid-cell"><span class="editable">edit</span></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="ui-bizagi-grid-cell ui-bizagi-grid-key">3</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Cali</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Valle</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Colombia</div></td>
+                        <td><div class="ui-bizagi-grid-cell"><span class="non-editable">edit</span></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="ui-bizagi-grid-cell ui-bizagi-grid-key">4</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Barranquilla</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Atlantico</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Colombia</div></td>
+                        <td><div class="ui-bizagi-grid-cell"><span class="editable">edit</span></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="ui-bizagi-grid-cell ui-bizagi-grid-key">5</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Pasto</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Nariño</div></td>
+                        <td><div class="ui-bizagi-grid-cell">Colombia</div></td>
+                        <td><div class="ui-bizagi-grid-cell"><span class="non-editable">edit</span></div></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="ui-bizagi-grid-pager">
+                <ul>
+                    <li><</li>
+                    <li class="state-active">1</li><li>2</li><li>3</li>
+                    <li>></li>
+                </ul>
+            </div>
+            <div class="ui-bizagi-grid-buttons">
+                <ul>
+                    <li class=""><div class=""></div></li>
+                    <li class=""><div class=""></div></li>
+                    <li class=""><div class=""></div></li>
+                    <li class=""><div class=""></div></li>
+                </ul>
+            </div>
+        </div>
+        
+</body>
+</html>

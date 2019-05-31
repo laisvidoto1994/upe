@@ -1,0 +1,87 @@
+﻿/*
+    Document   : bizagi.workportal.admin.entities
+    Created on : Sep 09, 2015
+    Author     : Andres Felipe Arenas Vargas, Ricardo Alirio Perez Diaz
+    Description: Styles for the entities admin widget
+*/
+#admin-entity-main-wrapper .admin-dialog-leftframe {
+    width: 20%;
+    height: inherit;
+    box-sizing: border-box;
+    display:inline-block;
+    display: flex;
+    flex-direction: column;
+}
+#admin-entity-main-wrapper .admin-dialog-leftframe select {
+    width: 100%;
+    padding: 2% 4%;
+    border: 1px solid #C6CACC;
+    height: inherit;
+    overflow-y: auto;
+}
+#admin-entity-main-wrapper .admin-dialog-leftframe .ui-bizagi-control {
+    width:100%;
+}
+#admin-entity-main-wrapper .admin-dialog-leftframe .ui-bizagi-render-control {
+    padding:0 6px 0 0;
+}
+#admin-entity-main-wrapper .admin-dialog-leftframe .ui-bizagi-control-wrapper {
+    padding:0;
+    margin: 0 0 3px 0;
+}
+
+#admin-entity-main-wrapper .admin-dialog-leftframe .ui-bizagi-control-wrapper input{
+    width: 98%;
+}
+
+#admin-entity-main-wrapper .admin-dialog-leftframe .ui-bizagi-control-wrapper i{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+#admin-entity-main-wrapper .admin-dialog-rightframe {
+    margin: 0 0 0 15px;
+    border: 1px solid #C3C3C3;
+    background: #FFF;
+    box-sizing: border-box;
+    padding: 0 10px;
+    -webkit-box-shadow:  0px 0px 2px 0px rgba(0, 0, 0, .1);
+    box-shadow:  0px 0px 2px 0px rgba(0, 0, 0, .1);
+    width: 78%;
+    vertical-align:top;
+    height: inherit;
+    position: relative;
+    display: inline-block;
+    overflow: auto;
+    padding-bottom: 40px;
+}
+
+#admin-entity-main-wrapper .admin-dialog-rightframe table.ui-bizagi-grid-table{
+    overflow: hidden; /*Fix IE, QAF-2394*/
+}
+
+.ui-dialog-content #admin-entity-main-wrapper {
+    height: inherit;
+}
+.ui-dialog-content #admin-entity-main-wrapper > div {
+    height: inherit;
+    overflow: hidden;
+    display: flex;
+}
+#admin-entity-main-wrapper .admin-dialog-rightframe .ui-bizagi-container.ui-bizagi-container-form {
+    border: none;
+}
+#admin-entity-main-wrapper .admin-dialog-rightframe .ui-bizagi-button-container {
+    border: none;
+    background-color: transparent;
+}
+#admin-entity-main-wrapper .admin-dialog-rightframe .ui-bizagi-container-group:first-child {
+    margin-bottom: 15px;
+}
+#admin-entity-main-wrapper .admin-dialog-rightframe .ui-bizagi-container-group #btn-get-user {
+    margin-right: 5px;
+}
+#admin-entity-main-wrapper .admin-entity-message {
+    flex-direction: column;
+}

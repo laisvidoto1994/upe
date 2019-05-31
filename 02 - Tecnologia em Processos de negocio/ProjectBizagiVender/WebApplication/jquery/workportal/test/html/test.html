@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <script type='text/javascript' src='../../../../jquery/common/base/js/lib/jquery.js'></script>
+    <script type='text/javascript' src='../../../../jquery/common/bizagi/js/bizagi.util.js'></script>
+    <title>Untitled Page</title>
+    
+</head>
+<body>
+    <input type="text" />
+    <button type="button" id="btnCargar">CARGAR</button>
+    <button type="button" id="btnLimpiar">LIMPIAR</button>
+</body>
+<script type="text/javascript" language="javascript">
+    BIZAGI_PATH_TO_BASE = "../../../../";
+    showPopup = function(url, params) {
+    	// Callback function which will update the values in bizagi
+    	var callbackFn = function(controls, submitForm) {
+    		alert("Callback called!!");
+    	};
+
+    	bizagi.showQuirksModePopup(url, params, callbackFn);
+    };
+
+    $("#btnCargar").click(function() {
+    	//showPopup("http://dev-diegop/BizAgiBPM916/jquery/test/rendering/html/UserField1.html", { height: 768, width: 1024 });
+    	showPopup("http://biz-docs/BizAgiCore/index.php?title=Main_Page", { height: 768, width: 1024 });
+    	//var url = "http://biz-docs/BizAgiCore/index.php?title=Main_Page";
+    	//var iframe = $('<iframe id="internalIframe" src="' + url+ '" style="height: 400px; width : 400px;"></iframe>');
+    	//iframe.appendTo("body", document);
+    	return false;
+    });
+    $("#btnLimpiar").click(function() {
+        //$("#internalIframe").remove();
+    });
+</script>
+</html>

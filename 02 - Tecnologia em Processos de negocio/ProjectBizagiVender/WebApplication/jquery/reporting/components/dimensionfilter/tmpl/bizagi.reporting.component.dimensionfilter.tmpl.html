@@ -1,0 +1,66 @@
+<script id="bz-rp-filters-dimension" type="text/x-jquery-tmpl">
+<div id="bz-rp-filters-dimension-wrapper" class="cf bz-rp-filters-dimension-wrapper">
+    <label class="bz-rp-form-label is-hidden">%{bz-rp-components-dimension-label}</label>
+    <button class="bz-rp-button bz-rp-filters-dimension-button">
+        <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-dimension"></i>
+        <span>%{bz-rp-components-dimension-label-add}</span>
+    </button>
+</div>
+</script>
+                  
+<script id="bz-rp-filters-dimension-dialog" type="text/x-jquery-tmpl">
+    <div id="bz-rp-filters-dimension-wrapper-dialog" {{loading}}>
+        <div id="bz-rp-filters-dimension-list"></div>
+        <div id="bz-rp-filters-dimension-description"><p class="bz-rp-filters-dimension-description"></p></div>
+        <div id="bz-rp-filters-dimension-filters">
+            <ul class="bz-rp-filters-dimension-tabs">
+                <li><a href="#bz-rp-filters-dimension-tab-select">%{bz-rp-components-dimension-tab-select}</a></li>
+                <li><a href="#bz-rp-filters-dimension-tab-search">%{bz-rp-components-dimension-tab-search}</a></li>
+            </ul>
+            <div id="bz-rp-filters-dimension-tab-select" class="bz-rp-filters-dimension-selection">
+                <p class="bz-rp-filters-dimension-desc">%{bz-rp-components-dimension-tab-select-desc}</p>
+                <div id="bz-rp-filters-dimension-tree"></div>
+            </div>
+            <div id="bz-rp-filters-dimension-tab-search" class="bz-rp-filters-dimension-single-selection">
+
+            <div id="bz-rp-filters-dimension-search"></div>
+
+            </div>
+            <p id="bz-rp-filters-dimension-nulls" class="bz-rp-filters-dimension-single-selection bz-rp-filters-dimension-null-value">
+                <label for="none">
+                    <input id="none" type="checkbox" name="option" {{if nulls}} checked="checked" {{/if}}>
+                    <span class="bz-rp-filters-dimension-nulls-info">%{bz-rp-components-process-label-null}</span>
+                </label>
+            </p>
+        </div>
+    </div>
+</script>
+
+<script id="bz-rp-filters-dimension-pills-wrapper" type="text/x-jquery-tmpl">
+<div class="bz-rp-filters-dimensions-pill">
+    <div class="bz-rp-filters-dimensions-pill-block">
+        <p class="bz-rp-filters-dimensions-pill-data"><strong class="bz-rp-filters-dimension-pill-type">${name}:</strong> <span class="bz-rp-filters-dimension-pill-null">{{if includeEmptyValues}}%{bz-rp-components-dimension-include-nulls}{{/if}}</span> <span class="bz-rp-filters-dimension-pill-items">
+        {{each(i, val) values}}
+            {{if i > (values.length - 4)}}
+                        {{if i}}, {{/if}}${val.name}
+            {{/if}}
+        {{/each}}            
+        </span></p>
+    </div>
+    <div class="bz-rp-filters-dimensions-pill-block" data-id="${id}" data-type="${type}" data-guid="${guid}" data-name="${name}">
+        <button class="bz-rp-button-secondary bz-rp-filters-dimensions-pill-edit">
+            <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-edit-dark"></i>
+            <span>%{bz-rp-components-dimension-edit}</span>
+        </button>
+        <button class="bz-rp-button-secondary bz-rp-filters-dimensions-pill-delete">
+            <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-delete-dark"></i>
+            <span>%{bz-rp-components-dimension-delete}</span>
+        </button>
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-filters-dimension-container" type="text/x-jquery-tmpl">
+<div id="bz-rp-filters-dimension-container">
+</div>
+</script>

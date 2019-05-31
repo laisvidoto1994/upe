@@ -1,0 +1,120 @@
+﻿@import "base/variables";
+@import "base/mixins";
+
+#ui-bizagi-wp-menu {
+    background-color: @blue;
+    height: 50px;
+}
+
+#ui-bizagi-wp-app-menu-container {
+    width: 1076px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#ui-bizagi-wp-app-menu-container {
+    background-color: @blue;
+    height: 50px;
+}
+
+#ui-bizagi-wp-app-menu-container > div:first-child {
+    height: 50px;
+}
+
+#ui-bizagi-wp-app-menu-bt-container > ul {
+    height: 50px;
+}
+
+#ui-bizagi-wp-app-menu-bt-container > ul li:hover, .activeMenu {
+    height: 50px;
+}
+
+#ui-bizagi-wp-app-menu-container > div:not(#user-profile) {
+    height: 50px;
+}
+
+#main_menu li a .text, #main_menu li a span {
+    line-height: 50px;
+    font-size: 18px;
+    color: @white-1;
+}
+
+#user {
+    margin-top: -22px;
+    right: 0;
+}
+
+#main_menu li:hover, #main_menu li.activeMenu, #user .menu-user-photo, .bz-wp-avatar {
+    background-color: @blue-3;
+}
+
+#main_menu li:hover a, #main_menu li.activeMenu a {
+    color: @white;
+}
+
+#main_menu li:hover, #main_menu li.activeMenu, #user .menu-user-photo, .bz-wp-avatar {
+    border-color: @blue-3;
+    color: @white;
+}
+
+#main_menu li a .text {
+    display: none;
+}
+
+#ui-bizagi-wp-app-menu-bt-container {
+    float: right !important;
+    margin-right: 60px;
+}
+
+.ui-bizagi-wp-app-menu-bt-container {
+    float: right;
+    margin-right: 70px;
+}
+
+#ui-bizagi-wp-app-search {
+    display: none;
+}
+
+#user .adm-user {
+    bottom: 6px;
+    right: -2px;
+}
+.biz-theme-booking-logo{
+    position:absolute;
+    top: 7px;
+    height: 37px;
+}
+#ui-bizagi-wp-app-menu-logo-client{
+    visibility:hidden;
+}
+.biz-theme-booking-bizagi-logo{
+    position:fixed;
+    right: 10px;
+    bottom: 5px;
+    height: 70px;
+}
+.biz-theme-booking-notifications{
+    position:absolute;
+    top: 7px;
+    left: 1055px;
+    padding: 11px;
+    cursor:pointer;
+}
+.biz-theme-booking-notifications .biz-theme-menu-item-icon{
+    font-size:16px ;
+    color:#ced5e0;
+    }
+.biz-theme-booking-notifications span{
+    border-radius: 50%;
+    background: #ba2121;
+    width: 18px;
+    height: 18px;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    padding-top: 2px;
+}

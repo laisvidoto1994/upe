@@ -1,0 +1,89 @@
+#project-popupform-wrapper-filepreview
+{
+    display: none;
+    padding: 0;
+    background: transparent;
+}
+
+#project-popupform-wrapper-filepreview form
+{
+    margin: 5px 10px 10px;
+}
+
+#project-popupform-wrapper-filepreview table td:first-child
+{
+    vertical-align: top;
+}
+
+#project-popupform-wrapper-filepreview #ui-bizagi-wp-project-filespreview-popup-description
+{
+    width: calc(100% - 10px)
+}
+
+#project-popupform-wrapper-filepreview .position-message-validate
+{
+    height: 14px;
+}
+
+#project-popupform-wrapper-filepreview button:nth-child(2)
+{
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+#ui-bizagi-wp-project-filespreview-description
+{
+    font-size:14px;
+    max-height: 16em;
+    overflow: auto;
+    padding-top: 5px;
+    word-break: break-all;
+}
+
+.ui-bizagi-wp-project-filespreview-title
+{
+    position: relative;
+}
+
+.ui-bizagi-wp-project-filespreview-title h3
+{
+    margin-right: 31px;
+    word-break: break-word;
+}
+
+.ui-bizagi-wp-project-filespreview-imgwrapper
+{
+    padding: 0;
+    margin: 1em 0 1.4em;
+}
+
+.ui-bizagi-wp-project-filespreview-imgwrapper .ui-bizagi-wp-project-filespreview-icon
+{
+    width: 128px;
+    height: 128px;
+}
+
+.ui-bizagi-wp-project-filespreview-edit > li
+{
+    width: 20px;
+    height: 20px;
+}
+
+.ui-bizagi-wp-project-filespreview-edit
+{
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.ui-bizagi-wp-project-filespreview-edit .k-item
+{
+    box-shadow:none;
+}
+
+.ui-bizagi-wp-project-filespreview-thumbnail
+{
+    max-width: 320px;
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Editor String</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../../../common/jquery.ui/css/desktop/jquery.ui.css" />
+        <style>
+            .editor.editor-selected
+            {
+                background: lime;
+            }
+            .editor.editor-localization-enabled > span.editor-image-small
+            {
+                display: inline-block;
+                border: solid 1px cyan;
+                border-radius: 2px;
+            }
+            .editor.editor-localization-disabled span.editor-image-small
+            {
+                display: none;
+            }
+            .editor .editor-error h1
+            {
+                font-size: medium;
+                width: 80px;
+                margin: 5px 0px 5px 36px;
+                text-align: center;
+            }
+            .editor .editor-error p
+            {
+                margin: 15px 4px 6px 4px;
+                clear: both;
+                text-align: center;
+            }
+            .editor.editor-error-disabled div.editor-error
+            {
+                display: none;
+            }
+            
+            
+            
+            .editor.editor-horizontal
+            {
+                border: solid 1px gainsboro;
+                border-radius: 4px;
+                width: 400px;
+                margin: 70px 1px 70px 1px;
+                padding: 4px;
+                position: relative;
+            }
+            .editor.editor-horizontal label,
+            .editor.editor-horizontal input,
+            .editor.editor-horizontal span.editor-image-small
+            {
+                vertical-align: middle;
+            }
+            .editor.editor-horizontal > label
+            {
+                display: inline-block;
+                width: 140px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .editor.editor-error-enabled.editor-horizontal div.editor-error
+            {
+                position: absolute;
+                top: 29px;
+                left: 150px;
+                border: solid 1px black;
+                background: gainsboro;
+                z-index: 10;
+                width: 140px;
+            }
+            
+            
+                        
+            .editor.editor-vertical
+            {
+                border: solid 1px gainsboro;
+                border-radius: 4px;
+                width: 260px;
+                margin: 70px 1px 70px 1px;
+                padding: 4px;
+                position: relative;
+            }
+            .editor.editor-vertical input,
+            .editor.editor-vertical span.editor-image-small
+            {
+                vertical-align: middle;
+            }
+            .editor.editor-vertical > label
+            {
+                display: inline-block;
+                width: 240px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .editor.editor-error-enabled.editor-vertical div.editor-error
+            {
+                position: absolute;
+                top: 49px;
+                left: 6px;
+                border: solid 1px black;
+                background: gainsboro;
+                z-index: 10;
+                width: 140px;
+            }
+            
+            
+            
+            .editor.editor-error-enabled .editor-error span.editor-image-small
+            {
+                display: inline-block;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+            }
+            .editor.editor-error-enabled .editor-error span.editor-image-small-extended
+            {
+                display: inline-block;
+                border: solid 1px gray;
+                float: left;
+            }
+            .editor .editor-image-small
+            {
+                width: 16px;
+                height: 16px;
+            }
+            .editor .editor-image-small-extended
+            {
+                width: 32px;
+                height: 32px;
+            }
+            .editor .editor-image-world { background: url("world.png") center center no-repeat; }
+            .editor .editor-image-error { background: url("error.png") center center no-repeat; }
+            .editor .editor-image-close { background: url("close.png") center center no-repeat; }
+        </style>
+        <script src="../../../../../common/base/js/lib/jquery.js"></script>
+        <script src="../../../../../common/jquery.ui/js/desktop/jquery.ui.js"></script>
+        <script>
+            $(document).ready(function() {
+                
+                // Seleccion
+                function seleccion() {
+                    $(".editor").removeClass("editor-selected");
+                    $(this).closest(".editor").addClass("editor-selected");
+                }
+                $(".editor").click(seleccion);
+                $(".editor > input").focus(seleccion);
+                
+                // Foco
+                $(".editor > label").click(function() {
+                    $(this).closest(".editor").find("input").focus();
+                });
+                
+                // Cerra ventana de validacion
+                $(".editor .editor-error .editor-image-close").click(function() {
+                    $(this).closest(".editor").removeClass("editor-error-enabled").addClass("editor-error-disabled");
+                });
+                
+                // DEMO: Habilirar ventana de validacion
+                $(".editor .editor-image-world").click(function() {
+                    $(this).closest(".editor").removeClass("editor-error-disabled").addClass("editor-error-enabled");
+                });
+                
+                
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main-container">
+            
+            <div class="editor editor-string editor-horizontal editor-localization-enabled editor-selected editor-error-enabled">
+                <label title="Horizontal, Selecci&oacute;n, Localizaci&oacute;n, Validaci&oacute;n">Horizontal, Selecci&oacute;n, Localizaci&oacute;n, Validaci&oacute;n</label>
+                <input type="text" value="Control" />
+                <span class="editor-image-small editor-image-world"></span>
+                <div class="editor-error">
+                    <span class="editor-image-small editor-image-close"></span>
+                    <span class="editor-image-small-extended editor-image-error"></span>
+                    <h1>Title</h1>
+                    <p>Validation message</p>
+                </div>
+            </div>
+            
+            <div class="editor editor-string editor-horizontal editor-localization-enabled editor-error-enabled">
+                <label title="Horizontal, Localizaci&oacute;n, Validaci&oacute;n">Horizontal, Localizaci&oacute;n, Validaci&oacute;n</label>
+                <input type="text" value="Control" />
+                <span class="editor-image-small editor-image-world"></span>
+                <div class="editor-error">
+                    <span class="editor-image-small editor-image-close"></span>
+                    <span class="editor-image-small-extended editor-image-error"></span>
+                    <h1>Title</h1>
+                    <p>Validation message</p>
+                </div>
+            </div>
+            
+            <div class="editor editor-string editor-horizontal editor-localization-disabled editor-error-disabled">
+                <label title="Horizontal">Horizontal</label>
+                <input type="text" value="Control" />
+                <span class="editor-image-small editor-image-world"></span>
+                <div class="editor-error">
+                    <span class="editor-image-small editor-image-close"></span>
+                    <span class="editor-image-small-extended editor-image-error"></span>
+                    <h1>Title</h1>
+                    <p>Validation message</p>
+                </div>
+            </div>
+            
+            <div class="editor editor-string editor-vertical editor-localization-enabled editor-error-enabled">
+                <label title="Vertical, Localizaci&oacute;n, Validaci&oacute;n">Vertical, Localizaci&oacute;n, Validaci&oacute;n</label>
+                <input type="text" value="Control" />
+                <span class="editor-image-small editor-image-world"></span>
+                <div class="editor-error">
+                    <span class="editor-image-small editor-image-close"></span>
+                    <span class="editor-image-small-extended editor-image-error"></span>
+                    <h1>Title</h1>
+                    <p>Validation message</p>
+                </div>
+            </div>
+            
+            <div class="editor editor-string editor-vertical editor-localization-disabled editor-error-enabled">
+                <label title="Vertical, Validaci&oacute;n">Vertical, Validaci&oacute;n</label>
+                <input type="text" value="Control" />
+                <span class="editor-image-small editor-image-world"></span>
+                <div class="editor-error">
+                    <span class="editor-image-small editor-image-close"></span>
+                    <span class="editor-image-small-extended editor-image-error"></span>
+                    <h1>Title</h1>
+                    <p>Validation message</p>
+                </div>
+            </div>
+            
+            <div class="editor editor-string editor-vertical editor-localization-disabled editor-error-disabled">
+                <label title="Vertical">Vertical</label>
+                <input type="text" value="Control" />
+                <span class="editor-image-small editor-image-world"></span>
+                <div class="editor-error">
+                    <span class="editor-image-small editor-image-close"></span>
+                    <span class="editor-image-small-extended editor-image-error"></span>
+                    <h1>Title</h1>
+                    <p>Validation message</p>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

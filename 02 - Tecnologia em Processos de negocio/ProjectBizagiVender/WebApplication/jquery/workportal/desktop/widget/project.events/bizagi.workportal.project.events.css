@@ -1,0 +1,19 @@
+/*
+    Document   : bizagi.workportal.project.events
+    Created on : Mar 25, 2015
+    Author     : Elkin Fernando Siabato Cruz
+*/
+
+#ui-bizagi-wp-project-events-wrapper .list-events {
+    margin: 0;
+    padding: 0;
+}
+
+#ui-bizagi-wp-project-events-wrapper .list-events li {
+    list-style-type: none;
+
+}
+
+#ui-bizagi-wp-project-events-wrapper .list-events .event .name {
+    vertical-align: middle;
+}

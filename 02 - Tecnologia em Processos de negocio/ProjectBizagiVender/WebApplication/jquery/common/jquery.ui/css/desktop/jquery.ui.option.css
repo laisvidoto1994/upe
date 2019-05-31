@@ -1,0 +1,97 @@
+.ui-radio{ position: relative; overflow:hidden; }
+.ui-radio input {
+	position: absolute;
+	left: -20px;
+	top: -20px;
+	margin: 0;
+	z-index: auto;
+	border-width: 0px;
+}
+
+html ui-radio input {
+	left: -20px !important;
+	top: -20px  !important;
+}
+
+.ui-radio label
+{
+	display: block;
+	position: relative;
+	z-index: auto;
+	padding-right: 1em;
+	line-height: 1em;
+	padding: .6em 0 .6em 30px !important;
+	margin: 0;
+	cursor: pointer;
+	min-height: 0.7em;
+}
+.ui-radio label { background: url(images/ui-radiobutton.png) no-repeat !important; }
+.ui-radio label {
+	background-position: -10px -14px  !important;
+}
+.ui-radio label.ui-radio-state-hover,
+.ui-radio label.ui-radio-state-highlight {
+	background-position: -10px -114px  !important;
+}
+.ui-radio label.ui-radio-state-checked {
+	background-position: -10px -214px !important;
+}
+/* RTL styles for radios*/
+.ui-bizagi-rtl {
+	table-layout: fixed;
+}
+.ui-radio.ui-bizagi-rtl {
+	text-align: right;
+}
+.ui-bizagi-rtl .ui-bizagi-render-radio {
+	direction: rtl;
+}
+.ui-radio.ui-bizagi-rtl label{
+	/*display: table-cell;*/
+	background-position: 8px -15px  !important;
+	padding: .6em 40px .6em 0px !important;
+	min-height: 0.7em !important;
+	display: inline-block !important;
+}
+
+.ui-radio.ui-bizagi-rtl label.ui-radio-state-hover,
+.ui-radio.ui-bizagi-rtl label.ui-radio-state-highlight {
+	background-position: 8px -115px  !important;
+	min-height: 0.7em !important;
+}
+.ui-radio.ui-bizagi-rtl label.ui-radio-state-checked {
+	background-position: 8px -215px  !important;
+	min-height: 0.7em !important;
+}
+
+.ui-radio.ui-bizagi-rtl input {
+	float:right!important;
+	position:relative;
+	margin: 1px -10px 0 0 !important;
+	z-index:-1;
+}
+.ui-bizagi-rtl .ui-bizagi-render-boolean-yesno .ui-radio {
+	padding-left: 0px !important;
+	display: block;
+	table-layout: fixed;
+}
+
+.ui-bizagi-rtl table .ui-bizagi-render-boolean-yesno .ui-radio {
+	display: table;
+}
+
+.ui-bizagi-rtl table {
+	table-layout: fixed;
+}
+
+.ui-bizagi-rtl .bz-rn-grid-data-wraper table {
+	table-layout: auto;
+}
+
+.ui-bizagi-rtl .ui-bizagi-render-boolean-yesno{
+	width:100% !important;
+}
+.ui-bizagi-rtl .ui-bizagi-render-radio-vertical .ui-bizagi-render-radio-item{
+	float: right;
+}
+/* End RTL styles for radios*/

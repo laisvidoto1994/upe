@@ -1,0 +1,112 @@
+
+#ui-bizagi-wp-project-dashboard-sidebar-right {
+position: relative;
+}
+
+
+
+#project-collapse-rightpanel .ui-bizagi-wp-project-panel-collapseicon {
+left: -24px;
+border-right: none;
+border-radius: 0 0 0 4px;
+}
+
+#project-collapse-rightpanel:hover .ui-bizagi-wp-project-panel-collapseicon {
+background: #FFF;
+}
+
+/*
+* Media Query
+* The orden is:
+* 1. First: validations collapsed, open, disabled
+* 2. Second: values default when access by width screen
+*/
+
+/*Collapse right sidebar*/
+.ui-bizagi-wp-project-collapse-rightpanel .ui-bizagi-wp-project-panel-rowicon-right::before {
+    content: "\e1090";
+}
+
+.ui-bizagi-wp-project-collapse-rightpanel .content-dashboard-right-sidebar {
+    display: none;
+}
+
+.ui-bizagi-wp-project-collapse-rightpanel #right-sidebar-wrapper {
+    width: 0;
+}
+
+/*Open right sidebar*/
+.ui-bizagi-wp-project-open-rightpanel .ui-bizagi-wp-project-panel-rowicon-right::before {
+    content: "\e1091";
+}
+
+.ui-bizagi-wp-project-open-rightpanel .content-dashboard-right-sidebar {
+    display: block;
+    padding: 20px;
+
+}
+
+.ui-bizagi-wp-project-open-rightpanel #right-sidebar-wrapper {
+    width: 360px;
+}
+
+/*Disabled right sidebar by default*/
+
+#project-collapse-rightpanel {
+    display: none;
+}
+
+.content-dashboard-right-sidebar {
+    display: none;
+}
+
+#right-sidebar-wrapper {
+    display: none;
+}
+
+/*Enabled right sidebar*/
+
+.enabled-right-sidebar #project-collapse-rightpanel {
+    display: block;
+}
+
+
+.enabled-right-sidebar #right-sidebar-wrapper {
+    display: block;
+}
+
+@media screen and (max-width: 1366px) {
+    /*Default values*/
+    .ui-bizagi-wp-project-panel-rowicon-right::before {
+        content: "\e1090";
+    }
+
+    .content-dashboard-right-sidebar {
+        display: none;
+    }
+
+    #right-sidebar-wrapper {
+        width: 0;
+        padding: 0;
+    }
+
+}
+
+@media screen and (min-width: 1367px) {
+    /*Default values*/
+    .ui-bizagi-wp-project-panel-rowicon-right::before {
+        content: "\e1091";
+    }
+
+    .content-dashboard-right-sidebar {
+        display: block;
+        padding: 20px;
+    }
+
+    #right-sidebar-wrapper {
+        width: 360px;
+    }
+
+}
+
+/*END COLLAPSE PANELS*/

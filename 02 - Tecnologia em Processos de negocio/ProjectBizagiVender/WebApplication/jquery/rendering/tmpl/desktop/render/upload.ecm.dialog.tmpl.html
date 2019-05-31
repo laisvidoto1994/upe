@@ -1,0 +1,47 @@
+﻿<div class="ui-bizagi-render-upload-dialog-noflash">
+    <span class="ui-bizagi-title">%{render-upload-dialog-title}</span>
+    <form method="POST" action="${url}" enctype='multipart/form-data' target="iframe-upload-{{if xPath}}${xPath}{{else}}${xpath}{{/if}}" accept-charset="UTF-8">
+        <div id="alert-file-upload"></div>
+        <div class="ui-bizagi-render-upload-button">
+            <input type="file" name="Filedata" id="{{if xPath}}${xPath}{{else}}${xpath}{{/if}}" accept="${processedFileExtension}" />
+        </div>
+        <div id="file-upload-status">
+            <div class="file-upload-latency" title="Network Speed: ${networkSpeed.speed}, Throughput: ${networkSpeed.throughput}, Latency: ${networkSpeed.latency}">%{render-upload-status-latency}: <span id="estimatedtime"></span></div>
+            <div class="file-upload-statusbar">
+                <span class="statusbar"></span>
+                <span class="statuspercent"></span>
+            </div>
+        </div>
+        <!--<label></label>-->
+        <!--<button type="button">%{render-upload-button-label}</button>-->
+
+        <input type="hidden" name="Filename"/>
+        <input type="hidden" name="h_pageCacheId" value="${idPageCache}"/>
+        <input type="hidden" name="idAttrib" value="${idAttrib}"/>
+        {{if xpathContext}}
+        <input type="hidden" name="xpathContext" value="${xpathContext}"/>
+        {{/if}}
+        <input type="hidden" name="xPath" value="{{if xPath}}${xPath}{{else}}${xpath}{{/if}}" />
+
+        <!-- exclusive parameters for updating the file -->
+        {{if idFileUpload}}
+        <input type="hidden" name="idFileUpload" value="${idFileUpload}"/>
+        <input type="hidden" name="fileext"/>
+        {{/if}}
+        <!-- -->
+
+        <input type="hidden" name="isIE" value="${$item.isIE}"/>
+        <input type="hidden" name="p_sessionId" value="${idSession}"/>
+        <input type="hidden" name="folder" value="${folder}"/>
+
+        {{if contexttype}}
+        <input type="hidden" name="h_contexttype" value="${contexttype}"/>
+        {{/if}}
+        
+        <input type="hidden" name="Upload" value="Submit Query"/>
+
+        
+
+        <iframe id="iframe-upload-{{if xPath}}${xPath}{{else}}${xpath}{{/if}}" name="iframe-upload-{{if xPath}}${xPath}{{else}}${xpath}{{/if}}" src=""  style="width:1px;height:1px;border:0px solid #fff;"></iframe>
+    </form>    
+</div>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Editor daterange</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../../../common/jquery.ui/css/desktop/jquery.ui.css" />
+        <link rel="stylesheet" href="../../../../base/css/jquery-ui-timepicker-addon.css" />
+        <style>
+            .daterange > .daterange-container > .daterange-property {
+                display: inline-block;
+                border: solid 1px black;
+                border-radius: 4px;
+                width: 250px;
+            }
+            .daterange > .daterange-container >.daterange-property > .daterange-property-name {
+                display: block;
+            }
+            .daterange > .daterange-container > .daterange-name {
+                display: block;
+            }
+            .daterange > .daterange-container > .daterange-property.daterange-show-time > .daterange-property-time {
+                display: inline-block;
+            }
+            .daterange > .daterange-container > .daterange-property.daterange-show-time > .daterange-image-small-time {
+                display: inline-block;
+            }
+            .daterange > .daterange-container > .daterange-property.daterange-not-show-time > .daterange-property-time {
+                display: none;
+            }
+            .daterange > .daterange-container > .daterange-property.daterange-not-show-time > .daterange-image-small-time {
+                display: none;
+            }
+            .daterange [class^="daterange-image-small-"] {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+            }
+            .daterange .daterange-image-small-date {
+                background: transparent url("date.png") no-repeat center center;
+            }
+            .daterange .daterange-image-small-time {
+                background: transparent url("time.png") no-repeat center center;
+            }
+        </style>
+        <script src="../../../../../common/base/js/lib/jquery.js"></script>
+        <script src="../../../../../common/jquery.ui/js/desktop/jquery.ui.js"></script>
+        <script src="../../../../plugins/desktop/jquery-ui-timepicker-addon.js"></script>
+        <script>
+            $(document).ready(function() {
+                
+                $(".daterange > .daterange-container > .daterange-property.daterange-not-show-time > .daterange-property-date").datepicker();
+                
+                $(".daterange > .daterange-container > .daterange-property.daterange-show-time > .daterange-property-date").each(function() {
+                    $(this).datetimepicker({
+                        altField : $(this).nextAll(".daterange-property-time")
+                    });
+                });
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main-container">
+            
+            <div class="editor daterange">
+                <div class="daterange-container">
+                    <label class="daterange-name">Date Range</label>
+                    <div class="daterange-property daterange-not-show-time">
+                        <span class="daterange-property-name">Min</span>
+                        <span class="daterange-image-small-date"></span>
+                        <input type="text" class="daterange-property-date" />
+                        <span class="daterange-image-small-time"></span>
+                        <input type="text" class="daterange-property-time" />
+                    </div>
+                    <div class="daterange-property daterange-not-show-time">
+                        <span class="daterange-property-name">Max</span>
+                        <span class="daterange-image-small-date"></span>
+                        <input type="text" class="daterange-property-date" />
+                        <span class="daterange-image-small-time"></span>
+                        <input type="text" class="daterange-property-time" />
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

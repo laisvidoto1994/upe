@@ -1,0 +1,36 @@
+<div class="bz-rn-association-control">
+    <div class="bz-rn-association-label">
+        #if(data.flipped){#
+        	<label>#= data.rightLabel # / #= data.leftLabel #</label>
+        #} else { #
+        	<label>#= data.leftLabel # / #= data.rightLabel #</label>
+        #}#
+        # if (data.allowFlip){ #
+        	<div class="bz-rn-association-flip-button bz-mo-icon bz-refresh-icon"></div>
+        #}#
+    </div>
+    <div class="bz-rn-association-container">
+        # $.each (data.columnData, function (i, item) { #
+        <div class="bz-rn-association-group-container">
+            <h3 class="bz-rn-association-header">
+                <a href="javascript:void(0)">
+                    <span class="bz-rn-association-header-title"># if(item.value != undefined) {##= item.value ##}#</span>
+                </a>
+                <span class="bz-rn-expand bz-mo-icon bz-arrow-down"></span>
+            </h3>
+            <div class="bz-rn-association-items">
+                <ul class="ui-bz-rn-check-list" data-parent-id="#= item.id #">
+                    # $.each (item.association, function (j, item2) { #
+                    <li class="ui-bz-rn-check-item">
+                        <label for="check#= item2.id #">
+                            <input class="ui-bz-rn-boolean-check bz-mo-icon # if(item2.checked) { # bz-check #}#" type="checkbox" data-id="#= item2.id #" # if(item2.checked) { # checked #}# />
+                            <span class="bz-rn-checkbox-label"># if(item2.name != undefined) {##= item2.name ##}#</span>
+                        </label>
+                    </li>
+                    #});#
+                </ul>
+            </div>
+        </div>
+        #});#
+    </div>
+</div>

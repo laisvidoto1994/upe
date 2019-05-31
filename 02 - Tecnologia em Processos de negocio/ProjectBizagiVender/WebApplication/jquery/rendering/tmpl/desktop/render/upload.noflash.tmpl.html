@@ -1,0 +1,18 @@
+<ul class="ui-bizagi-render-upload-container">
+    <div class="files" />
+    {{if haveFiles}}
+        {{files}}
+        <span id="no-files" style="display: none;">%{render-upload-no-files}</span>
+    {{else}}
+        <span id="no-files" style="display: block;">%{render-upload-no-files}</span>
+    {{/if}}
+
+    {{if editable}}
+      <li class="ui-bizagi-render-upload-wrapper">
+          <a href="#" style="display: inline-block!important;"><span class="ui-icon upload-file"></span></a>
+      </li>
+    {{/if}}
+    {{if allowSendInMail}}
+        <span class="ui-bizagi-render-upload-sendmail" title="%{render-upload-sendemail}"></span>
+    {{/if}}
+</ul>

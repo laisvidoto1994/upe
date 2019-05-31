@@ -1,0 +1,71 @@
+﻿{
+	"form": {
+		"properties" : {},
+		"elements": [
+			{"container": { "properties": {"id" : "h1", "type": "horizontal"},
+				"elements": [
+					{	"container": { "properties": {"id" : "p1", "type": "panel", "displayName": "100%"},
+						"elements": [
+							{"render": {	"properties": {"id" : 50002, "displayName" : "Label Standard", "xpath" : "text5_2", "type": "text"}}},
+							{"render": {	"properties": {"id" : 50003, "displayName" : "Label Standard", "xpath" : "text5_3", "type": "text"}}}
+						]
+					}}
+				]
+			}},
+			{"container": { "properties": {"id" : "h2", "type": "horizontal"},
+				"elements": [
+					{	"container": { "properties": {"id" : "p2", "type": "panel", "displayName": "50%", "width": "50%"},
+						"elements": [
+							{"render": {	"properties": {"id" : 50002, "displayName" : "Label Standard", "xpath" : "text5_2", "type": "text"}}},
+							{"render": {	"properties": {"id" : 50003, "displayName" : "Label Standard", "xpath" : "text5_3", "type": "text"}}}
+						]
+					}},
+					{	"container": { "properties": {"id" : "p3", "type": "panel", "displayName": "50%", "width": "50%"},
+						"elements": [
+							{"render": {	"properties": {"id" : 50002, "displayName" : "Label Standard", "xpath" : "text5_2", "type": "text"}}},
+							{"render": {	"properties": {"id" : 50003, "displayName" : "Label Standard", "xpath" : "text5_3", "type": "text"}}}
+						]
+					}}
+				]
+			}},
+			{"container": { "properties": {"id" : "h3", "type": "horizontal"},
+				"elements": [
+					{	"container": { "properties": {"id" : "p4", "type": "panel", "displayName": "30%", "width": "30%"},
+						"elements": [
+							{"render": {	"properties": {"id" : 50002, "displayName" : "Label Standard", "xpath" : "text5_2", "type": "text"}}},
+							{"render": {	"properties": {"id" : 50003, "displayName" : "Label Standard", "xpath" : "text5_3", "type": "text"}}}
+						]
+					}},
+					{	"container": { "properties": {"id" : "p5", "type": "panel", "displayName": "70%", "width": "70%"},
+						"elements": [
+							{"render": {	"properties": {"id" : 50002, "displayName" : "Label Standard", "xpath" : "text5_2", "type": "text"}}},
+							{"render": {	"properties": {"id" : 50003, "displayName" : "Label Standard", "xpath" : "text5_3", "type": "text"}}}
+						]
+					}}
+				]
+			}},
+			{"container": { "properties": {"id" : "h4", "type": "horizontal"},
+				"elements": [
+					{	"container": { "properties": {"id" : "p6", "type": "panel", "displayName": "33%", "width": "33%"},
+						"elements": [
+							{"render": {	"properties": {"id" : 50002, "displayName" : "Label Standard", "xpath" : "text5_2", "type": "text"}}},
+							{"render": {	"properties": {"id" : 50003, "displayName" : "Label Standard", "xpath" : "text5_3", "type": "text"}}}
+						]
+					}},
+					{	"container": { "properties": {"id" : "p7", "type": "panel", "displayName": "33%", "width": "33%"},
+						"elements": [
+							{"render": {	"properties": {"id" : 50002, "displayName" : "Label Standard", "xpath" : "text5_2", "type": "text"}}},
+							{"render": {	"properties": {"id" : 50003, "displayName" : "Label Standard", "xpath" : "text5_3", "type": "text"}}}
+						]
+					}},
+					{	"container": { "properties": {"id" : "p8", "type": "panel", "displayName": "33%", "width": "34%"},
+						"elements": [
+							{"render": {	"properties": {"id" : 50002, "displayName" : "Label Standard", "xpath" : "text5_2", "type": "text"}}},
+							{"render": {	"properties": {"id" : 50003, "displayName" : "Label Standard", "xpath" : "text5_3", "type": "text"}}}
+						]
+					}}
+				]
+			}}
+		]
+	}
+}

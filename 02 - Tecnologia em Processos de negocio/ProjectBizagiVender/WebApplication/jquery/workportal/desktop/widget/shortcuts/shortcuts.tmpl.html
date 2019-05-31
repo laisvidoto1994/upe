@@ -1,0 +1,26 @@
+﻿<script id="shortcuts-wrapper" type="text/x-jsrender">
+    <div class="wdg-srcts-panel relevant-to-me">
+        <h3 class="wdg-stf-header wgd-user-srcts-category">%{workportal-widget-shortcuts-suggested}</h3>
+        <ul class="wdg-srcts-list">
+            {{for shortcuts}}
+                <li class="bz-wp-ls-list-category wdg-srcts-card-category">
+                {{:category}}
+                </li>
+                {{for items}}
+                    <li class="bz-wp-ls-list-item wdg-srcts-container {{if image}}image{{/if}}" data-id="{{:id}}">
+                        {{if icon || image}}
+                            {{if icon}}
+                                <i class="wdg-srcts-font-icon {{:icon}}"></i>
+                            {{else}}
+                                <img src="{{:image}}" class="img-responsive">
+                            {{/if}}
+                        {{else}}
+                            <i class="bz-icon bz-icon-16 bz-icon-case-add-outline"></i>
+                        {{/if}}
+                        <div class="wdg-srcts-title {{if image}}image{{/if}}">{{:displayName}}</div>
+                    </li>
+                {{/for}}
+            {{/for}}
+        </ul>
+    </div>
+</script>

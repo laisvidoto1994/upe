@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+    <style>
+    .tooltip
+    {
+      position: relative;
+	  z-index: 100;
+    }
+    /* Box */
+    .tooltip:before{
+        background: -webkit-gradient( 
+		            	linear,
+	                    left bottom,
+	                    left top,
+	                    color-stop(0.51, rgb(255,0,0)),
+	                    color-stop(1, rgb(191,0,0))
+
+	            );
+	    color: #fff;
+        font: 12px Helvetica, Arial, Georgia, sans-serif;
+	    padding: 5px 10px;
+	    /*content: attr(data-error);*/
+	    content: "Hay un <STRONG>error</STRONG> aca";
+	    -webkit-border-radius: 8px;
+        -webkit-box-shadow: 0px 0px 4px #999;
+        display: inline; 
+        white-space: nowrap;    
+        position: absolute;
+	    right:18px;  
+	    top:-18px;  
+	    z-index:101;
+    }
+    /* Triangle */
+    .tooltip:after {
+	    border-width: 12px;
+	    border-style: solid;
+	    border-color: rgb(255,0,0) transparent  transparent transparent;
+	    display: block; 
+	    content: "";
+	    height: 2px; /* Width and height could  be left out, but I prefer a less 'pointy' triangle */
+	    width: 2px;
+	    position: absolute;
+	    top: 6px;
+	    right: 36px;
+	    z-index:102;
+    }
+
+    </style>
+    <script type='text/javascript' src='../../../../jquery/common/base/js/lib/jquery.js'></script>    
+</head>
+<body>
+    <div style="height: 100px;"></div>
+    <button id="btnShowTooltip">ShowTooltip</button>
+    <div style="height: 100px;"></div>
+    <div id="targetRender" style="height: 100px;width:400px;background-color:blue;" data-error="Hay un <STRONG>error</STRONG> aca"></div>
+    <script type="text/javascript" language="javascript">
+      $("#btnShowTooltip").click(function() {
+      	    $("#targetRender").toggleClass("tooltip");
+      });
+    </script>
+</body>
+</html>

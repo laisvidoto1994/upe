@@ -1,0 +1,62 @@
+/********
+* Filename: bizagi.editor.component.decorator.css
+* Create Date: 05 Oct 2012
+* Author: Ramiro Gomez
+*
+* $__banner
+*
+********/
+
+/* __banner
+--------*/
+
+
+.bizagi_editor_component_banner{
+	position:absolute!important;
+	bottom: 15px;
+	width:100%;
+
+}
+.bizagi_editor_component_banner .bizagi-editor-banner-option{
+	background: rgb(255,255,255) url(images/bgn_banner.png) left top;
+    text-align: left;
+    border-radius: 3px;
+    padding: 4px;
+    border:solid 1px #BBBFC4;
+    -webkit-transition: border, background-color 0.4s ease-in; /* Safari and Chrome */
+}
+.bizagi_editor_component_banner .mtool-banner-option-text h2,
+.bizagi_editor_component_banner .mtool-banner-option-text cite{
+	color: #6C6C71;
+	text-shadow: 1px 1px 1px #ffffff;
+}
+
+.bizagi_editor_component_banner .mtool-banner-option-text h2{
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.bizagi_editor_component_banner .mtool-banner-option-text {
+	margin-left: 63px;
+	padding-left: 20px;
+	min-height: 40px;
+	border-left: solid 1px #DEDEDF;
+}
+
+.bizagi_editor_component_banner .mtool-icon-banner.banner-icon-bizagi-logo{
+	background: url(images/bag-store.png) left top;
+	width:51px;
+	height: 57px;
+	position: absolute;
+	top:-14px;
+	left: 10px;
+	-webkit-transition: top 0.4s ease-in; /* Safari and Chrome */
+}
+
+.bizagi_editor_component_banner:hover .mtool-icon-banner.banner-icon-bizagi-logo{
+	top:-20px;
+}
+
+.bizagi_editor_component_banner:hover .bizagi-editor-banner-option{
+	border:solid 1px #8A9096; 
+	background-color: #EEEEEE;
+}

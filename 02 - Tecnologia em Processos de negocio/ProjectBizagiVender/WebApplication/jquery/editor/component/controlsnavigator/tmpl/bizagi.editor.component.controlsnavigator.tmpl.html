@@ -1,0 +1,40 @@
+<script id="mtool-group" type="text/x-jquery-tmpl">
+    <div class="mtool-group">
+        <h3 class="mtool-group-header">
+            <span class="mtool-group-image mtool-group-image-${id} ${style}"></span>
+            <span class="mtool-group-name">
+            {{if name.resource}}
+                %{${name.resource}}
+            {{else}}
+                ${name}
+            {{/if}}
+            </span>
+        </h3>
+        <div class="mtool-group-items"></div>
+    </div>
+</script>
+
+<script id="mtool-groupBCK" type="text/x-jquery-tmpl">
+    <div class="mtool-group">
+        <h3 class="mtool-group-header">
+            <span class="mtool-group-image mtool-group-image-${id} ${style}"></span>
+            <span class="mtool-group-name">${name}</span>
+        </h3>
+        <div class="mtool-group-items"></div>
+    </div>
+</script>
+
+<script id="mtool-item" type="text/x-jquery-tmpl">
+    <div class="biz-btn-horizontal mtool-item ui-bizagi-itemfordrag ui-bizagi-draggable-item" data-id ="${id}" data-caption="${name}">
+        <div class="biz-btn">
+            <i class="biz-ico mtool-item-image-${id} ${style}" style="{{if icon}} background:url(data:image/png;base64,${icon}); background-size:16px 16px; background-position: left top;{{/if}}"></i> <span class="mtool-item-name">${name}</span>
+        </div>
+    </div>
+</script>
+
+<script id="mtool-helper" type="text/x-jquery-tmpl">
+      <div id="mtool-container-helper" class="mtool-helper">
+          <i class="biz-ico mtool-item-image-${id} ${style}" style="{{if icon}} background:url(data:image/png;base64,${icon}); background-size:16px 16px; background-position: left top;{{/if}}"></i>
+         <label>${caption}</label>
+      </div>
+</script>

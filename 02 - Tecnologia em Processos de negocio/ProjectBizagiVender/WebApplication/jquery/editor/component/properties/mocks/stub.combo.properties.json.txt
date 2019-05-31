@@ -1,0 +1,193 @@
+{
+    "idRender": "GUID-3", 
+    "elements": [
+        {
+            "tabs": [
+                {
+                    "caption": "Basic", 
+                    "elements": [
+                        {
+                            "property": {
+                                "name": "xpath", 
+                                "bas-type": "xpath-to-entity", 
+                                "caption": "Data Binding", 
+                                "value": "", 
+                                "required": true
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "displayName", 
+                                "bas-type": "displayName", 
+                                "caption": "Display Name", 
+                                "default": "Combo"
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "helptext", 
+                                "bas-type": "localizable-string", 
+                                "caption": "Help Text", 
+                                "value": ""
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "visible", 
+                                "bas-type": "rule-expression", 
+                                "editor-parameters": {
+                                    "types": [
+                                        "boolean"
+                                    ]
+                                }, 
+                                "caption": "Visible", 
+                                "default": "true", 
+                                "required": true
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "editable", 
+                                "bas-type": "rule-expression", 
+                                "editor-parameters": {
+                                    "types": [
+                                        "boolean"
+                                    ]
+                                }, 
+                                "caption": "Editable", 
+                                "default": "true", 
+                                "required": true
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "required", 
+                                "bas-type": "rule-expression", 
+                                "editor-parameters": {
+                                    "types": [
+                                        "boolean"
+                                    ]
+                                }, 
+                                "caption": "Required", 
+                                "default": "false", 
+                                "required": true
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "submitonchange", 
+                                "bas-type": "boolean", 
+                                "caption": "Submit On Change", 
+                                "editor-parameters": {
+                                    "type": [
+                                        "boolean"
+                                    ]
+                                }, 
+                                "default": "false"
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "data", 
+                                "bas-type": "list-of-data", 
+                                "caption": "Data", 
+                                "subproperties": [
+                                    {
+                                        "property": {
+                                            "name": "entitysource", 
+                                            "bas-type": "entity", 
+                                            "editor-parameters": { }, 
+                                            "caption": "Entity Source", 
+                                            "value": "", 
+                                            "user-editable": false
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "sort-attribute", 
+                                            "bas-type": "xpath-from-entity", 
+                                            "editor-parameters": { }, 
+                                            "caption": "Sort Attribute", 
+                                            "default": "", 
+                                            "user-editable": true
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "filter", 
+                                            "bas-type": "filter", 
+                                            "editor-parameters": { }, 
+                                            "caption": "Filter", 
+                                            "value": "", 
+                                            "user-editable": true
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "additionalattrib", 
+                                            "bas-type": "xpath-from-entity", 
+                                            "editor-parameters": { }, 
+                                            "caption": "Additional Attribute", 
+                                            "value": "", 
+                                            "user-editable": true
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "localizable", 
+                                            "bas-type": "boolean", 
+                                            "caption": "Localizable", 
+                                            "value": "true", 
+                                            "user-editable": false
+                                        }
+                                    }
+                                ]
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "labelalign", 
+                                "bas-type": "horizontal-align", 
+                                "caption": "Label Horizontal Align", 
+                                "default": "default"
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "valuealign", 
+                                "bas-type": "horizontal-align", 
+                                "caption": "Value Horizontal Align", 
+                                "default": "default"
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "layout", 
+                                "bas-type": "render-layout", 
+                                "caption": "Layout", 
+                                "subproperties": [
+                                    {
+                                        "property": {
+                                            "name": "labelwidth", 
+                                            "bas-type": "int", 
+                                            "caption": "Label Width", 
+                                            "value": 30
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "valuewidth", 
+                                            "bas-type": "int", 
+                                            "caption": "Control Width", 
+                                            "value": 70
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

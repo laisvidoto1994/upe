@@ -1,0 +1,14 @@
+{   
+	"type":"form",
+    "form": {
+        "properties": { "id": 1, "xpathContext": "", "title": "Cycle 1", "buttons|1-1": [{ "action": "save", "text": "Save", "validate": "true", "submitData": "true", "refresh": "true"}] },
+        "elements": [
+			{ "container": { "properties": { "id": "tabItem1", "type": "tabItem", "displayName": "Random Renders" },
+				        "elements|1-20": [
+					    { "render": { "properties": { "id||10001-10099": 0, "displayName|1-2": "@LOREM", "xpath": "simple.text", "type": "text", "editable": false, "value": "@LOREM @LOREM @LOREM"}} }
+				        ]
+				}
+		    }
+	    ]
+    }
+}

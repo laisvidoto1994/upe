@@ -1,0 +1,29 @@
+<script id="bz-rendering-comboSelected" type="text/x-jquery-tmpl"> 
+    <div>
+        <div id="bz-render-comboSelected-selectOptions" class="bz-render-comboSelected-align-inline bz-render-comboSelected-wrapper">
+            <select size="10"  multiple="multiple" id="selectionData" class="bz-render-comboSelected-listBoxSelects">
+                {{each(i,item) dataList }}
+                    <option value="${item.id}">${item.value}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div id="bz-render-comboSelected-moveOptions" class="bz-render-comboSelected-align-inline bz-render-comboSelected-buttons">
+             <button id="move_right" class="bz-render-comboSelected-move_right clearfix ui-button" role="button" aria-disabled="true">
+                 <span class="ui-button-text">&#62;&#62;</span>
+             </button>
+             <button id="move_left" class="clearfix ui-button" role="button" aria-disabled="true">
+                 <span class="ui-button-text">&#60;&#60;</span>
+             </button>
+        </div>
+
+        <div id="bz-render-comboSelected-listBoxResults" class="bz-render-comboSelected-align-inline bz-render-comboSelected-wrapper">
+            <select size="10" multiple="multiple" id="listBoxComboData" class="bz-render-comboSelected-listBoxSelects">
+            </select>
+        </div>
+    </div>
+</script>
+
+<script id="bz-rendering-comboSelected-ReadOnly" type="text/x-jquery-tmpl">
+    <div id="bz-render-comboSelected-listBoxResults-ReadOnly" class="bz-render-comboSelected-align-inline"></div>
+</script>

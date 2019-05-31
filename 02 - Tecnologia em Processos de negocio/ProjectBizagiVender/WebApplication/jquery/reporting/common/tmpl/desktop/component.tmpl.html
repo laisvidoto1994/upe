@@ -1,0 +1,22 @@
+﻿<script id="bz-rp-component-main" type="text/x-jquery-tmpl">
+    <div id="bz-rp-components" class="cf bz-rp-components">
+        {{each(i, val) components}}
+            <div data-bizagi-component="${val}">
+            </div>
+        {{/each}}
+        <div id="bz-rp-customereports-dataavailable">
+            {{component customreports}}
+        </div>
+    </div>
+    <div id="bz-rp-detaillist" class="cf">
+        {{component detaillist}}
+    </div>
+    <div id="bz-rp-filters-dimension-pills" class="cf">
+    </div>
+</script>
+
+<script id="bz-rp-processviewer-nodata" type="text/x-jquery-tmpl">
+<div>
+    <div><p class="message">%{bz-rp-nodata}</p></div>
+</div>
+</script>

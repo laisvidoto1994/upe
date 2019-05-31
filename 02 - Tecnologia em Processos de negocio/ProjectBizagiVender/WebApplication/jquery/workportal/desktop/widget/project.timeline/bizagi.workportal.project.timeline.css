@@ -1,0 +1,515 @@
+/*
+    Document   : bizagi.workportal.project.timeline
+    Created on : Feb 12, 2016
+    Author     : Diego Parra
+    Description:
+        Styles for the "timeline" widget in the project
+*/
+
+
+/*  WRAPPER */
+
+#bz-project-timeline-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#project-timeline-switcher {
+    margin-top: 30px;
+}
+
+.bz-timeline-checkbox-button {
+    border: 2px solid #B3ABAB;
+    display: inline-block;
+    padding: 7px 12px;
+    width: 170px;
+    border-radius: 4px;
+    background-color: #D2D2D2;
+    opacity: 0.5;
+}
+
+.bz-timeline-checkbox-button.bz-active {
+    opacity: 1;
+}
+
+.bz-timeline-checkbox {
+    width: 200px;
+    position: relative;
+    margin: 4px 0;
+}
+
+.bz-timeline-checkbox label {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fcfff4;
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.bz-timeline-checkbox label:after {
+    content: '';
+    width: 9px;
+    height: 5px;
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    border: 3px solid #333;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    transform: rotate(-45deg);
+}
+
+.bz-timeline-checkbox label:hover::after {
+    opacity: 0.5;
+}
+
+.bz-timeline-checkbox input[type=checkbox] {
+    visibility: hidden;
+}
+
+.bz-timeline-checkbox input[type=checkbox]:checked + label:after {
+    opacity: 1;
+}
+
+.bz-timeline-checkbox span {
+    position: absolute;
+    left: 26px;
+    line-height: 21px;
+    font-size: 124%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/*  TIMELINE */
+
+#bz-project-timeline {
+    position: relative;
+    padding: 2em 0;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+#bz-project-timeline::before {
+    /* this is the vertical line */
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 48px;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+    background: #ddd;
+}
+
+
+/*  TIMELINE BLOCK */
+
+.bz-project-timeline-block {
+    position: relative;
+    margin: 4em 0;
+}
+
+.bz-project-timeline-block:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.bz-project-timeline-block:first-child {
+    margin-top: 0;
+    margin-top: 0;
+}
+
+.bz-project-timeline-block:last-child {
+    margin-bottom: 0;
+    margin-bottom: 0;
+}
+
+
+/*  TIMELINE BLOCK IMAGE */
+
+.bz-project-timeline-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-left: -32px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, .1), 0 4px 2px 3px rgba(0, 0, 0, .1);
+}
+
+.bz-project-timeline-start .bz-project-timeline-img {
+    width: 16px;
+    height: 16px;
+    margin-top: -38px;
+    margin-left: -8px;
+    background-color: #ddd;
+    box-shadow: none;
+}
+
+.bz-project-timeline-now .bz-project-timeline-img {
+    right: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    border: none;
+    margin-top: -16px;
+    margin-left: 0;
+    background-color: rgb(245, 245, 245);
+    font-size: 1.6em;
+    box-shadow: none;
+}
+
+.bz-project-timeline-img i {
+    line-height: 64px;
+}
+
+.bz-project-timeline-block.bz-project-timeline-type-activity.cs-status-open .bz-project-timeline-img.bz-project-timeline-picture {
+    box-shadow: 0 0 0 4px #63cf8b, inset 0 2px 0 rgba(0, 0, 0, .1), 0 4px 2px 3px rgba(0, 0, 0, .1);
+}
+
+.bz-project-timeline-block.bz-project-timeline-type-activity.cs-status-closed .bz-project-timeline-img.bz-project-timeline-picture {
+    background: #ddd;
+}
+
+.bz-project-timeline-block.bz-project-timeline-type-planactivity.cs-status-open .bz-project-timeline-img.bz-project-timeline-picture {
+    box-shadow: 0 0 0 4px #63cf8b, inset 0 2px 0 rgba(0, 0, 0, .1), 0 4px 2px 3px rgba(0, 0, 0, .1);
+}
+
+.bz-project-timeline-block.bz-project-timeline-type-planactivity.cs-status-closed .bz-project-timeline-img.bz-project-timeline-picture {
+    background: #ddd;
+}
+
+.bz-project-timeline-type-activity .bz-project-timeline-img.bz-project-timeline-picture .bz-icon-play {
+    transform: scale(4);
+    left: calc(50% - -15px);
+    top: calc(50% - -14px);
+}
+
+.bz-project-timeline-type-planstart .bz-project-timeline-img.bz-project-timeline-picture {
+    background: #75ce66;
+}
+
+.bz-project-timeline-type-event .bz-project-timeline-img.bz-project-timeline-picture {
+    background: #F1EE84;
+}
+
+.bz-project-timeline-type-planend .bz-project-timeline-img.bz-project-timeline-picture {
+    background: #E89494;
+}
+
+.cssanimations .bz-project-timeline-img.is-hidden {
+    visibility: hidden;
+}
+
+.cssanimations .bz-project-timeline-img.bounce-in {
+    visibility: visible;
+}
+
+
+/*  TIMELINE CONTENT */
+
+.bz-project-timeline-content {
+    position: relative;
+    width: 45%;
+    padding: 1em 2em;
+}
+
+.bz-project-timeline-content:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.bz-project-timeline-content h2 {
+    margin: .3em 2em .3em 2.5em;
+    line-height: 1.2;
+}
+
+.bz-project-timeline-type-activity .bz-project-timeline-content h2:hover,
+.bz-project-timeline-type-event .bz-project-timeline-content h2:hover {
+    cursor: pointer;
+}
+
+.bz-project-timeline-content p,
+.bz-project-timeline-content .bz-project-timeline-date {
+    font-size: 14px;
+    font-size: 0.875rem;
+}
+
+.bz-project-timeline-content .bz-project-timeline-date {
+    display: inline-block;
+}
+
+.bz-project-timeline-content .bz-project-timeline-date div {
+    display: block;
+    font-size: 13px;
+}
+
+.bz-project-timeline-content .bz-project-timeline-date label {
+    display: inline-block;
+    font-size: 11px;
+}
+
+.bz-project-timeline-content p {
+    margin: 1em 0;
+    line-height: 1.6;
+}
+
+.bz-project-timeline-content .bz-project-timeline-date {
+    float: left;
+    padding: .8em 0;
+    opacity: .7;
+    position: absolute;
+    width: 100%;
+    left: 122%;
+    top: 6px;
+    font-size: 16px;
+    font-size: 1rem;
+}
+
+.bz-project-timeline-content::before {
+    content: '';
+    position: absolute;
+    right: 100%;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-right: 7px solid white;
+    top: 24px;
+    left: 100%;
+    border-color: transparent;
+    border-left-color: white;
+}
+
+.bz-project-timeline-block:nth-child(even) .bz-project-timeline-content {
+    float: right;
+}
+
+.bz-project-timeline-block:nth-child(even) .bz-project-timeline-content::before {
+    top: 24px;
+    left: auto;
+    right: 100%;
+    border-color: transparent;
+    border-right-color: white;
+}
+
+.bz-project-timeline-block:nth-child(even) .bz-project-timeline-content .bz-project-timeline-date {
+    left: auto;
+    right: 122%;
+    text-align: right;
+}
+
+.cssanimations .bz-project-timeline-content.is-hidden {
+    visibility: hidden;
+}
+
+.cssanimations .bz-project-timeline-content.bounce-in {
+    visibility: visible;
+}
+
+
+/* ASSIGNEES*/
+
+.bz-assignee {
+    float: left;
+}
+
+.bz-assignee-picture {
+    max-width: 48px;
+    border-radius: 50%;
+}
+
+.bz-assignee-initials {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    line-height: 48px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.bz-more-assignees {
+    left: 42px;
+    position: absolute;
+    top: 21px;
+    cursor: pointer;
+}
+
+.bz-more-assignees i {
+    border-radius: 50px;
+    box-shadow: #D8D8D8 0px 0px 1px 1px;
+    transform: scale(4);
+}
+
+.bz-more-assignees i:hover {
+    transform: scale(5);
+    transition: transform 150ms ease-in-out;
+}
+
+
+/* ASSIGNEE POPUP*/
+
+.bz-project-timeline-tooltip,
+.bz-project-timeline-arrow:after {
+    background: white;
+    border: 1px solid #C5C5C5;
+}
+
+.bz-project-timeline-tooltip {
+    pointer-events: none;
+    display: inline-block;
+    position: absolute;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 0 7px #D0D0D0;
+}
+
+.bz-project-timeline-arrow {
+    width: 29px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: -26px;
+    top: 33%;
+}
+
+.bz-project-timeline-arrow:after {
+    content: "";
+    position: absolute;
+    left: 23px;
+    top: -5px;
+    width: 24px;
+    height: 24px;
+    box-shadow: 6px 5px 9px -9px black, 5px 6px 9px -9px black;
+    transform: rotate(135deg);
+}
+
+.bz-assignees .bz-assignee {
+    position: relative;
+    width: 48px;
+    display: inline-block;
+    height: 48px;
+}
+
+.bz-assignees .bz-assignee .bz-assignee-picture {
+    box-shadow: #E4E4E4 0px 0px 3px 2px;
+}
+
+.bz-assignees .bz-assignee .bz-assignee-initials {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    left: 0;
+    top: -17px;
+}
+
+.bz-project-timeline-tooltip-animation {
+    animation: bz-project-timeline-tooltip-animation 0.5s;
+}
+
+@keyframes bz-project-timeline-tooltip-animation {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* HOVER ICONS*/
+
+.bz-project-timeline-content:hover .bz-hover-icons {
+    visibility: visible;
+}
+
+.bz-project-timeline-content .bz-hover-icons {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    margin-top: -12px;
+}
+
+.bz-project-timeline-content .bz-hover-icons i {
+    cursor: pointer;
+}
+
+
+/* TIMELINE ANIMATION */
+
+#bz-project-timeline-wrapper {
+    overflow: hidden;
+}
+
+#bz-project-timeline-content {
+    visibility: hidden;
+}
+
+.bz-project-timeline-content-bounce {
+    visibility: visible !important;
+    animation: bz-project-timeline-animation 0.5s ease-in-out;
+}
+
+@keyframes bz-project-timeline-animation {
+    0% {
+        transform: translateY(-93%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+
+/* TIME LINE SEARCH*/
+
+.bz-project-timeline-search .bz-icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    margin-top: -12px;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.bz-project-timeline-search input {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #565656;
+    border: 1px solid gainsboro;
+}
+
+/*Hide button x on IE*/
+.bz-project-timeline-search input::-ms-clear {
+    display: none; width:0; height:0;
+}
+
+.bz-project-timeline-search {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+}

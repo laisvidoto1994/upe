@@ -1,0 +1,130 @@
+<script id="biz-render-ecm-view-default" type="text/x-jquery-tmpl">
+    {{each value}}
+    <ul class="biz-render-ecm-view-default" data-id="${$value[0] || $value.uploadId}">
+        <li class="thumb-image-wrapper">
+            <!-- Image Section -->                       
+            <!-- <span class="extension checkuot"></span> 
+            <span class="extension readonly"></span> -->
+            {{if $item.isImage($value[1] || $value.fileName) }}
+            <span class="extension"></span>            
+            {{else}}
+            <span class="extension ${$item.getFileExtension($value[1] || $value.fileName)}"></span>            
+            {{/if}}
+        </li>
+        <li class="${id}-${$value[0] || $value.uploadId} meta-data-wrapper">            
+            <!-- Meta Data Section -->
+        </li>
+    </ul>
+    {{/each}}
+    
+
+    <div class="biz-render-ecm-delete-confirmation">
+        %{render-ecm-confirm-message}
+    </div>
+    {{if showRenderOptions}}
+    
+    {{if editable}}
+    <div class="ui-bizagi-render-upload-queue" id="q_${q_xpath}" ></div>
+    {{/if}}
+    
+    <div class="biz-render-ecm-upload-wrapper" data-name="${ecmName}">   
+        <a href="#" data-idfileupload="${idFileUploads}" ><span class="ui-icon upload-file"></span></a>
+    </div>
+    {{if allowSendInMail}}
+    <span class="ui-bizagi-render-ecm-sendmail" title="%{render-ecm-sendemail}"></span>
+    {{/if}}
+    {{else}}
+        {{if !editable }}
+            {{if allowSendInMail}}
+            <span class="ui-bizagi-render-ecm-sendmail" title="%{render-ecm-sendemail}"></span>
+            {{/if}}
+        {{/if}}
+    {{/if}}
+</script>
+
+<script id="biz-render-ecm-view-default-yesno" type="text/x-jquery-tmpl">
+    <div class="ecm-metadata-field-edit  biz-render-ecm-upload-boolean">
+        <label for="biz-render-ecm-upload-boolean-radio1"><input type="radio" id="biz-render-ecm-upload-boolean-radio1" name="biz-render-ecm-upload-boolean-radio-${rnd}" value="True" {{if checked == '1'}}checked="checked"{{/if}} />%{render-boolean-yes}</label>
+        <label for="biz-render-ecm-upload-boolean-radio2"><input type="radio" id="biz-render-ecm-upload-boolean-radio2" name="biz-render-ecm-upload-boolean-radio-${rnd}" value="False" {{if checked == '0'}}checked="checked"{{/if}} />%{render-boolean-no}</label>
+    </div>
+</script>
+
+<script id="biz-render-ecm-view-default-metadata" type="text/x-jquery-tmpl">
+    <div class="ecm-file-name">
+        <div class="modal-ecm">
+            <div class="selectarrow"></div>
+            <div class="content clearfix">
+                <div class="ecm-options-slide">
+                    <ul>
+                        <li class="ecm-options-checkout         {{if !ecm_allowCheckOut}}        nodisplay {{/if}}">
+                            <span class="ui-icon ui-icon-locked"></span>
+                            <span>%{render-ecm-bt-lock}</span>
+                        </li>
+
+                        <li class="ecm-options-cancelcheckout   {{if !ecm_allowCancelCheckOut}}  nodisplay {{/if}}">
+                            <span class="ui-icon ui-icon-unlocked"></span>
+                            <span>%{render-ecm-bt-unlock}</span>
+                        </li>
+
+                        <li class="ecm-options-delete           {{if !ecm_allowDelete}}          nodisplay {{/if}}">
+                            <span class="ui-icon ui-icon-trash"></span>
+                            <span>%{render-ecm-bt-delete}</span>
+                        </li>
+
+                        {{if showMetadata}}
+                        <li class="ecm-options-edit             {{if !ecm_allowUpdateMetadata}}  nodisplay {{/if}}">
+                            <span class="ui-icon ui-icon-pencil"></span>
+                            <span>%{render-ecm-bt-edit}</span>
+                        </li>
+                        {{/if}}
+
+                        <li class="ecm-options-upgrade          {{if !ecm_allowUpdateContent }}  nodisplay {{/if}}">
+                            <input type="hidden" id="ecmfile-${idFileUploads}" name="ecmfile-${idFileUploads}" data-idfileupload="${idFileUploads}"/>
+                            <span class="ui-icon ui-icon-arrowreturnthick-1-n"></span>
+                            <span>%{render-ecm-bt-upgrade}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <span class="filename" title="${filename}">
+            <ul>
+                <li><div class="extension checkuot minicheckout"></div></li>
+                <li><div class="extension readonly minireadonly"></div></li>
+                <li>
+                    <a href='${url}' target='new'>${filename.substr(0,24)} {{if filename.length>24}}...{{/if}}</a>
+                </li>
+            </ul>            
+        </span>
+        <div class="emc-options{{if orientation == 'rtl'}} rtl{{/if}}">
+            <span class="ui-icon ui-icon-gear"></span>
+        </div>
+    </div>
+    {{if showMetadata}}
+    <table>
+        {{each metadata }}
+        <tr>
+            <td  class="ecm-metadata-key {{if required == "true"}}mandatory{{/if}}" data-idmetadata="${metadataId}">
+                {{if required == "true"}}<span title="%{render-ecm-tooltip-mandatory}">${description}*</span>{{else}}${description}{{/if}}:
+            </td>
+            <td class="ecm-metadata-value" data-value="${value}" data-mandatory="${required}" data-mandatoryfield="${description}" data-allowupdatemetadata="${ecm_allowUpdateMetadata}" data-metadatatype="${metadataType}" data-required="${required}" data-readonly="${readOnly}" data-edit-mode="false" data-ecmstatus="${ecm_ecmStatus}">
+                <span title="{{if metadataType =='BOOL'}}{{if value == true}}%{render-boolean-yes}{{else}}%{render-boolean-no}{{/if}}{{else}}${value}{{/if}}" 
+                      class="ecm-metadata-text">{{if metadataType =='BOOL'}}{{if value == true}}%{render-boolean-yes}{{else}}%{render-boolean-no}{{/if}}{{else}}${value}{{/if}}</span>
+                {{if ecm_allowUpdateMetadata  && ecm_ecmStatus != 4}}
+                <span class="ecm-metadata-edit {{if readOnly == 'true'}}ui-icon  ui-icon-locked{{/if}}"></span>
+                <span class="ecm-metadata-cancel"></span>                
+                <span class="ecm-metadata-done"></span>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+    {{/if}}
+</script>
+
+<script id="biz-render-ecm-view-default-edit-buttons" type="text/x-jquery-tmpl">
+    <div class="biz-render-ecm-metadata-edit nodisplay">
+        <button class="biz-render-ecm-metadata-edit-save">%{text-save}</button>
+        <button class="biz-render-ecm-metadata-edit-cancel">%{text-cancel}</button>
+    </div>
+</script>

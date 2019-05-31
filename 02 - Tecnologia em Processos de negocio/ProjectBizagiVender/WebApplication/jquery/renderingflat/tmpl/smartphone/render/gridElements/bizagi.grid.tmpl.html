@@ -1,0 +1,140 @@
+<script id="ui-bizagi-grid" type="text/x-kendo-template">
+    <div class="ui-bizagi-grid">
+        <div data-bizagi-component="header" class="bz-rn-grid-cn-header">
+            <span class="bz-rn-grid-header-title">#= data.label #</span>
+            {{element buttons}}
+            {{element rowButtons}}
+        </div>
+
+        {{element table}}
+
+        <div data-bizagi-component="pager" data-bizagi-position="replace">
+            {{element pager}}
+        </div>
+        <div data-bizagi-component="dynamicPager" data-bizagi-position="replace">
+            {{element dynamicPager}}
+        </div>
+        <div data-bizagi-component="emptyTable" data-bizagi-position="replace">
+            {{element emptyTable}}
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-waiting" type="text/x-kendo-template">
+    <div class="ui-bizagi-waiting"></div>
+</script>
+
+<script id="ui-bizagi-grid-table" type="text/x-kendo-template">
+    <div class="ui-bizagi-grid-smartphone" data-bizagi-component="table">
+        <div data-bizagi-component="rows" class="bz-gd-rows">
+            {{element rows}}
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-table-empty" type="text/x-kendo-template">
+    <div class="ui-bizagi-grid-noRecords">%{render-grid-no-records}</div>
+</script>
+
+<script id="ui-bizagi-grid-row" type="text/x-kendo-template">
+    <div data-bizagi-component="cells" data-key="#= data.key#" data-business-key="#= data.businessKey #"
+         #if (data.isnewrow){#
+         data-new-row="true"
+         #}#
+         class="bz-rn-grid-cell">
+        {{element cells}}
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-cell" type="text/x-kendo-template">
+    <div class="
+        #if (data.isKey){ #
+            ui-bizagi-grid-key
+        #}#
+        #if (data.hidden){ #
+            ui-bizagi-column-hidden
+        #}#"
+         data-bizagi-component="cellContent">
+        {{element cellContent}}
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-cell-special" type="text/x-kendo-template">
+    <div class="ui-bizagi-grid-cell" data-bizagi-component="cellContent"> {{element cellContent}}</div>
+</script>
+
+<script id="ui-bizagi-grid-pager" type="text/x-kendo-template">
+    <div class="ui-bizagi-grid-pager">
+        <ul>
+            <li data-page-number="previous" class="bz-cm-icon bz-mo-icon bz-back"></li>
+            <li class="bz-rn-grid-pager"><span>#= data.page # </span><span>&nbsp;/&nbsp;</span><span> #= data.records #</span></li>
+            <li data-page-number="next" class="bz-cm-icon bz-mo-icon bz-next"></li>
+        </ul>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-buttons" type="text/x-kendo-template">
+    <div class="ui-bizagi-grid-buttons" data-bizagi-component="buttons">
+        <ul class="bz-common-webkit-reset-ul bz-cm-width">
+            #if (data.add){ #
+                <li class="ui-state-active bz-mo-icon bz-plus" data-action="add"></li>
+            #}#
+            #if (data.remove){ #
+                <li class="ui-state-active bz-mo-icon bz-trash-icon" data-action="remove"></li>
+            #}#
+            #if (data.edit){ #
+                <li class="ui-state-active bz-mo-icon bz-edit" data-action="edit"></li>
+            #}#
+            #if (data.hasTotalizer){#
+                <li class="ui-state-active bz-mo-icon bz-totalizer-small" data-action="totalizer"></li>
+            #}#
+        </ul>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-totalizer" type="text/x-kendo-template">    
+    <div data-role="modalview" id="modalview-grid-totalizer" style="width: 90%; height: 80%" class="km-listview-wrapper bz-rn-grid-totalize-container #if (data.orientation === 'rtl'){ # bz-render-reversed #}#">
+        <div data-role="header">
+            <div id="" data-role="navbar">
+                <div class="bz-rn-bizagi-grid-totalizer-header">
+                    <span class="bz-rn-grid-totalize-icon bz-mo-icon bz-totalizer-small" data-action="totalizer"></span>
+                    <span> %{render-grid-totalizer}</span>
+                    <span class="bz-rn-grid-totalize-close-btn bz-mo-icon bz-cancel"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bz-rn-grid-totalize-box">
+            <div class="bz-rn-grid-totalize-list">
+                <ul class="km-widget km-listview km-list">
+                    # for (var i=0, len = data.length ; i < len; i++){ #
+                    <li>
+                        <div class="bz-rn-grid-totalize-item-label"> #= data[i].label # </div>
+                        <div class="bz-rn-grid-totalize-item-value"> #= data[i].total # </div>
+                    </li>
+                    #}#
+                </ul>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-grid-row-buttons" type="text/x-kendo-template">
+    <div class="ui-bizagi-grid-row-buttons" data-bizagi-component="rowButtons">
+        <ul>
+            #if (typeof data.edit !== 'undefined'){ #
+            	<li class="ui-state-active bz-mo-icon bz-edit" data-action="edit"></li>
+            #}#
+            #if (typeof data.remove !== 'undefined'){ #
+            	<li class="ui-state-active bz-mo-icon bz-trash-icon" data-action="remove"></li>
+            #}#
+        </ul>
+    </div>
+</script>
+
+
+<script id="ui-bizagi-grid-column" type="text/x-kendo-template">
+</script>
+
+<script id="ui-bizagi-grid-column-special" type="text/x-kendo-template">
+</script>

@@ -1,0 +1,210 @@
+<!-- idea tomada de http://www.thecssninja.com/css/accordian-effect-using-css -->
+<script id="bz-wp-widget-inbox-categories-process" type="text/x-jquery-tmpl">
+    {{if !categories.length}}
+        <div class="bz-result-not-found-categories">%{workportal-widget-inboxcommon-no-results-found}</div>
+    {{/if}}
+
+      
+    <div id="bz-list-categories-process">
+        <ul class="bz-common-webkit-reset-ul bz-cm-width ">
+            {{each categories}}
+         <li root>
+            <div>
+              <div class="container-left">
+                <span>${name}</span>
+              </div>       
+             <ul class="bz-common-webkit-reset-ul bz-cm-width" data-category="${name}">
+                {{each workflows}}
+                    <li data-id-workflow="${idworkflow}">
+                      <div>
+                          <div class="container-left">
+                           {{if idworkflow != "" && idworkflow > 0 }}
+                              {{if isFavorite == "true"}}
+	    			                 <span class="bz-cm-icon bz-cm-ib favorite-true" ></span>
+	    		              {{else}}
+	    			                <span class="bz-cm-icon bz-cm-ib favorite-false" ></span>
+	    		             {{/if}}
+                           {{else}}
+	    		                <span class="bz-cm-icon bz-cm-ib favorite-false"  />
+	    		           {{/if}}
+                           </div>
+                            <div class="container-middle">
+                             <span class="workflow-name" >${name}</span> 
+                            </div>
+                            <div class="container-right">       
+                             <span class="workflow-count" >${count}</span>
+                            </div>
+                        </div>
+                     </li>
+                {{/each}}
+              </ul>  
+          </div>
+        </li>
+       {{/each}}
+      </ul>
+   </div>   
+
+</script>
+
+<script id="ui-bz-wp-widget-inbox-process-cases-list" type="text/x-jquery-tmpl">
+        {{each rows}}
+        <li  data-id-case="${id}" {{if guidFavorite !=""}}data-idfavorites="${guidFavorite}"{{/if}} >         
+            
+            <div class="bz-wp-cases-container-header">  
+                <span class="bz-cm-icon bz-cm-ib {{if isFavorite == 'true'}}favorite-true{{else}}favorite-false {{/if}}"  />       
+                {{if radnumber}}<span class="rad-number">${radnumber}</span>{{/if}}
+            </div>
+
+            <div>
+                {{if workitems}}
+                   <ul class="bz-common-webkit-reset-ul bz-cm-width activity-list" >
+                    {{each workitems}}
+                    <li style="border: none;">
+                        <span class="bz-cm-icon state-light  {{if State == "Green"}}state-color-green{{else State == "Yellow"}}state-color-yellow{{else State == "Red"}}state-color-red{{/if}}"/>
+                        <span class="activity-name">${TaskName}</span>
+                    </li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
+			
+			<div class="bz-wp-cases-container-rigth">
+				<span class="bz-cm-icon bz-cm-ib"></span>
+			</div>
+
+
+        </li>
+        {{/each}}
+
+         <li class="moreload">
+                 <div>
+                   <div class="container-left"></div>
+                   <div class="container-middle">
+                   Load More.....
+                   </div>
+                 </div>
+       </li>
+
+     
+</script>
+
+
+<script id="ui-bz-wp-widget-inbox-process-case-summary" type="text/x-jquery-tmpl">
+ <div data-case-id="${idCase}">
+  
+
+   <div class="bz-wp-summary-header">
+	           <div class="container-left">
+	            <span class="bz-cm-icon bz-cm-ib "></span>
+	           </div>
+	           <div class="container-right">
+	            <span>${caseNumber}</span>
+	           </div>
+   </div>
+
+
+  	{{each currentState}}
+    <div class="bz-wp-summary-activity-box" data-workitem-id="${idWorkItem}" data-task-id="${idTask}">
+      
+     <div class="bz-wp-summary-acbox-title">
+	  <span class=" state-light {{if colorState == "Green"}}state-color-green{{else colorState == "Yellow"}}state-color-yellow{{else colorState == "Red"}}state-color-red{{/if}} bz-cm-icon"/>
+      <span class="activity-name">${state}</span>
+     </div>          
+
+    <div class="bz-wp-summary-acbox-summary">
+      {{if creationDate}}
+      <div class="bz-cm-tbl">
+        <div class="bz-cm-tbl-cell  bz-wp-cases-summary-fields-tbl-right">%{workportal-widget-inboxcommon-creation-date}</div>
+        <div class="bz-cm-tbl-cell  bz-wp-cases-summary-value">${creationDate}</div>
+      </div>
+      {{/if}}
+	  {{if estimatedSolutionDate}}
+      <div class="bz-cm-tbl">
+        <div class="bz-cm-tbl-cell  bz-wp-cases-summary-fields-tbl-right">%{workportal-widget-inboxcommon-state-expires-on}</div>
+        <div class="bz-cm-tbl-cell  bz-wp-cases-summary-value">${estimatedSolutionDate}</div>
+      </div>
+	  {{/if}}
+      {{if tskDescription}}
+      <div class="bz-cm-tbl">
+       <div class="bz-cm-tbl-cell  bz-wp-cases-summary-fields-tbl-right">%{workportal-widget-inboxcommon-description}</div>
+       <div class="bz-cm-tbl-cell  bz-wp-cases-summary-value">${tskDescription}</div>
+      </div>      	
+	  {{/if}}
+	  {{if createdBy && createdBy.Name}}
+      <div class="bz-cm-tbl">
+         <div class="bz-cm-tbl-cell bz-wp-cases-summary-fields-tbl-right">%{workportal-widget-inboxcommon-created-by}</div>
+         <div class="bz-cm-tbl-cell bz-wp-cases-summary-value">${createdBy.Name}</div>
+      </div>
+	  {{/if}}
+	  {{if caseNumber}}
+      <div class="bz-cm-tbl">
+         <div  class="bz-cm-tbl-cell bz-wp-cases-summary-fields-tbl-right">%{workportal-widget-inboxcommon-case-number}</div>
+         <div class="bz-cm-tbl-cell  bz-wp-cases-summary-value">${caseNumber}</div>
+      </div>
+	  {{/if}}
+      {{if process}}
+      <div class="bz-cm-tbl">
+         <div class="bz-cm-tbl-cell bz-wp-cases-summary-fields-tbl-right">%{workportal-widget-inboxcommon-process}</div>
+         <div class="bz-cm-tbl-cell bz-wp-cases-summary-value">${process}</div>
+      </div>
+	  {{/if}}
+      {{if processPath}}
+      <div class="bz-cm-tbl">
+         <div class="bz-cm-tbl-cell bz-wp-cases-summary-fields-tbl-right">%{workportal-widget-inboxcommon-process-path}</div>
+         <div class="bz-cm-tbl-cell bz-wp-cases-summary-value">${processPath}</div>
+      </div>
+	  {{/if}}
+
+	  {{if caseDescription}}
+	  <div class="bz-cm-tbl">
+         <div class="bz-cm-tbl-cell bz-wp-cases-summary-fields-tbl-right">%{workportal-widget-inboxcommon-description}</div>
+         <div class="bz-cm-tbl-cell bz-wp-cases-summary-value">${caseDescription}</div>
+      </div>
+	  {{/if}}
+    </div>
+     
+		
+	
+    </div>
+    {{/each}}
+  
+
+<!--div class="bz-wp-summary-menu-bar-bottom bz-wp-foother-static">
+<button type="button" ordinal="0"  class="bz-cancel_case">Close Case</button>
+<button type="button" ordinal="3"  class="bz-work_case">%{workportal-widget-inboxcommon-work-on-it}</button>
+<button type="button" ordinal="1"  class="bz-reassign_case">Reassign</button>
+</div-->
+
+ </div>
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-inbox-common-header" type="text/x-jquery-tmpl" >  
+        <div id="ui-bizagi-wp-app-inbox-tab-container">
+            <ul>                
+                <li class="ui-bizagi-wp-app-inbox-tab active" id="all">
+                    <span class="text"></span>
+                    <span class="toolTip">${All}</span>
+                </li>
+                <li  class="ui-bizagi-wp-app-inbox-tab" id="red">
+                    <span class="text"></span>
+                    <span class="toolTip">${Red}</span>
+                </li>
+                <li class="ui-bizagi-wp-app-inbox-tab" id="yellow">
+                    <span class="text"></span>
+                    <span class="toolTip">${Yellow}</span>
+                </li>
+                <li class="ui-bizagi-wp-app-inbox-tab" id="green">
+                    <span class="text"></span>
+                    <span class="toolTip">${Green}</span>
+                </li>
+                <li class="ui-bizagi-wp-app-inbox-tab" id="favourites">
+                    <span class="text"></span>
+                </li>
+                <span id="ui-bizagi-wp-app-inbox-tap-selector" class="All" ></span>
+            </ul>
+        </div>
+    </script>
+
+
+

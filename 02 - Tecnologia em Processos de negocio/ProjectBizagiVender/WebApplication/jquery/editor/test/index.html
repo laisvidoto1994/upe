@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QUnit Test - POC</title>
+        <link href="../../../jquery/common/base/css/dev/qunit.css" rel="stylesheet" type="text/css" />
+        <script type='text/javascript' src='../../../jquery/common/base/js/dev/qunit.js'></script>
+        <script type='text/javascript' src='../../../jquery/steal.js'></script>
+        <script type='text/javascript' src='../../../jquery/bizagi.loader.js'></script>
+        
+       <script type="text/javascript" language="javascript">
+            // Redefine path to base. To the default site
+            //var BIZAGI_PATH_TO_BASE = "../../../";
+            var BIZAGI_PATH_TO_BASE = "../../../";
+            /// required for find the path to the jquery root folder
+            //var BIZAGI_ENVIRONMENT = "release";
+
+
+            // Gets the loader instance, and load the module
+            var loader = bizagi.loader;
+            loader.init( function () {
+                loader.start("formModeler").then(function () {
+                    //loader.loadFile("jquery/editor/test/base/js/proof.js")
+                    //.loadFile("jquery/editor/test/js/bizagi.model.test.js")
+					/*.loadFile("jquery/editor/test/component/controlsnavigator/js/bizagi.editor.component.controlsnavigator.test.js")*/
+					loader.loadFile("jquery/editor/test/component/properties/js/bizagi.editor.component.properties.test.js")
+					/*.loadFile("jquery/editor/test/component/decorator/js/bizagi.editor.component.decorator.test.js")
+					.loadFile("jquery/editor/test/component/ribbon/js/bizagi.editor.component.ribbon.test.js")
+                    .loadFile("jquery/editor/test/component/design/js/bizagi.editor.component.design.test.js")
+                    .loadFile("jquery/editor/test/component/editor/string/js/bizagi.editor.component.editor.string.test.js")*/
+                    .loadFile("jquery/editor/test/component/editor/displayname/js/bizagi.editor.component.editor.displayname.test.js")
+                    //.loadFile("jquery/editor/test/component/editor/int/js/bizagi.editor.component.editor.int.test.js")                    
+                    //.loadFile("jquery/editor/test/component/editor/renderlayout/js/bizagi.editor.component.editor.renderlayout.test.js");
+					/*.loadFile("jquery/editor/test/base/js/bizagi.editor.base.modelrender.test.js")
+					.loadFile("jquery/editor/test/base/js/bizagi.editor.base.controller.test.js")
+					.loadFile("jquery/editor/test/base/js/bizagi.editor.base.view.test.js")
+					.loadFile("jquery/editor/test/base/js/bizagi.editor.base.modelerview.test.js")
+					.loadFile("jquery/editor/test/base/js/bizagi.editor.base.model.test.js")
+					.loadFile("jquery/editor/test/base/js/bizagi.editor.base.controls.test.js")
+					.loadFile("jquery/editor/test/component/controlsnavigator/js/bizagi.editor.component.controlsnavigator.model.test.js")
+					.loadFile("jquery/editor/test/base/js/hacksRendering/bizagi.hacks.rendering.container.test.js")
+					.loadFile("jquery/editor/test/base/js/bizagi.editor.base.container.test.js")
+					.loadFile("jquery/editor/test/component/properties/js/bizagi.editor.component.properties.model.test.js")
+                    .loadFile("jquery/editor/test/base/js/bizagi.editor.base.utilities.test.js")
+                    .loadFile("jquery/editor/test/component/xpathnavigator/js/bizagi.editor.component.xpathnavigator.model.test.js")
+                    .loadFile("jquery/editor/test/component/xpathnavigator/js/bizagi.editor.component.xpathnavigator.test.js")
+					.loadFile("jquery/editor/test/command/js/bizagi.editor.command.command.test.js")
+					.loadFile("jquery/editor/test/command/js/bizagi.editor.command.commandfactory.test.js")
+					.loadFile("jquery/editor/test/command/js/bizagi.editor.command.addelementcommand.test.js")
+					.loadFile("jquery/editor/test/command/js/bizagi.editor.command.moveelementcommand.test.js")
+					.loadFile("jquery/editor/test/command/js/bizagi.editor.command.removelastelementcommand.test.js")
+					.loadFile("jquery/editor/test/command/js/bizagi.editor.command.moveelementcontainercommand.test.js")
+					.loadFile("jquery/editor/test/command/js/bizagi.editor.command.removeelementcommand.test.js")
+					.loadFile("jquery/editor/test/command/js/bizagi.editor.command.insertelementcommand.test.js")
+					.loadFile("jquery/editor/test/command/js/bizagi.editor.command.elementselectedcommand.test.js")
+					.loadFile("jquery/editor/test/command/js/bizagi.editor.command.showpropertiescommand.test.js")
+                    .loadFile("jquery/editor/test/command/js/bizagi.editor.command.changepropertycommand.test.js")
+					.loadFile("jquery/editor/test/command/js/bizagi.editor.command.insertelementfromcontrolsnavigatorcommand.test.js")
+                    .loadFile("jquery/editor/test/command/js/bizagi.editor.command.removeelemementbyidcommand.test.js")
+                    .loadFile("jquery/editor/test/command/js/bizagi.editor.command.insertelementfromxpathnavigatorcommand.test.js")
+                    .loadFile("jquery/editor/test/command/js/bizagi.editor.command.showxpathcommand.test.js")
+                    .loadFile("jquery/editor/test/command/js/bizagi.editor.command.showxpathnavigatorcommand.test.js")
+                    .loadFile("jquery/editor/test/base/js/bizagi.editor.base.facade.test.js")
+                    .loadFile("jquery/editor/test/command/js/bizagi.editor.command.changexpathcommand.test.js")
+                    .loadFile("jquery/editor/test/command/js/bizagi.editor.command.shiftkeycommand.test.js")*/;
+                    
+                   
+
+
+                    $(document).ready(function(){
+                        // Is hidding test rsults so is better remove this item
+                        $("#container-layout").remove();
+                     });
+                });
+                //loader.start("formModeler");
+
+            }); 
+        </script> 
+<!--    <script>
+$(document).ready(function(){
+
+test("a basic test example", function() {
+ok( true, "this test is fine" );
+var value = "hello";
+equal( value, "hello", "We expect value to be hello" );
+});
+
+module("Module A");
+
+test("first test within module", function() {
+ok( true, "all pass" );
+});
+
+test("second test within module", function() {
+ok( true, "all pass" );
+});
+
+module("Module B");
+
+test("some other test", function() {
+expect(2);
+equal( true, false, "failing test" );
+equal( true, true, "passing test" );
+});
+
+});
+</script>-->
+   
+    </head>
+    <body>
+        <h1 id="qunit-header">QUnit Test - POC</h1>
+        <h2 id="qunit-banner"></h2>
+        <div id="qunit-testrunner-toolbar"></div>
+        <h2 id="qunit-userAgent"></h2>
+        <ol id="qunit-tests"></ol>
+        <div id="qunit-fixture">test markup</div>
+    </body>
+</html>

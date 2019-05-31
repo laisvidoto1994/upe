@@ -1,0 +1,33 @@
+<ul class="bz-render-association ${classCss}">
+    <li>
+        <div class="bz-render-association-left-container">
+            <h3 class="ui-widget-header">
+                {{if flipped}}
+                    ${rightLabel} / ${leftLabel}                    
+                {{else}}
+                    ${leftLabel} / ${rightLabel}                     
+                {{/if}}
+                
+                <span class="ui-state-default flip-arrow {{if !allowFlip}} ui-state-disabled {{/if}}"></span>                
+            </h3>
+            <div class="bz-render-association-accordion ui-bizagi-container clearfix ui-bizagi-container-accordion">            
+                {{each $item.getColumnData(0) }}
+                <div class="group">
+                    <h3><a class="bz-render-association-header-subgroup" href="#">${value}</a></h3>
+                    <div class="left-container">
+                        <ol data-id="${id}">
+                            {{each $item.getRightAssociation(id) }}  
+                            <li data-id="${id}">
+                                <span class="bz-render-association-check-mask {{if checked}} checked {{/if}}"></span>
+                                <input data-id="${id}" class="bz-render-association-check" type="checkbox" {{if checked}} checked {{/if}}>                                                               
+                                <label>${name}</label>
+                            </li>
+                            {{/each}}                            
+                        </ol>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </li>  
+</ul>

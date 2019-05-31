@@ -1,0 +1,447 @@
+<script id="ui-bizagi-workportal-widget-admin-case-search" type="text/x-jquery-tmpl" >
+
+    <div class="biz-wp-window">  
+            <div>
+            <strong>
+                <span id="generalTitle" class="biz-wp-window-title" style="display:none">
+                    %{workportal-widget-admincasesearch-subtitle}
+                </span>
+            </strong>
+        </div>
+    </div>
+
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-admin-case-search-fields" type="text/x-jquery-tmpl" >
+       <div id='biz-case-search'>
+        <div id="mainForm" class="biz-wp-form clearfix"> 
+            <div id="caseNumber" class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell">%{workportal-widget-admincasesearch-case-number}</div>
+                <div class="biz-wp-form-cell">  <input id="caseInput" class="biz-wp-input-text" type="text" />        
+                </div>
+            </div>
+            <div id="processTree">
+            
+            </div>
+            
+            <br/>
+            <div class="biz-wp-form-row clearfix">
+                <span class="biz-wp-window-title">
+                    <strong>%{workportal-widget-admincasesearch-specific-data}</strong> 
+                </span>
+            </div> 
+            <br/>
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell">%{workportal-widget-admincasesearch-actual-user-name}</div>
+                <div class="biz-wp-form-cell"><input id="userNameInput" class="biz-wp-input-text" type="text" /></div>
+            </div>
+              <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell">%{workportal-widget-admincasesearch-actual-user-fullname}</div>
+                <div class="biz-wp-form-cell"><input id="userFullNameInput" class="biz-wp-input-text" type="text" /></div>
+            </div>
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell">%{workportal-widget-admincasesearch-actual-user-position}</div>
+                <div id="userPositionInput" class="biz-wp-form-cell"></div>
+            </div>
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell">%{workportal-widget-admincasesearch-date-since}</div>
+                <div id="cases-since-date" class="biz-wp-form-cell"><input id="sinceDate" class="biz-wp-form-datepicker" type="text" readonly='true' /></div>
+            </div>
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell">%{workportal-widget-admincasesearch-to-date}</div>
+                <div id="cases-to-date" class="biz-wp-form-cell"><input id="toDate" class="biz-wp-form-datepicker" type="text" readonly='true' /></div>
+            </div>
+             <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell">%{workportal-widget-admincasesearch-number-results}</div>
+                <div class="biz-wp-form-cell"><input id="resultsNumber" class="biz-wp-input-text" type="text" />     </div>
+            </div>
+        </div>
+        <div id="dinamicContent"></div>
+        <div id="dinamicContent2" class="biz-wp-form clearfix"></div>
+        <div>
+
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-admin-case-search-buttons" type="text/x-jquery-tmpl" >
+
+        <div id="case-search-log-data-buttonset" class="biz-wp-buttonset">
+            <button id="btn-admin-case-back" style="display:none" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admincasesearch-button-back}</span>
+            </button>
+            <button id="btn-admin-case-search-clear" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admincasesearch-button-clean}</span>
+            </button>
+            <button id="btn-admin-case-search" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admincasesearch-button-search}</span>
+            </button>            
+            <button id="btn-admin-case-finish" style="display:none" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                <span class="ui-button-text">%{workportal-widget-admincasesearch-reassign-finish}</span>
+            </button>
+        </div>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-case-search-result" type="text/x-jquery-tmpl">
+
+    <table class="biz-wp-table" cellspacing="2" cellpadding="2" width="100%" border="0">
+
+        <col style="width:1%">
+        {{each(i, item) headers }} 
+            
+            {{if item.fieldName == "I_radNumber" && !groupByCaseNumber}}
+                <col style="width:5%">
+            {{/if}}
+
+            {{if item.fieldName == "I_wfClsDisplayName" || item.fieldName == "I_userName"  || item.fieldName == "I_wiEstimatedSolutionDate" || item.fieldName == "I_casCreationDate" || item.fieldName == "I_casSolutionDate"}}
+                <col style="width:10%">
+            {{/if}}
+
+            {{if item.fieldName == "I_tskDisplayName"}}
+                <col style="width:12%">
+            {{else}}
+                <col style="width:5%">
+            {{/if}}
+
+        {{/each}}
+        <col style="width:1%">
+
+        <thead class="biz-wp-table-head">
+             <th></th>
+             {{each(i, item) headers }} 
+                <th class="${$item.showColumn(i)}">
+                ${$item.showColumn(i)}
+                    {{if groupByCaseNumber}}
+                        <span>${item.displayName}</span>
+                    {{else}}
+                    <a href="#" class="cases-column-header" data-columnOrder="${item.order}" data-columnOrderName="${item.orderFieldName}" data-orderType="${item.orderType}">${item.displayName}</a>
+                    {{/if}}
+                </th>
+             {{/each}}
+
+             {{if groupByCaseNumber}}
+                <th>
+                    <span>%{workportal-widget-admincasesearch-table-view}</span>
+                </th>
+             {{else}}
+                 {{if securityGraphicQuery}}
+                    <th>
+                        <a href="#" class="cases-column-header">
+                            %{workportal-widget-admincasesearch-table-view}
+                        </a>
+                    </th>
+                 {{/if}}
+             {{/if}}
+
+        </thead>
+
+        <tbody class="biz-wp-table-body">
+
+            {{each(i, rowItem) rows }}
+                    {{if $item.createGroupedHeader(i)}}
+                        <tr class="biz-wp-table-grouped">
+                            <th colspan="${headers.length + 1}">
+                            %{workportal-widget-inboxcommon-case-number} ${$item.getRadNumber(resultList.rows[i])}
+                              </th>
+                        </tr>
+                    {{/if}}
+                   
+                ${totalTask = rowItem.totalTask, ""}
+
+                {{each(j, element) rowItem.data }}
+                    {{if element.attr == "first_row"}}
+                        <tr>
+                            {{each(k, item) element.data }}
+                            
+                                {{if item.id == "checkCaseAdmin" }}                                
+
+                                    <td class="row-item BorderCell BAMainFontColor" rowspan="${totalTask}">
+                                        {{if item.totalTask > 1}}rowspan="${element.totalTask}"  {{/if}} 
+
+                                        <input class="biz-wp-float-left biz-wp-margin-right-2" type="checkbox" name="CaseAdmin" value="${item.value}" data-subprocess="${item.isSubProcess}" data-parentCase="${item.idParentCase}"/>
+                                    </td>
+                                {{/if}}
+
+                                {{if item.id == "caseNumber" && !groupByCaseNumber}}
+
+                                    ${currentidCase = item.value, ""}
+
+                                    <td class="row-item BorderCell BAMainFontColor" rowspan="${totalTask}">
+                                        <a href="#" class="caseClicked" data-idCase="${item.value.idCase}">${item.value.caseNumber}</a>
+
+                                    </td>
+
+                                {{/if}}
+                                {{if item.id == "idWorkItem" || item.id == "processCreationDate" || item.id == "processDueDate"}}
+                                    <td class="row-item BorderCell BAMainFontColor" rowspan="${totalTask}">
+                                        <span>${item.value}</span>
+                                    </td>
+                                {{/if}}
+
+                                {{if item.id == "viewProcess" && securityGraphicQuery}}
+                                    <td class="row-item BorderCell BAMainFontColor" rowspan="${totalTask}">
+                                        <div class="biz-wp-diagram-view-icon" data-idCase="${item.value.idCase}" data-idWorkflow="${item.value.idworkflow}" />
+                                    </td>
+                                {{/if}}
+
+                                {{if item.colorState !== undefined }}
+                                    <td class="row-item BorderCell BAMainFontColor">
+                                        {{if !item.skip}}
+                                            <ul class="case-item-fields">
+                                                <li class="case-item-field-item">
+                                                    {{if item.taskType === "UserInteraction" || item.taskType === "Singleton" || item.taskType === "ManualTask" || item.taskType === "Event" || item.taskType === "ConditionalTask"}}
+                                                        <input type="checkbox" name="workItemAdmin" class="ui-checkbox ui-WorkItemAdmin"
+                                                        value="${item.idCase}|${item.idWorkItem}|${item.taskName}"
+                                                        >
+                                                    {{/if}}
+                                                </li>
+                                                <li class="case-item-field-item task-name">
+                                                    <a href="#" class="activityClicked" data-idCase="${item.idCase}" data-idWorkItem="${item.idWorkItem}" data-idTask="${item.idTask}" >${item.taskName}</a>
+
+                                                </li>
+
+                                                <li class="case-item-field-item">
+                                                    {{if item.taskType === "UserInteraction" || item.taskType === "Singleton" || item.taskType === "ManualTask" || item.taskType === "Event" || item.taskType === "ConditionalTask"}}
+                                                        {{if item.colorState == "Red"}}
+                                                            <div class="icon"/>
+                                                        {{/if}}
+                                                        {{if item.colorState == "Green"}}
+                                                            <div class="icon green"/>
+                                                        {{/if}}
+                                                        {{if item.colorState == "Yellow"}}
+                                                            <div class="icon yellow"/>
+                                                        {{/if}}
+                                                    {{/if}}
+                                                </li>
+                                            </ul>
+                                        {{/if}}
+                                    </td>
+                                {{/if}}
+
+                                {{if item.estimatedSolutionDate !== undefined}}
+                                    <td class="row-item BorderCell BAMainFontColor">
+                                        {{if !item.skip}}
+                                            <span>${item.estimatedSolutionDate}</span>
+                                        {{/if}}
+                                    </td>
+                                {{/if}}
+
+                                {{if item.userName !== undefined}}
+                                    <td class="row-item BorderCell BAMainFontColor">
+                                        <span>${item.userName}</span>
+                                    </td>
+                                {{/if}}
+                                
+                                {{if item.userLocation !== undefined}}
+                                    <td class="row-item BorderCell BAMainFontColor userLocation">
+                                        <span></span>
+                                    </td>
+                                {{/if}}
+
+                                {{if item.id == "customField"}}
+                                    <td class="row-item BorderCell BAMainFontColor" rowspan="${totalTask}">
+                                        <span>${item.value}</span>
+                                    </td>
+                                {{/if}}
+                            {{/each}}
+                        </tr>
+                    {{else}}
+                        <tr>
+                            {{each(k, item) element.data }}
+
+                                {{if item.colorState !== undefined }}
+                                    <td class="row-item BorderCell BAMainFontColor">
+                                        {{if !item.skip}}
+                                            <ul class="case-item-fields">
+                                                <li class="case-item-field-item">
+                                                    {{if item.taskType === "UserInteraction" || item.taskType === "Singleton" || item.taskType === "ManualTask" || item.taskType === "Event" || item.taskType === "ConditionalTask"}}
+                                                        <input type="checkbox" name="workItemAdmin" class="ui-checkbox ui-WorkItemAdmin"
+                                                        value="${item.idCase}|${item.idWorkItem}|${item.taskName}">
+                                                    {{/if}}
+                                                </li>
+                                                <li class="case-item-field-item task-name">
+                                                    <a href="#" class="activityClicked" data-idCase="${item.idCase}" data-idWorkItem="${item.idWorkItem}" data-idTask="${item.idTask}">${item.taskName}</a>
+
+                                                </li>
+
+                                                <li class="case-item-field-item">
+                                                    {{if item.taskType === "UserInteraction" || item.taskType === "Singleton" || item.taskType === "ManualTask" || item.taskType === "Event" || item.taskType === "ConditionalTask"}}
+                                                        {{if item.colorState == "Red"}}
+                                                            <div class="icon"/>
+                                                        {{/if}}
+                                                        {{if item.colorState == "Green"}}
+                                                            <div class="icon green"/>
+                                                        {{/if}}
+                                                        {{if item.colorState == "Yellow"}}
+                                                            <div class="icon yellow"/>
+                                                        {{/if}}
+                                                    {{/if}}
+                                                </li>
+                                            </ul>
+                                        {{/if}}
+                                    </td>
+                                {{/if}}
+
+                                {{if item.estimatedSolutionDate !== undefined}}
+                                    <td class="row-item BorderCell BAMainFontColor">
+                                        {{if !item.skip}}
+                                            <span>${item.estimatedSolutionDate}</span>
+                                        {{/if}}
+                                    </td>
+                                {{/if}}
+
+                                {{if item.userName !== undefined}}
+                                    <td class="row-item BorderCell BAMainFontColor">
+                                        <span>${item.userName}</span>
+                                    </td>
+                                {{/if}}
+
+                                {{if item.userfullName !== undefined}}
+                                    <td class="row-item BorderCell BAMainFontColor">
+                                        <span>${item.userfullName}</span>
+                                    </td>
+                                {{/if}}
+                            {{/each}}
+                        </tr>
+                    {{/if}}
+                {{/each}}
+            {{/each}}
+        </tbody>
+    </table>
+
+    <div id="biz-wp-table-summary-wrapper" class="biz-wp-table-summary-wrapper">
+          <ul id="biz-wp-table-pager-wrapper" class="biz-wp-table-pager-wrapper">
+          </ul>
+    </div>
+
+    <div class="case-search-action-wrapper"></div>
+
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-admin-case-search-pagination" type="text/x-jquery-tmpl">
+   <div>
+
+        {{each pages}}
+        <li {{if page==pageNumber}} class="bz-page active" {{else}} class="bz-page" {{/if}} data-page="${pageNumber}">
+            <span class="number">${pageNumber}</span>
+        </li>
+        {{/each}}
+  
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-case-search-invalidate" type="text/x-jquery-tmpl" >
+    <div class="case-search-invalidate-wrapper">   
+        <div>
+            <strong>%{workportal-widget-admincasesearch-invalidate}</strong>
+        </div>
+        <br/>
+        <div>
+            <label>%{workportal-widget-admincasesearch-invalidate-msg}</label>
+        </div>
+        <div class="biz-wp-form clearfix"> 
+                <div class="biz-wp-form-row clearfix">
+                    <div id="reasonLabel" class="biz-wp-form-cell case-search-reasonLabel">%{workportal-widget-admincasesearch-reason}</div>
+                    <div class="biz-wp-form-cell"> 
+                        <textarea id="txtReason" cols="40" rows="3" class="case-search-textarea" maxlength="1000"></textarea>
+                    </div>
+                </div>
+         </div>
+         <div class="btn-admin-case-invalidate-div">
+            <button id="btn-admin-case-invalidate" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                  <span class="ui-button-text">%{workportal-widget-admincasesearch-invalidate}</span>
+            </button>
+         </div>
+     </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-case-search-reassign" type="text/x-jquery-tmpl" >
+
+  <div class="case-search-reassign-wrapper">
+        <div>
+            <strong>%{workportal-widget-admincasesearch-reassign}</strong>
+        </div>
+        <br/>
+        <div>
+            <label>%{workportal-widget-admincasesearch-reassign-msg}</label>
+        </div>
+        <div class="btn-admin-case-reassign-div">
+            <button id="btn-admin-case-reassign" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+                  <span class="ui-button-text">%{workportal-widget-admincasesearch-reassign}</span>
+            </button>
+        </div>
+     </div>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-case-search-reassign-form" type="text/x-jquery-tmpl" >
+  
+        <div class="biz-wp-form-row clearfix" id="case-search-reassign-form">
+            <strong><div class="biz-wp-form-cell" style="display:none">%{workportal-widget-admincasesearch-reassign-activities}</div></strong>
+            <div id="activityList2" class="biz-wp-form-cell"> 
+                {{each(i,item) tasks}}
+                    <span> ${item.taskItem} </span>
+                    <br/>
+                {{/each}}
+            </div>
+            <div id="biz-wp-users-table-form" />
+            <div id="dinamicContent"></div>
+        </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-case-search-action-result" type="text/x-jquery-tmpl" >
+
+    <div>
+        <br/>
+        <div>
+            {{if action == "invalidate"}}
+                {{if resultStatus[0] == true}}
+                <label class="bz-wp-casesearch-invalidation">%{workportal-widget-admincasesearch-invalidate-result-msg}</label>
+                 {{/if}}
+                {{if resultStatus[1] == false}}
+                <label>%{workportal-widget-admincasesearch-invalidate-result-fail-msg}</label>
+                <p>${exceptionMessage}</p>
+                {{/if}}
+            {{/if}}
+            {{if action == "invalidate-several"}}
+                 {{if resultStatus[0] == true}}
+                <label>%{workportal-widget-admincasesearch-invalidate-several-result-msg}</label>                
+                 {{/if}}
+                {{if resultStatus[1] == false}}
+                 <label>%{workportal-widget-admincasesearch-invalidate-several-result-fail-msg}</label>
+                {{/if}}
+            {{/if}}
+            {{if action == "reassign"}}
+             {{if resultStatus[0] == true}}
+                <label>%{workportal-widget-admincasesearch-reassign-result-msg}</label>
+                 {{/if}}
+                {{if resultStatus[1] == false}}
+                 <label>%{workportal-widget-admincasesearch-reassign-result-fail-msg}</label>
+                {{/if}}
+            {{/if}}
+            {{if action == "reassign-several"}}
+              {{if resultStatus[0] == true}}
+                <label>%{workportal-widget-admincasesearch-reassign-several-result-msg}</label>
+                {{/if}}
+                {{if resultStatus[1] == false}}
+                 <label>%{workportal-widget-admincasesearch-reassign-several-result-fail-msg}</label>
+                {{/if}}
+            {{/if}}
+
+        </div>
+     </div>
+
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-case-search-quicksearch" type="text/x-jquery-tmpl">
+    <div>
+        <strong>
+            <span id="generalTitle" class="biz-wp-window-title">
+            </span>
+        </strong>
+        <div id="dinamicContent"></div>
+        <div id="dinamicContent2" class="biz-wp-form clearfix"></div>
+    </div>
+</script>

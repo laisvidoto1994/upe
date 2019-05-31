@@ -1,0 +1,133 @@
+/********
+* Filename: bizagi.editor.component.ribbon.css
+* Create Date: 2012-05-23
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com / Ramiro Gomez Ramiro.Gomez@bizagi.com / Jair Tellez Jair.Tellez@bizagi.com
+*
+* $__ribbon groups icons dropdown
+*
+********/
+
+/* Groups with his columns and labels
+   ========================================================================== */
+
+.ribbon-group
+{
+    position: relative;
+    float: left;
+    margin: 0 1px 0 0;
+    padding: 2px 3px;
+    height: 87px;
+    border-width: 1px;
+    list-style: none;
+    -webkit-border-image: -webkit-linear-gradient(#fdfdfd, #fff) 1 100%;
+}
+
+.ribbon-group::after
+{
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 1px;
+    height: 100%;
+    content: "";
+}
+
+.ribbon-group:hover { background: -webkit-radial-gradient(center 100px, circle cover, rgba(255, 255, 255, .5) 20px, rgba(229, 233, 238, 0) 100px, rgba(255, 255, 255, 0)); }
+
+.ribbon-group-col { float: left; }
+
+.ribbon-group-caption
+{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 100%;
+	margin-left: -50%;
+	clear: left;
+	text-align: center;
+}
+
+
+.ribbon-group-col .ui-cells{
+	display: inline-block;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+.ribbon-group-col .ui-cells:first-child{
+	border-right: 1px solid rgb(239, 242, 245);
+}
+
+.ribbon-group-col .ui-cells:last-child{
+	border-right:none;
+}
+
+.bizagi_editor_component_ribbon {
+    width: 200%;
+}
+
+.bizagi_editor_component_ribbon .ribbon-particular-properties{
+	margin: 0 4px 0 4px;
+}
+.ui-tooltip.ui-ribbon-tooltip.ui-ribbon-horizontal-tooltip,
+.ui-tooltip.ui-ribbon-tooltip.ui-ribbon-vertical-tooltip{
+	top:88px!important;
+	min-width: 60px;
+}
+
+.ribbon-group-col .biz-btn-caret{
+	position: absolute;
+	right: 4px;
+	top: 10px;
+}
+.ribbon-group-col .biz-btn-horizontal > .biz-btn{
+	padding-right: 12px;
+}
+
+.ribbon-layout {
+    background: #88ab16;
+}
+
+.ribbon-tab {
+    padding: 10px;
+    position: relative;
+}
+
+
+@media screen and (max-width: 1204px) and (min-width: 1082px){
+
+	.ribbon-label{
+		font-size:9px;
+	}
+
+	.bizagi_editor_component_ribbon li.biz-dropdown-section:hover,
+	.bizagi_editor_component_ribbon li.biz-dropdown-section{
+		font-size:10px;
+	}
+
+	/*.bizagi_editor_component_ribbon{
+		padding-left: 16px;
+	}*/
+	
+}
+
+@media screen and (max-width: 1081px){
+
+	.bizagi_editor_component_ribbon .ribbon-label{
+		opacity:0;
+		font-size:0;
+	}
+
+	.bizagi_editor_component_ribbon .biz-dropdown .ribbon-label{
+		opacity:1;
+		font-size:10px;
+	}
+
+	.bizagi_editor_component_ribbon li span {
+		margin: 0;
+	}
+
+	.bizagi_editor_component_ribbon .biz-dropdown .biz-dropdown-section{
+		font-size:10px;
+	}
+
+}

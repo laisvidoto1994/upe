@@ -1,0 +1,195 @@
+
+
+
+#ui-bizagi-wp-project-plan-activity-action .wrapper-menu-rubik
+{
+    position: relative;
+    top: -6px;
+}
+
+#ui-bizagi-wp-project-plan-activity-action .case-summary-favorite {
+    margin-right: 4px;
+}
+
+#ui-bizagi-wp-project-plan-activity-action .menu
+{
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top:5px;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+#ui-bizagi-wp-project-plan-activity-action .menu > li
+{
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 17px;
+}
+
+#ui-bizagi-wp-project-plan-activity-action h3
+{
+    margin-right: 2rem;
+}
+
+#project-popupform-edit-activity-wrapper .ui-bizagi-wp-project-popupform-form .first-column
+{
+    width: 135px;
+}
+
+#project-popupform-edit-activity-wrapper .user-assigned > span
+{
+    float: right;
+}
+
+#project-popupform-edit-activity-wrapper .ui-bizagi-wp-project-popupform-field-name.field-description
+{
+    padding-bottom: 0;
+}
+
+#project-popupform-edit-activity-wrapper .k-input
+{
+    border: 1px solid #C6CACC;
+}
+
+#right-sidebar-wrapper .k-link
+{
+  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size:13px;
+}
+
+#right-sidebar-wrapper .k-animation-container .k-item:hover
+{
+    background:#e2e2e2;
+}
+
+#right-sidebar-wrapper .k-animation-container .k-item
+{
+    padding:3px 10px 3px 5px;
+
+}
+
+#right-sidebar-wrapper .k-menu-group
+{
+    padding-bottom:5px;
+    padding-top:5px;
+}
+
+/*Defaults*/
+#project-popupform-edit-activity-wrapper .ui-rubik-input
+{
+    background: #FAFAFA !important;
+    border-color: #DDD !important;
+    border-radius: 4px !important;
+    box-sizing: border-box;
+    color: #374C58;
+    font-size: 12px;
+    min-height: 32px !important;
+    width: 100%;
+    border-width: 1px;
+    border-style:solid;
+    padding: 4px;
+}
+
+#project-popupform-edit-activity-wrapper .ui-rubik-input[type='checkbox']
+{
+    width: 1.4em;
+}
+
+#project-popupform-edit-activity-wrapper .ui-rubik-input.hasDatepicker,
+#project-popupform-edit-activity-wrapper .ui-rubik-input.ui-spinner-input
+{
+    width:auto;
+    text-align:right;
+}
+
+#project-popupform-edit-activity-wrapper .ui-rubik-input.hasDatepicker
+{
+    padding: 0px 30px 0px 0px;
+}
+#project-popupform-edit-activity-wrapper .ui-rubik-input.ui-spinner-input
+{
+    padding: 0px 0px 0px 0px;
+}
+
+
+
+#project-popupform-edit-activity-wrapper .ui-bizagi-input-required
+{
+    background-color: red;
+    line-height: normal;
+    -webkit-border-radius: 2px 0px 0px 2px;
+    border-radius: 2px 0px 0px 2px;
+    z-index: 1;
+    display: inline-block;
+    height: 28px;
+    vertical-align: top;
+    width: 3px;
+    position: relative;
+    left: 1px;
+    top: 31px;
+}
+
+#project-popupform-edit-activity-wrapper span.ui-spinner
+{
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    background: #fff;
+}
+
+#project-popupform-edit-activity-wrapper .ui-spinner input
+{
+    border: 0;
+}
+
+#project-popupform-edit-activity-wrapper .ui-spinner a
+{
+    display: block;
+    font-size: .5em;
+    height: 50%;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+
+#project-popupform-edit-activity-wrapper .ui-spinner a:hover
+{
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+}
+
+#project-popupform-edit-activity-wrapper .ui-spinner a.ui-spinner-button.ui-spinner-up
+{
+    border-radius: 0px;
+    border-top-right-radius: 4px;
+}
+
+#project-popupform-edit-activity-wrapper .ui-spinner a.ui-spinner-button.ui-spinner-down
+{
+    border-radius: 0px;
+    border-bottom-right-radius: 4px;
+}
+
+#project-popupform-edit-activity-wrapper .position-message-validate
+{
+    position: absolute;
+    right: 0px;
+}
+
+#project-popupform-edit-activity-wrapper table tr
+{
+    height: 55px;
+}
+
+#project-popupform-edit-activity-wrapper .second-column-with-message
+{
+    position: relative;
+}

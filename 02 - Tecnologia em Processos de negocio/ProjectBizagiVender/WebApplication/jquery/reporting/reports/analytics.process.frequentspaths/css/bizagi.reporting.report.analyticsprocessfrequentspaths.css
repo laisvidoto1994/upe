@@ -1,0 +1,98 @@
+﻿/* ==========================================================================
+   Frequent paths
+   ========================================================================== */
+
+.bz-rp-frequentspaths-header { padding: 1em 0;  }
+
+.bz-rp-analytics-process-frequentspaths-block {
+    float: left;
+    margin-right: 1.5em;
+}
+
+.bz-rp-frequentspaths-header .ui-spinner {
+    border: none;
+    background: none;
+}
+
+.bz-rp-frequentspaths-header input[type=text] {
+    box-shadow: inset 0 1px 6px 0 rgba(50, 50, 50, .2);
+    max-width: 5em;
+    max-height: 30px;
+    min-height: 30px;
+    padding-left: 1em;
+    border: 1px solid #c6cacc;
+    border-bottom: 1px solid #e2e3df;
+    border-color: #ddd #ddd;
+    border-radius: 4px 0 0 4px;
+    margin: 0;
+    background: #fff;
+    font: 12px/1 normal Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    color: #444;
+    vertical-align: top;
+}
+
+.bz-rp-frequentspaths-header .ui-button {
+    box-shadow: 0 1px #ddd;
+    position: relative;
+    min-width: 32px;
+    max-height: 30px;
+    min-height: 30px;
+    padding: 0;
+    border: 1px solid #ddd;
+    background: #fff !important;
+}
+
+.bz-rp-frequentspaths-header .ui-spinner-up {
+    float: right;
+    border-radius: 0 4px 4px 0 !important;
+}
+
+.bz-rp-frequentspaths-header .ui-spinner-up > span { border-radius: 0 4px 4px 0 !important; }
+
+.bz-rp-frequentspaths-header .ui-spinner-down {
+    border-right-color: transparent;
+    border-radius: 0 !important;
+}
+
+.bz-rp-analytics-process-frequentspaths-paths .ui-spinner-down {
+    float: left;
+    border-radius: 4px 0 0 4px !important;
+}
+
+.bz-rp-analytics-process-frequentspaths-paths input[type=text] {
+    border-radius: 0;
+}
+
+.bz-rp-frequentspaths-header .ui-spinner-down > span { border-radius: 0 !important; }
+
+.bz-rp-frequentspaths-header .ui-spinner-button span {
+    padding: 0;
+}
+
+.bz-rp-analytics-process-frequentspaths-block .ui-icon-triangle-1-n {
+    background-position: -32px -16px;
+}
+
+.bz-rp-analytics-process-frequentspaths-block .ui-icon-triangle-1-s {
+    background-position: -96px -16px;
+}
+
+.bz-rp-frequentspaths-header .ui-spinner-button .ui-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.bz-rp-frequentspaths-label {
+    display: block;
+    margin-bottom: .5em;
+}
+
+.bz-rp-frequentspaths-data {
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+}

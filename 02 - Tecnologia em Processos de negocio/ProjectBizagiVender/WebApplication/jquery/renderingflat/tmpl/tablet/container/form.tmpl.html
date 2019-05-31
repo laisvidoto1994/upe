@@ -1,0 +1,48 @@
+﻿<script id="ui-bizagi-render-form" type="text/x-kendo-template">
+    <div class="ui-bizagi-form" dir="#if (typeof data.orientation !== 'undefined'){ ##= data.orientation ##}else{#auto#}#" data-unique-id="#= data.uniqueId #">
+
+        <div class="ui-bizagi-container-children-form">
+            {{children}}
+        </div>
+        # if (data.transitions){#
+            #= $.cacheTemplate("complexgateway", data) #
+        #}#
+
+        <div class="ui-bizagi-button-container">
+            # for(var i=0, len = data.buttons.length; i < len; i++){ #
+            <div ordinal="#= i #" id="formButton#= i #" class="action-button ui-bizagi-form-button">#= data.buttons[i].caption #</div>
+            #}#
+        </div>
+    </div>
+</script>
+
+
+<script id="ui-bizagi-render-complexGateway" type="text/x-kendo-template">
+    <div class="ui-bizagi-container-complexgateway" dir="#if (typeof data.orientation !== 'undefined'){ ##= data.orientation ##}else{#auto#}#">
+        <div class="ui-bizagi-container-group-header bz-rn-cg-headercontainer">
+            <span class="ui-bizagi-fix-title bz-rn-cg-headertitle">%{render-widget-complexgateway-title} </span>
+        </div>
+
+        <div class="ui-bizagi-container-group-wrapper">
+            # $.each (data.transitions, function (i, item) { #
+
+            <div class="bz-rn-cg-row">
+                <span class="bz-rn-cg-row-element-text">
+                    <label>#= item.displayName #</label>
+                </span>
+
+                <div class="bz-rn-cg-row-element-button">
+                    <div class="bz-rn-cg-checkbox-control bz-rn-cg-checkbox">
+                        # if(item.isDefault === 'true'){ #
+                        <label class="ui-checkbox-state-checked bz-mo-icon bz-check" for="check_complexgateway_#= item.id #" data-checked="true" data-value="#= item.id #" class="ui-checkbox-state-checked bz-mo-icon bz-check"></label>
+                        #} else {#
+                        <label class="bz-mo-icon bz-full-ball" for="check_complexgateway_#= item.id #" data-checked="false" data-value="#= item.id #" class="bz-mo-icon bz-full-ball"></label>
+                        #}#
+                    </div>
+                </div>
+            </div>
+
+            #}); #
+        </div>
+    </div>
+</script>

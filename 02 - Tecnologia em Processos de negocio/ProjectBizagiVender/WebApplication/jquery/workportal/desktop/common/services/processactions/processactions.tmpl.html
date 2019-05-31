@@ -1,0 +1,37 @@
+<script id="popup-notification-template" type="text/x-jsrender" >
+    <div>
+        <div id="popup-notification-template-wrapper">
+            <div class="message-summary">
+                <p>{{:messageSummary}}</p>
+                <p>{{:messageActionGoToCase}}</p>
+            </div>
+            <div class="padding-botoom-15">
+                <ul>
+                    {{for messageCreatedCases}}
+                        <li>
+                            <i class="bz-icon bz-wp-icon-16 bz-icon-{{:icon}}"></i>
+                            {{:caseCreated}}
+                        </li>
+                    {{/for}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="popup-notification-rules-template" type="text/x-jsrender" >
+    <div>
+        <div id="popup-notification-template-wrapper">
+            <div class="message-summary">
+                <p>{{:messageSummary}}</p>
+            </div>
+            <div class="padding-botoom-15">
+                <ul>
+                    {{for resultTotalRules}}
+                    <li><i class="bz-icon bz-wp-icon-16 bz-icon-{{:icon}}"></i>{{:result}}</li>
+                    {{/for}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</script>

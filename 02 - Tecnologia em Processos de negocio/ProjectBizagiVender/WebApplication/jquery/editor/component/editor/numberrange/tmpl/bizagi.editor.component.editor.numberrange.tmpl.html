@@ -1,0 +1,39 @@
+<script id="numberrange-frame" type="text/x-jquery-tmpl">
+    <div class="numberrange-container ui-control-container">
+        <label class="numberrange-name-title">${caption}</label>
+    </div>
+</script>
+
+<script id="numberrange-frame-number-fixed" type="text/x-jquery-tmpl">
+    <div>
+        <label class="numberrange-name">${caption}</label>
+        <div class="numberrange-number-container ui-control-input ${style}">
+            <div class="biz-complex-btn biz-action-btn ui-corner-left numberrange-button-value {{if isOffline}}biz-value-longer{{/if}}">
+                <input type="text" class="numberrange-number-value" value="${fixedvalue}" />
+            </div><div class="biz-complex-btn biz-complex-dropdown ui-corner-right biz-complex-btn-container">
+                <div class="biz-action-btn"><i class="biz-ico numberrange-image-fixed-edit numberrange-image-edit bz-studio bz-edit_16x16_standard" title="%{formmodeler-component-editor-all-edit-this-field}"></i></div>
+                <div class="biz-action-btn"><i class="biz-ico numberrange-image-fixed-delete numberrange-image-delete bz-studio bz-delete_16x16_standard" title="%{formmodeler-component-editor-all-delete-value}"></i></div>
+                {{if !isOffline}}
+                    <div class="biz-action-btn"><i class="biz-ico biz-ico-default-value numberrange-rule-external bz-studio bz-expresion-ex_16x16_standard" title="%{formmodeler-component-editor-all-create-rule}"></i></div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="numberrange-frame-rule" type="text/x-jquery-tmpl">
+    <div>
+        <label class="numberrange-name">${caption}</label>
+        <div class="numberrange-number-container ui-control-input ${style}">
+            <div class="numberrange-rule-value">
+                <div class="biz-complex-btn biz-action-btn ui-corner-left numberrange-button-value" title="${nameRule}">
+                    <div class="numberrange-rule-value-caption">${nameRule}</div>
+                </div><div class="biz-complex-btn biz-complex-dropdown ui-corner-right biz-complex-btn-container">
+                    <div class="biz-action-btn"><i class="biz-ico numberrange-image-rule-edit numberrange-image-edit bz-studio bz-edit_16x16_standard" title="%{formmodeler-component-editor-all-edit-this-field}"></i></div>
+                    <div class="biz-action-btn"><i class="biz-ico numberrange-image-rule-delete numberrange-image-delete bz-studio bz-delete_16x16_standard" title="%{formmodeler-component-editor-all-delete-value}"></i></div>
+                    <div class="biz-action-btn"><i class="biz-ico biz-ico-default-value numberrange-rule-external bz-studio bz-expresion-ex_16x16_standard" title="%{formmodeler-component-editor-all-create-rule}"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

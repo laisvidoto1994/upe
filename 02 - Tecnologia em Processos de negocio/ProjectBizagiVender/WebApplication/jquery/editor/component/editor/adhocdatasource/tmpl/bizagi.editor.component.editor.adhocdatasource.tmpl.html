@@ -1,0 +1,53 @@
+<script id="adhocdatasource-frame" type="text/x-jquery-tmpl">
+    <div class="xpath-container ui-control-container">
+        <label class="xpath-name">${caption}</label>
+        <input type="text" class="adhoc-xpath-value ui-control-input" readonly="readonly" value="${value}" />
+        {{if readonly == false}}
+            <i class="biz-ico xpath-image-world bz-studio bz-modeldata_16x16_standard" title="%{formmodeler-component-editor-xpath-show-data}"></i>
+            <i class="biz-ico biz-ico-default bz-studio bz-undo_16x16_standard" title="%{formmodeler-component-editor-all-set-default}"></i>
+        {{/if}}
+        <div class="adhocdatasource-frame-component"></div>
+    </div>
+</script>
+
+<script id="adhocdatasource-popup-close" type="text/x-jquery-tmpl">
+    <div class="adhocdatasource-popup-close ui-properties-close biz-btn-close"><i class="biz-icon ui-close-btn bizagi_editor_xpathnavigator_container-close-image bz-studio bz-black bz-boolean-remove_16x16_black"></i></div>
+</script>
+
+<script id="adhocdatasource-popup-container" type="text/x-jquery-tmpl">
+    <div class="adhocdatasource-popup-container">
+        {{if hasBizagiEntities}}
+        <div class="ui-control-container">
+            <label title="Bizagi Entities">Bizagi Entities</label>
+            <div class="ui-control-input" tabindex="0">
+                <input type="text" id="bizagi-entity-input" />
+            </div>
+        </div>
+        {{/if}}
+        {{if hasAdhocEntities && showAdhocEntitiesControl}}
+        <div class="ui-control-container">
+            <label title="Adhoc Entities">Adhoc Entities</label>
+            <div class="ui-control-input" tabindex="0">
+                <input type="text" id="adhoc-entity-input" />
+            </div>
+        </div>
+        {{/if}}
+        {{if showPredefinedValuesControl}}
+            <a id="predefinedValuesLink" href="#">Create Values</a>
+        {{/if}}
+    </div>
+</script>
+
+<script id="adhocdatasource-predefined-values-popup" type="text/x-jquery-tmpl">
+    <div id="adhocdatasource-predefined-values-popup-wrapper">
+        <form>            
+            <div class="details-form-field">
+                <div id="predefinedValuesGrid"></div>
+            </div>
+            <div class="ui-bizagi-wp-project-popupform-actions">
+                <button id="button-cancel-predefined-values-form" type="reset" class="ui-rubik-button ui-rubik-button-cancel" type="reset">%{text-cancel}</button>
+                <button id="button-accept-predefined-values-form" type="submit" class="ui-rubik-button ui-rubik-button-accept" type="submit">%{text-save}</button>
+            </div>
+        </form>
+    </div>
+</script>

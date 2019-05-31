@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Editor dateformat</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../../../common/jquery.ui/css/desktop/jquery.ui.css" />
+        <style>
+            .bizagi_editor_component_dateformat > .dateformat-container > .dateformat-fields.dateformat-show-time > .dateformat-image-small-time,
+            .bizagi_editor_component_dateformat > .dateformat-container > .dateformat-fields.dateformat-show-time > .dateformat-field-time {
+                display: inline-block;
+            }
+            .bizagi_editor_component_dateformat > .dateformat-container > .dateformat-fields.dateformat-not-show-time > .dateformat-image-small-time,
+            .bizagi_editor_component_dateformat > .dateformat-container > .dateformat-fields.dateformat-not-show-time > .dateformat-field-time {
+                display: none;
+            }
+            
+            .bizagi_editor_component_dateformat > .dateformat-container > .dateformat-fields > span,
+            .bizagi_editor_component_dateformat > .dateformat-container > .dateformat-fields > input {
+                vertical-align: middle;
+            }
+            
+            .bizagi_editor_component_dateformat > .dateformat-container > .dateformat-fields {
+                border: solid 1px black;
+                border-radius: 4px;
+                width: 210px;
+                padding: 4px;
+            }
+            
+            
+            .bizagi_editor_component_dateformat [class^="dateformat-image-small-"] {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+            }
+            .bizagi_editor_component_dateformat .dateformat-image-small-date {
+                background: transparent url("date.png") no-repeat center center;
+            }
+            .bizagi_editor_component_dateformat .dateformat-image-small-popup {
+                background: transparent url("popup.png") no-repeat center center;
+            }
+            .bizagi_editor_component_dateformat .dateformat-image-small-time {
+                background: transparent url("time.png") no-repeat center center;
+            }
+            
+            
+            
+            
+            .dateformat-popup {
+                border: solid 1px black;
+                border-radius: 4px;
+                width: 450px;
+            }
+            .dateformat-popup .dateformat-popup-item {
+                border: solid 1px blue;
+                margin: 4px;
+                border-radius: 4px;
+                padding: 4px;
+            }
+            .dateformat-popup .dateformat-popup-item > span {
+                display: inline-block;
+                width: 150px;
+            }
+            .dateformat-popup .dateformat-popup-item.dateformat-enabled {
+                display: block;
+            }
+            .dateformat-popup .dateformat-popup-item.dateformat-disabled {
+                display: none;
+            }
+            .dateformat-popup .dateformat-popup-date-sample {
+                width: 270px;
+            }
+            
+            .dateformat-popup .dateformat-popup-buttons {
+                border: solid 1px red;
+                border-radius: 4px;
+                margin: 4px;
+                padding: 4px;
+                text-align: center;
+            }
+            .dateformat-popup .dateformat-popup-buttons > span {
+                display: inline-block;
+                border: solid 1px blue;
+                border-radius: 4px;
+                width: 100px;
+                margin: 0px 10px;
+                cursor: pointer;
+            }
+        </style>
+        <script src="../../../../../common/base/js/lib/jquery.js"></script>
+        <script src="../../../../../common/jquery.ui/js/desktop/jquery.ui.js"></script>
+        <script src="../../../../plugins/desktop/jquery-ui-timepicker-addon.js"></script>
+        <script>
+            $(document).ready(function() {
+                
+                var shortFormat = [
+                    ["M*d*yyyy", "m*d*yy"], ["M*d*yy", "m*d*y"], ["MM*dd*yy", "mm*dd*y"], ["MM*dd*yyyy", "mm*dd*yy"],
+                    ["yy*MM*dd", "y*mm*dd"], ["yyyy*MM*dd", "yy*mm*dd"], ["dd*MM*yyyy", "dd*mm*yy"], ["dd*MM*yy", "dd*mm*y"]
+                ];
+                var normalFormat = [
+                    ["dddd, MMMM dd, yyyy", "DD, MM dd, yy"], ["MMMM dd, yyyy", "MM dd, yy"], ["dddd, dd MMMM, yyyy", "DD, dd MM, yy"],
+                    ["dd MMMM, yyyy", "dd MM, yy"]
+                ];
+                var timeFormat = [
+                    ["hh:mm:ss tt", { format : "hh:mm:ss tt", ampm : true }], ["h:mm:ss tt", { format : "h:mm:ss tt", ampm : true }],
+                    ["H:mm:ss", { format : "h:mm:ss", ampm : false }], ["HH:mm:ss", { format : "hh:mm:ss", ampm : false }]
+                ];
+                var formats = [ shortFormat, normalFormat, timeFormat ];
+                
+                var showTime = (!!$(".bizagi_editor_component_dateformat .dateformat-fields.dateformat-show-time").length) ? true : (!!$(".bizagi_editor_component_dateformat .dateformat-fields.dateformat-not-show-time").length) ? false : undefined;
+                var defaultFormat = $(".dateformat-popup .dateformat-popup-default-format");
+                var dateFormat = $(".dateformat-popup .dateformat-popup-date-format");
+                var timeFormat = $(".dateformat-popup .dateformat-popup-time-format");
+                var shortDate = $(".dateformat-popup .dateformat-popup-short-date");
+                var shortDateSeparator = $(".dateformat-popup .dateformat-popup-short-date-separator");
+                
+                populate(formats, showTime, {});
+                
+                function populate(formats, showTime, params) {
+                    var separator, i, format = [], option, shortDate, isShortDate, dateFormatSelect, timeFormatSelect,
+                    dateSampleInput, date, objectTime, valueTime, hasDateFormatSelected, hasTimeFormatSelected;
+                    
+                    shortDate = $(".dateformat-popup .dateformat-popup-short-date");
+                    dateFormatSelect = $(".dateformat-popup .dateformat-popup-date-format");
+                    dateSampleInput = $(".dateformat-popup .dateformat-popup-date-sample");
+                    
+                    dateFormatSelect.empty();
+                    dateSampleInput.empty();
+                    
+                    isShortDate = shortDate.is(":checked");
+                    
+                    hasDateFormatSelected = params.hasOwnProperty("dateFormatSelected");
+                    hasTimeFormatSelected = params.hasOwnProperty("timeFormatSelected");
+                    
+                    if(isShortDate) {
+                        separator = $(".dateformat-popup .dateformat-popup-short-date-separator").val();
+                        for(i=0; i<formats[0].length; i++) {
+                            format[0] = formats[0][i][0].replace(/\*/g, separator);
+                            format[1] = formats[0][i][1].replace(/\*/g, separator);
+                            if(hasDateFormatSelected & i == params.dateFormatSelected) {
+                                option = $("<option></option").attr({
+                                    "value" : format[1],
+                                    "selected" : "selected"
+                                }).text(format[0]);
+                            } else {
+                                option = $("<option></option").attr("value", format[1]).text(format[0]);
+                            }
+                            dateFormatSelect.append(option);
+                        }
+                    } else {
+                        for(i=0; i<formats[1].length; i++) {
+                            if(hasDateFormatSelected & i == params.dateFormatSelected) {
+                                option = $("<option></option").attr({
+                                    "value" : formats[1][i][1],
+                                    "selected" : "selected"
+                                }).text(formats[1][i][0]);
+                            } else {
+                                option = $("<option></option").attr("value", formats[1][i][1]).text(formats[1][i][0]);
+                            }
+                            dateFormatSelect.append(option);
+                        }
+                    }
+                    
+                    if(showTime) {
+                        timeFormatSelect = $(".dateformat-popup .dateformat-popup-time-format");
+                        timeFormatSelect.empty();
+                        for(i=0; i<formats[2].length; i++) {
+                            if(hasTimeFormatSelected & i == params.timeFormatSelected) {
+                                option = $("<option></option").attr({
+                                    "value" : JSON.stringify(formats[2][i][1]),
+                                    "selected" : "selected"
+                                }).text(formats[2][i][0]);
+                            } else {
+                                option = $("<option></option").attr("value", JSON.stringify(formats[2][i][1])).text(formats[2][i][0]);
+                            }
+                            timeFormatSelect.append(option);
+                        }
+                        
+                        date = new Date();
+                        objectTime = { hour : date.getHours(), minute : date.getMinutes(), second : date.getSeconds() };
+                        valueTime = JSON.parse(timeFormatSelect.val());
+                        dateSampleInput.val($.datepicker.formatDate(dateFormatSelect.val(), date) + " " + $.datepicker.formatTime(valueTime.format, objectTime, { ampm: valueTime.ampm }));
+                    } else {
+                        date = new Date();
+                        dateSampleInput.val($.datepicker.formatDate(dateFormatSelect.val(), date));
+                    }
+                }
+                
+                function changeItems(state, classes, formats, showTime) {
+                    var i, classToRemove, classToAdd;
+                    if(state == "disabled") {
+                        classToRemove = "dateformat-enabled";
+                        classToAdd = "dateformat-disabled";
+                    } else {
+                        classToRemove = "dateformat-disabled";
+                        classToAdd = "dateformat-enabled";
+                    }
+                    for(i=0; i<classes.length; i++) {
+                        if(!showTime && classes[i] == "dateformat-popup-short-date-separator") { // not change short date separator
+                            continue;
+                        } else {
+                            $(".dateformat-popup ." + classes[i]).parent().removeClass(classToRemove).addClass(classToAdd);
+                        }
+                    }
+                    populate(formats, showTime, {});
+                }
+                
+                //
+                defaultFormat.change(function() {
+                    var classes = [], useShortDate = shortDate.is(":checked"), useDefaultFormat = $(this).is(":checked");
+                    
+                    if(showTime) {
+                        classes = [
+                            "dateformat-popup-short-date", "dateformat-popup-date-format",
+                            "dateformat-popup-time-format", "dateformat-popup-date-sample"
+                        ];
+                    } else {
+                        classes = [ "dateformat-popup-short-date", "dateformat-popup-date-format", "dateformat-popup-date-sample" ];
+                    }
+                    
+                    if(useShortDate) { classes.push("dateformat-popup-short-date-separator"); }
+                    
+                    if(useDefaultFormat) {
+                        changeItems("disabled", classes, formats, showTime);
+                    } else {
+                        changeItems("enabled", classes, formats, showTime);
+                    }
+                });
+                
+                //
+                shortDate.change(function() {
+                    var useShortDate = $(this).is(":checked");
+                    if(useShortDate) {
+                        changeItems("enabled", [ "dateformat-popup-short-date-separator" ], formats, showTime);
+                    } else {
+                        changeItems("disabled", [ "dateformat-popup-short-date-separator" ], formats, showTime);
+                    }
+                });
+                
+                //
+                dateFormat.change(function() {
+                    var optionsDate = $(this).find("option");
+                    var indexDate = optionsDate.index($(this).find("option:selected"));
+                    var optionsTime, indexTime;
+                    if(showTime) {
+                        optionsTime = timeFormat.find("option");
+                        indexTime = optionsTime.index(timeFormat.find("option:selected"));
+                        populate(formats, showTime, { dateFormatSelected : indexDate, timeFormatSelected : indexTime });
+                    } else {
+                        populate(formats, showTime, { dateFormatSelected : indexDate });
+                    }
+                });
+                
+                //
+                shortDateSeparator.change(function() {
+                    var optionsTime, indexTime, optionsDate, indexDate;
+                    optionsDate = dateFormat.find("option");
+                    indexDate = optionsDate.index(dateFormat.find("option:selected"));
+                    if(showTime) {
+                        optionsTime = timeFormat.find("option");
+                        indexTime = optionsTime.index(timeFormat.find("option:selected"));
+                        populate(formats, showTime, { dateFormatSelected : indexDate, timeFormatSelected : indexTime });
+                    } else {
+                        populate(formats, showTime, { dateFormatSelected : indexDate });
+                    }
+                });
+                
+                //
+                if(showTime) {
+                    timeFormat.change(function() {
+                        var optionsTime = $(this).find("option");
+                        var indexTime = optionsTime.index($(this).find("option:selected"));
+                        var optionsDate, indexDate;
+                        optionsDate = dateFormat.find("option");
+                        indexDate = optionsDate.index(dateFormat.find("option:selected"));
+                        populate(formats, showTime, { dateFormatSelected : indexDate, timeFormatSelected : indexTime });
+                    });
+                }
+                
+                // buttons
+                $(".dateformat-popup .dateformat-popup-buttons span:eq(0)").click(function() {
+                    var date, time, valueDate, valueTime;
+                    date = $(".bizagi_editor_component_dateformat .dateformat-fields .dateformat-field-date");
+                    time = $(".bizagi_editor_component_dateformat .dateformat-fields .dateformat-field-time");
+                    // reset
+                    date.val("");
+                    time.val("");
+                    
+                    if(defaultFormat.is(":checked")) {
+                        date.val("Default Format");
+                        // publish empty
+                    } else {
+                        valueDate = dateFormat.find("option:selected").text();
+                        if(showTime) {
+                            valueTime = timeFormat.find("option:selected").text();
+                            date.val(valueDate);
+                            time.val(valueTime);
+                            // publish
+                        } else {
+                            date.val(valueDate);
+                            // publish
+                        }
+                    }
+                });
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main-container">
+            
+            <div class="editor bizagi_editor_component_dateformat">
+                <div class="dateformat-container">
+                    <label class="dateformat-name">Date Format</label>
+                    <div class="dateformat-fields dateformat-show-time">
+                        <span class="dateformat-image-small-date"></span>
+                        <input type="text" class="dateformat-field-date" readonly="readonly" />
+                        <span class="dateformat-image-small-popup"></span>
+                        <span class="dateformat-image-small-time"></span>
+                        <input type="text" class="dateformat-field-time" readonly="readonly" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dateformat-popup">
+                <div class="dateformat-popup-container dateformat-show-time">
+                    
+                    <div class="dateformat-popup-item dateformat-enabled">
+                        <span class="dateformat-popup-name">Use Default Format</span>
+                        <input type="checkbox" checked="checked" class="dateformat-popup-default-format" />
+                    </div>
+                    
+                    <div class="dateformat-popup-item dateformat-disabled">
+                        <span class="dateformat-popup-name">Use Short Date</span>
+                        <input type="checkbox" class="dateformat-popup-short-date" />
+                    </div>
+                    
+                    <div class="dateformat-popup-item dateformat-disabled">
+                        <span class="dateformat-popup-name">Short Date Separator</span>
+                        <select class="dateformat-popup-short-date-separator">
+                            <option value="/" selected="selected">/</option>
+                            <option value=".">.</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    
+                    <div class="dateformat-popup-item dateformat-disabled">
+                        <span class="dateformat-popup-name">Date Format</span>
+                        <select class="dateformat-popup-date-format"></select>
+                    </div>
+                    
+                    <div class="dateformat-popup-item dateformat-disabled">
+                        <span class="dateformat-popup-name">Time Format</span>
+                        <select class="dateformat-popup-time-format"></select>
+                    </div>
+                    
+                    <div class="dateformat-popup-item dateformat-disabled">
+                        <span class="dateformat-popup-name">Date Sample</span>
+                        <input type="text" readonly="readonly" class="dateformat-popup-date-sample" />
+                    </div>
+                    
+                    <div class="dateformat-popup-buttons">
+                        <span>OK</span>
+                        <span>Cancel</span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

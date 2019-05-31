@@ -1,0 +1,40 @@
+<script id="tags-tagsframe" type="text/x-jquery-tmpl">
+    <div class="tags-container ui-control-container">
+        <label class="xpath-name">${caption}</label>
+        
+         {{if !hasValue}}
+            <ul id="tagsEmpty" class="tag-item-container" >
+                <li class="tag-item default-text">
+                    %{formmodeler-component-editor-tags-select-tags}
+                <li>
+            </ul>
+         {{else}}
+            <ul class="tag-item-container">
+                {{each(i, item) tagsSelected}}
+                    
+                    <li class="tag-item biz-btn" data-key="${item.key}">
+                        <i><span>${item.value}</span></i>
+                        <i class="biz-ico decorator-image item-image-delete-tag bz-studio bz-delete_16x16_standard" data-id="${i}" title="%{bizagi-editor-decorator-model-allowdelete}"></i>
+                    </li>    
+                    
+                {{/each}}                  
+            </ul>   
+         {{/if}}
+        
+        <i class="biz-ico tag-select" title="%{formmodeler-component-editor-tags-show-tags}"></i>
+
+        <div id='tag-values' style="display:none">
+            <ul class="tag-item-container">
+                {{each(i, item) tags}}
+
+                    <li class="tag-item tag-value biz-btn-horizontal" data-key="${item.key}">
+                        <div class="biz-btn">
+                            <span>${item.value}</span>
+                        </div>
+                    </li>
+
+                {{/each}}
+             </ul>           
+        </div>
+    </div>  
+</script>

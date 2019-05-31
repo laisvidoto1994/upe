@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://tempuri.org/getActivities.xsd" xmlns="http://tempuri.org/getActivities.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="workItems">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="workItem">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="workItemId" type="xs:string" minOccurs="0" />
+							<xs:element name="workItemState" type="xs:string" minOccurs="0" />
+							<xs:element name="workItemEntryDate" type="xs:string" minOccurs="0" />
+							<xs:element name="workItemDuration" type="xs:string" minOccurs="0" />
+							<xs:element name="workItemEstimatedSolutionDate" type="xs:string" minOccurs="0" />
+							<xs:element name="task" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="taskId" type="xs:string" minOccurs="0" />
+										<xs:element name="taskName" type="xs:string" minOccurs="0" />
+										<xs:element name="taskDisplayName" type="xs:string" minOccurs="0" />
+										<xs:element name="taskDescription" type="xs:string" minOccurs="0" />
+										<xs:element name="taskHelpText" type="xs:string" minOccurs="0" />
+										<xs:element name="taskEstimatedDuration" type="xs:string" minOccurs="0" />
+										<xs:element name="taskType" type="xs:string" minOccurs="0" />
+										<xs:element name="taskCost" type="xs:string" minOccurs="0" />
+										<xs:element name="taskPriority" type="xs:string" minOccurs="0" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

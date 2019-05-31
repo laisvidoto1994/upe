@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://tempuri.org/getActivities.xsd" xmlns="http://tempuri.org/getActivities.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="BizAgiWSParam">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="domain" type="xs:string" minOccurs="0" nillable="true" />
+				<xs:element name="userName" type="xs:string" minOccurs="0" nillable="true" />
+				<xs:element name="radNumber" type="xs:string" minOccurs="0" nillable="true" />
+				<xs:element name="applicationName" type="xs:string" minOccurs="0" nillable="true" />
+				<xs:element name="categoryName" type="xs:string" minOccurs="0" nillable="true" />
+				<xs:element name="processName" type="xs:string" minOccurs="0" nillable="true" />
+				<xs:element name="processesStatus" type="xs:int" nillable="true" />
+				<xs:element name="creationDate" minOccurs="0" maxOccurs="1" nillable="true">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="From" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="To" type="xs:string" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ExpirationDate" minOccurs="0" maxOccurs="1" nillable="true">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="From" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="To" type="xs:string" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

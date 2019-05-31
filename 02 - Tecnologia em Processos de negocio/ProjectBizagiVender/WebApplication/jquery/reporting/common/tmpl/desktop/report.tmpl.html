@@ -1,0 +1,25 @@
+﻿<script id="bz-rp-frame" type="text/x-jquery-tmpl">
+<div class="bz-rp-frame">
+   <div class="bz-rp-reports-wrapper">
+        <div class="cf bz-rp-reports">
+            {{component report}}
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-detaillist" type="text/x-jquery-tmpl">
+<div class="bz-rp-detaillist">
+    <iframe frameborder="0" src="${src}">
+    </iframe>
+</div>
+</script>
+
+<script id="bz-rp-exportexcel" type="text/x-jquery-tmpl">
+<div>
+    <label>%{reports-general-exportexcel}</label>
+    <a href="${$item.getReportExcelUrl}">
+        <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-export-excel bz-rp-export-excel"></i>
+    </a>
+</div>
+</script>

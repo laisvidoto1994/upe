@@ -1,0 +1,54 @@
+﻿{
+    "permissions": [
+    {
+        "Cases": [
+        "NewCase",
+        "Pending",
+        "Closed",
+        "Search"
+        ]
+    },
+    {
+        "AnalysisReports": [
+        "BAMProcess",
+        "BAMTask",
+        "AnalyticsProcess",
+        "AnalyticsTask",
+        "AnalyticsSensor"
+        ]
+    },
+    {
+        "Admin": [
+        "UserAdmin",
+        "EntityAdmin",
+        "CaseAdmin",
+        "AlarmAdmin",
+        "EncryptionAdmin",
+        "AsynchronousWorkitemRetries",
+        "UserPendingRequests",
+        "AuthenticationLogQuery",
+        "CasesMonitor",
+        "BusinessPolicies",
+        "Profiles",
+        "UserDefaultAssignation",
+        "LocationResources",
+        "MobileUpdatesAdmin"
+        ]
+    },
+    {
+        "CurrentUserAdministration": [
+        "CurrentUser"
+        ]
+    },
+    {
+        "LogOut": [
+    
+    ]
+    },
+    {
+        "Search": [
+    
+    ]
+    }
+    ]
+}

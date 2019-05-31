@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<xs:schema targetNamespace="http://tempuri.org/resumeCases.xsd" xmlns="http://tempuri.org/resumeCases.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="processes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="process">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="processId" type="xs:string" minOccurs="0" />
+							<xs:element name="processRadNumber" type="xs:string" minOccurs="0" />
+							<xs:element name="processWorkflowClass" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="workflowClassId" type="xs:string" minOccurs="0" />
+										<xs:element name="workflowClassName" type="xs:string" minOccurs="0" />
+										<xs:element name="workflowClassDisplayName" type="xs:string" minOccurs="0" />
+										<xs:element name="workflowClassDescription" type="xs:string" minOccurs="0" />
+										<xs:element name="workflowClassHelpText" type="xs:string" minOccurs="0" />
+										<xs:element name="workflowClassDisplayOrder" type="xs:string" minOccurs="0" />
+										<xs:element name="workflowClassCreationDate" type="xs:string" minOccurs="0" />
+										<xs:element name="workflowClassGlobalForm" type="xs:string" minOccurs="0" />
+										<xs:element name="workflowClassAllocationPrinciple" type="xs:string" minOccurs="0" />
+										<xs:element name="workflowClassProcessType" type="xs:string" minOccurs="0" />
+										<xs:element name="workflowClassProcessForumType" type="xs:string" minOccurs="0" />
+										<xs:element name="workflowClassDisplay" type="xs:string" minOccurs="0" />
+										<xs:element name="workflowClassUseParentRadicationNumber" type="xs:string" minOccurs="0" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="processError" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="errorCode" type="xs:string" minOccurs="0" nillable="true" />
+										<xs:element name="errorMessage" type="xs:string" minOccurs="0" nillable="true" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

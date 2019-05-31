@@ -1,0 +1,70 @@
+/*
+    Created on : Abr 14, 2015
+    Author     : Elkin Fernando Siabato Cruz
+*/
+
+
+.ui-bizagi-wp-userlist
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.ui-bizagi-wp-userlist li
+{
+    display: block;
+    float: left;
+    margin: 0 1em 0 0;
+    text-align: center;
+}
+
+.ui-bizagi-wp-usertooltip
+{
+    list-style-type: none;
+    margin: 8px;
+    padding: 0;
+}
+
+.ui-bizagi-wp-usertooltip li
+{
+    clear: both;
+}
+
+.bz-wp-tt-user
+{
+    text-align: left;
+}
+
+.bz-wp-tt-user-info
+{
+    margin-bottom: 1em;
+}
+
+.bz-wp-tt-user-info > .bz-wp-avatar
+{
+    float: left;
+}
+
+.bz-wp-tt-user-info-content {
+    margin-left: 4em;
+}
+
+.ui-bizagi-wp-usertooltip h4
+{
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ui-bizagi-wp-multiuser-item
+{
+    text-align: center;
+    font-weight: bold;
+    height: 30px;
+    padding: 6px;
+    background: white;
+    border: solid 1px #dfe7ec;
+}

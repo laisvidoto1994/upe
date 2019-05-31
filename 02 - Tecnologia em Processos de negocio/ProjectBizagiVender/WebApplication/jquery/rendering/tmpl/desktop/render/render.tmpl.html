@@ -1,0 +1,51 @@
+﻿<div class="ui-bizagi-render ui-corner-all ui-widget-content ${displayOptionClass} {{if orientation == 'rtl'}}ui-bizagi-rtl{{/if}}" data-unique-id="${uniqueId}" data-render-id="${id}" {{if xpath}} data-render-xpath="${xpath}" {{/if}} {{if tag}} data-render-tag="${tag}" {{/if}}>
+
+    <span class="ui-bizagi-label ${labelAlignClass} {{if labelWidth === 0}} ui-noSize" {{else}} {{if layoutType == 'pixels'}} " style=" width:${labelWidth}px; max-width:${labelWidth}px" {{else}} " style=" width:${labelWidth}%" {{/if}} {{/if}}>
+        <label>{{html label}}</label>
+    </span>
+
+    <div class="ui-bizagi-control ${valueAlignClass} {{if valueWidth === 100 }} ui-fullSize" {{else}} {{if layoutType == 'pixels'}} " style=" width:auto" {{else}} " style=" width:${valueWidth}%" {{/if}} {{/if}}>
+        <div class="ui-bizagi-control-wrapper">
+            {{if orientation == "rtl"}}
+                {{if isDesign}}
+                <div class="ui-bizagi-render-icons ui-widget-content ui-corner-all {{if messageValidation}} {{else}}ui-hidden{{/if}}">
+                    <span class="ui-bizagi-container-icon-editor-msg-validation"><div class="ui-bizagi-render-icon-editor-msg-validation bz-studio bz-warning-red_16x16_standard" title="${messageValidation}" {{if messageValidation && messageValidation.toString().length > 0}} style="display:inline-block" {{/if}}></div></span>
+                    {{else}}
+                    <div class="ui-bizagi-render-icons ui-widget-content ui-corner-all {{if helpText}} {{else}}ui-hidden{{/if}}" {{if helpText }} style="width:24px; text-align:center;" {{/if}}>
+                    {{/if}}
+                    {{if !printVersion}}
+                    <span class="ui-icon ui-icon-help ui-bizagi-render-icon-help" title="${helpText}" {{if helpText.toString().length > 0}} style="display:inline-block;" {{/if}}>${helpText}</span>
+                    <span class="ui-icon ui-icon-alert ui-bizagi-render-icon-error" title="${error}" {{if error}} {{if error.toString().length > 0}} style="display:inline-block" {{/if}} {{/if}}>${error}</span>
+                    {{/if}}
+                </div>
+
+                <div class="ui-bizagi-render-control {{if type != 'button'}} ${cssClass} {{/if}} {{if !editable && isExtendedText}}ui-bizagi-text-extended-readonly{{/if}}{{if queryForm}}ui-bizagi-render-control-queryForm{{/if}}">
+                    {{control}}
+                </div>
+            {{else}}
+                <div class="ui-bizagi-render-control {{if type != 'button'}} ${cssClass} {{/if}} {{if !editable && isExtendedText}}ui-bizagi-text-extended-readonly{{/if}}{{if queryForm}}ui-bizagi-render-control-queryForm{{/if}}">
+                    {{control}}
+                </div>
+
+                {{if isDesign}}
+                    <div class="ui-bizagi-render-icons ui-widget-content ui-corner-all {{if messageValidation}} {{else}}ui-hidden{{/if}}">
+                        <span class="ui-bizagi-container-icon-editor-msg-validation"><div class="ui-bizagi-render-icon-editor-msg-validation bz-studio bz-warning-red_16x16_standard" title="${messageValidation}" {{if messageValidation && messageValidation.toString().length > 0}} style="display:inline-block" {{/if}}></div></span>
+                {{else}}
+                    <div class="ui-bizagi-render-icons ui-widget-content ui-corner-all {{if helpText}} {{else}}ui-hidden{{/if}}" {{if helpText }} style="width:24px; text-align:center;" {{/if}}>
+                {{/if}}
+                {{if !printVersion}}
+                        <span class="ui-icon ui-icon-help ui-bizagi-render-icon-help" title="${helpText}" {{if helpText.toString().length > 0}} style="display:inline-block;" {{/if}}>${helpText}</span>
+                        <span class="ui-icon ui-icon-alert ui-bizagi-render-icon-error" title="${error}" {{if error}} {{if error.toString().length > 0}} style="display:inline-block" {{/if}} {{/if}}>${error}</span>
+                {{/if}}
+                    </div>
+            {{/if}}
+
+        </div>
+            {{if includedInResult}}
+            <div class="{{if orientation == 'rtl'}}ui-bizagi-render-control-mainIncluded-left{{/if}}{{if orientation == 'ltr'}}ui-bizagi-render-control-mainIncluded-right{{/if}}">
+                <input type="checkbox" class="ui-bizagi-render-control-included" title="included" {{if included}} checked="checked" {{/if}}>
+            </div>
+            {{/if}}
+
+    </div>
+</div>

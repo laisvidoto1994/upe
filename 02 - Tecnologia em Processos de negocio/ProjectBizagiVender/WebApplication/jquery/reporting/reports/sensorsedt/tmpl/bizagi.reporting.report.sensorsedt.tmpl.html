@@ -1,0 +1,193 @@
+﻿<script id="bz-rp-sensorsedt-main" type="text/x-jquery-tmpl">
+<div class="row">
+    <div class="columns">
+            {{tmpl "#bz-rp-sensorsedt-container"}}
+    </div>
+    <div class="columns">
+            <div class="bz-rp-processviewer-canvas" data-sensor="none" {{loading}}>
+            </div>
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-sensorsedt-container" type="text/x-jquery-tmpl">
+<div class="bz-rp-reports-sensors-wrapper">
+    <div class="cf bz-rp-reports-sensors-header">
+        <button class="bz-rp-button-secondary bz-rp-sensors-button-back">
+            <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-sensors-back"></i> <span>%{bz-rp-sensorsedt-return}</span>
+        </button>
+    </div>
+    <div>
+        {{component filters-processversion}}
+    </div>
+    <div id="bz-rp-reports-sensors-buttons" class="cf">
+        <button class="bz-rp-button bz-rp-sensors-button-newstopwatch stopwatch">
+            <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-sensors-item"></i>
+            <span>%{bz-rp-sensorsedt-newstopwatch}</span>
+        </button>
+        <button class="bz-rp-button bz-rp-sensors-button-newcounter counter">
+            <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-sensors-item"></i>
+            <span>%{bz-rp-sensorsedt-newcounter}</span>
+        </button>
+    </div>
+    <div id="bz-rp-reports-sensors-scrollablecontent">
+        <div id="bz-rp-reports-sensors-create">
+            <form class="bz-rp-sensors-form" novalidate>
+            </form>
+        </div>
+        <div id="bz-rp-reports-sensors-list">
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-sensorsedt-list" type="text/x-jquery-tmpl">
+<ul class="bz-rp-sensors-list">
+    {{each(i, val) sensors}}
+         <li data-id="${val.id}" data-type="${val.type}" {{if val.type === "counter" }} data-guid="${val.guidTask}" {{else}} data-guidfrom="${val.guidTaskFrom}" data-guidto="${val.guidTaskTo}"{{/if}} class="cf bz-rp-sensors-list-item ${val.type} {{if $item.name === val.name && $item.type === val.type}} bz-rp-sensors-selected{{/if}}">
+            <div class="cf bz-rp-sensors-list-header">
+                <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-sensors-item"></i>
+                <span class="bz-rp-sensors-list-name">${val.name}</span>
+            </div>
+            <div class="bz-rp-sensors-form-container" {{if $item.name === val.name && $item.type === val.type}} style="display:block;" {{/if}}>
+                <form class="bz-rp-sensors-form bz-rp-form-readonly" novalidate>
+                    {{if val.type === "counter"}}          
+                        {{tmpl(val) "#bz-rp-sensorsedt-countertable-edition"}}
+                    {{else}}
+                        {{tmpl(val) "#bz-rp-sensorsedt-stopwatchtable-edition"}}
+                    {{/if}}
+                    <div class="bz-rp-sensors-list-buttons-container">
+                        <div class="bz-rp-sensors-list-buttons-cntread">
+                            <button class="bz-rp-button-secondary bz-rp-sensors-button-edit">
+                                <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-edit"></i> <span>%{bz-rp-sensorsedt-edit}</span>
+                            </button>
+                            <button class="bz-rp-button-secondary bz-rp-sensors-button-delete">
+                                <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-delete"></i> <span>%{bz-rp-sensorsedt-delete}</span>
+                            </button>
+                        </div>
+                        <div class="bz-rp-sensors-list-buttons-cntedit">
+                            <button class="bz-rp-button-secondary bz-rp-sensors-button-apply">
+                                <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-apply"></i>
+                                <span>%{bz-rp-sensorsedt-apply}</span>
+                            </button>
+                            <button class="bz-rp-button-secondary bz-rp-sensors-button-cancel">
+                                <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-cancel"></i>
+                                <span>%{bz-rp-sensorsedt-cancel}</span>
+                            </button>
+                        </div>
+                    </div>                    
+                </form>
+            </div>
+        </li>
+    {{/each}}
+</ul>
+</script>
+
+<script id="bz-rp-sensorsedt-countertable-create" type="text/x-jquery-tmpl">
+<ul class="bz-rp-sensors-form bz-rp-sensors-form-createcounter">
+    <li><span class="bz-rp-errormsg">%{bz-rp-sensorsedt-cntvalidation-selecttask}</span></li>
+    <li><label>%{bz-rp-sensorsedt-formfield-name}</label></li>
+    <li class="bz-rp-sensors-form-fieldedit ui-required"><input type="text" value="" /></li>
+    <li><label>%{bz-rp-sensorsedt-formfield-dspname}</label></li>
+    <li class="bz-rp-sensors-form-fieldedit ui-required"><input type="text" value="" /></li>
+    <li><label>%{bz-rp-sensorsedt-formfield-desc}</label></li>
+    <li class="bz-rp-sensors-form-fieldedit ui-required"><textarea>{{if description}}${description}{{/if}}</textarea></li>
+    <li>
+        <button class="bz-rp-button-secondary bz-rp-sensors-button-apply" disabled>
+            <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-apply"></i>
+            <span>%{bz-rp-sensorsedt-apply}</span>
+        </button>
+        <button class="bz-rp-button-secondary bz-rp-sensors-button-cancel">
+            <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-cancel"></i>
+            <span>%{bz-rp-sensorsedt-cancel}</span>
+        </button>
+    </li>
+</ul>
+</script>
+
+<script id="bz-rp-sensorsedt-countertable-edition" type="text/x-jquery-tmpl">
+<ul class="bz-rp-sensors-form">
+    <li class="bz-rp-sensors-form-fieldread-label"><label>%{bz-rp-sensorsedt-formfield-name}</label></li>
+    <li class="bz-rp-sensors-form-fieldread">${name}</li>
+    <li class="bz-rp-sensors-form-fieldedit ui-bizagi-render-control-required"><input type="text" value="${name}" /> </li>        
+    <li class="bz-rp-sensors-form-fieldread-label"><label>%{bz-rp-sensorsedt-formfield-dspname}</label></li>
+    <li class="bz-rp-sensors-form-fieldread">${displayName}</li>
+    <li class="bz-rp-sensors-form-fieldedit ui-bizagi-render-control-required"><input type="text" value="${displayName}" /> </li>
+    <li class="bz-rp-sensors-form-fieldread-label"><label>%{bz-rp-sensorsedt-formfield-desc}</label></li>
+    <li class="bz-rp-sensors-form-fieldread">${description}</li>
+    <li class="bz-rp-sensors-form-fieldedit"><textarea>{{if description}}${description}{{/if}}</textarea></li>
+</ul>
+</script>
+
+<script id="bz-rp-sensorsedt-stopwatchtable-create" type="text/x-jquery-tmpl">
+<ul class="bz-rp-sensors-form bz-rp-sensors-form-createstopwatch">
+    <li><span class="bz-rp-errormsg">%{bz-rp-sensorsedt-swvalidation-selectlimits}</span></li>
+    <li><label>%{bz-rp-sensorsedt-formfield-name}</label></li>
+    <li class="bz-rp-sensors-form-fieldedit ui-required"><input type="text" value="" /></li>
+    <li><label>%{bz-rp-sensorsedt-formfield-dspname}</label></li>
+    <li class="bz-rp-sensors-form-fieldedit ui-required"><input type="text" value="" /></li>
+    <li><label>%{bz-rp-sensorsedt-formfield-desc}</label></li>
+    <li class="bz-rp-sensors-form-fieldedit ui-required"><textarea>{{if description}}${description}{{/if}}</textarea></li>
+    <li><label>SLA</label></li>
+    <li><label>%{bz-rp-sensorsedt-formfield-day}</label></li>
+    <li class="bz-rp-sensors-form-fieldedit"><input type="number" value="0" min="0" max="365" /></li>
+    <li><label>%{bz-rp-sensorsedt-formfield-hour}</label></li>
+    <li class="bz-rp-sensors-form-fieldedit"><input type="number" value="0" min="0" max="24" /></li>
+    <li><label>%{bz-rp-sensorsedt-formfield-minute}</label></li>
+    <li class="bz-rp-sensors-form-fieldedit"><input type="number" value="0" min="0" max="60" /></li>
+    <li>
+        <button class="bz-rp-button-secondary bz-rp-sensors-button-apply" disabled="disabled">
+            <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-apply"></i>
+            <span>%{bz-rp-sensorsedt-apply}</span>
+        </button>
+        <button class="bz-rp-button-secondary bz-rp-sensors-button-cancel">
+            <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-cancel"></i>
+            <span>%{bz-rp-sensorsedt-cancel}</span>
+        </button>
+    </li>
+</ul>
+</script>
+
+<script id="bz-rp-sensorsedt-stopwatchtable-edition" type="text/x-jquery-tmpl">
+<ul class="bz-rp-sensors-form">
+    <li class="bz-rp-sensors-form-fieldread-label"><label>%{bz-rp-sensorsedt-formfield-name}</label></li>
+    <li class="bz-rp-sensors-form-fieldread">${name}</li>
+    <li class="bz-rp-sensors-form-fieldedit ui-bizagi-render-control-required"><input type="text" value="${name}" /></li>        
+    <li class="bz-rp-sensors-form-fieldread-label"><label>%{bz-rp-sensorsedt-formfield-dspname}</label></li>
+    <li class="bz-rp-sensors-form-fieldread">${displayName}</li>
+    <li class="bz-rp-sensors-form-fieldedit ui-bizagi-render-control-required"><input type="text" value="${displayName}" /></li>
+    <li class="bz-rp-sensors-form-fieldread-label"><label>%{bz-rp-sensorsedt-formfield-desc}</label></li>
+    <li class="bz-rp-sensors-form-fieldread">${description}</li>
+    <li class="bz-rp-sensors-form-fieldedit ui-bizagi-render-control-required"><textarea>{{if description}}${description}{{/if}}</textarea></li>
+    <li class="bz-rp-sensors-form-fieldread-label-title"><label>SLA</label></li>
+    <li class="bz-rp-sensors-form-fieldread-label"><label>%{bz-rp-sensorsedt-formfield-day}</label></li>
+    <li class="bz-rp-sensors-form-fieldread">${slaDate.days}</li>
+    <li class="bz-rp-sensors-form-fieldedit"><input type="number" value="${slaDate.days}" min="0" max="365" /></li>
+    <li class="bz-rp-sensors-form-fieldread-label"><label>%{bz-rp-sensorsedt-formfield-hour}</label></li>
+    <li class="bz-rp-sensors-form-fieldread">${slaDate.hours}</li>
+    <li class="bz-rp-sensors-form-fieldedit"><input type="number" value="${slaDate.hours}" min="0" max="24" /></li>
+    <li class="bz-rp-sensors-form-fieldread-label"><label>%{bz-rp-sensorsedt-formfield-minute}</label></li>
+    <li class="bz-rp-sensors-form-fieldread">${slaDate.minutes}</li> 
+    <li class="bz-rp-sensors-form-fieldedit"><input type="number" value="${slaDate.minutes}" min="0" max="60" /></li>
+</ul>
+</script>
+
+<script id="bz-rp-sensorsedt-stopwatchtooltip" type="text/x-jquery-tmpl">
+<div class="bz-rp-sensors-tooltip-container" data-guid="${guid}">
+    <h4 class="bz-rp-sensors-tooltip-title">${taskName}</h4>
+    <div>
+        <button class="bz-rp-button bz-rp-sensors-tooltip-stopwathstarts stopwatch-start" data-type="swstarts">
+            <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-sensors-item"></i>
+            <span>%{bz-rp-sensorsedt-swtooltip-swstarts}</span>
+        </button>
+        <button class="bz-rp-button bz-rp-sensors-tooltip-stopwathends stopwatch-end" data-type="swends">
+            <i class="bz-rp-icon bz-rp-icon-24 bz-rp-icon-sensors-item"></i>
+            <span>%{bz-rp-sensorsedt-swtooltip-swends}</span>
+        </button>
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-sensorsedt-errormsg" type="text/x-jquery-tmpl">
+<span class="bz-rp-errormsg" aria-live="polite">${message}</span>
+</script>

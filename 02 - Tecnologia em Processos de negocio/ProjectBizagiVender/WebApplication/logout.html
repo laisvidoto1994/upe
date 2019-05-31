@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" manifest="bizagi.cache.appcache">
+<head>
+    <title>OAuth2 SSO Bizagi Logout</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link type="image/x-icon" rel="icon" href="favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="workportal/css/tablet/images/BizAgi_logo.png">
+    <link rel="stylesheet" href="jquery/login/css/desktop/bizagi.login.css" type="text/css">
+    
+    <script type='text/javascript' src='jquery/bizagi.configuration.js'></script>
+    <script src="jquery/common/base/js/lib/desktop/jquery.js"></script>
+    <script src="jquery/common/base/js/lib/json2.js"></script>        
+</head>
+<body>    
+    <script type="text/javascript">
+        var isIE = function () {
+            return (navigator.appName.indexOf("Internet Explorer") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./));
+        }
+
+        var isIE8 = function () {
+            return isIE() && document.documentMode == 8;
+        };
+         
+		var urlParams;
+		(window.onpopstate = function () {
+			var match,
+				pl     = /\+/g,  // Regex for replacing addition symbol with a space
+				search = /([^&=]+)=?([^&]*)/g,
+				decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+				query  = window.location.search.substring(1);
+
+			urlParams = {};
+			while (match = search.exec(query))
+			   urlParams[decode(match[1])] = decode(match[2]);
+		})();						
+    
+		var postLogoutRedirectUri = urlParams['post_logout_redirect_uri'] || urlParams['redirect'];
+		
+		if ((postLogoutRedirectUri === undefined || postLogoutRedirectUri == "") && (document.URL != document.referrer)) {
+		    postLogoutRedirectUri = document.referrer;
+		}
+
+        $(document).ready(function(){
+            $('#destino').load('oauth2/server/logout', function (response) {
+                var json = JSON.parse(response);                
+                $('#destino').html('Logout: ' + json.logout);
+
+                $.get('Api/Authentication/BizagiConfig', function () { })
+                    .done(function (response) {
+                        switch (response.authenticationType) {
+                            case 'Federate':                                                          
+                                if (response.logOffURL) {
+                                    var url = decodeURI(response.logOffURL);
+                                    logoutBridge(url);
+                                }                                  
+                                break;
+                            case 'OAuth2':
+                                $.get('Api/Authentication/OAuth2/OAuth2AuthenticationConfig').done(function (response) {
+                                    if (response.logoutUrl && response.logoutUrl != "") {
+                                        logoutBridge(response.logoutUrl);
+                                    }
+                                    else {
+                                        window.location.href = postLogoutRedirectUri;
+                                    }
+                                }).fail(function () {
+                                    
+                                });
+                                break;
+                            default:
+                                window.location.href = postLogoutRedirectUri;
+                                break;
+                        }                          
+                    });                               
+            });
+
+            $('#linkUrlHome').attr('href', postLogoutRedirectUri);
+            $('#linkUrl').attr('href', postLogoutRedirectUri);
+            $('#linkUrl').html(postLogoutRedirectUri);
+        });
+
+        function logoutBridge(url) {
+            url = url.replace(/post_logout_redirect_uri=[^&]*/, "post_logout_redirect_uri=" + postLogoutRedirectUri);
+
+            var iframe = document.createElement('iframe');
+
+            document.getElementsByTagName('body')[0].appendChild(iframe);
+
+            $(iframe).css('border', '0px');
+            $(iframe).css('display', 'none');
+            $(iframe).on('load', function () {
+                //window.location.href = postLogoutRedirectUri;
+                var iframeContent = isIE8() ? $(this.contentWindow.document.body) : $(this.contentWindow.eval('document.body'));
+                var rawResponse = iframeContent.text();
+            });
+
+            iframe.src = url;
+        }
+    </script>
+    <br/>
+    <div id="ui-bizagi-error-wrapper">
+        <div class="error-wrapper">
+            <h1 class="logo">
+                <a id="linkUrlHome" href="#" style="color:#FFFFFF;">
+                <img src="jquery/login/css/desktop/images/bizagi-logo.png" alt="home"></a>
+            </h1>
+            <p></p>
+            <h1>OAuth2 Logout</h1>
+            <h2 id="title"><a id="linkUrl" href="#"></a></h2>
+            <h2><span id="destino" class="error-message"></span></h2>                        
+        </div>
+    </div>    
+</body>
+</html>
+

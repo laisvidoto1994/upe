@@ -1,0 +1,37 @@
+
+<script id="ui-bizagi-workportal-widget-entitiestree-wrapper" type="text/x-jquery-tmpl" >
+    <div id="entitiestree-wrapper">                      
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-entitiestree" type="text/x-jquery-tmpl" >
+   
+    <ul class = "case-search-app-ul">
+        {{each(i,item) items }}
+            <li class="biz-wp-tree-node">
+                <div class="biz-wp-tree-data biz-btn-horizontal">
+                    <div class="biz-btn">
+                        {{if (item.nodeType == "master_entity") }} 
+                            <i data-id="${item.idNode}" name="master" class="biz-wp-tree-icon biz-ico biz-wp-tree-expand-icon"></i>                       
+                            <i class="biz-ico biz-wp-tree-entities-icon biz-wp-tree-image-master"></i>
+                            <a href="#" data-id="${item.idNode}" data-name="master" data-name-path="${item.nodeDisplayPath}" data-path="${item.nodePath}">${item.nodeTitle}</a>
+                        {{else}} 
+                            {{if (item.nodeType == "parameter_entity")}}
+                                <i data-id="${item.idNode}" name="parameter" class="biz-ico biz-wp-tree-icon biz-wp-tree-expand-icon"></i>
+                                <i class="biz-ico biz-wp-tree-entities-icon biz-wp-tree-image-parameter"></i>
+                                <a href="#" class="biz-wp-tree-parameter selectable" data-name-path="${item.nodeDisplayPath}" data-path="${item.nodePath}" data-id="${item.idNode}">${item.nodeTitle}</a>
+                            {{else}}
+                                <i data-id="${item.idNode}" name="boolean" class="biz-ico biz-wp-tree-icon biz-wp-tree-none-icon"></i>
+                                <i class="biz-ico biz-wp-tree-entities-icon biz-wp-tree-image-boolean"></i>
+                                <a href="#" class="biz-wp-tree-boolean selectable" data-name-path="${item.nodeDisplayPath}" data-path="${item.nodePath}" data-id="${item.idNode}">${item.nodeTitle}</a>
+                            {{/if}}
+                        {{/if}}                          
+                    </div>
+                </div>
+                <ul class = "biz-wp-tree-list">
+                </ul>	     
+            </li>
+        {{/each}}
+    </ul>
+
+</script>

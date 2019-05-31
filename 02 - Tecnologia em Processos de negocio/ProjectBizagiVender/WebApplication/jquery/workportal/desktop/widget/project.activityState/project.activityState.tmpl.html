@@ -1,0 +1,26 @@
+<script id="project-activityState-wrapper" type="text/x-jsrender" >
+    <div>
+        <div id="ui-bizagi-wp-project-activity-state-wrapper" class="bz-wp-widget"><!--Div is necessary, fix-->
+            <h3 class="bz-wp-section">{{>activityName}}</h3>
+            {{if estimatedSolutionDateFormat != "" && !activityIsEvent}}
+                <div class="ui-bizagi-wp-project-activity-state-dates-wrapper">
+                    <p class="bz-wp-date">
+                        {{>initDateFormat}}
+                        {{if showEstimatedSolutionDate}}
+                        - {{>estimatedSolutionDateFormat}}
+                        {{/if}}
+                    </p>
+                    <div class="remaining-days">
+                        <div class="time-remaining">
+                            <div class="bz-wp-progress-bar-wrapper bar-fullTime">
+                                <div class="bz-wp-progress-bar bar-completed {{>colorState}}" style="width: {{>percentCompleteBar}}%"></div>
+                            </div>
+                            <p class="bz-wp-timestamp" title="%{workportal-project-title-time-based-by-schedule}">{{>relativeTimeState}}</p>
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</script>
+

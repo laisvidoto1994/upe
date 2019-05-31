@@ -1,0 +1,254 @@
+﻿/* ==========================================================================
+   Sensors
+   ========================================================================== */
+
+form.bz-rp-form-edition li.bz-rp-sensors-form-fieldread,
+.bz-rp-form-edition div.bz-rp-sensors-list-buttons-cntread {
+    display: none;   
+}
+
+form.bz-rp-form-readonly li.bz-rp-sensors-form-fieldedit,
+.bz-rp-form-readonly div.bz-rp-sensors-list-buttons-cntedit {
+    display: none;   
+}
+
+#bz-rp-sensors-content { margin-top: 1.5em; }
+
+.bz-rp-sensors-list-item .bz-rp-sensors-form-container { display: none;  padding: 0 3em; }
+
+.bz-rp-reports-sensors-wrapper .bizagi_reporting_component_processversionfilter { margin: 1em 0 .5em; }
+.bz-rp-reports-sensors-wrapper .bizagi_reporting_component_processversionfilter .biz-wp-combo { margin-bottom: .5em; }
+
+#bz-rp-reports-sensors-list { clear: both; }
+
+.bz-rp-sensors-list,
+.bz-rp-sensors-list ul,
+.bz-rp-sensors-form ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.bz-rp-sensors-list-item:nth-child(odd) { background: #ececec; }
+
+.bz-rp-sensors-list-item.bz-rp-sensors-selected { background: #e6e6e6; }
+
+.bz-rp-sensors-list-header {
+    padding: .8em 1em .8em 2em;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.bz-rp-reports-sensors-header {
+    padding: 0;
+    margin: 1em 0 0;
+    background: #293f55;
+    color: #fff;
+}
+
+.bz-rp-reports-sensors-header .bz-rp-button-secondary {
+    max-height: inherit;
+    min-height: inherit;
+    padding: 1em;
+    color: #fff;
+}
+
+#bz-rp-reports-sensors-buttons,
+#bz-rp-reports-sensors-create {
+    clear: both;
+    margin-bottom: .5em;
+}
+
+#bz-rp-reports-sensors-buttons .bz-rp-button {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: .5em;
+}
+
+#bz-rp-reports-sensors-create ul.bz-rp-sensors-form {
+    padding: 1em;
+    background: #e6e6e6;
+}
+
+.bz-rp-sensors-form-container {
+    clear: both;
+    margin-bottom: 1.4em;
+}
+
+.bz-rp-sensors-form .bz-rp-button-secondary:first-child {
+    padding-left: 0;
+}
+
+.bz-rp-sensors-form-fieldread {
+    margin: .5em 1em 1em;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.bz-rp-sensors-form-fieldread-label { font-size: 10px; }
+
+.bz-rp-sensors-form-fieldread-label-title {
+    padding-bottom: .5em;
+    border-bottom: 1px solid #ddd;
+    margin: .5em 0;
+}
+
+.bz-rp-sensors-form input,
+.bz-rp-sensors-form textarea {
+    -webkit-appearance: none;
+    box-shadow: inset 0px 1px 2px 0 rgba(194, 197, 200, .4);    
+    width: 100%;
+    height: 32px;
+    padding-left: 4px;
+    border: 1px solid #c6cacc;
+    border-bottom: 1px solid #e2e3df;
+    border-radius: 2px;
+    font: 12px normal Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    color: #565656;
+}
+
+.bz-rp-sensors-form textarea {
+    min-height: 80px;
+    padding: 8px 4px; 
+    margin-bottom: 0;
+}
+
+.bz-rp-sensors-form-createstopwatch .bz-rp-errormsg:first-child,
+.bz-rp-sensors-form-createcounter .bz-rp-errormsg:first-child {
+    margin-top: 0;
+    margin-bottom: .5em;
+}
+
+.bz-rp-sensors-list-buttons-container { margin-top: 1em; }
+
+.bz-rp-sensors-tooltip-title { margin: 0 0 .5em; }
+
+.bz-rp-sensors-form-fieldedit {
+    position: relative;
+    margin: .25em 0 .5em;
+}
+
+.bz-rp-sensors-form-fieldedit.ui-bizagi-render-control-required::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0px;
+    left: 0;
+    z-index: 1;
+    width: 2px;
+    border-radius: 2px 0 0 2px;
+    background-color: red;
+}
+
+
+
+#bz-rp-sensors-processlist {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.bz-rp-sensors-processlist-row {
+    padding: .8em 1em .8em 2em;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.bz-rp-sensors-processlist-sublist {
+    padding: 0;
+    list-style: none;
+}
+
+.bz-rp-sensors-processlist-sublist-item {
+    padding: .8em 1em .8em 3em;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.bz-rp-sensors-processlist-sublist-item:nth-child(odd) {
+    background: #ececec;
+}
+
+.bz-rp-sensors-processlist-row.bz-rp-sensors-sltitem,
+.bz-rp-sensors-processlist-sublist-item.bz-rp-sensors-sltitem {
+    background: #ddd !important;    
+}
+
+#bz-rp-sensors-counters-cbcontainer { margin-bottom: 1.2em; }
+
+#bz-rp-sensors-counters-summarycontainer {
+    margin-bottom: 1em;
+}
+
+.bz-rp-sensors-counters-cbcontainer-time-range {
+    padding: 0 0 0 3em;
+    margin: 1em 0 0;
+    list-style: none;
+}
+
+.bz-rp-sensors-counters-cbcontainer-time-range li {
+    padding: .25em 0;
+    font-size: 1.2em;
+}
+
+.bz-rp-sensors-counters-cbcontainer-time-range input { vertical-align: middle; }
+
+.bz-rp-sensors-counters-cbcontainer-time-range label { vertical-align: middle; }
+
+.bz-rp-summary-title {
+    margin: 0 0 .5em;
+    font-size: 1.4em;
+}
+
+.bz-rp-time-range {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.bz-rp-nodata {
+    margin: 1em 0;
+    font-size: 1.2em;
+}
+
+.bz-rp-summary-total-cases {
+    margin: 0 0 1em;
+    font-size: 1.2em;
+}
+
+.ui-bizagi-wp-widget-sensors-menu {
+    padding: 0;
+    border-bottom: 1px solid #e6e6e6;
+    margin: 1em 0 0;
+    background: none;
+}
+
+.ui-bizagi-wp-widget-sensors-menu li {
+    position: relative;
+    border-right: 1px solid transparent;
+    border-left: 1px solid  transparent;
+    margin-bottom: -1px;
+}
+
+.ui-bizagi-wp-widget-sensors-menu li:hover {
+    background: none;
+}
+
+
+.ui-bizagi-wp-widget-sensors-menu li.ui-bizagi-wp-widget-reports-menu-active:hover {
+    background: #f2f2f2;
+}
+
+.ui-bizagi-wp-widget-sensors-menu li.ui-bizagi-wp-widget-reports-menu-active {
+    border-right: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+}
+
+#bz-rp-sensors-processlist a {
+    text-decoration: none;
+    color: #000;    
+}
+
+.bz-rp-sensors-tooltip-stopwathstarts.stopwatch-start {
+    margin-bottom: 1em;
+}

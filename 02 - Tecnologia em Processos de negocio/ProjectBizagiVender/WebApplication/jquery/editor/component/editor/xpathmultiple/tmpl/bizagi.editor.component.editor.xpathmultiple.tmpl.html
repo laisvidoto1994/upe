@@ -1,0 +1,35 @@
+<script id="xpathmultiple-xpathframe" type="text/x-jquery-tmpl">
+    <div class="xpath-container ui-control-container">
+        <label class="xpath-name">${caption}</label>
+        
+
+        {{if !hasXpaths}} 
+            <ul id="filePrintEmptyField" class="fileprint-item-container" >
+                <li class="fileprint-item default-text">
+                    %{formmodeler-component-editor-xpathmultiple-select-xpaths}
+                <li>
+            </ul>
+        {{/if}} 
+
+
+        {{if readonly == false}}
+        <i class="biz-ico xpath-select bz-studio bz-modeldata_16x16_standard" title="%{formmodeler-component-editor-xpath-show-data}"></i>
+        <i class="biz-ico biz-ico-default bz-studio bz-undo_16x16_standard" title="%{formmodeler-component-editor-all-set-default}"></i>
+            
+        {{/if}}
+        
+        {{if hasXpaths}}       
+            
+            <ul class="fileprint-item-container" >
+                 {{each(i, item) value }}   
+                    
+                      <li class="fileprint-item" >
+                        <i title=${item.xpath.baxpath.xpath}><span>${item.xpath.baxpath.xpath}</span></i>                      
+                          <i class="biz-ico decorator-image interface-image-rule-delete bz-studio bz-delete_16x16_standard" id=delete_${i} title="%{bizagi-editor-decorator-model-allowdelete}"></i>                      
+                      </li>    
+                    
+                {{/each}}                  
+            </ul>                       
+        {{/if}}
+    </div>
+</script>

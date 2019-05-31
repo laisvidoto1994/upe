@@ -1,0 +1,177 @@
+﻿{
+	"form": {
+		"properties" : {
+			"orientation": "rtl"
+		},
+		"elements": [
+			{"container": { "properties": {"id" : "tab", "type": "tab"},
+							"elements": [
+								{"container": { "properties": {"id" : "tabItem1", "type": "tabItem", "displayName": "تقديم تخطيط"}, "elements": [
+									{"container": { "properties": {"id" : 1, "displayName" : "عرض أنواع", "type": "panel"},
+											"elements": [
+												{"render": {	"properties": {"id" : 10001, "displayName" : "عرض العادي", "xpath" : "text1_1", "type": "text", "helpText": "ALOOO" }}},
+												{"render": {	"properties": {"id" : 10002, "displayName" : "عرض عمودي", "xpath" : "text1_2", "type": "text", "displayType": "vertical" }}},
+												{"render": {	"properties": {"id" : 10003, "displayName" : "عكس العرض", "xpath" : "text1_3", "type": "text", "displayType": "reversed" }}},
+												{"render": {	"properties": {"id" : 10004, "displayName" : "عرض عمودي عكس", "xpath" : "text1_4", "type": "text", "displayType": "verticalReversed" }}},
+												{"render": {	"properties": {"id" : 10005, "displayName" : "إلا التسمية", "xpath" : "text1_5", "type": "text", "displayType": "label" }}},
+												{"render": {	"properties": {"id" : 10006, "displayName" : "فقط قيمة", "xpath" : "text1_6", "type": "text", "displayType": "value" }}}
+											]
+									}},
+									{"container": { "properties": {"id" : 2, "displayName" : "محاذاة التسمية", "type": "panel"},
+											"elements": [
+												{"render": {	"properties": {"id" : 20001, "displayName" : "ترك التسمية محاذاة", "xpath" : "text2_1", "type": "text", "labelAlign": "left" }}},
+												{"render": {	"properties": {"id" : 20002, "displayName" : "محاذاة إلى الوسط التسمية", "xpath" : "text2_2", "type": "text", "labelAlign": "center" }}},
+												{"render": {	"properties": {"id" : 20003, "displayName" : "تسمية محاذاة إلى اليمين", "xpath" : "text2_3", "type": "text", "labelAlign": "right" }}}
+											]
+									}},
+									{"container": { "properties": {"id" : 3, "displayName" : "محاذاة القيمة", "type": "panel"},
+											"elements": [
+												{"render": {	"properties": {"id" : 30001, "displayName" : "ترك قيمة محاذاة", "xpath" : "text3_1", "type": "text", "valueAlign": "left" }}},
+												{"render": {	"properties": {"id" : 30002, "displayName" : "محاذاة إلى الوسط قيمة", "xpath" : "text3_2", "type": "text", "valueAlign": "center" }}},
+												{"render": {	"properties": {"id" : 30003, "displayName" : "قيمة محاذاة إلى اليمين", "xpath" : "text3_3", "type": "text", "valueAlign": "right" }}}
+											]
+									}},
+									{"container": { "properties": {"id" : 4, "displayName" : "الداخلية تخطيط", "type": "panel"},
+											"elements": [	
+												{"render": {	"properties": {"id" : 40001, "displayName" : "20% - 80%", "xpath" : "text4_1", "type": "text", "labelWidth": "20.01%", "valueWidth": "79.99%"}}},
+												{"render": {	"properties": {"id" : 40002, "displayName" : "60% - 40%", "xpath" : "text4_2", "type": "text", "labelWidth": "60%", "valueWidth": "40%" }}},
+												{"render": {	"properties": {"id" : 40003, "displayName" : "30% - 70%", "xpath" : "text4_3", "type": "text", "labelWidth": "30%", "valueWidth": "70%"}}}
+											]
+									}}
+								]}},
+								{"container": { "properties": {"id" : "tabItem2", "type": "tabItem",  "displayName": "العمود تخطيط"}, "elements": [
+									{"container": { "properties": {"id" : 5, "displayName" : "أعمدة موحدة", "type": "panel"},
+											"elements": [
+												{"render": {	"properties": {"id" : 50001, "displayName" : "التسمية الموحدة", "xpath" : "text5_1", "type": "text"}}},
+												{"container": { "properties": {"id" : "h1", "type": "horizontal"},
+													"elements": [
+														{"render": {	"properties": {"id" : 50002, "displayName" : "التسمية الموحدة", "xpath" : "text5_2", "type": "text"}}},
+														{"render": {	"properties": {"id" : 50003, "displayName" : "التسمية الموحدة", "xpath" : "text5_3", "type": "text"}}}
+													]
+												}},
+												{"container": { "properties": {"id" : "h2", "type": "horizontal"},
+													"elements": [
+														{"render": {	"properties": {"id" : 50004, "displayName" : "التسمية الموحدة", "xpath" : "text5_4", "type": "text"}}},
+														{"render": {	"properties": {"id" : 50005, "displayName" : "التسمية الموحدة", "xpath" : "text5_5", "type": "text"}}},
+														{"render": {	"properties": {"id" : 50006, "displayName" : "التسمية الموحدة", "xpath" : "text5_6", "type": "text"}}}
+													]
+												}},
+												{"container": { "properties": {"id" : "h3", "type": "horizontal"},
+													"elements": [
+														{"render": {	"properties": {"id" : 50007, "displayName" : "التسمية الموحدة", "xpath" : "text5_7", "type": "text"}}},
+														{"render": {	"properties": {"id" : 50008, "displayName" : "التسمية الموحدة", "xpath" : "text5_8", "type": "text"}}},
+														{"render": {	"properties": {"id" : 50009, "displayName" : "التسمية الموحدة", "xpath" : "text5_9", "type": "text"}}},
+														{"render": {	"properties": {"id" : 50009, "displayName" : "التسمية الموحدة", "xpath" : "text5_9", "type": "text"}}}
+													]
+												}},
+												{"container": { "properties": {"id" : "h1", "type": "horizontal"},
+													"elements": [
+														{"render": {	"properties": {"id" : 50002, "" : "التسمية الموحدة", "xpath" : "text5_2", "type": "label", "displayType": "label"}}},
+														{"render": {	"properties": {"id" : 50003, "displayName" : "Help", "xpath" : "text5_3", "type": "boolean", "display": "check", "displayType": "reversed", "labelWidth": "1%", "valueAlign" : "right"}}}
+													]
+												}}
+											]
+									}},
+									{"container": { "properties": {"id" : 6, "displayName" : "متغير الأعمدة", "type": "panel"},
+											"elements": [
+												{"container": { "properties": {"id" : "h4", "type": "horizontal"},
+													"elements": [
+														{"render": {	"properties": {"id" : 60001, "displayName" : "40%", "xpath" : "text6_1", "type": "text", "width": "40.00%"}}},
+														{"render": {	"properties": {"id" : 60002, "displayName" : "60%", "xpath" : "text6_1", "type": "text", "width": "60.00%"}}}
+													]
+												}},
+												{"container": { "properties": {"id" : "h2", "type": "horizontal"},
+													"elements": [
+														{"render": {	"properties": {"id" : 60003, "displayName" : "20%", "xpath" : "text6_3", "type": "text", "width": "20%"}}},
+														{"render": {	"properties": {"id" : 60004, "displayName" : "40%", "xpath" : "text6_4", "type": "text", "width": "40%"}}},
+														{"render": {	"properties": {"id" : 60005, "displayName" : "40%", "xpath" : "text6_5", "type": "text", "width": "40%"}}}
+													]
+												}},
+												{"container": { "properties": {"id" : "h3", "type": "horizontal"},
+													"elements": [
+														{"render": {	"properties": {"id" : 60006, "displayName" : "50%", "xpath" : "text6_6", "type": "text", "width": "50%"}}},
+														{"render": {	"properties": {"id" : 60007, "displayName" : "25%", "xpath" : "text6_7", "type": "text", "width": "25%"}}},
+														{"render": {	"properties": {"id" : 60008, "displayName" : "25%", "xpath" : "text6_8", "type": "text", "width": "25%"}}}
+													]
+												}}
+											]
+									}}
+								]}},
+								{"container": { "properties": {"id" : "tabItem3", "type": "tabItem", "displayName": "حاويات"}, "elements": [
+									{"container": { "properties": {"id" : 7, "displayName" : "لوحة", "type": "panel"},
+											"elements": [	
+												{"render": {	"properties": {"id" : 70001, "displayName" : "التسمية الموحدة", "xpath" : "text7_1", "type": "text"}}},
+												{"render": {	"properties": {"id" : 70002, "displayName" : "التسمية الموحدة", "xpath" : "text7_2", "type": "text"}}},
+												{"render": {	"properties": {"id" : 70003, "displayName" : "التسمية الموحدة", "xpath" : "text7_3", "type": "text"}}}												
+											]
+									}},
+									{"container": { "properties": {"id" : 71, "type": "panel"},
+											"elements": [	
+												{"render": {	"properties": {"id" : 710001, "displayName" : "التسمية الموحدة", "xpath" : "text71_1", "type": "text"}}},
+												{"render": {	"properties": {"id" : 710002, "displayName" : "التسمية الموحدة", "xpath" : "text71_2", "type": "text"}}},
+												{"render": {	"properties": {"id" : 710003, "displayName" : "التسمية الموحدة", "xpath" : "text71_3", "type": "text"}}}												
+											]
+									}},
+									{"container": { "properties": {"id" : 8, "displayName" : "علامة التبويب", "type": "panel"},
+											"elements": [	
+												{"container": { "properties": {"id" : "miniTab", "type": "tab"}, "elements": [	
+													{"container": { "properties": {"id" : "miniTabItem1", "displayName" : "علامة التبويب 1", "type": "tabItem"}, "elements": [	
+														{"render": {	"properties": {"id" : 80001, "displayName" : "عنصر من علامة التبويب 1", "xpath" : "text8_1", "type": "text"}}}
+													]}},
+													{"container": { "properties": {"id" : "miniTabItem2", "displayName" : "علامة التبويب 2", "type": "tabItem"}, "elements": [	
+														{"render": {	"properties": {"id" : 80002, "displayName" : "عنصر من علامة التبويب 2", "xpath" : "text8_2", "type": "text"}}}
+													]}},
+													{"container": { "properties": {"id" : "miniTabItem3", "displayName" : "علامة التبويب 3", "type": "tabItem"}, "elements": [	
+														{"render": {	"properties": {"id" : 80003, "displayName" : "عنصر من علامة التبويب 3", "xpath" : "text8_3", "type": "text"}}}
+													]}}
+												]}}
+											]
+									}},
+									{"container": { "properties": {"id" : 9, "displayName" : "أكورديون", "type": "panel"},
+											"elements": [	
+												{"container": { "properties": {"id" : "miniAccordion", "type": "accordion"}, "elements": [	
+													{"container": { "properties": {"id" : "miniAccordionItem1", "displayName" : "أكورديون 1", "type": "accordionItem"}, "elements": [	
+														{"render": {	"properties": {"id" : 90001, "displayName" : "عنصر من الأكورديون 1", "xpath" : "text9_1", "type": "text"}}}
+													]}},
+													{"container": { "properties": {"id" : "miniAccordionItem2", "displayName" : "أكورديون 2", "type": "accordionItem"}, "elements": [	
+														{"render": {	"properties": {"id" : 90002, "displayName" : "عنصر من الأكورديون 2", "xpath" : "text9_2", "type": "text"}}}
+													]}},
+													{"container": { "properties": {"id" : "miniAccordionItem3", "displayName" : "أكورديون 3", "type": "accordionItem"}, "elements": [	
+														{"render": {	"properties": {"id" : 90003, "displayName" : "عنصر من الأكورديون 3", "xpath" : "text9_3", "type": "text"}}}
+													]}}
+												]}}
+											]
+									}},
+									{"container": { "properties": {"id" : 10, "displayName" : "مجموعة", "type": "panel"},
+											"elements": [	
+												{"container": { "properties": {"id" : "group", "type": "group", "displayName" : "مجموعة"}, "elements": [	
+													{"render": {	"properties": {"id" : 100001, "displayName" : "التسمية الموحدة", "xpath" : "text10_1", "type": "text"}}},
+													{"render": {	"properties": {"id" : 100002, "displayName" : "التسمية الموحدة", "xpath" : "text10_2", "type": "text"}}},
+													{"render": {	"properties": {"id" : 100003, "displayName" : "التسمية الموحدة", "xpath" : "text10_3", "type": "text"}}}												
+												]}}
+											]
+									}}
+								]}},
+								{"container": { "properties": {"id" : "tabItem5", "type": "tabItem", "displayName": "التخصيص"}, "elements": [
+									{"container": { "properties": {"id" : 11, "displayName" : "اللون، والتخصيص المطلوبة والخلفية", "type": "panel"},
+											"elements": [
+												{"render": {	"properties": {"id" : 110001, "displayName" : "اللون الأزرق", "xpath" : "text10_1", "type": "text", "color": "blue"}}},
+												{"render": {	"properties": {"id" : 110002, "displayName" : "اللون #9955FF", "xpath" : "text10_2", "type": "text", "color": "#9955FF"}}},
+												{"render": {	"properties": {"id" : 110003, "displayName" : "مطلوب تقديم", "xpath" : "text10_3", "type": "text", "required" : "true"}}},
+												{"render": {	"properties": {"id" : 110004, "displayName" : "لون الخلفية (أكوا)", "xpath" : "text10_4", "type": "text", "backgroundColor" : "Aqua"}}}
+											]
+									}}
+								]}}
+							]
+			}},
+			{"container": { "properties": {"id" : 4, "displayName" : "This is a non rtl container", "type": "panel", "orientation": "ltr"},
+					"elements": [	
+						{"render": {	"properties": {"id" : 40001, "displayName" : "Standard label", "xpath" : "text4_1", "type": "text", "labelWidth": "20.01%", "valueWidth": "79.99%"}}},
+						{"render": {	"properties": {"id" : 40002, "displayName" : "Standard label", "xpath" : "text4_2", "type": "text", "labelWidth": "60%", "valueWidth": "40%" }}},
+						{"render": {	"properties": {"id" : 40003, "displayName" : "Standard label", "xpath" : "text4_3", "type": "text", "labelWidth": "30%", "valueWidth": "70%"}}}
+					]
+			}},
+			{"render": {	"properties": {"id" : 100001, "displayName" : "This is a non rtl label" , "xpath" : "text10_1", "type": "text", "orientation": "ltr"}}}
+		]
+	}
+}

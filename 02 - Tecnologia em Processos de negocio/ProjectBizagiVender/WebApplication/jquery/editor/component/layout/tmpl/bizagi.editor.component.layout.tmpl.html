@@ -1,0 +1,41 @@
+<script id="layout-frames" type="text/x-jquery-tmpl">
+    <div id="ribbon-panel" class="biz-shadow-down biz-border-all biz-toolbar-border biz-gradient-v "></div>
+    <div class="wrapper-left-panel biz-border-color biz-bg-color biz-border-all">
+        <div id="left-panel"></div>
+    </div>        
+    
+    <div class="wrapper-main-panel {{if context == "searchform"}}bz-fm-searchform-wrapper{{/if}}{{if isActivityForm}}bz-form-buttons-enabled{{/if}}" id="ui-bizagi-wp-app-render-form-content">
+        <div class="wrapper-main-scroll">
+            <div id="main-panel" class="biz-work-panel biz-border-all biz-light-border-color biz-shadow-all"></div>
+            <div class="top-scroll-grad"><span class="top-scroll-dragging"><i class="biz-ico scroll-top-drag"></i></span></div>
+            <div class="bottom-scroll-grad"><span class="bottom-scroll-dragging"><i class="biz-ico scroll-bottom-drag"></i></span></div>
+        </div>
+        {{if context == "searchform"}}
+            <div class="wrapper-search-scroll">
+                <div id="search-result-panel" class="biz-work-panel biz-border-all biz-light-border-color biz-shadow-all">
+                    <div class="bz-fm-searchresult-content">
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+        {{if isActivityForm}}
+            <div class="wrapper-button-scroll">
+                <div id="button-editor-panel" class="biz-work-panel biz-border-all biz-light-border-color biz-shadow-all">
+                    <div class="bz-fm-buttoneditor-content">
+                    </div>
+                </div>
+            </div> 
+        {{/if}}       
+    </div>
+</script>
+
+<script id="layout-left-tabs" type="text/x-jquery-tmpl">
+    <ul>
+        <li><a href="#left-tab-data-bind" data-rendering-mode="design" data-banner="hide">%{formmodeler-component-editor-layout-xpathnavigator-displayname}</a></li>
+        <li><a href="#left-tab-minitoolbar" data-rendering-mode="design" data-banner="show">%{formmodeler-component-editor-layout-controlsnavigator-displayname}</a></li>
+        <li><a href="#left-tab-layout" data-rendering-mode="layout" data-banner="hide">%{formmodeler-component-editor-layout-displayname}</a></li>
+    </ul>
+    <div id="left-tab-data-bind"></div>
+    <div id="left-tab-minitoolbar"></div>
+    <div id="left-tab-layout"></div>
+</script>

@@ -1,0 +1,36 @@
+/********
+* Filename: bizagi.editor.component.editor.xpath.css
+* Create Date: 2012-07-17
+* Author: Rhony Pedraza Rhony.Pedraza@bizagi.com
+*
+* $__xpath
+*
+********/
+
+/* __xpath
+--------*/
+
+.bizagi_editor_component_editor_xpath .biz-ico[class*="xpath"]{
+    opacity: 1;
+    position: absolute;
+    right: -20px;
+    bottom: 3px;
+    cursor: pointer;
+}
+
+.bizagi_editor_component_editor_xpath_navigator
+{
+    position: relative;
+    z-index: 2000;
+
+    height: 200px;
+    overflow: auto;
+    width: 230px;
+
+    line-height: 16px;
+}
+
+.bizagi_editor_component_editor_xpath_navigator > .bizagi_editor_xpathnavigator_list{
+    margin-top: 15px;
+}
+

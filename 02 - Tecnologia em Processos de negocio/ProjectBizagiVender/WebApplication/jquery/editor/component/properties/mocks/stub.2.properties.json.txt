@@ -1,0 +1,129 @@
+{
+    "idRender": "GUID-0", 
+    "elements": [
+        {
+            "tabs": [
+                {
+                    "caption": "Basic", 
+                    "elements": [
+                        {
+                            "property": {
+                                "name": "displayName", 
+                                "bas-type": "localizable-string", 
+                                "caption": "Display Name", 
+                                "value": "Label Text", 
+                                "default": "Label"
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "helptext", 
+                                "bas-type": "localizable-string", 
+                                "caption": "Help Text"
+                            }
+                        }, 
+                        {
+                            "category": {
+                                "caption": "Rules", 
+                                "elements": [
+                                    {
+                                        "property": {
+                                            "name": "visible", 
+                                            "bas-type": "rule-expression", 
+                                            "editor-parameters": {
+                                                "types": [
+                                                    "boolean"
+                                                ]
+                                            }, 
+                                            "caption": "Visible", 
+                                            "default": "true", 
+                                            "required": true
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "editable", 
+                                            "bas-type": "rule-expression", 
+                                            "editor-parameters": {
+                                                "types": [
+                                                    "boolean"
+                                                ]
+                                            }, 
+                                            "caption": "Editable", 
+                                            "default": "true", 
+                                            "required": true
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "required", 
+                                            "bas-type": "rule-expression", 
+                                            "editor-parameters": {
+                                                "types": [
+                                                    "boolean"
+                                                ]
+                                            }, 
+                                            "caption": "Required", 
+                                            "default": "false", 
+                                            "required": true
+                                        }
+                                    }
+                                ]
+                            }
+                        }, 
+                        {
+                            "group": {
+                                "caption": "Grupo de Prueba", 
+                                "elements": [
+                                    {
+                                        "property": {
+                                            "name": "labelalign", 
+                                            "bas-type": "horizontal-align", 
+                                            "caption": "Label Align", 
+                                            "default": "left"
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "valuealign", 
+                                            "bas-type": "horizontal-align", 
+                                            "caption": "Value Align", 
+                                            "default": "left"
+                                        }
+                                    }
+                                ]
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "layout", 
+                                "bas-type": "render-layout", 
+                                "caption": "Layout", 
+                                "subproperties": [
+                                    {
+                                        "property": {
+                                            "name": "labelwidth", 
+                                            "bas-type": "int", 
+                                            "caption": "Label Width", 
+                                            "value": 30, 
+                                            "user-editable": false
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "valuewidth", 
+                                            "bas-type": "int", 
+                                            "caption": "Control Width", 
+                                            "value": 70, 
+                                            "user-editable": false
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "cases": {
+        "rows|5-20": [{
+            "id|0-9999": 0,
+            "taskState": "@BIZAGI_TASK_STATE",
+            "isFavorite": "@BIZAGI_BOOLEAN",
+            "guidFavorite": "",
+            "fields": [{
+                "Value": "@NUMBER@NUMBER@NUMBER@NUMBER",
+                "DisplayName": "Case Number",
+                "DataType": "VarChar",
+                "isRadNumber": "true"
+            }, {
+                "Value": "@LOREM @LOREM",
+                "DisplayName": "@LOREM @LOREM",
+                "DataType": "VarChar",
+                "isRadNumber": "false"
+            }, {
+                "Value": "@LOREM @LOREM @LOREM @LOREM",
+                "DisplayName": "@LOREM",
+                "DataType": "Int",
+                "isRadNumber": "false"
+            }, {
+                "Value": "@DATE_DD/@DATE_MM/@DATE_YYYY @TIME_HH:@TIME_MM",
+                "DisplayName": "@LOREM @LOREM",
+                "DataType": "DateTime",
+                "isRadNumber": "false"
+            }]
+        }],
+        "page": 1,
+        "totalPages|1-20": 0,
+        "lstIdCases|5-20": [ "@NUMBER" ]
+    }
+}

@@ -1,0 +1,40 @@
+<!--WRAPPERS-->
+<script id="ui-bizagi-workportal-widget-admin-preferences-wrapper" type="text/x-jquery-tmpl" >
+<div id="main-wrapper" class="bz-wp-userpreferences-main">
+    <div id="preferences">
+        <div class="bz-widget-mainloading" {{loading}}></div>
+    </div>
+    <div id="preferences-buttons"></div>
+</div>
+</script>
+
+<!--container-->
+<script id="ui-bizagi-workportal-widget-preferences-container" type="text/x-jquery-tmpl" >
+    <div id="preferences-main-container">
+    </div>
+</script>
+
+<!--buttons-->
+<script id="ui-bizagi-workportal-widget-preference-buttons" type="text/x-jquery-tmpl" >
+<div id="mainButtons" class="ui-dialog-buttonset biz-wp-form-centerContent">
+    <button id="update-preferences"
+            class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover"
+            role="button" aria-disabled="true">
+        <span class="ui-button-text">%{workportal-widget-admin-users-requests-button-label-update-request}</span>
+    </button>
+</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-preference-iframe" type="text/x-jquery-tmpl" >
+<div class="bz-wp-userpreferences-wrapperiframe">
+    <iframe src='${url}' class="iframe-panel" frameborder='0'></iframe>
+</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-preferences-errormessage" type="text/x-jquery-tmpl">
+<div class="ui-bizagi-container ui-bizagi-container-form ui-widget-content ui-bizagi-rendering-mode-execution">
+    <div class="bz-wp-userpreferences-errormessage">
+        ${errorMessage}
+    </div>
+</div>
+</script>

@@ -1,0 +1,23 @@
+{
+	"xpathNavigatorOptions" :	{
+		"type": "object",
+		 "properties": {
+			"context" : {
+				"type" : {"type": "string"},
+				"enum" : ["main", "decorator"]
+			},
+			"supportedTypes": 
+			{
+		  	    "type": "array",
+			    "items": {
+			        "type": "object",
+			        "properties": {
+			            "type" : {"type": "string"},
+			            "style": {"type": "string"}
+			        }
+			    }
+			}
+
+		}
+	}
+}

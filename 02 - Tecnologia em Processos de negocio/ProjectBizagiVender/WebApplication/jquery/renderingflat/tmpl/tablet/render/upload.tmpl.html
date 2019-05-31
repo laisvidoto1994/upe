@@ -1,0 +1,63 @@
+﻿<script id="ui-bz-mobile-upload-control" type="text/x-kendo-template">
+    <ul class="ui-bizagi-render-upload-container">
+        # if (typeof(data.noFiles) !== 'undefined' && data.noFiles && !data.editable){#
+            <li class="noFiles">%{render-upload-no-files}</li>
+        #} else {#
+            <ul class="files">
+                {{files}}
+            </ul>
+        #}#
+
+        #if(data.editable){#
+            <li class="bz-rn-upload-show-menu">
+                <label>%{render-upload-link-label}</label>
+                <span class="bz-cm-icon bz-mo-icon bz-upload"></span>
+                <div class="bz-resolution-container"></div>
+            </li>
+            <input type="file" class="bz-rn-upload-web" style="display: none">
+        #}#
+    </ul>    
+</script>
+
+<script id="ui-bz-wp-popup-upload-control" type="text/x-kendo-template">
+    <div data-role="modalview" id="modalview-upload-options" style="width: 60%; height: 295px">
+        <div data-role="header">
+            <div id="filter-header" data-role="navbar">
+                <div class="bz-wp-modalview-header-top-item">
+                    <span class="bz-wp-modalview-title">
+                        #if(data.displayName != ""){#
+                            #= data.displayName #
+                        #} else {#
+                            Upload
+                        #}#
+                    </span>
+                    <span class="bz-wp-modalview-close bz-mo-icon bz-cancel"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bz-wp-modalview-results-wrapper">
+            <ul class="bz-rn-upload-options">
+                <li data-role="image" class="#if(!data.validExtensions.image){#bz-rn-upload-hidden-item#}#">
+                    <button type="button" class="bz-cm-icon bz-upload-button image bz-mo-icon bz-image"></button>
+                    <label class="bz-upload-control-label">%{workportal-actionsheet-upload-choose-photo}</label>
+                </li>
+                <li data-role="cimage" class="#if(!data.validExtensions.image){#bz-rn-upload-hidden-item#}#">
+                    <button type="button" class="bz-cm-icon bz-upload-button cimage bz-mo-icon bz-attach-photo"></button>
+                    <label class="bz-upload-control-label">%{workportal-actionsheet-upload-take-photo}</label>
+                </li>
+                <li data-role="caudio" class="#if(!data.validExtensions.audio){#bz-rn-upload-hidden-item#}#">
+                    <button type="button" class="bz-cm-icon bz-upload-button caudio bz-mo-icon bz-attach-audio"></button>
+                    <label class="bz-upload-control-label">%{workportal-actionsheet-upload-record-audio}</label>
+                </li>
+                <li data-role="cvideo" class="#if(!data.validExtensions.video){#bz-rn-upload-hidden-item#}#">
+                    <button type="button" class="bz-cm-icon bz-upload-button cvideo bz-mo-icon bz-attach-video "></button>
+                    <label class="bz-upload-control-label">%{workportal-actionsheet-upload-take-video}</label>
+                </li>
+                <li data-role="file" class="#if(!data.validExtensions.file){#bz-rn-upload-hidden-item#}#">
+                    <button type="button" class="bz-cm-icon bz-upload-button file bz-mo-icon bz-attach-file"></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</script>

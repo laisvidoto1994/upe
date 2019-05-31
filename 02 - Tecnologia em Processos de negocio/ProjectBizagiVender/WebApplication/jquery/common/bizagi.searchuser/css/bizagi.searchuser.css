@@ -1,0 +1,33 @@
+﻿
+#bz-plugin-searchUser-mainContent div{
+    color: black;
+}
+
+.filters-container {
+    width: 50%;
+    padding-top: 30px;
+    margin: 0 auto;
+}
+
+.filters-row {
+    width: 100%;
+    padding-top: 2px;
+}
+
+.filters-cell {
+    width: 48%;
+    float: left;
+    padding: 0 2px;
+    min-height: 8px;
+}
+
+.filters-cell input
+{
+    width: 100%;
+    height: 24px;
+}
+
+.ui-bizagi-component-search-user #buttonsContainer button
+{
+     margin: 0 1.5px;
+}

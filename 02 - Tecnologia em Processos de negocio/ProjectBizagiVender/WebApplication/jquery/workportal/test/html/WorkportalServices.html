@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Services</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+<div id="GetCurrentUser">
+    <h4>Testing Get Current User</h4>
+    <button type="button">Execute</button>
+    <h4>Response</h4>
+    <textarea cols="200" rows="8"></textarea>
+</div>
+<hr/>
+<div id="GetInboxSummary">
+    <h4>Testing Get Inbox Summary</h4>
+    <button type="button">Execute</button>
+    <h4>Response</h4>
+    <textarea cols="200" rows="8"></textarea>
+</div>
+<hr/>
+<div id="GetAllProcesses">
+    <h4>Testing Get All Processes</h4>
+    <h4>Parameters</h4>
+    <div><label>Task State:</label><input id="taskState" /></div>
+    <button type="button">Execute</button>
+    <h4>Response</h4>
+    <textarea cols="200" rows="8"></textarea>
+</div>
+<hr/>
+<div id="GetCasesByWorkflow">
+    <h4>Testing Get Case by Workflow</h4>
+    <h4>Parameters</h4>
+    <div><label>Task State:</label><input id="taskState" /></div>
+    <div><label>Workflow:</label><input id="workflow" /></div>
+    <div><label>Page Size:</label><input id="pageSize" value="20" /></div>
+    <div><label>Page:</label><input id="page" value="1" /></div>
+    <button type="button">Execute</button>
+    <h4>Response</h4>
+    <textarea cols="200" rows="8"></textarea>
+</div>
+<hr/>
+<div id="GetCaseSummary">
+    <h4>Testing Get Case Summary</h4>
+    <h4>Parameters</h4>
+    <div><label>Case id:</label><input id="idCase" /></div>
+    <button type="button">Execute</button>
+    <h4>Response</h4>
+    <textarea cols="200" rows="8"></textarea>
+</div>
+<hr/>
+<div id="GetCaseAssignees">
+    <h4>Testing Get Case Assignees</h4>
+    <h4>Parameters</h4>
+    <div><label>Case id:</label><input id="idCase" /></div>
+    <button type="button">Execute</button>
+    <h4>Response</h4>
+    <textarea cols="200" rows="8"></textarea>
+</div>
+<hr/>
+<div id="GetCustomizedColumnsData">
+    <h4>Testing Get Customized Columns Data</h4>
+    <h4>Parameters</h4>
+    <div><label>Task State:</label><input id="taskState" /></div>
+    <div><label>Workflow:</label><input id="workflow" /></div>
+    <button type="button">Execute</button>
+    <h4>Response</h4>
+    <textarea cols="200" rows="8"></textarea>
+</div>
+<hr/>
+<div id="GetCaseTasks">
+    <h4>Testing Get Case Tasks</h4>
+    <h4>Parameters</h4>
+    <div><label>Case id:</label><input id="idCase" /></div>
+    <button type="button">Execute</button>
+    <h4>Response</h4>
+    <textarea cols="200" rows="8"></textarea>
+</div>
+<hr/>
+<div id="GetTaskAssignees">
+    <h4>Testing Get Task Assignees</h4>
+    <h4>Parameters</h4>
+    <div><label>Case id:</label><input id="idCase" /></div>
+    <div><label>Task id:</label><input id="idTask" /></div>
+    <button type="button">Execute</button>
+    <h4>Response</h4>
+    <textarea cols="200" rows="8"></textarea>
+</div>
+<hr/>
+<div id="GetCaseEvents">
+    <h4>Testing Get Task Events</h4>
+    <h4>Parameters</h4>
+    <div><label>Case id:</label><input id="idCase" /></div>
+    <button type="button">Execute</button>
+    <h4>Response</h4>
+    <textarea cols="200" rows="8"></textarea>
+</div>
+<hr/>
+<div id="GetCaseSubprocesses">
+    <h4>Testing Get Case Subprocesses</h4>
+    <h4>Parameters</h4>
+    <div><label>Case id:</label><input id="idCase" /></div>
+    <button type="button">Execute</button>
+    <h4>Response</h4>
+    <textarea cols="200" rows="8"></textarea>
+</div>
+<hr/>
+<div id="GetWorkitems">
+    <h4>Testing Get Workitems</h4>
+    <h4>Parameters</h4>
+    <div><label>Case id:</label><input id="idCase" /></div>
+    <button type="button">Execute</button>
+    <h4>Response</h4>
+    <textarea cols="200" rows="8"></textarea>
+</div>
+<hr/>
+
+    <script src='../../../../jquery/steal.js' type='text/javascript'></script>
+    <script src='../../../../jquery/bizagi.loader.js' type='text/javascript'></script>
+    <script language="javascript" type="text/javascript">
+        // Redefine path to base
+        var BIZAGI_PATH_TO_BASE = "../../../../";
+        
+    	// Gets the loader instance, and load the module
+        var loader = bizagi.loader;
+    	loader.init(function() {
+    		loader.start("workportal").loadFile("jquery/workportal/test/js/workportalServices.test.js");
+    	});
+    </script>
+</body>
+</html>

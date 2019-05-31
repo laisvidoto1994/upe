@@ -1,0 +1,371 @@
+﻿@brand-primary : #374C58;
+
+.wgd-sortbar-container {
+    display: none;
+    position: relative;
+    z-index: 10;
+    padding: .6em 0;
+    min-height: 47px;
+}
+
+.wdg-topmenu-panel.wgd-sortbar-container{
+    display: block;
+}
+
+.wgd-sortbar-container.there-are-actions{
+    background-color: #e1f2e9;
+}
+
+.wgd-sortbar-container.there-are-actions .sortbar-right .sortbar-menu{
+    display: none;
+}
+
+.wgd-sortbar-container .wrapper-count-selected{
+    display: none;
+    line-height: 30px;
+}
+
+.wgd-sortbar-container .wrapper-count-selected span{
+    color: @brand-primary;
+}
+
+.wgd-sortbar-container.there-are-actions .wrapper-count-selected{
+    display: block;
+}
+
+.wgd-sortbar-container .sortbar-left {
+    float: left;
+}
+
+.wgd-sortbar-container .sortbar-left ul{
+    display: inline-block;
+}
+
+.wgd-sortbar-container .sortbar-right {
+    float: right;
+}
+
+.wgd-sortbar-container .sortbar-left > ul,
+.wgd-sortbar-container .sortbar-right > ul {
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+.wgd-sortbar-container .sortbar-menu li {
+    display: inline-block;
+    margin-right: 1em;
+    vertical-align: middle;
+}
+
+.wgd-sortbar-container .sortbar-menu li:last-child {
+    margin-right: 0;
+}
+
+.wgd-sortbar-container .sortbar-right > ul > li:nth-child(2) {
+    padding-right: 1em;
+    border-right: 1px solid #E2E2E2;
+}
+
+.wgd-sortbar-container .sortbar-right .right-menu,
+.wgd-sortbar-container .sortbar-right .filter-icon,
+.wgd-sortbar-container .sortbar-right .sortbar-az,
+.wgd-sortbar-container .sortbar-right .records-menu
+{
+    cursor: pointer;
+}
+
+.wgd-sortbar-container .sortbar-right .filter-icon{
+    position: relative;
+    padding: 6px;
+}
+
+.wgd-sortbar-container .sortbar-right .filter-icon.opened{
+    border: 1px solid rgb(226, 226, 226);
+    padding: 5px;
+    border-radius: 5px;
+    background: #E8E8E8;
+}
+
+.wgd-sortbar-container .sortbar-right .filter-icon .counter-filters-applied{
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #f66e65;
+    color: #fff;
+    font-size: 8px;
+    line-height: 16px;
+    text-align: center;
+}
+
+.wgd-sortbar-container .sortbar-right .filter-icon.opened .counter-filters-applied{
+    top: -4px;
+    right: -4px;
+}
+
+.wgd-sortbar-container .sortbar-right .sortbar-az.disabled {
+    color: rgba(65, 89, 104, 0.35);
+    cursor: auto;
+}
+
+.wgd-sortbar-container .wgd-sortbar-add-button {
+    margin-left: 6px;
+    padding: 0.6em 0.6em;
+    border-radius: 4px;
+}
+
+.wgd-sortbar-container > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.wgd-sortbar-container .wgd-sortbar-add-button:hover .wgd-sortbar-add-action-icon {
+    background-position: -44px 0px;
+}
+
+/*actions container*/
+.wrapper-sortbar-actions{
+    display: inline-block;
+}
+
+.sortbar-tooltip-more-actions{
+    background-color: #e1f2e9;
+    border: 1px solid #cccccc;
+}
+
+.sortbar-tooltip-more-actions ul.actions-container{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sortbar-tooltip-more-actions ul.actions-container li{
+    margin-bottom: 4px;
+}
+
+.sortbar-tooltip-more-actions ul.actions-container li:last-child{
+    margin-bottom: 0px;
+}
+
+.wgd-sortbar-container ul.actions-container{
+    padding: 0;
+    vertical-align: middle;
+}
+
+.wgd-sortbar-container ul.actions-container li{
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.sortbar-tooltip-more-actions ul.actions-container li i,
+.wgd-sortbar-container ul.actions-container li i{
+    margin-right: 7px;
+}
+
+.wgd-sortbar-container .template-box-tooltip{
+    display: inline-block;
+}
+
+.wgd-sortbar-container .bz-actions-showmore{
+    color: #a8b6bf;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 700;
+    height: 17px;
+    letter-spacing: 2px;
+    line-height: 8px;
+    margin-left: 11px;
+    vertical-align: middle;
+    width: 28px;
+}
+
+.wgd-sortbar-container .remove-selected-items-collections{
+    cursor: pointer;
+}
+
+.wgd-sortbar-add-button > i,
+.wgd-sortbar-add-button > span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.wgd-sortbar-add-button > i {
+    margin-right: .2rem;
+}
+
+.sortbar-box-tooltip {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: none;
+    background: #FFF;
+    width: 280px;
+    max-height: 18em;
+    border: 1px solid #DDD;
+    border-radius: 2px;
+    color: #374C58;
+    overflow-y: auto;
+    min-height: 40px;
+    min-width: 10em;
+    z-index: 99;
+}
+
+.sortbar-box-tooltip ul {
+    padding: 3px 0;
+}
+
+.wgd-sortbar-container .sortbar-menu .sortbar-box-tooltip ul li {
+
+    padding: 0.5em;
+    height: auto;
+    display: block;
+}
+
+.sortbar-box-tooltip ul li:hover {
+    background-color: #DDD;
+}
+
+.sortbar-box-tooltip ul li div.action-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 240px;
+    font-weight: 700;
+}
+
+.wrapper-sortbar-actions {
+    margin-top: 3px !important;
+}
+
+.sortbar-menu .left-menu {
+    position: relative;
+}
+
+.sortbar-box-tooltip .multiplicity-separator {
+    padding: 6px 3px;
+    border-bottom: 2px solid #374C58;
+    font-weight: 700;
+    font-size: 13px;
+    background-color: #E7EAF0;
+}
+
+.wgd-sortbar-container .add-button {
+    display: inline-block;
+}
+
+.wgd-sortbar-container .sortbar-menu li.sortbar-action {
+    margin: 0;
+}
+
+.wgd-sortbar-container .sortbar-box-menu {
+    position: absolute;
+    display: none;
+    background: #FFF;
+    margin-left: -1.2em;
+    max-height: 18em;
+    border: 1px solid #DDD;
+    border-radius: 2px;
+    color: #374C58;
+    overflow-y: auto;
+    min-height: 40px;
+    z-index: 99;
+}
+
+.wgd-sortbar-container .sortbar-box-menu .sortbar-option.hide {
+    display: none;
+}
+
+.wgd-sortbar-container .sortbar-box-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.wgd-sortbar-container .sortbar-box-menu li {
+    display: block;
+    padding: 8px;
+    margin: 0;
+}
+
+.wgd-sortbar-container .sortbar-box-menu li:hover {
+    background-color: rgba(55, 76, 88, 0.40);
+}
+
+.wgd-sortbar-container .sortbar-records-box-menu {
+    position: absolute;
+    display: none;
+    background: #FFF;
+    margin-left: -1.2em;
+    max-height: 18em;
+    border: 1px solid #DDD;
+    border-radius: 2px;
+    color: #374C58;
+    overflow-y: auto;
+    min-height: 40px;
+    z-index: 99;
+    width: 60px;
+    text-align: center;
+}
+
+.wgd-sortbar-container .sortbar-records-box-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.wgd-sortbar-container .sortbar-records-box-menu li {
+    display: block;
+    padding: 8px;
+    margin: 0;
+}
+
+.wgd-sortbar-container .sortbar-records-box-menu li:hover {
+    background-color: rgba(55, 76, 88, 0.40);
+}
+
+.wdg-tple-button .ui-bizagi-loading-button{
+    display: block;
+    float: left;
+    height: 15px;
+    margin-right: 5px;
+    width: 15px;
+}
+
+.wdg-tple-button.state-loading{
+    background-color: gray;
+    cursor: wait;
+}
+
+.sortbar-left-check-uncheck {
+    float: left;
+    margin-top: 9px;
+    margin-left: 10px;
+}
+
+.sortbar-left-check-uncheck .border-check-uncheck{
+    display: none;
+
+    position: relative;
+
+    width: 18px;
+    height: 17px;
+
+}
+
+.sortbar-left-check-uncheck .border-check-uncheck:hover{
+
+}
+
+.sortbar-left-check-uncheck input{
+    margin: 0;
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+.actions-count-selected {
+    margin-right: .4em;
+}

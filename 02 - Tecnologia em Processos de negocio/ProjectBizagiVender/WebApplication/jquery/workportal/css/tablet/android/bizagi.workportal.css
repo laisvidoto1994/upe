@@ -1,0 +1,232 @@
+
+.ui-bizagi-workportal-workarea
+{
+    height: 100%;
+    width: 100%;
+    position: relative;
+   /* overflow-y: hidden;*/
+    overflow: hidden;
+
+    }
+
+.ui-bizagi-workportal-inbox
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+
+}
+
+
+/* Center loader */
+.ui-bizagi-loading-message {
+	position: fixed !important;
+	left: 50%;
+	top: 50%;
+	width: 32px;
+	height: 32px;
+}
+
+#categories .ui-bizagi-loading-message{
+    position: relative !important;
+    top: 0px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#categories .ui-bizagi-loading-message-center{
+    top: 0px !important;
+    left: 0px !important;
+}
+
+/* Workportal app wrapper */
+.ui-bizagi-workportal-application {
+	position: relative;
+	/*overflow: hidden;*/
+	width: 100% !important;
+    height: 100% !important;
+}
+
+/* Loading icon */
+.ui-bizagi-loading-icon {
+	background: url("images/loader.gif" ) no-repeat 5px;
+	width: 32px;
+	height: 32px;
+}
+
+
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), 
+only screen and (min-device-pixel-ratio: 2) {
+    .ui-bizagi-loading-icon
+	{
+		background: url("images/loader-2x.gif" );
+		background-size: 32px 32px;
+	}
+	
+}
+
+.ui-bizagi-render-waiting-message-text {
+	font-weight: bold;
+	color: #FFF;
+	text-shadow: 1px 1px 3px #000;
+}
+
+/* Waiting overlay message */
+.ui-bizagi-render-waiting-message {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+}
+
+.webkitOverlay {
+	-webkit-box-align: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-pack: center;
+	-webkit-transition: 250ms opacity;
+	background: -webkit-gradient(linear,left top, left bottom,from(rgba(26, 46, 61,0.8)),to(rgba(47, 82, 108, 0.6)));
+	bottom: 0;
+	display: -webkit-box;
+	left: 0;
+	overflow: auto;
+	padding: 20px;
+	padding-bottom: 130px;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 10;
+}
+
+	.webkitOverlay .messageBox {
+		-webkit-box-shadow: 0 5px 80px #505050;
+		background: -webkit-gradient(linear, left top, left bottom, from(#B3B3B3), to(#666));
+		border: 1px solid black;
+		border-radius: 4px;
+		width: 400px;
+		min-height: 100px;
+		padding: 0;
+		position: relative;
+		color: #F8F8F8;
+	}
+
+	.webkitOverlay .unsupportGradient .messageBox {
+		background: #666;
+	}
+
+	.webkitOverlay .messageBox div {
+		padding: 10px;
+	}
+
+/* GENERAL LAYOUTS MEDIA-QUERY (MUST BE > 1280 to avoid android tablet crashes)
+=========================================================
+@media only screen and (min-width: 1280px) {
+
+	.ui-bizagi-workportal-application {
+
+	}
+}
+/* MENU RETINA ICONS
+=========================================================
+@media only screen and (-webkit-min-device-pixel-ratio: 2 ), 
+only screen and (min-device-pixel-ratio: 2) {
+    #menu-items li button,
+	{
+		background-image:url('images/bizagi-tablet-sprite.png');
+        background-size: 450px 300px;
+	}
+	
+}
+/* GENERAL RETINA ICONS
+=========================================================
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2 ), 
+only screen and (min-device-pixel-ratio: 2) {
+    .icon,
+	{
+		background-image:url('images/bizagi-tablet-sprite.png');
+         background-size: 450px 300px;
+	}
+	
+}
+
+/* iPAD LANDSCAPE MEDIA-QUERY
+=========================================================
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+
+	.ui-bizagi-workportal-application {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+/* iPad PORTRAIT MEDIA-QUERY
+=========================================================
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) and (orientation:portrait) {
+
+	.ui-bizagi-workportal-application {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+/* "ADD TO HOMESCREEN" MESSAGE
+=========================================================*/
+.add-to-homescreen {
+	min-height: 10px;
+	min-width: 140px;
+	max-width: 240px;
+	border-radius: 8px;
+	position: fixed;
+	left: 70px;
+	top: 20px;
+	background: -webkit-gradient(linear, left top, left bottom, from(hsl(0,0%,70%)), to(hsl(0,0%,40%)));
+	padding: 15px 30px 20px 30px;
+	color: #FFF;
+	font-weight: bold;
+	text-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 5px 5px 30px #333, 0 0 2px #FFF;
+	border: 2px solid #000;
+	z-index: 9999;
+	font-size: 18px;
+}
+
+	.add-to-homescreen::after {
+		position: absolute;
+		content: "";
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid #000;
+		top: -12px;
+		left: 78px;
+	}
+
+	.add-to-homescreen .close-btn {
+		display: inline-block;
+		position: absolute;
+		right: 5px;
+		top: 6px;
+		height: 22px;
+		width: 22px;
+		background-color: hsla(0,0%,0%, .5);
+		border-radius: 11px;
+	}
+
+		.add-to-homescreen .close-btn::after {
+			content: "x";
+			position: absolute;
+			left: 8px;
+			top: 3px;
+			font-size: 13px;
+			text-shadow: 0 0 0 transparent;
+		}

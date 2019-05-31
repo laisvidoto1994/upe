@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Editor String</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../../../../jquery/common/jquery.ui/css/desktop/jquery.ui.css" />
+        <link rel="stylesheet" href="../../../../../../jquery/common/jquery.ui/css/desktop/jquery.ui.tooltip.css" />
+        <link rel="stylesheet" href="../../../../../../jquery/rendering/css/desktop/bizagi.rendering.css" />
+        <link rel="stylesheet" href="../../../../base/css/bizagi.editor.base.css" />
+        <script src="../../../../../../jquery/common/base/js/lib/jquery.js"></script>
+        <script src="../../../../../../jquery/common/jquery.ui/js/desktop/jquery.ui.js"></script>
+        <script src="../../../../../../jquery/common/jquery.ui/js/desktop/jquery.ui.tooltip.js"></script>
+        <style>
+            body{
+                padding: 20px;
+            }
+
+            .editor_component_editor_string label {
+                color: #5D7389;
+                margin: 3px 0px 3px 0px;
+                display: block;
+            }
+
+            .editor-validator-container{
+                display:none;
+                position:absolute;
+                top:0;
+                left:0;
+                min-width:180px;
+                color:#FFF;
+                padding: 8px;
+                border-radius: 4px;
+                vertical-align: top;
+
+                max-width:200px;
+            }
+
+
+            .editor-validator-bg{
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.88)), color-stop(1%,rgba(0,0,0,0.88)), color-stop(100%,rgba(64,68,71,0.92)));
+                background: -webkit-linear-gradient(top,  rgba(0,0,0,0.88) 0%,rgba(0,0,0,0.88) 1%,rgba(64,68,71,0.92) 100%); /* Chrome10+,Safari5.1+ */
+            }
+
+            [class*="editor-validator-icon-"]{
+                background: transparent url("images/sprite-validator.png") no-repeat;
+                width:16px;
+                height:16px;
+                position:absolute;
+                vertical-align: top;
+                margin-right: 8px;
+            }
+            [class*="editor-validator-message-"]{
+                display:inline-block;
+                vertical-align: top;
+                margin-left: 24px;
+            }
+
+            .editor-validator-icon-error{
+                background-position: top left;
+            }
+
+            .editor-validator-icon-arrow{
+                background: none;
+                display: inline-block;
+                width: 0;
+                height: 0;
+                vertical-align: top;
+                border-bottom: 6px solid black;
+                border-right: 6px solid transparent;
+                border-left: 6px solid transparent;
+                content: "";
+                position: absolute;
+                top: -6px;
+            }
+
+            [class*="editor-string-icon"]{
+                background: transparent url("images/sprite_string_editor.png") no-repeat;
+                width:16px;
+                height:16px;
+                overflow: hidden;
+                text-indent:-1000px;
+                display:inline-block;
+            }
+
+            .editor-string-icon-default-value{
+                background-position: 0 0;
+                -webkit-border-radius: 0px 4px 4px 0px;
+
+                background-color: #ECECEC;
+                border-width:1px 1px 1px 0px;
+                border-color:#DADADA;
+                border-style:solid;
+
+                padding: 0 2px 0 2px;
+                margin: 3px 0 0 -6px;
+                vertical-align:top;
+                height:14px;
+                width:14px;
+
+                cursor:pointer;
+                opacity: 0;
+
+            }
+
+            .editor-string-icon-default-value{
+                opacity:1;
+            }
+
+            .editor-string-icon-localization{
+                background-position: 0 -16px;
+                padding: 0 2px 0 2px;
+                margin: 3px 2px 0px -23px;
+                vertical-align: top;
+                height: 16px;
+                width: 16px;
+                cursor: pointer;
+                opacity:0;
+                -webkit-transition:opacity .4s ease-in-out;
+            }
+            .editor_string_fadeIn,
+            .editor_component_editor_string:hover .editor-string-icon-localization{
+                background-position: 0 -32px;
+                opacity:1;
+            }
+
+            .editor-string-input{
+                background-image: none;
+                box-shadow: inset 0px 1px 2px 0px rgba(172, 177, 185, .5);
+                -webkit-box-sizing: border-box;
+                width:86%;
+
+                border: 1px solid #CCC;
+                border-top: 1px solid #999;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                border-radius: 4px;
+                color: #565656;
+
+                display: inline-block;
+                padding: 2px;
+            }
+
+            .editor-string-input input[type="text"]{
+                background: transparent none;
+                box-shadow: none;
+                border:0px transparent none;
+                width:90%;
+                padding: 0px;
+                margin: 0px;
+            }
+            .editor-string-input input[type="text"]:focus{
+                outline-color:transparent;
+            }
+            
+            .editor-string-focus{
+                -webkit-box-shadow:  0px 0px 0px 1px rgba(234, 176, 63, .8);
+                box-shadow:  0px 0px 0px 1px rgba(234, 176, 63, .8);
+            }
+
+        </style>
+        <script src="mock.js"></script>
+    </head>
+    <body>
+        <div id="main-container">
+            
+            <div class="editor_component_editor_string">
+                <label title="String Editor">String Editor</label>
+                <div class="editor-string-input" tabindex="0">
+                    <input type="text" value="Control" />
+                </div>
+                <span class="editor-string-icon-localization">Localization</span>
+                <span class="editor-string-icon-default-value">Default value<span>
+                <div class="editor-validator-container editor-validator-bg">
+                    <span class="editor-validator-icon-arrow"></span>
+                    <span class="editor-validator-icon-error"></span>
+                    <span class="editor-validator-message-error tooltip" title="valor default">El valor Ingresado no corresponde a un Entero</span>
+                </div>
+            </div>
+            <input type="text" value="Control" />
+            
+        </div>
+    </body>
+</html>

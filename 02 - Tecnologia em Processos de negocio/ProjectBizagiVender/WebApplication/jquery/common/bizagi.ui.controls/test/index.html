@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bizagi</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        .biz-inline {
+            display: inline-block;
+            width: 50%;
+        }
+
+        body,html{
+            overflow: auto!important;
+        }
+
+    </style>
+</head>
+<body onunload="doUnload">
+    <script type='text/javascript' src='../../../steal.js'></script>
+    <script type='text/javascript' src='../../../bizagi.loader.js'></script>
+    <script type="text/javascript" language="javascript">
+        // Redefine path to base
+        var BIZAGI_PATH_TO_BASE = "../../../../";
+        var BIZAGI_LANGUAGE = 'en-US';
+        var BIZAGI_ENVIRONMENT = 'debug';
+        var BIZAGI_ENABLE_LOG =  'debug' == 'debug';
+        var BIZAGI_INBOX_ROWS_PER_PAGE =   '10';
+        var BIZAGI_DEFAULT_CURRENCY_INFO = {            
+            "symbol": "$",
+            "decimalSeparator": ".",
+            "groupSeparator": ",",
+            "decimalDigits": "2"
+        };
+        var BIZAGI_DEFAULT_DATETIME_INFO = {            
+            "shortDateFormat": "M/d/yyyy",
+            "timeFormat": "h:mm tt",
+            "longDateFormat": "dddd, MMMM d, yyyy",
+            "twoDigitYearMax": "2029",
+            "twoDigitYearMaxDelta": "16"
+        };
+        var BIZAGI_SETTINGS= {            
+            "UploadMaxFileSize": "1048576",
+            "skipSubprocessGlobalForm": "true"
+        };
+        var BIZAGI_USER_PREFERENCES_PAGE = '';
+        var BIZAGI_SESSION_NAME = "ASP.NET_SessionId";
+        var BIZAGI_THEME = "bizagiDefault";
+
+        // Gets the loader instance, and load the module
+        var loader = bizagi.loader;
+    	loader.init(function() {
+    	    loader.start("workportal")
+    		.then( function () {
+    	    	// Test plugins
+                console.log("finished");
+
+                $(document).on("tableCompleted", function(obj){
+                    //console.log(obj.message, obj.ui);
+                });
+                
+                $(document).on("headerClicked", function(obj){
+                    //console.log(obj.message, obj.ui);
+                });
+
+                $(document).on("comboCompleted", function(obj){
+                    //console.log(obj.message, obj.ui);
+                });
+
+
+                $(document).on("comboChange", function(obj){
+                    //console.log(obj.message, obj.ui, obj.ui.val());
+                });
+
+                $(document).on("radioChange", function(obj){
+                    //console.log(obj.message, obj.ui, obj.ui.val());
+                });
+
+
+                $('.biz-ctrl-table').uitable({
+                        data:getDataSourceForTables(10,5),
+                        cellValue: function(obj){
+                            if(obj.indexCol === 2){
+                                return '<div class="biz-inline">Muestra de Insercion HTML y plugin combo : </div><div class="biz-inline">{{plugin:check}}</div>';
+                            }else{
+
+                                if(obj.value.component === 'uicombo'){
+                                    return '<div class="biz-inline">' + obj.indexRow + ' ' + obj.indexCol  + ' - ' + 'Muestra de Insercion HTML y plugin combo : </div><div class="biz-inline">{{plugin:check}}</div>';
+                                }else{
+                                    return obj.indexRow + ' ' + obj.indexCol  + ' - '+ obj.value;
+                                }
+                            }
+
+                        },
+                        onComplete:function(){
+                            $(this).find('td div:contains("{{plugin:check}}")').each(function(){
+                                var self = $(this);
+                                
+                                var initHTML = self.html();
+                                var endHTML = initHTML.replace('{{plugin:check}}','');
+                                self.html(endHTML);
+
+                                var combo = $('<div class="combo"></div>');
+                                combo.uicombo({
+                                    data:getDataSourceForCombos(2),
+                                    pathTemplate:'../biz/ui/controls/combo/tmpl/',
+                                    initValue:{value:'', text:'Choose your preferred item'}
+                                });
+                                self.append(combo);
+                            });
+                        }
+                    });
+
+                $('.biz-ctrl-table-2').uitable({
+                        data:getDataSourceForTables(10,5),
+                        oddClass: 'odd',
+                        css:'customCss'
+                    });
+
+                $('.biz-ctrl-combo').uicombo({
+                        data:getDataSourceForCombos(30),
+                        initValue:{value:'', text:'Choose your preferred item'},
+                        css:'customCss'
+                    });
+
+                $('.biz-ctrl-combo-esp').uicombo({
+                        data:getDataSourceEspForCombos(30),
+                        itemValue: function(obj){
+                            console.log(obj);
+                            return obj.valor.property + obj.valor.element; 
+                        },
+                        itemText: function(obj){
+                            return obj.nombre;
+                        },
+                        css:'customCss'
+                    });
+
+
+                $('.biz-ctrl-radio').uiradio({
+                        data:getDataSourceForRadios(10),
+                        radioGroup: 'myRadioGroup',
+                        css:'customCss'
+                    });
+
+                $('.biz-ctrl-radio-2').uiradio({
+                        data:getDataSourceForRadios(10)
+                    });
+
+                $('.biz-ctrl-checkbox').uicheckbox({
+                        data:getDataSourceForCheckbox(10)
+                    });
+                
+
+                $('.destroy-table').on('click', function(evt){
+                    $('.biz-ctrl-table').uitable('destroy');
+                });
+
+                $('.add-rows').on('click', function(evt){
+                    $('.biz-ctrl-table').uitable('addRow', getDataSourceForRows(20, 20), 3);
+                });
+
+                $('.add-rows-2').on('click', function(evt){
+                    $('.biz-ctrl-table-2').uitable('addRow', getDataSourceForRows(20, 10), 3);
+                }); 
+
+                $('.destroy-combo').on('click', function(evt){
+                    $('.biz-ctrl-combo').uicombo('destroy');
+                });
+
+
+
+
+            });	
+    	});
+
+
+
+        /*
+            
+            Tables
+            {
+                headers:[],
+                rows:[]
+            }
+        */
+
+        function getDataSourceForTables(cols, rows){
+            var dataSource = {headers:[],rows:[]};
+            for(var i=0; i<=cols; i++){
+                dataSource.headers.push({value:'Header-'+i});
+            }
+
+            var combos = getDataSourceForCombos(5);
+            var radios = getDataSourceForRadios(5);
+            var checks = getDataSourceForCheckbox(5);
+            for(var j=0; j<=rows; j++){
+                dataSource.rows[j] = [];
+                $.each(dataSource.headers, function(item, value){
+                    if(item < 2){
+                        dataSource.rows[j].push({value:{component:'uicombo', data:combos}});
+                    }else if(item > 2 && item < 5){
+                        dataSource.rows[j].push({value:{component:'uiradio', data:radios}});
+                    }else if(item > 5 && item < 8){
+                        dataSource.rows[j].push({value:{component:'uicheckbox', data:checks}});
+                    }else{
+                        dataSource.rows[j].push({value:'Row-'+j+' Col-'+item});
+                    }
+                });
+            }
+
+            return dataSource;
+
+        }
+
+
+
+        /*
+            Combos
+            {
+                label:'My Label',
+                combo:[
+                    {
+                        value:'',
+                        text:''
+                    }
+                ]
+            }
+        */
+
+        function getDataSourceForCombos(combos){
+            var dataSource = {combo:[], label:'My label'};
+
+            for(var i=0; i<=combos; i++){
+                var objTmp = {text:'cmb-'+i, value:i};
+                if(i > (combos/2)){
+                    objTmp.data = {id:'id-'+i};
+                }
+
+
+                dataSource.combo.push(objTmp);
+            }
+
+            return dataSource;
+
+        }
+
+
+
+        function getDataSourceEspForCombos(combos){
+            var dataSource = {combo:[], label:'My label'};
+
+            for(var i=0; i<=combos; i++){
+                var objTmp = {nombre:'cmb-'+i, valor:{element: i, property: 'Propiedad'}};
+                if(i > (combos/2)){
+                    objTmp.data = {id:'id-'+i};
+                }
+
+
+                dataSource.combo.push(objTmp);
+            }
+
+            return dataSource;
+
+        }
+
+
+
+
+        function getDataSourceForRows(rows, nCombo){
+            var nRows = [];
+
+            if(!nCombo){
+                nCombo = 5;
+            }
+
+            var combos = getDataSourceForCombos(nCombo);
+            for(var i=0; i<rows; i++){
+                if(i < 2){
+                    nRows.push({value:{component:'uicombo', data:combos}});
+                }else{
+                    nRows.push({value:'add-'+i});
+                }
+            }
+            return nRows;
+        };
+
+
+        function getDataSourceForRadios(radios){
+            var nRadios = [];
+            for(var i=0; i<radios; i++){
+                    nRadios.push({value:i, text:'radio-'+i});
+            }
+            return {radio:nRadios};
+        };
+
+        function getDataSourceForCheckbox(checks){
+            var nChecks = [];
+            for(var i=0; i<checks; i++){
+                    nChecks.push({value:i, text:'checkbox-'+i});
+            }
+            return {checkbox:nChecks};
+        };
+    </script>
+
+
+        <button class="add-rows">Add Rows</button>
+        <button class="add-rows-2">Add Rows 2</button>
+        <button class="destroy-table">Destoy Table</button>
+        <button class="destroy-combo">Destoy Combo</button>
+        <div class="biz-ctrl-table"></div>
+        <div class="biz-ctrl-table-2"></div>
+        <div class="biz-ctrl-combo"></div>
+        <div class="biz-ctrl-combo-esp"></div>
+        <div class="biz-ctrl-radio"></div>
+        <div class="biz-ctrl-radio-2"></div>
+        <div class="biz-ctrl-checkbox"></div>
+        <div class="biz-ctrl-button"></div>
+
+        <footer>Test</footer>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<script id="ui-bizagi-login-normal-login" type="text/x-jquery-tmpl">
+    <div class="login-data">
+        <fieldset>
+            <legend>Please type your account’s information to log in</legend>
+            <div class="login-field">
+                <label for="user">Username</label>
+                <input id="user" class="login-input" type="text" tabindex="1" />                        
+            </div>
+            <div class="login-field">
+                <label for="password">Password</label>
+                <input id="password" class="login-input" type="password" tabindex="2" />                        
+            </div>
+            <div class="login-field">
+                <input id="login" class="login-button" type="submit" name="login" value="Login" tabindex="3" />
+            </div>
+            <ul class="login-options">
+                <li class="login-option"><input id="changePassword" type="button" title="Change password" tabindex="4" /></li>
+                <li class="login-option"><input id="forgotPassword" type="button" title="Forgot password?" tabindex="5" /></li>
+                <li class="login-option"><input id="unlockAccount" type="button" title="Unlock Account" tabindex="6" /></li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <ul class="login-account-options secondary-data">
+                <li class="login-radio">
+                    <input id="rbSaveAccountPassword" type="radio" name="rbRemember" tabindex="7" /><label for="rbSaveAccountPassword">Remember my account and password</label>
+                </li>
+                <li class="login-radio">
+                    <input id="rbSaveAccount" type="radio" name="rbRemember" tabindex="8" /><label for="rbSaveAccount">Remember my account</label>
+                </li>                                           
+                <li class="login-radio">
+                    <input id="rbAskAlways" type="radio" name="rbRemember" checked="checked" tabindex="9" /><label for="rbAskAlways">Always ask for account and password</label>
+                </li>
+            </ul>
+        </fieldset>
+        <div class="login-admin">
+            <a class="login-admin-button secondary-data" href="#"  tabindex="10">Administrator Login</a>
+        </div>
+                    
+        <div class="login-error">
+            <p class="secondary-data"></p>
+        </div>
+    </div>
+</script>
+
+
+<script id="ui-bizagi-login-change-password" type="text/x-jquery-tmpl">
+    <div class="login-data">
+        <fieldset>
+            <div class="login-field">
+                <label for="user">Username</label>
+                <input id="user" class="login-input" type="text" tabindex="1" />
+            </div>
+            <div class="login-field">
+                <label for="domain">Domain</label>
+                <select id="domain" class="login-select" tabindex="3">
+                {{each domains}}
+                    <option value="${$value.name}">${$value.name}</option>
+                {{/each}}
+                </select>    
+            </div>
+            <div class="login-field">
+                <label for="password">Old Password</label>
+                <input id="password" class="login-input" type="password" tabindex="3" /> 
+            </div>
+            <div class="login-field">
+                <label for="newPassword">New Password</label>
+                <input id="new-password" class="login-input" type="password" tabindex="4" />                     
+            </div>
+            <div class="login-field">
+                <label for="passwordConfirmation">New Password Confirmation</label>
+                <input id="password-confirmation" class="login-input" type="password" tabindex="5" /> 
+            </div>
+            <div class="login-field">
+                <label for="secretQuestion">Secret Question</label>
+                <input id="secret-question" class="login-input" type="password" tabindex="6" />                      
+            </div>
+            <div class="login-field">
+                <label for="secretAnswer">Secret Answer</label>
+                <input id="secretAnswer" class="login-input" type="password" tabindex="7" /> 
+            </div>                    
+            <div class="login-field">
+                <input id="change-password" class="login-button" type="submit" name="login" value="Change Password" tabindex="8" />
+            </div>
+            <ul class="login-options">
+                <li class="login-option"><input id="lnkBackToLogin" type="button" title="Back to Login" value="Back to Login" tabindex="9" /></li>
+            </ul>
+        </fieldset>
+
+        <div class="login-error">
+            <p class="secondary-data"></p>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-login-unlock-account" type="text/x-jquery-tmpl">
+    <div class="login-data">
+        <fieldset>
+            <div class="login-field">
+                <label for="user">Username</label>
+                <input id="user" class="login-input" type="text" tabindex="1" />                        
+            </div>
+            <div class="login-field">
+                <label for="password">Password</label>
+                <input id="password" class="login-input" type="password" tabindex="2" />                        
+            </div>
+            <div class="login-field">
+                <label for="domain">Domain</label>
+                <select id="domain" class="login-select" tabindex="3">
+                {{each domains}}
+                    <option value="${$value.name}">${$value.name}</option>
+                {{/each}}
+                </select>                       
+            </div>                  
+            <div class="login-field">
+                <label for="observation">Observation</label>
+                <textarea rows="4" cols="39" id="observation" class="login-textarea" tabindex="4"></textarea>                                           
+            </div>                                                              
+            <div class="login-field">
+                <input id="unlock-account" class="login-button" type="submit" name="login" value="Unlock Account" tabindex="5" />
+            </div>
+            <ul class="login-options">
+                <li class="login-option"><input id="lnkBackToLogin" type="button" title="Back to Login" value="Back to Login" tabindex="6" /></li>
+            </ul>
+        </fieldset>  
+        <div class="login-error">
+            <p class="secondary-data"></p>             
+        </div>                                  
+    </div>  
+</script>
+
+<script id="ui-bizagi-login-quick-login" type="text/x-jquery-tmpl">
+			<div class="login-data">
+				<fieldset>
+					<legend>Please type your account’s information to log in</legend>
+					<div class="login-field">
+			            <label for="username">Username</label>
+			            <select id="username" class="login-select" tabindex="2">
+							
+                            {{each users}}
+							    <option value="${$value.name}">${$value.name}</option>
+                            {{/each}}
+						</select>						
+					</div>
+					<div class="login-field">
+						<input id="login" class="login-button" type="submit" name="login" value="Login" tabindex="3" />
+					</div>
+				</fieldset>
+                   <div class="login-error">
+                        <p class="secondary-data"></p>             
+                    </div>   
+			</div>
+</script>
+

@@ -1,0 +1,127 @@
+/********
+* Filename: bizagi.editor.component.editor.selecttemplate.css
+* authors: Andrés Fernando Muñoz
+* date: 2015-19-02
+*
+* $__selecttemplate
+*
+********/
+
+/* __selecttemplate
+--------*/
+
+.bizagi_editor_component_editor_selecttemplate{
+}
+
+
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-button-container
+{
+    position: relative;
+    margin: 0;
+}
+
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-button-container .selecttemplate-button-caption
+{
+    text-align: left;
+    cursor: pointer;
+    border-radius: 3px 0px 0px 3px;
+    display: inline-block;
+    margin: 0px;
+}
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-button-container .selecttemplate-button-caption:hover
+{
+    color: #333;
+    text-decoration: none;
+    background-color: #E6E6E6;
+    background-position: 0 -15px;
+}
+
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-button-container .selecttemplate-button-dropdown .biz-btn-caret{
+    position: relative;
+    top: 2px;
+}
+
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-button-container .selecttemplate-button-dropdown
+{
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0px 3px 3px 0px;
+    border-left: none;
+    margin-left: -3px;
+    min-width: 15px;
+	position: relative;
+	top: -5px;
+}
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-button-container .selecttemplate-button-dropdown:hover
+{
+    color: #333;
+    text-decoration: none;
+    background-color: #E6E6E6;
+    background-position: 0 -15px;
+}
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-button-container .selecttemplate-button-dropdown.selecttemplate-open
+{
+    color: #333;
+    text-decoration: none;
+    background-color: #E6E6E6;
+    background-position: 0 -15px;
+}
+
+
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-button-container .selecttemplate-menu-section{
+    padding: 2px 4px;
+    line-height: 14px;
+}
+
+.bizagi_editor_component_editor_selecttemplate .ui-ellipsis.selecttemplate-button-caption{
+    max-width: 165px;
+    min-width: 130px;
+}
+
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-button-container .selecttemplate-menu
+{
+    position: absolute;
+    padding: 5px;
+    width: 220px;
+    list-style: none;
+    display: none;
+    top: 24px;
+    left: 0px;
+    z-index: 900;
+    background-color: white;
+}
+
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-button-container .selecttemplate-menu.selecttemplate-open
+{
+    display: block;
+    z-index: 900;
+}
+
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-menu .selecttemplate-submenu
+{
+    list-style: none;
+    padding: 0px;
+    max-height: 120px;
+    overflow-y: scroll;
+}
+
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-menu .selecttemplate-submenu li
+{
+    text-align: left;
+    position: relative;
+}
+
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-menu .selecttemplate-submenu li span
+{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.bizagi_editor_component_editor_selecttemplate .selecttemplate-menu .selecttemplate-submenu li span{
+    margin-left: 5px;
+}
+
+.bizagi_editor_component_editor_selecttemplate .biz-ico.template-image{
+   
+}

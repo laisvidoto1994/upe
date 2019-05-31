@@ -1,0 +1,62 @@
+﻿{
+    "nodes": [ 
+            { 
+                "guid": "entity-10011", 
+                "displayName": "Aplicacion", 
+                "canHasChildren": "true", 
+                "style": "ui-bizagi-type-entity-application", 
+                "isDragabble" : "false",
+                "nodes" : [
+                    { 
+                        "guid": "entity-10000", 
+                        "displayName": "cliente", 
+                        "canHasChildren": "true", 
+                        "style": "ui-bizagi-type-entity-master", 
+                        "renderType" : "search",
+                        "xpath" : "cliente",
+                        "nodes" : [                            
+                            { "guid": "attribute-10002", "displayName": "Fecha de nacimiento", "canHasChildren": "false", "style": "ui-bizagi-type-attribute-date", "xpath": "cliente.fechaNacimiento", "renderType" : "date" },
+                            { "guid": "attribute-10003", "displayName": "Numero", "canHasChildren": "false", "style": "ui-bizagi-type-attribute-number", "xpath": "cliente.identificacion", "renderType" : "number"},
+                            { "guid": "attribute-10004", "displayName": "Booleano", "canHasChildren": "false", "style": "ui-bizagi-type-attribute-boolean", "xpath": "cliente.habilitado", "renderType" : "boolean"},
+                            { "guid": "attribute-10005", "displayName": "Flotante", "canHasChildren": "false", "style": "ui-bizagi-type-attribute-float", "xpath": "cliente.estatura", "renderType" : "number"},
+                            { "guid": "attribute-10006", "displayName": "Carta", "canHasChildren": "false", "style": "ui-bizagi-type-attribute-letter", "xpath": "cliente.cartaPresentacion", "renderType" : "letter"},
+                            { "guid": "attribute-10007", "displayName": "Archivo", "canHasChildren": "false", "style": "ui-bizagi-type-attribute-attachment", "xpath": "cliente.attachment" , "renderType" : "upload"},
+                            { "guid": "attribute-10017", "displayName": "Moneda", "canHasChildren": "false", "style": "ui-bizagi-type-attribute-currency", "xpath": "cliente.moneda", "renderType" : "money"},
+                            { "guid": "collection-10008", "displayName": "Coleccion", "canHasChildren": "true", "style": "ui-bizagi-type-collection", "xpath": "cliente.collection", "renderType" : "grid"},
+                            { "guid": "entity-10010", "displayName": "Maestra", "canHasChildren": "true", "style": "ui-bizagi-type-entity-master", "xpath": "cliente.Master", "renderType" : "search"},
+                            { "guid": "entity-10009", "displayName": "Parametrica", "canHasChildren": "true", "style": "ui-bizagi-type-entity-parametric", "xpath": "cliente.ciudad", "renderType" : "combo"},
+                            { "guid": "entity-10011", "displayName": "Sistema", "canHasChildren": "true", "style": "ui-bizagi-type-entity-system", "xpath": "cliente.system", "renderType" : "combo"},
+                            { 
+                                "guid": "node-form-10016",
+                                "displayName": "Forma", 
+                                "canHasChildren": "true", 
+                                "style": "bizagi-node-forms", 
+                                "isDragabble" : "false",                                
+                                "nodes" : [
+                                    { "guid": "entity-form-10016", "displayName": "FormaDemo", "canHasChildren": "false", "style": "ui-bizagi-type-form", "xpath": "cliente.forms"}
+                                ]
+                            }                       
+                        ]
+                    },
+                    { "guid": "attribute-10012", "displayName": "Atributo de ambito", "canHasChildren": "false", "style": "ui-bizagi-type-scope-attribute", "isScopeAttribute" : "true", "xpath": "AtributoScope",  "renderType" : "text"},
+                    { 
+						"guid": "entity-10018",
+						"displayName": "Entidad  de ambito",
+						"canHasChildren": "true",
+						"style": "ui-bizagi-type-scope-entity",
+						"isScopeAttribute" : "true",
+						"xpath": "cliente.sexo",
+						"renderType" : "combo",
+						"nodes" : [
+                            { "guid": "attribute-10001", "displayName": "Texto", "canHasChildren": "false", "style": "ui-bizagi-type-attribute-string", "xpath": "cliente.apellido",  "renderType" : "text"},
+                            { "guid": "attribute-10002", "displayName": "Fecha de nacimiento", "canHasChildren": "false", "style": "ui-bizagi-type-attribute-date", "xpath": "cliente.fechaNacimiento", "renderType" : "date" },
+                            { "guid": "attribute-10003", "displayName": "Numero", "canHasChildren": "false", "style": "ui-bizagi-type-attribute-number", "xpath": "cliente.identificacion", "renderType" : "number"}                                                   
+                        ]
+				    }
+
+                    
+                ]
+            }
+    ]
+}
+

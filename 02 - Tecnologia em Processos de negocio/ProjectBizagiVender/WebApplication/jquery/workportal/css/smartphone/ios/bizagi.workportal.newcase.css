@@ -1,0 +1,241 @@
+/**********************************
+*  Filename: bizagi.workportal.newcase.css
+*  Create Date: 2012-06-27
+*  Author: oscar.osorio@bizagi.com
+*
+*  ==STRUCTURE=====================
+*
+*  $__xxx
+***********************************/
+
+.bz-wp-nc-container
+{
+	border-radius: 6px;
+	box-shadow:  0px 1px 2px 0px rgba(0, 0, 0, .15);
+}
+
+
+.bz-wp-nc-categories li .processIco.wait{
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.arrow-nc
+{
+	background-position:-190px -55px;
+    text-indent:-9999px;
+    position:absolute;
+    right:5px;
+    top:50%;
+    margin-top:-10px;
+    font-weight: bold;
+}
+.processIco,.categoryIco{
+    position: absolute;
+    left: 15px;
+	width: 31px;
+	height: 31px;
+	top: 10px;
+}
+.categoryIco
+{background-position: -204px -54px;}
+.processIco
+{background-position: -150px -51px;
+ width:40px;}
+
+.bz-nc-item-arrow
+{
+	float: right;
+	top: 8px;
+	position: relative;
+}
+
+.bz-nc-item-arrow >span.bz-cm-icon
+{
+	background-position: -332px -95px;
+}
+
+
+.bz-wp-nc-list-items >li
+{
+	border-bottom: 1px solid #C0C6CB;
+    padding: 5px 5px 5px 45px;
+    position: relative;
+    min-height: 40px;
+	background-color:#f2f2f2;
+}
+
+.bz-wp-nc-list-items >li:nth-child(even){
+	background-color: #e6e6e6;
+}
+.bz-wp-nc-list-items >li .newCaseDescription
+{
+	font-weight: normal;
+	text-shadow: 0 1px 0 #f7f7f7;
+	color: #535b61;
+	font-size: 14px;
+	margin-left: 15px;
+}
+
+.bz-wp-nc-list-items >li:last-child
+{
+	border-bottom: 0;
+	border-radius: 0px 0px 6px 6px;
+}
+
+.bz-wp-nc-list-items
+{
+	list-style: none;
+}
+
+.bz-wp-nc-list-items >li  >h3
+{
+	font-size: 90%;
+	color: #6b7e87;
+	margin: 11px 0px;
+	font-weight: normal;
+	text-shadow: 0 1px 0 #f7f7f7;
+	color: #535b61;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.bz-wp-nc-list-items >li:last-child{border-bottom:none;}
+
+
+
+#searchNewCase
+{
+	display:none;
+}
+
+.bz-wp-nc-content
+{
+margin: 0 -7px 0 -7px;
+}
+
+.bz-wp-categoryTree
+{
+	vertical-align: middle;
+	list-style: none;
+	border-bottom: 1px solid #acacac;
+	min-height: 35px;
+
+	background-color: #C2CED8;
+	border-radius: 6px 6px 0 0;
+	box-shadow: inset 0 1px 0px 0px rgba(255, 255, 255, .25);
+}
+
+.bz-wp-categoryTree >li
+{
+	list-style: none;
+	display: inline-block;
+	color: #31414c;
+	font-size: 13px;
+    height: 35px;
+	vertical-align: middle;
+	position: relative;
+	text-shadow:0 1px 0 #d5d8db;
+	font-weight: bold;
+
+}
+
+.bz-wp-categoryTree >li:after
+{
+
+
+}
+
+.bz-wp-categoryTree >li:after,
+.bz-wp-categoryTree >li:before {
+	left: 83%;
+border: solid transparent;
+content: " ";
+height: 0;
+width: 0;
+position: absolute;
+pointer-events: none;
+}
+
+.bz-wp-categoryTree >li:after {
+	border-left-color: #C2CED8;
+	border-width: 10px;
+	top: 66%;
+	margin-top: -15px;
+}
+.bz-wp-categoryTree >li:before {
+	border-left-color: #B7BDC2;
+	border-width: 13px;
+	top: 65%;
+	margin-top: -17px;
+}
+
+.bz-wp-categoryTree > li > span {
+position: relative;
+margin-right: 26px;
+top: 9px;
+}
+.bz-wp-categoryTree > li:first-child > span,
+.bz-wp-categoryTree > li:nth-child(2) > span
+{margin-left: 0;
+ }
+
+ .bz-wp-categoryTree >li:first-child:before,
+.bz-wp-categoryTree >li:first-child:after,
+ .bz-wp-categoryTree >li:last-child:before,
+.bz-wp-categoryTree >li:last-child:after
+{
+	border-width:0;
+	}
+.bz-wp-icon-left{
+    border-right:1px solid #A9B1B7;
+    width: 40px;
+    margin-right: 5px;
+    height: 35px;
+    float: left;
+}
+.bz-wp-icon-left .bz-cm-icon{
+    background-position: -101px -54px;
+    position: relative;
+    display: block;
+    vertical-align: middle;
+    top: 5px;
+    left: 6px;
+}
+.bz-wp-categoryTree >li:first-child
+{
+	border-right:1px solid #A9B1B7;
+	width: 40px;
+	margin-right: 5px;
+
+}
+.bz-wp-categoryTree >li:first-child >.bz-cm-icon
+{
+
+}
+
+#modalNewCaseMessage{
+    display: none;
+}
+#modalNewCaseMessage.show{
+    display: inline;
+    position: fixed;
+    z-index: 1001;
+    width: 400px;
+    height: 150px;
+    box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.3);
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+#modalNewCaseMessage #case{
+    color: #2F526C;
+    font-size: 22.5px;
+    font-weight: normal;
+    text-align: center;
+}
+#modalNewCaseMessage #loading
+{
+	position:relative;
+	top:5px;
+    height: 50px;
+}

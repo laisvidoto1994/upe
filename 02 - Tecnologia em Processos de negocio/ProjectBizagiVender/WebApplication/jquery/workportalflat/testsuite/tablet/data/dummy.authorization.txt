@@ -1,0 +1,27 @@
+{
+    "permissions": [{
+        "Cases": ["NewCase", "Pending", "Closed", "Search"]
+    }, {
+        "AnalysisReports": ["BAMProcess", "BAMTask", "AnalyticsProcess", "AnalyticsTask", "AnalyticsSensor", "AnalysisQueries", "BAMResourceMonitor"]
+    }, {
+        "Admin": ["UserAdmin", "Licenses", "EntityAdmin", "CaseAdmin", "AlarmAdmin", "EncryptionAdmin", "MobileUpdatesAdmin", "AsynchronousWorkitemRetries", "BusinessPolicies", "Profiles", "UserDefaultAssignation", "GRDimensionAdmin"]
+    }, {
+        "CurrentUserAdministration": ["CurrentUser"]
+    }, {
+        "LogOut": []
+    }, {
+        "Search": []
+    }, {
+        "SmartFolders": []
+    }, {
+        "CustomFolders": []
+    }, {
+        "BizagiQueries": []
+    }, {
+        "AnalysisQueries": []
+    }, {
+        "StateLog": []
+    }, {
+        "PrintableVersion": []
+    }]
+}

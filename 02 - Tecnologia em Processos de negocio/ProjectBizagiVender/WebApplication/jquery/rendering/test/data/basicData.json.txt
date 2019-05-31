@@ -1,0 +1,44 @@
+﻿{
+	"form": {
+		"properties" : {"id": 1, "xpathContext": "", "title": "Cycle 1", 
+		"buttons": [
+			{"action": "save", "text": "Save", "validate": "true", "submitData": "true", "refresh": "true"},
+			{"action": "next", "text": "Next", "validate": "true", "submitData": "true", "refresh": "true"}
+		]},
+		"elements": [
+			{
+				"container": {
+					"properties": {
+						"id" : 1,
+						"displayName" : "My First Panel",
+						"type": "panel"
+					},
+					"elements": [
+						{
+							"render": {	
+								"properties": {
+									"id" : 10001,
+									"displayName" : "My First Render",
+									"xpath" : "11",
+									"type": "text"
+								}
+							}
+						},
+						{
+                            "render": {
+                                "properties": {
+                                    "id" : 10002,
+                                    "displayName" : "My First Render not editabe",
+                                    "xpath" : "12",
+                                    "type": "text",
+                                    "value": "jejeje",
+                                    "editable": false
+                                }
+                            }
+                        }
+					]
+				}				
+			}
+		]
+	}
+}

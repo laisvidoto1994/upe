@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Decorator (Popup)</title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            body
+            {
+                background: lime;
+            }
+            #decorator
+            {
+                position: absolute;
+                border: solid 1px black;
+                text-align: center;
+                padding: 4px 4px 2px 4px;
+                border-radius: 0px 6px 6px 0px;
+                background: white;
+                border-left-color: white;
+                border-left-width: 0px;
+            }
+            #decorator > .decorator-image
+            {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                margin: 2px;
+            }
+            #decorator > .decorator-gear
+            {
+                background: url(gear.png) no-repeat center center;
+            }
+            #decorator > .decorator-data-bind
+            {
+                background: url(data-bind.png) no-repeat center center;
+            }
+            #decorator > .decorator-close
+            {
+                background: url(close.png) no-repeat center center;
+            }
+            .element
+            {
+                width: 400px;
+                line-height: 80px;
+                text-align: center;
+                font-size: xx-large;
+                margin: 10px 0px;
+                border: white solid 1px;
+                color: white;
+                background-color: black;
+            }
+            .element.selected
+            {
+                border-color: black;
+                color: black;
+                background-color: white;
+            }
+        </style>
+        <script type="text/javascript" src="../../../../js/lib/jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var decorator = $("#decorator");
+                decorator.hide();
+                $(".element").click(function() {
+                    $(".element").removeClass("selected");
+                    $(this).addClass("selected");
+                    showDecorator($(this));
+                });
+                function showDecorator(element) {
+                    var coords = element.offset();
+                    var width = element.outerWidth();
+                    $.extend(coords, { left : coords.left + width -1});
+                    decorator.show().offset(coords);
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div id="decorator">
+            <span class="decorator-image decorator-gear"></span>
+            <span class="decorator-image decorator-data-bind"></span>
+            <span class="decorator-image decorator-close"></span>
+        </div>
+        <div id="canvas">
+            <div class="element">Element 1</div>
+            <div class="element">Element 2</div>
+            <div class="element">Element 3</div>
+        </div>
+    </body>
+</html>

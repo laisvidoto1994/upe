@@ -1,0 +1,31 @@
+<script id="usersummary-wrapper" type="text/x-jsrender" >
+ <div id="home-usersummary" class="wdg-usmry-panel home-usersummary">
+    <div class="wdg-usmry-box cf">
+        {{if photo}}
+            <div class="bz-wp-avatar bz-wp-avatar-48 wdg-usmry-photo-wrapper bz-wp-avatar-cleaned">
+                <img class="bz-wp-avatar-img wdg-usmry-user-photo" src="{{>photo}}">
+            </div>
+        {{else}}
+            <div class="bz-wp-avatar bz-wp-avatar-48 wdg-usmry-photo-wrapper">
+                <span class="bz-wp-avatar-label">{{>initials}}</span>
+            </div>
+        {{/if}}
+        <div class="wdg-usmry-user-info">
+            <p class="wdg-usmry-username"><strong>{{>user}}</strong></p>
+            <div class="wdg-usmry-stk-container">
+                <p>{{>stakeholders}}</p>
+                {{if showMore}}
+                    <div class="ellipsis-icon wdg-usmry-see-more ellipsis-icon">...</div>
+                    <div class="wdg-usmry-stk-overlay" style="display:none;">
+                        <ul>
+                            {{for stakeholdersHidden}}
+                                <li>{{>displayName}}</li>
+                            {{/for}}
+                        </ul>
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+</script>

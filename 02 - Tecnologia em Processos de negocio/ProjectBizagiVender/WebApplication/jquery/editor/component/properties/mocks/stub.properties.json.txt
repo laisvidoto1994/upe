@@ -1,0 +1,168 @@
+{
+    "idRender": "GUID-0", 
+    "elements": [
+        {
+            "tabs": [
+                {
+                    "caption": "Basic", 
+                    "elements": [
+                        {
+                            "property": {
+                                "name": "displayName", 
+                                "type": "displayName", 
+                                "caption": "Display Name", 
+                                "value": "Label Text", 
+                                "default": "Label"
+                            }
+                        }, 
+                        {
+                            "property": {
+                                "name": "helptext", 
+                                "type": "localizable-string", 
+                                "caption": "Help Text"
+                            }
+                        }, 
+                        {
+                            "category": {
+                                "caption": "Rules", 
+                                "elements": [
+                                    {
+                                        "property": {
+                                            "name": "visible", 
+                                            "type": "rule-expression", 
+                                            "data": {
+                                                "true": {
+                                                    "id": "1", 
+                                                    "style": "true"
+                                                }, 
+                                                "false": {
+                                                    "id": "0", 
+                                                    "style": "false"
+                                                }, 
+                                                "expression": {
+                                                    "id": "2", 
+                                                    "style": "expression"
+                                                }
+                                            }, 
+                                            "editorParameters": {
+                                                "types": [
+                                                    "boolean"
+                                                ]
+                                            }, 
+                                            "caption": "Visible", 
+                                            "default": "true", 
+                                            "required": true
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "editable", 
+                                            "type": "rule-expression", 
+                                            "data": {
+                                                "true": {
+                                                    "id": "1", 
+                                                    "style": "true"
+                                                }, 
+                                                "false": {
+                                                    "id": "0", 
+                                                    "style": "false"
+                                                }, 
+                                                "expression": {
+                                                    "id": "2", 
+                                                    "style": "expression"
+                                                }
+                                            }, 
+                                            "editorParameters": {
+                                                "types": [
+                                                    "boolean"
+                                                ]
+                                            }, 
+                                            "caption": "Editable", 
+                                            "default": "true", 
+                                            "required": true
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "required", 
+                                            "type": "rule-expression", 
+                                            "data": {
+                                                "true": {
+                                                    "id": "1", 
+                                                    "style": "true"
+                                                }, 
+                                                "false": {
+                                                    "id": "0", 
+                                                    "style": "false"
+                                                }, 
+                                                "expression": {
+                                                    "id": "2", 
+                                                    "style": "expression"
+                                                }
+                                            }, 
+                                            "editorParameters": {
+                                                "types": [
+                                                    "boolean"
+                                                ]
+                                            }, 
+                                            "caption": "Required", 
+                                            "default": "false", 
+                                            "required": true
+                                        }
+                                    }
+                                ]
+                            }
+                        }, 
+                        {
+                            "group": {
+                                "caption": "Grupo de Prueba", 
+                                "elements": [
+                                    {
+                                        "property": {
+                                            "name": "labelalign", 
+                                            "type": "horizontal-align", 
+                                            "caption": "Label Align", 
+                                            "default": "left"
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "valuealign", 
+                                            "type": "horizontal-align", 
+                                            "caption": "Value Align", 
+                                            "default": "left"
+                                        }
+                                    }
+                                ]
+                            }
+                        }, 
+                        {
+                            "category": {
+                                "caption": "Layout", 
+                                "type": "category-layout", 
+                                "elements": [
+                                    {
+                                        "property": {
+                                            "name": "labelwidth", 
+                                            "type": "int", 
+                                            "caption": "Label Width", 
+                                            "value": 30
+                                        }
+                                    }, 
+                                    {
+                                        "property": {
+                                            "name": "valuewidth", 
+                                            "type": "int", 
+                                            "caption": "Control Width", 
+                                            "value": 70
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

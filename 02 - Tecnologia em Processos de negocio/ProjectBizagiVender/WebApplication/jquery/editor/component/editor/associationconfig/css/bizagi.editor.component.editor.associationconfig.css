@@ -1,0 +1,20 @@
+/********
+* Filename: bizagi.editor.component.editor.gridvalidations.css
+* Create Date: 2012-08-09
+* Author: Alexander Mejia Manuel.Mejia@bizagi.com
+*
+* $__form
+*
+********/
+
+/* __form
+--------*/
+
+.bizagi_editor_component_editor_associationconfig  {
+    display: block;
+    width:auto;
+}
+
+.bizagi_editor_component_editor_associationconfig  .associationconfig-buttons{
+	margin-top: 4px;
+}

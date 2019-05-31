@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Editor Boolean</title>
+        <meta charset="utf-8" />
+		<link rel="stylesheet" href="../../../../../../jquery/common/jquery.ui/css/desktop/jquery.ui.css" />
+		<link rel="stylesheet" href="../../../../../../jquery/rendering/css/desktop/bizagi.rendering.css" />
+		<link rel="stylesheet" href="../../../../base/css/bizagi.editor.base.css" />
+		<script src="../../../../../../jquery/common/base/js/lib/jquery.js"></script>
+		<script src="../../../../../../jquery/common/jquery.ui/js/desktop/jquery.ui.js"></script>
+        <style>
+            #main-container
+            {
+                border: solid 1px gainsboro;
+                width: 400px;
+                border-radius: 4px;
+            }
+            
+            
+            .editor
+            {
+                margin: 20px 0 20px 0;
+            }
+            
+            
+            .editor.editor-selected
+            {
+                background-color: gold;
+            }
+            
+            
+            .editor .editor-boolean-value > input.editor-boolean-edition-enabled
+            {
+                display: inline;
+            }
+            .editor .editor-boolean-value > input.editor-boolean-edition-disabled
+            {
+                display: none;
+            }
+            
+            
+            .editor > .editor-horizontal
+            {
+                border: solid 1px tomato;
+                border-radius: 4px;
+                padding: 4px;
+            }
+            .editor > .editor-horizontal > .editor-boolean-value
+            {
+                display: inline-block;
+                width: 74%;
+            }
+            .editor > .editor-horizontal > label
+            {
+                display: inline-block;
+                width: 24%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            
+            .editor > .editor-vertical
+            {
+                border:  solid 1px blue;
+                border-radius: 4px;
+                padding: 4px;
+            }
+            
+            
+            .editor .editor-boolean-value
+            {
+                border: solid 1px springgreen;
+            }
+            .editor .editor-boolean-value > .editor-boolean-check-value,
+            .editor .editor-boolean-value > .editor-boolean-text-value
+            {
+                vertical-align: middle;
+            }
+            .editor .editor-boolean-value > .editor-boolean-text-value
+            {
+                text-transform: capitalize;
+            }
+        </style>
+        <script src="../../../../../js/lib/jquery.js"></script>
+        <script src="../../../../../js/plugins/desktop/jquery.ui.js"></script>
+        <script>
+            $(document).ready(function() {
+                
+                var focus = null;
+                
+                $(".editor").disableSelection();
+                
+                // Seleccion
+                $(".editor").click(function() {
+                    $(".editor").removeClass("editor-selected");
+                    $(this).addClass("editor-selected");
+                });
+                
+                // Habilitacion de la forma de edicion con el label
+                $(".editor label").click(function() {
+                    if(focus != $(this).closest(".editor").find("input")[0]) {
+                        $(this).closest(".editor").find(".editor-boolean-value").focus();
+                    }
+                });
+                
+                // Foco del control
+                $(".editor .editor-boolean-value").focusin(function(e) {
+                    e.stopPropagation();
+                    
+                    $(".editor").removeClass("editor-selected");
+                    $(this).closest(".editor").addClass("editor-selected");
+                    
+                    $(this).blur();
+                    $("input", $(this)).removeClass("editor-boolean-edition-disabled").addClass("editor-boolean-edition-enabled").focus();
+                });
+                $(".editor .editor-boolean-value input").focusin(function(e) {
+                    e.stopPropagation();
+                });
+                $(".editor .editor-boolean-value input").focusout(function() {
+                    focus = this;
+                    $(this).removeClass("editor-boolean-edition-enabled").addClass("editor-boolean-edition-disabled");
+                });
+                $(".editor .editor-boolean-value input").keyup(function(e) {
+                    if(e.keyCode == 9 && e.shiftKey) {
+                        var editor = $(this).closest(".editor");
+                        if(editor.prev().length != 0) {
+                            editor.prev().find(".editor-boolean-value").focus();
+                        }
+                    }
+                });
+                
+                // Generacion del checked
+                $(".editor input").change(function() {
+                    $(this).next().text($(this).is(":checked"));
+                });
+                
+                // Cambio de valor por el label
+                $(".editor label").dblclick(function() {
+                    var input = $(this).closest(".editor").find("input");
+                    if(input.is(":checked")) {
+                        input.removeAttr("checked");
+                    } else {
+                        input.attr("checked", "checked");
+                    }
+                    input.next().text(input.is(":checked"));
+                });
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main-container">
+            
+            <div class="editor editor-boolean">
+                <div class="editor-horizontal">
+                    <label title="Is Wizard">Is Wizard</label>
+                    <div class="editor-boolean-value" tabindex="0">
+                        <input type="checkbox" class="editor-boolean-check-value editor-boolean-edition-disabled" checked="checked" />
+                        <span class="editor-boolean-text-value">true</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="editor editor-boolean">
+                <div class="editor-horizontal">
+                    <label title="Otra Propiedad">Otra Propiedad</label>
+                    <div class="editor-boolean-value" tabindex="0">
+                        <input type="checkbox" class="editor-boolean-check-value editor-boolean-edition-disabled" checked="checked" />
+                        <span class="editor-boolean-text-value">true</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="editor editor-boolean">
+                <div class="editor-vertical">
+                    <label title="Needs User Confirmation">Needs User Confirmation</label>
+                    <div class="editor-boolean-value" tabindex="0">
+                        <input type="checkbox" class="editor-boolean-check-value editor-boolean-edition-disabled" />
+                        <span class="editor-boolean-text-value">false</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

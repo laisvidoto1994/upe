@@ -1,0 +1,24 @@
+﻿<script id="bz-rp-bam-resourcemonitor-workinprogress-main" type="text/x-jquery-tmpl">
+<div class="row">
+    <div class="large-12 columns">
+        <div class="bz-rp-processviewer-canvas" {{loading}}>
+        </div>
+    </div>
+    <div class="large-12 columns">
+        <div class="bz-rp-bam-resourcemonitor-workinprogress-charts">
+            {{component bam-resourcemonitor-workinprogress}}
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-bam-resourcemonitor-workinprogress-chart" type="text/x-jquery-tmpl">
+<div class="bz-rp-report">
+    <div class="bz-rp-chart bz-rp-longchart">
+        <div class="custom-overlay"><p class="message">%{bz-rp-nodata}</p></div>     
+    </div>
+    <div class="bz-rp-info">
+         <h3 class="bz-rp-info-title">${taskName}</h3>
+    </div>
+</div>
+</script>

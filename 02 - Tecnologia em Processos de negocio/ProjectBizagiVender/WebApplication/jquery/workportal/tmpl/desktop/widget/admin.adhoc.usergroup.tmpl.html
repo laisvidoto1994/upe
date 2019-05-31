@@ -1,0 +1,146 @@
+﻿﻿﻿﻿<!-- WRAPPERS -->
+<script id="ui-bizagi-workportal-widget-admin-adhoc-user-group-wrapper" type="text/x-jquery-tmpl">
+    <div id="adhoc-user-group-main-wrapper"></div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-user-group-panel-wrapper" type="text/x-jquery-tmpl">
+    <div id="admin-user-group-wrapper">
+        <div id="admin-user-group-list-wrapper" class="panel left"></div>
+        <div class="panel right">
+            <div id="admin-user-group-description-wrapper" class="subpanel">
+                <section class="content"/>
+            </div>
+            <div id="admin-user-instances-wrapper" {{loading}} class="subpanel"/>                       
+        </div>
+    </div>
+</script>
+
+<!-- CONTENT -->
+<script id="ui-bizagi-workportal-widget-admin-adhoc-user-group-list" type="text/x-jquery-tmpl">
+    <input type="hidden" autofocus="autofocus" /><!-- Problem with focus input in filters -->
+    <div class="ui-bizagi-control ui-bizagi-render-align-left  ac-is-visible">
+        <div class="ui-bizagi-control-wrapper">
+            <div class="ui-bizagi-render-control">
+                <input id="searchUserGroup" class="ui-bizagi-render-search ui-autocomplete-input" type="text" value="">
+                <i class="bz-icon bz-icon-16 bz-icon-search-outline"></i>
+            </div>
+        </div>
+    </div>
+
+    <select id="userGroupList" class="biz-wp-input-combo" size="25" style="-webkit-appearance: none;">
+        <optgroup label="%{workportal-adhoc-user-group-category-predefined}Predefined">
+            {{each(i, group) bizagiUserGroupList}}
+                <option value="${group.id}">${group.displayName}</option>
+            {{/each}}
+        </optgroup>
+        <optgroup label="%{workportal-adhoc-user-group-category-runtime}Runtime">
+            {{each(i, group) adhocUserGroupList}}
+                <option value="${group.id}">${group.displayName}</option>
+            {{/each}}            
+        </optgroup>
+    </select>
+
+    <i id="adhocUserGroupAdd" class="user-group-button bz-icon bz-icon-24 bz-icon-plus" title="%{workportal-adhoc-user-group-add-tooltip}"></i>
+    <i id="adhocUserGroupEdit" class="user-group-button bz-icon bz-icon-24 bz-icon-cog-outline" title="%{workportal-adhoc-user-group-edit-tooltip}"></i>
+    <i id="adhocUserGroupDelete" class="user-group-button bz-icon bz-icon-24 bz-icon-trash-outline" title="%{workportal-adhoc-user-group-delete-tooltip}"></i> 
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-user-group-data" type="text/x-jquery-tmpl">
+    <div id="userGroupContainer">
+        {{each(i, user) userList}}
+            <div class="card"> 
+                <div class="user-group-avatar">               
+                    {{if photo}}
+                        <div class="bz-wp-avatar bz-wp-avatar-64 bz-wp-avatar-cleaned">
+                            <img class="bz-wp-avatar-img" src="data:image/png;base64,${photo}">
+                        </div>
+                    {{else}}
+                        <div class="bz-wp-avatar bz-wp-avatar-64">
+                            <span class="bz-wp-avatar-label">${displayName.getInitials()}</span>
+                        </div>
+                    {{/if}}
+                    <span>${displayName}</span>
+                </div>
+                {{if context === "adhoc" }}
+                    <div class="item-delete-button" data-id="${id}">                    
+                        <i class="bz-icon bz-icon-16 bz-icon-trash-outline" title="%{workportal-adhoc-user-group-remove-user-tooltip}"></i>                    
+                    </div>
+                {{/if}}                            
+            </div>
+        {{/each}}
+        {{if context === "adhoc" }}
+            <div class="card">
+                <i id="addUserButton" class="user-group-avatar bz-icon bz-icon-64 bz-icon-plus"></i>
+            </div>
+        {{/if}}               
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-user-group-nodata" type="text/x-jquery-tmpl">
+    <div class="admin-user-group-message">
+        <i id="userGroupNoData" class="bz-icon bz-icon-64 bz-icon-plus"></i>
+        <p class="bz-wp-empty__info bz-wp-empty__info--first">${errorMessage}</p>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-admin-adhoc-user-group-error" type="text/x-jquery-tmpl">
+    <div class="admin-user-group-message">
+        <i class="bz-wp-empty__img"></i>
+        <p class="bz-wp-empty__info bz-wp-empty__info--first">${errorMessage}</p>
+    </div>
+</script>
+
+<script id="adhoc-user-group-form-popup" type="text/x-jsrender">
+    <div id="adhoc-user-group-form-popup-wrapper">
+        <form>
+            <div class="details-form-field">
+                <div class="column-label"><label for="name">%{workportal-adhoc-user-group-form-name}:</label></div>
+                <div class="column-content">
+                    <input id="input-displayname-adhoc-user-group" name="displayname-adhoc-entity" class="bz-wp-rub-input required" value="" type="text" maxlength="100"/>
+                </div>
+            </div>
+            <div class="details-form-field">
+                <div class="column-label">
+                    <label>%{workportal-adhoc-user-group-form-description}:</label>
+                </div> 
+                <div class="column-content">
+                    <textarea id="input-desc-adhoc-user-group" name="desc-adhoc-entity" class="ui-rubik-input" />
+                </div>
+            </div>            
+            <div class="ui-bizagi-wp-project-popupform-actions">
+                <button id="button-cancel-adhoc-user-group-form" type="reset" class="ui-rubik-button ui-rubik-button-cancel" type="reset">%{text-cancel}</button>
+                <button id="button-accept-adhoc-user-group-form" type="submit" class="ui-rubik-button ui-rubik-button-accept" type="submit">%{text-save}</button>
+            </div>
+        </form>
+    </div>
+</script>
+
+<script id="adhoc-user-group-data-form-popup" type="text/x-jsrender">
+    <div id="adhoc-user-group-data-form-popup-wrapper">
+        <form>
+            <div class="ui-form-scroll">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td class="first-column">
+                                <span class="field-description">%{workportal-adhoc-user-group-search-form-name}:</span>
+                            </td>
+                            <td>
+                                <div class="bz-wp-pp-af-control">
+                                    <input type="text" id="input-displayname-user" />
+                                    <div class="position-message-validate">
+                                        <span data-for="name-user"></span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><br /> 
+            <div class="ui-bizagi-wp-project-popupform-actions">
+                <button id="button-cancel-adhoc-user-group-form" type="reset" class="ui-rubik-button ui-rubik-button-cancel" type="reset">%{text-cancel}</button>
+                <button id="button-accept-adhoc-user-group-form" type="submit" class="ui-rubik-button ui-rubik-button-accept" type="submit">%{workportal-adhoc-user-group-search-form-add-button}</button>
+            </div>
+        </form>
+    </div>
+</script>

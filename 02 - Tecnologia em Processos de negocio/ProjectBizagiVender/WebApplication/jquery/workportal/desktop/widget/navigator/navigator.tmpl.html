@@ -1,0 +1,18 @@
+<script id="navigator-wrapper" type="text/x-jsrender" >
+    <div id="home-navbar" class="clearfix">
+        <div class="navbar-actions">
+            <div class="navbar-back"><a href="#"><i class="bz-icon bz-icon-left-outline"></i> %{workportal-widget-render-backbutton}</a></div>
+            <div class="navbar-date">{{:date}}</div>
+            {{if security && security.PrintableVersion }}
+                <div class="navbar-print"><a href="#"><i class="bz-icon bz-icon-print"></i> %{render-actions-print}</a></div>
+            {{/if}}
+        </div>
+        <div class="nav-items-ctn">
+            <ul></ul>
+        </div>
+    </div>
+</script>
+
+<script id="navigator-child" type="text/x-jquery-tmpl" >
+    <li><a id="home-nav-child" href="#" data-surrogateKey="{{:surrogateKey}}" data-isPrincipalHome="{{:isPrincipalHome}}">{{:name}} / </a></li>
+</script>

@@ -1,0 +1,62 @@
+﻿/* Search list control */
+/***********************/
+.biz-widget-searchlist .biz-widget-input-search{
+    background-color: transparent !important;
+    border: 0 none !important;
+    background: none !important;
+    outline: medium none;
+    vertical-align: middle;
+    width:200px;
+}
+.biz-widget-searchlist .button-search{
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url('images/form_window.png');
+    background-position: 0 0;
+    width:20px;
+    height:20px;
+    margin-left: 4px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.biz-widget-searchlist a.closebutton {
+    background-image: url('images/close.gif');
+    background-position: 0 0px;
+    display: inline-block;
+    height: 7px;
+    width: 7px;
+    margin-left: 7px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.biz-widget-searchlist a.closebutton:hover {
+    background-position: 0 7px;
+}
+.biz-widget-searchlist ul {
+    border: 1px solid #999;
+    padding: 0px;
+    border-radius: 6px;
+    margin: 5px 0;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+.biz-widget-searchlist ul > li { display: inline-block; }
+.biz-widget-searchlist ul li.selected-case{
+    padding: 2px 4px 2px 14px;
+    background-color: #125673;
+    color: #FFF;
+    margin: 1px 3px 1px 1px;
+    border-radius: 4px;
+}
+.biz-widget-searchlist ul li.selected{
+    background-color: #1b82ae;
+}
+.ui-button.ui-default-button:hover,
+.ui-button.ui-default-button
+{
+    filter:none;
+}
+

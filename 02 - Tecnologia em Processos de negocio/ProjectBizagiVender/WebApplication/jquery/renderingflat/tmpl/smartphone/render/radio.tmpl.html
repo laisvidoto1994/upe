@@ -1,0 +1,13 @@
+<span class="ui-bz-render-radio  ui-bizagi-render-radio">
+    <fieldset>
+        # for (var i=0, len= data.items.length ; i < len; i++){ #
+        <div class="ui-bz-rn-radio-item">
+            <input class="bz-mo-icon bz-rn-radio-item bz-unchecked" id="radio-#= data.xpath #-#= data.items[i].id #" type="radio"
+                   value="#= data.items[i].id #" name="radio-#= data.xpath #-#= data.unique #">
+            <label for="radio-#= data.xpath #-#= data.items[i].id #">
+                #= data.items[i].value #
+            </label>
+        </div>
+        #}#
+    </fieldset>
+</span>

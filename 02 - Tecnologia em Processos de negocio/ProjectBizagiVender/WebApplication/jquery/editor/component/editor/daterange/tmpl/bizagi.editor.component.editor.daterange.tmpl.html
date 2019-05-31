@@ -1,0 +1,40 @@
+<script id="daterange-frame" type="text/x-jquery-tmpl">
+    <div class="daterange-container ui-control-container">
+        <label class="daterange-name-title">${caption}</label>
+    </div>
+</script>
+
+<script id="daterange-frame-date-fixed" type="text/x-jquery-tmpl">
+    <div>
+        <label class="daterange-name">${caption}</label>
+        <div class="daterange-date-container ui-control-input ${style} biz-complex-btn-container">
+            <div class="biz-complex-btn biz-action-btn ui-corner-left daterange-button-value {{if isOffline}}biz-value-longer{{/if}}">
+                <input type="text" class="daterange-date-value" value="${fixedvalue}" />
+            </div><div class="biz-complex-btn biz-complex-dropdown ui-corner-right biz-complex-btn-container">
+                <div class="biz-action-btn"><i class="biz-ico daterange-image-fixed-edit daterange-image-edit bz-studio bz-edit_16x16_standard" title="%{formmodeler-component-editor-all-edit-this-field}"></i></div>
+                <div class="biz-action-btn"><i class="biz-ico daterange-image-fixed-delete daterange-image-delete bz-studio bz-delete_16x16_standard" title="%{formmodeler-component-editor-all-delete-value}"></i></div>
+                {{if !isOffline}}
+                    <div class="biz-action-btn"><i class="biz-ico biz-ico-default-value daterange-rule-external bz-studio bz-expresion-ex_16x16_standard" title="%{formmodeler-component-editor-all-create-rule}"></i></div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="daterange-frame-rule" type="text/x-jquery-tmpl">
+    <div>
+        <label class="daterange-name">${caption}</label>
+        <div class="daterange-date-container">
+            <div class="daterange-rule-value ui-control-input ${style} biz-complex-btn-container">
+                <div class="biz-complex-btn biz-action-btn ui-corner-left daterange-button-value" title="${nameRule}">
+                    <span class="daterange-rule-value-caption" data-rule="${rule.baref.ref}">${nameRule}</span>
+                </div><div class="biz-complex-btn biz-complex-dropdown ui-corner-right biz-complex-btn-container">
+                    <div class="biz-action-btn"><i class="biz-ico daterange-image-rule-edit daterange-image-edit bz-studio bz-edit_16x16_standard" title="%{formmodeler-component-editor-all-edit-this-field}"></i></div>
+                    <div class="biz-action-btn"><i class="biz-ico daterange-image-rule-delete daterange-image-delete bz-studio bz-delete_16x16_standard" title="%{formmodeler-component-editor-all-delete-value}"></i></div>
+                    <div class="biz-action-btn"><i class="biz-ico biz-ico-default-value daterange-rule-external bz-studio bz-expresion-ex_16x16_standard" title="%{formmodeler-component-editor-all-create-rule}"></i></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</script>

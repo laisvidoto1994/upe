@@ -1,0 +1,99 @@
+<script id="validator-editor" type="text/x-jquery-tmpl">
+	<div id="bizagi_editor_validator_container" class="bizagi_editor_validator_container editor-validator-bg">
+		<i class="editor-validator-icon-arrow"></i>
+		<div class="editor-validator-content">
+			<i class="biz-ico editor-validator-icon-${typeMessage} ${style}"></i>
+			<span class="editor-validator-message-${typeMessage}">${message}</span>
+		</div>
+	</div>
+</script>
+
+<script id="validator-multiple-editor" type="text/x-jquery-tmpl">
+    <div class="bizagi_editor_validator_container editor-validator-bg">
+        <i class="editor-validator-icon-arrow"></i>
+        <ul class="editor-validator-message-${typeMessage}">
+        </ul>
+    </div>
+</script>
+
+<script id="validator-multiple-editor-item" type="text/x-jquery-tmpl">
+    <li><i class="biz-ico editor-validator-icon-${typeMessage} ${style}"></i><span>${message}</span></li>
+</script>
+
+<script id="modal-editor" type="text/x-jquery-tmpl">
+	<div class="ui-modal ui-modal-close ui-modal-${style}" id="${id}">
+		<div class="ui-modal-hedaer">
+			<h3>${caption}</h3>
+			<div class="biz-btn-close"><i class="biz-icon ui-close-btn bz-studio bz-black bz-boolean-remove_16x16_black"></i></div>
+			<i class="ui-modal-arrow-left-to-right"></i>
+		</div>
+		<div class="content-modal">
+		</div>
+	</div>
+</script>
+
+
+<script id="modal-actions-editor" type="text/x-jquery-tmpl">
+	<div class="modal-editor-buttons editor-ui-actions-container">
+			${actions}
+	</div>
+</script>
+<!-- -->
+<!-- COMBOBOX -->
+<!-- -->
+<script id="comboBox-selector" type="text/x-jquery-tmpl">
+	<div class="ui-bizagi-editor-comboBox-selector" {{if tooltip}} title="{{resource tooltip}}" {{/if}}>
+			<div class="ui-control-text-box ui-comboBox-selector-text">
+            {{if icon}}
+                <i class="biz-ico ui-comboBox-image-large-${icon} ${style}"></i>
+            {{/if}}
+				<span class="ui-comboBox-value">{{resource label}}</span>
+			</div>
+			<div class="ui-control-arrow-box ui-comboBox-selector-btn">
+				<i class="biz-btn-caret"></i>
+			</div>
+	</div>
+</script>
+
+<script id="comboBox-values" type="text/x-jquery-tmpl">
+	<div class="ui-bizagi-editor-comboBox-dropDown biz-work-panel">
+	</div>
+</script>
+
+<script id="comboBox-options" type="text/x-jquery-tmpl">
+	   {{if unselectable}}
+           <div class="ui-bizagi-editor-comboBox-option-unselectable">
+                <span class="ui-comboBox-value">{{resource label}}</span>
+           </div>
+       {{else}}
+           <div class="ui-bizagi-editor-comboBox-option biz-btn-horizontal" {{if tooltip}} title="{{resource tooltip}}" {{/if}}>
+               <div class="biz-btn">
+                    {{if icon}}
+                   <i class="biz-ico ui-comboBox-image-large-${icon}  ${style}"></i>
+                    {{/if}}
+                    <span class="ui-comboBox-value">{{resource label}}</span>
+                   <i class="biz-ico ui-comboBox-image-small-uncheck bz-studio {{if selected}} bz-point_16x16_standard {{else}} bz-black bz-point_16x16_black {{/if}}"></i>
+               </div>
+            </div>
+       {{/if}}
+</script>
+
+<!-- -->
+<!-- BOOLEANSWITCH -->
+<!-- -->
+
+<script id="booleanSwitch-selector" type="text/x-jquery-tmpl">
+	<div class="ui-bizagi-editor-booleanSwitch-selector biz-action-btn  biz-btn">
+		<i class="biz-ico booleanSwitch-icon-btnSwitch"></i>
+	</div>
+</script>
+
+<script id="booleanSwitch-values" type="text/x-jquery-tmpl">
+	<div class="ui-bizagi-editor-booleanSwitch-container">
+		<div class="ui-bizagi-editor-booleanSwitch-content"></div>
+	</div>
+</script>
+
+<script id="booleanSwitch-options" type="text/x-jquery-tmpl">
+	<div class="ui-booleanSwitch-value ui-booleanSwitch-${value} biz-shadow-inset" data-value="${value}"><span>${label}</span></div>
+</script>

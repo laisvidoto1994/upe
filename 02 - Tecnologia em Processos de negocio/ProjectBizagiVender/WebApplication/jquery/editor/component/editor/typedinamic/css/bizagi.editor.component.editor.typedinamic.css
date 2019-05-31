@@ -1,0 +1,48 @@
+/********
+* Filename: bizagi.editor.component.editor.typedinamic.css
+* Create Date: 2012-05-07
+* Author: Cristian Olaya cristian.olaya@bizagi.com
+*
+* typedinamic
+*
+********/
+
+/* typedinamic
+--------*/
+
+.bizagi_editor_component_editor_typedinamic{
+    position: relative;
+}
+
+.bizagi_editor_component_editor_typedinamic .ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-option
+{
+    background-position:top left;
+}
+
+.bizagi_editor_component_editor_typedinamic .ui-bizagi-editor-uiControls-comboBox .ui-comboBox-image-large-check
+{
+     background-position:0 -25px;
+}
+
+
+.typedinamic-container .biz-ico{
+    display:none;
+}
+
+.typedinamic-group-container{
+    position: relative;
+}
+
+.bizagi_editor_component_properties .bizagi_editor_component_editor_typedinamic .bizagi-editor-typedinamic-inline label{
+    display:inline-block;
+    width:55%;
+}
+
+.bizagi_editor_component_editor_typedinamic .bizagi-editor-typedinamic-inline .ui-control-editor{
+    display:inline-block;
+    width:30%;
+}
+
+.bizagi_editor_component_editor_typedinamic .multiple-container .bizagi-editor-typedinamic-inline .ui-control-editor{
+    width:58px;
+}

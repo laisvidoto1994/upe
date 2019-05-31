@@ -1,0 +1,14 @@
+{
+  "autor": "UX-Team",
+  "exportProject":"E:/dv/100x/Source/ProcessModeler/Bizagi.ProcessModeler.Resources/HTMLViewer/libs/js/plugins/",
+  "url": "http://www.bizagi.com",
+  "name": "processviewer-Canvas-Plugin",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-contrib-jshint": "~0.6.2",
+    "dp-grunt-contrib-copy": "~0.4.3"
+  }
+}

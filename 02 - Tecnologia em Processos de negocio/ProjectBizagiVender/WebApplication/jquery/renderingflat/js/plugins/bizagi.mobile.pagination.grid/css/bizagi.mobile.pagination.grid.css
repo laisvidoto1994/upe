@@ -1,0 +1,217 @@
+﻿/* PAGER HEADER
+=========================================================*/
+.bz-rn-modal-pagination-header span.bz-rn-modal-pagination-header-title-cancel {
+    float: left;
+    width: 42px;
+    height: 49px;
+    line-height: 45px;
+    font-size: 21px;
+}
+
+.bz-rn-modal-pagination-header .bz-rn-modal-pagination-header-navigation.km-navbar {
+    background: white;
+}
+
+.bz-rn-modal-pagination-header .bz-rn-modal-pagination-header-title {
+    background-color: white;
+    border-bottom: 1px solid #F7F8FA;
+    color: #326A9D;
+    display: flex;
+    font-size: 17px;
+    font-weight: normal;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.bz-rn-modal-pagination-header span.bz-rn-modal-pagination-header-title-text {
+    float: left;
+    width: 100%;
+    line-height: 45px;
+}
+
+
+.bz-rn-modal-pagination-header .bz-rn-modal-pagination-header-search {
+    background-color: white;
+    height: 50px;
+    float: left;
+    font-weight: normal;
+    text-align: left;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.bz-rn-modal-pagination-header input.bz-rn-modal-pagination-header-filter {
+    background-color: #E5E5E5;
+    border: none;
+    border-radius: 8px;
+    display: block;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 0 0 30px;
+    position: relative;
+    transition: all .5s ease;
+    width: 100%;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+}
+
+.bz-rn-modal-pagination-header span.bz-rn-modal-pagination-header-filter-search.bz-search {
+    color: #3D515A;
+    font-size: 15px;
+    left: 27px;
+    position: absolute;
+    top: 66px;
+}
+
+.bz-rn-modal-pagination-header span.bz-rn-modal-pagination-header-filter-cancel.bz-circle-cross-full {
+    color: #3D515A;
+    color: rgb(194, 194, 194);
+    font-size: 15px;
+    position: absolute;
+    right: 14%;
+    top: 66px;
+    width: 17px;
+    height: 17px;
+    display: none;
+}
+
+
+/* PAGER CONTENT
+=========================================================*/
+
+.bz-rn-modal-pagination .bz-rn-modal-pagination-content .km-content.km-widget.km-native-scroller {
+    z-index: 999;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.bz-rn-modal-pagination .bz-rn-modal-pagination-content {
+    background-color: #F1F5F8;
+    overflow-y: hidden;
+     -webkit-overflow-scrolling: touch;
+}
+
+    .bz-rn-modal-pagination .bz-rn-modal-pagination-content ul.bz-rn-modal-pagination-content-list {
+        padding: 0;
+        margin: 0;
+    }
+
+    .bz-rn-modal-pagination .bz-rn-modal-pagination-content li.bz-rn-modal-pagination-content-list-item {
+        border-bottom: 1px solid #EAEFF2;
+        min-height: 33px;
+        line-height: 33px;
+        list-style: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .bz-rn-modal-pagination .bz-rn-modal-pagination-content li.bz-rn-modal-pagination-content-list-item-selected {
+        color: rgb(55, 186, 236);
+        border-bottom: 1px solid rgb(55, 186, 236);
+    }
+
+/* PAGER ICONS
+=========================================================*/
+
+.bz-rn-grid-pager-content li.bz-page-arrow .bz-mo-icon:before {
+    top: 7px;
+    position: relative;
+    font-size: 12px;
+}
+
+.bz-rn-grid-pager-content span.number {
+    color: rgb(78, 87, 92);
+    top: 12px;
+    position: relative;
+    right: 10px;
+}
+
+ .bz-rn-grid-pager-content > li.first,
+    .bz-rn-grid-pager-content > li.previous,
+    .bz-rn-grid-pager-content > li.next,
+    .bz-rn-grid-pager-content > li.last {
+        width: 40px;
+    }
+
+    .bz-rn-grid-pager-content > li.previous {
+        border-right: 1px solid rgba(62, 81, 90, 0.1);
+    }
+
+    .bz-rn-grid-pager-content > li.next {
+        border-left: 1px solid rgba(62, 81, 90, 0.1);
+    }
+
+span.bz-rn-grid-pager-index-icon.bz-mo-icon.bz-grid-upwards:before {
+    font-size: 9px !important;
+    position: relative;
+    top: 7px;
+}
+
+
+/* PAGER FOOTER
+=========================================================*/
+
+.bz-rn-modal-pagination .bz-rn-modal-pagination-footer .km-widget.km-navbar {
+    border-width: 1px 0 0;
+    top: 0;
+    width: 100%;
+    right: 0;
+    background: #3E515A;
+    padding: 3px 0 0 0;
+}
+
+.bz-rn-modal-pagination .bz-rn-modal-pagination-footer .km-rightitem {
+    width: 100%;
+    height: 100%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    top: 0;
+    right: 0;
+    background: #3E515A;
+}
+
+.bz-rn-modal-pagination .bz-rn-modal-pagination-footer a.bz-rn-modal-pagination-footer-action.km-widget.km-button {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.bz-rn-modal-pagination .bz-rn-modal-pagination-footer a.bz-rn-modal-pagination-footer-action span.km-text {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 50%;
+    position: absolute;
+}
+
+/* PAGER ARROW
+=========================================================*/
+
+.km-modalview-wrapper.bz-rn-modal-pagination-container.bz-rn-modal-pagination-position {
+    bottom: -50px !important;
+}
+
+.km-modalview-wrapper.bz-rn-modal-pagination-container:before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(194, 225, 245, 0);
+    border-top-color: rgb( 61,81, 90);
+    border-width: 15px;
+    margin-left: -15px;
+    z-index: 9999999;
+}

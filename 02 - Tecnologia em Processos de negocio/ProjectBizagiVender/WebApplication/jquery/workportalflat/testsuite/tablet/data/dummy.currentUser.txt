@@ -1,0 +1,139 @@
+{
+    "idUser": 1,
+    "user": "domain\\admon",
+    "userName": "admon",
+    "domain": "domain",
+    "delegateUserName": "",
+    "idDelegateUser": -1,
+    "enableExpireAccount": true,
+    "groupSeparator": ".",
+    "language": "es-ES",
+    "decimalSeparator": ",",
+    "decimalDigits": "2",
+    "symbol": "â‚¬",
+    "shortDateFormat": "dd/MM/yyyy",
+    "timeFormat": "H:mm",
+    "longDateFormat": "dddd, d' de 'MMMM' de 'yyyy",
+    "twoDigitYearMax": 2029,
+    "twoDigitYearMaxDelta": 14,
+    "uploadMaxFileSize": "1048576",
+    "allowSaveCredentials": true,
+    "offlineForms": false,
+    "isMultiOrganization": "false",
+    "sArea": "Area",
+    "userFullName": "admon",
+    "sRoles": [],
+    "sUserProperties": [
+        {
+            "key": "contactemail",
+            "value": "support@bizagi.com"
+        },
+        {
+            "key": "userpicture",
+            "value": ""
+        },
+        {
+            "key": "delegateenabled",
+            "value": "0"
+        },
+        {
+            "key": "username",
+            "value": "admon"
+        },
+        {
+            "key": "normalcost",
+            "value": ""
+        },
+        {
+            "key": "enabled",
+            "value": "True"
+        },
+        {
+            "key": "createdcasesskipassigrules",
+            "value": "True"
+        },
+        {
+            "key": "iduser1",
+            "value": ""
+        },
+        {
+            "key": "idworkingtimeschema",
+            "value": "1"
+        },
+        {
+            "key": "fullname",
+            "value": "admon"
+        },
+        {
+            "key": "notifbymessenger",
+            "value": "False"
+        },
+        {
+            "key": "iddelegate",
+            "value": ""
+        },
+        {
+            "key": "enabledforassignation",
+            "value": "1"
+        },
+        {
+            "key": "idarea",
+            "value": "1"
+        },
+        {
+            "key": "iduser",
+            "value": "1"
+        },
+        {
+            "key": "overtimecost",
+            "value": ""
+        },
+        {
+            "key": "notifbycell",
+            "value": "False"
+        },
+        {
+            "key": "contactcell",
+            "value": ""
+        },
+        {
+            "key": "idlocation",
+            "value": "1"
+        },
+        {
+            "key": "wfclassaccesscacheexpiry",
+            "value": ""
+        },
+        {
+            "key": "notifbyemail",
+            "value": "False"
+        },
+        {
+            "key": "idbossuser",
+            "value": ""
+        },
+        {
+            "key": "contactmessenger",
+            "value": ""
+        },
+        {
+            "key": "offlineforms",
+            "value": "True"
+        },
+        {
+            "key": "language",
+            "value": ""
+        },
+        {
+            "key": "domain",
+            "value": "domain"
+        },
+        {
+            "key": "idtimezone",
+            "value": ""
+        }
+    ],
+    "sPositionName": "Administrator",
+    "sPositionDisplayName": "Administrator",
+    "associatedStakeholders": []
+}

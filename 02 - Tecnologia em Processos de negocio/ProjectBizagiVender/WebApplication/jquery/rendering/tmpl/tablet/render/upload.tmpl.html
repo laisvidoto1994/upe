@@ -1,0 +1,43 @@
+﻿<ul class="ui-bizagi-render-upload-container">
+    {{if editable}}
+        <li class="ui-bizagi-render-upload-wrapper"></li>
+    {{/if}}
+    {{if noFiles}}
+        <li class="ui-bizagi-render-upload-item-no-upload">%{render-upload-no-files}</li>
+    {{/if}}
+    <ul class="files">
+        {{files}}
+        <li class="bz-rn-upload-show-menu">
+            <span class="bz-cm-icon"></span>
+            <input type="file" class="bz-rn-upload-web" style="display: none">
+        </li>
+    </ul>
+</ul>
+
+{{if editable}}
+    <div class="bz_rn_upload_container_upload_items">
+        <ul class="bz-rn-upload-options">
+            <li> <button type="button" class="bz-cm-icon bz-upload-button image"></button> </li>
+            <li> <button type="button" class="bz-cm-icon bz-upload-button cimage"></button> </li>
+            <li> <button type="button" class="bz-cm-icon bz-upload-button caudio"></button> </li>
+            <li> <button type="button" class="bz-cm-icon bz-upload-button cvideo"></button> </li>
+            <li> <button type="button" class="bz-cm-icon bz-upload-button file"></button> </li>
+        </ul>
+    </div>
+
+    <div class="ui-bizagi-resolution-container">
+        <div class="ui-bizagi-resolutionUploadFrame">
+            <span>%{workportal-size-title}</span>
+            <br /><br />
+            <button type="button" data-bz-ordinal="1" class="ui-bizagi-form-button ui-bizagi-resolution-button" style="">%{workportal-size-small}</button>
+            <br />
+            <button type="button" data-bz-ordinal="2" class="ui-bizagi-form-button ui-bizagi-resolution-button" style="">%{workportal-size-medium}</button>
+            <br />
+            <button type="button" data-bz-ordinal="3" class="ui-bizagi-form-button ui-bizagi-resolution-button" style="">%{workportal-size-large}</button>
+            <br />
+            <button type="button" data-bz-ordinal="4" class="ui-bizagi-form-button ui-bizagi-resolution-button" style="">%{workportal-size-original}</button>
+            <br /><br />
+            <button type="button" data-bz-ordinal="5" class="ui-bizagi-form-button ui-bizagi-resolution-button-cancel" style="">%{confirmation-box-cancel}</button>
+        </div>
+    </div>
+{{/if}}

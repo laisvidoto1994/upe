@@ -1,0 +1,28 @@
+<script id="plan-template-create" type="text/x-jsrender" >
+    <div id="project-plan-popup-wrapper">
+        <form>
+            <div class="padding-botoom-15">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td class="first-column">
+                                <span class="field-description">%{workportal-project-plan-action-popup-save-as-template-name}:</span>
+                            </td>
+                            <td>
+                                <input id="input-name-template" name="name-template" class="bz-wp-rub-input required" value=""
+                                       type="text" maxlength="100" required validationMessage="%{workportal-project-plan-action-popup-save-as-template-name-required}" />
+                                <div class="position-message-validate">
+                                    <span  data-for="name-template"></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><br/>
+            <div class="ui-bizagi-wp-project-popupform-actions">
+                <button id="button-cancel-create-template" type="reset" class="ui-rubik-button ui-rubik-button-cancel">%{workportal-widget-reports-confirm-cancel}</button>
+                <button id="button-accept-create-template" type="submit" class="ui-rubik-button ui-rubik-button-accept">%{workportal-project-plan-popup-button-create}</button>
+            </div>
+        </form>
+    </div>
+</script>

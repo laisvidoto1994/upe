@@ -1,0 +1,25 @@
+#adhoc-create-process-wrapper {
+    position: relative;
+}
+
+.adhoc-create-process-wrapper__message-validate {
+    position: absolute;
+    bottom: 34px;
+    color: #ab4646;
+}
+
+.ui-bizagi-wp-project-popupform-actions{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.adhoc-create-process-wrapper__row-input{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.adhoc-create-process-wrapper__input-name{
+    width: 80%;
+}

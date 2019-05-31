@@ -1,0 +1,386 @@
+<!--WRAPPERS-->
+<script id="ui-bizagi-workportal-widget-frankenstein-queryform-wrapper" type="text/x-jquery-tmpl" >
+	{{css "jquery/workportal/css/desktop/bizagi.workportal.queries.css"}}
+	<div class="biz-wp-queryform">
+		<iframe id='queryFormIFrame' src='${queryFormURL}' class="biz-wp-queryform" frameborder='0'></iframe>
+	</div>
+</script>
+
+<!--WRAPPERS-->
+<script id="ui-bizagi-workportal-widget-queryform-wrapper" type="text/x-jquery-tmpl" >
+	<div id="query-form-wrapper" class="biz-wp-window">
+		<div id="query-form-admin-result"></div>
+		<div id="query-form">
+				<div style="margin:20% 0 0 0"{{loading}}></div>
+		</div>
+		<div id="query-form-result"></div>
+		<div id="query-form-buttons"></div>
+	</div>
+</script>
+
+
+<!--container-->
+<script id="ui-bizagi-workportal-widget-queryform-container" type="text/x-jquery-tmpl" >
+	<div id="query-form-main-container">
+	</div>
+</script>
+
+<!--query form-->
+<script id="ui-bizagi-workportal-widget-queryform-buttons" type="text/x-jquery-tmpl" >
+	<div>
+		<div id="exportExcel">
+			<a href="#" class="biz-wp-form-queryForm-exportExcelLink">
+				<div class="bz-wp-generic-icons exportExcel" title="%{workportal-widget-query-form-export-to-excel}"/>
+			</a>
+		</div>
+		<div id="graphicalAnalysis">
+			<a href="#" class="biz-wp-form-queryForm-graphicalAnalysisLink">
+				<div class="bz-wp-generic-icons graphicalAnalysis" title="%{workportal-widget-query-form-graphical-analysis}"/>
+			</a>
+		</div>
+
+		<div id="mainButtons" class="ui-dialog-buttonset biz-wp-form-centerContent">
+			<button id="submit-for-search"
+					class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover"
+					role="button" aria-disabled="false">
+				<span class="ui-button-text">%{workportal-widget-query-form-search-button}</span>
+			</button>
+			<button id="back-to-queryform"
+					class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover"
+					role="button" aria-disabled="true">
+				<span class="ui-button-text">%{workportal-widget-query-form-back-button}</span>
+			</button>
+			<button id="clear-queryform"
+					class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover"
+					role="button" aria-disabled="true">
+				<span class="ui-button-text">%{workportal-widget-query-form-clear-button}</span>
+			</button>
+            <button id="save-queryform"
+					class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover"
+					role="button" aria-disabled="true">
+				<span class="ui-button-text">%{workportal-widget-query-form-save-button}</span>
+			</button>
+			<button id="update-stored-queryform"
+					class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover"
+					role="button" aria-disabled="true">
+				<span class="ui-button-text">%{workportal-widget-query-form-update}</span>
+			</button>
+            <button id="copy-as-new-stored-queryform"
+					class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover"
+					role="button" aria-disabled="true">
+				<span class="ui-button-text">%{workportal-widget-query-form-copy-as-new}</span>
+			</button>
+            <button id="edit-stored-queryform"
+					class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover"
+					role="button" aria-disabled="true">
+				<span class="ui-button-text">%{workportal-widget-query-form-edit}</span>
+			</button>
+		</div>
+	</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-queryform-graphic-analysis" type="text/x-jquery-tmpl" >
+    <div>
+        <form id="formGraphicalAnalysis" target="iframeGraphicalAnalysis" method="POST" action="App/GraphicAnalysis/GraphicalAnalysisWizard.aspx" style="display: none;" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8">
+            <textarea type="hidden" id="h_definitionData" name="h_queryDefinition">${h_definition}</textarea>
+            <input type="hidden" id="h_guidQueryForm" name="h_guidQueryForm" value="${h_guidQueryForm}"></input>
+            <input type="hidden" id="h_idStoredQuery" name="h_idStoredQuery" value="${h_idStoredQuery}"></input>
+        </form>
+     <iframe id="iframeGraphicalAnalysis" name="iframeGraphicalAnalysis" marginwidth="0"></iframe>
+     </div>
+</script>
+
+<!--result set-->
+<script id="ui-bizagi-workportal-widget-queryform-result-set" type="text/x-jquery-tmpl" >
+	<div id="queryform-result-set">
+	</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-queryform-search-result" type="text/x-jquery-tmpl" >
+	<div id="result-set-queryForm">
+		<table class="biz-wp-table" cellspacing="2" cellpadding="2" width="100%" border="0">
+			<thead class="biz-wp-table-head">
+				{{each(i, item) headers }}
+                <th class="{{if !groupByCaseNumber}}cases-column-header{{/if}} ${$item.showColumn(i)}" data-xpath="${item.xpath}" data-ordertype="0"
+                    data-index="${i}" data-type="${item.dataType}">
+                    <div>
+                        <span class="displayNameLabel">{{if item.displayName!=""}}${item.displayName}{{else}}${item.fieldValue}{{/if}}</span>
+                        {{if item.displayName && !groupByCaseNumber}}
+                            {{if sortedField && item.xpath == sortedField.xpath && sortedField.orderType == "DESC"}}
+                                <span class="sortColumnsDataUpIcon">
+                                    <span class="arrowUpIcon"></span>
+                                    <span class="arrowDownIcon"></span>
+                                </span>
+                            {{else sortedField && item.xpath == sortedField.xpath && sortedField.orderType == "ASC"}}
+                                <span class="sortColumnsDataDownIcon">
+                                    <span class="arrowUpIcon"></span>
+                                    <span class="arrowDownIcon"></span>
+                                </span>
+                            {{else}}
+                                <span class="sortColumnsDataIcon">
+                                    <span class="arrowUpIcon"></span>
+                                    <span class="arrowDownIcon"></span>
+                                </span>
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                </th>
+				{{/each}}
+			</thead>
+			<tbody class="biz-wp-table-body">
+				{{each(i, row) rows }}
+				{{if $item.createGroupedHeader(i)}}
+                        <tr class="biz-wp-table-grouped">
+                            <th colspan="${headers.length + 1}">
+                                %{workportal-widget-inboxcommon-case-number}
+                                <span class="ui-bizagi-wp-app-inbox-grouped" data-radnumber="${$item.getRadNumber(resultList.rows[i])}">
+                                    ${$item.getRadNumber(resultList.rows[i])}
+                                    <input type="hidden" id="idCase" value="${row[0].idCase}">
+                                </span>
+                            </th>
+                        </tr>
+                    {{/if}}
+				<tr>
+					{{each(j, cell) row }}
+					{{if typeof(cell) == "object" && cell !=null}}
+					<td class="row-item BorderCell BAMainFontColor ${$item.showColumn(j)}">
+						{{if cell.idCase && cell.idWorkflow}}
+						<div class="clearfix biz-wp-padding-bottom-3">
+							<div class="biz-wp-diagram-view-icon" title="%{workportal-widget-query-form-title-icon}" data-idCase="${cell.idCase}" data-idWorkflow="${cell.idWorkflow}"></div>
+						</div>
+						{{else cell.radNumber}}
+						<div class="clearfix biz-wp-padding-bottom-3">
+							<a href="#" class="caseClicked" data-idcase="${cell.idCase}">${cell.radNumber}</a>
+						</div>
+						{{else}}
+						{{each(k, sub_cell) cell }}
+						{{if typeof(sub_cell) == "object" && sub_cell != null}}
+						<div class="clearfix biz-wp-padding-bottom-3">
+                            <a href="#" class="caseClicked" data-idcase="${sub_cell.idCase}"
+                               data-idworkitem="${sub_cell.idWorkItem}" data-idtask="${sub_cell.idTask}" data-idworkflow="${sub_cell.idWorkflow}">
+                                {{if sub_cell.colorState == "Red"}}
+                                <div class="biz-wp-state-icon-red"></div>
+                                {{/if}}
+                                {{if sub_cell.colorState == "Green"}}
+                                <div class="biz-wp-state-icon-green"></div>
+                                {{/if}}
+                                {{if sub_cell.colorState == "Yellow"}}
+                                <div class="biz-wp-state-icon-yellow"></div>
+                                {{/if}}
+                                {{if sub_cell.colorState == "aborted"}}
+                                <div class="biz-wp-state-icon-standard biz-wp-state-icon-aborted"></div>
+                                {{/if}}
+                                {{if sub_cell.colorState == "cancelled"}}
+                                <div class="biz-wp-state-icon-standard biz-wp-state-icon-cancelled"></div>
+                                {{/if}}
+                                {{if sub_cell.colorState == "compensation"}}
+                                <div class="biz-wp-state-icon-standard biz-wp-state-icon-compensation"></div>
+                                {{/if}}
+                                {{if sub_cell.colorState == "lock"}}
+                                <div class="biz-wp-state-icon-standard biz-wp-state-icon-lock"></div>
+                                {{/if}}
+                                <span class="biz-wp-taskName">${sub_cell.taskName}</span>
+                            </a>
+						</div>
+						{{else}}
+						<div class="clearfix biz-wp-padding-bottom-3">
+                            <span>${$item.formatValue(sub_cell, $item.data.headers[j].dataType)}</span>
+						</div>
+						{{/if}}
+						{{/each}}
+						{{/if}}
+					</td>
+					{{else}}
+					<td class="row-item BorderCell BAMainFontColor">
+                        <span>${$item.formatValue(cell, $item.data.headers[j].dataType)}</span>
+					</td>
+					{{/if}}
+					{{/each}}
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+		<div id="biz-wp-table-summary-wrapper" class="biz-wp-table-summary-wrapper">
+            <span class="biz-wp-table-total">%{bz-rp-components-detaillist-pagination-totalrecords} ${records}</span>
+			<ul id="biz-wp-table-pager-wrapper" class="biz-wp-table-pager-wrapper">
+			</ul>
+		</div>
+		<br/>
+	</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-queryform-pagination" type="text/x-jquery-tmpl">
+	<div>
+		{{each pages}}
+			<li {{if page==pageNumber}} class="bz-page active" {{else}} class="bz-page" {{/if}} data-page="${pageNumber}">
+				<span class="number">${pageNumber}</span>
+		   </li>
+	   {{/each}}
+	</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-queryform-admin-result" type="text/x-jquery-tmpl">
+
+<div id="admin-stored-query-form-wrapper">
+    <ul>
+        <li><a href="#stored_queryform_definition" id="tab_definition">%{workportal-widget-query-form-stored-definition}</a></li>
+        <li><a href="#stored_queryform_share" id="tab_share" >%{workportal-widget-query-form-users-groups-to-share}</a></li>
+    </ul>
+    <div id="stored_queryform_definition">
+        <div class="biz-wp-form-queryForm clearfix">
+            <div class="biz-wp-form-row clearfix">
+                <div class="biz-wp-form-cell-table-queryForm">
+                    <span class="ui-bizagi-label">%{workportal-widget-query-form-query-name}</span>
+                </div>
+                <div class="biz-wp-form-cell-table-queryForm">
+                    <div class="ui-bizagi-input-required"></div>
+                    <input id="queryFormName" maxlength="50"  class="auth-text" type="text"/>
+                    <div class="ui-bizagi-input-icon-error" title="%{workportal-general-error-required}" style="display: none;"></div>
+                </div>
+                <div class="biz-wp-form-cell-table-queryForm">
+                    <span class="ui-bizagi-label">%{workportal-widget-query-form-query-description}</span>
+                </div>
+                <div class="biz-wp-form-cell-table-queryForm">
+                    <textarea id="queryFormDescription" rows="2"/>
+                </div>
+            </div>
+            <!--QAF-783-->
+            <div class="biz-wp-form-row clearfix">
+                <div id="queryFormFieldsContainerName" >
+                    <span class="ui-bizagi-label"></span>
+                </div>
+                <div id="queryFormFieldsContainer" ></div>
+            </div>
+        </div>
+    </div>
+    <div id="stored_queryform_share">
+        <div id="shareSelection" class="clearfix">
+            <div class="biz-wp-form-centerContent">
+                <div class="biz-wp-form-alignContent">
+                    <input id="shareUsers" type="radio" name="shareType" value="users" checked="true"/>
+                    <strong>%{workportal-widget-query-form-users}</strong>
+                </div>
+                <div class="biz-wp-form-alignContent">
+                    <input id="shareGroups" type="radio" name="shareType" value="groups"/>
+                    <strong>%{workportal-widget-query-form-groups}</strong>
+                </div>
+                <div id="shareSelectionPanel" class="biz-wp-form-queryForm"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-queryform-share-selection" type="text/x-jquery-tmpl">
+	<div id="userShare" class="clearfix">
+		<div class="biz-wp-form-queryForm-searchUsers">
+			<div class="biz-wp-form-row clearfix">
+				<div class="biz-wp-form-cell-table-queryForm">
+					<span class="ui-bizagi-label">%{workportal-widget-query-form-user-name}</span>
+				</div>
+				<div class="biz-wp-form-cell-table-queryForm">
+					<input id="userName" class="auth-text" type="text"/>
+				</div>
+			</div>
+			<div class="biz-wp-form-row clearfix">
+				<div class="biz-wp-form-cell-table-queryForm">
+					<span class="ui-bizagi-label">%{workportal-widget-query-form-user-domain}</span>
+				</div>
+				<div class="biz-wp-form-cell-table-queryForm">
+					<input id="domain" class="auth-text" type="text"/>
+				</div>
+			</div>
+			<div class="biz-wp-form-row clearfix">
+				<div class="biz-wp-form-cell-table-queryForm">
+					<span class="ui-bizagi-label">%{workportal-widget-query-form-user-full-name}</span>
+				</div>
+				<div class="biz-wp-form-cell-table-queryForm">
+					<input id="fullName" class="auth-text" type="text"/>
+				</div>
+			</div>
+			<div class="biz-wp-form-row clearfix">
+			    <div class="biz-wp-form-alignUserButton biz-wp-form-cell-table-queryForm">
+                    <button id="search_user" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover"
+                    role="button" aria-disabled="true">
+                        <span class="ui-button-text">%{workportal-widget-query-form-user-search-button}</span>
+                    </button>
+                </div>
+			</div>
+		</div>
+	</div>
+	<div id="select_user_to_share">
+	    <div class="biz-wp-form-queryForm-listBox clearfix">
+            <div class="biz-wp-float-left">
+                <span class="ui-bizagi-label">%{workportal-widget-query-form-source}</span>
+                <select size="11" id="ListBoxSource" class="biz-wp-form-listBoxSelects biz-wp-input-combo clearfix" multiple="multiple">
+                </select>
+            </div>
+            <div class="biz-wp-float-left biz-wp-move">
+                <button id="move_right"
+                        class="clearfix ui-button"
+                        role="button" aria-disabled="true">
+                    <span class="ui-button-text">&#62;&#62;</span>
+                </button>
+                <button id="move_left"
+                        class="clearfix ui-button"
+                        role="button" aria-disabled="true">
+                    <span class="ui-button-text">&#60;&#60;</span>
+                </button>
+            </div>
+            <div class="biz-wp-float-left">
+                <span class="ui-bizagi-label">%{workportal-widget-query-form-selected}</span>
+                <select size="11" id="ListBoxResult" class="biz-wp-form-listBoxSelects biz-wp-input-combo clearfix" multiple="multiple">
+                </select>
+            </div>
+        </div>
+	</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-queryform-select-user" type="text/x-jquery-tmpl">
+	<select size="11" id="ListBoxSource" class="biz-wp-form-listBoxSelects biz-wp-input-combo clearfix" multiple="multiple">
+		{{each elementList}}
+		<option value="${$value.idUser}">${$value.userName}</option>
+		{{/each}}
+	</select>
+</script>
+
+<script id="ui-bizagi-workportal-widget-queryform-select-group" type="text/x-jquery-tmpl">
+	<select size="11" id="ListBoxSource" class="biz-wp-form-listBoxSelects biz-wp-input-combo clearfix" multiple="multiple">
+		{{each elementList}}
+		<option value="${$value.id}">${$value.displayName}</option>
+		{{/each}}
+	</select>
+</script>
+
+<script id="ui-bizagi-workportal-widget-queryform-save-as" type="x-jquery-tmpl" >
+<div class="ui-bizagi-workportal-queryform-save biz-wp-form-queryForm clearfix">
+    <div class="biz-wp-form-row clearfix">
+        <div class="biz-wp-form-cell-table-queryForm">
+            <span class="ui-bizagi-label">%{workportal-widget-query-form-query-name}</span>
+        </div>
+        <div class="biz-wp-form-cell-table-queryForm">
+            <div class="ui-bizagi-input-required"></div>
+            <input id="queryFormNameSaveAs" maxlength="50" class="auth-text" type="text"/>
+            <div class="ui-bizagi-input-icon-error" title="%{workportal-general-error-required}" style="display: none;"></div>
+        </div>
+    </div>
+    <div class="biz-wp-form-row clearfix">
+        <div class="biz-wp-form-cell-table-queryForm">
+            <span class="ui-bizagi-label">%{workportal-widget-query-form-query-description}</span>
+        </div>
+        <div class="biz-wp-form-cell-table-queryForm">
+            <textarea id="queryFormDescriptionSaveAs" rows="2"/>
+        </div>
+    </div>
+</div>
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-queryform--message-error" type="text/x-jquery-tmpl" >
+<div class="ui-bizagi-container ui-bizagi-container-form ui-widget-content ui-bizagi-rendering-mode-execution">
+    <div class="error-message-migrate-form">
+    ${messageError}
+    </div>
+</div>
+</script>

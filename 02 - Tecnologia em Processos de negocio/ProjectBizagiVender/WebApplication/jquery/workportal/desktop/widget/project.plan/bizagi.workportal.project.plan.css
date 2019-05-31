@@ -1,0 +1,240 @@
+/*
+    Document   : bizagi.workportal.project.plan
+    Created on : Abr 08, 2015
+    Author     : Elkin Fernando Siabato Cruz
+*/
+
+.ui-bizagi-title {
+    padding: .5em 0;
+    border-bottom: 1px solid #DDD;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    color: #374C58;
+}
+
+.ui-bizagi-txt {
+    color: #374C58;
+    line-height: 1.5;
+}
+
+#ui-bizagi-wp-project-plan-wrapper {
+    padding: 0px 10px 0px 15px;
+
+}
+
+#ui-bizagi-wp-project-plan-wrapper .containers-info-plan {
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+}
+
+#ui-bizagi-wp-project-plan-wrapper .actions {
+    text-align: right;
+    width: 100%;
+}
+
+#ui-bizagi-wp-project-plan-wrapper .containers-info-plan > div {
+    text-align: left;
+    width: 29%;
+}
+
+#ui-bizagi-wp-project-plan-wrapper .containers-info-plan > div.left {
+    float: left;
+    margin-left: 20px;
+}
+
+#ui-bizagi-wp-project-plan-wrapper .containers-info-plan > div.center {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#ui-bizagi-wp-project-plan-wrapper .containers-info-plan > div.right {
+    float: right;
+    margin-right: 20px;
+
+}
+
+#ui-bizagi-wp-project-plan-wrapper .containers-info-plan .description {
+    background-color: lightgrey;
+    min-height: 201px;
+    position: relative;
+    width: 100%;
+}
+
+#ui-bizagi-wp-project-plan-wrapper .containers-info-plan .description .content {
+    padding: 10px 10px;
+}
+
+#ui-bizagi-wp-project-plan-wrapper .containers-info-plan .description .content .bz-icon {
+    float: left;
+}
+
+#ui-bizagi-wp-project-plan-wrapper .containers-info-plan .description .content span {
+    padding-bottom: 46px;
+    display: block;
+}
+
+#ui-bizagi-wp-project-plan-wrapper .containers-info-plan .description .title {
+    color: #374C58;
+}
+
+/*Popup plan*/
+#project-plan-popup-wrapper{
+    overflow: visible;
+}
+
+#project-plan-popup-wrapper .ui-select-dropdown{
+    max-height: 117px;
+}
+
+#project-plan-popup-wrapper table {
+    width: 100%;
+}
+
+#project-plan-popup-wrapper form table tr {
+    border: 10px solid transparent;
+}
+
+#project-plan-popup-wrapper form .first-column {
+    padding-right: 8px;
+    text-align: right;
+    width: 89px;
+}
+
+#project-plan-popup-wrapper form .field-description {
+    color: #999;
+    display: block;
+    font-size: 12px;
+}
+
+#project-plan-popup-wrapper form .container-autosuggest {
+    position: relative;
+    width: 100%;
+}
+
+#project-plan-popup-wrapper .position-message-validate {
+    position: relative;
+}
+
+#project-plan-popup-wrapper .k-widget.k-autocomplete.k-header.k-state-default {
+    width: 100%;
+}
+
+#project-plan-popup-wrapper .k-widget.k-tooltip-validation {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}
+
+/*Autosuggest templates*/
+#templates-plan-list .k-item > span {
+    border-style: solid;
+    border-width: 0 0 1px 1px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: inline-block;
+    min-height: 95px;
+    padding: .6em 0 0 .6em;
+    vertical-align: top;
+    width: 79%;
+}
+
+#templates-plan-list .k-item > span:first-child {
+    border-left-width: 0;
+    padding: 0em 1em;
+    width: 100%;
+}
+
+/*Defaults*/
+
+#project-plan-popup-wrapper .ui-rubik-input {
+    background: #FAFAFA !important;
+    border-color: #DDD !important;
+    border-radius: 4px !important;
+    box-sizing: border-box;
+    color: #374C58;
+    font-size: 12px;
+    min-height: 32px !important;
+    width: 100%;
+    border-width: 1px;
+    border-style:solid;
+    padding: 4px;
+}
+
+#project-plan-popup-wrapper .ui-rubik-input[type='checkbox'] {
+    width: 1.4em;
+}
+
+.bz-calendar-container {
+  position: relative;
+}
+
+.bz-calendar-container .bz-icon-calendar-outline {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    margin-top: -8px;
+    pointer-events: none;
+}
+
+#project-plan-popup-wrapper textarea.ui-rubik-input {
+    resize: none;
+}
+
+#project-plan-popup-wrapper .ui-rubik-h4 {
+    font-size: 1.5em;
+    margin: 1em 1.5em .5em;
+    color: #374C58;
+}
+/*
+#project-plan-popup-wrapper .ui-rubik-button {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: .5em;
+    padding: 0.6em 1.2em;
+    text-shadow: none;
+}
+
+#project-plan-popup-wrapper .ui-rubik-button-cancel {
+    background: #F2F2F2;
+    border-color: #374C58;
+    color: #374C58;
+}
+
+#project-plan-popup-wrapper .ui-rubik-button-cancel:hover {
+    background: #FAFAFA;
+    border-color: #31444E;
+}
+
+#project-plan-popup-wrapper .ui-rubik-button-accept:hover {
+    background: #4F6C7D;
+    border-color: #4F6C7D;
+    color: #FAFAFA;
+}*/
+
+#project-plan-popup-wrapper .ui-rubik-button-accept:hover:disabled {
+    background: #76A4BE;
+    cursor: wait;
+}
+
+/* ==========================================================================
+   Project plan component
+   ========================================================================== */
+
+.bz-wp-pp-content {
+    margin-bottom: 2em;
+}
+
+.bz-wp-pp-card {
+    text-align: center;
+}
+
+.bz-wp-pp-action {
+    text-align: center;
+}
+
+.bz-wp-pp-action > .bz-wp-btn {
+    min-width: 200px;
+}

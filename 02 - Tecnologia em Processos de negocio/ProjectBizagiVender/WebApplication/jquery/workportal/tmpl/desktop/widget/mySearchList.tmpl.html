@@ -1,0 +1,30 @@
+<script id="ui-bizagi-workportal-widget-mysearchlist-searchlists-wrapper" type="text/x-jquery-tmpl" >
+    <div class="ui-bizagi-wp-widget-my-search-search-lists-wrapper" {{loading}} {{adjustable}}>
+    </div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-mysearchlist-searchlists" type="text/x-jquery-tmpl" >
+    <div class="modalMenuBt">
+        <div id="modalMenuBtHeader" class="clearfix">
+            <div id="modalTitle">%{workportal-my-search-title}</div>
+        </div>
+        <div id="modalMenuBtList" class="clearfix">
+            <div id="categories" data-loading="true" class="ui-bizagi-component-loading" style="overflow-y: auto;">
+                {{if searchLists.length > 0}}
+                    {{each searchLists}}
+                        <ul>
+                            <li class="ui-bizagi-wp-widget-my-search-list-item" data-guidform="${form}" data-id="${id}" data-displayname="${displayName}" data-guidentity="${entity}">
+                                <div class="searchIco col-md-1">
+                                    <i class="bz-icon bz-icon-search-outline bz-icon-16"></i>
+                                </div>
+                                <div>${displayName}</div>
+                            </li>
+                        </ul>
+                    {{/each}}
+                {{else}}
+                    <div class="ui-bizagi-component-empty">%{workportal-menu-search-found-no-cases}</div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,23 @@
+﻿.bz-wp-userpreferences-wrapperiframe, .bz-wp-userpreferences-main
+{
+    height: 99%;
+}
+
+.bz-wp-userpreferences-wrapperiframe iframe
+{
+    height: inherit;
+    width: 100%;
+    border-width: 0;
+}
+
+.bz-wp-userpreferences-errormessage
+{
+    text-align: center;
+    color: #F00;
+    padding: 15px 5px;
+    font-weight: bold;
+}
+
+#preferences-buttons {
+    text-align: right;
+}

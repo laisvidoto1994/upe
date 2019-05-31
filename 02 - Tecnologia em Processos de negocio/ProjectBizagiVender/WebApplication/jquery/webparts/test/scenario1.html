@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Bizagi Webparts</title>
+    <style type="text/css">
+        body {
+            margin: 0px;
+        }
+    </style>
+    <link href="assets/bizagi.sharepoint.css" rel="stylesheet" type="text/css">
+    <link href="../desktop/portal/common/css/bizagi.webpart.wrapper.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="assets/bizagi.sharepoint.js"></script>
+    <script type="text/javascript" src="assets/bizagi.postmessage.js"></script>
+</head>
+<body>
+<span class="ui-bizagi-newCaseButton-style">
+    <button type="button" id="btnNewCase"
+            onclick="newcaseButtonctl00_ctl36_g_3e6edb12_1db0_4df9_9e6f_08ec09c54c5a_ctl00();"
+            class="ui-bizagi-button ui-button-text ui-button ui-widget ui-state-default ui-corner-all">
+        <span>&nbsp;Purchase</span> <i class="ui-bizagi-wp-app-ico-new-case"></i>
+    </button>
+</span>
+<script type="text/javascript">
+    function newcaseButtonctl00_ctl36_g_3e6edb12_1db0_4df9_9e6f_08ec09c54c5a_ctl00() {
+        var params = {};
+        params.idWorkflow = '104';
+        params.idWfClass = '104';
+        params.buttonName = 'Purchase';
+        params.renderPageUrl = '';
+        params.renderBehavior = "PopUp";
+        params.pathiFrame = 'http://localhost/BizAgiR110x/';
+        bizagi.newcaseButton(params);
+    }
+</script>
+
+<span class="ui-bizagi-newCaseButton-style">
+    <button type="button" id="btnNewCase"
+            onclick="newcaseButtonctl00_ctl36_g_f1baed0c_e014_48f8_b4d3_8a168badbbef_ctl00();"
+            class="ui-bizagi-button ui-button-text ui-button ui-widget ui-state-default ui-corner-all">
+        <span>&nbsp;Travel</span> <i class="ui-bizagi-wp-app-ico-new-case"></i>
+    </button>
+</span>
+<script type="text/javascript">
+    function newcaseButtonctl00_ctl36_g_f1baed0c_e014_48f8_b4d3_8a168badbbef_ctl00() {
+        var params = {};
+        params.idWorkflow = '107';
+        params.idWfClass = '107';
+        params.buttonName = 'Travel';
+        params.renderPageUrl = '';
+        params.renderBehavior = "PopUp";
+        params.pathiFrame = 'http://localhost/BizAgiR110x/';
+        bizagi.newcaseButton(params);
+    }
+</script>
+
+<span class="ui-bizagi-newCaseButton-style">
+    <button type="button" id="btnNewCase"
+            onclick="newcaseButtonctl00_ctl36_g_a1076fce_f240_4b35_8d7c_33c29a9202ed_ctl00();"
+            class="ui-bizagi-button ui-button-text ui-button ui-widget ui-state-default ui-corner-all">
+        <span>&nbsp;Vacation</span> <i
+            class="ui-bizagi-wp-app-ico-new-case"></i>
+    </button>
+</span>
+<script type="text/javascript">
+    function newcaseButtonctl00_ctl36_g_a1076fce_f240_4b35_8d7c_33c29a9202ed_ctl00() {
+        var params = {};
+        params.idWorkflow = '108';
+        params.idWfClass = '108';
+        params.buttonName = 'Vacation';
+        params.renderPageUrl = '';
+        params.renderBehavior = "PopUp";
+        params.pathiFrame = 'http://localhost/BizAgiR110x/';
+        bizagi.newcaseButton(params);
+    }
+
+
+</script>
+
+
+
+<iframe id="webpartIframectl00_ctl36_g_f763e3d2_0d33_4909_8d12_b2417ef862e2_ctl00"
+        class="csswebpartIframeworkportal"
+        src="http://localhost/BizAgiR110x/jquery/webparts/desktop/portal/pages/webpart.htm?type=cases&amp;renderBehavior=PopUp&amp;renderPageUrl=&amp;summaryBehavior=PopUp&amp;summaryPageUrl=&amp;DefaultView=grid&amp;ShowViewToggler=False&amp;CasesByPage=5&amp;cookieName=ctl00_ctl36_g_f763e3d2_0d33_4909_8d12_b2417ef862e2_ctl00&amp;iframename=webpartIframectl00_ctl36_g_f763e3d2_0d33_4909_8d12_b2417ef862e2_ctl00&amp;remoteServer=http://localhost/BizAgiR110x/jquery/webparts/test/scenario1.html"
+        scrolling="no" frameborder="0" style="height: 415px; width: 100%;"></iframe>
+<div id="postMessageSupport"></div>
+<script type="text/javascript">
+
+    var bizagiServerUrl = 'http://demo.bizagi.com/SharePointDemo/' + 'jquery/webparts/desktop/portal/pages/webpart.htm'
+    bizagi.manageIframe('webpartIframectl00_ctl36_g_f763e3d2_0d33_4909_8d12_b2417ef862e2_ctl00', bizagiServerUrl, 'type=cases&renderBehavior=PopUp&renderPageUrl=&summaryBehavior=PopUp&summaryPageUrl=&DefaultView=grid&ShowViewToggler=False&CasesByPage=5&cookieName=ctl00_ctl36_g_f763e3d2_0d33_4909_8d12_b2417ef862e2_ctl00');
+</script>
+</body>
+</html>

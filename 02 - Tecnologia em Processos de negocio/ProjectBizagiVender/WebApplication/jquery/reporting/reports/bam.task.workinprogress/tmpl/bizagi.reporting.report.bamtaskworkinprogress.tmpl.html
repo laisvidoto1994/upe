@@ -1,0 +1,36 @@
+﻿<script id="bz-rp-bam-task-workinprogress-main" type="text/x-jquery-tmpl">
+<div class="row">
+    <div class="large-6 columns">
+        <div class="bz-rp-report">
+            {{component bam-task-workinprogress-taskstatus}}
+        </div>
+    </div>
+    <div class="large-6 columns">
+        <div class="bz-rp-report">
+            {{component bam-task-workinprogress-taskgoingoverdue}}
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="bz-rp-bam-task-worinprogress-taskstatus" type="text/x-jquery-tmpl">
+<div class="bz-rp-chart">
+    <div class="custom-overlay"><p class="message">%{bz-rp-nodata}</p></div>
+</div>
+<div class="bz-rp-info">
+    <h6 class="bz-rp-info-breadcrumb">%{bam-title} / %{bam-task-title} / %{bam-task-workinprogress-taskstatus-title}</h6>
+    <h3 class="bz-rp-info-title">%{bam-task-workinprogress-taskstatus-title}</h3>
+    <p class="bz-rp-info-description">%{bam-task-load-analysis-description}</p>
+</div>    
+</script>
+
+<script id="bz-rp-bam-task-worinprogress-taskgoingoverdue" type="text/x-jquery-tmpl">
+<div class="bz-rp-chart">
+    <div class="custom-overlay"><p class="message">%{bz-rp-nodata}</p></div>
+</div>
+<div class="bz-rp-info">
+    <h6 class="bz-rp-info-breadcrumb">%{bam-title} / %{bam-task-title} / %{bam-task-workinprogress-taskgoingoverdue-title}</h6>
+    <h3 class="bz-rp-info-title">%{bam-task-workinprogress-taskgoingoverdue-title}</h3>
+    <p class="bz-rp-info-description">%{bam-task-workinprogress-casesgoingoverdue-description}</p>   
+</div> 
+</script>

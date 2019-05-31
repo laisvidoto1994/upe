@@ -1,0 +1,58 @@
+<script id="properties-frame-header" type="text/x-jquery-tmpl">
+    <ul></ul>
+</script>
+
+<script id="properties-frame-header-name" type="text/x-jquery-tmpl">
+    <li><a href="#properties-tab-${machineName}">${caption}</a></li>
+</script>
+
+<script id="properties-content-frame" type="text/x-jquery-tmpl">
+    <div id="properties-tab-${machineName}"></div>
+</script>
+
+<script id="properties-frame-property" type="text/x-jquery-tmpl">
+    <div></div>
+</script>
+
+<script id="properties-frame-group" type="text/x-jquery-tmpl">
+    <fieldset class="biz-accordion{{if $data.visibility == "hidden"}} properties-group-hidden{{/if}}">
+        <h3 class="properties-category-name ui-legend ui-title">${caption}<div class="ui-control-arrow-box"><i class="biz-btn-caret"></i></div></h3>
+        <div class="ui-content">
+        </div>
+    </fieldset>
+</script>
+
+<script id="properties-frame-group-exclusive" type="text/x-jquery-tmpl">
+    <div class="properties-group-exclusive${hidden}" data-guid="${guid}">
+        <div class="properties-group-exclusive-head">
+            <div class="properties-group-exclusive-header">
+                <span class="${check1}"></span><span class="properties-group-exclusive-text">Group 1</span>
+            </div>
+        </div>
+        <div class="ui-content-group"></div>
+        <div class="properties-group-exclusive-head">
+            <div class="properties-group-exclusive-header">
+                <span class="${check2}"></span><span class="properties-group-exclusive-text">Group 2</span>
+            </div>
+        </div>
+        <div class="ui-content-group"></div>
+    </div>
+</script>
+
+<script id="properties-frame-category-simple" type="text/x-jquery-tmpl">
+    <fieldset class="biz-accordion">
+        <h3 class="properties-category-name ui-legend ui-title">${caption}<div class="ui-control-arrow-box"><i class="biz-btn-caret"></i></div></h3>
+        <div class="ui-content">
+        </div>
+    </fieldset>
+</script>
+
+<script id="prop-close" type="text/x-jquery-tmpl">
+    <div class="ui-properties-close biz-btn-close"><i class="biz-icon ui-close-btn bz-studio bz-black bz-false_16x16_black"></i></div>
+</script>
+
+<script id="properties-caption" type="text/x-jquery-tmpl">
+    <div class="ui-modal-hedaer">
+        <h3 class="properties-caption"><i class="biz-icon mtool-item-image-${ico} ${style}"></i>${caption} %{bizagi-editor-properties-caption}</h3>
+    </div>
+</script>

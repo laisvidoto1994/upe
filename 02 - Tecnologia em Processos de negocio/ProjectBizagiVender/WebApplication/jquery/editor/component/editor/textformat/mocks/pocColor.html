@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Editor Color Picker</title>
+        <link rel="stylesheet" href="../../../../../common/jquery.ui/css/desktop/jquery.ui.css" />
+        <link rel="stylesheet" href="spectrum.css" />
+        <style></style>
+        <script src="../../../../../common/base/js/lib/jquery.js"></script>
+        <script src="../../../../../common/jquery.ui/js/desktop/jquery.ui.js"></script>
+        <script src="spectrum.js"></script>
+        <script>
+            $(document).ready(function() {
+                
+                var colors = [], init;
+                init = [ '00', '33', "66", "99", "CC", "FF" ];
+                for(var i=0; i<init.length; i++) {
+                    for(var j=0; j<init.length; j++) {
+                        for(var k=0; k<init.length; k++) {
+                            colors.push(init[i] + init[j] + init[k]);
+                            console.log(init[i] + init[j] + init[k]);
+                        }
+                    }
+                }
+                
+                $("#color").spectrum({
+                    flat : true,
+                    preferredFormat: "name",
+                    showInput : true,
+                    color : "black",
+                    showPalette : true,
+                    /*showPaletteOnly : true,*/
+                    palette : [
+                        [ "black", "white", "red", "orange" ],
+                        [ "yellow", "green", "blue","purple" ]
+                    ],
+                    change : function(color) {
+                        console.log(color.toName());
+                    }
+                });
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main-container">
+            
+            <input type="text" id="color" />
+            
+        </div>
+    </body>
+</html>

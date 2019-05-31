@@ -1,0 +1,26 @@
+<div class="ui-bizagi-render-upload-dialog-noflash">
+    <span class="ui-bizagi-title">%{render-upload-dialog-title}</span>
+
+    <form id="uploadform" method="POST" action="${url}" enctype='multipart/form-data' target="iframe-upload-${xpath}" accept-charset="UTF-8">
+        <div id="alert-file-upload"></div>
+        <div class="ui-bizagi-render-upload-button">
+            <input id="file" type="file" name="${xpath}" id="${xpath}" accept="${processedFileExtension}"/>
+        </div>
+        <div id="file-upload-status">
+            <div class="file-upload-latency" title="Network Speed: ${networkSpeed.speed}, Throughput: ${networkSpeed.throughput}, Latency: ${networkSpeed.latency}">%{render-upload-status-latency}: <span id="estimatedtime"></span></div>
+            <div class="file-upload-statusbar">
+                <span class="statusbar"></span>
+                <span class="statuspercent"></span>
+            </div>
+        </div>
+        <!--<label></label>-->
+        <!--<button type="button">%{render-upload-button-label}</button>-->
+        <input type="hidden" name="h_xpath" value="${xpath}"/>
+        <input type="hidden" name="h_idRender" value="${idRender}"/>
+        <input type="hidden" name="h_xpathContext" value="${xpathContext}"/>
+        <input type="hidden" name="h_pageCacheId" value="${idPageCache}"/>
+        <input type="hidden" name="h_sessionId" value="${idSession}"/>
+        <input type="hidden" name="h_contexttype" value="${contexttype}"/>
+        <iframe id="iframe-upload-${xpath}" name="iframe-upload-${xpath}" src="" style="width:1px;height:1px;border:0px solid #fff;"></iframe>
+    </form>
+</div>

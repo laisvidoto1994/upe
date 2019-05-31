@@ -1,0 +1,19 @@
+<script id="ui-bizagi-render-layout-image" type="text/x-kendo-template">
+    <div class="ui-bizagi-render-layout-image-wrapper">
+        #if (typeof data.url !== 'undefined' && data.url !== ''){#
+        <img src="#= data.url #">
+        #}else{#
+        <div class="image-file bz-mo-icon bz-image"></div>
+        #}#
+    </div>
+</script>
+
+<script id="ui-bizagi-render-layout-image64" type="text/x-kendo-template">
+    <div class="ui-bizagi-render-layout-image-wrapper">
+        #if (typeof data.url !== 'undefined' && data.url !== ''){#
+        <img src="#= 'data:image/png;base64,' + data.url #">
+        #}else{#
+        <div class="image-file bz-mo-icon bz-image"></div>
+        #}#
+    </div>
+</script>

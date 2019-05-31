@@ -1,0 +1,149 @@
+<script id="ui-bizagi-widget-simple-grid" type="text/x-jquery-tmpl">
+	<div class="ui-bizagi-simple-grid-wrapper"></div>
+</script>
+
+<script id="ui-bizagi-widget-simple-grid-content" type="text/x-jquery-tmpl">
+    <div id="detailEntity" {{loading}}>
+        <div class="ui-bizagi-grid">
+            <div class="bz-rn-grid-cn-header">
+                <span class="bz-rn-grid-header-title">${displayName}</span>
+            </div>
+            {{if rows.length > 0  || filterApplied }}
+                <div class="bz-rn-grid-data-wraper">
+                    <table class="ui-bizagi-grid-table" cellspacing="0" cellpadding="0" width="100%" border="0">
+                        <thead class="ui-bizagi-grid-header ui-state-default">
+                            {{each(i, item) headers }}
+                                <th class="resizableColumn">
+                                    <div class="ui-bizagi-grid-column ui-bizagi-grid-title-align-center">
+                                    {{if attributeSupportOrder(item)}}
+                                        <a href="#"
+                                            class="link-order-entity"
+                                            {{if item.fieldValue}}
+                                                {{if item.fieldValue==orderField}}
+                                                    {{if orderType=='ASC'}}
+                                                        data-orderType="DESC"
+                                                    {{else}}
+                                                        data-orderType="ASC"
+                                                    {{/if}}
+                                                {{else}}
+                                                    data-orderType="ASC"
+                                                {{/if}}
+                                            {{else}}
+                                                {{if item.xpath==orderField}}
+                                                    {{if orderType=='ASC'}}
+                                                        data-orderType="DESC"
+                                                    {{else}}
+                                                        data-orderType="ASC"
+                                                    {{/if}}
+                                                {{else}}
+                                                    data-orderType="ASC"
+                                                {{/if}}
+                                            {{/if}}
+                                            data-columnorderfield="{{if item.fieldValue}}${item.fieldValue}{{else}}${item.xpath}{{/if}}"
+                                            data-index="${i}"
+                                            data-type="${item.dataType}"
+                                            data-allowDecimals="${item.allowDecimals}"
+                                            data-numDecimals="${item.numDecimals}"
+                                            data-thousands="${item.thousands}"
+                                            data-percentage="${item.percentage}"
+                                            data-showsymbol="${item.showsymbol}"
+                                            data-attributeType="${item.attributeType}">
+                                            {{if item.displayName!= ""}}
+                                                ${item.displayName}
+                                            {{else}}
+                                                ${item.fieldValue}
+                                            {{/if}}
+                                            <span class="sortColumnsDataDownIcon">
+                                                <span class="arrowUpIcon{{if orderType=='DESC'  && item.fieldValue==orderField}} active{{/if}}"></span>
+                                                <span class="arrowDownIcon{{if orderType=='ASC'  && item.fieldValue==orderField}} active{{/if}}"></span>
+                                            </span>
+                                        </a>
+                                        {{else}}
+                                            <label style="padding-left: 20px; padding-right: 20px;">{{if item.displayName!= ""}}${item.displayName}{{else}}${item.fieldValue}{{/if}}</label>
+                                        {{/if}}
+                                        {{if attributeSupportFilter(item)}}
+                                            <i class="ui-bizagi-render-icon-filter" data-index="${i}"></i>
+                                        {{/if}}
+                                    </div>
+                                </th>
+                            {{/each}}
+                        </thead>
+                        <tbody class="ui-bizagi-grid-body">
+                            {{each(i, item) rows }}
+                                <tr data-idrowentity="${item[0]}">
+                                    {{each(j, data) item }}
+                                        <td class="ui-bizagi-grid-align-center">
+                                            <div class="ui-bizagi-grid-cell">
+                                                <div class="ui-bizagi-cell">
+                                                    <div class="ui-bizagi-cell-readonly">
+                                                        {{if typeof(data) != 'object' && data != null}}
+                                                            <span>${data}</span>
+                                                        {{/if}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    {{/each}}
+                                </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            {{else}}
+                <div class="ui-bizagi-render-grid-container">
+                    <div data-bizagi-component="emptyTable">
+                        <label>%{render-grid-no-records}</label>
+                    </div>
+                </div>
+            {{/if}}
+            <div class="bz-rn-grid-container-footer">
+                <table cellspacing="2" cellpadding="2" width="100%" style="table-layout: fixed;">
+                    <tbody>
+                        <tr class="bz-rn-grid-footer-row">
+                            <th>
+                                <div data-bizagi-component="buttons">
+                                    <div class="ui-bizagi-grid-buttons">
+                                        <ul>
+                                            {{if allowAdd == true}}
+                                                <li class="" data-action="add" alt="%{render-form-dialog-box-add}" title="%{render-form-dialog-box-add}">
+                                                    <div id="addRowEntity" class="ui-icon ui-icon-plus"></div>
+                                                </li>
+                                            {{/if}}
+                                            {{if allowEdit == true && rows.length > 0}}
+                                                <li class="" data-action="edit" alt="%{workportal-general-button-label-edit}" title="%{workportal-general-button-label-edit}">
+                                                    <div id="editRowEntity" class="ui-icon ui-icon-pencil"></div>
+                                                </li>
+                                            {{/if}}
+                                            {{if allowDelete == true && rows.length > 0}}
+                                                <li class="" data-action="delete" alt="%{workportal-general-button-label-delete}" title="%{workportal-general-button-label-delete}">
+                                                    <div id="deleteRowEntity" class="ui-icon ui-icon-trash"></div>
+                                                </li>
+                                            {{/if}}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="bz-rn-grid-footer-pagination"></th>
+                            <th></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="ui-bizagi-widget-simple-grid-paginator" type="text/x-jquery-tmpl">
+    <div data-bizagi-component="pager">
+        <div class="ui-bizagi-grid-pager">
+            <ul id="biz-wp-table-pager-wrapper" class="biz-wp-table-pager-wrapper">
+                {{each pages}}
+                    <li {{if page == pageNumber}} class="bz-page active" {{else}} class="bz-page" {{/if}} data-page="${pageNumber}">
+                        <span class="number">${pageNumber}</span>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</script>
+

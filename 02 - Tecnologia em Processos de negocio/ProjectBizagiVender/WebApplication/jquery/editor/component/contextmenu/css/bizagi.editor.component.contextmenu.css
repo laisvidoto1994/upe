@@ -1,0 +1,85 @@
+/********
+* Filename: bizagi.editor.component.contextmenu.css
+* Create Date: 2012-08-08
+* Author: Jair Tellez Jair.Tellez@bizagi.com / Ramiro Gomez Ramiro.Gomez@bizagi.com
+*
+* $__contextmenu groups icons dropdown
+*
+********/
+
+/* Groups with his columns and labels
+   ========================================================================== */
+
+.bizagi_editor_component_contextmenu 
+{
+    position: absolute;
+    top: 160px;
+    left: 360px;
+    z-index: 10100;
+}
+
+.contextmenu-container
+{
+    padding: 1px;
+    border-radius: 2px;
+}
+
+.contextmenu-container::after
+{
+    content: "";
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 28px;
+    width: 1px;
+    background-color: #e2e4e7;
+}
+
+.contextmenu-container i[class*="ribbon-ico-"]
+{
+    margin-right: 8px;
+}
+
+.contextmenu-container .is-active:hover .biz-dropdown
+{
+    position: absolute;
+    top: -2px; 
+    right: -160px;
+    left: auto;
+    width: 120px;
+}
+
+.rightToLeft .contextmenu-container .is-active:hover .biz-dropdown,
+.bottomToTop .contextmenu-container .is-active:hover .biz-dropdown
+{
+    top: auto;
+    right: auto;
+    bottom: -2px;
+    left: -160px;
+}
+
+.contextmenu-group
+{
+    position: relative;
+    z-index: 1;
+    margin: 1px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contextmenu-caption { margin-right: 20px; }
+
+.biz-dropdown .contextmenu-caption { margin-right: 0; white-space: nowrap;}
+
+.contextmenu-arrow {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+}
+
+.contextmenu-hr
+{
+    margin-left: 35px;
+    border: none;
+    border-top: 1px dashed;
+}

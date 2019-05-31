@@ -1,0 +1,66 @@
+/*
+    Document   : bizagi.workportal.project.activity
+    Created on : Mar 04, 2015
+    Author     : Elkin Fernando Siabato Cruz
+    Description:
+        Styles for the "activity" widget in the project
+*/
+
+/*Buttons actions on bottom*/
+#ui-bizagi-wp-project-plan-content-dashboard .ui-bizagi-button-container {
+
+    bottom: 0;
+    min-height: 35px;
+    position: fixed;
+    left: 0px;
+    margin: 0px;
+    width: 100%;
+    padding: 0px;
+    padding-right: 360px;
+    z-index: 2;
+}
+
+
+
+#ui-bizagi-wp-project-plan-content-dashboard .ui-bizagi-button-container .ui-bizagi-buttons-group
+{
+    bottom: 2px;
+    position: relative;
+    text-align: right;
+}
+
+#ui-bizagi-wp-project-plan-content-dashboard .ui-bizagi-button-container .ui-button
+{
+    margin: 5px 5px 0px 5px;
+    color: #ffffff;
+}
+
+/*Adjustment buttons form*/
+
+.enabled-right-sidebar.ui-bizagi-wp-project-collapse-rightpanel #ui-bizagi-wp-project-plan-content-dashboard .ui-bizagi-button-container
+{
+    padding-right: 0px;
+}
+.enabled-right-sidebar.ui-bizagi-wp-project-open-rightpanel #ui-bizagi-wp-project-plan-content-dashboard .ui-bizagi-button-container
+{
+    padding-right: 360px;
+}
+
+@media screen and (max-width: 1366px)
+{
+    #ui-bizagi-wp-project-plan-content-dashboard .ui-bizagi-button-container
+    {
+        padding-right: 0px;
+    }
+
+}
+
+
+@media screen and (min-width: 1367px)
+{
+    #ui-bizagi-wp-project-plan-content-dashboard .ui-bizagi-button-container
+    {
+        padding-right: 360px;
+    }
+
+}

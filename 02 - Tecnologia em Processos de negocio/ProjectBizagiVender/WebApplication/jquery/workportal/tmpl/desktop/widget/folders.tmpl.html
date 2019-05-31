@@ -1,0 +1,106 @@
+<script id="ui-bizagi-workportal-widget-folders" type="x-jquery-tmpl" >
+    <div class="modalMenuBt">
+        <div id="selectArrow"></div>   
+        <div id="modalMenuBtList" class="clearfix">
+            <ul id="categoryTree" class="categoryTree">
+                <li>%{workportal-menu-inbox}<input type="hidden" id="idParent" value=""/></li>
+            </ul>
+            <div id="queries" {{loading}}></div>
+        </div>    
+    </div> 
+</script>
+
+
+<script id="ui-bizagi-workportal-widget-folders-default" type="x-jquery-tmpl" >
+    <ul>
+        <li class="category">
+            <div class="categoryIco"></div>
+            <h3>%{workportal-widget-folders}</h3>
+        </li>
+        <li class="category">
+            <div class="categoryIco"></div>
+            <h3>%{workportal-widget-smartfolders}</h3>
+        </li>
+    </li>
+</ul>
+</script>
+
+
+
+<script id="ui-bizagi-workportal-widget-folders-elements" type="x-jquery-tmpl" >   
+    <ul class="queriesListDisplay">
+        {{tmpl "#ui-bizagi-workportal-widget-folders-element-node"}}
+    </ul>    
+</script>
+
+<script id="ui-bizagi-workportal-widget-folders-element-node" type="text/x-jquery-tmpl">
+    {{each folders}}
+    <li data-id="${id}" data-idparent="${idParent}" data-urlparameters="${urlParameters}" data-childslength="${countChilds}" data-name="${name}">
+        {{if countChilds > 0 }}
+        <!-- category withOut link -->
+        <div class="categoryIco openFolder"></div>
+        {{else id=="newFolder"}}
+        <div class="newFolderIco"></div>
+        {{else}}        
+        {{if categoryWithLink}}
+        <!-- category with link -->
+        <div class="categoryLinkIco"></div>                     
+        {{else}}
+        <div class="categoryIco"></div>
+        {{/if}}
+        {{/if}}
+
+        {{if id != -1 && id!="newFolder"}}
+        <span class="addButton" data-id="${id}" data-idparent="${idParent}"></span>
+        <span class="editButton" data-id="${id}" data-idparent="${idParent}"></span>
+        <span class="deleteButton" data-id="${id}" data-idparent="${idParent}"></span>
+        {{/if}}
+        <h3>${name}</h3>
+    </li>
+    {{/each}}
+</script>
+
+<script id="ui-bizagi-workportal-widget-folders-empty-elements" type="x-jquery-tmpl" > 
+    <div>%{workportal-widget-queries-no-queries}</div>
+</script>
+
+<script id="ui-bizagi-workportal-widget-folders-query-tree" type="x-jquery-tmpl" >   
+    <li>
+        &GT; ${queryDisplayName}
+        <input type="hidden" id="idParent" value="${idParentQuery}" />        
+    </li>
+</script>
+
+<script id="ui-bizagi-workportal-widget-folders-confirm" type="x-jquery-tmpl" > 
+    <p>
+        <span class="ui-icon ui-icon-alert"></span>
+        %{workportal-widget-queries-confirm}
+    </p>
+</script>
+
+<script id="ui-bizagi-workportal-widget-folders-edit" type="x-jquery-tmpl" > 
+    <p>
+        <span class="ui-icon ui-icon-alert"></span>
+        %{workportal-widget-queries-confirm}
+    </p>
+</script>
+
+<script id="ui-bizagi-workportal-widget-folders-input-new" type="x-jquery-tmpl" > 
+    <li data-idparent="${idParent}" class="${style}">       
+        <div class="categoryIco"></div>        
+        <span class="checkico ui-icon ui-icon-check" data-idparent="${idParent}"></span>
+        <input class='newInput' type='text' id='newFolder' value='${name}'>
+    </li>
+</script>
+
+<script id="ui-bizagi-workportal-widget-folders-add-case" type="text/x-jquery-tmpl">
+    <ul class="queriesListDisplay">
+    {{each folders}} 
+    <li {{if countChilds == 0}}class="noSubFolder" {{/if}}data-id="${id}" data-idparent="${idParent}" data-urlparameters="${urlParameters}" data-childslength="${countChilds}" data-name="${name}">        
+        <div class="categoryIco"></div>  
+        <span class="addIco addCase" data-idparent="${idParent}" data-id="${id}"> </span>
+        <h3>${name}</h3>
+    </li>
+    {{/each}}
+    </ul>
+</script>

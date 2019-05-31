@@ -1,0 +1,53 @@
+﻿<script id="column-filter-wrapper" type="text/x-jquery-tmpl">
+    <ul id="biz-column-filter">
+        <li>%{workportal-widget-filter-title}</li>
+        <li class="biz-column-filter-operators">
+            <div id="biz-column-filter-operators"></div>
+        </li>
+        <li id="biz-column-filter-control">
+        </li>
+        <li id="biz-column-filter-buttons">
+            <div class="ui-bizagi-filter-buttons">
+                <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover biz-column-filter-button" role="button" aria-disabled="true" data-button="apply">
+                    <span class="ui-button-text">%{workportal-widget-filter-button-filter}</span>
+                </button>
+                <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover biz-column-filter-button" role="button" aria-disabled="true" data-button="clear">
+                    <span class="ui-button-text">%{workportal-widget-filter-button-clean}</span>
+                </button>
+            </div>
+        </li>
+    </ul>
+</script>
+
+<script id="column-filter-control-string" type="text/x-jquery-tmpl">
+    <span class="bz-column-filter-control-string">
+        <input type="text" value="${value}" placeholder="%{workportal-general-error-a-field-required}" required />
+    </span>
+</script>
+
+<script id="column-filter-control-number" type="text/x-jquery-tmpl">
+    <span class="bz-column-filter-control-number">
+        <input type="text" value="${value}" placeholder="%{workportal-general-error-a-field-required}" title="${title}" required  />
+    </span>
+</script>
+
+<script id="column-filter-control-date" type="text/x-jquery-tmpl">
+    <span class="bz-column-filter-control-date">
+        <input type="text" value="${value}" placeholder="%{workportal-general-error-a-field-required}" required />
+    </span>
+</script>
+
+
+<script id="column-filter-control-boolean" type="text/x-jquery-tmpl">
+    <div class="ui-bizagi-render-boolean-yesno">
+        <label for="radio${id}yes">
+            <input class="ui-bizagi-render-boolean-radio" type="radio" id="radio${id}yes" value="true" name="radio${id}name" />
+            %{render-boolean-yes}
+        </label>
+        <label for="radio${id}no">
+            <input class="ui-bizagi-render-boolean-radio" type="radio" id="radio${id}no" value="false" name="radio${id}name" />
+            %{render-boolean-no}
+        </label>
+    </div>
+</script>
+
