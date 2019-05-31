@@ -1,4 +1,0 @@
-﻿{
-	"name": "Diego Parra",
-	"phone": "3002674655"
-}

@@ -1,2 +1,0 @@
-Compiler returned with result code: 0
-Generated assembly name: BizAgi.EntityManager.Entities1, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

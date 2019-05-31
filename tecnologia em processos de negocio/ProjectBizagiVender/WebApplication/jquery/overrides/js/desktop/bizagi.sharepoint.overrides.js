@@ -1,3 +1,0 @@
-/**
-* File reserved for clients
-*/

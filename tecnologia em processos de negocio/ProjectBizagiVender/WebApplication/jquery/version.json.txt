@@ -1,4 +1,0 @@
-{
-"build": "11.0.0.2724", 
-"channel": "CURRENT"
-}

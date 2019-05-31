@@ -1,1 +1,0 @@
-The info.xml file contains the licenses of the application

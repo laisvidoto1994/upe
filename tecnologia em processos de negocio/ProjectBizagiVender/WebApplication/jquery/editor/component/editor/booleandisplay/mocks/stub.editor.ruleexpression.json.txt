@@ -1,8 +1,0 @@
-{
-    "displayName": "Editable", 
-    "helptext": "Determine if the render will be editable or not", 
-    "name": "editable",
-    "type": "booleanrule",
-    "value": false,
-    "expression" : "expression"
-}

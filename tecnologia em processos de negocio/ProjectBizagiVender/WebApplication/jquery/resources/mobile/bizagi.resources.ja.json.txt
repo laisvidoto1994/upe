@@ -1,7 +1,0 @@
-﻿{
-  "bizagi-rateus-title": "ように使用Bizagiすか",
-  "bizagi-rateus-description": "Please take a minute to rate us!",
-  "bizagi-rateus-no": "せん。",
-  "bizagi-rateus-yes": "YES",
-  "bizagi-rateus-later": "REMIND ME LATER"
-}

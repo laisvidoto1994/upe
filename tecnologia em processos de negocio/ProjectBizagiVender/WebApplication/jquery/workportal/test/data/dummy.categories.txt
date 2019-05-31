@@ -1,9 +1,0 @@
-{
-    "category|2-5": [{
-        "idCategory|0-999": 0,
-        "categoryName": "@LOREM @LOREM @LOREM",
-        "isProcess": "@BIZAGI_BOOLEAN",
-        "description": "",
-        "renderVersion": 2
-    }]
-}

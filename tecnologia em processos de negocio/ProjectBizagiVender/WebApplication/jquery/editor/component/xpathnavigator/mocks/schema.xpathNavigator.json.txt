@@ -1,5 +1,0 @@
-{
-    "xpathNavigatorData" :  { 
-        "type" : "node"
-    }
-}
