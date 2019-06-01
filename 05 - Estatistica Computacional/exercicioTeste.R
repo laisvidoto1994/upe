@@ -77,6 +77,7 @@ range(A)
 #  MEDIA->mean(A) OU sum(A)/length(A)
 mean(A)
 median(A)
+# Desvio padrão
 sd(A)
 var(A)
 CV=var(A)/mean(A)
@@ -88,6 +89,7 @@ sum(A)/length(A)
 B = c(35,39,37,38,42,40,45,41,33,37,40,47)
 
 summary(B)
+# Desvio padrão
 sd(B)
 var(B)
 CV=var(B)/mean(B)
@@ -97,8 +99,7 @@ CV=var(B)/mean(B)
 
 q = c(48,49,51,50,49)
 quantile(q)
-
-
+ 
 
 percentis = seq(.01,.99,.01)
 quantile(q, percentis)

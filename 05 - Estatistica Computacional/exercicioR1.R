@@ -10,22 +10,19 @@
 # e) Calcule a variância e o desvio padrão da amostra.
 # f) Qual a fonte de maior variabilidade deste experimento.
  
+# a)Calcule a média e mediana da amostra e dê uma interpretação
 #valores
 vetor=c(96,96,102,102,102,104,104,108,126,126,128,128,140,156,160,160,164,170)
-
 #  MEDIA->mean(A) OU sum(A)/length(A)
-media=mean(vetor)
-print("media:")
-print(media)
-#mediana
+media=mean(vetor) 
+# mediana
 mediana=median(vetor)
-#d) Calcule a amplitude da amostra
-amplitude=range(vetor)
+
 #porcentagens que eu queira enquadrar
 #b) Calcule os percentis 9%, 25%, 5% e 69%
 percentis=c(.09, .25, .05, .69)
 perc=quantile(vetor,percentis)
-sd(vetor)
+
 variavel=var(vetor)
 # tamanho do vetor
 tamanho=length(vetor)
@@ -37,6 +34,13 @@ numeroMinimo=min(vetor)
 total=sum(vetor)
 # amostra de dados
 dadosSumarizados=summary(vetor)
+
+#d) Calcule a amplitude da amostra
+amplitude = range(vetor)
+
+# e) Calcule a variância e o desvio padrão da amostra
+# Desvio padrão
+sd(vetor)
 
 #se tem pouca variedade entre a media e a mediana
 
@@ -51,7 +55,7 @@ vetorAno = c( 2007,2008,2009,2010,2011)
 vetorMatriculado = c( 734,753,777,794,819)
 
 # construção de grafico
-plot(vetorAno,vetorMatriculado,main = "teste", type="o", col="blue",lwd=3 , xlab="matriculado", ylab="ano", sub="subtitulo do grafico")
+plot(vetorAno,vetorMatriculado, main = "teste", type="o", col="blue",lwd=3, xlab="matriculado", ylab="ano", sub="subtitulo do grafico")
 
 # para saber  mais informações ?
 ?plot
@@ -152,7 +156,9 @@ boxplot(d$speed, d$dist, col = c("orange","yellow"))
  
 boxplot(d$speed, d$dist, col = c("orange","yellow"), main="teste") 
 
- 
-#################################
+  
+
+
+
 
 
