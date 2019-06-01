@@ -141,8 +141,18 @@ hist(c$speed,breaks = c(0,5,10,20,30), main="teste" )
  
 #################################
 
+data(cars)
 
+# carregue os dados da tabela iris na variavel c
+d=data.frame(cars)
 
+boxplot(d$speed, d$dist) 
+  
+boxplot(d$speed, d$dist, col = c("orange","yellow")) 
+ 
+boxplot(d$speed, d$dist, col = c("orange","yellow"), main="teste") 
 
+ 
+#################################
 
 
