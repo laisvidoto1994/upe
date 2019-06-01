@@ -1,0 +1,50 @@
+1º)Um artigo no Journal of Structural Engineering (Vol. 115, 1989)
+descreve um experimento para testar a resistência resultante em
+tubos circulares com calotas soldadas nas extremidades. 
+Os primeiros resultados são: 96; 96; 102; 102; 102;104; 104; 108; 126; 126; 128; 128; 140; 156; 160; 160; 164 e 170.
+Pede-se:
+a) Calcule a média e mediana da amostra e dê uma interpretação.
+n=18
+media= (96+96+102+102+102+104+104+108+126+126+128+128+140+156+160+160+164+170)/18->2272/18->126,2222
+
+b) Calcule os percentis 9%, 25%, 5% e 69%.
+c) Calcule o segundo quartil ou mediana.
+Posição de Md: 
+0,5*(n+1)
+0,5*(18+1)
+0,5*19
+Q2=9,5
+mediana é igual ao valor de Q2 está estre 126 e 126
+d) Calcule a amplitude da amostra.
+e) Calcule a variância e o desvio padrão da amostra.
+f) Qual a fonte de maior variabilidade deste experimento.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

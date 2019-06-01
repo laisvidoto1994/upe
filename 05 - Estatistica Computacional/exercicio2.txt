@@ -180,39 +180,40 @@ Filial A: 20 21 22 22 24 24 24 25 30 32 40 190
 Filial B: 33 35 39 37 37 38 40 40 41 42 45 47
 
 Filial A:
-moda->
-mediana->(12+1)/2-> 3 resposta final o correspondente da posição 3 é 25 
-media->(20 +21+ 22+ 22+ 24+ 24+ 24+ 25+ 30+ 32+ 40+ 190)/12->  450/12->35,5
+moda->24
+mediana->(12+1)/2-> 3 resposta final o correspondente da posição 3 é 24 
+media->(20 +21+ 22+ 22+ 24+ 24+ 24+ 25+ 30+ 32+ 40+ 190)/12->  450/12->39,5
 minimo ->20
 maximo->190
-Q1= 0,25*(n+1)->Q1= 0,25*(12+1)->Q1= 0,25*13->Q1=3,25
+Q1= 0,25*(n+1)->Q1= 0,25*(12+1)->Q1= 0,25*13->Q1=22
 Q2=0,5*(n+1)->Q2=0,5*(12+1)->Q2=0,5*13->Q2=6,5
-Q3= 0,75*(n+1)->Q3= 0,75*(12+1)->Q3= 0,75*13->Q3= 9,75
-cv = s/x-> /35,5->
-
-desvioPadrao= ((20-35,5)² + (21-35,5)² +...+(190-35,5)² )/12
-
-
-
- Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-20.0    22.0    24.0    39.5    30.5   190.0
-
-
-
+Q3= 0,75*(n+1)->Q3= 0,75*(12+1)->Q3= 0,75*13->Q3= 30,5
+cv = s/x-> /35,5->1,24
+amplitude->170
+var->2278,4
+desvioPadrao= ((20-35,5)² + (21-35,5)² +...+(190-35,5)² )/12->47,73
+    
 Filial B:
-moda->
-mediana->(12+1)/2-> 3  
+moda-> 37 e 40
+mediana->(12+1)/2-> 39,5 
 media->(33+ 35+ 39+ 37+ 37+ 38+ 40+ 40+ 41+ 42+ 45+ 47)/12-> 474/12 ->39,5
 minimo ->33
 maximo->47
-Q1= 0,25*(n+1)->Q1= 0,25*(12+1)->Q1= 0,25*13->Q1=3,25
+Q1= 0,25*(n+1)->Q1= 0,25*(12+1)->Q1= 0,25*13->Q1=37
 Q2=0,5*(n+1)->Q2=0,5*(12+1)->Q2=0,5*13->Q2=6,5
-Q3= 0,75*(n+1)->Q3= 0,75*(12+1)->Q3= 0,75*13->Q3= 9,75
+Q3= 0,75*(n+1)->Q3= 0,75*(12+1)->Q3= 0,75*13->Q3= 41,25
+cv = s/x-> /35,5->0,100
+amplitude->14
+var->15,72
+desvioPadrao= ((20-35,5)² + (21-35,5)² +...+(190-35,5)² )/12->3,96
+    
+	 
+há filial A tem maior variação de dados em comparação com a filial B, 
+pois há uma variação maior entre a media e mediana da filial A de mais de 10 pontos
 
-
-
- Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-33.00   37.00   39.50   39.50   41.25   47.00
+filial A tem media->39,5 e mediana->24
+filial B tem media->39,5 e mediana->39,5
+ 
 ###################################
 
 
