@@ -48,14 +48,13 @@ regrecaoNota = lm(nota~tempo)
 regrecaoNota
 
 #diagrama de dispersao
-plot(tempo, nota, main = "teste", type ='o', col='blue', lwd=3)
+plot(tempo, nota, main = "teste", type ='o', col='yellow', lwd=2)
 
 #criacao da linha do grafico de resposta da regressao
 abline(regrecaoNota)
 
 #y= a+b*x
 #Yestimado = 2.9130 + 0.5269*x
-
 
 #valores ajustados e sao guardados na variavel(fitted.values)
 regrecaoNota$fitted.values
@@ -100,9 +99,7 @@ YEstimado
 # x = temperaturaX
 #y=217,37+(4,74*25)-> y=217,37+(118,5)->y=335,87litros
 
-
 plot(fitted(regrecaoConsumo), residuals(regrecaoConsumo), xlab = "valores ajustados", ylab = "residuos")
-
 
 #Valores Ajustados
 regrecaoConsumo$fitted.values
@@ -126,15 +123,15 @@ data("swiss")
 set.seed(123)
 
 #Criando os índices para Holdout
+# traga 2/3 dos dados
 indice = createDataPartition(swiss$Fertility, p=2/3, list = FALSE)
 
-# Dividindo em treinamento e teste
+# Dividindo dados em variaveis treinamento e teste
 treinamento.data = swiss[indice,]
 teste.data = swiss[-indice,]
 
-
 # Construção do Modelo de Regressão
-modelo1 = lm(Fetility ~ ., data=treinamento.data)
+modelo1 = lm(Fertility ~ ., data = treinamento.data)
 
 # Calculo do Valor predito
 valoresPreditos1 = predict(modelo1, newdata = data.frame(teste.data))
@@ -153,7 +150,7 @@ metodo2 = trainControl(method="LOOCV")
 modelo2 = train(Fertility ~ ., data = data.frame(treinamento.data), method="lm", trControl=metodo2)
 
 # Calculo do Valor predito
-valoresPreditos2 = predict(modelo2, newdata=data.frame(teste.data))
+valoresPreditos2 = predict(modelo2, newdata = data.frame(teste.data) )
 
 #Métricas para Avaliar o modelo
 modeloAjustado2      = R2(valoresPreditos2, teste.data$Fertility)
@@ -447,7 +444,7 @@ meu_arquivo = read_csv(file.choose())
 
 
 # importando arquivos
-df_sono = read_csv("C:/Users/pos/Downloads/estatistica/sono.csv")
+df_sono = read_csv("C:/Users/Edna Soares/Desktop/Nova pasta/upe/05 - Estatistica Computacional/sono.csv")
  
 meu_arquivo = read_delim(file.choose(), sep = ",")
  
