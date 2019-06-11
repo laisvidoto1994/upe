@@ -11,8 +11,7 @@ setwd("C:/Users/pos/Documents/ESTATISTICA")
 
 # leia os dados do arquivo e venha com o cabeçalho
 dados = read.table("dados.txt", header = TRUE)
-
-
+ 
 boxplot(dados$desempenho ~ dados$tecnica)
 boxplot(dados$desempenho ~ dados$classe)
 
@@ -31,9 +30,7 @@ summary(comparacao)
 #equação d regressão
  #y=a+bX
 #a=valor que a reta pode bater em y
-#bX=inclinação
-
-
+#bX=inclinação 
 
 ##########################
 #Exemplo 1: nota da prova e tempo de estudo
@@ -134,7 +131,7 @@ teste.data = swiss[-indice,]
 modelo1 = lm(Fertility ~ ., data = treinamento.data)
 
 # Calculo do Valor predito
-valoresPreditos1 = predict(modelo1, newdata = data.frame(teste.data))
+valoresPreditos1 = predict(modelo1, newdata = data.frame(teste.data) )
 
 #M�tricas para Avaliar o modelo
 modeloAjustado1      = R2(valoresPreditos1, teste.data$Fertility)
@@ -220,7 +217,6 @@ summary(xMatriz)
 #####################
 
 x2 = matrix(10:1, ncol = 2)
-
 
 
 #####################
