@@ -57,13 +57,6 @@ dados = cbind.data.frame(leituraArquivo$mpg,leituraArquivo$cilindro,leituraArqui
 colnames(dados) = c("mpg", "cilindros", "deslocamento", "peso", "aceleracao", "anoModelo")
 
 #-------------------------------------------------------------#
-# min,max,mediana,media dos dados        
-#-------------------------------------------------------------#
-
-# visualiza dados(min,max,mediana,media)
-summary(dados)
-
-#-------------------------------------------------------------#
 # amplitude de cada variavel quantitativa       
 #-------------------------------------------------------------#
 
@@ -73,6 +66,13 @@ amplitudeDeslocamento = ( range(dados$deslocamento)[2] - range(dados$deslocament
 amplitudePeso         = ( range(dados$peso)[2]         - range(dados$peso)[1] )  
 amplitudeAceleracao   = ( range(dados$aceleracao)[2]   - range(dados$aceleracao)[1] )  
 amplitudeAnoModelo    = ( range(dados$anoModelo)[2]    - range(dados$anoModelo)[1] )  
+
+#-------------------------------------------------------------#
+# min,max,mediana,media dos dados        
+#-------------------------------------------------------------#
+
+# visualiza dados(min,max,mediana,media)
+summary(dados)
 
 #-------------------------------------------------------------#
 # variançia        
@@ -88,8 +88,6 @@ varianciaAnoModelo    = var(dados$anoModelo)
 #-------------------------------------------------------------#
 # desvio padrao
 #-------------------------------------------------------------#
-desvioPadrao = sd(dados)
-
 desvioPadraoMpg          = sd(dados$mpg)
 desvioPadraoCilindros    = sd(dados$cilindros)
 desvioPadraoDeslocamento = sd(dados$deslocamento)
@@ -114,23 +112,26 @@ boxplot(dados$mpg ~ dados$anoModelo)
 # grafico de linha
 plot(dados$cilindros, dados$mpg, main = "consumo combustivel X Qtd. Cilindros", type="o", col="blue",lwd=1, xlab="Cilindro", ylab="Mpg")
 
-# grafico de barras
-#barplot(dados$cilindros)
-
-# construindo grafico de pizza
-# pie(dados$anoModelo, main="titulo")
-
-#boxplot(dados$mpg, dados$cilindros) 
-
-#boxplot(dados$mpg)
-
 # grafico de histograma
-hist(dados$mpg, main="Mpg", xlab = "Mpg")
-hist(dados$cilindros, main="Cilindros", xlab = "Cilindros")
-hist(dados$deslocamento, main="Deslocamento", xlab = "Deslocamento")
-hist(dados$peso, main="Peso", xlab = "Peso")
-hist(dados$aceleracao, main="Aceleração", xlab = "Aceleração")
-hist(dados$anoModelo, main="Ano Modelo", xlab = "Ano Modelo")
+hist(dados$mpg, main="Mpg", xlab = "Mpg", ylab = " ")
+hist(dados$cilindros, main="Cilindros", xlab = "Cilindros", ylab = " ")
+hist(dados$deslocamento, main="Deslocamento", xlab = "Deslocamento", ylab = " ")
+hist(dados$peso, main="Peso", xlab = "Peso", ylab = " ")
+hist(dados$aceleracao, main="Aceleração", xlab = "Aceleração", ylab = " ")
+hist(dados$anoModelo, main="Ano Modelo", xlab = "Ano Modelo", ylab = " ")
+
+#-------------------------------------------------------------#
+# Correlação       
+#-------------------------------------------------------------#
+
+# para saber qual tem o maior coleração entre a coluna mpg
+corelacaoDeMPG = cor(dados)
+corelacaoDeMPG
+
+library(corrplot)
+
+#correlacção nome das variaveis
+corrplot(corelacaoDeMPG, method="circle",type = "upper", tl.pos = "td",tl.cex = 0.5,tl.col = 'brank',order = "hclust")
 
 #-------------------------------------------------------------#
 # partição dos dados em teste e treinamento        
@@ -154,24 +155,6 @@ testeDados = dados[-indice,]
 # Construção do Modelo de Regressão(comparando mpg com todos)
 modelo1 = lm(mpg ~ ., data = treinamentoDados)
 
-#valor de intercept
-modelo1$coefficients[1] 
-
-# valor do x = cilindros
-modelo1$coefficients[2] 
-
-# valor do x = deslocamento          
-modelo1$coefficients[3] 
-
-# valor do x = peso          
-modelo1$coefficients[4]
-
-# valor do x = aceleracao          
-modelo1$coefficients[5]
-
-# valor do x = anoModelo          
-modelo1$coefficients[5]
-
 # Calculo do Valor predito
 valoresPreditos1 = predict(modelo1, newdata = data.frame(testeDados) )
  
@@ -182,40 +165,22 @@ ErroAbsoluto1   = MAE(valoresPreditos1, testeDados$mpg)
 #y= a+b*x
 x=dados$cilindros[1]
 Yestimado = modelo1$coefficients[1] + modelo1$coefficients[2]*x #-> para deslocamento
-#Yestimado = -16.042718 + 0.211716*x-> para aceleracao
-
-#(Intercept)->-16.042718 
-#cilindros-> -0.201211
-#deslocamento-> 0.009095
-#peso-> -0.007048    
-#aceleracao-> 0.211716  
-#anoModelo -> 0.742954
 
 #diagrama de dispersao
-plot(modelo1$coefficients[1], modelo1$coefficients[2])
+plot(dados$mpg, dados$cilindros)
 
 #criacao da linha do grafico de resposta da regressao
 abline(modelo1)
 
-#Valores Ajustados
-modelo1$fitted.values
-   
-boxplot(dados$mpg ~ dados$cilindros, ylab = "mpg", xlab = "cilindros", main="consumo de gasolina X Cilindros")
-
-boxplot(dados$mpg ~ dados$anoModelo, ylab = "mpg", xlab = "anoModelo")
+#diagrama de dispersao
+plot(fitted(modelo1), main = "diagrama de dispersão1", residuals(modelo1), xlab="Valores Ajustados", ylab="Resíduos")
 
 #-------------------------------------------------------------#
 # Modelo de Regressão 2 - 3 maiores         
 #-------------------------------------------------------------#
 
 # Construção do Modelo de Regressão(comparando mpg com todos)
-modelo2 = lm(mpg ~ dados$cilindros,dados$aceleracao,dados$anoModelo, data = treinamentoDados)
-
-#valor de intercept
-modelo2$coefficients[1] 
-
-# valor do x = cilindros
-modelo2$coefficients[2]
+modelo2 = lm(mpg ~ cilindros,aceleracao,anoModelo, data = treinamentoDados)
 
 # Calculo do Valor predito
 valoresPreditos2 = predict(modelo2, newdata = data.frame(testeDados) )
@@ -224,18 +189,21 @@ valoresPreditos2 = predict(modelo2, newdata = data.frame(testeDados) )
 modeloAjustado2 = R2(valoresPreditos2, testeDados$mpg)
 ErroAbsoluto2   = MAE(valoresPreditos2, testeDados$mpg)
 
+#diagrama de dispersao
+plot(dados$mpg, dados$cilindros)
+
+#criacao da linha do grafico de resposta da regressao
+abline(modelo2)
+
+#diagrama de dispersao
+plot(fitted(modelo2), main = "diagrama de dispersão2", residuals(modelo2), xlab="Valores Ajustados", ylab="Resíduos")
+
 #-------------------------------------------------------------#
 # Modelo de Regressão 3 - o maior        
 #-------------------------------------------------------------#
 
 # Construção do Modelo de Regressão(comparando mpg com todos)
-modelo3 = lm(mpg ~ dados$anoModelo, data = treinamentoDados)
-
-#valor de intercept
-modelo3$coefficients[1] 
-
-# valor do x = cilindros
-modelo3$coefficients[2]
+modelo3 = lm(mpg ~ cilindros, data = treinamentoDados)
 
 # Calculo do Valor predito
 valoresPreditos3 = predict(modelo3, newdata = data.frame(testeDados) )
@@ -244,86 +212,53 @@ valoresPreditos3 = predict(modelo3, newdata = data.frame(testeDados) )
 modeloAjustado3 = R2(valoresPreditos3, testeDados$mpg)
 ErroAbsoluto3   = MAE(valoresPreditos3, testeDados$mpg)
 
-#-------------------------------------------------------------#
-# Correlação       
-#-------------------------------------------------------------#
+#diagrama de dispersao
+plot(dados$mpg, dados$cilindros)
 
-# para saber qual tem o maior coleração entre a coluna mpg
-corelacaoDeMPG = cor(dados$mpg, dados$cilindros)
-corelacaoDeMPG
-
-#-------------------------------------------------------------#
-# Grafico de Dispersão       
-#-------------------------------------------------------------#
-
-#Valores Ajustados
-modelo1$fitted.values
-
-#mostra o valor de erro do real - o valor estimado da regrecaoNota
-modelo1$residuals
+#criacao da linha do grafico de resposta da regressao
+abline(modelo3)
 
 #diagrama de dispersao
-plot(fitted(modelo1), residuals(modelo1), xlab="Valores Ajustados", ylab="Resíduos")
-
-#-------------------------------------------------------------#
-# teste de hipótese e Anova       
-#-------------------------------------------------------------#
-
-#conseguir comparar dados de consumo de gasolina com mpg e depois cilindros e deslocamento
-comparacao1 = aov(dados$mpg ~ dados$cilindros + dados$deslocamento + dados$peso)
-
-#dados da tabela dotipo Anova
-summary(comparacao1)
-
-comparacao2 = aov(dados$mpg ~ dados$cilindros + dados$aceleracao + dados$anoModelo)
-
-#dados da tabela dotipo Anova
-summary(comparacao2)
-
-# alternativas-> "two.sided", "less"-> menos, "greater"->maior
-# nivel de confidencialidade = 95%-> conf.level = 0.95
-t.test(dados$cilindros, alternative="two.sided", conf.level = 0.95, mu = 690)
-
-#y= a+b*x
-#Yestimado = -16.042718 + 0.009095*x-> para deslocamento
-#Yestimado = -16.042718 + 0.211716*x-> para aceleracao
-#Yestimado = -16.042718 + 0.742954*x-> para anoModelo
-
-#(Intercept)->-16.042718 
-#cilindros-> -0.201211
-#deslocamento-> 0.009095
-#peso-> -0.007048    
-#aceleracao-> 0.211716  
-#anoModelo -> 0.742954
-
+plot(fitted(modelo3), main = "diagrama de dispersão3", residuals(modelo3), xlab="Valores Ajustados", ylab="Resíduos")
 
 #-------------------------------------------------------------#
 # teste de normalidade      
 #-------------------------------------------------------------#
 
-boxplot(dados$mpg, dados$cilindros)
-
-#Gráfico histograma
-hist(dados$cilindros, col="yellow", main="Distribuição normal")
-
-#Traçando a curva da normal
-curve(dnorm, add=TRUE)
-?curve
+#Teste de Normalidade Shapiro-Wilk
+shapiroNormalidadeY1 = shapiro.test(valoresPreditos1)
+# Kolmogorov-Smirnov
+ks.test(valoresPreditos1, "pnorm", mean(valoresPreditos1), sd(valoresPreditos1))
+hist(valoresPreditos1)
 
 #Teste de Normalidade Shapiro-Wilk
-shapiroNormalidadeY = shapiro.test(dados$mpg)
-
+shapiroNormalidadeY2 = shapiro.test(valoresPreditos2)
 # Kolmogorov-Smirnov
-ks.test(dados$mpg, "pnorm", mean(dados$mpg), sd(dados$mpg))
-
-# visualizar valor do shapiro
-shapiroNormalidadey$p.value
+ks.test(valoresPreditos2, "pnorm", mean(valoresPreditos2), sd(valoresPreditos2))
+hist(valoresPreditos2)
 
 #Teste de Normalidade Shapiro-Wilk
-shapiroNormalidadeX = shapiro.test(dados$cilindros)
-
+shapiroNormalidadeY3 = shapiro.test(valoresPreditos3)
 # Kolmogorov-Smirnov
-ks.test(dados$cilindros,"pnorm", mean(dados$cilindros), sd(dados$cilindros))
+ks.test(valoresPreditos3, "pnorm", mean(valoresPreditos3), sd(valoresPreditos3))
+hist(valoresPreditos3)
 
-# cruzando os valores
-t.test(x = dados$mpg, y = dados$cilindros, alternative="two.sided", conf.level = 0.95)
+#-------------------------------------------------------------#
+# teste de hipotese      
+#-------------------------------------------------------------#
+
+# alternativas-> "two.sided", "less"-> menos, "greater"->maior
+# nivel de confidencialidade = 95%-> conf.level = 0.95
+t.test(valoresPreditos1,valoresPreditos2, alternative="less", conf.level = 0.95)
+t.test(valoresPreditos1,valoresPreditos3, alternative="less", conf.level = 0.95)
+t.test(valoresPreditos2,valoresPreditos3, alternative="less", conf.level = 0.95)
+
+#-------------------------------------------------------------#
+# teste de Anova       
+#-------------------------------------------------------------#
+
+#conseguir comparar dados de consumo de gasolina com mpg e depois cilindros e deslocamento
+testeAnova = aov(dados$mpg ~ dados$cilindros + dados$deslocamento + dados$peso)
+
+#dados da tabela dotipo Anova
+summary(testeAnova)#99,9% em valor 0.001-1*100
