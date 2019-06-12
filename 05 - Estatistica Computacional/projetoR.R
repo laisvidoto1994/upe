@@ -112,7 +112,7 @@ boxplot(dados$mpg ~ dados$anoModelo)
 #-------------------------------------------------------------#
 
 # grafico de linha
-#plot(dados$anoModelo, main = "teste", type="o", col="blue",lwd=1, xlab="matriculado", ylab="ano", sub="subtitulo do grafico")
+plot(dados$cilindros, dados$mpg, main = "consumo combustivel X Qtd. Cilindros", type="o", col="blue",lwd=1, xlab="Cilindro", ylab="Mpg")
 
 # grafico de barras
 #barplot(dados$cilindros)
@@ -122,13 +122,15 @@ boxplot(dados$mpg ~ dados$anoModelo)
 
 #boxplot(dados$mpg, dados$cilindros) 
 
+#boxplot(dados$mpg)
+
 # grafico de histograma
-hist(dados$mpg, main="teste")
-hist(dados$cilindros, main="teste")
-hist(dados$deslocamento, main="teste")
-hist(dados$peso, main="teste")
-hist(dados$aceleracao, main="teste")
-hist(dados$anoModelo, main="teste")
+hist(dados$mpg, main="Mpg", xlab = "Mpg")
+hist(dados$cilindros, main="Cilindros", xlab = "Cilindros")
+hist(dados$deslocamento, main="Deslocamento", xlab = "Deslocamento")
+hist(dados$peso, main="Peso", xlab = "Peso")
+hist(dados$aceleracao, main="Aceleração", xlab = "Aceleração")
+hist(dados$anoModelo, main="Ano Modelo", xlab = "Ano Modelo")
 
 #-------------------------------------------------------------#
 # partição dos dados em teste e treinamento        
@@ -174,9 +176,8 @@ modelo1$coefficients[5]
 valoresPreditos1 = predict(modelo1, newdata = data.frame(testeDados) )
  
 # Métricas para Avaliar o modelo
-modeloAjustado1      = R2(valoresPreditos1, testeDados$mpg)
-ErroAbsoluto         = MAE(valoresPreditos1, testeDados$mpg)
-ErroMedioQuadratico1 = RMSE(valoresPreditos1, testeDados$mpg)
+modeloAjustado1 = R2(valoresPreditos1, testeDados$mpg)
+ErroAbsoluto1   = MAE(valoresPreditos1, testeDados$mpg)
 
 #y= a+b*x
 x=dados$cilindros[1]
@@ -191,35 +192,57 @@ Yestimado = modelo1$coefficients[1] + modelo1$coefficients[2]*x #-> para desloca
 #anoModelo -> 0.742954
 
 #diagrama de dispersao
-plot(dados$mpg, dados$cilindros)
+plot(modelo1$coefficients[1], modelo1$coefficients[2])
 
 #criacao da linha do grafico de resposta da regressao
-abline(modelo2)
+abline(modelo1)
 
 #Valores Ajustados
 modelo1$fitted.values
    
+boxplot(dados$mpg ~ dados$cilindros, ylab = "mpg", xlab = "cilindros", main="consumo de gasolina X Cilindros")
+
+boxplot(dados$mpg ~ dados$anoModelo, ylab = "mpg", xlab = "anoModelo")
+
 #-------------------------------------------------------------#
 # Modelo de Regressão 2 - 3 maiores         
 #-------------------------------------------------------------#
 
-#Definição da Partição de Dados
-metodo2 = trainControl(method="LOOCV")
+# Construção do Modelo de Regressão(comparando mpg com todos)
+modelo2 = lm(mpg ~ dados$cilindros,dados$aceleracao,dados$anoModelo, data = treinamentoDados)
 
-modelo2 = train(mpg ~ ., data = data.frame(treinamentoDados), method="lm", trControl=metodo2)
+#valor de intercept
+modelo2$coefficients[1] 
+
+# valor do x = cilindros
+modelo2$coefficients[2]
 
 # Calculo do Valor predito
 valoresPreditos2 = predict(modelo2, newdata = data.frame(testeDados) )
 
-#Métricas para Avaliar o modelo
-modeloAjustado2      = R2(valoresPreditos2, testeDados$mpg)
-ErroAbsoluto2        = MAE(valoresPreditos2, testeDados$mpg)
-ErroMedioQuadratico2 = RMSE(valoresPreditos2, testeDados$mpg)
+# Métricas para Avaliar o modelo
+modeloAjustado2 = R2(valoresPreditos2, testeDados$mpg)
+ErroAbsoluto2   = MAE(valoresPreditos2, testeDados$mpg)
 
 #-------------------------------------------------------------#
 # Modelo de Regressão 3 - o maior        
 #-------------------------------------------------------------#
 
+# Construção do Modelo de Regressão(comparando mpg com todos)
+modelo3 = lm(mpg ~ dados$anoModelo, data = treinamentoDados)
+
+#valor de intercept
+modelo3$coefficients[1] 
+
+# valor do x = cilindros
+modelo3$coefficients[2]
+
+# Calculo do Valor predito
+valoresPreditos3 = predict(modelo3, newdata = data.frame(testeDados) )
+
+# Métricas para Avaliar o modelo
+modeloAjustado3 = R2(valoresPreditos3, testeDados$mpg)
+ErroAbsoluto3   = MAE(valoresPreditos3, testeDados$mpg)
 
 #-------------------------------------------------------------#
 # Correlação       
@@ -232,6 +255,7 @@ corelacaoDeMPG
 #-------------------------------------------------------------#
 # Grafico de Dispersão       
 #-------------------------------------------------------------#
+
 #Valores Ajustados
 modelo1$fitted.values
 
