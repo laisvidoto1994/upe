@@ -23,11 +23,11 @@
 
 # OK - Identificar a amplitude de cada uma das varia??veis; 
 # OK - Calcular me??dia, moda e mediana para cada uma das varia??veis nume??ricas; 
-# - Calcular variância e desvio padra~o para cada uma das varia??veis; 
-# - Plotar o melhor gra??fico para cada uma das varia??veis; 
+# OK - Calcular variância e desvio padra~o para cada uma das varia??veis; 
+# OK - Plotar o melhor gra??fico para cada uma das varia??veis; 
 # OK - Plotar o boxplot para todas as varia??veis quantitativas; 
 # - Calcular a correlac??a~o e plotar o gra??fico de dispersa~o;
-# OK - Formular um problema de regressão e análisa-lo como também discuti-lo;
+# - Formular um problema de regressão e análisa-lo como também discuti-lo;
 # - Realizar teste de normalidade usando boxplot, histograma e shapiro.test, discutir os resultados;
 # - Formular teste de hipótese e Anova, discutir os resultados;
 
@@ -66,44 +66,36 @@ summary(dados)
 #-------------------------------------------------------------#
 # amplitude de cada variavel quantitativa       
 #-------------------------------------------------------------#
-rangeMpg = range(dados$mpg)
-maiorMpg = rangeMpg[2]
-menorMpg = rangeMpg[1]
-amplitudeMpg = maiorMpg - menorMpg  
 
-rangeCilindros = range(dados$cilindros)
-maiorCilindros = rangeCilindros[2]
-menorCilindros = rangeCilindros[1]
-amplitudeCilindros = maiorCilindros - menorCilindros  
+amplitudeMpg          = ( range(dados$mpg)[2]          - range(dados$mpg)[1] ) 
+amplitudeCilindros    = ( range(dados$cilindros)[2]    - range(dados$cilindros)[1] )  
+amplitudeDeslocamento = ( range(dados$deslocamento)[2] - range(dados$deslocamento)[1] )  
+amplitudePeso         = ( range(dados$peso)[2]         - range(dados$peso)[1] )  
+amplitudeAceleracao   = ( range(dados$aceleracao)[2]   - range(dados$aceleracao)[1] )  
+amplitudeAnoModelo    = ( range(dados$anoModelo)[2]    - range(dados$anoModelo)[1] )  
 
-rangeDeslocamento = range(dados$deslocamento)
-maiorDeslocamento = rangeDeslocamento[2]
-menorDeslocamento = rangeDeslocamento[1]
-amplitudeDeslocamento = maiorDeslocamento - menorDeslocamento  
-
-rangePeso = range(dados$peso)
-maiorPeso = rangePeso[2]
-menorPeso = rangePeso[1]
-amplitudePeso = maiorPeso - menorPeso
-
-rangeAceleracao = range(dados$aceleracao)
-maiorAceleracao = rangeAceleracao[2]
-menorAceleracao = rangeAceleracao[1]
-amplitudeAceleracao = maiorAceleracao - menorAceleracao
-
-rangeAnoModelo = range(dados$anoModelo)
-maiorAnoModelo = rangeAnoModelo[2]
-menorAnoModelo = rangeAnoModelo[1]
-amplitudeAnoModelo = maiorAnoModelo - menorAnoModelo
 #-------------------------------------------------------------#
 # variançia        
 #-------------------------------------------------------------#
 var(dados)
+varianciaMpg          = var(dados$mpg)
+varianciaCilindros    = var(dados$cilindros)
+varianciaDeslocamento = var(dados$deslocamento)
+varianciaPeso         = var(dados$peso)
+varianciaAceleracao   = var(dados$aceleracao)
+varianciaAnoModelo    = var(dados$anoModelo)
 
 #-------------------------------------------------------------#
 # desvio padrao
 #-------------------------------------------------------------#
-sd(var(dados))
+desvioPadrao = sd(dados)
+
+desvioPadraoMpg          = sd(dados$mpg)
+desvioPadraoCilindros    = sd(dados$cilindros)
+desvioPadraoDeslocamento = sd(dados$deslocamento)
+desvioPadraoPeso         = sd(dados$peso)
+desvioPadraoAceleracao   = sd(dados$aceleracao)
+desvioPadraoAnoModelo    = sd(dados$anoModelo)
 
 #-------------------------------------------------------------#
 # graficos das variaveis quantitativas        
@@ -119,7 +111,24 @@ boxplot(dados$mpg ~ dados$anoModelo)
 # o melhor grafico para cada variavel quantitativa        
 #-------------------------------------------------------------#
 
+# grafico de linha
+#plot(dados$anoModelo, main = "teste", type="o", col="blue",lwd=1, xlab="matriculado", ylab="ano", sub="subtitulo do grafico")
 
+# grafico de barras
+#barplot(dados$cilindros)
+
+# construindo grafico de pizza
+# pie(dados$anoModelo, main="titulo")
+
+#boxplot(dados$mpg, dados$cilindros) 
+
+# grafico de histograma
+hist(dados$mpg, main="teste")
+hist(dados$cilindros, main="teste")
+hist(dados$deslocamento, main="teste")
+hist(dados$peso, main="teste")
+hist(dados$aceleracao, main="teste")
+hist(dados$anoModelo, main="teste")
 
 #-------------------------------------------------------------#
 # partição dos dados em teste e treinamento        
@@ -247,6 +256,9 @@ comparacao2 = aov(dados$mpg ~ dados$cilindros + dados$aceleracao + dados$anoMode
 #dados da tabela dotipo Anova
 summary(comparacao2)
 
+# alternativas-> "two.sided", "less"-> menos, "greater"->maior
+# nivel de confidencialidade = 95%-> conf.level = 0.95
+t.test(dados$cilindros, alternative="two.sided", conf.level = 0.95, mu = 690)
 
 #y= a+b*x
 #Yestimado = -16.042718 + 0.009095*x-> para deslocamento
@@ -261,3 +273,33 @@ summary(comparacao2)
 #anoModelo -> 0.742954
 
 
+#-------------------------------------------------------------#
+# teste de normalidade      
+#-------------------------------------------------------------#
+
+boxplot(dados$mpg, dados$cilindros)
+
+#Gráfico histograma
+hist(dados$cilindros, col="yellow", main="Distribuição normal")
+
+#Traçando a curva da normal
+curve(dnorm, add=TRUE)
+?curve
+
+#Teste de Normalidade Shapiro-Wilk
+shapiroNormalidadeY = shapiro.test(dados$mpg)
+
+# Kolmogorov-Smirnov
+ks.test(dados$mpg, "pnorm", mean(dados$mpg), sd(dados$mpg))
+
+# visualizar valor do shapiro
+shapiroNormalidadey$p.value
+
+#Teste de Normalidade Shapiro-Wilk
+shapiroNormalidadeX = shapiro.test(dados$cilindros)
+
+# Kolmogorov-Smirnov
+ks.test(dados$cilindros,"pnorm", mean(dados$cilindros), sd(dados$cilindros))
+
+# cruzando os valores
+t.test(x = dados$mpg, y = dados$cilindros, alternative="two.sided", conf.level = 0.95)
