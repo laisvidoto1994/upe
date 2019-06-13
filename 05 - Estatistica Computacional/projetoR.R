@@ -34,7 +34,8 @@
 #-------------------------------------------------------------#
 # Leitura de Arquivos txt       
 #-------------------------------------------------------------#
-# LEITURA DE DIRETORIO
+
+# leitura de diretorio
 getwd()
 
 # onde o arquivo esta
@@ -96,16 +97,6 @@ desvioPadraoAceleracao   = sd(dados$aceleracao)
 desvioPadraoAnoModelo    = sd(dados$anoModelo)
 
 #-------------------------------------------------------------#
-# graficos das variaveis quantitativas        
-#-------------------------------------------------------------#
-
-boxplot(dados$mpg ~ dados$cilindros)
-boxplot(dados$mpg ~ dados$deslocamento)
-boxplot(dados$mpg ~ dados$peso)
-boxplot(dados$mpg ~ dados$aceleracao)
-boxplot(dados$mpg ~ dados$anoModelo)
-
-#-------------------------------------------------------------#
 # o melhor grafico para cada variavel quantitativa        
 #-------------------------------------------------------------#
 
@@ -113,12 +104,22 @@ boxplot(dados$mpg ~ dados$anoModelo)
 plot(dados$cilindros, dados$mpg, main = "consumo combustivel X Qtd. Cilindros", type="o", col="blue",lwd=1, xlab="Cilindro", ylab="Mpg")
 
 # grafico de histograma
-hist(dados$mpg, main="Mpg", xlab = "Mpg", ylab = " ")
-hist(dados$cilindros, main="Cilindros", xlab = "Cilindros", ylab = " ")
-hist(dados$deslocamento, main="Deslocamento", xlab = "Deslocamento", ylab = " ")
-hist(dados$peso, main="Peso", xlab = "Peso", ylab = " ")
-hist(dados$aceleracao, main="Aceleração", xlab = "Aceleração", ylab = " ")
-hist(dados$anoModelo, main="Ano Modelo", xlab = "Ano Modelo", ylab = " ")
+hist(dados$mpg, main="Mpg", xlab = "Mpg")
+hist(dados$cilindros, main="Cilindros", xlab = "Cilindros")
+hist(dados$deslocamento, main="Deslocamento", xlab = "Deslocamento")
+hist(dados$peso, main="Peso", xlab = "Peso")
+hist(dados$aceleracao, main="Aceleração", xlab = "Aceleração")
+hist(dados$anoModelo, main="Ano Modelo", xlab = "Ano Modelo")
+
+#-------------------------------------------------------------#
+# graficos das variaveis quantitativas        
+#-------------------------------------------------------------#
+
+boxplot(dados$mpg ~ dados$cilindros, xlab = "Cilindro", ylab = "Mpg")
+boxplot(dados$mpg ~ dados$deslocamento, xlab = "Deslocamento", ylab = "Mpg")
+boxplot(dados$mpg ~ dados$peso, xlab = "Peso", ylab = "Mpg")
+boxplot(dados$mpg ~ dados$aceleracao, xlab = "Aceleracao", ylab = "Mpg")
+boxplot(dados$mpg ~ dados$anoModelo, xlab = "Ano Modelo", ylab = "Mpg")
 
 #-------------------------------------------------------------#
 # Correlação       
@@ -167,7 +168,7 @@ x=dados$cilindros[1]
 Yestimado = modelo1$coefficients[1] + modelo1$coefficients[2]*x #-> para deslocamento
 
 #diagrama de dispersao
-plot(dados$mpg, dados$cilindros)
+plot(dados$mpg, dados$cilindros, main = "dispersão mpg X cilindros", xlab = )
 
 #criacao da linha do grafico de resposta da regressao
 abline(modelo1)
@@ -190,7 +191,7 @@ modeloAjustado2 = R2(valoresPreditos2, testeDados$mpg)
 ErroAbsoluto2   = MAE(valoresPreditos2, testeDados$mpg)
 
 #diagrama de dispersao
-plot(dados$mpg, dados$cilindros)
+plot(dados$mpg, dados$cilindros,main = "D")
 
 #criacao da linha do grafico de resposta da regressao
 abline(modelo2)
