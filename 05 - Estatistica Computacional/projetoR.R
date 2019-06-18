@@ -132,7 +132,8 @@ corelacaoDeMPG
 library(corrplot)
 
 #correlacção nome das variaveis
-corrplot(corelacaoDeMPG, method="circle",type = "upper", tl.pos = "td",tl.cex = 0.5,tl.col = 'brank',order = "hclust")
+corrplot(corelacaoDeMPG, method="circle", type = "upper")
+
 
 #-------------------------------------------------------------#
 # partição dos dados em teste e treinamento        
@@ -168,7 +169,7 @@ x=dados$cilindros[1]
 Yestimado = modelo1$coefficients[1] + modelo1$coefficients[2]*x #-> para deslocamento
 
 #diagrama de dispersao
-plot(dados$mpg, dados$cilindros, main = "dispersão mpg X cilindros", xlab = )
+plot( dados$cilindros,dados$mpg, main = "dispersão mpg X cilindros", xlab ="Cilindro",ylab = "Mpg" )
 
 #criacao da linha do grafico de resposta da regressao
 abline(modelo1)
@@ -191,13 +192,14 @@ modeloAjustado2 = R2(valoresPreditos2, testeDados$mpg)
 ErroAbsoluto2   = MAE(valoresPreditos2, testeDados$mpg)
 
 #diagrama de dispersao
-plot(dados$mpg, dados$cilindros,main = "D")
+plot( dados$cilindros, dados$mpg, main = "D")
 
 #criacao da linha do grafico de resposta da regressao
 abline(modelo2)
 
 #diagrama de dispersao
 plot(fitted(modelo2), main = "diagrama de dispersão2", residuals(modelo2), xlab="Valores Ajustados", ylab="Resíduos")
+abline(modelo2)
 
 #-------------------------------------------------------------#
 # Modelo de Regressão 3 - o maior        
@@ -214,7 +216,7 @@ modeloAjustado3 = R2(valoresPreditos3, testeDados$mpg)
 ErroAbsoluto3   = MAE(valoresPreditos3, testeDados$mpg)
 
 #diagrama de dispersao
-plot(dados$mpg, dados$cilindros)
+plot( dados$cilindros, dados$mpg)
 
 #criacao da linha do grafico de resposta da regressao
 abline(modelo3)
