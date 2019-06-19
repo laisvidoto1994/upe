@@ -132,8 +132,7 @@ corelacaoDeMPG
 library(corrplot)
 
 #correlacção nome das variaveis
-corrplot(corelacaoDeMPG, method="circle", type = "upper")
-
+corrplot(corelacaoDeMPG, method="circle", type = "upper", title = "Dispersão dos Dados")
 
 #-------------------------------------------------------------#
 # partição dos dados em teste e treinamento        
@@ -230,18 +229,24 @@ plot(fitted(modelo3), main = "diagrama de dispersão3", residuals(modelo3), xlab=
 
 #Teste de Normalidade Shapiro-Wilk
 shapiroNormalidadeY1 = shapiro.test(valoresPreditos1)
+shapiroNormalidadeY1
+
 # Kolmogorov-Smirnov
 ks.test(valoresPreditos1, "pnorm", mean(valoresPreditos1), sd(valoresPreditos1))
 hist(valoresPreditos1)
 
 #Teste de Normalidade Shapiro-Wilk
 shapiroNormalidadeY2 = shapiro.test(valoresPreditos2)
+shapiroNormalidadeY2
+
 # Kolmogorov-Smirnov
 ks.test(valoresPreditos2, "pnorm", mean(valoresPreditos2), sd(valoresPreditos2))
 hist(valoresPreditos2)
 
 #Teste de Normalidade Shapiro-Wilk
 shapiroNormalidadeY3 = shapiro.test(valoresPreditos3)
+shapiroNormalidadeY3
+
 # Kolmogorov-Smirnov
 ks.test(valoresPreditos3, "pnorm", mean(valoresPreditos3), sd(valoresPreditos3))
 hist(valoresPreditos3)
