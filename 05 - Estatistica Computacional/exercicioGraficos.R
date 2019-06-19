@@ -11,27 +11,35 @@
 # f) Qual a fonte de maior variabilidade deste experimento.
  
 # a)Calcule a média e mediana da amostra e dê uma interpretação
+
 #valores
-vetor=c(96,96,102,102,102,104,104,108,126,126,128,128,140,156,160,160,164,170)
+vetor = c(96,96,102,102,102,104,104,108,126,126,128,128,140,156,160,160,164,170)
+
 #  MEDIA->mean(A) OU sum(A)/length(A)
-media=mean(vetor) 
+media = mean(vetor) 
+
 # mediana
-mediana=median(vetor)
+mediana = median(vetor)
 
 #porcentagens que eu queira enquadrar
 #b) Calcule os percentis 9%, 25%, 5% e 69%
-percentis=c(.09, .25, .05, .69)
-perc=quantile(vetor,percentis)
+percentis = c(.09, .25, .05, .69)
+perc = quantile(vetor,percentis)
 
 variavel=var(vetor)
+
 # tamanho do vetor
 tamanho=length(vetor)
+
 # maior valor do vetor
 numeroMaximo=max(vetor)
+
 # menor valor do vetor
 numeroMinimo=min(vetor)
+
 # soma de todos os valores do vetor
 total=sum(vetor)
+
 # amostra de dados
 dadosSumarizados=summary(vetor)
 
@@ -39,11 +47,12 @@ dadosSumarizados=summary(vetor)
 amplitude = range(vetor)
 
 # e) Calcule a variância e o desvio padrão da amostra
+
 # Desvio padrão
 sd(vetor)
 
 #se tem pouca variedade entre a media e a mediana
-
+var(vetor)
 
 #################################
 # 2º)na sala dos professores da escola, há um cartaz com a frase "Em 2007, eram 734 estudantes matriculados;
@@ -95,7 +104,6 @@ survived=table(a$Survived)
 #mostra e constri o grafico separando as categorias do sexo como feminino e masculino
 barplot(survived)
 
- 
 #################################
 
 data(iris)
@@ -111,19 +119,13 @@ pie(clas,main="titulo")
 
 #################################
 
-?lynx
-
-
 plot(lynx)
-
 
 plot(lynx, ylab="plot com dataframe", xlab="")
 
 plot(lynx, ylab="plot com dataframe", xlab="observações")
 
 plot(lynx, main="plot com dataframe", col="red")
-
-
 
 #################################
 
@@ -155,10 +157,3 @@ boxplot(d$speed, d$dist)
 boxplot(d$speed, d$dist, col = c("orange","yellow")) 
  
 boxplot(d$speed, d$dist, col = c("orange","yellow"), main="teste") 
-
-  
-
-
-
-
-

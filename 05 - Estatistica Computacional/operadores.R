@@ -100,20 +100,5 @@ CV=var(B)/mean(B)
 q = c(48,49,51,50,49)
 quantile(q)
  
-
 percentis = seq(.01,.99,.01)
 quantile(q, percentis)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
