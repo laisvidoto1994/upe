@@ -1,0 +1,96 @@
+
+
+clusterização
+
+criar grupos que descrevam da melhror forma os elementos(similiaridade)
+
+
+algoritmos
+
+##############################################
+# K-means - ele utiliza á media
+
+só pode ser utilizada se:
+- souber como os dados estão dispostos
+- 
+
+tem que saber como os dados estão dispostos(se estão bem classificados e agrupados), se eles forem muito bem separados 
+em grupos eles podem ser usados no k-means
+
+tem que saber e definir o numero de grupos
+
+define o ponto de referencia(o centro)
+
+centro de cada grupo
+
+
+e que os dados estejam com sua distancia na densidade parecida
+densidade-> o quanto o dados estam proximos
+
+
+centroide-> é o ponto de referencia que melhor representa aquele grupo (cluster)
+cluster-> os grupos
+
+##############################################
+# K-Medianas - ele utiliza a mediaba
+
+é igual ao  K-means á diferença é que ele utiliza medianas
+medoides->
+ 
+##############################################
+FuzzyC-Means - 
+
+
+ele fala de distancia em valor de pertinencia ou pertencimento dos dados
+
+
+############################################## 
+Mean-Shift Clustering
+
+é mais custozo
+
+pode ter densidade diferente, fica independente da inicialização , mais é mais custozo
+
+tem que discubrir o raio que ele pode ter para categorizar os dados
+
+estrategia para saber á quantidade de grupos
+ 
+##############################################
+DBSCAN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
