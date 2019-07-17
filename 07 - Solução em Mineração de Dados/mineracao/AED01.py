@@ -32,31 +32,11 @@ url = "https://archive.ics.uci.edu/ml/machine-learning-databases/00327/Training%
 # Definindo o nome de cada coluna dos dados
 dataset = arff.loadarff('TrainingDataset.arff')
 input_data_df = pd.DataFrame(dataset[0])
-#print(input_data_df.head())
+
 
 for col in input_data_df:
         temp = list(map(lambda x: int(x.decode('UTF-8')),input_data_df[col]))
         input_data_df[col] = temp
-
-#for col in input_data_df:
-#    if col == "Result":
-#        temp = list(map(lambda x: int(x.decode('UTF-8')),input_data_df[col]))
-#        input_data_df[col] = temp
-#    else:
-#        temp = list(map(lambda x: x.decode('UTF-8'),input_data_df[col]))
-#        input_data_df[col] = temp
-#        input_data_df[col] = pd.Categorical(input_data_df[col])
-#        
-#from sklearn import preprocessing
-#le = preprocessing.LabelEncoder()
-#for column_name in input_data_df.columns:
-#  if input_data_df[column_name].dtype == object:
-#    input_data_df[column_name] = le.fit_transform(input_data_df[column_name])
-#  else:
-#     pass
-
-#display(input_data_df.head(2))
-#display(input_data_df.tail(2))
 
 print("Apresentando o shape dos dados (dimensoes)")
 print(input_data_df.shape)
@@ -181,7 +161,7 @@ print('#########################################################')
 
 #################################################################primeiro teste
 
-mlp = MLPClassifier(hidden_layer_sizes=([1,2]))
+mlp = MLPClassifier(hidden_layer_sizes=([1,2]) )
 mlp.fit(X_train,y_train)
 predictions = mlp.predict(X_test)
 

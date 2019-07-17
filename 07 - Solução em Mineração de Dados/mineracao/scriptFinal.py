@@ -30,7 +30,7 @@ warnings.filterwarnings("ignore")
 #--------------------------------------------------------#
 
 # carregando dados do arquivo
-dataset = arff.loadarff('Training Dataset.arff')
+dataset = arff.loadarff('TrainingDataset.arff')
 input_data_df = pd.DataFrame(dataset[0]) 
 
 #--------------------------------------------------------#
@@ -66,57 +66,35 @@ Y = input_data_df.values[:,30] #separa os dados da ultima coluna
 # separação de treinamento de teste
 #--------------------------------------------------------#
 
+seed = 10
 #usando o metodo para fazer uma unica divisao dos dados de teste=25% e treinamento=75%
-X_train, X_test, y_train, y_test = train_test_split( X, Y, test_size = 0.25, random_state = 10)
+X_train, X_test, Y_train, y_test = train_test_split( X, Y, test_size = 0.25, random_state = seed)
  
 #--------------------------------------------------------#
-#  Arvore de decisão simples
+#  Arvore de decisão simples - DecisionTreeClassifier
 #--------------------------------------------------------#
-     
-# Constroi um classificador com arvore de decisao
-#clf = tree.DecisionTreeClassifier(criterion='entropy',random_state=10)
-clf = tree.DecisionTreeClassifier(criterion='entropy',max_depth = 5, random_state=10)
-clf2 = tree.DecisionTreeClassifier()
-#clf = clf.fit(X_train, y_train)
- 
-print("Acuracia train: %0.3f" % clf.score(X_train, y_train) )
-print("Acuracia test: %0.3f" % clf.score(X_test, y_test) )
- 
-#--------------------------------------------------------#
-# criando arquivo de decisão 
-#--------------------------------------------------------#
- 
-dotfile = open("dt-phishing.dot", 'w')
-tree.export_graphviz(clf, out_file=dotfile)
-dotfile.close()
-print("Arvore de decisao gerada no diretorio!")
+numProfundidade = 0
 
+for i in range(10):
+    numProfundidade = numProfundidade + 5
+    arvoreDecisao = tree.DecisionTreeClassifier(criterion='entropy', max_depth = numProfundidade, random_state=seed)
+    score = cross_val_score(arvoreDecisao, X_train, Y_train, cv=10)
+    media = score.mean()
+    desvioPadrao = score.std()
+    print("Accuracy in Arvore de decisao: %0.2f (+/- %0.2f)" % (media, desvioPadrao * 2), "Profundidade: ", numProfundidade, "Interacao: ", i ) 
+        
 #--------------------------------------------------------#
-# Validação Cruzada - cross_val_score
+# Arvore de decisão - Random Forest
 #--------------------------------------------------------#
+numEstimador = 0
 
-# teste de validação cruzada que cria 10 vezes amostragem dos dados
-scores = cross_val_score(clf, X, Y, cv=10)
-print("Accuracy clf: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
-
-print("Conteudo da variavel scores", scores)
-    
-#--------------------------------------------------------#
-# Random Forest
-#--------------------------------------------------------#
-seed = 7
-num_trees = 100
-max_features = 3
-
-kfold = model_selection.StratifiedKFold(n_splits=10, random_state=seed)
-model = RandomForestClassifier(n_estimators=num_trees, max_features=max_features)
-results = model_selection.cross_val_score(model, X, Y, cv=kfold)
-print(results.mean())
-
-X_train, X_test, y_train, y_test = train_test_split( X, Y, test_size=0.30, random_state=seed)
-clf = tree.DecisionTreeClassifier(criterion='entropy', max_depth=5, random_state=seed)
-clf = clf.fit(X_train, y_train)
-print("Acuracia: %0.3f" %  clf.score(X_test, y_test))
+for i in range(10):
+    numEstimador = numEstimador + 2 
+    florestaAleatoria = RandomForestClassifier(n_estimators=numEstimador, max_features=3, random_state=seed)
+    score = cross_val_score(florestaAleatoria, X_train, Y_train, cv=10)
+    media = score.mean()
+    desvioPadrao = score.std()      
+    print("Accuracy Random Forest: %0.2f (+/- %0.2f)" % (score.mean(), score.std() * 2), "Estimador: ", numEstimador, "Interacao: ", i )
 
 #--------------------------------------------------------#
 # Rede Neural MLP
@@ -127,6 +105,18 @@ print("Acuracia: %0.3f" %  clf.score(X_test, y_test))
 # Comitê de Redes Neurais
 #--------------------------------------------------------#
 
+
+#--------------------------------------------------------#
+# criando arquivo de decisão 
+#--------------------------------------------------------#
+  
+    
+    
+#--------------------------------------------------------#
+# Validação Cruzada - cross_val_score
+#--------------------------------------------------------#
+
+    
 
 #--------------------------------------------------------#
 # graficos de apresentação da distribuição por classe
@@ -141,24 +131,6 @@ print("Acuracia: %0.3f" %  clf.score(X_test, y_test))
 # 
 #--------------------------------------------------------#
  
-
-#--------------------------------------------------------#
-# 
-#--------------------------------------------------------#
-
-#--------------------------------------------------------#
-# 
-#--------------------------------------------------------#
- 
-
-#--------------------------------------------------------#
-# 
-#--------------------------------------------------------#
-
-
-
-
-
 
 
 

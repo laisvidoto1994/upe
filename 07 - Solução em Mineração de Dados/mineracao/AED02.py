@@ -28,6 +28,9 @@ for col in input_data_df:
 X = input_data_df.values[:,0:29]
 Y = input_data_df.values[:,30]
 
+
+X_train, X_test, y_train, y_test = train_test_split(X, Y, random_state=seed)
+
 # prepare configuration for cross validation test harness
 seed = 7
 # prepare models
@@ -47,8 +50,6 @@ names = []
 scoring = 'accuracy'
 
 kfold = model_selection.StratifiedKFold(n_splits=10, random_state=seed)
-
-X_train, X_test, y_train, y_test = train_test_split(X, Y, random_state=seed)
 
 for name, model in models:
 	cv_results = model_selection.cross_val_score(model, X_train, y_train, cv=kfold, scoring=scoring)

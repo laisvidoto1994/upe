@@ -7,8 +7,7 @@ from sklearn.model_selection import cross_val_score
 
 cancer = load_digits()
 
-print( "\nAtibutos " )
-print(cancer.keys())
+print( "\nAtibutos ",cancer.keys())
 
 # Print full description by running:
 # print(cancer['DESCR'])
@@ -33,13 +32,19 @@ X_test = scaler.transform(X_test)
 
 #criando rede neural
 from sklearn.neural_network import MLPClassifier
+
 mlp = MLPClassifier(hidden_layer_sizes=([3,3]))
 
+print("mlp: ",mlp)
+
 mlp.fit(X_train,y_train)
+
+
 #usando á rede treinada da rede neural para o uso do cliente
 predictions = mlp.predict(X_test)
 
 from sklearn.metrics import classification_report,confusion_matrix
+
 print("\nMatriz de confusao")
 print(confusion_matrix(y_test,predictions))
 
