@@ -1,0 +1,147 @@
+banco de dados não Convencionais
+ 
+mongo.exe
+ 
+
+colection -> é igual á uma tabela
+clusterização no mongoDB-> é uma virtualização de parte do banco de dados, para que haja uma melhor performace na transação.
+
+ex clusterização(nô): Mongo mongo = new Mongo("localhost:27017");
+
+ele faz parte do mesmo database, porem está funcionando em outra maquina, podendo ter o mesmo nome de uma outro nô(tabela)
+
+####################
+comandos mongo
+
+show dbs-> mostra todos os databases que estiverem disponiveis
+use ligado-> 
+
+
+db.albuns.insert({})->insere vazio, e cria a tabela albuns
+db.alunos.find()-> traz todos os registros
+
+show collections->lista todas as tabelas que estão criadas na base selecionada
+
+# exemplo de inserção de dados
+db.albuns.insert({"nome" : "Master of Puppets","dataLancamento" : new Date(1986, 2, 3),"duracao" : 3286})
+db.albuns.insert({"nome" : "...And Justice for All","dataLancamento" : new Date(1988, 7, 25),"duracao" : 3929})
+db.albuns.insert({"nome" : "Among the Living","produtor" : "Eddie Kramer"})
+
+# traz todos os dados da tabela albuns se o atributo chave nome for igual ao informado
+db.albuns.find({"nome" : "Master of Puppets"})
+
+# traz apenas os dados da tabela albuns se o atributo chave nome for igual ao informado
+db.albuns.findOne({"nome" : "Master of Puppets"})
+
+# traz todos os dados que hoverem a letra m no texto
+db.albuns.find({"nome":/m/}
+
+
+# traz todos os dados que hoverem a letra M ou m no texto, maiuscula ou menuscula
+db.albuns.find({"nome":/.*[Mm].*/})
+
+ou 
+
+db.albuns.find({"nome":/.*M|m.*/})
+
+# começa e termina com a letra m
+db.albuns.find({"nome":/ˆm$/}
+
+#######################
+$gt-> maior que
+$gte-> maior ou igual á que
+$in-> se existe
+$lt-> menores que
+$lte->menores ou igual á que
+$ne-> valores diferentes há
+$nin-> valores que não existem no array
+#######################
+
+# trazer todas as durações que forem menor que 1800
+db.albuns.find({"duracao": {"$lt": 1800} })
+
+#######################
+$and-> E
+$nor->NEM
+$not-> NEGAÇÃO
+$or-> OU
+#######################
+
+# traga todos os dados que a data de lançamento forem maior ou igual que 1986 E
+menor que 1987
+db.albuns.find({ $and : [ 
+						  {"dataLancamento" : {$gte: new Date(1986, 0, 1)}},
+						  {"dataLancamento" : {$lt: new Date(1987, 0, 1)}}
+						]})
+
+# removendo o dado quando nome for igual ao informado						
+db.albuns.remove({"nome": "...And Justice for All"})
+
+# para mudar o o valor de um atributo
+#procure o nome igual ao informado, e depois atualize o atributo duração com o valore informado
+db.albuns.update(
+				   {"nome" : "Among the Living"},
+				   { $set : {"duracao" : 3013}}
+				)
+# para adicionar uma nova coluna
+db.albuns.update(
+				   {"nome" : "Among the Living"},
+				   {"duracao" : 3013}
+				)
+
+# exclui database
+db.dropDatabase()
+
+# exclui tabela
+db.albuns.drop({}
+
+  
+# inserir mais de um 
+db.artistas.insert([ 
+						{"nome" : "Metallica"},
+						{"nome" : "Megadeath"},
+						{"nome" : "Slayer"},
+						{"nome" : "Anthrax"}
+					])
+
+
+db.artistas.insert([ 
+						{"nome" : "Metallica", "_id": 1},
+						{"nome" : "Megadeath", "_id": 2},
+						{"nome" : "Slayer", "_id": 3},
+						{"nome" : "Anthrax", "_id": 4}
+					])
+
+
+var artista = db.artistas.findOne({"nome" : "Metallica"}
+var albuns = db.albuns.find({"artista_id" :artista._id})					
+					
+
+albuns.forEach(function(albuns) {print(albuns["nome"]);})					
+		
+
+
+db.albuns.insert({"nome" : "Somewhere Far Beyond",
+                  "dataLancamento" : new Date(1992, 5, 30),
+				  "duracao" : 3328,
+				  "artista" : {"nome" : "Blind Guardian"}
+				  })
+
+#importação de dados em csv para o banco mongoDb
+-d->
+-c-> coleção
+--type-> tipo de arquivo para leitura
+–-file-> caminho do diretorio onde foi salvo o arquivo csv
+
+pelo cmd digite
+mongoimport -d movies -c movie --type csv --headerline --file C:\Users\pos\Desktop\upe\movie_metadata.csv
+ 
+db.movie.find({"director_name": "James Cameron"})
+
+db.movie.find({"actor_1_name": "Leonardo DiCaprio"})
+
+db.movie.find({"genres": /ˆAction$/})
+
+
+
+
