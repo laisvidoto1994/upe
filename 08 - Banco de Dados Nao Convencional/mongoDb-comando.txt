@@ -142,6 +142,3 @@ db.movie.find({"actor_1_name": "Leonardo DiCaprio"})
 
 db.movie.find({"genres": /ˆAction$/})
 
-
-
-

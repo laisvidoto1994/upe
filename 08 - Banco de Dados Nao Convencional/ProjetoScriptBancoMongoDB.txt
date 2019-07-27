@@ -1,0 +1,95 @@
+// importação do arquivo csv
+mongoimport -d dentistas -c dentista --type csv --headerline --file C:\Users\pos\Desktop\upe\movie_metadata.csv
+
+//agrupa por proced, e conta quantos procedimentos tem dentro de cada grupo
+// retorna o total de registro de cada procedimento
+db.dentista.aggregate([{ 
+	$group : { 
+		_id : "$proced", 
+		count: { $sum: 1 }
+	}
+}])
+
+// retorna o total de registro de cada dentista
+db.dentista.aggregate([{ 
+	$group : { 
+		_id : "$nome_dent",
+		count: { $sum: 1 }
+	}
+}])
+
+
+//agrupa por proced que contenha /resina/ no texto,
+// e cod_dentista = 18 
+// e conta o total retornando agrupado de todos os registros que adequem á condição acima			   
+db.runCommand({
+    group:{
+        ns: 'dentista',
+        key: {'cod_dent':1, 'proced':1},
+		cond: { cod_dent: 18, 'proced':/Resina/},
+        $reduce: function ( curr, result ) { },
+        initial: { }
+    }
+})
+ 
+
+//agrupa por proced que tenha ok=0
+// e cod dentista = 18 
+// e conta o total retornado agrupado com o valor da comissao	
+// retorna cada valor da commisaõ de cada procedimento, quando ok=0 e dentista=18
+db.runCommand({
+    group:{
+        ns: 'dentista',
+        key: {'cod_dent':1, 'ok':1, 'proced':1, 'comissao':1},
+		cond: { 'cod_dent': 18, 'ok':0, },
+        $reduce: function ( curr, result ) { },
+        initial: { }
+    }
+})
+  
+
+//agrupa por proced e cod_dent,
+// e conta quantos dentistas tem dentro de cada procedimento
+// mostra por cada dentista, quais os seus procedimentos
+db.dentista.aggregate([{ 
+	$group : { 
+		_id : { 
+			cod: "$cod_dent", 
+			proced: "$proced" 
+		}, 
+		count: { $sum: 1 }
+	}
+}]).pretty() 
+
+
+//--------------- TENTATIVA --------------//
+//agrupa por proced que tenha ok=0
+// e cod dentista = 18 
+// e conta o total retornado agrupado			   
+db.runCommand({
+    group:{
+        ns: 'dentista',
+        key: {'cod_dent':1, 'ok':1, 'comissao':1},
+		cond: { cod_dent: 18, 'ok':0, comissao: { $sum{"$comissao"}}  },
+        $reduce: function ( curr, result ) { },
+        initial: { }
+    }
+})
+ 
+// trazer o valor total da comissao
+db.dentista.aggregate({ 
+	$match:{
+		$and: [
+			{ok:0},
+			{cod_dent:18}
+		]
+	}
+	 $group : { 
+		 _id : null, 
+		 sum: { $sum: "$comissao" }
+	}
+})
+
+
+
+
