@@ -1,0 +1,63 @@
+cassandra comandos
+
+C:\Users\pos\Downloads\apache-cassandra-3.11.4-bin.tar\apache-cassandra-3.11.4-bin\apache-cassandra-3.11.4\bin\
+
+// statndando serviço
+cassandra.bat
+
+// linha de comando de cassandra
+cqlsh.py
+
+
+//mostra os bancos de dados
+DESCRIBE KEYSPACES 
+
+// criando o database
+CREATE KEYSPACE ligado WITH replication={'class': 'SimpleStrategy', 'replication_factor': '3'};
+
+// use o database 
+use ligado;
+
+// criando tabela de musica
+CREATE TABLE musica (id uuid PRIMARY KEY,nome text,album text,artista text);
+
+// inserindo dados na tabela de musica
+INSERT INTO musica (id, nome,album, artista) VALUES(now(), 'Help', 'Help','Beatles’);
+
+// mostra todos os dados da tabela
+SELECT * FROM musica;
+
+//atualização de dados
+UPDATE musica SET nome='Help!', album='Help!' WHERE id = a70ca7ff-6d57-4f89-be89-08421c432bb7;
+
+// excluindo o dado do campo id informaasdo
+DELETE FROM musica WHERE id = a70ca7ff-6d57-4f89-be89-08421c432bb7;
+
+// criando indece para realizar consultas especificas
+CREATE INDEX ON musica (artista)
+ 
+// buscando os dados quando artista do indes criado acima for = Beatles 
+SELECT * FROM musica WHERE artista='Beatles';
+
+// excluindo databases 
+DROP KEYSPACE ligado; 
+ 
+ 
+CREATE TABLE playlist_atual(
+	id_playlist uuid,
+	posicao int,
+	id_musica uuid,
+	nome text,
+	album text,
+	artista text,
+	PRIMARY KEY (id_playlist,posicao)
+);
+ 
+INSERT INTO playlist_atual(id_playlist,posicao,id_musica, nome,album, artista)
+VALUES (c4f408dd-00f3-488e-8800-050d2775bbc7,1,1a8d6a80-33df-11e5-a151-feff819cdc9f,'Help!','Help!','Beatles');
+
+
+INSERT INTO playlist_atual(id_playlist,posicao,id_musica, nome, album,artista)
+VALUES (c4f408dd-00f3-488e-8800-050d2775bbc7, 2,1a8d6a80-33df-11e5-a151-feff819cdc9f,'Yestarday', 'Help!', 'Beatles');
+ 
+ 
