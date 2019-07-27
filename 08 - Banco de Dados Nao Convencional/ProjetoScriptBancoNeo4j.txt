@@ -1,0 +1,24 @@
+//carrega o banco e estabelece as relações
+LOAD CSV WITH HEADERS FROM "file:/neo_prod.csv" AS linha FIELDTERMINATOR ','
+MERGE (proc:Procedimento{
+cod_proced:toInteger(linha.cod_proced),
+cod_ok:toInteger(linha.ok),
+id_proced:toInteger(linha.id_proced)})
+MERGE (dentista:Dentista{cod_dentista:toInteger(linha.cod_dent)})
+MERGE (dente:Dente{cod_dente:toInteger(linha.dente)})
+MERGE (dentista)-[:REALIZA]->(proc)
+MERGE (proc)-[:LOCALIZADO]->(dente)
+
+//Qual dentista mais realizou o procedimento X e recebeu por ele
+
+MATCH (d:Dentista)-[r:REALIZA]->(p:Procedimento)
+WHERE p.cod_proced=85100196 and p.cod_ok=1
+RETURN d.cod_dentista, count(p.id_proced)
+ORDER BY count(p.id_proced) DESC
+
+// qual dentista mais realizou o procedimento x no dente y e recebeu por ele.
+MATCH (d:Dentista)-[r:REALIZA]->(p:Procedimento)
+MATCH (p:Procedimento)-[l:LOCALIZADO]->(dent:Dente)
+WHERE p.cod_proced=85100196 and dent.cod_dente=26 and p.cod_ok=1
+RETURN d.cod_dentista, count(p.id_proced)
+ORDER BY count(p.id_proced) DESC
