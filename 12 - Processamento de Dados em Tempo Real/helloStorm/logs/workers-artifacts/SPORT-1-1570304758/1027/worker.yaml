@@ -1,0 +1,4 @@
+worker-id: 1bc1e915-cbe5-4e7f-a493-0e74ab0bcc79
+logs.users: []
+logs.groups: []
+topology.submitter.user: pos
