@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "cheerio": "^0.22.0",
-    "clean-css": "^3.4.23",
+    "clean-css": "^4.2.1",
     "entities": "^1.1.1",
     "terminal-kit": "^0.26.1",
     "uglify-js": "^2.7.5"
